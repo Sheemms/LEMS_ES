@@ -203,6 +203,12 @@
     <Compile Include="Forms\frmTeachers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmUserMaintenance.Designer.vb">
+      <DependentUpon>frmUserMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUserMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module\ModDisplay.vb" />
     <Compile Include="Module\Mod_Conn.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTeachers.resx">
       <DependentUpon>frmTeachers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUserMaintenance.resx">
+      <DependentUpon>frmUserMaintenance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -313,6 +322,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\skill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masculine-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-box.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
