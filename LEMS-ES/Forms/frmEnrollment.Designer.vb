@@ -24,6 +24,13 @@ Partial Class frmEnrollment
     Private Sub InitializeComponent()
         Me.GBEnrollmentForm = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Guna2TextBox23 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2TextBox22 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2TextBox21 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2TextBox20 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2TextBox19 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2TextBox18 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2TextBox17 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TextBox16 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Guna2ComboBox3 = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -62,13 +69,6 @@ Partial Class frmEnrollment
         Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox17 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox18 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox19 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox20 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox21 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox22 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox23 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,7 +82,7 @@ Partial Class frmEnrollment
         Me.GBEnrollmentForm.ForeColor = System.Drawing.Color.White
         Me.GBEnrollmentForm.Location = New System.Drawing.Point(0, 0)
         Me.GBEnrollmentForm.Name = "GBEnrollmentForm"
-        Me.GBEnrollmentForm.Size = New System.Drawing.Size(851, 518)
+        Me.GBEnrollmentForm.Size = New System.Drawing.Size(953, 565)
         Me.GBEnrollmentForm.TabIndex = 0
         Me.GBEnrollmentForm.Text = "Enrollment Form"
         Me.GBEnrollmentForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -138,10 +138,150 @@ Partial Class frmEnrollment
         Me.GroupBox1.Font = New System.Drawing.Font("Georgia", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(0, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(851, 478)
+        Me.GroupBox1.Size = New System.Drawing.Size(953, 525)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Assesment Form"
+        '
+        'Guna2TextBox23
+        '
+        Me.Guna2TextBox23.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox23.DefaultText = ""
+        Me.Guna2TextBox23.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox23.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox23.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox23.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox23.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox23.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox23.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox23.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox23.Location = New System.Drawing.Point(628, 330)
+        Me.Guna2TextBox23.Name = "Guna2TextBox23"
+        Me.Guna2TextBox23.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox23.PlaceholderText = "Contact No."
+        Me.Guna2TextBox23.SelectedText = ""
+        Me.Guna2TextBox23.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox23.TabIndex = 58
+        '
+        'Guna2TextBox22
+        '
+        Me.Guna2TextBox22.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox22.DefaultText = ""
+        Me.Guna2TextBox22.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox22.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox22.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox22.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox22.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox22.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox22.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox22.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox22.Location = New System.Drawing.Point(628, 288)
+        Me.Guna2TextBox22.Name = "Guna2TextBox22"
+        Me.Guna2TextBox22.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox22.PlaceholderText = "Contact No."
+        Me.Guna2TextBox22.SelectedText = ""
+        Me.Guna2TextBox22.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox22.TabIndex = 57
+        '
+        'Guna2TextBox21
+        '
+        Me.Guna2TextBox21.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox21.DefaultText = ""
+        Me.Guna2TextBox21.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox21.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox21.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox21.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox21.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox21.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox21.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox21.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox21.Location = New System.Drawing.Point(628, 246)
+        Me.Guna2TextBox21.Name = "Guna2TextBox21"
+        Me.Guna2TextBox21.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox21.PlaceholderText = "Contact No."
+        Me.Guna2TextBox21.SelectedText = ""
+        Me.Guna2TextBox21.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox21.TabIndex = 56
+        '
+        'Guna2TextBox20
+        '
+        Me.Guna2TextBox20.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox20.DefaultText = ""
+        Me.Guna2TextBox20.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox20.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox20.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox20.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox20.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox20.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox20.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox20.Location = New System.Drawing.Point(422, 330)
+        Me.Guna2TextBox20.Name = "Guna2TextBox20"
+        Me.Guna2TextBox20.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox20.PlaceholderText = "Guardian Occupation"
+        Me.Guna2TextBox20.SelectedText = ""
+        Me.Guna2TextBox20.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox20.TabIndex = 55
+        '
+        'Guna2TextBox19
+        '
+        Me.Guna2TextBox19.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox19.DefaultText = ""
+        Me.Guna2TextBox19.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox19.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox19.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox19.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox19.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox19.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox19.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox19.Location = New System.Drawing.Point(422, 246)
+        Me.Guna2TextBox19.Name = "Guna2TextBox19"
+        Me.Guna2TextBox19.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox19.PlaceholderText = "Mother's Occupation"
+        Me.Guna2TextBox19.SelectedText = ""
+        Me.Guna2TextBox19.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox19.TabIndex = 54
+        '
+        'Guna2TextBox18
+        '
+        Me.Guna2TextBox18.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox18.DefaultText = ""
+        Me.Guna2TextBox18.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox18.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox18.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox18.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox18.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox18.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox18.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox18.Location = New System.Drawing.Point(422, 288)
+        Me.Guna2TextBox18.Name = "Guna2TextBox18"
+        Me.Guna2TextBox18.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox18.PlaceholderText = "Father's Occupation"
+        Me.Guna2TextBox18.SelectedText = ""
+        Me.Guna2TextBox18.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox18.TabIndex = 53
+        '
+        'Guna2TextBox17
+        '
+        Me.Guna2TextBox17.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox17.DefaultText = ""
+        Me.Guna2TextBox17.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox17.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox17.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox17.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox17.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox17.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox17.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox17.Location = New System.Drawing.Point(130, 330)
+        Me.Guna2TextBox17.Name = "Guna2TextBox17"
+        Me.Guna2TextBox17.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox17.PlaceholderText = "Guardian Name"
+        Me.Guna2TextBox17.SelectedText = ""
+        Me.Guna2TextBox17.Size = New System.Drawing.Size(286, 36)
+        Me.Guna2TextBox17.TabIndex = 52
         '
         'Guna2TextBox16
         '
@@ -732,151 +872,11 @@ Partial Class frmEnrollment
         Me.Guna2TextBox1.Size = New System.Drawing.Size(108, 36)
         Me.Guna2TextBox1.TabIndex = 0
         '
-        'Guna2TextBox17
-        '
-        Me.Guna2TextBox17.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox17.DefaultText = ""
-        Me.Guna2TextBox17.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox17.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox17.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox17.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox17.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox17.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox17.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox17.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox17.Location = New System.Drawing.Point(130, 330)
-        Me.Guna2TextBox17.Name = "Guna2TextBox17"
-        Me.Guna2TextBox17.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox17.PlaceholderText = "Guardian Name"
-        Me.Guna2TextBox17.SelectedText = ""
-        Me.Guna2TextBox17.Size = New System.Drawing.Size(286, 36)
-        Me.Guna2TextBox17.TabIndex = 52
-        '
-        'Guna2TextBox18
-        '
-        Me.Guna2TextBox18.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox18.DefaultText = ""
-        Me.Guna2TextBox18.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox18.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox18.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox18.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox18.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox18.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox18.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox18.Location = New System.Drawing.Point(422, 288)
-        Me.Guna2TextBox18.Name = "Guna2TextBox18"
-        Me.Guna2TextBox18.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox18.PlaceholderText = "Father's Occupation"
-        Me.Guna2TextBox18.SelectedText = ""
-        Me.Guna2TextBox18.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2TextBox18.TabIndex = 53
-        '
-        'Guna2TextBox19
-        '
-        Me.Guna2TextBox19.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox19.DefaultText = ""
-        Me.Guna2TextBox19.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox19.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox19.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox19.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox19.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox19.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox19.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox19.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox19.Location = New System.Drawing.Point(422, 246)
-        Me.Guna2TextBox19.Name = "Guna2TextBox19"
-        Me.Guna2TextBox19.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox19.PlaceholderText = "Mother's Occupation"
-        Me.Guna2TextBox19.SelectedText = ""
-        Me.Guna2TextBox19.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2TextBox19.TabIndex = 54
-        '
-        'Guna2TextBox20
-        '
-        Me.Guna2TextBox20.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox20.DefaultText = ""
-        Me.Guna2TextBox20.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox20.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox20.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox20.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox20.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox20.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox20.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox20.Location = New System.Drawing.Point(422, 330)
-        Me.Guna2TextBox20.Name = "Guna2TextBox20"
-        Me.Guna2TextBox20.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox20.PlaceholderText = "Guardian Occupation"
-        Me.Guna2TextBox20.SelectedText = ""
-        Me.Guna2TextBox20.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2TextBox20.TabIndex = 55
-        '
-        'Guna2TextBox21
-        '
-        Me.Guna2TextBox21.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox21.DefaultText = ""
-        Me.Guna2TextBox21.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox21.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox21.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox21.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox21.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox21.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox21.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox21.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox21.Location = New System.Drawing.Point(628, 246)
-        Me.Guna2TextBox21.Name = "Guna2TextBox21"
-        Me.Guna2TextBox21.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox21.PlaceholderText = "Contact No."
-        Me.Guna2TextBox21.SelectedText = ""
-        Me.Guna2TextBox21.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2TextBox21.TabIndex = 56
-        '
-        'Guna2TextBox22
-        '
-        Me.Guna2TextBox22.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox22.DefaultText = ""
-        Me.Guna2TextBox22.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox22.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox22.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox22.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox22.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox22.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox22.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox22.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox22.Location = New System.Drawing.Point(628, 288)
-        Me.Guna2TextBox22.Name = "Guna2TextBox22"
-        Me.Guna2TextBox22.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox22.PlaceholderText = "Contact No."
-        Me.Guna2TextBox22.SelectedText = ""
-        Me.Guna2TextBox22.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2TextBox22.TabIndex = 57
-        '
-        'Guna2TextBox23
-        '
-        Me.Guna2TextBox23.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox23.DefaultText = ""
-        Me.Guna2TextBox23.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox23.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox23.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox23.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox23.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox23.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox23.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox23.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox23.Location = New System.Drawing.Point(628, 330)
-        Me.Guna2TextBox23.Name = "Guna2TextBox23"
-        Me.Guna2TextBox23.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox23.PlaceholderText = "Contact No."
-        Me.Guna2TextBox23.SelectedText = ""
-        Me.Guna2TextBox23.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2TextBox23.TabIndex = 58
-        '
         'frmEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(851, 518)
+        Me.ClientSize = New System.Drawing.Size(953, 565)
         Me.Controls.Add(Me.GBEnrollmentForm)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

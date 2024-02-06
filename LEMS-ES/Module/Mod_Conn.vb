@@ -44,9 +44,16 @@ Module Mod_Conn
         frmEnrollment.Close()
         frmStudents.Close()
         frmTeachers.Close()
+    End Sub
+    Public Sub MaintenanceRemovePanel()
+        frmRequirements.Close()
+        frmSubjects.Close()
         frmSections.Close()
-        frmStudents.Close()
+        frmUserMaintenance.Close()
         frmSY.Close()
+        frmMiscellaneous.Close()
+        frmTuitionFee.Close()
+        frmAuditTrail.Close()
     End Sub
     Public Sub Critical(ByVal MessageStatement As String)
         MsgBox(MessageStatement, MsgBoxStyle.Critical, "LEMS_ES")

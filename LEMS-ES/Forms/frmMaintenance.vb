@@ -12,7 +12,7 @@ Public Class frmMaintenance
         End Try
     End Function
     Private Sub SchoolYearMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SchoolYearMaintenanceToolStripMenuItem.Click
-        RemovePanel()
+        MaintenanceRemovePanel()
         With frmSY
             .TopLevel = False
             Panel1.Controls.Add(frmSY)
@@ -23,7 +23,7 @@ Public Class frmMaintenance
     End Sub
 
     Private Sub SectionMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SectionMaintenanceToolStripMenuItem.Click
-        RemovePanel()
+        MaintenanceRemovePanel()
         With frmSections
             .TopLevel = False
             Panel1.Controls.Add(frmSections)
@@ -34,7 +34,7 @@ Public Class frmMaintenance
     End Sub
 
     Private Sub SubjectMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubjectMaintenanceToolStripMenuItem.Click
-        RemovePanel()
+        MaintenanceRemovePanel()
         With frmSubjects
             .TopLevel = False
             Panel1.Controls.Add(frmSubjects)
@@ -43,12 +43,29 @@ Public Class frmMaintenance
             .Show()
         End With
     End Sub
-
-    Private Sub UserMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserMaintenanceToolStripMenuItem.Click
-        RemovePanel()
+    Private Sub UserMaintenanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UserMaintenanceToolStripMenuItem1.Click
+        MaintenanceRemovePanel()
         With frmUserMaintenance
             .TopLevel = False
             Panel1.Controls.Add(frmUserMaintenance)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub OtherFeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OtherFeeToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+    End Sub
+
+    Private Sub TuitionFeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TuitionFeeToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+    End Sub
+    Private Sub AuditTrailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AuditTrailToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+        With frmAuditTrail
+            .TopLevel = False
+            Panel1.Controls.Add(frmAuditTrail)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()

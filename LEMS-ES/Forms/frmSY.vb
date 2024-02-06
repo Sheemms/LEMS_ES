@@ -11,14 +11,14 @@ Public Class frmSY
     End Sub
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSY.CellClick
-        'Try
-        For Each row As DataGridViewRow In dgvSY.SelectedRows
-            id = row.Cells(0).Value
-            txtAddSY.Text = row.Cells(1).Value
-        Next
-        'Catch ex As Exception
-
-        'End Try
+        Try
+            For Each row As DataGridViewRow In dgvSY.SelectedRows
+                id = row.Cells(0).Value
+                txtAddSY.Text = row.Cells(1).Value
+            Next
+        Catch ex As Exception
+            MsgBox("ERROR!", vbCritical)
+        End Try
     End Sub
 
     Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
