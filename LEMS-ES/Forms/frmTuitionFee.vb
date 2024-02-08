@@ -1,3 +1,3 @@
-﻿Public Class frmTuitionFee1
+﻿Public Class frmTuitionFee
 
 End Class

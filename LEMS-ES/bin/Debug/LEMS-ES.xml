@@ -57,6 +57,11 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:LEMS_ES.My.Resources.Resources.invoice">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:LEMS_ES.My.Resources.Resources.logout">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -78,6 +83,11 @@ LEMS-ES
 </summary>
 </member>
 <member name="P:LEMS_ES.My.Resources.Resources.new_document">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LEMS_ES.My.Resources.Resources.requirement">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

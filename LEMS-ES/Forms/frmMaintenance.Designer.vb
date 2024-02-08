@@ -24,16 +24,16 @@ Partial Class frmMaintenance
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdminControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SubjectMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequirementsMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiscellaneousMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TuitionFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OtherFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.SubjectMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TuitionFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,57 +54,26 @@ Partial Class frmMaintenance
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AdminControlsToolStripMenuItem.Text = "Admin Controls"
         '
-        'SubjectMaintenanceToolStripMenuItem
-        '
-        Me.SubjectMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.subject
-        Me.SubjectMaintenanceToolStripMenuItem.Name = "SubjectMaintenanceToolStripMenuItem"
-        Me.SubjectMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.SubjectMaintenanceToolStripMenuItem.Text = "Subject Maintenance"
-        '
-        'SectionMaintenanceToolStripMenuItem
-        '
-        Me.SectionMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.sections
-        Me.SectionMaintenanceToolStripMenuItem.Name = "SectionMaintenanceToolStripMenuItem"
-        Me.SectionMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.SectionMaintenanceToolStripMenuItem.Text = "Section Maintenance"
-        '
         'RequirementsMaintenanceToolStripMenuItem
         '
+        Me.RequirementsMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.requirement
         Me.RequirementsMaintenanceToolStripMenuItem.Name = "RequirementsMaintenanceToolStripMenuItem"
         Me.RequirementsMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.RequirementsMaintenanceToolStripMenuItem.Text = "Requirements Maintenance"
         '
-        'SchoolYearMaintenanceToolStripMenuItem
-        '
-        Me.SchoolYearMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.calendar
-        Me.SchoolYearMaintenanceToolStripMenuItem.Name = "SchoolYearMaintenanceToolStripMenuItem"
-        Me.SchoolYearMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.SchoolYearMaintenanceToolStripMenuItem.Text = "School Year Maintenance"
-        '
         'MiscellaneousMaintenanceToolStripMenuItem
         '
+        Me.MiscellaneousMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.invoice
         Me.MiscellaneousMaintenanceToolStripMenuItem.Name = "MiscellaneousMaintenanceToolStripMenuItem"
         Me.MiscellaneousMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.MiscellaneousMaintenanceToolStripMenuItem.Text = "Miscellaneous Maintenance"
         '
-        'TuitionFeeToolStripMenuItem
-        '
-        Me.TuitionFeeToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.skill
-        Me.TuitionFeeToolStripMenuItem.Name = "TuitionFeeToolStripMenuItem"
-        Me.TuitionFeeToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.TuitionFeeToolStripMenuItem.Text = "Tuition Fee"
-        '
         'OtherFeeToolStripMenuItem
         '
+        Me.OtherFeeToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.invoice
         Me.OtherFeeToolStripMenuItem.Name = "OtherFeeToolStripMenuItem"
         Me.OtherFeeToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.OtherFeeToolStripMenuItem.Text = "Other Fee"
-        '
-        'UserMaintenanceToolStripMenuItem1
-        '
-        Me.UserMaintenanceToolStripMenuItem1.Name = "UserMaintenanceToolStripMenuItem1"
-        Me.UserMaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(260, 22)
-        Me.UserMaintenanceToolStripMenuItem1.Text = "User Maintenance"
         '
         'AuditTrailToolStripMenuItem
         '
@@ -120,6 +89,41 @@ Partial Class frmMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(953, 565)
         Me.Panel1.TabIndex = 1
+        '
+        'SubjectMaintenanceToolStripMenuItem
+        '
+        Me.SubjectMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.subject
+        Me.SubjectMaintenanceToolStripMenuItem.Name = "SubjectMaintenanceToolStripMenuItem"
+        Me.SubjectMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.SubjectMaintenanceToolStripMenuItem.Text = "Subject Maintenance"
+        '
+        'SectionMaintenanceToolStripMenuItem
+        '
+        Me.SectionMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.sections
+        Me.SectionMaintenanceToolStripMenuItem.Name = "SectionMaintenanceToolStripMenuItem"
+        Me.SectionMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.SectionMaintenanceToolStripMenuItem.Text = "Section Maintenance"
+        '
+        'SchoolYearMaintenanceToolStripMenuItem
+        '
+        Me.SchoolYearMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.calendar
+        Me.SchoolYearMaintenanceToolStripMenuItem.Name = "SchoolYearMaintenanceToolStripMenuItem"
+        Me.SchoolYearMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.SchoolYearMaintenanceToolStripMenuItem.Text = "School Year Maintenance"
+        '
+        'TuitionFeeToolStripMenuItem
+        '
+        Me.TuitionFeeToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.invoice
+        Me.TuitionFeeToolStripMenuItem.Name = "TuitionFeeToolStripMenuItem"
+        Me.TuitionFeeToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.TuitionFeeToolStripMenuItem.Text = "Tuition Fee"
+        '
+        'UserMaintenanceToolStripMenuItem1
+        '
+        Me.UserMaintenanceToolStripMenuItem1.Image = Global.LEMS_ES.My.Resources.Resources.skill
+        Me.UserMaintenanceToolStripMenuItem1.Name = "UserMaintenanceToolStripMenuItem1"
+        Me.UserMaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(260, 22)
+        Me.UserMaintenanceToolStripMenuItem1.Text = "User Maintenance"
         '
         'frmMaintenance
         '
