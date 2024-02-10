@@ -71,4 +71,15 @@ Public Class frmMaintenance
             .Show()
         End With
     End Sub
+
+    Private Sub GradeLevelMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GradeLevelMaintenanceToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+        With frmGradeLevel
+            .TopLevel = False
+            Panel1.Controls.Add(frmGradeLevel)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class

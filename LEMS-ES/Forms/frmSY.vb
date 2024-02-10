@@ -30,7 +30,9 @@ Public Class frmSY
             Exit Sub
         End If
 
-        SchoolYearRef()
+        Command("INSERT INTO schoolyear(SchoolYear) VALUES(@SchoolYear)")
+        cmd.Parameters.AddWithValue("@SchoolYear", txtAddSY.Text)
+        cmd.ExecuteNonQuery()
         Success("Successfully Added!")
         txtAddSY.Clear()
         loadrecords()

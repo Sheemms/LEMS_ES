@@ -67,7 +67,7 @@ Module Mod_Conn
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", If(row.Cells(0).Value Is Nothing Or IsDBNull(row.Cells(0).Value), "", row.Cells(0).Value)),
-                    New MySqlParameter("@SchoolYear", If(row.Cells(1).Value Is Nothing Or IsDBNull(row.Cells(0).Value), "", row.Cells(1).Value))
+                    New MySqlParameter("@SchoolYear", If(row.Cells(1).Value Is Nothing Or IsDBNull(row.Cells(1).Value), "", row.Cells(1).Value))
                 }
             Return syParam
         Catch ex As Exception
@@ -81,7 +81,7 @@ Module Mod_Conn
                 If row.Cells(0).Value IsNot Nothing AndAlso Not IsDBNull(row.Cells(0).Value) Then
                     Command("UPDATE schoolyear SET SchoolYear = @SchoolYear WHERE ID = @ID", dynamicParams)
                 ElseIf row.Cells(0).Value Is Nothing Or IsDBNull(row.Cells(0).Value) Then
-                    Command("INSERT INTO schoolyear (SchoolYear) VALUES (@SchoolYear)", dynamicParams)
+                    Command("INSERT INTO schoolyear (ID, SchoolYear) VALUES (@ID, @SchoolYear)", dynamicParams)
                 End If
             End If
         Next
