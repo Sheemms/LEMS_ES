@@ -55,7 +55,7 @@ Public Class frmSY
         loadrecords()
     End Sub
 
-    Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnCancelSY.Click
+    Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnClearSY.Click
         txtAddSY.Clear()
     End Sub
 End Class

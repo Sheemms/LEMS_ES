@@ -136,6 +136,12 @@
     <Compile Include="Forms\frmAuditTrail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmBilling.Designer.vb">
+      <DependentUpon>frmBilling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBilling.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,12 @@
       <DependentUpon>frmMiscellaneous.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmMiscellaneous.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReports.Designer.vb">
+      <DependentUpon>frmReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReports.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmRequirements.Designer.vb">
@@ -233,6 +245,12 @@
     <Compile Include="Forms\frmUserMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Login Form\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login Form\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module\ModDisplay.vb" />
     <Compile Include="Module\Mod_Conn.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -255,6 +273,9 @@
     <EmbeddedResource Include="Forms\frmAuditTrail.resx">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBilling.resx">
+      <DependentUpon>frmBilling.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMaintenance.resx">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMiscellaneous.resx">
+      <DependentUpon>frmMiscellaneous.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReports.resx">
+      <DependentUpon>frmReports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRequirements.resx">
       <DependentUpon>frmRequirements.vb</DependentUpon>
@@ -296,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmUserMaintenance.resx">
       <DependentUpon>frmUserMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login Form\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

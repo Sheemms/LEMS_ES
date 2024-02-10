@@ -32,18 +32,20 @@ Partial Class frmSY
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnCancelSY = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnClearSY = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAddSY = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.dgvSY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.dgvSY)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel2)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -66,7 +68,7 @@ Partial Class frmSY
         Me.dgvSY.BackgroundColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -77,7 +79,7 @@ Partial Class frmSY
         Me.dgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -85,7 +87,7 @@ Partial Class frmSY
         Me.dgvSY.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSY.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSY.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSY.Location = New System.Drawing.Point(230, 40)
+        Me.dgvSY.Location = New System.Drawing.Point(0, 0)
         Me.dgvSY.Name = "dgvSY"
         Me.dgvSY.ReadOnly = True
         Me.dgvSY.RowHeadersVisible = False
@@ -136,12 +138,12 @@ Partial Class frmSY
         Me.Column3.HeaderText = "Status"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 72
+        Me.Column3.Width = 67
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.btnUpdate)
-        Me.Panel1.Controls.Add(Me.btnCancelSY)
+        Me.Panel1.Controls.Add(Me.btnClearSY)
         Me.Panel1.Controls.Add(Me.btnSaveSY)
         Me.Panel1.Controls.Add(Me.txtAddSY)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -166,20 +168,20 @@ Partial Class frmSY
         Me.btnUpdate.TabIndex = 10
         Me.btnUpdate.Text = "Update"
         '
-        'btnCancelSY
+        'btnClearSY
         '
-        Me.btnCancelSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancelSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancelSY.FillColor = System.Drawing.Color.Gray
-        Me.btnCancelSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelSY.ForeColor = System.Drawing.Color.White
-        Me.btnCancelSY.Location = New System.Drawing.Point(68, 122)
-        Me.btnCancelSY.Name = "btnCancelSY"
-        Me.btnCancelSY.Size = New System.Drawing.Size(91, 36)
-        Me.btnCancelSY.TabIndex = 9
-        Me.btnCancelSY.Text = "Clear"
+        Me.btnClearSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClearSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClearSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClearSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClearSY.FillColor = System.Drawing.Color.Gray
+        Me.btnClearSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearSY.ForeColor = System.Drawing.Color.White
+        Me.btnClearSY.Location = New System.Drawing.Point(68, 122)
+        Me.btnClearSY.Name = "btnClearSY"
+        Me.btnClearSY.Size = New System.Drawing.Size(91, 36)
+        Me.btnClearSY.TabIndex = 9
+        Me.btnClearSY.Text = "Clear"
         '
         'btnSaveSY
         '
@@ -224,6 +226,16 @@ Partial Class frmSY
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "School Year"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.dgvSY)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(230, 40)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(723, 525)
+        Me.Panel2.TabIndex = 4
+        '
         'frmSY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -238,6 +250,7 @@ Partial Class frmSY
         CType(Me.dgvSY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -249,8 +262,9 @@ Partial Class frmSY
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnCancelSY As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnClearSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtAddSY As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
 End Class

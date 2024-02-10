@@ -10,6 +10,7 @@ Module Mod_Conn
             con.Open()
         End If
     End Sub
+
     Public Sub Query(ByVal QueryStatement As String)
         Try
             adp = New MySqlDataAdapter(QueryStatement, con)
@@ -22,9 +23,9 @@ Module Mod_Conn
     Public Sub Command(ByVal CommandStatement As String, ParamArray dynamicParam() As MySqlParameter)
         Try
             cmd = New MySqlCommand(CommandStatement, con)
-            cmd.Parameters.AddRange(dynamicParam)
-            cmd.ExecuteNonQuery()
-            cmd.Parameters.Clear()
+            'cmd.Parameters.AddRange(dynamicParam)
+            'cmd.ExecuteNonQuery()
+            'cmd.Parameters.Clear()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

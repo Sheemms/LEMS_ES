@@ -22,10 +22,11 @@ Partial Class frmUserMaintenance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvSY = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,18 +42,19 @@ Partial Class frmUserMaintenance
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnCancelSY = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnClearUserMaintenance = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.dgvSY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.dgvSY)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel2)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -66,35 +68,45 @@ Partial Class frmUserMaintenance
         Me.Guna2GroupBox1.Text = "USER MAINTENANCE"
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.dgvSY)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(230, 40)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(723, 525)
+        Me.Panel2.TabIndex = 4
+        '
         'dgvSY
         '
         Me.dgvSY.AllowUserToAddRows = False
         Me.dgvSY.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.dgvSY.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvSY.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvSY.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSY.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSY.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSY.ColumnHeadersHeight = 44
         Me.dgvSY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSY.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSY.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSY.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSY.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSY.Location = New System.Drawing.Point(230, 40)
+        Me.dgvSY.Location = New System.Drawing.Point(0, 0)
         Me.dgvSY.Name = "dgvSY"
         Me.dgvSY.ReadOnly = True
         Me.dgvSY.RowHeadersVisible = False
@@ -145,7 +157,7 @@ Partial Class frmUserMaintenance
         Me.Column3.HeaderText = "Password"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 94
+        Me.Column3.Width = 83
         '
         'Column4
         '
@@ -177,8 +189,8 @@ Partial Class frmUserMaintenance
         Me.Panel1.Controls.Add(Me.txtPassword)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnUpdate)
-        Me.Panel1.Controls.Add(Me.btnCancelSY)
-        Me.Panel1.Controls.Add(Me.btnSaveSY)
+        Me.Panel1.Controls.Add(Me.btnClearUserMaintenance)
+        Me.Panel1.Controls.Add(Me.btnSave)
         Me.Panel1.Controls.Add(Me.txtUsername)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -284,34 +296,34 @@ Partial Class frmUserMaintenance
         Me.btnUpdate.TabIndex = 10
         Me.btnUpdate.Text = "Update"
         '
-        'btnCancelSY
+        'btnClearUserMaintenance
         '
-        Me.btnCancelSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancelSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancelSY.FillColor = System.Drawing.Color.Gray
-        Me.btnCancelSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelSY.ForeColor = System.Drawing.Color.White
-        Me.btnCancelSY.Location = New System.Drawing.Point(67, 313)
-        Me.btnCancelSY.Name = "btnCancelSY"
-        Me.btnCancelSY.Size = New System.Drawing.Size(91, 36)
-        Me.btnCancelSY.TabIndex = 9
-        Me.btnCancelSY.Text = "Clear"
+        Me.btnClearUserMaintenance.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClearUserMaintenance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClearUserMaintenance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClearUserMaintenance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClearUserMaintenance.FillColor = System.Drawing.Color.Gray
+        Me.btnClearUserMaintenance.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearUserMaintenance.ForeColor = System.Drawing.Color.White
+        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(67, 313)
+        Me.btnClearUserMaintenance.Name = "btnClearUserMaintenance"
+        Me.btnClearUserMaintenance.Size = New System.Drawing.Size(91, 36)
+        Me.btnClearUserMaintenance.TabIndex = 9
+        Me.btnClearUserMaintenance.Text = "Clear"
         '
-        'btnSaveSY
+        'btnSave
         '
-        Me.btnSaveSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSaveSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSaveSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveSY.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSY.Location = New System.Drawing.Point(18, 271)
-        Me.btnSaveSY.Name = "btnSaveSY"
-        Me.btnSaveSY.Size = New System.Drawing.Size(91, 36)
-        Me.btnSaveSY.TabIndex = 8
-        Me.btnSaveSY.Text = "Save"
+        Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(18, 271)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(91, 36)
+        Me.btnSave.TabIndex = 8
+        Me.btnSave.Text = "Save"
         '
         'txtUsername
         '
@@ -353,6 +365,7 @@ Partial Class frmUserMaintenance
         Me.Name = "frmUserMaintenance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         CType(Me.dgvSY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -370,8 +383,8 @@ Partial Class frmUserMaintenance
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnCancelSY As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnClearUserMaintenance As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtUsername As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtPassword As Guna.UI2.WinForms.Guna2TextBox
@@ -380,4 +393,5 @@ Partial Class frmUserMaintenance
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbUserLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel2 As Panel
 End Class
