@@ -130,6 +130,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ClassSchoolYear.vb" />
     <Compile Include="Forms\frmAuditTrail.Designer.vb">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </Compile>
@@ -320,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTeachers.resx">
       <DependentUpon>frmTeachers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTuitionFee.resx">
+      <DependentUpon>frmTuitionFee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmUserMaintenance.resx">
       <DependentUpon>frmUserMaintenance.vb</DependentUpon>

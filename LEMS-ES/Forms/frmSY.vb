@@ -30,12 +30,10 @@ Public Class frmSY
             Exit Sub
         End If
 
-        Command("INSERT INTO schoolyear(SchoolYear) VALUES(@SchoolYear)")
-        cmd.Parameters.AddWithValue("@SchoolYear", txtAddSY.Text)
-        cmd.ExecuteNonQuery()
+        ClassSchoolYear.SchoolYearRef()
         Success("Successfully Added!")
-        txtAddSY.Clear()
         loadrecords()
+        txtAddSY.Clear()
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click

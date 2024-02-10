@@ -20,7 +20,7 @@
             Exit Sub
         End If
 
-        SchoolYearRef()
+
         Success("Successfully Added!")
         clear()
         loadrecords()
