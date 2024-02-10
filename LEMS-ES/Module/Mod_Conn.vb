@@ -44,15 +44,20 @@ Module Mod_Conn
         frmEnrollment.Close()
         frmStudents.Close()
         frmTeachers.Close()
+        frmBilling.Close()
+        frmReports.Close()
+        frmMaintenance.Close()
     End Sub
     Public Sub MaintenanceRemovePanel()
         frmRequirements.Close()
         frmSubjects.Close()
         frmSections.Close()
-        frmUserMaintenance.Close()
+        frmGradeLevel.Close()
+        frmRequirements.Close()
         frmSY.Close()
         frmMiscellaneous.Close()
         frmTuitionFee.Close()
+        frmUserMaintenance.Close()
         frmAuditTrail.Close()
     End Sub
     Public Sub Critical(ByVal MessageStatement As String)
@@ -61,7 +66,6 @@ Module Mod_Conn
     Public Sub Success(ByVal MessageStatement As String)
         MsgBox(MessageStatement, MsgBoxStyle.OkOnly, "LEMS_ES")
     End Sub
-
 
     Public Function SchoolYearParameters(row As DataGridViewRow) As MySqlParameter()
         Try

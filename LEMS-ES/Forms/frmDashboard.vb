@@ -34,9 +34,9 @@
     End Sub
     Private Sub btnBilling_Click(sender As Object, e As EventArgs) Handles btnBilling.Click
         RemovePanel()
-        With frmSections
+        With frmBilling
             .TopLevel = False
-            Panel3.Controls.Add(frmSections)
+            Panel3.Controls.Add(frmBilling)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -56,6 +56,13 @@
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         RemovePanel()
+        With frmReports
+            .TopLevel = False
+            Panel3.Controls.Add(frmReports)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
     End Sub
 
     Private Sub btnMaintenance_Click(sender As Object, e As EventArgs) Handles btnMaintenance.Click
