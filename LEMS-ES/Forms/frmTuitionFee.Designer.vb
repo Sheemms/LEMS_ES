@@ -29,6 +29,8 @@ Partial Class frmTuitionFee
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvTuitionFee = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtClassification = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClearTuitionFee = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveTuitionFee = New Guna.UI2.WinForms.Guna2Button()
@@ -127,6 +129,8 @@ Partial Class frmTuitionFee
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtClassification)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnClearTuitionFee)
         Me.Panel1.Controls.Add(Me.btnSaveTuitionFee)
@@ -139,6 +143,35 @@ Partial Class frmTuitionFee
         Me.Panel1.Size = New System.Drawing.Size(230, 525)
         Me.Panel1.TabIndex = 3
         '
+        'txtClassification
+        '
+        Me.txtClassification.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtClassification.DefaultText = ""
+        Me.txtClassification.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtClassification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtClassification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtClassification.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtClassification.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtClassification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtClassification.ForeColor = System.Drawing.Color.Black
+        Me.txtClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtClassification.Location = New System.Drawing.Point(3, 95)
+        Me.txtClassification.Name = "txtClassification"
+        Me.txtClassification.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtClassification.PlaceholderText = ""
+        Me.txtClassification.SelectedText = ""
+        Me.txtClassification.Size = New System.Drawing.Size(221, 36)
+        Me.txtClassification.TabIndex = 12
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 78)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(84, 14)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Classification"
+        '
         'btnUpdate
         '
         Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -147,7 +180,7 @@ Partial Class frmTuitionFee
         Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(116, 80)
+        Me.btnUpdate.Location = New System.Drawing.Point(117, 137)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(91, 36)
         Me.btnUpdate.TabIndex = 10
@@ -162,7 +195,7 @@ Partial Class frmTuitionFee
         Me.btnClearTuitionFee.FillColor = System.Drawing.Color.Gray
         Me.btnClearTuitionFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTuitionFee.ForeColor = System.Drawing.Color.White
-        Me.btnClearTuitionFee.Location = New System.Drawing.Point(68, 122)
+        Me.btnClearTuitionFee.Location = New System.Drawing.Point(69, 179)
         Me.btnClearTuitionFee.Name = "btnClearTuitionFee"
         Me.btnClearTuitionFee.Size = New System.Drawing.Size(91, 36)
         Me.btnClearTuitionFee.TabIndex = 9
@@ -176,7 +209,7 @@ Partial Class frmTuitionFee
         Me.btnSaveTuitionFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSaveTuitionFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveTuitionFee.ForeColor = System.Drawing.Color.White
-        Me.btnSaveTuitionFee.Location = New System.Drawing.Point(19, 80)
+        Me.btnSaveTuitionFee.Location = New System.Drawing.Point(20, 137)
         Me.btnSaveTuitionFee.Name = "btnSaveTuitionFee"
         Me.btnSaveTuitionFee.Size = New System.Drawing.Size(91, 36)
         Me.btnSaveTuitionFee.TabIndex = 8
@@ -222,7 +255,7 @@ Partial Class frmTuitionFee
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "TuitionFee"
+        Me.Column2.DataPropertyName = "Amount"
         Me.Column2.HeaderText = "Amount"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
@@ -264,6 +297,8 @@ Partial Class frmTuitionFee
     Friend WithEvents btnSaveTuitionFee As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtAmount As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents txtClassification As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label2 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
