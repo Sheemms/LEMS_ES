@@ -26,8 +26,8 @@ Partial Class frmTeachers
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.AddNew = New System.Windows.Forms.ToolStripButton()
+        Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,6 +50,14 @@ Partial Class frmTeachers
         Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'AddNew
+        '
+        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
+        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.AddNew.Name = "AddNew"
+        Me.AddNew.Size = New System.Drawing.Size(51, 22)
+        Me.AddNew.Text = "New"
         '
         'Guna2DataGridView1
         '
@@ -106,14 +114,6 @@ Partial Class frmTeachers
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'AddNew
-        '
-        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
-        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.AddNew.Name = "AddNew"
-        Me.AddNew.Size = New System.Drawing.Size(51, 22)
-        Me.AddNew.Text = "New"
         '
         'Column1
         '
