@@ -35,17 +35,19 @@ Partial Class frmSubjects
         Me.btnSaveSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSubjCode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.dgvSubject, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.dgvSubject)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel2)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -54,7 +56,7 @@ Partial Class frmSubjects
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 565)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 589)
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "SUBJECTS"
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -66,11 +68,13 @@ Partial Class frmSubjects
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.dgvSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSubject.BackgroundColor = System.Drawing.Color.DimGray
+        Me.dgvSubject.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.dgvSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
@@ -87,11 +91,11 @@ Partial Class frmSubjects
         Me.dgvSubject.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvSubject.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSubject.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubject.Location = New System.Drawing.Point(230, 40)
+        Me.dgvSubject.Location = New System.Drawing.Point(0, 0)
         Me.dgvSubject.Name = "dgvSubject"
         Me.dgvSubject.ReadOnly = True
         Me.dgvSubject.RowHeadersVisible = False
-        Me.dgvSubject.Size = New System.Drawing.Size(723, 525)
+        Me.dgvSubject.Size = New System.Drawing.Size(723, 549)
         Me.dgvSubject.TabIndex = 2
         Me.dgvSubject.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvSubject.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -100,15 +104,15 @@ Partial Class frmSubjects
         Me.dgvSubject.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
         Me.dgvSubject.ThemeStyle.BackColor = System.Drawing.Color.DimGray
         Me.dgvSubject.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubject.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubject.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvSubject.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.dgvSubject.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         Me.dgvSubject.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvSubject.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgvSubject.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSubject.ThemeStyle.HeaderStyle.Height = 44
         Me.dgvSubject.ThemeStyle.ReadOnly = True
         Me.dgvSubject.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSubject.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvSubject.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvSubject.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvSubject.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.dgvSubject.ThemeStyle.RowsStyle.Height = 22
@@ -128,7 +132,7 @@ Partial Class frmSubjects
         Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 525)
+        Me.Panel1.Size = New System.Drawing.Size(230, 549)
         Me.Panel1.TabIndex = 3
         '
         'txtSubjName
@@ -232,6 +236,16 @@ Partial Class frmSubjects
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Subject Code"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.dgvSubject)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(230, 40)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(723, 549)
+        Me.Panel2.TabIndex = 4
+        '
         'Column1
         '
         Me.Column1.DataPropertyName = "ID"
@@ -244,10 +258,10 @@ Partial Class frmSubjects
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column2.DataPropertyName = "SubjectCode"
-        Me.Column2.HeaderText = "Subject Code"
+        Me.Column2.HeaderText = "Code"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 106
+        Me.Column2.Width = 64
         '
         'Column3
         '
@@ -261,7 +275,7 @@ Partial Class frmSubjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 565)
+        Me.ClientSize = New System.Drawing.Size(953, 589)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -271,6 +285,7 @@ Partial Class frmSubjects
         CType(Me.dgvSubject, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -285,6 +300,7 @@ Partial Class frmSubjects
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSubjName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn

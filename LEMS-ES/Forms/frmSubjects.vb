@@ -1,5 +1,9 @@
 ﻿Public Class frmSubjects
     Dim id As String = ""
+    Private Sub frmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Connection()
+        loadrecords()
+    End Sub
     Public Sub loadrecords()
         Query("SELECT * FROM subject")
         dgvSubject.DataSource = ds.Tables("QueryTb")
@@ -9,8 +13,8 @@
         txtSubjName.Clear()
     End Sub
     Public Sub Parameters()
-        cmd.Parameters.AddWithValue("SubjectCode", txtSubjCode.Text)
-        cmd.Parameters.AddWithValue("SubjectName", txtSubjName.Text)
+        cmd.Parameters.AddWithValue("@SubjectCode", txtSubjCode.Text)
+        cmd.Parameters.AddWithValue("@SubjectName", txtSubjName.Text)
     End Sub
     Private Sub btnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
         If IS_EMPTY(txtSubjCode) = True Then Return
@@ -28,10 +32,6 @@
         cmd.ExecuteNonQuery()
         Success("Successfully Added!")
         clear()
-    End Sub
-
-    Private Sub frmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Connection()
         loadrecords()
     End Sub
 
@@ -55,6 +55,7 @@
         cmd.ExecuteNonQuery()
         Success("Successfully Added!")
         clear()
+        loadrecords()
     End Sub
 
     Private Sub dgvSubject_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSubject.CellClick

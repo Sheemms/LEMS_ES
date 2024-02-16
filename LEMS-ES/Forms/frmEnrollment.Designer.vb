@@ -55,8 +55,6 @@ Partial Class frmEnrollment
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cbFemale = New Guna.UI2.WinForms.Guna2ImageCheckBox()
-        Me.cbMale = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbMaritalStatus = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -71,6 +69,8 @@ Partial Class frmEnrollment
         Me.txtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtLastname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtStudNo = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.cbFemale = New Guna.UI2.WinForms.Guna2ImageCheckBox()
+        Me.cbMale = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -84,7 +84,7 @@ Partial Class frmEnrollment
         Me.GBEnrollmentForm.ForeColor = System.Drawing.Color.White
         Me.GBEnrollmentForm.Location = New System.Drawing.Point(0, 0)
         Me.GBEnrollmentForm.Name = "GBEnrollmentForm"
-        Me.GBEnrollmentForm.Size = New System.Drawing.Size(953, 565)
+        Me.GBEnrollmentForm.Size = New System.Drawing.Size(953, 615)
         Me.GBEnrollmentForm.TabIndex = 0
         Me.GBEnrollmentForm.Text = "Enrollment Form"
         Me.GBEnrollmentForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -142,7 +142,7 @@ Partial Class frmEnrollment
         Me.GroupBox1.Font = New System.Drawing.Font("Georgia", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(0, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(953, 525)
+        Me.GroupBox1.Size = New System.Drawing.Size(953, 575)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Assesment Form"
@@ -611,36 +611,6 @@ Partial Class frmEnrollment
         Me.Label2.TabIndex = 30
         Me.Label2.Text = "Incoming Grade Level:"
         '
-        'cbFemale
-        '
-        Me.cbFemale.BackColor = System.Drawing.Color.Transparent
-        Me.cbFemale.CheckedState.Image = Global.LEMS_ES.My.Resources.Resources.check_box
-        Me.cbFemale.CheckedState.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cbFemale.HoverState.Image = Global.LEMS_ES.My.Resources.Resources.woman
-        Me.cbFemale.Image = Global.LEMS_ES.My.Resources.Resources.female
-        Me.cbFemale.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.cbFemale.ImageRotate = 0!
-        Me.cbFemale.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cbFemale.Location = New System.Drawing.Point(126, 162)
-        Me.cbFemale.Name = "cbFemale"
-        Me.cbFemale.Size = New System.Drawing.Size(36, 36)
-        Me.cbFemale.TabIndex = 29
-        '
-        'cbMale
-        '
-        Me.cbMale.BackColor = System.Drawing.Color.Transparent
-        Me.cbMale.CheckedState.Image = Global.LEMS_ES.My.Resources.Resources.check_box
-        Me.cbMale.CheckedState.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cbMale.HoverState.Image = Global.LEMS_ES.My.Resources.Resources.masculine_user
-        Me.cbMale.Image = Global.LEMS_ES.My.Resources.Resources.male
-        Me.cbMale.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.cbMale.ImageRotate = 0!
-        Me.cbMale.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cbMale.Location = New System.Drawing.Point(84, 162)
-        Me.cbMale.Name = "cbMale"
-        Me.cbMale.Size = New System.Drawing.Size(36, 36)
-        Me.cbMale.TabIndex = 28
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -905,11 +875,41 @@ Partial Class frmEnrollment
         Me.txtStudNo.Size = New System.Drawing.Size(167, 36)
         Me.txtStudNo.TabIndex = 0
         '
+        'cbFemale
+        '
+        Me.cbFemale.BackColor = System.Drawing.Color.Transparent
+        Me.cbFemale.CheckedState.Image = Global.LEMS_ES.My.Resources.Resources.check_box
+        Me.cbFemale.CheckedState.ImageSize = New System.Drawing.Size(30, 30)
+        Me.cbFemale.HoverState.Image = Global.LEMS_ES.My.Resources.Resources.woman
+        Me.cbFemale.Image = Global.LEMS_ES.My.Resources.Resources.female
+        Me.cbFemale.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.cbFemale.ImageRotate = 0!
+        Me.cbFemale.ImageSize = New System.Drawing.Size(30, 30)
+        Me.cbFemale.Location = New System.Drawing.Point(126, 162)
+        Me.cbFemale.Name = "cbFemale"
+        Me.cbFemale.Size = New System.Drawing.Size(36, 36)
+        Me.cbFemale.TabIndex = 29
+        '
+        'cbMale
+        '
+        Me.cbMale.BackColor = System.Drawing.Color.Transparent
+        Me.cbMale.CheckedState.Image = Global.LEMS_ES.My.Resources.Resources.check_box
+        Me.cbMale.CheckedState.ImageSize = New System.Drawing.Size(30, 30)
+        Me.cbMale.HoverState.Image = Global.LEMS_ES.My.Resources.Resources.masculine_user
+        Me.cbMale.Image = Global.LEMS_ES.My.Resources.Resources.male
+        Me.cbMale.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.cbMale.ImageRotate = 0!
+        Me.cbMale.ImageSize = New System.Drawing.Size(30, 30)
+        Me.cbMale.Location = New System.Drawing.Point(84, 162)
+        Me.cbMale.Name = "cbMale"
+        Me.cbMale.Size = New System.Drawing.Size(36, 36)
+        Me.cbMale.TabIndex = 28
+        '
         'frmEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 565)
+        Me.ClientSize = New System.Drawing.Size(953, 615)
         Me.Controls.Add(Me.GBEnrollmentForm)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

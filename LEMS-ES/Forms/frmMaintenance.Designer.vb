@@ -24,6 +24,9 @@ Partial Class frmMaintenance
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdminControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TeacherMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SubjectMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GradeLevelMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,9 +36,6 @@ Partial Class frmMaintenance
         Me.TuitionFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OtherFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TeacherMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,6 +55,27 @@ Partial Class frmMaintenance
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AdminControlsToolStripMenuItem.Text = "Admin Controls"
+        '
+        'TeacherMaintenanceToolStripMenuItem
+        '
+        Me.TeacherMaintenanceToolStripMenuItem.Name = "TeacherMaintenanceToolStripMenuItem"
+        Me.TeacherMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.TeacherMaintenanceToolStripMenuItem.Text = "Teacher Maintenance"
+        '
+        'AuditTrailToolStripMenuItem
+        '
+        Me.AuditTrailToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AuditTrailToolStripMenuItem.Name = "AuditTrailToolStripMenuItem"
+        Me.AuditTrailToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
+        Me.AuditTrailToolStripMenuItem.Text = "Audit Trail"
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 26)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(953, 589)
+        Me.Panel1.TabIndex = 1
         '
         'SubjectMaintenanceToolStripMenuItem
         '
@@ -119,32 +140,11 @@ Partial Class frmMaintenance
         Me.UserMaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(260, 22)
         Me.UserMaintenanceToolStripMenuItem1.Text = "User Maintenance"
         '
-        'AuditTrailToolStripMenuItem
-        '
-        Me.AuditTrailToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AuditTrailToolStripMenuItem.Name = "AuditTrailToolStripMenuItem"
-        Me.AuditTrailToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
-        Me.AuditTrailToolStripMenuItem.Text = "Audit Trail"
-        '
-        'Panel1
-        '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 26)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(953, 565)
-        Me.Panel1.TabIndex = 1
-        '
-        'TeacherMaintenanceToolStripMenuItem
-        '
-        Me.TeacherMaintenanceToolStripMenuItem.Name = "TeacherMaintenanceToolStripMenuItem"
-        Me.TeacherMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.TeacherMaintenanceToolStripMenuItem.Text = "Teacher Maintenance"
-        '
         'frmMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 591)
+        Me.ClientSize = New System.Drawing.Size(953, 615)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

@@ -26,7 +26,6 @@ Partial Class frmTeachers
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.AddNew = New System.Windows.Forms.ToolStripButton()
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,6 +37,7 @@ Partial Class frmTeachers
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddNew = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,14 +50,6 @@ Partial Class frmTeachers
         Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'AddNew
-        '
-        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
-        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.AddNew.Name = "AddNew"
-        Me.AddNew.Size = New System.Drawing.Size(51, 22)
-        Me.AddNew.Text = "New"
         '
         'Guna2DataGridView1
         '
@@ -91,7 +83,7 @@ Partial Class frmTeachers
         Me.Guna2DataGridView1.Name = "Guna2DataGridView1"
         Me.Guna2DataGridView1.ReadOnly = True
         Me.Guna2DataGridView1.RowHeadersVisible = False
-        Me.Guna2DataGridView1.Size = New System.Drawing.Size(953, 566)
+        Me.Guna2DataGridView1.Size = New System.Drawing.Size(953, 590)
         Me.Guna2DataGridView1.TabIndex = 2
         Me.Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -192,11 +184,19 @@ Partial Class frmTeachers
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
         '
+        'AddNew
+        '
+        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
+        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.AddNew.Name = "AddNew"
+        Me.AddNew.Size = New System.Drawing.Size(51, 22)
+        Me.AddNew.Text = "New"
+        '
         'frmTeachers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 591)
+        Me.ClientSize = New System.Drawing.Size(953, 615)
         Me.Controls.Add(Me.Guna2DataGridView1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

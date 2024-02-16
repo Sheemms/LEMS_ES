@@ -1,6 +1,13 @@
 ﻿Public Class frmDashboard
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-
+        RemovePanel()
+        With frmCharts
+            .TopLevel = False
+            Panel3.Controls.Add(frmCharts)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
     End Sub
     Private Sub btnEnrollment_Click(sender As Object, e As EventArgs) Handles btnEnrollment.Click
         RemovePanel()
@@ -93,5 +100,13 @@
             .BringToFront()
             .Show()
         End With
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label5.Text = DateTime.Now.ToString("g")
+    End Sub
+
+    Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Timer1.Enabled = True
     End Sub
 End Class

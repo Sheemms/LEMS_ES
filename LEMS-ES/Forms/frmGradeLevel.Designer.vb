@@ -51,7 +51,7 @@ Partial Class frmGradeLevel
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 565)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 589)
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "GRADE LEVEL"
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -65,7 +65,7 @@ Partial Class frmGradeLevel
         Me.dgvGradeLevel.BackgroundColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -76,7 +76,7 @@ Partial Class frmGradeLevel
         Me.dgvGradeLevel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -88,7 +88,7 @@ Partial Class frmGradeLevel
         Me.dgvGradeLevel.Name = "dgvGradeLevel"
         Me.dgvGradeLevel.ReadOnly = True
         Me.dgvGradeLevel.RowHeadersVisible = False
-        Me.dgvGradeLevel.Size = New System.Drawing.Size(723, 525)
+        Me.dgvGradeLevel.Size = New System.Drawing.Size(723, 549)
         Me.dgvGradeLevel.TabIndex = 2
         Me.dgvGradeLevel.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvGradeLevel.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -139,7 +139,7 @@ Partial Class frmGradeLevel
         Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 525)
+        Me.Panel1.Size = New System.Drawing.Size(230, 549)
         Me.Panel1.TabIndex = 3
         '
         'btnUpdate
@@ -218,7 +218,7 @@ Partial Class frmGradeLevel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 565)
+        Me.ClientSize = New System.Drawing.Size(953, 589)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

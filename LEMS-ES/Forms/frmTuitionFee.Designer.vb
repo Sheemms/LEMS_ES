@@ -28,6 +28,9 @@ Partial Class frmTuitionFee
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvTuitionFee = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtClassification = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,9 +39,6 @@ Partial Class frmTuitionFee
         Me.btnSaveTuitionFee = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAmount = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvTuitionFee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,7 +56,7 @@ Partial Class frmTuitionFee
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 565)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 589)
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "TUITION FEE"
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -68,7 +68,7 @@ Partial Class frmTuitionFee
         Me.Panel2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel2.Location = New System.Drawing.Point(230, 40)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(723, 525)
+        Me.Panel2.Size = New System.Drawing.Size(723, 549)
         Me.Panel2.TabIndex = 4
         '
         'dgvTuitionFee
@@ -103,7 +103,7 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.Name = "dgvTuitionFee"
         Me.dgvTuitionFee.ReadOnly = True
         Me.dgvTuitionFee.RowHeadersVisible = False
-        Me.dgvTuitionFee.Size = New System.Drawing.Size(723, 525)
+        Me.dgvTuitionFee.Size = New System.Drawing.Size(723, 549)
         Me.dgvTuitionFee.TabIndex = 2
         Me.dgvTuitionFee.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvTuitionFee.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -127,6 +127,31 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Amount"
+        Me.Column2.HeaderText = "Amount"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.DataPropertyName = "Classification"
+        Me.Column3.HeaderText = "Classification"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 107
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.txtClassification)
@@ -140,7 +165,7 @@ Partial Class frmTuitionFee
         Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 525)
+        Me.Panel1.Size = New System.Drawing.Size(230, 549)
         Me.Panel1.TabIndex = 3
         '
         'txtClassification
@@ -244,36 +269,11 @@ Partial Class frmTuitionFee
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Amount"
         '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Amount"
-        Me.Column2.HeaderText = "Amount"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "Classification"
-        Me.Column3.HeaderText = "Classification"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 107
-        '
         'frmTuitionFee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 565)
+        Me.ClientSize = New System.Drawing.Size(953, 589)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

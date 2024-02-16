@@ -34,7 +34,7 @@ Module Mod_Conn
         If ptext.text = String.Empty Then
             ptext.backcolor = Color.LemonChiffon
             ptext.focus
-            MsgBox("Required Missing Field!", vbCritical)
+            Critical("Required Missing Field!")
             IS_EMPTY = True
         Else
             ptext.backcolor = Color.White
@@ -42,6 +42,7 @@ Module Mod_Conn
         End If
     End Function
     Public Sub RemovePanel()
+        frmCharts.Close()
         frmEnrollment.Close()
         frmStudents.Close()
         frmTeachers.Close()
@@ -50,6 +51,7 @@ Module Mod_Conn
         frmMaintenance.Close()
     End Sub
     Public Sub MaintenanceRemovePanel()
+        frmTeacherMaintenance.Close()
         frmRequirements.Close()
         frmSubjects.Close()
         frmSections.Close()
