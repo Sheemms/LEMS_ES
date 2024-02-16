@@ -46,4 +46,16 @@
     Private Sub Guna2PictureBox4_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox4.Click
         Application.Exit()
     End Sub
+
+    Private Sub cbShow_CheckedChanged(sender As Object, e As EventArgs) Handles cbShow.CheckedChanged
+        If cbShow.Checked Then
+            txtPassword.PasswordChar = ""
+        Else
+            txtPassword.PasswordChar = "*"
+        End If
+    End Sub
+
+    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
+
+    End Sub
 End Class

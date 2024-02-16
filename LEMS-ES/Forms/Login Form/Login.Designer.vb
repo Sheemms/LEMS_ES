@@ -26,22 +26,24 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnLogin = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.cbShow = New Guna.UI2.WinForms.Guna2ImageCheckBox()
+        Me.Guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -83,17 +85,6 @@ Partial Class Login
         Me.txtUsername.Size = New System.Drawing.Size(256, 40)
         Me.txtUsername.TabIndex = 1
         '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.Image = Global.LEMS_ES.My.Resources.Resources.user
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(43, 40)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox2.TabIndex = 0
-        Me.Guna2PictureBox2.TabStop = False
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.txtPassword)
@@ -123,17 +114,6 @@ Partial Class Login
         Me.txtPassword.Size = New System.Drawing.Size(256, 40)
         Me.txtPassword.TabIndex = 1
         '
-        'Guna2PictureBox3
-        '
-        Me.Guna2PictureBox3.Image = Global.LEMS_ES.My.Resources.Resources.padlock
-        Me.Guna2PictureBox3.ImageRotate = 0!
-        Me.Guna2PictureBox3.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Me.Guna2PictureBox3.Size = New System.Drawing.Size(43, 40)
-        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox3.TabIndex = 0
-        Me.Guna2PictureBox3.TabStop = False
-        '
         'btnLogin
         '
         Me.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -142,7 +122,7 @@ Partial Class Login
         Me.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnLogin.Font = New System.Drawing.Font("Georgia", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(12, 358)
+        Me.btnLogin.Location = New System.Drawing.Point(12, 374)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(331, 45)
         Me.btnLogin.TabIndex = 4
@@ -157,11 +137,26 @@ Partial Class Login
         Me.btnCancel.FillColor = System.Drawing.Color.DarkGray
         Me.btnCancel.Font = New System.Drawing.Font("Georgia", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(12, 409)
+        Me.btnCancel.Location = New System.Drawing.Point(12, 425)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(331, 45)
         Me.btnCancel.TabIndex = 5
         Me.btnCancel.Text = "Cancel"
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'cbShow
+        '
+        Me.cbShow.CheckedState.Image = Global.LEMS_ES.My.Resources.Resources.hide
+        Me.cbShow.Image = Global.LEMS_ES.My.Resources.Resources.view
+        Me.cbShow.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.cbShow.ImageRotate = 0!
+        Me.cbShow.Location = New System.Drawing.Point(15, 338)
+        Me.cbShow.Name = "cbShow"
+        Me.cbShow.Size = New System.Drawing.Size(29, 30)
+        Me.cbShow.TabIndex = 7
         '
         'Guna2PictureBox4
         '
@@ -174,6 +169,28 @@ Partial Class Login
         Me.Guna2PictureBox4.TabIndex = 6
         Me.Guna2PictureBox4.TabStop = False
         '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.Image = Global.LEMS_ES.My.Resources.Resources.padlock
+        Me.Guna2PictureBox3.ImageRotate = 0!
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(43, 40)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox3.TabIndex = 0
+        Me.Guna2PictureBox3.TabStop = False
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = Global.LEMS_ES.My.Resources.Resources.user
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(43, 40)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox2.TabIndex = 0
+        Me.Guna2PictureBox2.TabStop = False
+        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.Image = Global.LEMS_ES.My.Resources.Resources.user_login
@@ -185,15 +202,22 @@ Partial Class Login
         Me.Guna2PictureBox1.TabIndex = 0
         Me.Guna2PictureBox1.TabStop = False
         '
-        'ErrorProvider1
+        'Label2
         '
-        Me.ErrorProvider1.ContainerControl = Me
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(50, 346)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(94, 14)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Show Password"
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 482)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.cbShow)
         Me.Controls.Add(Me.Guna2PictureBox4)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnLogin)
@@ -206,12 +230,12 @@ Partial Class Login
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -229,4 +253,6 @@ Partial Class Login
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox4 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents cbShow As Guna.UI2.WinForms.Guna2ImageCheckBox
+    Friend WithEvents Label2 As Label
 End Class

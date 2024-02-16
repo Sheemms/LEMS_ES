@@ -222,10 +222,10 @@
     <Compile Include="Forms\frmSY.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTeacherRegistration.Designer.vb">
-      <DependentUpon>frmTeacherRegistration.vb</DependentUpon>
+    <Compile Include="Forms\frmTeacherMaintenance.Designer.vb">
+      <DependentUpon>frmTeacherMaintenance.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTeacherRegistration.vb">
+    <Compile Include="Forms\frmTeacherMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmTeachers.Designer.vb">
@@ -317,8 +317,8 @@
     <EmbeddedResource Include="Forms\frmSY.resx">
       <DependentUpon>frmSY.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTeacherRegistration.resx">
-      <DependentUpon>frmTeacherRegistration.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmTeacherMaintenance.resx">
+      <DependentUpon>frmTeacherMaintenance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTeachers.resx">
       <DependentUpon>frmTeachers.vb</DependentUpon>
@@ -423,6 +423,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

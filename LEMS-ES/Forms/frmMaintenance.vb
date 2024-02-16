@@ -100,4 +100,15 @@ Public Class frmMaintenance
             .Show()
         End With
     End Sub
+
+    Private Sub TeacherMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TeacherMaintenanceToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+        With frmTeacherMaintenance
+            .TopLevel = False
+            Panel1.Controls.Add(frmTeacherMaintenance)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class

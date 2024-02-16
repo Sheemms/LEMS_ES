@@ -35,6 +35,7 @@ Partial Class frmMaintenance
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TeacherMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class frmMaintenance
         '
         'AdminControlsToolStripMenuItem
         '
-        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.SchoolYearMaintenanceToolStripMenuItem, Me.MiscellaneousMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.OtherFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
+        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TeacherMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.SchoolYearMaintenanceToolStripMenuItem, Me.MiscellaneousMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.OtherFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
         Me.AdminControlsToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
@@ -133,6 +134,12 @@ Partial Class frmMaintenance
         Me.Panel1.Size = New System.Drawing.Size(953, 565)
         Me.Panel1.TabIndex = 1
         '
+        'TeacherMaintenanceToolStripMenuItem
+        '
+        Me.TeacherMaintenanceToolStripMenuItem.Name = "TeacherMaintenanceToolStripMenuItem"
+        Me.TeacherMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.TeacherMaintenanceToolStripMenuItem.Text = "Teacher Maintenance"
+        '
         'frmMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -165,4 +172,5 @@ Partial Class frmMaintenance
     Friend WithEvents OtherFeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UserMaintenanceToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GradeLevelMaintenanceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TeacherMaintenanceToolStripMenuItem As ToolStripMenuItem
 End Class

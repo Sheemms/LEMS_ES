@@ -20,7 +20,9 @@
             Exit Sub
         End If
 
-
+        Command("INSERT INTO gradelevel (GradeLevel) VALUES(@GradeLevel)")
+        cmd.Parameters.AddWithValue("@GradeLevel", txtAddGradeLevel.Text)
+        cmd.ExecuteNonQuery()
         Success("Successfully Added!")
         clear()
         loadrecords()
