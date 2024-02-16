@@ -79,7 +79,8 @@
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         If MsgBox("Do You Want to Logout?", vbYesNo + vbQuestion) = vbYes Then
             'LogAction("has been logged out", "Logout")
-            Application.Exit()
+            Login.Show()
+            Me.Close()
         End If
     End Sub
 
