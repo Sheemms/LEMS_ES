@@ -131,6 +131,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Classes\ClassGradeLevel.vb" />
     <Compile Include="Forms\Classes\ClassSchoolYear.vb" />
     <Compile Include="Forms\Classes\ClassSection.vb" />
     <Compile Include="Forms\Classes\ClassSubject.vb" />

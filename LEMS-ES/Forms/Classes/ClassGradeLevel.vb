@@ -3,11 +3,11 @@ Public Class ClassGradeLevel
 #Region "GradeLevelParameters"
     Public Shared Function GradeLevelParameters() As MySqlParameter()
         Try
-            Dim syParam() As MySqlParameter = {
+            Dim GradeLevelParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmGradeLevel.idGradeLevel),
                     New MySqlParameter("@GradeLevel", frmGradeLevel.txtAddGradeLevel.Text)
                 }
-            Return syParam
+            Return GradeLevelParam
         Catch ex As Exception
             Return Nothing
         End Try
@@ -17,7 +17,9 @@ Public Class ClassGradeLevel
         If frmGradeLevel.idGradeLevel = 0 Then
             Command("INSERT INTO gradelevel(GradeLevel) VALUES (@GradeLevel)", dynamicParams)
         Else
-            Command("UPDATE gradelevel SET GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
+            If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) Then
+                Command("UPDATE gradelevel SET GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
+            End If
         End If
     End Sub
 #End Region

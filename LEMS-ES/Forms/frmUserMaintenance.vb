@@ -27,10 +27,12 @@
         End Try
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If IS_EMPTY(txtUsername) = False Then Return
-        If IS_EMPTY(txtPassword) = False Then Return
-        If IS_EMPTY(txtFullname) = False Then Return
-        If IS_EMPTY(cmbUserLevel) = False Then Return
+#Region "IS_EMPTY"
+        If IS_EMPTY(txtUsername) = True Then Return
+        If IS_EMPTY(txtPassword) = True Then Return
+        If IS_EMPTY(txtFullname) = True Then Return
+        If IS_EMPTY(cmbUserLevel) = True Then Return
+#End Region
 
         Query("SELECT * FROM user WHERE ID = '" & id & "'")
         If ds.Tables("QueryTb").Rows.Count > 0 Then
@@ -43,7 +45,7 @@
         clear()
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
 
     End Sub
 

@@ -22,6 +22,7 @@
         End Try
     End Sub
     Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
+        MsgBox(idGradeLevel)
         If IS_EMPTY(txtAddGradeLevel) = True Then Return
 
         Query("SELECT * FROM gradelevel WHERE GradeLevel= '" & txtAddGradeLevel.Text & "' and ID <> '" & idGradeLevel & "'")

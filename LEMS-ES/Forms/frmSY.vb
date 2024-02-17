@@ -1,5 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-Public Class frmSY
+﻿Public Class frmSY
     Public idSY As Integer = 0
     Private Sub frmSY_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
@@ -8,6 +7,9 @@ Public Class frmSY
     Public Sub loadrecords()
         Query("SELECT * FROM schoolyear")
         dgvSY.DataSource = ds.Tables("QueryTb")
+    End Sub
+    Public Sub clear()
+        txtAddSY.Clear()
     End Sub
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSY.CellClick
@@ -33,11 +35,11 @@ Public Class frmSY
         ClassSchoolYear.SchoolYearRef()
         Success("Successfully Added!")
         loadrecords()
-        txtAddSY.Clear()
+        clear()
     End Sub
 
     Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnClearSY.Click
-        txtAddSY.Clear()
+        clear()
     End Sub
 
 End Class

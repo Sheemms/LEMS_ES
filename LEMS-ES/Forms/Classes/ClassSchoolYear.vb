@@ -17,7 +17,9 @@ Public Class ClassSchoolYear
         If frmSY.idSY = 0 Then
             Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
         Else
-            Command("UPDATE schoolyear SET SchoolYear=@SchoolYear WHERE ID=@ID", dynamicParams)
+            If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                Command("UPDATE schoolyear SET SchoolYear=@SchoolYear WHERE ID=@ID", dynamicParams)
+            End If
         End If
     End Sub
 #End Region

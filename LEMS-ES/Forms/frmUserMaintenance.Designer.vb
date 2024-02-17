@@ -41,7 +41,6 @@ Partial Class frmUserMaintenance
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClearUserMaintenance = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
@@ -188,7 +187,6 @@ Partial Class frmUserMaintenance
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtPassword)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnClearUserMaintenance)
         Me.Panel1.Controls.Add(Me.btnSave)
         Me.Panel1.Controls.Add(Me.txtUsername)
@@ -282,20 +280,6 @@ Partial Class frmUserMaintenance
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Password"
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(115, 271)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(91, 36)
-        Me.btnUpdate.TabIndex = 10
-        Me.btnUpdate.Text = "Update"
-        '
         'btnClearUserMaintenance
         '
         Me.btnClearUserMaintenance.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -305,7 +289,7 @@ Partial Class frmUserMaintenance
         Me.btnClearUserMaintenance.FillColor = System.Drawing.Color.Gray
         Me.btnClearUserMaintenance.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearUserMaintenance.ForeColor = System.Drawing.Color.White
-        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(67, 313)
+        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(115, 271)
         Me.btnClearUserMaintenance.Name = "btnClearUserMaintenance"
         Me.btnClearUserMaintenance.Size = New System.Drawing.Size(91, 36)
         Me.btnClearUserMaintenance.TabIndex = 9
@@ -382,7 +366,6 @@ Partial Class frmUserMaintenance
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClearUserMaintenance As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtUsername As Guna.UI2.WinForms.Guna2TextBox
