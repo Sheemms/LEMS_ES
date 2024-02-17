@@ -35,7 +35,7 @@
             Exit Sub
         End If
 
-        ClassSchoolYear.SubjectRef()
+        ClassSubject.SubjectRef()
         Success("Successfully Added!")
         clear()
         loadrecords()

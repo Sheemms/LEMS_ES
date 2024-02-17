@@ -131,7 +131,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\ClassSchoolYear.vb" />
+    <Compile Include="Forms\Classes\ClassSchoolYear.vb" />
+    <Compile Include="Forms\Classes\ClassSection.vb" />
+    <Compile Include="Forms\Classes\ClassSubject.vb" />
+    <Compile Include="Forms\Classes\ClassTeacher.vb" />
+    <Compile Include="Forms\Classes\ClassTuition.vb" />
     <Compile Include="Forms\frmAuditTrail.Designer.vb">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </Compile>

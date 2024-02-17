@@ -33,7 +33,7 @@
             Exit Sub
         End If
 
-        ClassSchoolYear.SectionRef()
+        ClassSection.SectionRef()
         Success("Successfully Added!")
         loadrecords()
         clear()
