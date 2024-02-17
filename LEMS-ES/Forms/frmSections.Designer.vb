@@ -33,19 +33,20 @@ Partial Class frmSections
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtSectionCapacity = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnUpdateSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClearSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSectionName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.dgvSection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.dgvSection)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel2)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -66,11 +67,13 @@ Partial Class frmSections
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.dgvSection.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSection.BackgroundColor = System.Drawing.Color.DimGray
+        Me.dgvSection.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.dgvSection.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvSection.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
@@ -79,7 +82,7 @@ Partial Class frmSections
         Me.dgvSection.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -87,10 +90,12 @@ Partial Class frmSections
         Me.dgvSection.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvSection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSection.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSection.Location = New System.Drawing.Point(230, 40)
+        Me.dgvSection.Location = New System.Drawing.Point(0, 0)
+        Me.dgvSection.MultiSelect = False
         Me.dgvSection.Name = "dgvSection"
         Me.dgvSection.ReadOnly = True
         Me.dgvSection.RowHeadersVisible = False
+        Me.dgvSection.RowTemplate.Height = 25
         Me.dgvSection.Size = New System.Drawing.Size(723, 549)
         Me.dgvSection.TabIndex = 2
         Me.dgvSection.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -100,18 +105,18 @@ Partial Class frmSections
         Me.dgvSection.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
         Me.dgvSection.ThemeStyle.BackColor = System.Drawing.Color.DimGray
         Me.dgvSection.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSection.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSection.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvSection.ThemeStyle.HeaderStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.dgvSection.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         Me.dgvSection.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvSection.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgvSection.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSection.ThemeStyle.HeaderStyle.Height = 44
         Me.dgvSection.ThemeStyle.ReadOnly = True
         Me.dgvSection.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSection.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvSection.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvSection.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvSection.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgvSection.ThemeStyle.RowsStyle.Height = 22
+        Me.dgvSection.ThemeStyle.RowsStyle.Height = 25
         Me.dgvSection.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSection.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
@@ -138,13 +143,12 @@ Partial Class frmSections
         Me.Column3.HeaderText = "Capacity"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 115
+        Me.Column3.Width = 91
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.txtSectionCapacity)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnUpdateSubject)
         Me.Panel1.Controls.Add(Me.btnClearSubject)
         Me.Panel1.Controls.Add(Me.btnSaveSubject)
         Me.Panel1.Controls.Add(Me.txtSectionName)
@@ -185,20 +189,6 @@ Partial Class frmSections
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Capacity"
         '
-        'btnUpdateSubject
-        '
-        Me.btnUpdateSubject.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdateSubject.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdateSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdateSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdateSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateSubject.ForeColor = System.Drawing.Color.White
-        Me.btnUpdateSubject.Location = New System.Drawing.Point(114, 137)
-        Me.btnUpdateSubject.Name = "btnUpdateSubject"
-        Me.btnUpdateSubject.Size = New System.Drawing.Size(91, 36)
-        Me.btnUpdateSubject.TabIndex = 10
-        Me.btnUpdateSubject.Text = "Update"
-        '
         'btnClearSubject
         '
         Me.btnClearSubject.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -208,7 +198,7 @@ Partial Class frmSections
         Me.btnClearSubject.FillColor = System.Drawing.Color.Gray
         Me.btnClearSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearSubject.ForeColor = System.Drawing.Color.White
-        Me.btnClearSubject.Location = New System.Drawing.Point(66, 179)
+        Me.btnClearSubject.Location = New System.Drawing.Point(114, 137)
         Me.btnClearSubject.Name = "btnClearSubject"
         Me.btnClearSubject.Size = New System.Drawing.Size(91, 36)
         Me.btnClearSubject.TabIndex = 9
@@ -257,6 +247,16 @@ Partial Class frmSections
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Section Name"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.dgvSection)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(230, 40)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(723, 549)
+        Me.Panel2.TabIndex = 5
+        '
         'frmSections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -271,6 +271,7 @@ Partial Class frmSections
         CType(Me.dgvSection, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -283,9 +284,9 @@ Partial Class frmSections
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtSectionCapacity As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnUpdateSubject As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClearSubject As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveSubject As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtSectionName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
 End Class

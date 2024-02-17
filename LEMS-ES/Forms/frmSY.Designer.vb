@@ -32,7 +32,6 @@ Partial Class frmSY
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClearSY = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAddSY = New Guna.UI2.WinForms.Guna2TextBox()
@@ -150,11 +149,10 @@ Partial Class frmSY
         Me.Column3.HeaderText = "Status"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 67
+        Me.Column3.Width = 69
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnClearSY)
         Me.Panel1.Controls.Add(Me.btnSaveSY)
         Me.Panel1.Controls.Add(Me.txtAddSY)
@@ -166,20 +164,6 @@ Partial Class frmSY
         Me.Panel1.Size = New System.Drawing.Size(230, 575)
         Me.Panel1.TabIndex = 3
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(116, 80)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(91, 36)
-        Me.btnUpdate.TabIndex = 10
-        Me.btnUpdate.Text = "Update"
-        '
         'btnClearSY
         '
         Me.btnClearSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -189,7 +173,7 @@ Partial Class frmSY
         Me.btnClearSY.FillColor = System.Drawing.Color.Gray
         Me.btnClearSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearSY.ForeColor = System.Drawing.Color.White
-        Me.btnClearSY.Location = New System.Drawing.Point(68, 122)
+        Me.btnClearSY.Location = New System.Drawing.Point(116, 80)
         Me.btnClearSY.Name = "btnClearSY"
         Me.btnClearSY.Size = New System.Drawing.Size(91, 36)
         Me.btnClearSY.TabIndex = 9
@@ -263,7 +247,6 @@ Partial Class frmSY
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClearSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtAddSY As Guna.UI2.WinForms.Guna2TextBox
