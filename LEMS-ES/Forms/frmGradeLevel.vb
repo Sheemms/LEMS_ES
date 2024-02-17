@@ -1,5 +1,5 @@
 ﻿Public Class frmGradeLevel
-    Dim id As String = ""
+    Public idGradeLevel As Integer = 0
     Private Sub frmGradeLevel_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
@@ -11,39 +11,32 @@
     Public Sub clear()
         txtAddGradeLevel.Clear()
     End Sub
+    Private Sub dgvGradeLevel_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGradeLevel.CellClick
+        Try
+            For Each row As DataGridViewRow In dgvGradeLevel.SelectedRows
+                idGradeLevel = row.Cells(0).Value
+                txtAddGradeLevel.Text = row.Cells(1).Value
+            Next
+        Catch ex As Exception
+            MsgBox("ERROR!", vbCritical)
+        End Try
+    End Sub
     Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
         If IS_EMPTY(txtAddGradeLevel) = True Then Return
 
-        Query("SELECT * FROM schoolyear WHERE SchoolYear= '" & txtAddGradeLevel.Text & "' and ID <> '" & id & "'")
+        Query("SELECT * FROM gradelevel WHERE GradeLevel= '" & txtAddGradeLevel.Text & "' and ID <> '" & idGradeLevel & "'")
         If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("School Year already exist")
+            Critical("Grade Level already exist")
             Exit Sub
         End If
 
-        Command("INSERT INTO gradelevel (GradeLevel) VALUES(@GradeLevel)")
-        cmd.Parameters.AddWithValue("@GradeLevel", txtAddGradeLevel.Text)
-        cmd.ExecuteNonQuery()
+        ClassGradeLevel.GradeLevelRef()
         Success("Successfully Added!")
         clear()
         loadrecords()
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-
-    End Sub
-
     Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnCancelSY.Click
         clear()
-    End Sub
-
-    Private Sub dgvGradeLevel_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGradeLevel.CellClick
-        Try
-            For Each row As DataGridViewRow In dgvGradeLevel.SelectedRows
-                id = row.Cells(0).Value
-                dgvGradeLevel.Text = row.Cells(1).Value
-            Next
-        Catch ex As Exception
-            MsgBox("ERROR!", vbCritical)
-        End Try
     End Sub
 End Class

@@ -22,27 +22,28 @@ Partial Class frmGradeLevel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.dgvGradeLevel = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancelSY = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAddGradeLevel = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.dgvGradeLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.dgvGradeLevel)
+        Me.Guna2GroupBox1.Controls.Add(Me.Panel2)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -60,34 +61,38 @@ Partial Class frmGradeLevel
         '
         Me.dgvGradeLevel.AllowUserToAddRows = False
         Me.dgvGradeLevel.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvGradeLevel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvGradeLevel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvGradeLevel.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvGradeLevel.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvGradeLevel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.dgvGradeLevel.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGradeLevel.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvGradeLevel.ColumnHeadersHeight = 44
         Me.dgvGradeLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvGradeLevel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvGradeLevel.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvGradeLevel.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvGradeLevel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvGradeLevel.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvGradeLevel.Location = New System.Drawing.Point(230, 40)
+        Me.dgvGradeLevel.Location = New System.Drawing.Point(0, 0)
+        Me.dgvGradeLevel.MultiSelect = False
         Me.dgvGradeLevel.Name = "dgvGradeLevel"
         Me.dgvGradeLevel.ReadOnly = True
         Me.dgvGradeLevel.RowHeadersVisible = False
+        Me.dgvGradeLevel.RowTemplate.Height = 25
         Me.dgvGradeLevel.Size = New System.Drawing.Size(723, 549)
         Me.dgvGradeLevel.TabIndex = 2
         Me.dgvGradeLevel.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -98,17 +103,17 @@ Partial Class frmGradeLevel
         Me.dgvGradeLevel.ThemeStyle.BackColor = System.Drawing.Color.DimGray
         Me.dgvGradeLevel.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvGradeLevel.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvGradeLevel.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvGradeLevel.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         Me.dgvGradeLevel.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvGradeLevel.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgvGradeLevel.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvGradeLevel.ThemeStyle.HeaderStyle.Height = 44
         Me.dgvGradeLevel.ThemeStyle.ReadOnly = True
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvGradeLevel.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvGradeLevel.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgvGradeLevel.ThemeStyle.RowsStyle.Height = 22
+        Me.dgvGradeLevel.ThemeStyle.RowsStyle.Height = 25
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
@@ -130,7 +135,6 @@ Partial Class frmGradeLevel
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnCancelSY)
         Me.Panel1.Controls.Add(Me.btnSaveSY)
         Me.Panel1.Controls.Add(Me.txtAddGradeLevel)
@@ -142,20 +146,6 @@ Partial Class frmGradeLevel
         Me.Panel1.Size = New System.Drawing.Size(230, 549)
         Me.Panel1.TabIndex = 3
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(115, 77)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(91, 36)
-        Me.btnUpdate.TabIndex = 10
-        Me.btnUpdate.Text = "Update"
-        '
         'btnCancelSY
         '
         Me.btnCancelSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -165,7 +155,7 @@ Partial Class frmGradeLevel
         Me.btnCancelSY.FillColor = System.Drawing.Color.Gray
         Me.btnCancelSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelSY.ForeColor = System.Drawing.Color.White
-        Me.btnCancelSY.Location = New System.Drawing.Point(67, 119)
+        Me.btnCancelSY.Location = New System.Drawing.Point(115, 77)
         Me.btnCancelSY.Name = "btnCancelSY"
         Me.btnCancelSY.Size = New System.Drawing.Size(91, 36)
         Me.btnCancelSY.TabIndex = 9
@@ -214,6 +204,16 @@ Partial Class frmGradeLevel
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Grade Level"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.dgvGradeLevel)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Georgia", 11.0!)
+        Me.Panel2.Location = New System.Drawing.Point(230, 40)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(723, 549)
+        Me.Panel2.TabIndex = 4
+        '
         'frmGradeLevel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -228,6 +228,7 @@ Partial Class frmGradeLevel
         CType(Me.dgvGradeLevel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -235,11 +236,11 @@ Partial Class frmGradeLevel
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents dgvGradeLevel As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnCancelSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtAddGradeLevel As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
 End Class
