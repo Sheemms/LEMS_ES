@@ -17,6 +17,9 @@ Public Class frmStudentRegistration
         txtMotherOccup.Clear()
         txtFathersName.Clear()
         txtFatherOccup.Clear()
+        txtFatherContact.Clear()
+        txtReligion.Clear()
+        txtCitizenship.Clear()
     End Sub
     Private Function GenderSelection() As String
         If cbMale.Checked Then
