@@ -19,14 +19,22 @@ Public Class ClassTeacher
         End Try
     End Function
     Public Shared Sub TeacherRef()
-        Dim dynamicParams As MySqlParameter() = TeacherParameters()
-        If frmTeacherMaintenance.idTeacher = 0 Then
-            Command("INSERT INTO teacher(EmpID, Lastname, Firstname, Middlename, Birthday, Contact, Address) 
+        Try
+            Dim dynamicParams As MySqlParameter() = TeacherParameters()
+            If frmTeacherMaintenance.idTeacher = 0 Then
+                Command("INSERT INTO teacher(EmpID, Lastname, Firstname, Middlename, Birthday, Contact, Address) 
                             VALUES (@EmpID, @Lastname, @Firstname, @Middlename, @Birthday, @Contact, @Address)", dynamicParams)
-        Else
-            Command("UPDATE teacher SET EmpID=@EmpID, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Birthday=@Birthday, 
+            Else
+                Command("UPDATE teacher SET EmpID=@EmpID, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Birthday=@Birthday, 
                             Contact=@Contact, Address=@Address WHERE ID=@ID", dynamicParams)
-        End If
+            End If
+            frmTeacherMaintenance.loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("Employee ID already exists.")
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 #End Region
 End Class

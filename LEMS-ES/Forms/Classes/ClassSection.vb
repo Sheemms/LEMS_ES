@@ -14,12 +14,20 @@ Public Class ClassSection
         End Try
     End Function
     Public Shared Sub SectionRef()
-        Dim dynamicParams As MySqlParameter() = SectionParameters()
-        If frmSections.idSection = 0 Then
-            Command("INSERT INTO section(SectionRoom, Capacity) VALUES (@SectionRoom, @Capacity)", dynamicParams)
-        Else
-            Command("UPDATE section SET SectionRoom=@SectionRoom, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
-        End If
+        Try
+            Dim dynamicParams As MySqlParameter() = SectionParameters()
+            If frmSections.idSection = 0 Then
+                Command("INSERT INTO section(SectionRoom, Capacity) VALUES (@SectionRoom, @Capacity)", dynamicParams)
+            Else
+                Command("UPDATE section SET SectionRoom=@SectionRoom, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
+            End If
+            frmSections.loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("Section Room already exists.")
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 #End Region
 End Class

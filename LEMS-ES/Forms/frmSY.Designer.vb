@@ -99,6 +99,7 @@ Partial Class frmSY
         Me.dgvSY.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSY.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSY.Location = New System.Drawing.Point(0, 0)
+        Me.dgvSY.MultiSelect = False
         Me.dgvSY.Name = "dgvSY"
         Me.dgvSY.ReadOnly = True
         Me.dgvSY.RowHeadersVisible = False

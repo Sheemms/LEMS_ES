@@ -13,14 +13,24 @@ Public Class ClassSchoolYear
         End Try
     End Function
     Public Shared Sub SchoolYearRef()
-        Dim dynamicParams As MySqlParameter() = SchoolYearParameters()
-        If frmSY.idSY = 0 Then
-            Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
-        Else
-            If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
-                Command("UPDATE schoolyear SET SchoolYear=@SchoolYear WHERE ID=@ID", dynamicParams)
+        Try
+            Dim dynamicParams As MySqlParameter() = SchoolYearParameters()
+            If frmSY.idSY = 0 Then
+                Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
+                Success("Successfully Added!")
+            Else
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE schoolyear SET SchoolYear=@SchoolYear WHERE ID=@ID", dynamicParams)
+                    Success("Successfully Updated!")
+                End If
             End If
-        End If
+            frmSY.loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("School year already exists.")
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 #End Region
 End Class

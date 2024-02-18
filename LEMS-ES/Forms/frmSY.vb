@@ -9,33 +9,32 @@
         dgvSY.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()
+        idSY = 0
         txtAddSY.Clear()
     End Sub
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSY.CellClick
         Try
-            For Each row As DataGridViewRow In dgvSY.SelectedRows
-                idSY = row.Cells(0).Value
-                txtAddSY.Text = row.Cells(1).Value
-            Next
+            If dgvSY.SelectedRows.Count > 0 Then
+                Dim selectedRow As DataGridViewRow = dgvSY.SelectedRows(0)
+                idSY = Convert.ToInt32(selectedRow.Cells(0).Value)
+                txtAddSY.Text = selectedRow.Cells(1).Value.ToString()
+            End If
         Catch ex As Exception
-            MsgBox("ERROR!", vbCritical)
+            MsgBox(ex.Message)
         End Try
     End Sub
 
+
     Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
+        'Try
         If IS_EMPTY(txtAddSY) = True Then Return
 
-        Query("SELECT * FROM schoolyear WHERE SchoolYear= '" & txtAddSY.Text & "' and ID <> '" & idSY & "'")
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("School Year already exist")
-            Exit Sub
-        End If
-
         ClassSchoolYear.SchoolYearRef()
-        Success("Successfully Added!")
-        loadrecords()
         clear()
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
     End Sub
 
     Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnClearSY.Click

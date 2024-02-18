@@ -1,5 +1,5 @@
 ﻿Public Class frmTuitionFee
-    Dim id As String = ""
+    Public idTuition As Integer = 0
     Private Sub frmTuitionFee_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
@@ -16,19 +16,8 @@
         If IS_EMPTY(txtAmount) Then Return
         If IS_EMPTY(txtClassification) Then Return
 
-        Query("SELECT * FROM tuition WHERE Amount = '" & txtAmount.Text & "' OR Classification = '" & txtClassification.Text & "' AND ID <> '" & id & "'")
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("Tuition fee already exist")
-            Exit Sub
-        End If
-
-        Command("INSERT INTO tuition(Amount, Classification) VALUES(@Amount, @Classification)")
-        cmd.Parameters.AddWithValue("@Amount", txtAmount.Text)
-        cmd.Parameters.AddWithValue("@Classification", txtClassification.Text)
-        'cmd.ExecuteNonQuery()
-        Success("Successfully Added!")
-        loadrecords()
-        Clear()
+        ClassTuition.TuitionRef()
+        clear()
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click

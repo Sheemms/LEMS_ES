@@ -15,12 +15,20 @@ Public Class ClassSubject
         End Try
     End Function
     Public Shared Sub SubjectRef()
-        Dim dynamicParams As MySqlParameter() = SubjectParameters()
-        If frmSubjects.idSubj = 0 Then
-            Command("INSERT INTO subject(SubjectCode, SubjectName) VALUES (@SubjectCode, @SubjectName)", dynamicParams)
-        Else
-            Command("UPDATE subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName WHERE ID=@ID", dynamicParams)
-        End If
+        Try
+            Dim dynamicParams As MySqlParameter() = SubjectParameters()
+            If frmSubjects.idSubj = 0 Then
+                Command("INSERT INTO subject(SubjectCode, SubjectName) VALUES (@SubjectCode, @SubjectName)", dynamicParams)
+            Else
+                Command("UPDATE subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName WHERE ID=@ID", dynamicParams)
+            End If
+            frmSubjects.loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("School year already exists. Please enter a unique school year.")
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 #End Region
 End Class

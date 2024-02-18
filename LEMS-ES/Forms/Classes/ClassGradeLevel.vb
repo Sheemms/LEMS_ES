@@ -13,14 +13,22 @@ Public Class ClassGradeLevel
         End Try
     End Function
     Public Shared Sub GradeLevelRef()
-        Dim dynamicParams As MySqlParameter() = GradeLevelParameters()
-        If frmGradeLevel.idGradeLevel = 0 Then
-            Command("INSERT INTO gradelevel(GradeLevel) VALUES (@GradeLevel)", dynamicParams)
-        Else
-            If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) Then
-                Command("UPDATE gradelevel SET GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
+        Try
+            Dim dynamicParams As MySqlParameter() = GradeLevelParameters()
+            If frmGradeLevel.idGradeLevel = 0 Then
+                Command("INSERT INTO gradelevel(GradeLevel) VALUES (@GradeLevel)", dynamicParams)
+            Else
+                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE gradelevel SET GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
+                End If
             End If
-        End If
+            frmGradeLevel.loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("Grade Level already exists.")
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 #End Region
 End Class
