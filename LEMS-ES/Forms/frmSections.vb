@@ -9,6 +9,7 @@
         dgvSection.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()
+        idSection = 0
         txtSectionName.Clear()
         txtSectionCapacity.Clear()
     End Sub
@@ -27,15 +28,7 @@
         If IS_EMPTY(txtSectionName) = True Then Return
         If IS_EMPTY(txtSectionCapacity) = True Then Return
 
-        Query("SELECT * FROM section WHERE SectionRoom= '" & txtSectionName.Text & "' and ID <> '" & idSection & "'")
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("Room already exist")
-            Exit Sub
-        End If
-
         ClassSection.SectionRef()
-        Success("Successfully Added!")
-        loadrecords()
         clear()
     End Sub
 

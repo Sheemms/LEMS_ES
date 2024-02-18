@@ -17,9 +17,15 @@ Public Class ClassSection
         Try
             Dim dynamicParams As MySqlParameter() = SectionParameters()
             If frmSections.idSection = 0 Then
-                Command("INSERT INTO section(SectionRoom, Capacity) VALUES (@SectionRoom, @Capacity)", dynamicParams)
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                    Command("INSERT INTO section(SectionRoom, Capacity) VALUES (@SectionRoom, @Capacity)", dynamicParams)
+                    Success("Successfully Added!")
+                End If
             Else
-                Command("UPDATE section SET SectionRoom=@SectionRoom, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE section SET SectionRoom=@SectionRoom, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
+                    Success("Successfully Updated!")
+                End If
             End If
             frmSections.loadrecords()
         Catch ex As MySqlException When ex.Number = 1062

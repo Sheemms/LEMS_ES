@@ -9,6 +9,7 @@
         dgvSubject.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()
+        idSubj = 0
         txtSubjCode.Clear()
         txtSubjName.Clear()
     End Sub
@@ -29,16 +30,8 @@
         If IS_EMPTY(txtSubjName) = True Then Return
 
 
-        Query("SELECT * FROM subject WHERE SubjectCode= '" & txtSubjCode.Text & "' and ID <> '" & idSubj & "'")
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("Subject already exist")
-            Exit Sub
-        End If
-
         ClassSubject.SubjectRef()
-        Success("Successfully Added!")
         clear()
-        loadrecords()
     End Sub
 
     Private Sub btnClearSubject_Click(sender As Object, e As EventArgs) Handles btnClearSubject.Click

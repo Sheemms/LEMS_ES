@@ -5,9 +5,8 @@ Public Class frmStudentRegistration
         Connection()
     End Sub
 
-
-    Private Sub btnCancelSY_Click(sender As Object, e As EventArgs)
-        Me.Close()
+    Public Sub loadrecords()
+        Query("SELECT * FROM student")
     End Sub
     Private Function GenderSelection() As String
         If cbMale.Checked Then
@@ -18,4 +17,14 @@ Public Class frmStudentRegistration
             Return "Not Specified"
         End If
     End Function
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+#Region "IS_EMPTY"
+        If IS_EMPTY(txtLRN) = True Then Return
+#End Region
+
+    End Sub
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+
+    End Sub
 End Class

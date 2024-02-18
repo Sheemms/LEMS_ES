@@ -16,10 +16,12 @@ Public Class ClassSchoolYear
         Try
             Dim dynamicParams As MySqlParameter() = SchoolYearParameters()
             If frmSY.idSY = 0 Then
-                Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
-                Success("Successfully Added!")
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                    Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
+                    Success("Successfully Added!")
+                End If
             Else
-                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                    If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
                     Command("UPDATE schoolyear SET SchoolYear=@SchoolYear WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If

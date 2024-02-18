@@ -9,6 +9,7 @@
         dgvTeacher.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()
+        idTeacher = 0
         txtEmpID.Clear()
         txtLastname.Clear()
         txtFirstname.Clear()
@@ -48,15 +49,7 @@
         If IS_EMPTY(txtAddress) = True Then Return
 #End Region
 
-        Query("SELECT * FROM teacher WHERE EmpID= '" & txtEmpID.Text & "' and ID <> '" & idTeacher & "'")
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("Teacher already exist")
-            Exit Sub
-        End If
-
         ClassTeacher.TeacherRef()
-        Success("Successfully Added!")
-        loadrecords()
         clear()
     End Sub
 

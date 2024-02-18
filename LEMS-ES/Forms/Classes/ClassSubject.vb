@@ -18,13 +18,19 @@ Public Class ClassSubject
         Try
             Dim dynamicParams As MySqlParameter() = SubjectParameters()
             If frmSubjects.idSubj = 0 Then
-                Command("INSERT INTO subject(SubjectCode, SubjectName) VALUES (@SubjectCode, @SubjectName)", dynamicParams)
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                    Command("INSERT INTO subject(SubjectCode, SubjectName) VALUES (@SubjectCode, @SubjectName)", dynamicParams)
+                    Success("Successfully Added!")
+                End If
             Else
-                Command("UPDATE subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName WHERE ID=@ID", dynamicParams)
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName WHERE ID=@ID", dynamicParams)
+                    Success("Successfully Updated!")
+                End If
             End If
-            frmSubjects.loadrecords()
+                frmSubjects.loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
-            Critical("School year already exists. Please enter a unique school year.")
+            Critical("Subject already exists.")
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)

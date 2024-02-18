@@ -15,13 +15,12 @@
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSY.CellClick
         Try
-            If dgvSY.SelectedRows.Count > 0 Then
-                Dim selectedRow As DataGridViewRow = dgvSY.SelectedRows(0)
-                idSY = Convert.ToInt32(selectedRow.Cells(0).Value)
-                txtAddSY.Text = selectedRow.Cells(1).Value.ToString()
-            End If
+            For Each row As DataGridViewRow In dgvSY.SelectedRows
+                idSY = row.Cells(0).Value
+                txtAddSY.Text = row.Cells(1).Value
+            Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
 

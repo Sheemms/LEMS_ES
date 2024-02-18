@@ -17,12 +17,18 @@ Public Class ClassTuition
         Try
             Dim dynamicParams As MySqlParameter() = TuitionParameters()
             If frmTuitionFee.idTuition = 0 Then
-                Command("INSERT INTO tuition(Amount, Classification) 
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                    Command("INSERT INTO tuition(Amount, Classification) 
                             VALUES (@Amount, @Classification)", dynamicParams)
+                    Success("Successfully Added!")
+                End If
             Else
-                Command("UPDATE tuition SET Amount=@Amount, Classification=@Classification", dynamicParams)
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE tuition SET Amount=@Amount, Classification=@Classification", dynamicParams)
+                    Success("Successfully Updated!")
+                End If
             End If
-            frmTuitionFee.loadrecords()
+                frmTuitionFee.loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Tuition already exists.")
             Exit Sub

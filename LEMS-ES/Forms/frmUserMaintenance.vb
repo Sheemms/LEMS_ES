@@ -1,13 +1,15 @@
 ﻿Public Class frmUserMaintenance
-    Dim id As String = ""
+    Public idUserMaintenance As Integer = 0
     Private Sub frmUserMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
+        loadrecords()
     End Sub
     Public Sub loadrecords()
         Query("SELECT * FROM user")
         dgvUser.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()
+        idUserMaintenance = 0
         txtUsername.Clear()
         txtPassword.Clear()
         txtFullname.Clear()
@@ -16,7 +18,7 @@
     Private Sub dgvUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUser.CellClick
         Try
             For Each row As DataGridViewRow In dgvUser.SelectedRows
-                id = row.Cells(0).Value
+                idUserMaintenance = row.Cells(0).Value
                 txtUsername.Text = row.Cells(1).Value
                 txtPassword.Text = row.Cells(2).Value
                 txtFullname.Text = row.Cells(3).Value
@@ -34,19 +36,8 @@
         If IS_EMPTY(cmbUserLevel) = True Then Return
 #End Region
 
-        Query("SELECT * FROM user WHERE ID = '" & id & "'")
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            Critical("User Account already exist!")
-            Exit Sub
-        End If
-
-        Success("Succcessfully Added!")
-
+        ClassUserMaintenance.UserMRef()
         clear()
-    End Sub
-
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub btnClearUserMaintenance_Click(sender As Object, e As EventArgs) Handles btnClearUserMaintenance.Click

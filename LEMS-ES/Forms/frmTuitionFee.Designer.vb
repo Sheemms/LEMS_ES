@@ -34,7 +34,6 @@ Partial Class frmTuitionFee
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtClassification = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnClearTuitionFee = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveTuitionFee = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAmount = New Guna.UI2.WinForms.Guna2TextBox()
@@ -100,6 +99,7 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvTuitionFee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvTuitionFee.Location = New System.Drawing.Point(0, 0)
+        Me.dgvTuitionFee.MultiSelect = False
         Me.dgvTuitionFee.Name = "dgvTuitionFee"
         Me.dgvTuitionFee.ReadOnly = True
         Me.dgvTuitionFee.RowHeadersVisible = False
@@ -156,7 +156,6 @@ Partial Class frmTuitionFee
         '
         Me.Panel1.Controls.Add(Me.txtClassification)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnClearTuitionFee)
         Me.Panel1.Controls.Add(Me.btnSaveTuitionFee)
         Me.Panel1.Controls.Add(Me.txtAmount)
@@ -197,20 +196,6 @@ Partial Class frmTuitionFee
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Classification"
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(117, 137)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(91, 36)
-        Me.btnUpdate.TabIndex = 10
-        Me.btnUpdate.Text = "Update"
-        '
         'btnClearTuitionFee
         '
         Me.btnClearTuitionFee.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -220,7 +205,7 @@ Partial Class frmTuitionFee
         Me.btnClearTuitionFee.FillColor = System.Drawing.Color.Gray
         Me.btnClearTuitionFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTuitionFee.ForeColor = System.Drawing.Color.White
-        Me.btnClearTuitionFee.Location = New System.Drawing.Point(69, 179)
+        Me.btnClearTuitionFee.Location = New System.Drawing.Point(117, 137)
         Me.btnClearTuitionFee.Name = "btnClearTuitionFee"
         Me.btnClearTuitionFee.Size = New System.Drawing.Size(91, 36)
         Me.btnClearTuitionFee.TabIndex = 9
@@ -292,7 +277,6 @@ Partial Class frmTuitionFee
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvTuitionFee As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClearTuitionFee As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveTuitionFee As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtAmount As Guna.UI2.WinForms.Guna2TextBox

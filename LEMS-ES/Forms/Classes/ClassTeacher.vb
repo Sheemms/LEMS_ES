@@ -22,13 +22,19 @@ Public Class ClassTeacher
         Try
             Dim dynamicParams As MySqlParameter() = TeacherParameters()
             If frmTeacherMaintenance.idTeacher = 0 Then
-                Command("INSERT INTO teacher(EmpID, Lastname, Firstname, Middlename, Birthday, Contact, Address) 
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                    Command("INSERT INTO teacher(EmpID, Lastname, Firstname, Middlename, Birthday, Contact, Address) 
                             VALUES (@EmpID, @Lastname, @Firstname, @Middlename, @Birthday, @Contact, @Address)", dynamicParams)
+                    Success("Successfully Added!")
+                End If
             Else
-                Command("UPDATE teacher SET EmpID=@EmpID, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Birthday=@Birthday, 
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE teacher SET EmpID=@EmpID, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Birthday=@Birthday, 
                             Contact=@Contact, Address=@Address WHERE ID=@ID", dynamicParams)
+                    Success("Successfully Updated!")
+                End If
             End If
-            frmTeacherMaintenance.loadrecords()
+                frmTeacherMaintenance.loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Employee ID already exists.")
             Exit Sub
