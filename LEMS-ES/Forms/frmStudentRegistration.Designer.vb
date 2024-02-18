@@ -569,7 +569,7 @@ Partial Class frmStudentRegistration
         Me.txtPlaceofBirth.Location = New System.Drawing.Point(584, 25)
         Me.txtPlaceofBirth.Name = "txtPlaceofBirth"
         Me.txtPlaceofBirth.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPlaceofBirth.PlaceholderText = "eg. Taguig City"
+        Me.txtPlaceofBirth.PlaceholderText = "Place of Birth"
         Me.txtPlaceofBirth.SelectedText = ""
         Me.txtPlaceofBirth.Size = New System.Drawing.Size(213, 36)
         Me.txtPlaceofBirth.TabIndex = 5
