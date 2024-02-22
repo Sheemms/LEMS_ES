@@ -31,7 +31,7 @@ Public Class frmStudentRegistration
     txtAddress, txtMothersName, txtMotherOccup, txtMotherContact, txtFathersName, txtFatherOccup, txtFatherContact, txtPlaceofBirth, txtReligion, txtCitizenship, txtEmailAddress}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             If IS_EMPTY(textBox) Then
-                Return ' or do something else if the textbox is empty
+                Return
             End If
         Next
         If cbMale.Checked = False AndAlso cbFemale.Checked = False Then
