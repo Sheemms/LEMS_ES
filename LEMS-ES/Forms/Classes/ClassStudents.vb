@@ -10,7 +10,7 @@ Public Class ClassStudents
                     New MySqlParameter("@Firstname", frmStudentRegistration.txtFirstname.Text),
                     New MySqlParameter("@Middlename", frmStudentRegistration.txtMiddlename.Text),
                     New MySqlParameter("@Suffix", frmStudentRegistration.txtSuffix.Text),
-                    New MySqlParameter("@Gender", frmStudentRegistration.c.Text),
+                    New MySqlParameter("@Gender", frmStudentRegistration.GenderSelection()),
                     New MySqlParameter("@Birthday", frmStudentRegistration.dtpBday.Text),
                     New MySqlParameter("@Address", frmStudentRegistration.txtAddress.Text),
                     New MySqlParameter("@MotherName", frmStudentRegistration.txtMothersName.Text),

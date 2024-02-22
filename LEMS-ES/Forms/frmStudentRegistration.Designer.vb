@@ -24,6 +24,8 @@ Partial Class frmStudentRegistration
     Private Sub InitializeComponent()
         Me.GBEnrollmentForm = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtGuardianContact = New Guna.UI2.WinForms.Guna2TextBox()
@@ -40,6 +42,7 @@ Partial Class frmStudentRegistration
         Me.txtReligion = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtSuffix = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dtpBday = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.cbFemale = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.cbMale = New Guna.UI2.WinForms.Guna2ImageCheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -53,9 +56,6 @@ Partial Class frmStudentRegistration
         Me.txtMiddlename = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtLastname = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -116,6 +116,37 @@ Partial Class frmStudentRegistration
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Basic Information"
+        '
+        'Guna2TextBox1
+        '
+        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox1.DefaultText = ""
+        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(393, 363)
+        Me.Guna2TextBox1.Name = "Guna2TextBox1"
+        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox1.PlaceholderText = "Address of the School"
+        Me.Guna2TextBox1.SelectedText = ""
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(404, 36)
+        Me.Guna2TextBox1.TabIndex = 62
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(16, 342)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(194, 18)
+        Me.Label2.TabIndex = 61
+        Me.Label2.Text = "Previous School Attended:"
         '
         'btnClear
         '
@@ -278,12 +309,12 @@ Partial Class frmStudentRegistration
         Me.txtGuardianName.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtGuardianName.ForeColor = System.Drawing.Color.Black
         Me.txtGuardianName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGuardianName.Location = New System.Drawing.Point(112, 297)
+        Me.txtGuardianName.Location = New System.Drawing.Point(12, 297)
         Me.txtGuardianName.Name = "txtGuardianName"
         Me.txtGuardianName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardianName.PlaceholderText = "Guardian Name"
         Me.txtGuardianName.SelectedText = ""
-        Me.txtGuardianName.Size = New System.Drawing.Size(273, 36)
+        Me.txtGuardianName.Size = New System.Drawing.Size(373, 36)
         Me.txtGuardianName.TabIndex = 52
         '
         'txtMothersName
@@ -298,12 +329,12 @@ Partial Class frmStudentRegistration
         Me.txtMothersName.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMothersName.ForeColor = System.Drawing.Color.Black
         Me.txtMothersName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMothersName.Location = New System.Drawing.Point(112, 213)
+        Me.txtMothersName.Location = New System.Drawing.Point(12, 213)
         Me.txtMothersName.Name = "txtMothersName"
         Me.txtMothersName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMothersName.PlaceholderText = "Mother's Name"
         Me.txtMothersName.SelectedText = ""
-        Me.txtMothersName.Size = New System.Drawing.Size(273, 36)
+        Me.txtMothersName.Size = New System.Drawing.Size(373, 36)
         Me.txtMothersName.TabIndex = 51
         '
         'Label16
@@ -329,12 +360,12 @@ Partial Class frmStudentRegistration
         Me.txtEmailAddress.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmailAddress.ForeColor = System.Drawing.Color.Black
         Me.txtEmailAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmailAddress.Location = New System.Drawing.Point(231, 151)
+        Me.txtEmailAddress.Location = New System.Drawing.Point(209, 151)
         Me.txtEmailAddress.Name = "txtEmailAddress"
         Me.txtEmailAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmailAddress.PlaceholderText = "Email Address"
         Me.txtEmailAddress.SelectedText = ""
-        Me.txtEmailAddress.Size = New System.Drawing.Size(239, 36)
+        Me.txtEmailAddress.Size = New System.Drawing.Size(261, 36)
         Me.txtEmailAddress.TabIndex = 47
         '
         'txtCitizenship
@@ -412,6 +443,17 @@ Partial Class frmStudentRegistration
         Me.dtpBday.TabIndex = 35
         Me.dtpBday.Value = New Date(2020, 12, 31, 0, 0, 0, 0)
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(372, 25)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(75, 18)
+        Me.Label6.TabIndex = 34
+        Me.Label6.Text = "Birthday:"
+        '
         'cbFemale
         '
         Me.cbFemale.BackColor = System.Drawing.Color.Transparent
@@ -465,7 +507,7 @@ Partial Class frmStudentRegistration
         Me.Guna2TextBox12.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2TextBox12.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox12.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox12.Location = New System.Drawing.Point(112, 363)
+        Me.Guna2TextBox12.Location = New System.Drawing.Point(12, 363)
         Me.Guna2TextBox12.Name = "Guna2TextBox12"
         Me.Guna2TextBox12.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox12.PlaceholderText = "Name of the School"
@@ -505,12 +547,12 @@ Partial Class frmStudentRegistration
         Me.txtFathersName.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFathersName.ForeColor = System.Drawing.Color.Black
         Me.txtFathersName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFathersName.Location = New System.Drawing.Point(112, 255)
+        Me.txtFathersName.Location = New System.Drawing.Point(12, 255)
         Me.txtFathersName.Name = "txtFathersName"
         Me.txtFathersName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFathersName.PlaceholderText = "Father's Name"
         Me.txtFathersName.SelectedText = ""
-        Me.txtFathersName.Size = New System.Drawing.Size(273, 36)
+        Me.txtFathersName.Size = New System.Drawing.Size(373, 36)
         Me.txtFathersName.TabIndex = 9
         '
         'txtLRN
@@ -654,48 +696,6 @@ Partial Class frmStudentRegistration
         Me.txtLastname.Size = New System.Drawing.Size(245, 36)
         Me.txtLastname.TabIndex = 1
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(372, 25)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 18)
-        Me.Label6.TabIndex = 34
-        Me.Label6.Text = "Birthday:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(16, 342)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(194, 18)
-        Me.Label2.TabIndex = 61
-        Me.Label2.Text = "Previous School Attended:"
-        '
-        'Guna2TextBox1
-        '
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(493, 363)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderText = "Address of the School"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(304, 36)
-        Me.Guna2TextBox1.TabIndex = 62
-        '
         'frmStudentRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -703,7 +703,7 @@ Partial Class frmStudentRegistration
         Me.ClientSize = New System.Drawing.Size(811, 504)
         Me.Controls.Add(Me.GBEnrollmentForm)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmStudentRegistration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GBEnrollmentForm.ResumeLayout(False)

@@ -132,11 +132,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\Classes\ClassGradeLevel.vb" />
+    <Compile Include="Forms\Classes\ClassRequirements.vb" />
     <Compile Include="Forms\Classes\ClassSchoolYear.vb" />
     <Compile Include="Forms\Classes\ClassSection.vb" />
+    <Compile Include="Forms\Classes\ClassStudents.vb" />
     <Compile Include="Forms\Classes\ClassSubject.vb" />
     <Compile Include="Forms\Classes\ClassTeacher.vb" />
     <Compile Include="Forms\Classes\ClassTuition.vb" />
+    <Compile Include="Forms\Classes\ClassUserMaintenance.vb" />
     <Compile Include="Forms\frmAuditTrail.Designer.vb">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </Compile>
