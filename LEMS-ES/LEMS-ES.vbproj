@@ -131,19 +131,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Classes\ClassGradeLevel.vb" />
-    <Compile Include="Forms\Classes\ClassRequirements.vb" />
-    <Compile Include="Forms\Classes\ClassSchoolYear.vb" />
-    <Compile Include="Forms\Classes\ClassSection.vb" />
-    <Compile Include="Forms\Classes\ClassStudents.vb" />
-    <Compile Include="Forms\Classes\ClassSubject.vb" />
-    <Compile Include="Forms\Classes\ClassTeacher.vb" />
-    <Compile Include="Forms\Classes\ClassTuition.vb" />
-    <Compile Include="Forms\Classes\ClassUserMaintenance.vb" />
-    <Compile Include="Forms\frmAuditTrail.Designer.vb">
+    <Compile Include="Classes\ClassGradeLevel.vb" />
+    <Compile Include="Classes\ClassRequirements.vb" />
+    <Compile Include="Classes\ClassSchoolYear.vb" />
+    <Compile Include="Classes\ClassSection.vb" />
+    <Compile Include="Classes\ClassStudents.vb" />
+    <Compile Include="Classes\ClassSubject.vb" />
+    <Compile Include="Classes\ClassTeacher.vb" />
+    <Compile Include="Classes\ClassTuition.vb" />
+    <Compile Include="Classes\ClassUserMaintenance.vb" />
+    <Compile Include="Forms\Audit Trail\frmAuditTrail.Designer.vb">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAuditTrail.vb">
+    <Compile Include="Forms\Audit Trail\frmAuditTrail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmBilling.Designer.vb">
@@ -152,41 +152,41 @@
     <Compile Include="Forms\frmBilling.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCharts.Designer.vb">
+    <Compile Include="Forms\Dashboard\frmCharts.Designer.vb">
       <DependentUpon>frmCharts.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmCharts.vb">
+    <Compile Include="Forms\Dashboard\frmCharts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDashboard.vb">
+    <Compile Include="Forms\Dashboard\frmDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDashboard.Designer.vb">
+    <Compile Include="Forms\Dashboard\frmDashboard.Designer.vb">
       <DependentUpon>frmDashboard.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmEnrollment.Designer.vb">
+    <Compile Include="Forms\Enrollment\frmEnrollment.Designer.vb">
       <DependentUpon>frmEnrollment.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmEnrollment.vb">
+    <Compile Include="Forms\Enrollment\frmEnrollment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmGradeLevel.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmGradeLevel.Designer.vb">
       <DependentUpon>frmGradeLevel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmGradeLevel.vb">
+    <Compile Include="Forms\Maintenance\frmGradeLevel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMaintenance.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmMaintenance.Designer.vb">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmMaintenance.vb">
+    <Compile Include="Forms\Maintenance\frmMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMiscellaneous.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmMiscellaneous.Designer.vb">
       <DependentUpon>frmMiscellaneous.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmMiscellaneous.vb">
+    <Compile Include="Forms\Maintenance\frmMiscellaneous.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmReports.Designer.vb">
@@ -195,70 +195,76 @@
     <Compile Include="Forms\frmReports.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmRequirements.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmRequirements.Designer.vb">
       <DependentUpon>frmRequirements.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmRequirements.vb">
+    <Compile Include="Forms\Maintenance\frmRequirements.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSections.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmSections.Designer.vb">
       <DependentUpon>frmSections.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSections.vb">
+    <Compile Include="Forms\Maintenance\frmSections.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmStudentRegistration.Designer.vb">
+    <Compile Include="Forms\Students\frmStudentRegistration.Designer.vb">
       <DependentUpon>frmStudentRegistration.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmStudentRegistration.vb">
+    <Compile Include="Forms\Students\frmStudentRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmStudents.Designer.vb">
+    <Compile Include="Forms\Students\frmStudents.Designer.vb">
       <DependentUpon>frmStudents.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmStudents.vb">
+    <Compile Include="Forms\Students\frmStudents.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmStudentsView.Designer.vb">
+    <Compile Include="Forms\Students\frmStudentsView.Designer.vb">
       <DependentUpon>frmStudentsView.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmStudentsView.vb">
+    <Compile Include="Forms\Students\frmStudentsView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSubjects.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmSubjects.Designer.vb">
       <DependentUpon>frmSubjects.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSubjects.vb">
+    <Compile Include="Forms\Maintenance\frmSubjects.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSY.Designer.vb">
+    <Compile Include="Forms\Maintenance\frmSY.Designer.vb">
       <DependentUpon>frmSY.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSY.vb">
+    <Compile Include="Forms\Maintenance\frmSY.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTeacherMaintenance.Designer.vb">
+    <Compile Include="Forms\Teacher\frmTeacherMaintenance.Designer.vb">
       <DependentUpon>frmTeacherMaintenance.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTeacherMaintenance.vb">
+    <Compile Include="Forms\Teacher\frmTeacherMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTeachers.Designer.vb">
+    <Compile Include="Forms\Teacher\frmTeachers.Designer.vb">
       <DependentUpon>frmTeachers.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTeachers.vb">
+    <Compile Include="Forms\Teacher\frmTeachers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTuitionFee.Designer.vb">
+    <Compile Include="Forms\Tuition Fee\frmTuitionFee.Designer.vb">
       <DependentUpon>frmTuitionFee.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTuitionFee.vb">
+    <Compile Include="Forms\Tuition Fee\frmTuitionFee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmUserMaintenance.Designer.vb">
+    <Compile Include="Forms\User Maintenance\frmAddUserLevel.Designer.vb">
+      <DependentUpon>frmAddUserLevel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Maintenance\frmAddUserLevel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Maintenance\frmUserMaintenance.Designer.vb">
       <DependentUpon>frmUserMaintenance.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmUserMaintenance.vb">
+    <Compile Include="Forms\User Maintenance\frmUserMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login Form\Login.Designer.vb">
@@ -267,6 +273,7 @@
     <Compile Include="Forms\Login Form\Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module\EncryptDecrypt.vb" />
     <Compile Include="Module\ModDisplay.vb" />
     <Compile Include="Module\Mod_Conn.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -287,64 +294,67 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmAuditTrail.resx">
+    <EmbeddedResource Include="Forms\Audit Trail\frmAuditTrail.resx">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBilling.resx">
       <DependentUpon>frmBilling.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCharts.resx">
+    <EmbeddedResource Include="Forms\Dashboard\frmCharts.resx">
       <DependentUpon>frmCharts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDashboard.resx">
+    <EmbeddedResource Include="Forms\Dashboard\frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmEnrollment.resx">
+    <EmbeddedResource Include="Forms\Enrollment\frmEnrollment.resx">
       <DependentUpon>frmEnrollment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmGradeLevel.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmGradeLevel.resx">
       <DependentUpon>frmGradeLevel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMaintenance.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmMaintenance.resx">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMiscellaneous.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmMiscellaneous.resx">
       <DependentUpon>frmMiscellaneous.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReports.resx">
       <DependentUpon>frmReports.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmRequirements.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmRequirements.resx">
       <DependentUpon>frmRequirements.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSections.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmSections.resx">
       <DependentUpon>frmSections.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmStudentRegistration.resx">
+    <EmbeddedResource Include="Forms\Students\frmStudentRegistration.resx">
       <DependentUpon>frmStudentRegistration.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmStudents.resx">
+    <EmbeddedResource Include="Forms\Students\frmStudents.resx">
       <DependentUpon>frmStudents.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmStudentsView.resx">
+    <EmbeddedResource Include="Forms\Students\frmStudentsView.resx">
       <DependentUpon>frmStudentsView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSubjects.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmSubjects.resx">
       <DependentUpon>frmSubjects.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSY.resx">
+    <EmbeddedResource Include="Forms\Maintenance\frmSY.resx">
       <DependentUpon>frmSY.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTeacherMaintenance.resx">
+    <EmbeddedResource Include="Forms\Teacher\frmTeacherMaintenance.resx">
       <DependentUpon>frmTeacherMaintenance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTeachers.resx">
+    <EmbeddedResource Include="Forms\Teacher\frmTeachers.resx">
       <DependentUpon>frmTeachers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTuitionFee.resx">
+    <EmbeddedResource Include="Forms\Tuition Fee\frmTuitionFee.resx">
       <DependentUpon>frmTuitionFee.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmUserMaintenance.resx">
+    <EmbeddedResource Include="Forms\User Maintenance\frmAddUserLevel.resx">
+      <DependentUpon>frmAddUserLevel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Maintenance\frmUserMaintenance.resx">
       <DependentUpon>frmUserMaintenance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login Form\Login.resx">
@@ -447,6 +457,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

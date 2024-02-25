@@ -7,6 +7,11 @@
     Public Sub loadrecords()
         Query("SELECT * FROM user")
         dgvUser.DataSource = ds.Tables("QueryTb")
+
+        Query("SELECT * FROM userlevel")
+        cmbUserLevel.DataSource = ds.Tables("QueryTb")
+        cmbUserLevel.ValueMember = "userlevel"
+        cmbUserLevel.DisplayMember = "userlevel"
     End Sub
     Public Sub clear()
         idUserMaintenance = 0
@@ -25,7 +30,7 @@
                 cmbUserLevel.Text = row.Cells(4).Value
             Next
         Catch ex As Exception
-            MsgBox("ERROR!", vbCritical)
+            MsgBox(ex.Message)
         End Try
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -34,6 +39,11 @@
         If IS_EMPTY(txtPassword) = True Then Return
         If IS_EMPTY(txtFullname) = True Then Return
         If IS_EMPTY(cmbUserLevel) = True Then Return
+
+        If txtPassword.Text <> txtRePassword.Text Then
+            Critical("Password not match.")
+            Return
+        End If
 #End Region
 
         ClassUserMaintenance.UserMRef()
@@ -44,4 +54,16 @@
         clear()
     End Sub
 
+    Private Sub btnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
+        ClassUserMaintenance.UserMDeact()
+        clear()
+    End Sub
+
+    Private Sub btnAddUserLevel_Click(sender As Object, e As EventArgs) Handles btnAddUserLevel.Click
+        frmAddUserLevel.Show()
+    End Sub
+
+    Private Sub cmbUserLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbUserLevel.KeyPress
+        e.Handled = True
+    End Sub
 End Class

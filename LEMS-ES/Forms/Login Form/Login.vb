@@ -31,7 +31,7 @@
         ValidateInput(txtPassword, "Please enter a password")
 
         If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
-            Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & txtPassword.Text & "'")
+            Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & DecryptData(txtPassword.Text) & "'")
             If ds.Tables("QueryTb").Rows.Count > 0 Then
                 Success("Login success!")
                 frmDashboard.Show()
@@ -71,7 +71,7 @@
         End Select
     End Sub
 
-    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown, txtUsername.KeyDown
+    Private Sub TextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown, txtUsername.KeyDown
         If e.KeyCode = Keys.Enter Then
             btnLogin_Click(Nothing, Nothing)
         Else

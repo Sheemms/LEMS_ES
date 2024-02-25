@@ -35,6 +35,10 @@ Partial Class frmUserMaintenance
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtRePassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnDeactivate = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnAddUserLevel = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.cmbUserLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtFullname = New Guna.UI2.WinForms.Guna2TextBox()
@@ -45,6 +49,7 @@ Partial Class frmUserMaintenance
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,6 +186,10 @@ Partial Class frmUserMaintenance
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtRePassword)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.btnDeactivate)
+        Me.Panel1.Controls.Add(Me.btnAddUserLevel)
         Me.Panel1.Controls.Add(Me.cmbUserLevel)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.txtFullname)
@@ -198,6 +207,64 @@ Partial Class frmUserMaintenance
         Me.Panel1.Size = New System.Drawing.Size(230, 525)
         Me.Panel1.TabIndex = 3
         '
+        'txtRePassword
+        '
+        Me.txtRePassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRePassword.DefaultText = ""
+        Me.txtRePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtRePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtRePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRePassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtRePassword.ForeColor = System.Drawing.Color.Black
+        Me.txtRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRePassword.Location = New System.Drawing.Point(6, 157)
+        Me.txtRePassword.Name = "txtRePassword"
+        Me.txtRePassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRePassword.PlaceholderText = ""
+        Me.txtRePassword.SelectedText = ""
+        Me.txtRePassword.Size = New System.Drawing.Size(221, 36)
+        Me.txtRePassword.TabIndex = 20
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 140)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(107, 14)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Re-type Password"
+        '
+        'btnDeactivate
+        '
+        Me.btnDeactivate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDeactivate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDeactivate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDeactivate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDeactivate.FillColor = System.Drawing.Color.Red
+        Me.btnDeactivate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeactivate.ForeColor = System.Drawing.Color.White
+        Me.btnDeactivate.Location = New System.Drawing.Point(62, 372)
+        Me.btnDeactivate.Name = "btnDeactivate"
+        Me.btnDeactivate.Size = New System.Drawing.Size(91, 36)
+        Me.btnDeactivate.TabIndex = 18
+        Me.btnDeactivate.Text = "Deactivate"
+        '
+        'btnAddUserLevel
+        '
+        Me.btnAddUserLevel.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnAddUserLevel.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnAddUserLevel.Image = Global.LEMS_ES.My.Resources.Resources.add
+        Me.btnAddUserLevel.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.btnAddUserLevel.ImageRotate = 0!
+        Me.btnAddUserLevel.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnAddUserLevel.Location = New System.Drawing.Point(190, 288)
+        Me.btnAddUserLevel.Name = "btnAddUserLevel"
+        Me.btnAddUserLevel.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btnAddUserLevel.Size = New System.Drawing.Size(35, 36)
+        Me.btnAddUserLevel.TabIndex = 17
+        '
         'cmbUserLevel
         '
         Me.cmbUserLevel.BackColor = System.Drawing.Color.Transparent
@@ -208,15 +275,15 @@ Partial Class frmUserMaintenance
         Me.cmbUserLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmbUserLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbUserLevel.ItemHeight = 30
-        Me.cmbUserLevel.Location = New System.Drawing.Point(6, 229)
+        Me.cmbUserLevel.Location = New System.Drawing.Point(7, 288)
         Me.cmbUserLevel.Name = "cmbUserLevel"
-        Me.cmbUserLevel.Size = New System.Drawing.Size(220, 36)
+        Me.cmbUserLevel.Size = New System.Drawing.Size(177, 36)
         Me.cmbUserLevel.TabIndex = 16
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 212)
+        Me.Label4.Location = New System.Drawing.Point(6, 271)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 14)
         Me.Label4.TabIndex = 15
@@ -234,7 +301,7 @@ Partial Class frmUserMaintenance
         Me.txtFullname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFullname.ForeColor = System.Drawing.Color.Black
         Me.txtFullname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFullname.Location = New System.Drawing.Point(5, 161)
+        Me.txtFullname.Location = New System.Drawing.Point(6, 220)
         Me.txtFullname.Name = "txtFullname"
         Me.txtFullname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFullname.PlaceholderText = ""
@@ -245,11 +312,11 @@ Partial Class frmUserMaintenance
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 144)
+        Me.Label3.Location = New System.Drawing.Point(6, 203)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 14)
+        Me.Label3.Size = New System.Drawing.Size(63, 14)
         Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Lastname"
+        Me.Label3.Text = "Fullname"
         '
         'txtPassword
         '
@@ -289,7 +356,7 @@ Partial Class frmUserMaintenance
         Me.btnClearUserMaintenance.FillColor = System.Drawing.Color.Gray
         Me.btnClearUserMaintenance.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearUserMaintenance.ForeColor = System.Drawing.Color.White
-        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(115, 271)
+        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(116, 330)
         Me.btnClearUserMaintenance.Name = "btnClearUserMaintenance"
         Me.btnClearUserMaintenance.Size = New System.Drawing.Size(91, 36)
         Me.btnClearUserMaintenance.TabIndex = 9
@@ -303,7 +370,7 @@ Partial Class frmUserMaintenance
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(18, 271)
+        Me.btnSave.Location = New System.Drawing.Point(19, 330)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(91, 36)
         Me.btnSave.TabIndex = 8
@@ -338,6 +405,15 @@ Partial Class frmUserMaintenance
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Username"
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.LEMS_ES.My.Resources.Resources.delete
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ReadOnly = True
+        '
         'frmUserMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -359,12 +435,6 @@ Partial Class frmUserMaintenance
 
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents dgvUser As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnClearUserMaintenance As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
@@ -377,4 +447,15 @@ Partial Class frmUserMaintenance
     Friend WithEvents cmbUserLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents btnAddUserLevel As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents btnDeactivate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtRePassword As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label5 As Label
 End Class
