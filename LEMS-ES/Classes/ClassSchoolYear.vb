@@ -14,18 +14,19 @@ Public Class ClassSchoolYear
     End Function
     Public Shared Sub SchoolYearRef()
         Try
-            Dim dynamicParams As MySqlParameter() = SchoolYearParameters()
+            Dim closeParams() As MySqlParameter = {New MySqlParameter()}
+            Command("UPDATE schoolyear SET Status= 'Closed' WHERE ID = (SELECT MAX(ID) FROM schoolyear)", closeParams)
             If frmSY.idSY = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) Then
+                    Dim dynamicParams() As MySqlParameter = SchoolYearParameters()
                     Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                    If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
-                    Command("UPDATE schoolyear SET SchoolYear=@SchoolYear WHERE ID=@ID", dynamicParams)
-                    Success("Successfully Updated!")
-                End If
+                MsgBox("School Year is Closed.")
+                Exit Sub
             End If
+
             frmSY.loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("School year already exists.")

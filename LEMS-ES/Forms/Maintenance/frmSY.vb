@@ -5,7 +5,7 @@
         loadrecords()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT * FROM schoolyear")
+        Query("SELECT * FROM schoolyear ORDER BY ID DESC ")
         dgvSY.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()

@@ -5,6 +5,7 @@ Module Mod_Conn
     Public adp As New MySqlDataAdapter
     Public ds As New DataSet
     Public dt As New DataTable
+    Public dr As MySqlDataReader
     Public Sub Connection()
         If con.State = ConnectionState.Closed Then
             con.Open()
