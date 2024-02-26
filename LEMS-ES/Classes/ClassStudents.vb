@@ -11,7 +11,8 @@ Public Class ClassStudents
                     New MySqlParameter("@Middlename", frmStudentRegistration.txtMiddlename.Text),
                     New MySqlParameter("@Suffix", frmStudentRegistration.txtSuffix.Text),
                     New MySqlParameter("@Gender", frmStudentRegistration.GenderSelection()),
-                    New MySqlParameter("@Birthday", frmStudentRegistration.dtpBday.Text),
+                    New MySqlParameter("@Age", frmStudentRegistration.txtAge.Text),
+                    New MySqlParameter("@Birthday", frmStudentRegistration.dtpBday.Value),
                     New MySqlParameter("@Address", frmStudentRegistration.txtAddress.Text),
                     New MySqlParameter("@MotherName", frmStudentRegistration.txtMothersName.Text),
                     New MySqlParameter("@Mother_Occupation", frmStudentRegistration.txtMotherOccup.Text),
@@ -19,9 +20,8 @@ Public Class ClassStudents
                     New MySqlParameter("@Father_Occupation", frmStudentRegistration.txtFatherOccup.Text),
                     New MySqlParameter("@GuardianName", frmStudentRegistration.txtGuardianName.Text),
                     New MySqlParameter("@GuardianContact", frmStudentRegistration.txtGuardianContact.Text),
-                    New MySqlParameter("@Religion", frmStudentRegistration.txtMothersName.Text),
-                    New MySqlParameter("@Citizenship", frmStudentRegistration.txtMothersName.Text),
-                    New MySqlParameter("@Classification", frmStudentRegistration.txtMothersName.Text)
+                    New MySqlParameter("@Religion", frmStudentRegistration.txtReligion.Text),
+                    New MySqlParameter("@Citizenship", frmStudentRegistration.txtCitizenship.Text)
                 }
             Return studParam
         Catch ex As Exception
@@ -32,17 +32,26 @@ Public Class ClassStudents
         Try
             Dim dynamicParams As MySqlParameter() = StudentParameters()
             If frmStudentRegistration.idStudent = 0 Then
-                Command("INSERT INTO student(LRN, Lastname, Firstname, Middlename, Suffix, Gender, Birthday, Address, MotherName, Mother_Occupation, 
-                            FatherName, Father_Occupation, GuardianName, GuardianContact, Religion, Citizenship, Classification) 
-                            VALUES (@LRN, @Lastname, @Firstname, @Middlename, @Suffix, @Gender, @Birthday, @Address, @Contact, @MotherName, @Mother_Occupation, 
-                            @FatherName, @Father_Occupation, @GuardianName, @GuardianContact, @Religion, @Citizenship, @Classification)", dynamicParams)
+                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) Then
+                    Command("INSERT INTO student(LRN, Lastname, Firstname, Middlename, Suffix, Gender, Age, Birthday, Address, MotherName, Mother_Occupation, 
+                            FatherName, Father_Occupation, GuardianName, GuardianContact, Religion, Citizenship) 
+                            VALUES (@LRN, @Lastname, @Firstname, @Middlename, @Suffix, @Gender, @Age, @Birthday, @Address, @MotherName, @Mother_Occupation, 
+                            @FatherName, @Father_Occupation, @GuardianName, @GuardianContact, @Religion, @Citizenship)", dynamicParams)
+                    Success("Successfully Added!")
+                End If
             Else
-                Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Suffix=@Suffix, Gender=@Gender, 
-                            Birthday=@Birthday, Address=@Address, Contact=@Contact, MotherName=@MotherName, Mother_Occupation=@Mother_Occupation, FatherName=@FatherName, Father_Occupation=@Father_Occupation, 
-                            GuardianName=@GuardianName, GuardianContact=@GuardianContact, Religion=@Religion, Citizenship=@Citizenship, Classification=@Classification WHERE ID=@ID", dynamicParams)
+                If MsgBox("Do you want to Update?", vbQuestion + vbYesNo) Then
+                    Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Suffix=@Suffix, Gender=@Gender, Age=@Age
+                            Birthday=@Birthday, Address=@Address, MotherName=@MotherName, Mother_Occupation=@Mother_Occupation, FatherName=@FatherName, Father_Occupation=@Father_Occupation, 
+                            GuardianName=@GuardianName, GuardianContact=@GuardianContact, Religion=@Religion, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
+                    Success("Successfully Updated")
+                End If
             End If
-        Catch ex As MySqlException When ex.Number = 1062
-            Critical("LRN already exists.")
+                frmStudents.loadrecords()
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                Critical("LRN already exists.")
+            End If
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)

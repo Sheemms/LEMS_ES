@@ -6,7 +6,7 @@ Public Class ClassUserMaintenance
             Dim UserParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmUserMaintenance.idUserMaintenance),
                     New MySqlParameter("@Username", frmUserMaintenance.txtUsername.Text),
-                    New MySqlParameter("@Password", EncryptData(frmUserMaintenance.txtPassword.Text)),
+                    New MySqlParameter("@Password", frmUserMaintenance.txtPassword.Text),
                     New MySqlParameter("@Fullname", frmUserMaintenance.txtFullname.Text),
                     New MySqlParameter("@UserLevel", frmUserMaintenance.cmbUserLevel.Text)
                     }

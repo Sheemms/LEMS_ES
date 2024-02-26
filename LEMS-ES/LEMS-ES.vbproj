@@ -146,6 +146,12 @@
     <Compile Include="Forms\Audit Trail\frmAuditTrail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Enrollment\frmEnrollmentRegistration.Designer.vb">
+      <DependentUpon>frmEnrollmentRegistration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enrollment\frmEnrollmentRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmBilling.Designer.vb">
       <DependentUpon>frmBilling.vb</DependentUpon>
     </Compile>
@@ -296,6 +302,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\Audit Trail\frmAuditTrail.resx">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentRegistration.resx">
+      <DependentUpon>frmEnrollmentRegistration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBilling.resx">
       <DependentUpon>frmBilling.vb</DependentUpon>

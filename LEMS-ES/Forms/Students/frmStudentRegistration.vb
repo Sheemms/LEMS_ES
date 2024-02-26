@@ -42,7 +42,6 @@ Public Class frmStudentRegistration
 
         ClassStudents.StudentRef()
 
-        ClearFields()
     End Sub
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ClearFields()
