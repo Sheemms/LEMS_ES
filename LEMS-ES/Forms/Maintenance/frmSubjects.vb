@@ -7,6 +7,11 @@
     Public Sub loadrecords()
         Query("SELECT * FROM subject")
         dgvSubject.DataSource = ds.Tables("QueryTb")
+
+        Query("SELECT GradeLevel FROM gradelevel")
+        cmbGradeLevel.DataSource = ds.Tables("QueryTb")
+        cmbGradeLevel.ValueMember = "GradeLevel"
+        cmbGradeLevel.DisplayMember = "GradeLevel"
     End Sub
     Public Sub clear()
         idSubj = 0
@@ -37,4 +42,5 @@
     Private Sub btnClearSubject_Click(sender As Object, e As EventArgs) Handles btnClearSubject.Click
         clear()
     End Sub
+
 End Class
