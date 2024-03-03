@@ -24,16 +24,18 @@
     End Sub
     Private Sub dgvSubject_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSubject.CellClick
         Try
-            For Each row As DataGridViewRow In dgvSubject.SelectedRows
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow = dgvSubject.Rows(e.RowIndex)
                 idSubj = row.Cells(0).Value
                 cmbGradeLevel.Text = row.Cells(1).Value
                 txtSubjCode.Text = row.Cells(2).Value
                 txtSubjName.Text = row.Cells(3).Value
-            Next
+            ElseIf e.ColumnIndex >= 0 Then
+                clear()
+            End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
-
     End Sub
     Private Sub btnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
         If IS_EMPTY(cmbGradeLevel) = True Then Return

@@ -5,6 +5,7 @@ Public Class ClassGradeLevel
         Try
             Dim GradeLevelParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmGradeLevel.idGradeLevel),
+                    New MySqlParameter("@Department_ID", frmGradeLevel.cmbDept.SelectedValue),
                     New MySqlParameter("@GradeLevel", frmGradeLevel.txtAddGradeLevel.Text)
                 }
             Return GradeLevelParam
@@ -17,12 +18,12 @@ Public Class ClassGradeLevel
             Dim dynamicParams As MySqlParameter() = GradeLevelParameters()
             If frmGradeLevel.idGradeLevel = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO gradelevel(GradeLevel) VALUES (@GradeLevel)", dynamicParams)
+                    Command("INSERT INTO gradelevel(Department_ID, GradeLevel) VALUES (@Department_ID, @GradeLevel)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE gradelevel SET GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE gradelevel SET Department_ID=@Department_ID, GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If

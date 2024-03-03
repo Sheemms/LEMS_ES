@@ -15,10 +15,13 @@
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSY.CellClick
         Try
-            For Each row As DataGridViewRow In dgvSY.SelectedRows
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow = dgvSY.Rows(e.RowIndex)
                 idSY = row.Cells(0).Value
                 txtAddSY.Text = row.Cells(1).Value
-            Next
+            ElseIf e.ColumnIndex >= 0 Then
+                clear()
+            End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
@@ -26,14 +29,10 @@
 
 
     Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
-        'Try
         If IS_EMPTY(txtAddSY) = True Then Return
 
         ClassSchoolYear.SchoolYearRef()
         clear()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
     End Sub
 
     Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnClearSY.Click

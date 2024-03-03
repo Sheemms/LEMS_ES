@@ -15,11 +15,14 @@
     End Sub
     Private Sub dgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
         Try
-            For Each row As DataGridViewRow In dgvSection.SelectedRows
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow = dgvSection.Rows(e.RowIndex)
                 idSection = row.Cells(0).Value
                 txtSectionName.Text = row.Cells(1).Value
                 txtSectionCapacity.Text = row.Cells(2).Value
-            Next
+            ElseIf e.ColumnIndex >= 0 Then
+                clear()
+            End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try

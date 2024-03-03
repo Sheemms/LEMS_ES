@@ -41,9 +41,13 @@ Public Class ClassSubject
     Public Shared Sub DeleteRef()
         Try
             Dim dynamicParams As MySqlParameter() = SubjectParameters()
-            If MsgBox("Do you want to delete?", vbQuestion + vbYesNo) = vbYes Then
-                Command("DELETE FROM subject WHERE ID=@ID", dynamicParams)
-                Success("Successfully Deleted!")
+            If frmSubjects.idSubj <> 0 Then
+                If MsgBox("Do you want to delete it?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("DELETE FROM subject WHERE ID=@ID", dynamicParams)
+                    Success("Successfully Deleted!")
+                End If
+            Else
+                MsgBox("You have nothing to delete")
             End If
             frmSubjects.loadrecords()
         Catch ex As Exception

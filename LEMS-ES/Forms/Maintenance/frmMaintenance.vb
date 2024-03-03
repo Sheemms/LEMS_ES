@@ -122,4 +122,15 @@ Public Class frmMaintenance
             .Show()
         End With
     End Sub
+
+    Private Sub RequirementsMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RequirementsMaintenanceToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+        With frmRequirements
+            .TopLevel = False
+            Panel1.Controls.Add(frmRequirements)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class
