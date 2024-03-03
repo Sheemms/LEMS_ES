@@ -17,7 +17,7 @@ Public Class ClassSchoolYear
             Dim closeParams() As MySqlParameter = {New MySqlParameter()}
             Command("UPDATE schoolyear SET Status= 'Closed' WHERE ID = (SELECT MAX(ID) FROM schoolyear)", closeParams)
             If frmSY.idSY = 0 Then
-                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) = vbYes Then
                     Dim dynamicParams() As MySqlParameter = SchoolYearParameters()
                     Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
                     Success("Successfully Added!")

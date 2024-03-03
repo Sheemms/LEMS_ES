@@ -25,9 +25,10 @@ Partial Class frmMaintenance
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdminControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TeacherMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GradeLevelMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GradeLevelMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequirementsMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiscellaneousMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,7 +37,6 @@ Partial Class frmMaintenance
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,6 +64,19 @@ Partial Class frmMaintenance
         Me.TeacherMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.TeacherMaintenanceToolStripMenuItem.Text = "Teacher Maintenance"
         '
+        'DepartmentToolStripMenuItem
+        '
+        Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
+        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.DepartmentToolStripMenuItem.Text = "Department"
+        '
+        'GradeLevelMaintenanceToolStripMenuItem
+        '
+        Me.GradeLevelMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.subject
+        Me.GradeLevelMaintenanceToolStripMenuItem.Name = "GradeLevelMaintenanceToolStripMenuItem"
+        Me.GradeLevelMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.GradeLevelMaintenanceToolStripMenuItem.Text = "Grade Level Maintenance"
+        '
         'SubjectMaintenanceToolStripMenuItem
         '
         Me.SubjectMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.subject
@@ -77,13 +90,6 @@ Partial Class frmMaintenance
         Me.SectionMaintenanceToolStripMenuItem.Name = "SectionMaintenanceToolStripMenuItem"
         Me.SectionMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.SectionMaintenanceToolStripMenuItem.Text = "Section Maintenance"
-        '
-        'GradeLevelMaintenanceToolStripMenuItem
-        '
-        Me.GradeLevelMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.subject
-        Me.GradeLevelMaintenanceToolStripMenuItem.Name = "GradeLevelMaintenanceToolStripMenuItem"
-        Me.GradeLevelMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.GradeLevelMaintenanceToolStripMenuItem.Text = "Grade Level Maintenance"
         '
         'RequirementsMaintenanceToolStripMenuItem
         '
@@ -141,12 +147,6 @@ Partial Class frmMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(953, 589)
         Me.Panel1.TabIndex = 1
-        '
-        'DepartmentToolStripMenuItem
-        '
-        Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
-        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.DepartmentToolStripMenuItem.Text = "Department"
         '
         'frmMaintenance
         '

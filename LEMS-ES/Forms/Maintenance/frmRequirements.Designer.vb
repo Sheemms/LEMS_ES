@@ -210,7 +210,7 @@ Partial Class frmRequirements
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column2.DataPropertyName = "Requirements"
-        Me.Column2.HeaderText = "School Year"
+        Me.Column2.HeaderText = "Requirements"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         '
@@ -218,10 +218,10 @@ Partial Class frmRequirements
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column3.DataPropertyName = "Status"
-        Me.Column3.HeaderText = "Status"
+        Me.Column3.HeaderText = "Classification Level"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 69
+        Me.Column3.Width = 131
         '
         'frmRequirements
         '

@@ -32,7 +32,7 @@ Public Class ClassStudents
         Try
             Dim dynamicParams As MySqlParameter() = StudentParameters()
             If frmStudentRegistration.idStudent = 0 Then
-                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO student(LRN, Lastname, Firstname, Middlename, Suffix, Gender, Age, Birthday, Address, MotherName, Mother_Occupation, 
                             FatherName, Father_Occupation, GuardianName, GuardianContact, Religion, Citizenship) 
                             VALUES (@LRN, @Lastname, @Firstname, @Middlename, @Suffix, @Gender, @Age, @Birthday, @Address, @MotherName, @Mother_Occupation, 
@@ -40,7 +40,7 @@ Public Class ClassStudents
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do you want to Update?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do you want to Update?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, Middlename=@Middlename, Suffix=@Suffix, Gender=@Gender, Age=@Age
                             Birthday=@Birthday, Address=@Address, MotherName=@MotherName, Mother_Occupation=@Mother_Occupation, FatherName=@FatherName, Father_Occupation=@Father_Occupation, 
                             GuardianName=@GuardianName, GuardianContact=@GuardianContact, Religion=@Religion, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)

@@ -19,13 +19,13 @@ Public Class ClassUserMaintenance
         Try
             Dim dynamicParams As MySqlParameter() = UserMParameters()
             If frmUserMaintenance.idUserMaintenance = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO user(Username, Password, Fullname, UserLevel) 
                             VALUES (@Username, @Password, @Fullname, @UserLevel)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE user SET Username=@Username, Password=@Password, Fullname=@Fullname, UserLevel=@UserLevel", dynamicParams)
                     Success("Successfully Updated!")
                 End If
@@ -52,7 +52,7 @@ Public Class ClassUserMaintenance
     Public Shared Sub UserLevelRef()
         Try
             Dim dynamicParams As MySqlParameter() = UserLevelParameters()
-            If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+            If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
                 Command("INSERT INTO userlevel(userlevel) 
                             VALUES (@userlevel)", dynamicParams)
                 Success("Successfully Added!")

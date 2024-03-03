@@ -6,6 +6,7 @@ Public Class ClassSubject
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmSubjects.idSubj),
+                    New MySqlParameter("@GradeLevel_ID", frmSubjects.cmbGradeLevel.SelectedValue),
                     New MySqlParameter("@SubjectCode", frmSubjects.txtSubjCode.Text),
                     New MySqlParameter("@SubjectName", frmSubjects.txtSubjName.Text)
                 }
@@ -18,20 +19,33 @@ Public Class ClassSubject
         Try
             Dim dynamicParams As MySqlParameter() = SubjectParameters()
             If frmSubjects.idSubj = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
-                    Command("INSERT INTO subject(SubjectCode, SubjectName) VALUES (@SubjectCode, @SubjectName)", dynamicParams)
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("INSERT INTO subject(GradeLevel_ID, SubjectCode, SubjectName) VALUES (@GradeLevel_ID, @SubjectCode, @SubjectName)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
-                    Command("UPDATE subject SET SubjectCode=@SubjectCode, SubjectName=@SubjectName WHERE ID=@ID", dynamicParams)
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("UPDATE subject SET GradeLevel_ID=@GradeLevel_ID, SubjectCode=@SubjectCode, SubjectName=@SubjectName WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If
-                frmSubjects.loadrecords()
+            frmSubjects.loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Subject already exists.")
             Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Shared Sub DeleteRef()
+        Try
+            Dim dynamicParams As MySqlParameter() = SubjectParameters()
+            If MsgBox("Do you want to delete?", vbQuestion + vbYesNo) = vbYes Then
+                Command("DELETE FROM subject WHERE ID=@ID", dynamicParams)
+                Success("Successfully Deleted!")
+            End If
+            frmSubjects.loadrecords()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

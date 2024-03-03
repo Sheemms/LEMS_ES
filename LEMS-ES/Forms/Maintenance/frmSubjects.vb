@@ -3,18 +3,22 @@
     Private Sub frmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
+        clear()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT * FROM subject")
+        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName 
+                FROM subject sub
+                JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID")
         dgvSubject.DataSource = ds.Tables("QueryTb")
 
-        Query("SELECT GradeLevel FROM gradelevel")
+        Query("SELECT * FROM gradelevel")
         cmbGradeLevel.DataSource = ds.Tables("QueryTb")
-        cmbGradeLevel.ValueMember = "GradeLevel"
+        cmbGradeLevel.ValueMember = "ID"
         cmbGradeLevel.DisplayMember = "GradeLevel"
     End Sub
     Public Sub clear()
         idSubj = 0
+        cmbGradeLevel.Text = ""
         txtSubjCode.Clear()
         txtSubjName.Clear()
     End Sub
@@ -22,8 +26,9 @@
         Try
             For Each row As DataGridViewRow In dgvSubject.SelectedRows
                 idSubj = row.Cells(0).Value
-                txtSubjCode.Text = row.Cells(1).Value
-                txtSubjName.Text = row.Cells(2).Value
+                cmbGradeLevel.Text = row.Cells(1).Value
+                txtSubjCode.Text = row.Cells(2).Value
+                txtSubjName.Text = row.Cells(3).Value
             Next
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
@@ -31,6 +36,7 @@
 
     End Sub
     Private Sub btnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
+        If IS_EMPTY(cmbGradeLevel) = True Then Return
         If IS_EMPTY(txtSubjCode) = True Then Return
         If IS_EMPTY(txtSubjName) = True Then Return
 
@@ -43,4 +49,8 @@
         clear()
     End Sub
 
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        ClassSubject.DeleteRef()
+        clear()
+    End Sub
 End Class

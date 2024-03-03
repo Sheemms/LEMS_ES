@@ -17,13 +17,13 @@ Public Class ClassTuition
         Try
             Dim dynamicParams As MySqlParameter() = TuitionParameters()
             If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO tuition(Amount, Classification) 
                             VALUES (@Amount, @Classification)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE tuition SET Amount=@Amount, Classification=@Classification", dynamicParams)
                     Success("Successfully Updated!")
                 End If

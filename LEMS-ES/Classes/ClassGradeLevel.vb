@@ -16,12 +16,12 @@ Public Class ClassGradeLevel
         Try
             Dim dynamicParams As MySqlParameter() = GradeLevelParameters()
             If frmGradeLevel.idGradeLevel = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO gradelevel(GradeLevel) VALUES (@GradeLevel)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) Then
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE gradelevel SET GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
