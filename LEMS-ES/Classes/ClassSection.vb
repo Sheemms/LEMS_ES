@@ -5,6 +5,7 @@ Public Class ClassSection
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmSections.idSection),
+                    New MySqlParameter("@GradeLevel_ID", frmSections.cmbGradeLevel.SelectedValue),
                     New MySqlParameter("@SectionRoom", frmSections.txtSectionName.Text),
                     New MySqlParameter("@Capacity", frmSections.txtSectionCapacity.Text)
                 }
@@ -18,12 +19,12 @@ Public Class ClassSection
             Dim dynamicParams As MySqlParameter() = SectionParameters()
             If frmSections.idSection = 0 Then
                 If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO section(SectionRoom, Capacity) VALUES (@SectionRoom, @Capacity)", dynamicParams)
+                    Command("INSERT INTO section(GradeLevel_ID, SectionRoom, Capacity) VALUES (@GradeLevel_ID, @SectionRoom, @Capacity)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do u want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE section SET SectionRoom=@SectionRoom, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If

@@ -28,9 +28,6 @@ Partial Class frmTuitionFee
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvTuitionFee = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtClassification = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,6 +35,12 @@ Partial Class frmTuitionFee
         Me.btnSaveTuitionFee = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAmount = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvTuitionFee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +90,7 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvTuitionFee.ColumnHeadersHeight = 44
         Me.dgvTuitionFee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvTuitionFee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
+        Me.dgvTuitionFee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -127,33 +130,10 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Amount"
-        Me.Column2.HeaderText = "Amount"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "Classification"
-        Me.Column3.HeaderText = "Classification"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 107
-        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.cmbGradeLevel)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtClassification)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnClearTuitionFee)
@@ -179,7 +159,7 @@ Partial Class frmTuitionFee
         Me.txtClassification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtClassification.ForeColor = System.Drawing.Color.Black
         Me.txtClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtClassification.Location = New System.Drawing.Point(3, 95)
+        Me.txtClassification.Location = New System.Drawing.Point(3, 153)
         Me.txtClassification.Name = "txtClassification"
         Me.txtClassification.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtClassification.PlaceholderText = ""
@@ -190,7 +170,7 @@ Partial Class frmTuitionFee
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 78)
+        Me.Label2.Location = New System.Drawing.Point(3, 136)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 14)
         Me.Label2.TabIndex = 11
@@ -205,7 +185,7 @@ Partial Class frmTuitionFee
         Me.btnClearTuitionFee.FillColor = System.Drawing.Color.Gray
         Me.btnClearTuitionFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTuitionFee.ForeColor = System.Drawing.Color.White
-        Me.btnClearTuitionFee.Location = New System.Drawing.Point(117, 137)
+        Me.btnClearTuitionFee.Location = New System.Drawing.Point(117, 195)
         Me.btnClearTuitionFee.Name = "btnClearTuitionFee"
         Me.btnClearTuitionFee.Size = New System.Drawing.Size(91, 36)
         Me.btnClearTuitionFee.TabIndex = 9
@@ -219,7 +199,7 @@ Partial Class frmTuitionFee
         Me.btnSaveTuitionFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSaveTuitionFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveTuitionFee.ForeColor = System.Drawing.Color.White
-        Me.btnSaveTuitionFee.Location = New System.Drawing.Point(20, 137)
+        Me.btnSaveTuitionFee.Location = New System.Drawing.Point(20, 195)
         Me.btnSaveTuitionFee.Name = "btnSaveTuitionFee"
         Me.btnSaveTuitionFee.Size = New System.Drawing.Size(91, 36)
         Me.btnSaveTuitionFee.TabIndex = 8
@@ -237,7 +217,7 @@ Partial Class frmTuitionFee
         Me.txtAmount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAmount.ForeColor = System.Drawing.Color.Black
         Me.txtAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAmount.Location = New System.Drawing.Point(3, 38)
+        Me.txtAmount.Location = New System.Drawing.Point(3, 96)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAmount.PlaceholderText = ""
@@ -248,11 +228,67 @@ Partial Class frmTuitionFee
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 21)
+        Me.Label1.Location = New System.Drawing.Point(3, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(55, 14)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Amount"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 21)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 14)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Grade Level"
+        '
+        'cmbGradeLevel
+        '
+        Me.cmbGradeLevel.BackColor = System.Drawing.Color.Transparent
+        Me.cmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
+        Me.cmbGradeLevel.ItemHeight = 30
+        Me.cmbGradeLevel.Location = New System.Drawing.Point(3, 38)
+        Me.cmbGradeLevel.Name = "cmbGradeLevel"
+        Me.cmbGradeLevel.Size = New System.Drawing.Size(221, 36)
+        Me.cmbGradeLevel.TabIndex = 14
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "GradeLevel"
+        Me.Column4.HeaderText = "Grade Level"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Amount"
+        Me.Column2.HeaderText = "Amount"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.DataPropertyName = "Classification"
+        Me.Column3.HeaderText = "Classification"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 107
         '
         'frmTuitionFee
         '
@@ -283,7 +319,10 @@ Partial Class frmTuitionFee
     Friend WithEvents Label1 As Label
     Friend WithEvents txtClassification As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents cmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label3 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
 End Class

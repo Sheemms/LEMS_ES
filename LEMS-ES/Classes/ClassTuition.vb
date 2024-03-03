@@ -5,6 +5,7 @@ Public Class ClassTuition
         Try
             Dim tuitionParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmTuitionFee.idTuition),
+                    New MySqlParameter("@GradeLevel_ID", frmTuitionFee.cmbGradeLevel.SelectedValue),
                     New MySqlParameter("@Amount", frmTuitionFee.txtAmount.Text),
                     New MySqlParameter("@Classification", frmTuitionFee.txtClassification.Text)
                 }
@@ -18,13 +19,13 @@ Public Class ClassTuition
             Dim dynamicParams As MySqlParameter() = TuitionParameters()
             If frmTuitionFee.idTuition = 0 Then
                 If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO tuition(Amount, Classification) 
-                            VALUES (@Amount, @Classification)", dynamicParams)
+                    Command("INSERT INTO tuition(GradeLevel_ID, Amount, Classification) 
+                            VALUES (@GradeLevel_ID, @Amount, @Classification)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do u want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE tuition SET Amount=@Amount, Classification=@Classification", dynamicParams)
+                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount, Classification=@Classification", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If

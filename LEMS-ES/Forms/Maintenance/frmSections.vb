@@ -3,13 +3,22 @@
     Private Sub frmSections_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
+        clear()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT * FROM section")
+        Query("SELECT  sec.ID, gl.GradeLevel, sec.SectionRoom, sec.Capacity
+                FROM section sec
+                JOIN gradelevel gl ON sec.GradeLevel_ID = gl.ID")
         dgvSection.DataSource = ds.Tables("QueryTb")
+
+        Query("SELECT * FROM gradelevel")
+        cmbGradeLevel.DataSource = ds.Tables("QueryTb")
+        cmbGradeLevel.ValueMember = "ID"
+        cmbGradeLevel.DisplayMember = "GradeLevel"
     End Sub
     Public Sub clear()
         idSection = 0
+        cmbGradeLevel.Text = ""
         txtSectionName.Clear()
         txtSectionCapacity.Clear()
     End Sub
@@ -18,8 +27,9 @@
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = dgvSection.Rows(e.RowIndex)
                 idSection = row.Cells(0).Value
-                txtSectionName.Text = row.Cells(1).Value
-                txtSectionCapacity.Text = row.Cells(2).Value
+                cmbGradeLevel.Text = row.Cells(1).Value
+                txtSectionName.Text = row.Cells(2).Value
+                txtSectionCapacity.Text = row.Cells(3).Value
             ElseIf e.ColumnIndex >= 0 Then
                 clear()
             End If
@@ -28,6 +38,7 @@
         End Try
     End Sub
     Private Sub btnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
+        If IS_EMPTY(cmbGradeLevel) = True Then Return
         If IS_EMPTY(txtSectionName) = True Then Return
         If IS_EMPTY(txtSectionCapacity) = True Then Return
 
