@@ -30,12 +30,16 @@
         ValidateInput(txtUsername, "Please enter a username")
         ValidateInput(txtPassword, "Please enter a password")
 
+
+
         If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
             Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & txtPassword.Text & "'")
             If ds.Tables("QueryTb").Rows.Count > 0 Then
+                userID = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
                 Success("Login success!")
                 frmDashboard.Show()
                 clear()
+                'LogAction("Logged in")
                 Me.Hide()
                 Exit Sub
             Else

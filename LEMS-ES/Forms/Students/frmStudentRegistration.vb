@@ -4,11 +4,17 @@ Public Class frmStudentRegistration
 
     Private Sub frmStudentRegistration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Connection()
+        loadrecords()
     End Sub
+    Public Sub loadrecords()
+        Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
+                FROM requirements rq
+                JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID")
+        dgvRequirements.DataSource = ds.Tables("QueryTb")
 
+    End Sub
     Public Sub ClearFields()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtLRN, txtLastname, txtFirstname, txtMiddlename, txtSuffix, txtStudentContact,
-    txtAddress, txtMothersName, txtMotherOccup, txtMotherContact, txtFathersName, txtFatherOccup, txtFatherContact, txtPlaceofBirth, txtReligion, txtCitizenship, txtEmailAddress}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtLRN, txtLastname, txtFirstname, txtMiddlename, txtAddress}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
@@ -17,8 +23,10 @@ Public Class frmStudentRegistration
     End Sub
     Public Function GenderSelection() As String
         If cbMale.Checked Then
+            cbFemale.Checked = False
             Return "Male"
         ElseIf cbFemale.Checked Then
+            cbMale.Checked = False
             Return "Female"
         Else
             Return "Not Specified"
@@ -27,8 +35,8 @@ Public Class frmStudentRegistration
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 #Region "IS_EMPTY"
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtLRN, txtLastname, txtFirstname, txtMiddlename, txtSuffix, txtStudentContact,
-    txtAddress, txtMothersName, txtMotherOccup, txtMotherContact, txtFathersName, txtFatherOccup, txtFatherContact, txtPlaceofBirth, txtReligion, txtCitizenship, txtEmailAddress}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtLRN, txtLastname, txtFirstname, txtMiddlename,
+    txtAddress}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             If IS_EMPTY(textBox) Then
                 Return
@@ -46,15 +54,5 @@ Public Class frmStudentRegistration
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ClearFields()
     End Sub
-    Private Sub cbMale_CheckedChanged(sender As Object, e As EventArgs) Handles cbMale.CheckedChanged
-        If cbMale.Checked Then
-            cbFemale.Checked = False
-        End If
-    End Sub
 
-    Private Sub cbFemale_CheckedChanged(sender As Object, e As EventArgs) Handles cbFemale.CheckedChanged
-        If cbFemale.Checked Then
-            cbMale.Checked = False
-        End If
-    End Sub
 End Class

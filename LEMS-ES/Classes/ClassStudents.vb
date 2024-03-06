@@ -9,20 +9,18 @@ Public Class ClassStudents
                     New MySqlParameter("@Lastname", frmStudentRegistration.txtLastname.Text),
                     New MySqlParameter("@Firstname", frmStudentRegistration.txtFirstname.Text),
                     New MySqlParameter("@Middlename", frmStudentRegistration.txtMiddlename.Text),
-                    New MySqlParameter("@Suffix", frmStudentRegistration.txtSuffix.Text),
+                    New MySqlParameter("@Suffix", frmStudentRegistration.cmbSuffix.Text),
                     New MySqlParameter("@Gender", frmStudentRegistration.GenderSelection()),
-                    New MySqlParameter("@Age", frmStudentRegistration.txtAge.Text),
                     New MySqlParameter("@Birthday", frmStudentRegistration.dtpBday.Value),
-                    New MySqlParameter("@Address", frmStudentRegistration.txtAddress.Text),
-                    New MySqlParameter("@MotherName", frmStudentRegistration.txtMothersName.Text),
-                    New MySqlParameter("@Mother_Occupation", frmStudentRegistration.txtMotherOccup.Text),
-                    New MySqlParameter("@FatherName", frmStudentRegistration.txtFathersName.Text),
-                    New MySqlParameter("@Father_Occupation", frmStudentRegistration.txtFatherOccup.Text),
-                    New MySqlParameter("@GuardianName", frmStudentRegistration.txtGuardianName.Text),
-                    New MySqlParameter("@GuardianContact", frmStudentRegistration.txtGuardianContact.Text),
-                    New MySqlParameter("@Religion", frmStudentRegistration.txtReligion.Text),
-                    New MySqlParameter("@Citizenship", frmStudentRegistration.txtCitizenship.Text)
-                }
+                    New MySqlParameter("@Address", frmStudentRegistration.txtAddress.Text)
+                    }
+            'New MySqlParameter("@MotherName", frmStudentRegistration.txtMothersName.Text),
+            'New MySqlParameter("@Mother_Occupation", frmStudentRegistration.txtMotherOccup.Text),
+            'New MySqlParameter("@FatherName", frmStudentRegistration.txtFathersName.Text),
+            'New MySqlParameter("@Father_Occupation", frmStudentRegistration.txtFatherOccup.Text),
+            'New MySqlParameter("@GuardianName", frmStudentRegistration.txtGuardianName.Text),
+            'New MySqlParameter("@GuardianContact", frmStudentRegistration.txtGuardianContact.Text)
+
             Return studParam
         Catch ex As Exception
             Return Nothing
