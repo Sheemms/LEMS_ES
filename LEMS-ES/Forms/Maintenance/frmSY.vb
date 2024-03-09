@@ -10,7 +10,6 @@
     End Sub
     Public Sub clear()
         idSY = 0
-        txtAddSY.Clear()
     End Sub
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSY.CellClick
@@ -35,8 +34,17 @@
         clear()
     End Sub
 
-    Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnClearSY.Click
-        clear()
-    End Sub
+    Function GenerateSchoolYear(startYear As Integer) As String
+        Dim endYear As Integer = startYear + 1
+        Return $"{startYear}-{endYear}"
+    End Function
 
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        clear()
+        Dim currentYear As Integer = DateTime.Now.Year
+        Dim schoolYear As String = GenerateSchoolYear(currentYear)
+
+        ' Set the generated school year in the TextBox
+        txtAddSY.Text = schoolYear
+    End Sub
 End Class

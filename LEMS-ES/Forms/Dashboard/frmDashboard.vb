@@ -108,5 +108,20 @@
 
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
+
+    End Sub
+
+    Private Sub Guna2CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2CirclePictureBox1.Click
+        If PanelSidebar.Visible Then
+            ' Hide the sidebar
+            PanelSidebar.Visible = False
+            ' Expand the main content to fill the entire form
+            Panel3.Width = Me.ClientRectangle.Width
+        Else
+            ' Show the sidebar
+            PanelSidebar.Visible = True
+            ' Shrink the main content to accommodate the sidebar
+            Panel3.Width = Me.ClientRectangle.Width - PanelSidebar.Width
+        End If
     End Sub
 End Class

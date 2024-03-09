@@ -28,6 +28,16 @@ Module Mod_Conn
         cmd.ExecuteNonQuery()
         cmd.Parameters.Clear()
     End Sub
+    Public Function CmdScalar(ByVal ScalarStatement As String)
+        Try
+            cmd = New MySqlCommand(ScalarStatement, con)
+            Dim scalar As Object = cmd.ExecuteScalar()
+            Return scalar
+        Catch ex As Exception
+            MsgBox("Error executing scalar query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
     Sub LogAction(ByVal plog As String)
         Try
             Command("INSERT INTO AuditTrail (UserID, Description) VALUES (@UserID, @Description)",

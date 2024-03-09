@@ -6,6 +6,8 @@ Public Class frmCharts
         StudentsCount()
         TeachersCount()
         EnrolledCount()
+        SectionsCount()
+        ActiveSchoolYear()
         ChartEnrolled()
     End Sub
     Sub StudentsCount()
@@ -23,13 +25,23 @@ Public Class frmCharts
         Dim total As Integer = CInt(cmd.ExecuteScalar())
         lblEnrolled.Text = total.ToString()
     End Sub
+    Sub SectionsCount()
+        Command("SELECT COUNT(*) FROM section")
+        Dim total As Integer = CInt(cmd.ExecuteScalar())
+        lblSections.Text = total.ToString()
+    End Sub
+    Sub ActiveSchoolYear()
+        Command("SELECT SchoolYear FROM schoolyear WHERE Status = 'Open'")
+        Dim total As Integer = CInt(cmd.ExecuteScalar())
+        lblSY.Text = total.ToString()
+    End Sub
     Sub ChartEnrolled()
         With Chart1
             .Series.Clear()
             .Series.Add("Series1")
         End With
 
-        Query("SELECT SchoolYear, COUNT(ID) FROM enrollment group by SchoolYear")
+        Query("SELECT SchoolYear, COUNT(ID) FROM enrollment GROUP BY SchoolYear")
 
         Chart1.DataSource = ds.Tables("SchoolYear")
         Dim series1 As Series = Chart1.Series("Series1")
