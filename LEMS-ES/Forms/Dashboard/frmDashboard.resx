@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Guna2CirclePictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Guna2CirclePictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 3</value>
+  </data>
+  <data name="Guna2CirclePictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 29</value>
+  </data>
+  <data name="Guna2CirclePictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Guna2CirclePictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
   <data name="&gt;&gt;Guna2CirclePictureBox1.Name" xml:space="preserve">
     <value>Guna2CirclePictureBox1</value>
   </data>
@@ -129,11 +147,9 @@
   <data name="&gt;&gt;Guna2CirclePictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Panel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 8.25pt</value>
   </data>
@@ -141,9 +157,8 @@
     <value>0, 0</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1200, 15</value>
+    <value>1200, 38</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -159,179 +174,38 @@
   <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
+  <data name="Guna2CirclePictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Guna2CirclePictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+  <data name="Guna2CirclePictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 84</value>
+  </data>
+  <data name="Guna2CirclePictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Guna2CirclePictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;Guna2CirclePictureBox2.Name" xml:space="preserve">
+    <value>Guna2CirclePictureBox2</value>
+  </data>
+  <data name="&gt;&gt;Guna2CirclePictureBox2.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;Guna2CirclePictureBox2.Parent" xml:space="preserve">
     <value>PanelSidebar</value>
   </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Guna2CirclePictureBox2.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
-    <value>Label5</value>
-  </data>
-  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnLogout.Name" xml:space="preserve">
-    <value>btnLogout</value>
-  </data>
-  <data name="&gt;&gt;btnLogout.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnLogout.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnLogout.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.Name" xml:space="preserve">
-    <value>btnEnrollment</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnMaintenance.Name" xml:space="preserve">
-    <value>btnMaintenance</value>
-  </data>
-  <data name="&gt;&gt;btnMaintenance.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnMaintenance.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnMaintenance.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Name" xml:space="preserve">
-    <value>btnReports</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnReports.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnBilling.Name" xml:space="preserve">
-    <value>btnBilling</value>
-  </data>
-  <data name="&gt;&gt;btnBilling.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnBilling.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnBilling.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.Name" xml:space="preserve">
-    <value>btnTeachers</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.Name" xml:space="preserve">
-    <value>btnStudents</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;btnDashboard.Name" xml:space="preserve">
-    <value>btnDashboard</value>
-  </data>
-  <data name="&gt;&gt;btnDashboard.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnDashboard.Parent" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;btnDashboard.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="PanelSidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="PanelSidebar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 8.25pt</value>
-  </data>
-  <data name="PanelSidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 15</value>
-  </data>
-  <data name="PanelSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 615</value>
-  </data>
-  <data name="PanelSidebar.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PanelSidebar.Name" xml:space="preserve">
-    <value>PanelSidebar</value>
-  </data>
-  <data name="&gt;&gt;PanelSidebar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSidebar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelSidebar.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 541</value>
@@ -355,7 +229,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -388,7 +262,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -418,7 +292,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,7 +322,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnLogout.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -475,7 +349,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnLogout.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnEnrollment.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -502,7 +376,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnEnrollment.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnMaintenance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -529,7 +403,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnMaintenance.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnReports.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -556,7 +430,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnReports.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnBilling.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -583,7 +457,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnBilling.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnTeachers.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -610,7 +484,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnTeachers.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnStudents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -637,7 +511,7 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnStudents.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnDashboard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
@@ -664,34 +538,34 @@
     <value>PanelSidebar</value>
   </data>
   <data name="&gt;&gt;btnDashboard.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, -56</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 84</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.Name" xml:space="preserve">
-    <value>Guna2CirclePictureBox1</value>
+  <data name="PanelSidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
   </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  <data name="PanelSidebar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 8.25pt</value>
   </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.Parent" xml:space="preserve">
-    <value>Panel1</value>
+  <data name="PanelSidebar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 38</value>
   </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="PanelSidebar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 592</value>
+  </data>
+  <data name="PanelSidebar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelSidebar.Name" xml:space="preserve">
+    <value>PanelSidebar</value>
+  </data>
+  <data name="&gt;&gt;PanelSidebar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSidebar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelSidebar.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -700,10 +574,10 @@
     <value>Fill</value>
   </data>
   <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 15</value>
+    <value>247, 38</value>
   </data>
   <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>953, 615</value>
+    <value>953, 592</value>
   </data>
   <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

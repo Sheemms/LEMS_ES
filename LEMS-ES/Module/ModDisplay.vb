@@ -28,7 +28,6 @@
         frmGradeLevel.Close()
         frmRequirements.Close()
         frmSY.Close()
-        frmMiscellaneous.Close()
         frmTuitionFee.Close()
         frmUserMaintenance.Close()
         frmAuditTrail.Close()

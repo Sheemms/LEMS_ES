@@ -53,11 +53,6 @@ Public Class frmMaintenance
             .Show()
         End With
     End Sub
-
-    Private Sub OtherFeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OtherFeeToolStripMenuItem.Click
-        MaintenanceRemovePanel()
-    End Sub
-
     Private Sub TuitionFeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TuitionFeeToolStripMenuItem.Click
         MaintenanceRemovePanel()
         With frmTuitionFee
@@ -84,17 +79,6 @@ Public Class frmMaintenance
         With frmGradeLevel
             .TopLevel = False
             Panel1.Controls.Add(frmGradeLevel)
-            .Dock = DockStyle.Fill
-            .BringToFront()
-            .Show()
-        End With
-    End Sub
-
-    Private Sub MiscellaneousMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MiscellaneousMaintenanceToolStripMenuItem.Click
-        MaintenanceRemovePanel()
-        With frmMiscellaneous
-            .TopLevel = False
-            Panel1.Controls.Add(frmMiscellaneous)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()

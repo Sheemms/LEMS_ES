@@ -31,9 +31,7 @@ Partial Class frmMaintenance
         Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequirementsMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MiscellaneousMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TuitionFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OtherFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -51,7 +49,7 @@ Partial Class frmMaintenance
         '
         'AdminControlsToolStripMenuItem
         '
-        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TeacherMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.SchoolYearMaintenanceToolStripMenuItem, Me.MiscellaneousMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.OtherFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
+        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TeacherMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.SchoolYearMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
         Me.AdminControlsToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
@@ -66,6 +64,7 @@ Partial Class frmMaintenance
         '
         'DepartmentToolStripMenuItem
         '
+        Me.DepartmentToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.subject
         Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
         Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.DepartmentToolStripMenuItem.Text = "Department"
@@ -105,26 +104,12 @@ Partial Class frmMaintenance
         Me.SchoolYearMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.SchoolYearMaintenanceToolStripMenuItem.Text = "School Year Maintenance"
         '
-        'MiscellaneousMaintenanceToolStripMenuItem
-        '
-        Me.MiscellaneousMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.invoice
-        Me.MiscellaneousMaintenanceToolStripMenuItem.Name = "MiscellaneousMaintenanceToolStripMenuItem"
-        Me.MiscellaneousMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.MiscellaneousMaintenanceToolStripMenuItem.Text = "Miscellaneous Maintenance"
-        '
         'TuitionFeeToolStripMenuItem
         '
         Me.TuitionFeeToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.invoice
         Me.TuitionFeeToolStripMenuItem.Name = "TuitionFeeToolStripMenuItem"
         Me.TuitionFeeToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.TuitionFeeToolStripMenuItem.Text = "Tuition Fee"
-        '
-        'OtherFeeToolStripMenuItem
-        '
-        Me.OtherFeeToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.invoice
-        Me.OtherFeeToolStripMenuItem.Name = "OtherFeeToolStripMenuItem"
-        Me.OtherFeeToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.OtherFeeToolStripMenuItem.Text = "Other Fee"
+        Me.TuitionFeeToolStripMenuItem.Text = "School Fees"
         '
         'UserMaintenanceToolStripMenuItem1
         '
@@ -173,11 +158,9 @@ Partial Class frmMaintenance
     Friend WithEvents SectionMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RequirementsMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SchoolYearMaintenanceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MiscellaneousMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TuitionFeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AuditTrailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents OtherFeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UserMaintenanceToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GradeLevelMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TeacherMaintenanceToolStripMenuItem As ToolStripMenuItem

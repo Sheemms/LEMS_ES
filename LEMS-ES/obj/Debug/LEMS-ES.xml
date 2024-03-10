@@ -32,6 +32,11 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:LEMS_ES.My.Resources.Resources.bars">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:LEMS_ES.My.Resources.Resources.calendar">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

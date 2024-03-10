@@ -201,12 +201,6 @@
     <Compile Include="Forms\Maintenance\frmMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Maintenance\frmMiscellaneous.Designer.vb">
-      <DependentUpon>frmMiscellaneous.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Maintenance\frmMiscellaneous.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\frmReports.Designer.vb">
       <DependentUpon>frmReports.vb</DependentUpon>
     </Compile>
@@ -273,10 +267,10 @@
     <Compile Include="Forms\Transaction\frmPayment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Tuition Fee\frmTuitionFee.Designer.vb">
+    <Compile Include="Forms\School Fee\frmTuitionFee.Designer.vb">
       <DependentUpon>frmTuitionFee.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Tuition Fee\frmTuitionFee.vb">
+    <Compile Include="Forms\School Fee\frmTuitionFee.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User Maintenance\frmAddUserLevel.Designer.vb">
@@ -345,9 +339,6 @@
     <EmbeddedResource Include="Forms\Maintenance\frmMaintenance.resx">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Maintenance\frmMiscellaneous.resx">
-      <DependentUpon>frmMiscellaneous.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReports.resx">
       <DependentUpon>frmReports.vb</DependentUpon>
     </EmbeddedResource>
@@ -381,7 +372,7 @@
     <EmbeddedResource Include="Forms\Transaction\frmPayment.resx">
       <DependentUpon>frmPayment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Tuition Fee\frmTuitionFee.resx">
+    <EmbeddedResource Include="Forms\School Fee\frmTuitionFee.resx">
       <DependentUpon>frmTuitionFee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Maintenance\frmAddUserLevel.resx">
@@ -496,6 +487,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bars.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

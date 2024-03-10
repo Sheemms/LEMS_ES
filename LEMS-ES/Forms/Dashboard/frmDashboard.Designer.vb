@@ -30,6 +30,9 @@ Partial Class frmDashboard
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEnrollment = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMaintenance = New Guna.UI2.WinForms.Guna2Button()
@@ -39,10 +42,9 @@ Partial Class frmDashboard
         Me.btnStudents = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.PanelSidebar.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,6 +58,7 @@ Partial Class frmDashboard
         'PanelSidebar
         '
         Me.PanelSidebar.BackColor = System.Drawing.Color.White
+        Me.PanelSidebar.Controls.Add(Me.Guna2CirclePictureBox2)
         Me.PanelSidebar.Controls.Add(Me.Label1)
         Me.PanelSidebar.Controls.Add(Me.Label5)
         Me.PanelSidebar.Controls.Add(Me.Label4)
@@ -90,6 +93,25 @@ Partial Class frmDashboard
         '
         resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
+        '
+        'Timer1
+        '
+        '
+        'Panel3
+        '
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
+        'Guna2CirclePictureBox2
+        '
+        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.DimGray
+        Me.Guna2CirclePictureBox2.Image = Global.LEMS_ES.My.Resources.Resources._301880572_513192177473445_977701946028615649_n
+        Me.Guna2CirclePictureBox2.ImageRotate = 0!
+        resources.ApplyResources(Me.Guna2CirclePictureBox2, "Guna2CirclePictureBox2")
+        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
+        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox2.TabStop = False
         '
         'btnLogout
         '
@@ -206,20 +228,12 @@ Partial Class frmDashboard
         '
         Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2CirclePictureBox1.Image = Global.LEMS_ES.My.Resources.Resources._301880572_513192177473445_977701946028615649_n
+        Me.Guna2CirclePictureBox1.Image = Global.LEMS_ES.My.Resources.Resources.bars
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
         resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.TabStop = False
-        '
-        'Timer1
-        '
-        '
-        'Panel3
-        '
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
         '
         'frmDashboard
         '
@@ -234,6 +248,7 @@ Partial Class frmDashboard
         Me.Panel1.ResumeLayout(False)
         Me.PanelSidebar.ResumeLayout(False)
         Me.PanelSidebar.PerformLayout()
+        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -256,4 +271,5 @@ Partial Class frmDashboard
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
 End Class
