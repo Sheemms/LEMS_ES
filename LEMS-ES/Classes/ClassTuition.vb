@@ -16,16 +16,15 @@ Public Class ClassTuition
     End Function
     Public Shared Sub TuitionRef()
         Try
-            Dim dynamicParams As MySqlParameter() = TuitionParameters()
             If frmTuitionFee.idTuition = 0 Then
                 If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO tuition(GradeLevel_ID, Amount, Classification) 
-                            VALUES (@GradeLevel_ID, @Amount, @Classification)", dynamicParams)
+                            VALUES (@GradeLevel_ID, @Amount, @Classification)", TuitionParameters())
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do u want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount, Classification=@Classification", dynamicParams)
+                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount, Classification=@Classification", TuitionParameters)
                     Success("Successfully Updated!")
                 End If
             End If
@@ -50,16 +49,16 @@ Public Class ClassTuition
     End Function
     Public Shared Sub MiscellaneousRef()
         Try
-            Dim dynamicParams As MySqlParameter() = MiscellaneousParameters()
-            If frmTuitionFee.idMiscellaneous = 0 Then
-                If MsgBox("Do u want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO miscellaneous(M_Amount) 
-                            VALUES (@M_Amount)", dynamicParams)
+            Dim existingCount As Integer = CInt(CmdScalar("SELECT COUNT(*) FROM miscellaneous"))
+
+            If existingCount = 0 Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("INSERT INTO miscellaneous(M_Amount) VALUES (@M_Amount)", MiscellaneousParameters())
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE miscellaneous SET M_Amount=@M_Amount", dynamicParams)
+                If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("UPDATE miscellaneous SET M_Amount=@M_Amount", MiscellaneousParameters())
                     Success("Successfully Updated!")
                 End If
             End If
@@ -68,6 +67,7 @@ Public Class ClassTuition
             MsgBox(ex.Message)
         End Try
     End Sub
+
 #End Region
 #Region "OtherFeeParameters"
     Public Shared Function OtherFeeParameters() As MySqlParameter()
@@ -83,19 +83,20 @@ Public Class ClassTuition
     End Function
     Public Shared Sub OtherFeeRef()
         Try
-            Dim dynamicParams As MySqlParameter() = OtherFeeParameters()
-            If frmTuitionFee.idOtherFee = 0 Then
-                If MsgBox("Do u want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO otherfee(OF_Amount) 
-                            VALUES (@OF_Amount)", dynamicParams)
+            Dim existingCount As Integer = CInt(CmdScalar("SELECT COUNT(*) FROM otherfee"))
+
+            If existingCount = 0 Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("INSERT INTO otherfee(OF_Amount) VALUES (@OF_Amount)", OtherFeeParameters())
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE otherfee SET OF_Amount=@OF_Amount", dynamicParams)
+                If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("UPDATE otherfee SET OF_Amount=@OF_Amount", OtherFeeParameters())
                     Success("Successfully Updated!")
                 End If
             End If
+
             frmTuitionFee.loadrecords()
         Catch ex As Exception
             MsgBox(ex.Message)
