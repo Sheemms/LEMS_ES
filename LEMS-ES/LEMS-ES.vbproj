@@ -158,6 +158,12 @@
     <Compile Include="Forms\Enrollment\frmEnrollmentRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Enrollment\frmEnrollmentReport.Designer.vb">
+      <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enrollment\frmEnrollmentReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmBilling.Designer.vb">
       <DependentUpon>frmBilling.vb</DependentUpon>
     </Compile>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentRegistration.resx">
       <DependentUpon>frmEnrollmentRegistration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentReport.resx">
+      <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBilling.resx">
       <DependentUpon>frmBilling.vb</DependentUpon>

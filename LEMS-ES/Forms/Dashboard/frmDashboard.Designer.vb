@@ -25,14 +25,13 @@ Partial Class frmDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.PanelSidebar = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEnrollment = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMaintenance = New Guna.UI2.WinForms.Guna2Button()
@@ -41,19 +40,31 @@ Partial Class frmDashboard
         Me.btnTeachers = New Guna.UI2.WinForms.Guna2Button()
         Me.btnStudents = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSidebar.SuspendLayout()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(254, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Guna2CirclePictureBox1)
         resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.DimGray
+        Me.Guna2CirclePictureBox1.Image = Global.LEMS_ES.My.Resources.Resources.bars
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.TabStop = False
         '
         'PanelSidebar
         '
@@ -74,6 +85,17 @@ Partial Class frmDashboard
         resources.ApplyResources(Me.PanelSidebar, "PanelSidebar")
         Me.PanelSidebar.Name = "PanelSidebar"
         '
+        'Guna2CirclePictureBox2
+        '
+        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.DimGray
+        Me.Guna2CirclePictureBox2.Image = Global.LEMS_ES.My.Resources.Resources._301880572_513192177473445_977701946028615649_n
+        Me.Guna2CirclePictureBox2.ImageRotate = 0!
+        resources.ApplyResources(Me.Guna2CirclePictureBox2, "Guna2CirclePictureBox2")
+        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
+        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox2.TabStop = False
+        '
         'Label1
         '
         resources.ApplyResources(Me.Label1, "Label1")
@@ -93,25 +115,6 @@ Partial Class frmDashboard
         '
         resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        '
-        'Timer1
-        '
-        '
-        'Panel3
-        '
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
-        '
-        'Guna2CirclePictureBox2
-        '
-        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2CirclePictureBox2.Image = Global.LEMS_ES.My.Resources.Resources._301880572_513192177473445_977701946028615649_n
-        Me.Guna2CirclePictureBox2.ImageRotate = 0!
-        resources.ApplyResources(Me.Guna2CirclePictureBox2, "Guna2CirclePictureBox2")
-        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
-        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox2.TabStop = False
         '
         'btnLogout
         '
@@ -224,16 +227,13 @@ Partial Class frmDashboard
         Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDashboard.Name = "btnDashboard"
         '
-        'Guna2CirclePictureBox1
+        'Timer1
         '
-        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2CirclePictureBox1.Image = Global.LEMS_ES.My.Resources.Resources.bars
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.TabStop = False
+        '
+        'Panel3
+        '
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
         '
         'frmDashboard
         '
@@ -246,10 +246,10 @@ Partial Class frmDashboard
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDashboard"
         Me.Panel1.ResumeLayout(False)
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSidebar.ResumeLayout(False)
         Me.PanelSidebar.PerformLayout()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

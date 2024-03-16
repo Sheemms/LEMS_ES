@@ -550,7 +550,7 @@
     <value>0, 38</value>
   </data>
   <data name="PanelSidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 592</value>
+    <value>247, 612</value>
   </data>
   <data name="PanelSidebar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -577,7 +577,7 @@
     <value>247, 38</value>
   </data>
   <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>953, 592</value>
+    <value>953, 612</value>
   </data>
   <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -601,10 +601,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1200, 630</value>
+    <value>1200, 650</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Constantia, 8.25pt</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
