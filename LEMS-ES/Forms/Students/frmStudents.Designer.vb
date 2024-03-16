@@ -151,6 +151,7 @@ Partial Class frmStudents
         Me.Column1.HeaderText = "ID"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
         '
         'Column16
         '

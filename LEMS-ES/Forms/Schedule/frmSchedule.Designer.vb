@@ -27,7 +27,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbSection = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -36,7 +36,7 @@ Partial Class frmSchedule
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Guna2ComboBox4 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cmbSubjCode = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Guna2TextBox4 = New Guna.UI2.WinForms.Guna2TextBox()
@@ -86,7 +86,7 @@ Partial Class frmSchedule
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Guna2TextBox4)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Guna2ComboBox4)
+        Me.Panel1.Controls.Add(Me.cmbSubjCode)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Guna2TextBox3)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -96,7 +96,7 @@ Partial Class frmSchedule
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.cmbGradeLevel)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Guna2ComboBox1)
+        Me.Panel1.Controls.Add(Me.cmbDepartment)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Guna2TextBox1)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -117,6 +117,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox1.Location = New System.Drawing.Point(98, 14)
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
@@ -146,20 +147,20 @@ Partial Class frmSchedule
         Me.Label2.Text = "Department"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Guna2ComboBox1
+        'cmbDepartment
         '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(98, 56)
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2ComboBox1.TabIndex = 3
+        Me.cmbDepartment.BackColor = System.Drawing.Color.Transparent
+        Me.cmbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDepartment.ForeColor = System.Drawing.Color.Black
+        Me.cmbDepartment.ItemHeight = 30
+        Me.cmbDepartment.Location = New System.Drawing.Point(98, 56)
+        Me.cmbDepartment.Name = "cmbDepartment"
+        Me.cmbDepartment.Size = New System.Drawing.Size(200, 36)
+        Me.cmbDepartment.TabIndex = 3
         '
         'cmbGradeLevel
         '
@@ -169,7 +170,7 @@ Partial Class frmSchedule
         Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
         Me.cmbGradeLevel.ItemHeight = 30
         Me.cmbGradeLevel.Location = New System.Drawing.Point(98, 98)
         Me.cmbGradeLevel.Name = "cmbGradeLevel"
@@ -194,7 +195,7 @@ Partial Class frmSchedule
         Me.cmbSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbSection.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbSection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmbSection.ForeColor = System.Drawing.Color.Black
         Me.cmbSection.ItemHeight = 30
         Me.cmbSection.Location = New System.Drawing.Point(98, 140)
         Me.cmbSection.Name = "cmbSection"
@@ -221,6 +222,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox2.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox2.Location = New System.Drawing.Point(398, 14)
         Me.Guna2TextBox2.Name = "Guna2TextBox2"
@@ -250,6 +252,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox3.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox3.Location = New System.Drawing.Point(398, 56)
         Me.Guna2TextBox3.Name = "Guna2TextBox3"
@@ -269,20 +272,20 @@ Partial Class frmSchedule
         Me.Label6.Text = "Adviser"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Guna2ComboBox4
+        'cmbSubjCode
         '
-        Me.Guna2ComboBox4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox4.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Guna2ComboBox4.ItemHeight = 30
-        Me.Guna2ComboBox4.Location = New System.Drawing.Point(398, 98)
-        Me.Guna2ComboBox4.Name = "Guna2ComboBox4"
-        Me.Guna2ComboBox4.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2ComboBox4.TabIndex = 13
+        Me.cmbSubjCode.BackColor = System.Drawing.Color.Transparent
+        Me.cmbSubjCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbSubjCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSubjCode.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbSubjCode.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbSubjCode.ForeColor = System.Drawing.Color.Black
+        Me.cmbSubjCode.ItemHeight = 30
+        Me.cmbSubjCode.Location = New System.Drawing.Point(398, 98)
+        Me.cmbSubjCode.Name = "cmbSubjCode"
+        Me.cmbSubjCode.Size = New System.Drawing.Size(200, 36)
+        Me.cmbSubjCode.TabIndex = 13
         '
         'Label7
         '
@@ -316,6 +319,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox4.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox4.Location = New System.Drawing.Point(398, 140)
         Me.Guna2TextBox4.Name = "Guna2TextBox4"
@@ -410,6 +414,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox5.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox5.Location = New System.Drawing.Point(715, 56)
         Me.Guna2TextBox5.Name = "Guna2TextBox5"
@@ -429,6 +434,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox6.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox6.Location = New System.Drawing.Point(921, 56)
         Me.Guna2TextBox6.Name = "Guna2TextBox6"
@@ -448,6 +454,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox7.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox7.Location = New System.Drawing.Point(715, 98)
         Me.Guna2TextBox7.Name = "Guna2TextBox7"
@@ -477,6 +484,7 @@ Partial Class frmSchedule
         Me.Guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox8.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox8.Location = New System.Drawing.Point(921, 98)
         Me.Guna2TextBox8.Name = "Guna2TextBox8"
@@ -532,7 +540,7 @@ Partial Class frmSchedule
     Friend WithEvents Label9 As Label
     Friend WithEvents Guna2TextBox4 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents Guna2ComboBox4 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cmbSubjCode As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Guna2TextBox3 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
@@ -542,6 +550,6 @@ Partial Class frmSchedule
     Friend WithEvents Label4 As Label
     Friend WithEvents cmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cmbDepartment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label2 As Label
 End Class

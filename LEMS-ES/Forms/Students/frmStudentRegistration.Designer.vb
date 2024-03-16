@@ -29,10 +29,6 @@ Partial Class frmStudentRegistration
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gbRequirements = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.dgvRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.cbFemale = New System.Windows.Forms.RadioButton()
         Me.cbMale = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -52,6 +48,10 @@ Partial Class frmStudentRegistration
         Me.txtMiddlename = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtLastname = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCheckBoxReq = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GBStudentRegistration.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gbRequirements.SuspendLayout()
@@ -134,7 +134,7 @@ Partial Class frmStudentRegistration
         Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvRequirements.ColumnHeadersHeight = 44
         Me.dgvRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column2, Me.Column3, Me.colCheckBoxReq})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -148,7 +148,6 @@ Partial Class frmStudentRegistration
         Me.dgvRequirements.Location = New System.Drawing.Point(0, 40)
         Me.dgvRequirements.MultiSelect = False
         Me.dgvRequirements.Name = "dgvRequirements"
-        Me.dgvRequirements.ReadOnly = True
         Me.dgvRequirements.RowHeadersVisible = False
         Me.dgvRequirements.Size = New System.Drawing.Size(453, 255)
         Me.dgvRequirements.TabIndex = 3
@@ -165,7 +164,7 @@ Partial Class frmStudentRegistration
         Me.dgvRequirements.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgvRequirements.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvRequirements.ThemeStyle.HeaderStyle.Height = 44
-        Me.dgvRequirements.ThemeStyle.ReadOnly = True
+        Me.dgvRequirements.ThemeStyle.ReadOnly = False
         Me.dgvRequirements.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvRequirements.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvRequirements.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -173,39 +172,6 @@ Partial Class frmStudentRegistration
         Me.dgvRequirements.ThemeStyle.RowsStyle.Height = 22
         Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.DataPropertyName = "Classification"
-        Me.Column2.HeaderText = "Classification"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 115
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.DataPropertyName = "Requirement"
-        Me.Column3.HeaderText = "Requirements"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.HeaderText = ""
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 5
         '
         'cbFemale
         '
@@ -281,9 +247,9 @@ Partial Class frmStudentRegistration
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(6, 142)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 17)
+        Me.Label7.Size = New System.Drawing.Size(160, 17)
         Me.Label7.TabIndex = 67
-        Me.Label7.Text = "Middle Name (Optional)"
+        Me.Label7.Text = "Middle Initial (Optional)"
         '
         'Label5
         '
@@ -330,7 +296,7 @@ Partial Class frmStudentRegistration
         Me.btnClear.FillColor = System.Drawing.Color.Gray
         Me.btnClear.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(233, 436)
+        Me.btnClear.Location = New System.Drawing.Point(233, 473)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(91, 36)
         Me.btnClear.TabIndex = 27
@@ -344,7 +310,7 @@ Partial Class frmStudentRegistration
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(136, 436)
+        Me.btnSave.Location = New System.Drawing.Point(136, 473)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(91, 36)
         Me.btnSave.TabIndex = 26
@@ -491,6 +457,35 @@ Partial Class frmStudentRegistration
         Me.txtLastname.Size = New System.Drawing.Size(222, 36)
         Me.txtLastname.TabIndex = 4
         '
+        'colID
+        '
+        Me.colID.DataPropertyName = "ID"
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.DataPropertyName = "Classification"
+        Me.Column2.HeaderText = "Classification"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 115
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "Requirement"
+        Me.Column3.HeaderText = "Requirements"
+        Me.Column3.Name = "Column3"
+        '
+        'colCheckBoxReq
+        '
+        Me.colCheckBoxReq.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colCheckBoxReq.HeaderText = ""
+        Me.colCheckBoxReq.Name = "colCheckBoxReq"
+        Me.colCheckBoxReq.Width = 5
+        '
         'frmStudentRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -533,8 +528,8 @@ Partial Class frmStudentRegistration
     Friend WithEvents Label2 As Label
     Friend WithEvents gbRequirements As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents dgvRequirements As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewCheckBoxColumn
+    Friend WithEvents colCheckBoxReq As DataGridViewCheckBoxColumn
 End Class

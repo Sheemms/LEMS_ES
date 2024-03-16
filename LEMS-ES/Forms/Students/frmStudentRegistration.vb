@@ -48,8 +48,8 @@ Public Class frmStudentRegistration
         End If
 #End Region
 
-        ClassStudents.StudentRef()
-
+        ClassStudents.StudentRef(Me)
+        'ClearFields()
     End Sub
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ClearFields()

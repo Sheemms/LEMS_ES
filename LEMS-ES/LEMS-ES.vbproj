@@ -219,6 +219,12 @@
     <Compile Include="Forms\Maintenance\frmSections.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Schedule\frmSchedule.Designer.vb">
+      <DependentUpon>frmSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Schedule\frmSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Students\frmStudentRegistration.Designer.vb">
       <DependentUpon>frmStudentRegistration.vb</DependentUpon>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\frmSections.resx">
       <DependentUpon>frmSections.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Schedule\frmSchedule.resx">
+      <DependentUpon>frmSchedule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\frmStudentRegistration.resx">
       <DependentUpon>frmStudentRegistration.vb</DependentUpon>
@@ -490,6 +499,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
