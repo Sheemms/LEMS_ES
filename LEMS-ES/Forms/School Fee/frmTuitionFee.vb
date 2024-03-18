@@ -2,6 +2,8 @@
     Public idTuition As Integer = 0
     Public idMiscellaneous As Integer = 0
     Public idOtherFee As Integer = 0
+    Public idMOP As Integer = 0
+    Public idTOP As Integer = 0
     Private Sub frmTuitionFee_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
@@ -23,6 +25,12 @@
 
         Query("SELECT * FROM otherfee")
         dgvOtherFee.DataSource = ds.Tables("QueryTb")
+
+        Query("SELECT * FROM mop")
+        dgvMOP.DataSource = ds.Tables("QueryTb")
+
+        Query("SELECT * FROM top")
+        dgvTOP.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub clear()
         idTuition = 0
@@ -35,6 +43,9 @@
 
         idOtherFee = 0
         txtAmountOtherFee.Clear()
+
+        idMOP = 0
+        txtMOP.Clear()
     End Sub
 
     Private Sub dgvTuitionFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTuitionFee.CellClick
@@ -61,7 +72,7 @@
         clear()
     End Sub
 
-    Private Sub btnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearTuitionFee.Click, btnClearMiscellaneousFee.Click, btnClearOtherFee.Click
+    Private Sub btnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearTuitionFee.Click, btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
         clear()
     End Sub
 
@@ -76,6 +87,20 @@
         If IS_EMPTY(txtAmountOtherFee) Then Return
 
         ClassTuition.OtherFeeRef()
+        clear()
+    End Sub
+
+    Private Sub btnMOP_Click(sender As Object, e As EventArgs) Handles btnMOP.Click
+        If IS_EMPTY(txtMOP) Then Return
+
+        ClassTuition.MoPRef()
+        clear()
+    End Sub
+
+    Private Sub btnTOP_Click(sender As Object, e As EventArgs) Handles btnTOP.Click
+        If IS_EMPTY(txtTOP) Then Return
+
+        ClassTuition.ToPRef()
         clear()
     End Sub
 End Class

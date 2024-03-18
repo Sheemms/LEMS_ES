@@ -34,7 +34,7 @@
             For Each row As DataGridViewRow In dgvTeacher.SelectedRows
                 idTeacher = row.Cells(0).Value
                 txtEmpID.Text = row.Cells(1).Value
-                cmbDept.SelectedValue = row.Cells(2).Value
+                cmbDept.Text = row.Cells(2).Value
                 Dim fullName As String = row.Cells(3).Value.ToString()
                 Dim names() As String = fullName.Split(" "c)
                 If names.Length >= 1 Then txtLastname.Text = names(0)

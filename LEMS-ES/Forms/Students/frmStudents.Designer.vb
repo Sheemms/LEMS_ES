@@ -31,7 +31,7 @@ Partial Class frmStudents
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFirstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,8 +47,6 @@ Partial Class frmStudents
         Me.colFatherOcc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudType = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -106,7 +104,7 @@ Partial Class frmStudents
         Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvStudents.ColumnHeadersHeight = 44
         Me.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.colLRN, Me.colLastname, Me.colFirstname, Me.colMName, Me.colSuffix, Me.colGender, Me.colAge, Me.colBday, Me.colAddress, Me.colMother, Me.colMotherOcc, Me.colFather, Me.colFatherOcc, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.colStudType})
+        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colLRN, Me.colLastname, Me.colFirstname, Me.colMName, Me.colSuffix, Me.colGender, Me.colAge, Me.colBday, Me.colAddress, Me.colMother, Me.colMotherOcc, Me.colFather, Me.colFatherOcc, Me.Column10, Me.Column11, Me.Column14, Me.Column15, Me.colStudType})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -145,13 +143,13 @@ Partial Class frmStudents
         Me.dgvStudents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvStudents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column1
+        'colID
         '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
+        Me.colID.DataPropertyName = "ID"
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.ReadOnly = True
+        Me.colID.Visible = False
         '
         'colLRN
         '
@@ -214,6 +212,7 @@ Partial Class frmStudents
         Me.colAge.HeaderText = "Age"
         Me.colAge.Name = "colAge"
         Me.colAge.ReadOnly = True
+        Me.colAge.Visible = False
         Me.colAge.Width = 52
         '
         'colBday
@@ -241,6 +240,7 @@ Partial Class frmStudents
         Me.colMother.HeaderText = "Mother Name"
         Me.colMother.Name = "colMother"
         Me.colMother.ReadOnly = True
+        Me.colMother.Visible = False
         Me.colMother.Width = 99
         '
         'colMotherOcc
@@ -250,6 +250,7 @@ Partial Class frmStudents
         Me.colMotherOcc.HeaderText = "Mother Occupation"
         Me.colMotherOcc.Name = "colMotherOcc"
         Me.colMotherOcc.ReadOnly = True
+        Me.colMotherOcc.Visible = False
         Me.colMotherOcc.Width = 128
         '
         'colFather
@@ -259,6 +260,7 @@ Partial Class frmStudents
         Me.colFather.HeaderText = "Father Name"
         Me.colFather.Name = "colFather"
         Me.colFather.ReadOnly = True
+        Me.colFather.Visible = False
         Me.colFather.Width = 97
         '
         'colFatherOcc
@@ -268,6 +270,7 @@ Partial Class frmStudents
         Me.colFatherOcc.HeaderText = "Father's Occupation"
         Me.colFatherOcc.Name = "colFatherOcc"
         Me.colFatherOcc.ReadOnly = True
+        Me.colFatherOcc.Visible = False
         Me.colFatherOcc.Width = 132
         '
         'Column10
@@ -277,6 +280,7 @@ Partial Class frmStudents
         Me.Column10.HeaderText = "Guardian Name"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
+        Me.Column10.Visible = False
         Me.Column10.Width = 112
         '
         'Column11
@@ -286,25 +290,8 @@ Partial Class frmStudents
         Me.Column11.HeaderText = "Guardian Contact"
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
+        Me.Column11.Visible = False
         Me.Column11.Width = 122
-        '
-        'Column12
-        '
-        Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column12.DataPropertyName = "Religion"
-        Me.Column12.HeaderText = "Religion"
-        Me.Column12.Name = "Column12"
-        Me.Column12.ReadOnly = True
-        Me.Column12.Width = 77
-        '
-        'Column13
-        '
-        Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column13.DataPropertyName = "Citizenship"
-        Me.Column13.HeaderText = "Citizenship"
-        Me.Column13.Name = "Column13"
-        Me.Column13.ReadOnly = True
-        Me.Column13.Width = 94
         '
         'Column14
         '
@@ -313,6 +300,7 @@ Partial Class frmStudents
         Me.Column14.HeaderText = "Classification"
         Me.Column14.Name = "Column14"
         Me.Column14.ReadOnly = True
+        Me.Column14.Visible = False
         Me.Column14.Width = 107
         '
         'Column15
@@ -322,6 +310,7 @@ Partial Class frmStudents
         Me.Column15.HeaderText = "Status"
         Me.Column15.Name = "Column15"
         Me.Column15.ReadOnly = True
+        Me.Column15.Visible = False
         Me.Column15.Width = 67
         '
         'colStudType
@@ -330,6 +319,7 @@ Partial Class frmStudents
         Me.colStudType.HeaderText = "Student Type"
         Me.colStudType.Name = "colStudType"
         Me.colStudType.ReadOnly = True
+        Me.colStudType.Visible = False
         Me.colStudType.Width = 99
         '
         'frmStudents
@@ -356,7 +346,7 @@ Partial Class frmStudents
     Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents dgvStudents As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colLRN As DataGridViewTextBoxColumn
     Friend WithEvents colLastname As DataGridViewTextBoxColumn
     Friend WithEvents colFirstname As DataGridViewTextBoxColumn
@@ -372,8 +362,6 @@ Partial Class frmStudents
     Friend WithEvents colFatherOcc As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column14 As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents colStudType As DataGridViewTextBoxColumn
