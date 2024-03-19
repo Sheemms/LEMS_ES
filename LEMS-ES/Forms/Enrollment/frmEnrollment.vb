@@ -8,4 +8,7 @@
         dgvSY.DataSource = ds.Tables("QueryTb")
     End Sub
 
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        frmEnrollmentRegistration.Show()
+    End Sub
 End Class
