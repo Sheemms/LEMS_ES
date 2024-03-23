@@ -8,7 +8,7 @@
     End Sub
     Public Sub loadrecords()
         Query("SELECT t.ID, t.EmpID, d.Department, CONCAT(t.Lastname, ', ', t.Firstname, ' ', t.MiddleInitial) AS Fullname, 
-                t.Birthday, t.Contact, t.Address 
+                t.Contact, t.Address 
                 FROM teacher t
                 JOIN department d ON t.Department_ID = d.ID")
         dgvTeacher.DataSource = ds.Tables("QueryTb")
@@ -25,7 +25,6 @@
         txtLastname.Clear()
         txtFirstname.Clear()
         txtMiddleInitial.Clear()
-        txtBday.Clear()
         txtContact.Clear()
         txtAddress.Clear()
     End Sub
@@ -36,13 +35,17 @@
                 txtEmpID.Text = row.Cells(1).Value
                 cmbDept.Text = row.Cells(2).Value
                 Dim fullName As String = row.Cells(3).Value.ToString()
-                Dim names() As String = fullName.Split(" "c)
+                Dim names() As String = fullName.Split(","c)
                 If names.Length >= 1 Then txtLastname.Text = names(0)
-                If names.Length >= 2 Then txtFirstname.Text = names(1)
-                If names.Length >= 3 Then txtMiddleInitial.Text = names(2)
-                txtBday.Text = row.Cells(4).Value
-                txtContact.Text = row.Cells(5).Value
-                txtAddress.Text = row.Cells(6).Value
+                If names.Length >= 2 Then
+                    Dim firstNameAndInitial() As String = names(1).Trim().Split(" "c)
+                    txtFirstname.Text = firstNameAndInitial(0)
+                    If firstNameAndInitial.Length >= 2 Then
+                        txtMiddleInitial.Text = firstNameAndInitial(1)
+                    End If
+                End If
+                txtContact.Text = row.Cells(4).Value
+                txtAddress.Text = row.Cells(5).Value
             Next
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
@@ -57,7 +60,6 @@
         If IS_EMPTY(txtLastname) = True Then Return
         If IS_EMPTY(txtFirstname) = True Then Return
         If IS_EMPTY(txtMiddleInitial) = True Then Return
-        If IS_EMPTY(txtBday) = True Then Return
         If IS_EMPTY(txtContact) = True Then Return
         If IS_EMPTY(txtAddress) = True Then Return
 #End Region
@@ -66,7 +68,20 @@
         clear()
     End Sub
 
-    Private Sub btnClearUserMaintenance_Click(sender As Object, e As EventArgs) Handles btnClearUserMaintenance.Click
+    Private Sub btnClearUserMaintenance_Click(sender As Object, e As EventArgs)
         clear()
     End Sub
+
+#Region "TextBoxValidation"
+    Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtLastname.KeyPress, txtMiddleInitial.KeyPress
+        TextBoxOnlyLetters(txtFirstname)
+        TextBoxOnlyLetters(txtLastname)
+        TextBoxOnlyLetters(txtMiddleInitial)
+    End Sub
+
+    Private Sub txtEmpID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpID.KeyPress, txtContact.KeyPress
+        TextBoxDigitsOnly(txtEmpID)
+        TextBoxDigitsOnly(txtContact)
+    End Sub
+#End Region
 End Class

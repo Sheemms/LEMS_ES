@@ -40,8 +40,10 @@
         clear()
     End Sub
 
-    Private Sub btnCancelSY_Click(sender As Object, e As EventArgs) Handles btnCancelSY.Click
-        clear()
-    End Sub
 
+    Private Sub txtAddGradeLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddGradeLevel.KeyPress
+        If e.KeyChar = "0"c AndAlso txtAddGradeLevel.TextLength = 0 Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

@@ -46,9 +46,11 @@
         clear()
     End Sub
 
-    Private Sub btnClearSubject_Click(sender As Object, e As EventArgs) Handles btnClearSubject.Click
-        clear()
+    Private Sub txtSectionCapacity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionCapacity.KeyPress
+        TextBoxDigitsOnly(txtSectionCapacity)
     End Sub
 
-
+    Private Sub txtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionName.KeyPress
+        TextBoxOnlyLetters(txtSectionName)
+    End Sub
 End Class

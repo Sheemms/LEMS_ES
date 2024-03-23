@@ -10,7 +10,7 @@
         clear()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT tf.ID, gl.GradeLevel, tf.Amount, tf.Classification
+        Query("SELECT tf.ID, gl.GradeLevel, tf.Amount
                 FROM tuition tf
                 JOIN gradelevel gl ON tf.GradeLevel_ID = gl.ID")
         dgvTuitionFee.DataSource = ds.Tables("QueryTb")
@@ -36,7 +36,6 @@
         idTuition = 0
         cmbGradeLevel.Text = ""
         txtAmountTuition.Clear()
-        txtClassification.Clear()
 
         idMiscellaneous = 0
         txtAmountMiscellaneous.Clear()
@@ -55,7 +54,6 @@
                 idTuition = row.Cells(0).Value
                 cmbGradeLevel.Text = row.Cells(1).Value
                 txtAmountTuition.Text = row.Cells(2).Value
-                txtClassification.Text = row.Cells(3).Value
             ElseIf e.ColumnIndex >= 0 Then
                 clear()
             End If
@@ -66,13 +64,12 @@
     Private Sub btnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click
         If IS_EMPTY(cmbGradeLevel) Then Return
         If IS_EMPTY(txtAmountTuition) Then Return
-        If IS_EMPTY(txtClassification) Then Return
 
         ClassTuition.TuitionRef()
         clear()
     End Sub
 
-    Private Sub btnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearTuitionFee.Click, btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
+    Private Sub btnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
         clear()
     End Sub
 

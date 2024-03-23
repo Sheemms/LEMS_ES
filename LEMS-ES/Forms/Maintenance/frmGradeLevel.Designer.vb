@@ -28,16 +28,15 @@ Partial Class frmGradeLevel
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvGradeLevel = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCancelSY = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtAddGradeLevel = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtAddGradeLevel = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvGradeLevel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,11 +129,35 @@ Partial Class frmGradeLevel
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvGradeLevel.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.DataPropertyName = "Department"
+        Me.Column3.HeaderText = "Department"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 113
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "GradeLevel"
+        Me.Column2.HeaderText = "Grade Level"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.cmbDept)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnCancelSY)
         Me.Panel1.Controls.Add(Me.btnSaveSY)
         Me.Panel1.Controls.Add(Me.txtAddGradeLevel)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -145,20 +168,29 @@ Partial Class frmGradeLevel
         Me.Panel1.Size = New System.Drawing.Size(230, 549)
         Me.Panel1.TabIndex = 3
         '
-        'btnCancelSY
+        'cmbDept
         '
-        Me.btnCancelSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancelSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancelSY.FillColor = System.Drawing.Color.Gray
-        Me.btnCancelSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelSY.ForeColor = System.Drawing.Color.White
-        Me.btnCancelSY.Location = New System.Drawing.Point(117, 143)
-        Me.btnCancelSY.Name = "btnCancelSY"
-        Me.btnCancelSY.Size = New System.Drawing.Size(91, 36)
-        Me.btnCancelSY.TabIndex = 9
-        Me.btnCancelSY.Text = "Clear"
+        Me.cmbDept.BackColor = System.Drawing.Color.Transparent
+        Me.cmbDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDept.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDept.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDept.ForeColor = System.Drawing.Color.Black
+        Me.cmbDept.ItemHeight = 30
+        Me.cmbDept.Location = New System.Drawing.Point(3, 35)
+        Me.cmbDept.Name = "cmbDept"
+        Me.cmbDept.Size = New System.Drawing.Size(221, 36)
+        Me.cmbDept.TabIndex = 11
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 84)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(76, 14)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Grade Level"
         '
         'btnSaveSY
         '
@@ -203,55 +235,6 @@ Partial Class frmGradeLevel
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Department"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 84)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 14)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Grade Level"
-        '
-        'cmbDept
-        '
-        Me.cmbDept.BackColor = System.Drawing.Color.Transparent
-        Me.cmbDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbDept.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDept.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbDept.ForeColor = System.Drawing.Color.Black
-        Me.cmbDept.ItemHeight = 30
-        Me.cmbDept.Location = New System.Drawing.Point(3, 35)
-        Me.cmbDept.Name = "cmbDept"
-        Me.cmbDept.Size = New System.Drawing.Size(221, 36)
-        Me.cmbDept.TabIndex = 11
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "Department"
-        Me.Column3.HeaderText = "Department"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 113
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "GradeLevel"
-        Me.Column2.HeaderText = "Grade Level"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
         'frmGradeLevel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -274,7 +257,6 @@ Partial Class frmGradeLevel
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents dgvGradeLevel As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnCancelSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtAddGradeLevel As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label

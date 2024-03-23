@@ -17,12 +17,12 @@ Public Class ClassDepartment
         Try
             Dim dynamicParams As MySqlParameter() = DepartmentParameters()
             If frmDepartment.idDept = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO department(Department) VALUES (@Department)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE department SET Department=@Department WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If

@@ -29,29 +29,25 @@ Partial Class frmTeacherMaintenance
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvTeacher = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtContact = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtBday = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtMiddleInitial = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtLastname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnClearUserMaintenance = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtEmpID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
@@ -105,7 +101,7 @@ Partial Class frmTeacherMaintenance
         Me.dgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvTeacher.ColumnHeadersHeight = 44
         Me.dgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvTeacher.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column7, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgvTeacher.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column7, Me.Column3, Me.Column5, Me.Column6})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -154,15 +150,12 @@ Partial Class frmTeacherMaintenance
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.txtContact)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.txtBday)
-        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.txtMiddleInitial)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.txtFirstname)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtLastname)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnClearUserMaintenance)
         Me.Panel1.Controls.Add(Me.btnSave)
         Me.Panel1.Controls.Add(Me.txtEmpID)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -172,6 +165,30 @@ Partial Class frmTeacherMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(230, 549)
         Me.Panel1.TabIndex = 3
+        '
+        'cmbDept
+        '
+        Me.cmbDept.BackColor = System.Drawing.Color.Transparent
+        Me.cmbDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDept.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDept.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDept.ForeColor = System.Drawing.Color.Black
+        Me.cmbDept.ItemHeight = 30
+        Me.cmbDept.Location = New System.Drawing.Point(5, 93)
+        Me.cmbDept.Name = "cmbDept"
+        Me.cmbDept.Size = New System.Drawing.Size(221, 36)
+        Me.cmbDept.TabIndex = 24
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 76)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(77, 14)
+        Me.Label8.TabIndex = 23
+        Me.Label8.Text = "Department"
         '
         'txtAddress
         '
@@ -185,7 +202,7 @@ Partial Class frmTeacherMaintenance
         Me.txtAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAddress.ForeColor = System.Drawing.Color.Black
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddress.Location = New System.Drawing.Point(5, 417)
+        Me.txtAddress.Location = New System.Drawing.Point(5, 354)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -197,7 +214,7 @@ Partial Class frmTeacherMaintenance
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 400)
+        Me.Label7.Location = New System.Drawing.Point(6, 337)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 14)
         Me.Label7.TabIndex = 21
@@ -215,7 +232,7 @@ Partial Class frmTeacherMaintenance
         Me.txtContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtContact.ForeColor = System.Drawing.Color.Black
         Me.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContact.Location = New System.Drawing.Point(6, 352)
+        Me.txtContact.Location = New System.Drawing.Point(6, 289)
         Me.txtContact.Name = "txtContact"
         Me.txtContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtContact.PlaceholderText = ""
@@ -226,40 +243,11 @@ Partial Class frmTeacherMaintenance
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 335)
+        Me.Label6.Location = New System.Drawing.Point(6, 272)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 14)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Contact"
-        '
-        'txtBday
-        '
-        Me.txtBday.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtBday.DefaultText = ""
-        Me.txtBday.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtBday.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtBday.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBday.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBday.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtBday.ForeColor = System.Drawing.Color.Black
-        Me.txtBday.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBday.Location = New System.Drawing.Point(6, 287)
-        Me.txtBday.Name = "txtBday"
-        Me.txtBday.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtBday.PlaceholderText = ""
-        Me.txtBday.SelectedText = ""
-        Me.txtBday.Size = New System.Drawing.Size(221, 36)
-        Me.txtBday.TabIndex = 18
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 270)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(166, 14)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Date of Birth (dd-MM-YYYY)"
         '
         'txtMiddleInitial
         '
@@ -349,21 +337,6 @@ Partial Class frmTeacherMaintenance
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Lastname"
         '
-        'btnClearUserMaintenance
-        '
-        Me.btnClearUserMaintenance.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnClearUserMaintenance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnClearUserMaintenance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnClearUserMaintenance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnClearUserMaintenance.FillColor = System.Drawing.Color.Gray
-        Me.btnClearUserMaintenance.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearUserMaintenance.ForeColor = System.Drawing.Color.White
-        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(109, 486)
-        Me.btnClearUserMaintenance.Name = "btnClearUserMaintenance"
-        Me.btnClearUserMaintenance.Size = New System.Drawing.Size(91, 36)
-        Me.btnClearUserMaintenance.TabIndex = 9
-        Me.btnClearUserMaintenance.Text = "Clear"
-        '
         'btnSave
         '
         Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -372,7 +345,7 @@ Partial Class frmTeacherMaintenance
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(12, 486)
+        Me.btnSave.Location = New System.Drawing.Point(12, 423)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(91, 36)
         Me.btnSave.TabIndex = 8
@@ -406,30 +379,6 @@ Partial Class frmTeacherMaintenance
         Me.Label1.Size = New System.Drawing.Size(78, 14)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Employee ID"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 76)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 14)
-        Me.Label8.TabIndex = 23
-        Me.Label8.Text = "Department"
-        '
-        'cmbDept
-        '
-        Me.cmbDept.BackColor = System.Drawing.Color.Transparent
-        Me.cmbDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbDept.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDept.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbDept.ForeColor = System.Drawing.Color.Black
-        Me.cmbDept.ItemHeight = 30
-        Me.cmbDept.Location = New System.Drawing.Point(5, 93)
-        Me.cmbDept.Name = "cmbDept"
-        Me.cmbDept.Size = New System.Drawing.Size(221, 36)
-        Me.cmbDept.TabIndex = 24
         '
         'Column1
         '
@@ -467,15 +416,6 @@ Partial Class frmTeacherMaintenance
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "Birthday"
-        Me.Column4.HeaderText = "Date of Birth"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 96
-        '
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -483,6 +423,7 @@ Partial Class frmTeacherMaintenance
         Me.Column5.HeaderText = "Contact"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
         Me.Column5.Width = 96
         '
         'Column6
@@ -492,6 +433,7 @@ Partial Class frmTeacherMaintenance
         Me.Column6.HeaderText = "Address"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
         Me.Column6.Width = 96
         '
         'frmTeacherMaintenance
@@ -520,7 +462,6 @@ Partial Class frmTeacherMaintenance
     Friend WithEvents Label3 As Label
     Friend WithEvents txtLastname As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnClearUserMaintenance As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtEmpID As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
@@ -531,15 +472,13 @@ Partial Class frmTeacherMaintenance
     Friend WithEvents Label7 As Label
     Friend WithEvents txtContact As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtBday As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents cmbDept As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class

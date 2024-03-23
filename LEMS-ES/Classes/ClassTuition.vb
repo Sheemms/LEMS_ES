@@ -6,8 +6,7 @@ Public Class ClassTuition
             Dim tuitionParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmTuitionFee.idTuition),
                     New MySqlParameter("@GradeLevel_ID", frmTuitionFee.cmbGradeLevel.SelectedValue),
-                    New MySqlParameter("@Amount", frmTuitionFee.txtAmountTuition.Text),
-                    New MySqlParameter("@Classification", frmTuitionFee.txtClassification.Text)
+                    New MySqlParameter("@Amount", frmTuitionFee.txtAmountTuition.Text)
                 }
             Return tuitionParam
         Catch ex As Exception
@@ -17,14 +16,14 @@ Public Class ClassTuition
     Public Shared Sub TuitionRef()
         Try
             If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do u want to Add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO tuition(GradeLevel_ID, Amount, Classification) 
-                            VALUES (@GradeLevel_ID, @Amount, @Classification)", TuitionParameters())
+                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("INSERT INTO tuition(GradeLevel_ID, Amount) 
+                            VALUES (@GradeLevel_ID, @Amount)", TuitionParameters())
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount, Classification=@Classification", TuitionParameters())
+                If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount", TuitionParameters())
                     Success("Successfully Updated!")
                 End If
             End If
@@ -118,13 +117,13 @@ Public Class ClassTuition
     Public Shared Sub MoPRef()
         Try
             If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do u want to add?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO mop(Mode) 
                             VALUES (@Mode)", MoPParameters())
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE mop SET Mode=@Mode", MoPParameters())
                     Success("Successfully Updated!")
                 End If
@@ -150,13 +149,13 @@ Public Class ClassTuition
     Public Shared Sub ToPRef()
         Try
             If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do u want to add?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO top(Terms) 
                             VALUES (@Terms)", ToPParameters())
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE top SET Terms=@Terms", ToPParameters())
                     Success("Successfully Updated!")
                 End If

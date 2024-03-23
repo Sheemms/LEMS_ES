@@ -10,7 +10,6 @@ Public Class ClassTeacher
                     New MySqlParameter("@Lastname", frmTeacherMaintenance.txtLastname.Text),
                     New MySqlParameter("@Firstname", frmTeacherMaintenance.txtFirstname.Text),
                     New MySqlParameter("@MiddleInitial", frmTeacherMaintenance.txtMiddleInitial.Text),
-                    New MySqlParameter("@Birthday", frmTeacherMaintenance.txtBday.Text),
                     New MySqlParameter("@Contact", frmTeacherMaintenance.txtContact.Text),
                     New MySqlParameter("@Address", frmTeacherMaintenance.txtAddress.Text)
                 }
@@ -24,14 +23,14 @@ Public Class ClassTeacher
             Dim dynamicParams As MySqlParameter() = TeacherParameters()
             If frmTeacherMaintenance.idTeacher = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO teacher(EmpID, Department_ID, Lastname, Firstname, MiddleInitial, Birthday, Contact, Address) 
-                            VALUES (@EmpID, @Department_ID, @Lastname, @Firstname, @MiddleInitial, @Birthday, @Contact, @Address)", dynamicParams)
+                    Command("INSERT INTO teacher(EmpID, Department_ID, Lastname, Firstname, MiddleInitial, Contact, Address) 
+                            VALUES (@EmpID, @Department_ID, @Lastname, @Firstname, @MiddleInitial, @Contact, @Address)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE teacher SET EmpID=@EmpID, Department_ID=@Department_ID, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial,
-                            Birthday=@Birthday, Contact=@Contact, Address=@Address WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE teacher SET EmpID=@EmpID, Department_ID=@Department_ID, Lastname=@Lastname, Firstname=@Firstname, 
+                            MiddleInitial=@MiddleInitial, Contact=@Contact, Address=@Address WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If

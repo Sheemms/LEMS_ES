@@ -46,13 +46,12 @@
         ClassSubject.SubjectRef()
         clear()
     End Sub
-
-    Private Sub btnClearSubject_Click(sender As Object, e As EventArgs) Handles btnClearSubject.Click
-        clear()
-    End Sub
-
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ClassSubject.DeleteRef()
         clear()
+    End Sub
+
+    Private Sub txtSubjName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjName.KeyPress
+        TextBoxOnlyLetters(txtSubjName)
     End Sub
 End Class
