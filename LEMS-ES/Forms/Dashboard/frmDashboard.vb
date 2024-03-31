@@ -20,6 +20,16 @@
             .Show()
         End With
     End Sub
+    Private Sub btnScheduling_Click(sender As Object, e As EventArgs) Handles btnScheduling.Click
+        RemovePanel()
+        With frmSchedule
+            .TopLevel = False
+            Panel3.Controls.Add(frmSchedule)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
     Private Sub btnStudents_Click(sender As Object, e As EventArgs) Handles btnStudents.Click
         RemovePanel()
         With frmStudents
@@ -40,7 +50,7 @@
             .Show()
         End With
     End Sub
-    Private Sub btnBilling_Click(sender As Object, e As EventArgs) Handles btnBilling.Click
+    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
         RemovePanel()
         With frmBilling
             .TopLevel = False
@@ -168,4 +178,5 @@
     Private Sub btnGrading_Click(sender As Object, e As EventArgs) Handles btnGrading.Click
         ShowHideGradingPanel()
     End Sub
+
 End Class

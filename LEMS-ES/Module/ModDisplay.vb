@@ -13,6 +13,8 @@
     Public Sub RemovePanel()
         frmCharts.Close()
         frmEnrollment.Close()
+        frmSchedule.Close()
+        frmPayment.Close()
         frmStudents.Close()
         frmTeachers.Close()
         frmBilling.Close()

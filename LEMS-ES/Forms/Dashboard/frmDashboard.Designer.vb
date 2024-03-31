@@ -44,7 +44,7 @@ Partial Class frmDashboard
         Me.btnTeachers = New Guna.UI2.WinForms.Guna2Button()
         Me.btnStudents = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDataEntry = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnBilling = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.btnScheduling = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEnrollment = New Guna.UI2.WinForms.Guna2Button()
         Me.btnTransaction = New Guna.UI2.WinForms.Guna2Button()
@@ -104,7 +104,7 @@ Partial Class frmDashboard
         'TransactionPanel
         '
         Me.TransactionPanel.BackColor = System.Drawing.Color.Silver
-        Me.TransactionPanel.Controls.Add(Me.btnBilling)
+        Me.TransactionPanel.Controls.Add(Me.btnPayment)
         Me.TransactionPanel.Controls.Add(Me.btnScheduling)
         Me.TransactionPanel.Controls.Add(Me.btnEnrollment)
         resources.ApplyResources(Me.TransactionPanel, "TransactionPanel")
@@ -268,19 +268,19 @@ Partial Class frmDashboard
         Me.btnDataEntry.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnDataEntry.Name = "btnDataEntry"
         '
-        'btnBilling
+        'btnPayment
         '
-        Me.btnBilling.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBilling.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBilling.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBilling.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        resources.ApplyResources(Me.btnBilling, "btnBilling")
-        Me.btnBilling.FillColor = System.Drawing.Color.Transparent
-        Me.btnBilling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnBilling.Image = Global.LEMS_ES.My.Resources.Resources.sections
-        Me.btnBilling.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBilling.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btnBilling.Name = "btnBilling"
+        Me.btnPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnPayment, "btnPayment")
+        Me.btnPayment.FillColor = System.Drawing.Color.Transparent
+        Me.btnPayment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnPayment.Image = Global.LEMS_ES.My.Resources.Resources.sections
+        Me.btnPayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnPayment.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnPayment.Name = "btnPayment"
         '
         'btnScheduling
         '
@@ -386,7 +386,7 @@ Partial Class frmDashboard
     Friend WithEvents btnDashboard As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnStudents As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnTeachers As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnBilling As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnMaintenance As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEnrollment As Guna.UI2.WinForms.Guna2Button
