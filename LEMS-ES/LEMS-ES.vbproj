@@ -513,5 +513,26 @@
   <ItemGroup>
     <None Include="Resources\search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pupil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\City_of_Taguig_seal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deped-logo-kagawaran-ng-edukasyon.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

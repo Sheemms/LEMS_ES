@@ -24,97 +24,123 @@ Partial Class frmDashboard
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.TopPanel = New System.Windows.Forms.Panel()
         Me.PanelSidebar = New System.Windows.Forms.Panel()
-        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GradingPanel = New System.Windows.Forms.Panel()
+        Me.DataEntryPanel = New System.Windows.Forms.Panel()
+        Me.TransactionPanel = New System.Windows.Forms.Panel()
+        Me.PanelLogo = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnEnrollment = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnMaintenance = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnBilling = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnTeachers = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnStudents = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnMaintenance = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnJHSGrading = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnElemGrading = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnGrading = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTeachers = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnStudents = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDataEntry = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBilling = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnScheduling = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEnrollment = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnTransaction = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.TopPanel.SuspendLayout()
         Me.PanelSidebar.SuspendLayout()
+        Me.GradingPanel.SuspendLayout()
+        Me.DataEntryPanel.SuspendLayout()
+        Me.TransactionPanel.SuspendLayout()
+        Me.PanelLogo.SuspendLayout()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
+        'TopPanel
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Guna2CirclePictureBox1)
-        resources.ApplyResources(Me.Panel1, "Panel1")
-        Me.Panel1.Name = "Panel1"
-        '
-        'Guna2CirclePictureBox1
-        '
-        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2CirclePictureBox1.Image = Global.LEMS_ES.My.Resources.Resources.bars
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.TabStop = False
+        Me.TopPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(189, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.TopPanel.Controls.Add(Me.Guna2CirclePictureBox1)
+        resources.ApplyResources(Me.TopPanel, "TopPanel")
+        Me.TopPanel.Name = "TopPanel"
         '
         'PanelSidebar
         '
-        Me.PanelSidebar.BackColor = System.Drawing.Color.White
-        Me.PanelSidebar.Controls.Add(Me.Guna2CirclePictureBox2)
-        Me.PanelSidebar.Controls.Add(Me.Label1)
-        Me.PanelSidebar.Controls.Add(Me.Label5)
-        Me.PanelSidebar.Controls.Add(Me.Label4)
-        Me.PanelSidebar.Controls.Add(Me.Label3)
-        Me.PanelSidebar.Controls.Add(Me.btnLogout)
-        Me.PanelSidebar.Controls.Add(Me.btnEnrollment)
-        Me.PanelSidebar.Controls.Add(Me.btnMaintenance)
-        Me.PanelSidebar.Controls.Add(Me.btnReports)
-        Me.PanelSidebar.Controls.Add(Me.btnBilling)
-        Me.PanelSidebar.Controls.Add(Me.btnTeachers)
-        Me.PanelSidebar.Controls.Add(Me.btnStudents)
-        Me.PanelSidebar.Controls.Add(Me.btnDashboard)
         resources.ApplyResources(Me.PanelSidebar, "PanelSidebar")
+        Me.PanelSidebar.BackColor = System.Drawing.Color.White
+        Me.PanelSidebar.Controls.Add(Me.btnLogout)
+        Me.PanelSidebar.Controls.Add(Me.btnReports)
+        Me.PanelSidebar.Controls.Add(Me.btnMaintenance)
+        Me.PanelSidebar.Controls.Add(Me.GradingPanel)
+        Me.PanelSidebar.Controls.Add(Me.btnGrading)
+        Me.PanelSidebar.Controls.Add(Me.DataEntryPanel)
+        Me.PanelSidebar.Controls.Add(Me.btnDataEntry)
+        Me.PanelSidebar.Controls.Add(Me.TransactionPanel)
+        Me.PanelSidebar.Controls.Add(Me.btnTransaction)
+        Me.PanelSidebar.Controls.Add(Me.btnDashboard)
+        Me.PanelSidebar.Controls.Add(Me.PanelLogo)
         Me.PanelSidebar.Name = "PanelSidebar"
         '
-        'Guna2CirclePictureBox2
+        'GradingPanel
         '
-        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2CirclePictureBox2.Image = Global.LEMS_ES.My.Resources.Resources._301880572_513192177473445_977701946028615649_n
-        Me.Guna2CirclePictureBox2.ImageRotate = 0!
-        resources.ApplyResources(Me.Guna2CirclePictureBox2, "Guna2CirclePictureBox2")
-        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
-        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox2.TabStop = False
+        Me.GradingPanel.BackColor = System.Drawing.Color.Silver
+        Me.GradingPanel.Controls.Add(Me.btnJHSGrading)
+        Me.GradingPanel.Controls.Add(Me.btnElemGrading)
+        resources.ApplyResources(Me.GradingPanel, "GradingPanel")
+        Me.GradingPanel.Name = "GradingPanel"
         '
-        'Label1
+        'DataEntryPanel
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        Me.DataEntryPanel.BackColor = System.Drawing.Color.Silver
+        Me.DataEntryPanel.Controls.Add(Me.btnTeachers)
+        Me.DataEntryPanel.Controls.Add(Me.btnStudents)
+        resources.ApplyResources(Me.DataEntryPanel, "DataEntryPanel")
+        Me.DataEntryPanel.Name = "DataEntryPanel"
         '
-        'Label5
+        'TransactionPanel
         '
-        resources.ApplyResources(Me.Label5, "Label5")
-        Me.Label5.Name = "Label5"
+        Me.TransactionPanel.BackColor = System.Drawing.Color.Silver
+        Me.TransactionPanel.Controls.Add(Me.btnBilling)
+        Me.TransactionPanel.Controls.Add(Me.btnScheduling)
+        Me.TransactionPanel.Controls.Add(Me.btnEnrollment)
+        resources.ApplyResources(Me.TransactionPanel, "TransactionPanel")
+        Me.TransactionPanel.Name = "TransactionPanel"
+        '
+        'PanelLogo
+        '
+        Me.PanelLogo.Controls.Add(Me.Guna2CirclePictureBox2)
+        Me.PanelLogo.Controls.Add(Me.Label3)
+        Me.PanelLogo.Controls.Add(Me.Label4)
+        Me.PanelLogo.Controls.Add(Me.Label5)
+        resources.ApplyResources(Me.PanelLogo, "PanelLogo")
+        Me.PanelLogo.Name = "PanelLogo"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
         '
         'Label4
         '
         resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
         '
-        'Label3
+        'Label5
         '
-        resources.ApplyResources(Me.Label3, "Label3")
-        Me.Label3.Name = "Label3"
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'Timer1
+        '
+        '
+        'Panel3
+        '
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
         '
         'btnLogout
         '
@@ -122,41 +148,13 @@ Partial Class frmDashboard
         Me.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnLogout.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.btnLogout, "btnLogout")
+        Me.btnLogout.FillColor = System.Drawing.Color.White
         Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnLogout.Image = Global.LEMS_ES.My.Resources.Resources.logout
         Me.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnLogout.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnLogout.Name = "btnLogout"
-        '
-        'btnEnrollment
-        '
-        Me.btnEnrollment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEnrollment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEnrollment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEnrollment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEnrollment.FillColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.btnEnrollment, "btnEnrollment")
-        Me.btnEnrollment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnEnrollment.Image = Global.LEMS_ES.My.Resources.Resources.enrollment
-        Me.btnEnrollment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEnrollment.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btnEnrollment.Name = "btnEnrollment"
-        '
-        'btnMaintenance
-        '
-        Me.btnMaintenance.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnMaintenance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnMaintenance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnMaintenance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnMaintenance.FillColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.btnMaintenance, "btnMaintenance")
-        Me.btnMaintenance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnMaintenance.Image = Global.LEMS_ES.My.Resources.Resources.maintenance
-        Me.btnMaintenance.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnMaintenance.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btnMaintenance.Name = "btnMaintenance"
         '
         'btnReports
         '
@@ -164,27 +162,69 @@ Partial Class frmDashboard
         Me.btnReports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnReports.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnReports.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.btnReports, "btnReports")
+        Me.btnReports.FillColor = System.Drawing.Color.White
         Me.btnReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnReports.Image = Global.LEMS_ES.My.Resources.Resources.file_report
         Me.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnReports.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnReports.Name = "btnReports"
         '
-        'btnBilling
+        'btnMaintenance
         '
-        Me.btnBilling.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBilling.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBilling.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBilling.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBilling.FillColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.btnBilling, "btnBilling")
-        Me.btnBilling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnBilling.Image = Global.LEMS_ES.My.Resources.Resources.sections
-        Me.btnBilling.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBilling.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btnBilling.Name = "btnBilling"
+        Me.btnMaintenance.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMaintenance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMaintenance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMaintenance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnMaintenance, "btnMaintenance")
+        Me.btnMaintenance.FillColor = System.Drawing.Color.White
+        Me.btnMaintenance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnMaintenance.Image = Global.LEMS_ES.My.Resources.Resources.maintenance
+        Me.btnMaintenance.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnMaintenance.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnMaintenance.Name = "btnMaintenance"
+        '
+        'btnJHSGrading
+        '
+        Me.btnJHSGrading.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnJHSGrading.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnJHSGrading.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnJHSGrading.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnJHSGrading, "btnJHSGrading")
+        Me.btnJHSGrading.FillColor = System.Drawing.Color.Transparent
+        Me.btnJHSGrading.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnJHSGrading.Image = Global.LEMS_ES.My.Resources.Resources.pupil
+        Me.btnJHSGrading.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnJHSGrading.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnJHSGrading.Name = "btnJHSGrading"
+        '
+        'btnElemGrading
+        '
+        Me.btnElemGrading.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnElemGrading.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnElemGrading.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnElemGrading.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnElemGrading, "btnElemGrading")
+        Me.btnElemGrading.FillColor = System.Drawing.Color.Transparent
+        Me.btnElemGrading.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnElemGrading.Image = Global.LEMS_ES.My.Resources.Resources.pupil
+        Me.btnElemGrading.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnElemGrading.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnElemGrading.Name = "btnElemGrading"
+        '
+        'btnGrading
+        '
+        Me.btnGrading.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnGrading.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnGrading.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnGrading.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnGrading, "btnGrading")
+        Me.btnGrading.FillColor = System.Drawing.Color.White
+        Me.btnGrading.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnGrading.Image = Global.LEMS_ES.My.Resources.Resources.grading
+        Me.btnGrading.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnGrading.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnGrading.Name = "btnGrading"
         '
         'btnTeachers
         '
@@ -192,8 +232,8 @@ Partial Class frmDashboard
         Me.btnTeachers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnTeachers.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnTeachers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnTeachers.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.btnTeachers, "btnTeachers")
+        Me.btnTeachers.FillColor = System.Drawing.Color.Transparent
         Me.btnTeachers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnTeachers.Image = Global.LEMS_ES.My.Resources.Resources.teacher
         Me.btnTeachers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -206,13 +246,83 @@ Partial Class frmDashboard
         Me.btnStudents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnStudents.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnStudents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnStudents.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.btnStudents, "btnStudents")
+        Me.btnStudents.FillColor = System.Drawing.Color.Transparent
         Me.btnStudents.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnStudents.Image = Global.LEMS_ES.My.Resources.Resources.student_profile
         Me.btnStudents.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnStudents.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnStudents.Name = "btnStudents"
+        '
+        'btnDataEntry
+        '
+        Me.btnDataEntry.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDataEntry.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDataEntry.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDataEntry.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnDataEntry, "btnDataEntry")
+        Me.btnDataEntry.FillColor = System.Drawing.Color.White
+        Me.btnDataEntry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnDataEntry.Image = Global.LEMS_ES.My.Resources.Resources.data
+        Me.btnDataEntry.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnDataEntry.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnDataEntry.Name = "btnDataEntry"
+        '
+        'btnBilling
+        '
+        Me.btnBilling.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBilling.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBilling.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBilling.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnBilling, "btnBilling")
+        Me.btnBilling.FillColor = System.Drawing.Color.Transparent
+        Me.btnBilling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnBilling.Image = Global.LEMS_ES.My.Resources.Resources.sections
+        Me.btnBilling.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnBilling.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnBilling.Name = "btnBilling"
+        '
+        'btnScheduling
+        '
+        Me.btnScheduling.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnScheduling.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnScheduling.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnScheduling.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnScheduling, "btnScheduling")
+        Me.btnScheduling.FillColor = System.Drawing.Color.Transparent
+        Me.btnScheduling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnScheduling.Image = Global.LEMS_ES.My.Resources.Resources.Schedule
+        Me.btnScheduling.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnScheduling.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnScheduling.Name = "btnScheduling"
+        '
+        'btnEnrollment
+        '
+        Me.btnEnrollment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEnrollment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEnrollment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEnrollment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnEnrollment, "btnEnrollment")
+        Me.btnEnrollment.FillColor = System.Drawing.Color.Transparent
+        Me.btnEnrollment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnEnrollment.Image = Global.LEMS_ES.My.Resources.Resources.enrollment
+        Me.btnEnrollment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnEnrollment.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnEnrollment.Name = "btnEnrollment"
+        '
+        'btnTransaction
+        '
+        Me.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnTransaction.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnTransaction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.btnTransaction, "btnTransaction")
+        Me.btnTransaction.FillColor = System.Drawing.Color.White
+        Me.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.btnTransaction.Image = Global.LEMS_ES.My.Resources.Resources.credit_card
+        Me.btnTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnTransaction.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnTransaction.Name = "btnTransaction"
         '
         'btnDashboard
         '
@@ -220,20 +330,32 @@ Partial Class frmDashboard
         Me.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDashboard.FillColor = System.Drawing.Color.White
         resources.ApplyResources(Me.btnDashboard, "btnDashboard")
+        Me.btnDashboard.FillColor = System.Drawing.Color.White
         Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btnDashboard.Image = Global.LEMS_ES.My.Resources.Resources.dashboard
         Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDashboard.Name = "btnDashboard"
         '
-        'Timer1
+        'Guna2CirclePictureBox2
         '
+        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.DimGray
+        resources.ApplyResources(Me.Guna2CirclePictureBox2, "Guna2CirclePictureBox2")
+        Me.Guna2CirclePictureBox2.ImageRotate = 0!
+        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
+        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox2.TabStop = False
         '
-        'Panel3
+        'Guna2CirclePictureBox1
         '
-        resources.ApplyResources(Me.Panel3, "Panel3")
-        Me.Panel3.Name = "Panel3"
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.DimGray
+        resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.TabStop = False
         '
         'frmDashboard
         '
@@ -242,19 +364,24 @@ Partial Class frmDashboard
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.PanelSidebar)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.TopPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDashboard"
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.TopPanel.ResumeLayout(False)
         Me.PanelSidebar.ResumeLayout(False)
-        Me.PanelSidebar.PerformLayout()
+        Me.GradingPanel.ResumeLayout(False)
+        Me.DataEntryPanel.ResumeLayout(False)
+        Me.TransactionPanel.ResumeLayout(False)
+        Me.PanelLogo.ResumeLayout(False)
+        Me.PanelLogo.PerformLayout()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TopPanel As Panel
     Friend WithEvents PanelSidebar As Panel
     Friend WithEvents btnDashboard As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnStudents As Guna.UI2.WinForms.Guna2Button
@@ -268,8 +395,17 @@ Partial Class frmDashboard
     Friend WithEvents Label3 As Label
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents PanelLogo As Panel
+    Friend WithEvents GradingPanel As Panel
+    Friend WithEvents btnJHSGrading As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnElemGrading As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnGrading As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DataEntryPanel As Panel
+    Friend WithEvents btnDataEntry As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents TransactionPanel As Panel
+    Friend WithEvents btnScheduling As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnTransaction As Guna.UI2.WinForms.Guna2Button
 End Class

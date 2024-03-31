@@ -1,4 +1,5 @@
 ﻿Public Class frmDashboard
+
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         RemovePanel()
         With frmCharts
@@ -108,9 +109,40 @@
 
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
-
+        dropdownMenu()
     End Sub
-
+    Private Sub dropdownMenu()
+        TransactionPanel.Visible = False
+        DataEntryPanel.Visible = False
+        GradingPanel.Visible = False
+    End Sub
+    Private Sub ShowHideTransactionPanel()
+        If TransactionPanel.Visible = False Then
+            TransactionPanel.Visible = True
+        Else
+            If TransactionPanel.Visible = True Then
+                TransactionPanel.Visible = False
+            End If
+        End If
+    End Sub
+    Private Sub ShowHideDataEntryPanel()
+        If DataEntryPanel.Visible = False Then
+            DataEntryPanel.Visible = True
+        Else
+            If DataEntryPanel.Visible = True Then
+                DataEntryPanel.Visible = False
+            End If
+        End If
+    End Sub
+    Private Sub ShowHideGradingPanel()
+        If GradingPanel.Visible = False Then
+            GradingPanel.Visible = True
+        Else
+            If GradingPanel.Visible = True Then
+                GradingPanel.Visible = False
+            End If
+        End If
+    End Sub
     Private Sub Guna2CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2CirclePictureBox1.Click
         If PanelSidebar.Visible Then
             ' Hide the sidebar
@@ -123,5 +155,17 @@
             ' Shrink the main content to accommodate the sidebar
             Panel3.Width = Me.ClientRectangle.Width - PanelSidebar.Width
         End If
+    End Sub
+
+    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
+        ShowHideTransactionPanel()
+    End Sub
+
+    Private Sub btnDataEntry_Click(sender As Object, e As EventArgs) Handles btnDataEntry.Click
+        ShowHideDataEntryPanel()
+    End Sub
+
+    Private Sub btnGrading_Click(sender As Object, e As EventArgs) Handles btnGrading.Click
+        ShowHideGradingPanel()
     End Sub
 End Class
