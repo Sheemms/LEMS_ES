@@ -33,21 +33,20 @@ Partial Class frmStudents
         Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colLastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFirstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colMName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStudName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colSuffix = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colGender = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colAge = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colBday = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colMother = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colMothersMaiden = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colMotherOcc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFather = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFatherOcc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colGuardianName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colGuardianContact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCitizenship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
@@ -104,7 +103,7 @@ Partial Class frmStudents
         Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvStudents.ColumnHeadersHeight = 44
         Me.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colLRN, Me.colLastname, Me.colFirstname, Me.colMName, Me.colSuffix, Me.colGender, Me.colAge, Me.colBday, Me.colAddress, Me.colMother, Me.colMotherOcc, Me.colFather, Me.colFatherOcc, Me.Column10, Me.Column11, Me.Column14, Me.Column15, Me.colStudType})
+        Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colLRN, Me.colStudName, Me.colSuffix, Me.colGender, Me.colAge, Me.colBday, Me.colAddress, Me.colMother, Me.colMothersMaiden, Me.colMotherOcc, Me.colFather, Me.colFatherOcc, Me.colGuardianName, Me.colGuardianContact, Me.colCitizenship, Me.Column15, Me.colStudType})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -160,32 +159,13 @@ Partial Class frmStudents
         Me.colLRN.ReadOnly = True
         Me.colLRN.Width = 54
         '
-        'colLastname
+        'colStudName
         '
-        Me.colLastname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colLastname.DataPropertyName = "Lastname"
-        Me.colLastname.HeaderText = "Last Name"
-        Me.colLastname.Name = "colLastname"
-        Me.colLastname.ReadOnly = True
-        Me.colLastname.Width = 84
-        '
-        'colFirstname
-        '
-        Me.colFirstname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colFirstname.DataPropertyName = "Firstname"
-        Me.colFirstname.HeaderText = "First Name"
-        Me.colFirstname.Name = "colFirstname"
-        Me.colFirstname.ReadOnly = True
-        Me.colFirstname.Width = 86
-        '
-        'colMName
-        '
-        Me.colMName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colMName.DataPropertyName = "MiddleInitial"
-        Me.colMName.HeaderText = "Middle Name"
-        Me.colMName.Name = "colMName"
-        Me.colMName.ReadOnly = True
-        Me.colMName.Width = 96
+        Me.colStudName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colStudName.DataPropertyName = "Fullname"
+        Me.colStudName.HeaderText = "Student Name"
+        Me.colStudName.Name = "colStudName"
+        Me.colStudName.ReadOnly = True
         '
         'colSuffix
         '
@@ -222,6 +202,7 @@ Partial Class frmStudents
         Me.colBday.HeaderText = "Date of Birth"
         Me.colBday.Name = "colBday"
         Me.colBday.ReadOnly = True
+        Me.colBday.Visible = False
         Me.colBday.Width = 67
         '
         'colAddress
@@ -231,6 +212,7 @@ Partial Class frmStudents
         Me.colAddress.HeaderText = "Address"
         Me.colAddress.Name = "colAddress"
         Me.colAddress.ReadOnly = True
+        Me.colAddress.Visible = False
         Me.colAddress.Width = 75
         '
         'colMother
@@ -242,6 +224,16 @@ Partial Class frmStudents
         Me.colMother.ReadOnly = True
         Me.colMother.Visible = False
         Me.colMother.Width = 99
+        '
+        'colMothersMaiden
+        '
+        Me.colMothersMaiden.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colMothersMaiden.DataPropertyName = "MothersMaiden"
+        Me.colMothersMaiden.HeaderText = "Mother's Maiden"
+        Me.colMothersMaiden.Name = "colMothersMaiden"
+        Me.colMothersMaiden.ReadOnly = True
+        Me.colMothersMaiden.Visible = False
+        Me.colMothersMaiden.Width = 112
         '
         'colMotherOcc
         '
@@ -273,35 +265,35 @@ Partial Class frmStudents
         Me.colFatherOcc.Visible = False
         Me.colFatherOcc.Width = 132
         '
-        'Column10
+        'colGuardianName
         '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column10.DataPropertyName = "GuardianName"
-        Me.Column10.HeaderText = "Guardian Name"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        Me.Column10.Visible = False
-        Me.Column10.Width = 112
+        Me.colGuardianName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colGuardianName.DataPropertyName = "GuardianName"
+        Me.colGuardianName.HeaderText = "Guardian Name"
+        Me.colGuardianName.Name = "colGuardianName"
+        Me.colGuardianName.ReadOnly = True
+        Me.colGuardianName.Visible = False
+        Me.colGuardianName.Width = 112
         '
-        'Column11
+        'colGuardianContact
         '
-        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column11.DataPropertyName = "Guardian_Contact"
-        Me.Column11.HeaderText = "Guardian Contact"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        Me.Column11.Visible = False
-        Me.Column11.Width = 122
+        Me.colGuardianContact.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colGuardianContact.DataPropertyName = "GuardianContact"
+        Me.colGuardianContact.HeaderText = "Guardian Contact"
+        Me.colGuardianContact.Name = "colGuardianContact"
+        Me.colGuardianContact.ReadOnly = True
+        Me.colGuardianContact.Visible = False
+        Me.colGuardianContact.Width = 122
         '
-        'Column14
+        'colCitizenship
         '
-        Me.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column14.DataPropertyName = "Classification"
-        Me.Column14.HeaderText = "Classification"
-        Me.Column14.Name = "Column14"
-        Me.Column14.ReadOnly = True
-        Me.Column14.Visible = False
-        Me.Column14.Width = 107
+        Me.colCitizenship.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colCitizenship.DataPropertyName = "Citizenship"
+        Me.colCitizenship.HeaderText = "Citizenship"
+        Me.colCitizenship.Name = "colCitizenship"
+        Me.colCitizenship.ReadOnly = True
+        Me.colCitizenship.Visible = False
+        Me.colCitizenship.Width = 94
         '
         'Column15
         '
@@ -348,21 +340,20 @@ Partial Class frmStudents
     Friend WithEvents dgvStudents As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colLRN As DataGridViewTextBoxColumn
-    Friend WithEvents colLastname As DataGridViewTextBoxColumn
-    Friend WithEvents colFirstname As DataGridViewTextBoxColumn
-    Friend WithEvents colMName As DataGridViewTextBoxColumn
+    Friend WithEvents colStudName As DataGridViewTextBoxColumn
     Friend WithEvents colSuffix As DataGridViewTextBoxColumn
     Friend WithEvents colGender As DataGridViewTextBoxColumn
     Friend WithEvents colAge As DataGridViewTextBoxColumn
     Friend WithEvents colBday As DataGridViewTextBoxColumn
     Friend WithEvents colAddress As DataGridViewTextBoxColumn
     Friend WithEvents colMother As DataGridViewTextBoxColumn
+    Friend WithEvents colMothersMaiden As DataGridViewTextBoxColumn
     Friend WithEvents colMotherOcc As DataGridViewTextBoxColumn
     Friend WithEvents colFather As DataGridViewTextBoxColumn
     Friend WithEvents colFatherOcc As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents colGuardianName As DataGridViewTextBoxColumn
+    Friend WithEvents colGuardianContact As DataGridViewTextBoxColumn
+    Friend WithEvents colCitizenship As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents colStudType As DataGridViewTextBoxColumn
 End Class

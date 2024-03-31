@@ -53,12 +53,12 @@ Public Class ClassTuition
             If existingCount = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO miscellaneous(M_Amount) VALUES (@M_Amount)", MiscellaneousParameters())
-                    Success("Successfully Added!")
+                    Success("Successfully added!")
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE miscellaneous SET M_Amount=@M_Amount", MiscellaneousParameters())
-                    Success("Successfully Updated!")
+                    Success("Successfully updated!")
                 End If
             End If
             frmTuitionFee.loadrecords()
