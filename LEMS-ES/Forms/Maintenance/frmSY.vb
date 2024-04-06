@@ -15,7 +15,18 @@
     End Sub
 
     Private Sub dgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-
+        Try
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow = dgvSY.Rows(e.RowIndex)
+                idSY = row.Cells(0).Value
+                txtStartYear.Text = row.Cells(1).Value
+                txtEndYear.Text = row.Cells(2).Value
+            ElseIf e.ColumnIndex >= 0 Then
+                clear()
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR!", vbCritical)
+        End Try
     End Sub
 
 
