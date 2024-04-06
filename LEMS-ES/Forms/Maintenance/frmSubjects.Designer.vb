@@ -29,10 +29,6 @@ Partial Class frmSubjects
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvSubject = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,6 +38,13 @@ Partial Class frmSubjects
         Me.btnSaveSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSubjCode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtUnit = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvSubject, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +96,7 @@ Partial Class frmSubjects
         Me.dgvSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSubject.ColumnHeadersHeight = 44
         Me.dgvSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3})
+        Me.dgvSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column5})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -135,40 +138,10 @@ Partial Class frmSubjects
         Me.dgvSubject.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubject.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "GradeLevel"
-        Me.Column4.HeaderText = "Grade Level"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.DataPropertyName = "SubjectCode"
-        Me.Column2.HeaderText = "Code"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 69
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.DataPropertyName = "SubjectName"
-        Me.Column3.HeaderText = "Subject Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtUnit)
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnDelete)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.cmbGradeLevel)
@@ -193,7 +166,7 @@ Partial Class frmSubjects
         Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(31, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(118, 197)
+        Me.btnDelete.Location = New System.Drawing.Point(123, 247)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(91, 36)
         Me.btnDelete.TabIndex = 15
@@ -261,7 +234,7 @@ Partial Class frmSubjects
         Me.btnSaveSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSaveSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveSubject.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSubject.Location = New System.Drawing.Point(21, 197)
+        Me.btnSaveSubject.Location = New System.Drawing.Point(26, 247)
         Me.btnSaveSubject.Name = "btnSaveSubject"
         Me.btnSaveSubject.Size = New System.Drawing.Size(91, 36)
         Me.btnSaveSubject.TabIndex = 8
@@ -295,6 +268,75 @@ Partial Class frmSubjects
         Me.Label1.Size = New System.Drawing.Size(80, 14)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Subject Code"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 14)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Unit(s)"
+        '
+        'txtUnit
+        '
+        Me.txtUnit.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUnit.DefaultText = ""
+        Me.txtUnit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUnit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtUnit.ForeColor = System.Drawing.Color.Black
+        Me.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUnit.Location = New System.Drawing.Point(6, 205)
+        Me.txtUnit.Name = "txtUnit"
+        Me.txtUnit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUnit.PlaceholderText = ""
+        Me.txtUnit.SelectedText = ""
+        Me.txtUnit.Size = New System.Drawing.Size(221, 36)
+        Me.txtUnit.TabIndex = 17
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "GradeLevel"
+        Me.Column4.HeaderText = "Grade Level"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.DataPropertyName = "SubjectCode"
+        Me.Column2.HeaderText = "Code"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 69
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "SubjectName"
+        Me.Column3.HeaderText = "Subject Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "Unit(s)"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 96
         '
         'frmSubjects
         '
@@ -331,4 +373,7 @@ Partial Class frmSubjects
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents txtUnit As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label4 As Label
 End Class

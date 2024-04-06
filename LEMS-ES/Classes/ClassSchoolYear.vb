@@ -5,7 +5,7 @@ Public Class ClassSchoolYear
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmSY.idSY),
-                    New MySqlParameter("@SchoolYear", frmSY.txtAddSY.Text)
+                    New MySqlParameter("@End_Year", frmSY.txtEndYear.Text)
                 }
             Return syParam
         Catch ex As Exception
@@ -19,14 +19,14 @@ Public Class ClassSchoolYear
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Dim dynamicParams() As MySqlParameter = SchoolYearParameters()
                     Command("UPDATE schoolyear SET Status = 'Closed' WHERE ID = (SELECT MAX(ID) FROM schoolyear)", New MySqlParameter() {})
-                    Command("INSERT INTO schoolyear(SchoolYear) VALUES (@SchoolYear)", dynamicParams)
+                    Command("INSERT INTO schoolyear(End_Year) VALUES (@End_Year)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             ElseIf isOpen Then
-                If MsgBox("Do you want to close it?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Dim closeParams() As MySqlParameter = {New MySqlParameter()}
-                    Command("UPDATE schoolyear SET Status = 'Closed' WHERE ID = (SELECT MAX(ID) FROM schoolyear)", closeParams)
-                    MsgBox("School Year is Closed.")
+                    Command("UPDATE schoolyear SET Start_Year=@Start_Year, End_Year=@End_Year", closeParams)
+                    MsgBox("School Year is updated.")
                 End If
             Else
                 MsgBox("You cannot close the current school year without having another one open.")

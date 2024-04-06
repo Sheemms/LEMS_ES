@@ -113,9 +113,29 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property checked() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("checked", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property City_of_Taguig_seal() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("City_of_Taguig_seal", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property close() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("close", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

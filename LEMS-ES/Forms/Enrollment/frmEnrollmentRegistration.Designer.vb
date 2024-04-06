@@ -22,9 +22,9 @@ Partial Class frmEnrollmentRegistration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -41,14 +41,14 @@ Partial Class frmEnrollmentRegistration
         Me.lblSY = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox4 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmbSection = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbGradeLevel = New System.Windows.Forms.ComboBox()
         Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtStudName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtStudLRN = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -69,14 +69,14 @@ Partial Class frmEnrollmentRegistration
         Me.GroupBox1.Controls.Add(Me.lblSY)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.Guna2TextBox4)
+        Me.GroupBox1.Controls.Add(Me.txtSearch)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.cmbSection)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.cmbGradeLevel)
         Me.GroupBox1.Controls.Add(Me.Guna2TextBox3)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Guna2TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtStudName)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtStudLRN)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -117,27 +117,27 @@ Partial Class frmEnrollmentRegistration
         '
         Me.dgvSubjectList.AllowUserToAddRows = False
         Me.dgvSubjectList.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvSubjectList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSubjectList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvSubjectList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSubjectList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSubjectList.ColumnHeadersHeight = 32
         Me.dgvSubjectList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSubjectList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubjectList.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSubjectList.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSubjectList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSubjectList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubjectList.Location = New System.Drawing.Point(3, 3)
@@ -291,29 +291,29 @@ Partial Class frmEnrollmentRegistration
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Enter Student Name"
         '
-        'Guna2TextBox4
+        'txtSearch
         '
-        Me.Guna2TextBox4.Animated = True
-        Me.Guna2TextBox4.AutoRoundedCorners = True
-        Me.Guna2TextBox4.BorderRadius = 12
-        Me.Guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox4.DefaultText = ""
-        Me.Guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.FillColor = System.Drawing.Color.LemonChiffon
-        Me.Guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox4.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
-        Me.Guna2TextBox4.Location = New System.Drawing.Point(399, 28)
-        Me.Guna2TextBox4.Name = "Guna2TextBox4"
-        Me.Guna2TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox4.PlaceholderText = ""
-        Me.Guna2TextBox4.SelectedText = ""
-        Me.Guna2TextBox4.Size = New System.Drawing.Size(227, 26)
-        Me.Guna2TextBox4.TabIndex = 15
+        Me.txtSearch.Animated = True
+        Me.txtSearch.AutoRoundedCorners = True
+        Me.txtSearch.BorderRadius = 12
+        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSearch.DefaultText = ""
+        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.FillColor = System.Drawing.Color.LemonChiffon
+        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
+        Me.txtSearch.Location = New System.Drawing.Point(399, 28)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PlaceholderText = ""
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.Size = New System.Drawing.Size(227, 26)
+        Me.txtSearch.TabIndex = 15
         '
         'Label7
         '
@@ -383,24 +383,24 @@ Partial Class frmEnrollmentRegistration
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Department"
         '
-        'Guna2TextBox2
+        'txtStudName
         '
-        Me.Guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox2.DefaultText = ""
-        Me.Guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(121, 119)
-        Me.Guna2TextBox2.Name = "Guna2TextBox2"
-        Me.Guna2TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox2.PlaceholderText = ""
-        Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(200, 26)
-        Me.Guna2TextBox2.TabIndex = 5
+        Me.txtStudName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtStudName.DefaultText = ""
+        Me.txtStudName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtStudName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtStudName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStudName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStudName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtStudName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtStudName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtStudName.Location = New System.Drawing.Point(121, 119)
+        Me.txtStudName.Name = "txtStudName"
+        Me.txtStudName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtStudName.PlaceholderText = ""
+        Me.txtStudName.SelectedText = ""
+        Me.txtStudName.Size = New System.Drawing.Size(200, 26)
+        Me.txtStudName.TabIndex = 5
         '
         'Label4
         '
@@ -495,14 +495,14 @@ Partial Class frmEnrollmentRegistration
     Friend WithEvents lblSY As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Guna2TextBox4 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents cmbSection As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents cmbGradeLevel As ComboBox
     Friend WithEvents Guna2TextBox3 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtStudName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtStudLRN As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label

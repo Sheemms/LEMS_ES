@@ -23,10 +23,14 @@ Module Mod_Conn
         End Try
     End Sub
     Public Sub Command(ByVal CommandStatement As String, ParamArray dynamicParam() As MySqlParameter)
-        cmd = New MySqlCommand(CommandStatement, con)
-        cmd.Parameters.AddRange(dynamicParam)
-        cmd.ExecuteNonQuery()
-        cmd.Parameters.Clear()
+        Try
+            cmd = New MySqlCommand(CommandStatement, con)
+            cmd.Parameters.AddRange(dynamicParam)
+            cmd.ExecuteNonQuery()
+            cmd.Parameters.Clear()
+        Catch ex As Exception
+            MsgBox("Error executing command: " & ex.Message)
+        End Try
     End Sub
     Public Function CmdScalar(ByVal ScalarStatement As String)
         Try
@@ -35,6 +39,17 @@ Module Mod_Conn
             Return scalar
         Catch ex As Exception
             MsgBox("Error executing scalar query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    Public Function ExecuteReader(ByVal query As String) As MySqlDataReader
+        Try
+            Dim reader As MySqlDataReader
+            cmd = New MySqlCommand(query, con)
+            reader = cmd.ExecuteReader()
+            Return reader
+        Catch ex As Exception
+            MsgBox("Error executing query: " & ex.Message)
             Return Nothing
         End Try
     End Function

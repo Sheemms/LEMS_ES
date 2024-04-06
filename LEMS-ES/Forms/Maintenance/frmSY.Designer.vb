@@ -28,14 +28,20 @@ Partial Class frmSY
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvSY = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtStartYear = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtEndYear = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnGenerate = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtAddSY = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpen = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.colClose = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvSY, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +93,7 @@ Partial Class frmSY
         Me.dgvSY.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSY.ColumnHeadersHeight = 44
         Me.dgvSY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
+        Me.dgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.colOpen, Me.colClose})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -127,6 +133,110 @@ Partial Class frmSY
         Me.dgvSY.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSY.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtEndYear)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnSaveSY)
+        Me.Panel1.Controls.Add(Me.txtStartYear)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(230, 575)
+        Me.Panel1.TabIndex = 3
+        '
+        'btnSaveSY
+        '
+        Me.btnSaveSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSaveSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSaveSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSaveSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSaveSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveSY.ForeColor = System.Drawing.Color.White
+        Me.btnSaveSY.Location = New System.Drawing.Point(6, 138)
+        Me.btnSaveSY.Name = "btnSaveSY"
+        Me.btnSaveSY.Size = New System.Drawing.Size(218, 36)
+        Me.btnSaveSY.TabIndex = 8
+        Me.btnSaveSY.Text = "Save"
+        '
+        'txtStartYear
+        '
+        Me.txtStartYear.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtStartYear.DefaultText = ""
+        Me.txtStartYear.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtStartYear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtStartYear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStartYear.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStartYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtStartYear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtStartYear.ForeColor = System.Drawing.Color.Black
+        Me.txtStartYear.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtStartYear.Location = New System.Drawing.Point(3, 38)
+        Me.txtStartYear.Name = "txtStartYear"
+        Me.txtStartYear.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtStartYear.PlaceholderText = ""
+        Me.txtStartYear.SelectedText = ""
+        Me.txtStartYear.Size = New System.Drawing.Size(221, 36)
+        Me.txtStartYear.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(67, 14)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Start Year"
+        '
+        'txtEndYear
+        '
+        Me.txtEndYear.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEndYear.DefaultText = ""
+        Me.txtEndYear.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEndYear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEndYear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEndYear.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEndYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEndYear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEndYear.ForeColor = System.Drawing.Color.Black
+        Me.txtEndYear.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEndYear.Location = New System.Drawing.Point(3, 96)
+        Me.txtEndYear.Name = "txtEndYear"
+        Me.txtEndYear.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEndYear.PlaceholderText = ""
+        Me.txtEndYear.SelectedText = ""
+        Me.txtEndYear.Size = New System.Drawing.Size(221, 36)
+        Me.txtEndYear.TabIndex = 11
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 79)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 14)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "End Year"
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.LEMS_ES.My.Resources.Resources.checked
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Width = 5
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn2.HeaderText = ""
+        Me.DataGridViewImageColumn2.Image = Global.LEMS_ES.My.Resources.Resources.close
+        Me.DataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Width = 5
+        '
         'Column1
         '
         Me.Column1.DataPropertyName = "ID"
@@ -138,91 +248,47 @@ Partial Class frmSY
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "SchoolYear"
-        Me.Column2.HeaderText = "School Year"
+        Me.Column2.DataPropertyName = "Start_Year"
+        Me.Column2.HeaderText = "Start Year"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         '
         'Column3
         '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "Status"
-        Me.Column3.HeaderText = "Status"
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "End_Year"
+        Me.Column3.HeaderText = "End Year"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 69
         '
-        'Panel1
+        'Column4
         '
-        Me.Panel1.Controls.Add(Me.btnGenerate)
-        Me.Panel1.Controls.Add(Me.btnSaveSY)
-        Me.Panel1.Controls.Add(Me.txtAddSY)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(0, 40)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 575)
-        Me.Panel1.TabIndex = 3
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.DataPropertyName = "Status"
+        Me.Column4.HeaderText = "Status"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 69
         '
-        'btnGenerate
+        'colOpen
         '
-        Me.btnGenerate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnGenerate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnGenerate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGenerate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnGenerate.FillColor = System.Drawing.Color.Gray
-        Me.btnGenerate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerate.ForeColor = System.Drawing.Color.White
-        Me.btnGenerate.Location = New System.Drawing.Point(116, 80)
-        Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(91, 36)
-        Me.btnGenerate.TabIndex = 9
-        Me.btnGenerate.Text = "Generate"
+        Me.colOpen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colOpen.HeaderText = ""
+        Me.colOpen.Image = Global.LEMS_ES.My.Resources.Resources.checked
+        Me.colOpen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colOpen.Name = "colOpen"
+        Me.colOpen.ReadOnly = True
+        Me.colOpen.Width = 5
         '
-        'btnSaveSY
+        'colClose
         '
-        Me.btnSaveSY.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveSY.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSaveSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSaveSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveSY.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSY.Location = New System.Drawing.Point(19, 80)
-        Me.btnSaveSY.Name = "btnSaveSY"
-        Me.btnSaveSY.Size = New System.Drawing.Size(91, 36)
-        Me.btnSaveSY.TabIndex = 8
-        Me.btnSaveSY.Text = "Save"
-        '
-        'txtAddSY
-        '
-        Me.txtAddSY.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtAddSY.DefaultText = ""
-        Me.txtAddSY.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtAddSY.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtAddSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAddSY.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAddSY.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddSY.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtAddSY.ForeColor = System.Drawing.Color.Black
-        Me.txtAddSY.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddSY.Location = New System.Drawing.Point(3, 38)
-        Me.txtAddSY.Name = "txtAddSY"
-        Me.txtAddSY.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAddSY.PlaceholderText = ""
-        Me.txtAddSY.ReadOnly = True
-        Me.txtAddSY.SelectedText = ""
-        Me.txtAddSY.Size = New System.Drawing.Size(221, 36)
-        Me.txtAddSY.TabIndex = 7
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 14)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "School Year"
+        Me.colClose.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colClose.HeaderText = ""
+        Me.colClose.Image = Global.LEMS_ES.My.Resources.Resources.close
+        Me.colClose.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colClose.Name = "colClose"
+        Me.colClose.ReadOnly = True
+        Me.colClose.Width = 5
         '
         'frmSY
         '
@@ -245,13 +311,19 @@ Partial Class frmSY
 
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents dgvSY As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtStartYear As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents txtEndYear As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnGenerate As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnSaveSY As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents txtAddSY As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents colOpen As DataGridViewImageColumn
+    Friend WithEvents colClose As DataGridViewImageColumn
 End Class
