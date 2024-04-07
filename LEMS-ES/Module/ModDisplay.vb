@@ -58,4 +58,19 @@
         End If
     End Sub
 
+    Public Sub GetSchoolYear(ByVal lblSY As Label)
+        Try
+            Query("SELECT Start_Year, End_Year FROM schoolyear WHERE Status = 'Open'")
+            Dim result As Object = CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Open'")
+            If result IsNot Nothing Then
+                Dim startYear As String = ds.Tables("QueryTb").Rows(0)("Start_Year").ToString()
+                Dim endYear As String = ds.Tables("QueryTb").Rows(0)("End_Year").ToString()
+                lblSY.Text = startYear & " - " & endYear
+            Else
+                lblSY.Text = "No open school year found"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Module
