@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmSchedule
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,31 @@ Partial Class frmSchedule
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtSubjCode = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.cmbAdviser = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cbF = New System.Windows.Forms.CheckBox()
+        Me.cbTH = New System.Windows.Forms.CheckBox()
         Me.cbW = New System.Windows.Forms.CheckBox()
         Me.cbT = New System.Windows.Forms.CheckBox()
         Me.cbM = New System.Windows.Forms.CheckBox()
         Me.lblSY = New System.Windows.Forms.Label()
         Me.dgvRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtTeacherName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtTeacherID = New Guna.UI2.WinForms.Guna2TextBox()
@@ -42,7 +55,6 @@ Partial Class frmSchedule
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtSubjName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.cmbSubjCode = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAdviserID = New Guna.UI2.WinForms.Guna2TextBox()
@@ -54,18 +66,6 @@ Partial Class frmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbTH = New System.Windows.Forms.CheckBox()
-        Me.cbF = New System.Windows.Forms.CheckBox()
-        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.cmbAdviser = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvRequirements, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +86,7 @@ Partial Class frmSchedule
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.txtSubjCode)
         Me.Panel1.Controls.Add(Me.cmbAdviser)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.cbF)
@@ -105,7 +106,6 @@ Partial Class frmSchedule
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.txtSubjName)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.cmbSubjCode)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtAdviserID)
@@ -124,10 +124,75 @@ Partial Class frmSchedule
         Me.Panel1.Size = New System.Drawing.Size(754, 578)
         Me.Panel1.TabIndex = 0
         '
+        'txtSubjCode
+        '
+        Me.txtSubjCode.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubjCode.DefaultText = ""
+        Me.txtSubjCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubjCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubjCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjCode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSubjCode.ForeColor = System.Drawing.Color.Black
+        Me.txtSubjCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjCode.Location = New System.Drawing.Point(400, 94)
+        Me.txtSubjCode.Name = "txtSubjCode"
+        Me.txtSubjCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubjCode.PlaceholderText = ""
+        Me.txtSubjCode.SelectedText = ""
+        Me.txtSubjCode.Size = New System.Drawing.Size(200, 36)
+        Me.txtSubjCode.TabIndex = 39
+        '
+        'cmbAdviser
+        '
+        Me.cmbAdviser.BackColor = System.Drawing.Color.Transparent
+        Me.cmbAdviser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbAdviser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbAdviser.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbAdviser.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbAdviser.ForeColor = System.Drawing.Color.Black
+        Me.cmbAdviser.ItemHeight = 30
+        Me.cmbAdviser.Location = New System.Drawing.Point(400, 52)
+        Me.cmbAdviser.Name = "cmbAdviser"
+        Me.cmbAdviser.Size = New System.Drawing.Size(200, 36)
+        Me.cmbAdviser.TabIndex = 38
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(821, 63)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(31, 14)
+        Me.Label13.TabIndex = 37
+        Me.Label13.Text = "[To]"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'cbF
+        '
+        Me.cbF.AutoSize = True
+        Me.cbF.Location = New System.Drawing.Point(806, 28)
+        Me.cbF.Name = "cbF"
+        Me.cbF.Size = New System.Drawing.Size(65, 18)
+        Me.cbF.TabIndex = 36
+        Me.cbF.Text = "Friday"
+        Me.cbF.UseVisualStyleBackColor = True
+        '
+        'cbTH
+        '
+        Me.cbTH.AutoSize = True
+        Me.cbTH.Location = New System.Drawing.Point(717, 28)
+        Me.cbTH.Name = "cbTH"
+        Me.cbTH.Size = New System.Drawing.Size(83, 18)
+        Me.cbTH.TabIndex = 35
+        Me.cbTH.Text = "Thursday"
+        Me.cbTH.UseVisualStyleBackColor = True
+        '
         'cbW
         '
         Me.cbW.AutoSize = True
-        Me.cbW.Location = New System.Drawing.Point(885, 14)
+        Me.cbW.Location = New System.Drawing.Point(887, 10)
         Me.cbW.Name = "cbW"
         Me.cbW.Size = New System.Drawing.Size(92, 18)
         Me.cbW.TabIndex = 34
@@ -137,7 +202,7 @@ Partial Class frmSchedule
         'cbT
         '
         Me.cbT.AutoSize = True
-        Me.cbT.Location = New System.Drawing.Point(804, 14)
+        Me.cbT.Location = New System.Drawing.Point(806, 10)
         Me.cbT.Name = "cbT"
         Me.cbT.Size = New System.Drawing.Size(75, 18)
         Me.cbT.TabIndex = 33
@@ -147,7 +212,7 @@ Partial Class frmSchedule
         'cbM
         '
         Me.cbM.AutoSize = True
-        Me.cbM.Location = New System.Drawing.Point(715, 14)
+        Me.cbM.Location = New System.Drawing.Point(717, 10)
         Me.cbM.Name = "cbM"
         Me.cbM.Size = New System.Drawing.Size(72, 18)
         Me.cbM.TabIndex = 32
@@ -158,7 +223,7 @@ Partial Class frmSchedule
         '
         Me.lblSY.AutoSize = True
         Me.lblSY.ForeColor = System.Drawing.Color.Red
-        Me.lblSY.Location = New System.Drawing.Point(98, 28)
+        Me.lblSY.Location = New System.Drawing.Point(100, 24)
         Me.lblSY.Name = "lblSY"
         Me.lblSY.Size = New System.Drawing.Size(75, 14)
         Me.lblSY.TabIndex = 31
@@ -194,7 +259,7 @@ Partial Class frmSchedule
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRequirements.Location = New System.Drawing.Point(18, 206)
+        Me.dgvRequirements.Location = New System.Drawing.Point(20, 202)
         Me.dgvRequirements.MultiSelect = False
         Me.dgvRequirements.Name = "dgvRequirements"
         Me.dgvRequirements.RowHeadersVisible = False
@@ -221,328 +286,6 @@ Partial Class frmSchedule
         Me.dgvRequirements.ThemeStyle.RowsStyle.Height = 22
         Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'txtTeacherName
-        '
-        Me.txtTeacherName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtTeacherName.DefaultText = ""
-        Me.txtTeacherName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtTeacherName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtTeacherName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTeacherName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTeacherName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtTeacherName.ForeColor = System.Drawing.Color.Black
-        Me.txtTeacherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherName.Location = New System.Drawing.Point(715, 140)
-        Me.txtTeacherName.Name = "txtTeacherName"
-        Me.txtTeacherName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTeacherName.PlaceholderText = ""
-        Me.txtTeacherName.SelectedText = ""
-        Me.txtTeacherName.Size = New System.Drawing.Size(247, 36)
-        Me.txtTeacherName.TabIndex = 28
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(655, 147)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(54, 14)
-        Me.Label12.TabIndex = 27
-        Me.Label12.Text = "Teacher"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txtTeacherID
-        '
-        Me.txtTeacherID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtTeacherID.DefaultText = ""
-        Me.txtTeacherID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtTeacherID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtTeacherID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTeacherID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTeacherID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtTeacherID.ForeColor = System.Drawing.Color.Black
-        Me.txtTeacherID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherID.Location = New System.Drawing.Point(715, 98)
-        Me.txtTeacherID.Name = "txtTeacherID"
-        Me.txtTeacherID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTeacherID.PlaceholderText = ""
-        Me.txtTeacherID.SelectedText = ""
-        Me.txtTeacherID.Size = New System.Drawing.Size(98, 36)
-        Me.txtTeacherID.TabIndex = 26
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(640, 109)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(69, 14)
-        Me.Label11.TabIndex = 25
-        Me.Label11.Text = "Teacher ID"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txtendTime
-        '
-        Me.txtendTime.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtendTime.DefaultText = ""
-        Me.txtendTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtendTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtendTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtendTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtendTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtendTime.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtendTime.ForeColor = System.Drawing.Color.Black
-        Me.txtendTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtendTime.Location = New System.Drawing.Point(864, 56)
-        Me.txtendTime.Name = "txtendTime"
-        Me.txtendTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtendTime.PlaceholderText = "__:__"
-        Me.txtendTime.SelectedText = ""
-        Me.txtendTime.Size = New System.Drawing.Size(98, 36)
-        Me.txtendTime.TabIndex = 24
-        '
-        'txtstartTime
-        '
-        Me.txtstartTime.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtstartTime.DefaultText = ""
-        Me.txtstartTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtstartTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtstartTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtstartTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtstartTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtstartTime.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtstartTime.ForeColor = System.Drawing.Color.Black
-        Me.txtstartTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtstartTime.Location = New System.Drawing.Point(715, 56)
-        Me.txtstartTime.Name = "txtstartTime"
-        Me.txtstartTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtstartTime.PlaceholderText = "__:__"
-        Me.txtstartTime.SelectedText = ""
-        Me.txtstartTime.Size = New System.Drawing.Size(98, 36)
-        Me.txtstartTime.TabIndex = 23
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(628, 67)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(81, 14)
-        Me.Label10.TabIndex = 22
-        Me.Label10.Text = "Time [From]"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(655, 18)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(45, 14)
-        Me.Label9.TabIndex = 16
-        Me.Label9.Text = "Day(s)"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txtSubjName
-        '
-        Me.txtSubjName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSubjName.DefaultText = ""
-        Me.txtSubjName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSubjName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSubjName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSubjName.ForeColor = System.Drawing.Color.Black
-        Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Location = New System.Drawing.Point(398, 140)
-        Me.txtSubjName.Name = "txtSubjName"
-        Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubjName.PlaceholderText = ""
-        Me.txtSubjName.SelectedText = ""
-        Me.txtSubjName.Size = New System.Drawing.Size(200, 36)
-        Me.txtSubjName.TabIndex = 15
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(308, 150)
-        Me.Label8.Name = "Label8"
-        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label8.Size = New System.Drawing.Size(87, 14)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Subject Name"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cmbSubjCode
-        '
-        Me.cmbSubjCode.BackColor = System.Drawing.Color.Transparent
-        Me.cmbSubjCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbSubjCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbSubjCode.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSubjCode.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbSubjCode.ForeColor = System.Drawing.Color.Black
-        Me.cmbSubjCode.ItemHeight = 30
-        Me.cmbSubjCode.Location = New System.Drawing.Point(398, 98)
-        Me.cmbSubjCode.Name = "cmbSubjCode"
-        Me.cmbSubjCode.Size = New System.Drawing.Size(200, 36)
-        Me.cmbSubjCode.TabIndex = 13
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(315, 109)
-        Me.Label7.Name = "Label7"
-        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label7.Size = New System.Drawing.Size(80, 14)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Subject Code"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(340, 68)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 14)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Adviser"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txtAdviserID
-        '
-        Me.txtAdviserID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtAdviserID.DefaultText = ""
-        Me.txtAdviserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtAdviserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtAdviserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAdviserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAdviserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviserID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtAdviserID.ForeColor = System.Drawing.Color.Black
-        Me.txtAdviserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviserID.Location = New System.Drawing.Point(398, 14)
-        Me.txtAdviserID.Name = "txtAdviserID"
-        Me.txtAdviserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAdviserID.PlaceholderText = ""
-        Me.txtAdviserID.SelectedText = ""
-        Me.txtAdviserID.Size = New System.Drawing.Size(200, 36)
-        Me.txtAdviserID.TabIndex = 9
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(325, 28)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 14)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Adviser ID"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cmbSection
-        '
-        Me.cmbSection.BackColor = System.Drawing.Color.Transparent
-        Me.cmbSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSection.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbSection.ForeColor = System.Drawing.Color.Black
-        Me.cmbSection.ItemHeight = 30
-        Me.cmbSection.Location = New System.Drawing.Point(98, 140)
-        Me.cmbSection.Name = "cmbSection"
-        Me.cmbSection.Size = New System.Drawing.Size(200, 36)
-        Me.cmbSection.TabIndex = 7
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(43, 150)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 14)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Section"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cmbGradeLevel
-        '
-        Me.cmbGradeLevel.BackColor = System.Drawing.Color.Transparent
-        Me.cmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
-        Me.cmbGradeLevel.ItemHeight = 30
-        Me.cmbGradeLevel.Location = New System.Drawing.Point(98, 98)
-        Me.cmbGradeLevel.Name = "cmbGradeLevel"
-        Me.cmbGradeLevel.Size = New System.Drawing.Size(200, 36)
-        Me.cmbGradeLevel.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 109)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 14)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Grade Level"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cmbDepartment
-        '
-        Me.cmbDepartment.BackColor = System.Drawing.Color.Transparent
-        Me.cmbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbDepartment.ForeColor = System.Drawing.Color.Black
-        Me.cmbDepartment.ItemHeight = 30
-        Me.cmbDepartment.Location = New System.Drawing.Point(98, 56)
-        Me.cmbDepartment.Name = "cmbDepartment"
-        Me.cmbDepartment.Size = New System.Drawing.Size(200, 36)
-        Me.cmbDepartment.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 68)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 14)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Department"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 14)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "School Year"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cbTH
-        '
-        Me.cbTH.AutoSize = True
-        Me.cbTH.Location = New System.Drawing.Point(715, 32)
-        Me.cbTH.Name = "cbTH"
-        Me.cbTH.Size = New System.Drawing.Size(83, 18)
-        Me.cbTH.TabIndex = 35
-        Me.cbTH.Text = "Thursday"
-        Me.cbTH.UseVisualStyleBackColor = True
-        '
-        'cbF
-        '
-        Me.cbF.AutoSize = True
-        Me.cbF.Location = New System.Drawing.Point(804, 32)
-        Me.cbF.Name = "cbF"
-        Me.cbF.Size = New System.Drawing.Size(65, 18)
-        Me.cbF.TabIndex = 36
-        Me.cbF.Text = "Friday"
-        Me.cbF.UseVisualStyleBackColor = True
         '
         'colID
         '
@@ -598,30 +341,292 @@ Partial Class frmSchedule
         Me.Column7.HeaderText = "Teacher"
         Me.Column7.Name = "Column7"
         '
-        'Label13
+        'txtTeacherName
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(819, 67)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(31, 14)
-        Me.Label13.TabIndex = 37
-        Me.Label13.Text = "[To]"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.txtTeacherName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtTeacherName.DefaultText = ""
+        Me.txtTeacherName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtTeacherName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtTeacherName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTeacherName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTeacherName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTeacherName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtTeacherName.ForeColor = System.Drawing.Color.Black
+        Me.txtTeacherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTeacherName.Location = New System.Drawing.Point(717, 136)
+        Me.txtTeacherName.Name = "txtTeacherName"
+        Me.txtTeacherName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTeacherName.PlaceholderText = ""
+        Me.txtTeacherName.SelectedText = ""
+        Me.txtTeacherName.Size = New System.Drawing.Size(247, 36)
+        Me.txtTeacherName.TabIndex = 28
         '
-        'cmbAdviser
+        'Label12
         '
-        Me.cmbAdviser.BackColor = System.Drawing.Color.Transparent
-        Me.cmbAdviser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbAdviser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbAdviser.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbAdviser.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbAdviser.ForeColor = System.Drawing.Color.Black
-        Me.cmbAdviser.ItemHeight = 30
-        Me.cmbAdviser.Location = New System.Drawing.Point(398, 56)
-        Me.cmbAdviser.Name = "cmbAdviser"
-        Me.cmbAdviser.Size = New System.Drawing.Size(200, 36)
-        Me.cmbAdviser.TabIndex = 38
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(657, 143)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(54, 14)
+        Me.Label12.TabIndex = 27
+        Me.Label12.Text = "Teacher"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txtTeacherID
+        '
+        Me.txtTeacherID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtTeacherID.DefaultText = ""
+        Me.txtTeacherID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtTeacherID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtTeacherID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTeacherID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTeacherID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTeacherID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtTeacherID.ForeColor = System.Drawing.Color.Black
+        Me.txtTeacherID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTeacherID.Location = New System.Drawing.Point(717, 94)
+        Me.txtTeacherID.Name = "txtTeacherID"
+        Me.txtTeacherID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTeacherID.PlaceholderText = ""
+        Me.txtTeacherID.SelectedText = ""
+        Me.txtTeacherID.Size = New System.Drawing.Size(98, 36)
+        Me.txtTeacherID.TabIndex = 26
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(642, 105)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(69, 14)
+        Me.Label11.TabIndex = 25
+        Me.Label11.Text = "Teacher ID"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txtendTime
+        '
+        Me.txtendTime.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtendTime.DefaultText = ""
+        Me.txtendTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtendTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtendTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtendTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtendTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtendTime.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtendTime.ForeColor = System.Drawing.Color.Black
+        Me.txtendTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtendTime.Location = New System.Drawing.Point(866, 52)
+        Me.txtendTime.Name = "txtendTime"
+        Me.txtendTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtendTime.PlaceholderText = "__:__"
+        Me.txtendTime.SelectedText = ""
+        Me.txtendTime.Size = New System.Drawing.Size(98, 36)
+        Me.txtendTime.TabIndex = 24
+        '
+        'txtstartTime
+        '
+        Me.txtstartTime.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtstartTime.DefaultText = ""
+        Me.txtstartTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtstartTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtstartTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtstartTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtstartTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtstartTime.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtstartTime.ForeColor = System.Drawing.Color.Black
+        Me.txtstartTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtstartTime.Location = New System.Drawing.Point(717, 52)
+        Me.txtstartTime.Name = "txtstartTime"
+        Me.txtstartTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtstartTime.PlaceholderText = "__:__"
+        Me.txtstartTime.SelectedText = ""
+        Me.txtstartTime.Size = New System.Drawing.Size(98, 36)
+        Me.txtstartTime.TabIndex = 23
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(630, 63)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(81, 14)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Time [From]"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(657, 14)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(45, 14)
+        Me.Label9.TabIndex = 16
+        Me.Label9.Text = "Day(s)"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txtSubjName
+        '
+        Me.txtSubjName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubjName.DefaultText = ""
+        Me.txtSubjName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubjName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubjName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSubjName.ForeColor = System.Drawing.Color.Black
+        Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjName.Location = New System.Drawing.Point(400, 136)
+        Me.txtSubjName.Name = "txtSubjName"
+        Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubjName.PlaceholderText = ""
+        Me.txtSubjName.SelectedText = ""
+        Me.txtSubjName.Size = New System.Drawing.Size(200, 36)
+        Me.txtSubjName.TabIndex = 15
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(310, 146)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label8.Size = New System.Drawing.Size(87, 14)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Subject Name"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(317, 105)
+        Me.Label7.Name = "Label7"
+        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label7.Size = New System.Drawing.Size(80, 14)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Subject Code"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(342, 64)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(52, 14)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Adviser"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txtAdviserID
+        '
+        Me.txtAdviserID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtAdviserID.DefaultText = ""
+        Me.txtAdviserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtAdviserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtAdviserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdviserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdviserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtAdviserID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtAdviserID.ForeColor = System.Drawing.Color.Black
+        Me.txtAdviserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtAdviserID.Location = New System.Drawing.Point(400, 10)
+        Me.txtAdviserID.Name = "txtAdviserID"
+        Me.txtAdviserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtAdviserID.PlaceholderText = ""
+        Me.txtAdviserID.SelectedText = ""
+        Me.txtAdviserID.Size = New System.Drawing.Size(200, 36)
+        Me.txtAdviserID.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(327, 24)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 14)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Adviser ID"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'cmbSection
+        '
+        Me.cmbSection.BackColor = System.Drawing.Color.Transparent
+        Me.cmbSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbSection.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbSection.ForeColor = System.Drawing.Color.Black
+        Me.cmbSection.ItemHeight = 30
+        Me.cmbSection.Location = New System.Drawing.Point(100, 136)
+        Me.cmbSection.Name = "cmbSection"
+        Me.cmbSection.Size = New System.Drawing.Size(200, 36)
+        Me.cmbSection.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(45, 146)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 14)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Section"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'cmbGradeLevel
+        '
+        Me.cmbGradeLevel.BackColor = System.Drawing.Color.Transparent
+        Me.cmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
+        Me.cmbGradeLevel.ItemHeight = 30
+        Me.cmbGradeLevel.Location = New System.Drawing.Point(100, 94)
+        Me.cmbGradeLevel.Name = "cmbGradeLevel"
+        Me.cmbGradeLevel.Size = New System.Drawing.Size(200, 36)
+        Me.cmbGradeLevel.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(18, 105)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 14)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Grade Level"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'cmbDepartment
+        '
+        Me.cmbDepartment.BackColor = System.Drawing.Color.Transparent
+        Me.cmbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDepartment.ForeColor = System.Drawing.Color.Black
+        Me.cmbDepartment.ItemHeight = 30
+        Me.cmbDepartment.Location = New System.Drawing.Point(100, 52)
+        Me.cmbDepartment.Name = "cmbDepartment"
+        Me.cmbDepartment.Size = New System.Drawing.Size(200, 36)
+        Me.cmbDepartment.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(17, 64)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(77, 14)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Department"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(20, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(74, 14)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "School Year"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'frmSchedule
         '
@@ -654,7 +659,6 @@ Partial Class frmSchedule
     Friend WithEvents Label9 As Label
     Friend WithEvents txtSubjName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents cmbSubjCode As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAdviserID As Guna.UI2.WinForms.Guna2TextBox
@@ -682,4 +686,5 @@ Partial Class frmSchedule
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents cmbAdviser As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents txtSubjCode As Guna.UI2.WinForms.Guna2TextBox
 End Class
