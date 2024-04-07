@@ -16,7 +16,7 @@ Public Class ClassTuition
     Public Shared Sub TuitionRef()
         Try
             If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) = vbYes Then
+                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO tuition(GradeLevel_ID, Amount) 
                             VALUES (@GradeLevel_ID, @Amount)", TuitionParameters())
                     Success("Successfully Added!")

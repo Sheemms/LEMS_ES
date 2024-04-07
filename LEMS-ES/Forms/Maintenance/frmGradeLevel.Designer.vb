@@ -200,9 +200,9 @@ Partial Class frmGradeLevel
         Me.btnSaveSY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSaveSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveSY.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSY.Location = New System.Drawing.Point(20, 143)
+        Me.btnSaveSY.Location = New System.Drawing.Point(3, 143)
         Me.btnSaveSY.Name = "btnSaveSY"
-        Me.btnSaveSY.Size = New System.Drawing.Size(91, 36)
+        Me.btnSaveSY.Size = New System.Drawing.Size(221, 36)
         Me.btnSaveSY.TabIndex = 8
         Me.btnSaveSY.Text = "Save"
         '

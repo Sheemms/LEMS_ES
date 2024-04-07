@@ -43,7 +43,7 @@
         clear()
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) 
         clear()
     End Sub
 End Class

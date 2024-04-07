@@ -1,4 +1,5 @@
 ﻿Public Class frmSchedule
+    Public idSched As Integer = 0
     Private Sub frmSchedule_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadRecords()
         LoadDepartment()
@@ -132,4 +133,8 @@
     End Sub
 
 #End Region
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+    End Sub
 End Class

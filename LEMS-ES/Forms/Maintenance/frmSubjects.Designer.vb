@@ -22,14 +22,21 @@ Partial Class frmSubjects
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvSubject = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtUnit = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -38,13 +45,6 @@ Partial Class frmSubjects
         Me.btnSaveSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSubjCode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtUnit = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvSubject, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,30 +81,30 @@ Partial Class frmSubjects
         '
         Me.dgvSubject.AllowUserToAddRows = False
         Me.dgvSubject.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        Me.dgvSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSubject.BackgroundColor = System.Drawing.Color.DimGray
         Me.dgvSubject.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSubject.ColumnHeadersHeight = 44
         Me.dgvSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column5})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubject.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSubject.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvSubject.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSubject.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubject.Location = New System.Drawing.Point(0, 0)
@@ -112,8 +112,8 @@ Partial Class frmSubjects
         Me.dgvSubject.Name = "dgvSubject"
         Me.dgvSubject.ReadOnly = True
         Me.dgvSubject.RowHeadersVisible = False
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSubject.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvSubject.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvSubject.Size = New System.Drawing.Size(723, 549)
         Me.dgvSubject.TabIndex = 2
         Me.dgvSubject.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -137,166 +137,6 @@ Partial Class frmSubjects
         Me.dgvSubject.ThemeStyle.RowsStyle.Height = 22
         Me.dgvSubject.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubject.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.txtUnit)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.btnDelete)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.cmbGradeLevel)
-        Me.Panel1.Controls.Add(Me.txtSubjName)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnSaveSubject)
-        Me.Panel1.Controls.Add(Me.txtSubjCode)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(0, 40)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 549)
-        Me.Panel1.TabIndex = 3
-        '
-        'btnDelete
-        '
-        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(31, Byte), Integer))
-        Me.btnDelete.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(123, 247)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(91, 36)
-        Me.btnDelete.TabIndex = 15
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 5)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 14)
-        Me.Label3.TabIndex = 14
-        Me.Label3.Text = "Grade Level"
-        '
-        'cmbGradeLevel
-        '
-        Me.cmbGradeLevel.BackColor = System.Drawing.Color.Transparent
-        Me.cmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
-        Me.cmbGradeLevel.ItemHeight = 30
-        Me.cmbGradeLevel.Location = New System.Drawing.Point(6, 22)
-        Me.cmbGradeLevel.Name = "cmbGradeLevel"
-        Me.cmbGradeLevel.Size = New System.Drawing.Size(218, 36)
-        Me.cmbGradeLevel.TabIndex = 13
-        '
-        'txtSubjName
-        '
-        Me.txtSubjName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSubjName.DefaultText = ""
-        Me.txtSubjName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSubjName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSubjName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSubjName.ForeColor = System.Drawing.Color.Black
-        Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Location = New System.Drawing.Point(3, 146)
-        Me.txtSubjName.Name = "txtSubjName"
-        Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubjName.PlaceholderText = ""
-        Me.txtSubjName.SelectedText = ""
-        Me.txtSubjName.Size = New System.Drawing.Size(221, 36)
-        Me.txtSubjName.TabIndex = 12
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 129)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 14)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Subject Name"
-        '
-        'btnSaveSubject
-        '
-        Me.btnSaveSubject.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveSubject.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSaveSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSaveSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveSubject.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSubject.Location = New System.Drawing.Point(26, 247)
-        Me.btnSaveSubject.Name = "btnSaveSubject"
-        Me.btnSaveSubject.Size = New System.Drawing.Size(91, 36)
-        Me.btnSaveSubject.TabIndex = 8
-        Me.btnSaveSubject.Text = "Save"
-        '
-        'txtSubjCode
-        '
-        Me.txtSubjCode.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSubjCode.DefaultText = ""
-        Me.txtSubjCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSubjCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSubjCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjCode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSubjCode.ForeColor = System.Drawing.Color.Black
-        Me.txtSubjCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjCode.Location = New System.Drawing.Point(3, 87)
-        Me.txtSubjCode.Name = "txtSubjCode"
-        Me.txtSubjCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubjCode.PlaceholderText = ""
-        Me.txtSubjCode.SelectedText = ""
-        Me.txtSubjCode.Size = New System.Drawing.Size(221, 36)
-        Me.txtSubjCode.TabIndex = 7
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 70)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 14)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Subject Code"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 188)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 14)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Unit(s)"
-        '
-        'txtUnit
-        '
-        Me.txtUnit.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtUnit.DefaultText = ""
-        Me.txtUnit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUnit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtUnit.ForeColor = System.Drawing.Color.Black
-        Me.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUnit.Location = New System.Drawing.Point(6, 205)
-        Me.txtUnit.Name = "txtUnit"
-        Me.txtUnit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtUnit.PlaceholderText = ""
-        Me.txtUnit.SelectedText = ""
-        Me.txtUnit.Size = New System.Drawing.Size(221, 36)
-        Me.txtUnit.TabIndex = 17
         '
         'Column1
         '
@@ -337,6 +177,166 @@ Partial Class frmSubjects
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Width = 96
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtUnit)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.btnDelete)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.cmbGradeLevel)
+        Me.Panel1.Controls.Add(Me.txtSubjName)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.btnSaveSubject)
+        Me.Panel1.Controls.Add(Me.txtSubjCode)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(230, 549)
+        Me.Panel1.TabIndex = 3
+        '
+        'txtUnit
+        '
+        Me.txtUnit.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUnit.DefaultText = ""
+        Me.txtUnit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUnit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtUnit.ForeColor = System.Drawing.Color.Black
+        Me.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUnit.Location = New System.Drawing.Point(3, 205)
+        Me.txtUnit.Name = "txtUnit"
+        Me.txtUnit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUnit.PlaceholderText = ""
+        Me.txtUnit.SelectedText = ""
+        Me.txtUnit.Size = New System.Drawing.Size(221, 36)
+        Me.txtUnit.TabIndex = 17
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 14)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Unit(s)"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(193, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(3, 289)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(221, 36)
+        Me.btnDelete.TabIndex = 15
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 14)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "Grade Level"
+        '
+        'cmbGradeLevel
+        '
+        Me.cmbGradeLevel.BackColor = System.Drawing.Color.Transparent
+        Me.cmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
+        Me.cmbGradeLevel.ItemHeight = 30
+        Me.cmbGradeLevel.Location = New System.Drawing.Point(3, 22)
+        Me.cmbGradeLevel.Name = "cmbGradeLevel"
+        Me.cmbGradeLevel.Size = New System.Drawing.Size(221, 36)
+        Me.cmbGradeLevel.TabIndex = 13
+        '
+        'txtSubjName
+        '
+        Me.txtSubjName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubjName.DefaultText = ""
+        Me.txtSubjName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubjName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubjName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSubjName.ForeColor = System.Drawing.Color.Black
+        Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjName.Location = New System.Drawing.Point(3, 146)
+        Me.txtSubjName.Name = "txtSubjName"
+        Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubjName.PlaceholderText = ""
+        Me.txtSubjName.SelectedText = ""
+        Me.txtSubjName.Size = New System.Drawing.Size(221, 36)
+        Me.txtSubjName.TabIndex = 12
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 129)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(87, 14)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Subject Name"
+        '
+        'btnSaveSubject
+        '
+        Me.btnSaveSubject.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSaveSubject.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSaveSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSaveSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSaveSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveSubject.ForeColor = System.Drawing.Color.White
+        Me.btnSaveSubject.Location = New System.Drawing.Point(3, 247)
+        Me.btnSaveSubject.Name = "btnSaveSubject"
+        Me.btnSaveSubject.Size = New System.Drawing.Size(221, 36)
+        Me.btnSaveSubject.TabIndex = 8
+        Me.btnSaveSubject.Text = "Save"
+        '
+        'txtSubjCode
+        '
+        Me.txtSubjCode.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubjCode.DefaultText = ""
+        Me.txtSubjCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubjCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubjCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjCode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSubjCode.ForeColor = System.Drawing.Color.Black
+        Me.txtSubjCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjCode.Location = New System.Drawing.Point(3, 87)
+        Me.txtSubjCode.Name = "txtSubjCode"
+        Me.txtSubjCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubjCode.PlaceholderText = ""
+        Me.txtSubjCode.SelectedText = ""
+        Me.txtSubjCode.Size = New System.Drawing.Size(221, 36)
+        Me.txtSubjCode.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 70)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 14)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Subject Code"
         '
         'frmSubjects
         '

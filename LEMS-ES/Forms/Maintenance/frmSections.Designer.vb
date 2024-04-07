@@ -241,9 +241,9 @@ Partial Class frmSections
         Me.btnSaveSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSaveSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveSubject.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSubject.Location = New System.Drawing.Point(17, 187)
+        Me.btnSaveSubject.Location = New System.Drawing.Point(3, 187)
         Me.btnSaveSubject.Name = "btnSaveSubject"
-        Me.btnSaveSubject.Size = New System.Drawing.Size(91, 36)
+        Me.btnSaveSubject.Size = New System.Drawing.Size(221, 36)
         Me.btnSaveSubject.TabIndex = 8
         Me.btnSaveSubject.Text = "Save"
         '
