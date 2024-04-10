@@ -42,6 +42,9 @@ Partial Class frmTuitionFee
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvTuitionFee = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -49,6 +52,7 @@ Partial Class frmTuitionFee
         Me.txtAmountTuition = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.dgvMiscellaneous = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,15 +62,17 @@ Partial Class frmTuitionFee
         Me.txtAmountMiscellaneous = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.dgvOtherFee = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.txtAmountOtherFee = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClearOtherFee = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSaveOtherFee = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtAmountOtherFee = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtOtherFeeDesc = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.dgvMOP = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,6 +82,7 @@ Partial Class frmTuitionFee
         Me.txtMOP = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.dgvTOP = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -84,9 +91,9 @@ Partial Class frmTuitionFee
         Me.btnTOP = New Guna.UI2.WinForms.Guna2Button()
         Me.txtTOP = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -94,15 +101,19 @@ Partial Class frmTuitionFee
         CType(Me.dgvTuitionFee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         CType(Me.dgvMiscellaneous, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         CType(Me.dgvOtherFee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.Panel10.SuspendLayout()
         CType(Me.dgvMOP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         CType(Me.dgvTOP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
@@ -152,7 +163,7 @@ Partial Class frmTuitionFee
         '
         Me.Panel2.Controls.Add(Me.dgvTuitionFee)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         Me.Panel2.Location = New System.Drawing.Point(233, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(709, 505)
@@ -167,7 +178,7 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.BackgroundColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -178,7 +189,7 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -214,6 +225,31 @@ Partial Class frmTuitionFee
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.Height = 22
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvTuitionFee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.DataPropertyName = "GradeLevel"
+        Me.Column4.HeaderText = "Grade Level"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 78
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Amount"
+        Me.Column2.HeaderText = "Amount"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
         'Panel1
         '
@@ -298,7 +334,7 @@ Partial Class frmTuitionFee
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.dgvMiscellaneous)
+        Me.TabPage2.Controls.Add(Me.Panel7)
         Me.TabPage2.Controls.Add(Me.Panel3)
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
@@ -307,6 +343,16 @@ Partial Class frmTuitionFee
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Miscellaneous Fee"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.dgvMiscellaneous)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel7.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Panel7.Location = New System.Drawing.Point(233, 3)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(709, 505)
+        Me.Panel7.TabIndex = 6
         '
         'dgvMiscellaneous
         '
@@ -317,7 +363,7 @@ Partial Class frmTuitionFee
         Me.dgvMiscellaneous.BackgroundColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -328,7 +374,7 @@ Partial Class frmTuitionFee
         Me.dgvMiscellaneous.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -336,7 +382,7 @@ Partial Class frmTuitionFee
         Me.dgvMiscellaneous.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvMiscellaneous.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvMiscellaneous.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvMiscellaneous.Location = New System.Drawing.Point(233, 3)
+        Me.dgvMiscellaneous.Location = New System.Drawing.Point(0, 0)
         Me.dgvMiscellaneous.MultiSelect = False
         Me.dgvMiscellaneous.Name = "dgvMiscellaneous"
         Me.dgvMiscellaneous.ReadOnly = True
@@ -453,7 +499,7 @@ Partial Class frmTuitionFee
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.dgvOtherFee)
+        Me.TabPage3.Controls.Add(Me.Panel8)
         Me.TabPage3.Controls.Add(Me.Panel4)
         Me.TabPage3.Location = New System.Drawing.Point(4, 34)
         Me.TabPage3.Name = "TabPage3"
@@ -462,6 +508,16 @@ Partial Class frmTuitionFee
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Other Fee"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.dgvOtherFee)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel8.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Panel8.Location = New System.Drawing.Point(233, 3)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(709, 505)
+        Me.Panel8.TabIndex = 8
         '
         'dgvOtherFee
         '
@@ -472,7 +528,7 @@ Partial Class frmTuitionFee
         Me.dgvOtherFee.BackgroundColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -480,10 +536,10 @@ Partial Class frmTuitionFee
         Me.dgvOtherFee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvOtherFee.ColumnHeadersHeight = 44
         Me.dgvOtherFee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvOtherFee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.dgvOtherFee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.Column3})
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold)
         DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -491,7 +547,7 @@ Partial Class frmTuitionFee
         Me.dgvOtherFee.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvOtherFee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvOtherFee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvOtherFee.Location = New System.Drawing.Point(233, 3)
+        Me.dgvOtherFee.Location = New System.Drawing.Point(0, 0)
         Me.dgvOtherFee.MultiSelect = False
         Me.dgvOtherFee.Name = "dgvOtherFee"
         Me.dgvOtherFee.ReadOnly = True
@@ -520,26 +576,13 @@ Partial Class frmTuitionFee
         Me.dgvOtherFee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvOtherFee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Visible = False
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "OF_Amount"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.txtAmountOtherFee)
+        Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.btnClearOtherFee)
         Me.Panel4.Controls.Add(Me.btnSaveOtherFee)
-        Me.Panel4.Controls.Add(Me.txtAmountOtherFee)
+        Me.Panel4.Controls.Add(Me.txtOtherFeeDesc)
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel4.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -547,35 +590,6 @@ Partial Class frmTuitionFee
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(230, 505)
         Me.Panel4.TabIndex = 7
-        '
-        'btnClearOtherFee
-        '
-        Me.btnClearOtherFee.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnClearOtherFee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnClearOtherFee.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnClearOtherFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnClearOtherFee.FillColor = System.Drawing.Color.Gray
-        Me.btnClearOtherFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearOtherFee.ForeColor = System.Drawing.Color.White
-        Me.btnClearOtherFee.Location = New System.Drawing.Point(117, 82)
-        Me.btnClearOtherFee.Name = "btnClearOtherFee"
-        Me.btnClearOtherFee.Size = New System.Drawing.Size(91, 36)
-        Me.btnClearOtherFee.TabIndex = 9
-        Me.btnClearOtherFee.Text = "Clear"
-        '
-        'btnSaveOtherFee
-        '
-        Me.btnSaveOtherFee.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveOtherFee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSaveOtherFee.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSaveOtherFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSaveOtherFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveOtherFee.ForeColor = System.Drawing.Color.White
-        Me.btnSaveOtherFee.Location = New System.Drawing.Point(20, 82)
-        Me.btnSaveOtherFee.Name = "btnSaveOtherFee"
-        Me.btnSaveOtherFee.Size = New System.Drawing.Size(91, 36)
-        Me.btnSaveOtherFee.TabIndex = 8
-        Me.btnSaveOtherFee.Text = "Save"
         '
         'txtAmountOtherFee
         '
@@ -589,26 +603,84 @@ Partial Class frmTuitionFee
         Me.txtAmountOtherFee.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAmountOtherFee.ForeColor = System.Drawing.Color.Black
         Me.txtAmountOtherFee.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAmountOtherFee.Location = New System.Drawing.Point(3, 40)
+        Me.txtAmountOtherFee.Location = New System.Drawing.Point(3, 97)
         Me.txtAmountOtherFee.Name = "txtAmountOtherFee"
         Me.txtAmountOtherFee.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAmountOtherFee.PlaceholderText = ""
         Me.txtAmountOtherFee.SelectedText = ""
         Me.txtAmountOtherFee.Size = New System.Drawing.Size(221, 36)
-        Me.txtAmountOtherFee.TabIndex = 7
+        Me.txtAmountOtherFee.TabIndex = 11
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 80)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(55, 14)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Amount"
+        '
+        'btnClearOtherFee
+        '
+        Me.btnClearOtherFee.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClearOtherFee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClearOtherFee.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClearOtherFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClearOtherFee.FillColor = System.Drawing.Color.Gray
+        Me.btnClearOtherFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearOtherFee.ForeColor = System.Drawing.Color.White
+        Me.btnClearOtherFee.Location = New System.Drawing.Point(75, 181)
+        Me.btnClearOtherFee.Name = "btnClearOtherFee"
+        Me.btnClearOtherFee.Size = New System.Drawing.Size(91, 36)
+        Me.btnClearOtherFee.TabIndex = 9
+        Me.btnClearOtherFee.Text = "Clear"
+        '
+        'btnSaveOtherFee
+        '
+        Me.btnSaveOtherFee.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSaveOtherFee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSaveOtherFee.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSaveOtherFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSaveOtherFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveOtherFee.ForeColor = System.Drawing.Color.White
+        Me.btnSaveOtherFee.Location = New System.Drawing.Point(3, 139)
+        Me.btnSaveOtherFee.Name = "btnSaveOtherFee"
+        Me.btnSaveOtherFee.Size = New System.Drawing.Size(221, 36)
+        Me.btnSaveOtherFee.TabIndex = 8
+        Me.btnSaveOtherFee.Text = "Save"
+        '
+        'txtOtherFeeDesc
+        '
+        Me.txtOtherFeeDesc.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtOtherFeeDesc.DefaultText = ""
+        Me.txtOtherFeeDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtOtherFeeDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtOtherFeeDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtOtherFeeDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtOtherFeeDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtOtherFeeDesc.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtOtherFeeDesc.ForeColor = System.Drawing.Color.Black
+        Me.txtOtherFeeDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtOtherFeeDesc.Location = New System.Drawing.Point(3, 40)
+        Me.txtOtherFeeDesc.Name = "txtOtherFeeDesc"
+        Me.txtOtherFeeDesc.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtOtherFeeDesc.PlaceholderText = ""
+        Me.txtOtherFeeDesc.SelectedText = ""
+        Me.txtOtherFeeDesc.Size = New System.Drawing.Size(221, 36)
+        Me.txtOtherFeeDesc.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(3, 23)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 14)
+        Me.Label4.Size = New System.Drawing.Size(72, 14)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Amount"
+        Me.Label4.Text = "Description"
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.dgvMOP)
+        Me.TabPage4.Controls.Add(Me.Panel10)
         Me.TabPage4.Controls.Add(Me.Panel5)
         Me.TabPage4.Location = New System.Drawing.Point(4, 34)
         Me.TabPage4.Name = "TabPage4"
@@ -616,6 +688,16 @@ Partial Class frmTuitionFee
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Mode Of Payment"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.dgvMOP)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel10.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel10.Location = New System.Drawing.Point(230, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(715, 511)
+        Me.Panel10.TabIndex = 9
         '
         'dgvMOP
         '
@@ -628,7 +710,7 @@ Partial Class frmTuitionFee
         Me.dgvMOP.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -639,7 +721,7 @@ Partial Class frmTuitionFee
         Me.dgvMOP.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -647,7 +729,7 @@ Partial Class frmTuitionFee
         Me.dgvMOP.DefaultCellStyle = DataGridViewCellStyle12
         Me.dgvMOP.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvMOP.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvMOP.Location = New System.Drawing.Point(230, 0)
+        Me.dgvMOP.Location = New System.Drawing.Point(0, 0)
         Me.dgvMOP.MultiSelect = False
         Me.dgvMOP.Name = "dgvMOP"
         Me.dgvMOP.ReadOnly = True
@@ -714,7 +796,7 @@ Partial Class frmTuitionFee
         Me.btnMOPClear.FillColor = System.Drawing.Color.Gray
         Me.btnMOPClear.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMOPClear.ForeColor = System.Drawing.Color.White
-        Me.btnMOPClear.Location = New System.Drawing.Point(118, 75)
+        Me.btnMOPClear.Location = New System.Drawing.Point(58, 126)
         Me.btnMOPClear.Name = "btnMOPClear"
         Me.btnMOPClear.Size = New System.Drawing.Size(91, 36)
         Me.btnMOPClear.TabIndex = 9
@@ -728,9 +810,9 @@ Partial Class frmTuitionFee
         Me.btnMOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnMOP.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMOP.ForeColor = System.Drawing.Color.White
-        Me.btnMOP.Location = New System.Drawing.Point(21, 75)
+        Me.btnMOP.Location = New System.Drawing.Point(3, 84)
         Me.btnMOP.Name = "btnMOP"
-        Me.btnMOP.Size = New System.Drawing.Size(91, 36)
+        Me.btnMOP.Size = New System.Drawing.Size(221, 36)
         Me.btnMOP.TabIndex = 8
         Me.btnMOP.Text = "Save"
         '
@@ -746,7 +828,7 @@ Partial Class frmTuitionFee
         Me.txtMOP.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMOP.ForeColor = System.Drawing.Color.Black
         Me.txtMOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMOP.Location = New System.Drawing.Point(3, 33)
+        Me.txtMOP.Location = New System.Drawing.Point(3, 42)
         Me.txtMOP.Name = "txtMOP"
         Me.txtMOP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMOP.PlaceholderText = ""
@@ -757,7 +839,7 @@ Partial Class frmTuitionFee
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(3, 16)
+        Me.Label8.Location = New System.Drawing.Point(3, 25)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(105, 14)
         Me.Label8.TabIndex = 6
@@ -765,7 +847,7 @@ Partial Class frmTuitionFee
         '
         'TabPage5
         '
-        Me.TabPage5.Controls.Add(Me.dgvTOP)
+        Me.TabPage5.Controls.Add(Me.Panel9)
         Me.TabPage5.Controls.Add(Me.Panel6)
         Me.TabPage5.Location = New System.Drawing.Point(4, 34)
         Me.TabPage5.Name = "TabPage5"
@@ -773,6 +855,16 @@ Partial Class frmTuitionFee
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Terms Of Payment"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.dgvTOP)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel9.Location = New System.Drawing.Point(230, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(715, 511)
+        Me.Panel9.TabIndex = 9
         '
         'dgvTOP
         '
@@ -783,7 +875,7 @@ Partial Class frmTuitionFee
         Me.dgvTOP.BackgroundColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -794,7 +886,7 @@ Partial Class frmTuitionFee
         Me.dgvTOP.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -802,7 +894,7 @@ Partial Class frmTuitionFee
         Me.dgvTOP.DefaultCellStyle = DataGridViewCellStyle15
         Me.dgvTOP.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvTOP.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvTOP.Location = New System.Drawing.Point(230, 0)
+        Me.dgvTOP.Location = New System.Drawing.Point(0, 0)
         Me.dgvTOP.MultiSelect = False
         Me.dgvTOP.Name = "dgvTOP"
         Me.dgvTOP.ReadOnly = True
@@ -917,28 +1009,29 @@ Partial Class frmTuitionFee
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Terms of Payment"
         '
-        'Column1
+        'DataGridViewTextBoxColumn3
         '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Visible = False
         '
-        'Column4
+        'DataGridViewTextBoxColumn4
         '
-        Me.Column4.DataPropertyName = "GradeLevel"
-        Me.Column4.HeaderText = "Grade Level"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Description"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
-        'Column2
+        'Column3
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Amount"
-        Me.Column2.HeaderText = "Amount"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "OF_Amount"
+        Me.Column3.HeaderText = "Amount"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
         '
         'frmTuitionFee
         '
@@ -958,18 +1051,22 @@ Partial Class frmTuitionFee
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
         CType(Me.dgvMiscellaneous, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
         CType(Me.dgvOtherFee, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
+        Me.Panel10.ResumeLayout(False)
         CType(Me.dgvMOP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
         CType(Me.dgvTOP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
@@ -1000,12 +1097,10 @@ Partial Class frmTuitionFee
     Friend WithEvents Panel4 As Panel
     Friend WithEvents btnClearOtherFee As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSaveOtherFee As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents txtAmountOtherFee As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtOtherFeeDesc As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents btnMOPClear As Guna.UI2.WinForms.Guna2Button
@@ -1024,7 +1119,16 @@ Partial Class frmTuitionFee
     Friend WithEvents dgvMOP As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel10 As Panel
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents txtAmountOtherFee As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
 End Class

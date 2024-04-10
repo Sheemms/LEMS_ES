@@ -13,10 +13,12 @@ Public Class frmStudentsView
         dgvSubmittedRequirements.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub ClearFields()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudNum, txtStudLname, txtStudFname, txtStudMname, txtGuardianAddress}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox =
+            {txtStudNum, txtStudLname, txtStudFname, txtStudMname, txtGuardianName, txtGuardianAddress}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
+        cmbStudSuffix.Items.Clear()
         cbMale.Checked = False
         cbFemale.Checked = False
     End Sub

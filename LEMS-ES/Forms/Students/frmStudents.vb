@@ -4,7 +4,7 @@
         loadrecords()
     End Sub
     Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
-        frmStudentRegistration.Show()
+        frmStudentsView.Show()
     End Sub
     Public Sub loadrecords()
         Query("SELECT ID, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS Fullname, Suffix, Gender, Age, Birthday, Address, 

@@ -73,6 +73,7 @@ Public Class ClassTuition
         Try
             Dim OtherFeeParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmTuitionFee.idOtherFee),
+                    New MySqlParameter("@Description", frmTuitionFee.txtOtherFeeDesc.Text),
                     New MySqlParameter("@OF_Amount", frmTuitionFee.txtAmountOtherFee.Text)
                     }
             Return OtherFeeParam
@@ -82,16 +83,16 @@ Public Class ClassTuition
     End Function
     Public Shared Sub OtherFeeRef()
         Try
-            Dim existingCount As Integer = CInt(CmdScalar("SELECT COUNT(*) FROM otherfee"))
+            'Dim existingCount As Integer = CInt(CmdScalar("SELECT COUNT(*) FROM otherfee"))
 
-            If existingCount = 0 Then
+            If frmTuitionFee.idOtherFee = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO otherfee(OF_Amount) VALUES (@OF_Amount)", OtherFeeParameters())
+                    Command("INSERT INTO otherfee(Description, OF_Amount) VALUES (@Description, @OF_Amount)", OtherFeeParameters())
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE otherfee SET OF_Amount=@OF_Amount", OtherFeeParameters())
+                    Command("UPDATE otherfee SET Description=@Description, OF_Amount=@OF_Amount", OtherFeeParameters())
                     Success("Successfully Updated!")
                 End If
             End If

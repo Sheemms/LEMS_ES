@@ -2,11 +2,10 @@
     Public idSubj As Integer = 0
     Private Sub frmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
-        clear()
+        LoadRecords()
     End Sub
-    Public Sub loadrecords()
-        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName 
+    Public Sub LoadRecords()
+        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName , sub.Units
                 FROM subject sub
                 JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID")
         dgvSubject.DataSource = ds.Tables("QueryTb")

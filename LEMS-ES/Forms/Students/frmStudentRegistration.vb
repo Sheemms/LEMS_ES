@@ -11,7 +11,6 @@ Public Class frmStudentRegistration
                 FROM requirements rq
                 JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID")
         dgvRequirements.DataSource = ds.Tables("QueryTb")
-
     End Sub
     Public Sub ClearFields()
         Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtLRN, txtLastname, txtFirstname, txtMiddlename, txtAddress}

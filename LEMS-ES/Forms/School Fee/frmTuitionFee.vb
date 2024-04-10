@@ -41,7 +41,7 @@
         txtAmountMiscellaneous.Clear()
 
         idOtherFee = 0
-        txtAmountOtherFee.Clear()
+        txtOtherFeeDesc.Clear()
 
         idMOP = 0
         txtMOP.Clear()
@@ -81,6 +81,7 @@
     End Sub
 
     Private Sub btnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click
+        If IS_EMPTY(txtOtherFeeDesc) Then Return
         If IS_EMPTY(txtAmountOtherFee) Then Return
 
         ClassTuition.OtherFeeRef()
@@ -100,4 +101,5 @@
         ClassTuition.ToPRef()
         clear()
     End Sub
+
 End Class

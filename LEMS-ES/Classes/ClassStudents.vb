@@ -84,6 +84,8 @@ Public Class ClassStudents
                 New MySqlParameter("@FatherName", frmStudentsView.txtFatherName.Text),
                 New MySqlParameter("@Father_Occupation", frmStudentsView.txtFatherOccupation.Text),
                 New MySqlParameter("@GuardianName", frmStudentsView.txtGuardianName.Text),
+                New MySqlParameter("@Guardian_Occupation", frmStudentsView.txtGuardianOccupation.Text),
+                New MySqlParameter("@GuardianRelation", frmStudentsView.txtGuardianRelation.Text),
                 New MySqlParameter("@GuardianContact", frmStudentsView.txtGuardianContact.Text),
                 New MySqlParameter("@Citizenship", frmStudentsView.txtCitizenship.Text)
             }
@@ -100,9 +102,9 @@ Public Class ClassStudents
             If frmStudentsView.idStud = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO student(LRN, Lastname, Firstname, MiddleInitial, Suffix, Gender, Age, Birthday, Address, 
-                            MotherName, MothersMaiden, Mother_Occupation, FatherName, Father_Occupation, GuardianName, GuardianContact, Citizenship) 
+                            MotherName, MothersMaiden, Mother_Occupation, FatherName, Father_Occupation, GuardianName, Guardian_Occupation, GuardianRelation, GuardianContact, Citizenship) 
                             VALUES (@LRN, @Lastname, @Firstname, @MiddleInitial, @Suffix, @Gender, @Birthday, @Address, 
-                            @MotherName, @Mother_Occupation, @FatherName, @Father_Occupation, @GuardianName, @GuardianContact, @Citizenship)", dynamicParams)
+                            @MotherName, @Mother_Occupation, @FatherName, @Father_Occupation, @GuardianName, @Guardian_Occupation, @GuardianRelation, @GuardianContact, @Citizenship)", dynamicParams)
 
                     'Dim lastInsertedId As Integer = Convert.ToInt32(CmdScalar("SELECT LAST_INSERT_ID()"))
 
@@ -123,10 +125,11 @@ Public Class ClassStudents
                     frmStudentsView.Close()
                 End If
             Else
-                If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial, Suffix=@Suffix, Gender=@Gender, Age=@Age, Birthday=@Birthday, Address=@Address, 
-                            MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName, GuardianContact=@GuardianContact, 
-                            Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
+                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial, Suffix=@Suffix, Gender=@Gender, Age=@Age, 
+                            Birthday=@Birthday, Address=@Address, MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, 
+                            FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName, Guardian_Occupation=@Guardian_Occupation, 
+                            GuardianRelation=@GuardianRelation, GuardianContact=@GuardianContact, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
                     Success("Successfully updated!")
                     frmStudentsView.Close()
                 End If
@@ -147,10 +150,11 @@ Public Class ClassStudents
             Dim dynamicParams As MySqlParameter() = StudParameters()
 
 
-            If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
-                Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial, Suffix=@Suffix, Gender=@Gender, Age=@Age, Birthday=@Birthday, Address=@Address,
-                        MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName, GuardianContact=@GuardianContact, 
-                        Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
+            If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                Command("UPDATE student SET LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial, Suffix=@Suffix, Gender=@Gender, Age=@Age, 
+                            Birthday=@Birthday, Address=@Address, MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, 
+                            FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName, Guardian_Occupation=@Guardian_Occupation, 
+                            GuardianRelation=@GuardianRelation, GuardianContact=@GuardianContact, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
                 Success("Successfully updated!")
             Else
 
