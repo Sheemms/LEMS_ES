@@ -4,16 +4,18 @@
         LoadRecords()
         LoadDepartment()
         LoadSubjectAutoComplet()
-        LoadTeacher()
         LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
+#Region "Loads"
     Public Sub LoadRecords()
-        Query("SELECT sc.ID, sc.SY_Code, sec.ID, sc.Room, t.ID, sub.ID, sc.Days, sc.Time_From, sc.Time_To, t.ID 
+        Query("SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, t.EmpID, sub.SubjectCode, sc.Days, sc.Time_From, sc.Time_To, t.EmpID 
                FROM schedule sc
                JOIN section sec ON sc.Sec_ID = sec.ID
                JOIN teacher t ON sc.Adviser_ID = t.ID
-               JOIN subject sub ON sc.Subj_ID = sub.ID")
+               JOIN subject sub ON sc.Subj_ID = sub.ID
+               JOIN department dpt ON sc.Department_ID = dpt.ID")
+        dgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub LoadDepartment()
         Query("SELECT * FROM department")
@@ -21,12 +23,7 @@
         cmbDepartment.ValueMember = "ID"
         cmbDepartment.DisplayMember = "Department"
     End Sub
-    Public Sub LoadTeacher()
-        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM teacher")
-        cmbAdviser.DataSource = ds.Tables("QueryTb")
-        cmbAdviser.ValueMember = "ID"
-        cmbAdviser.DisplayMember = "FullName"
-    End Sub
+#End Region
 
     Private Sub cmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartment.SelectedIndexChanged
         Dim selectedDepartmentID As Integer
@@ -65,35 +62,59 @@
             Return
         End If
 
-        Dim qry As String = $"SELECT ID, SectionRoom FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
+        Dim qry As String = $"SELECT ID, SectionRoom, Adviser_ID FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
         Query(qry)
 
         Dim sectionTable As DataTable = ds.Tables("QueryTb")
         If sectionTable.Rows.Count > 0 Then
-            ' If grade levels are found, populate cmbGradeLevel
             cmbSection.DataSource = sectionTable
-            cmbSection.ValueMember = "ID" ' Assuming "ID" is the column name for the value
-            cmbSection.DisplayMember = "SectionRoom" ' Assuming "GradeLevel" is the column name for the display text
+            cmbSection.ValueMember = "ID"
+            cmbSection.DisplayMember = "SectionRoom"
         Else
-            ' If no grade levels found, clear cmbGradeLevel
             cmbSection.DataSource = Nothing
             cmbSection.Items.Clear()
+            txtAdviser.Clear()
         End If
     End Sub
+    Private Sub cmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
+        Try
+            If cmbSection.SelectedIndex <> -1 AndAlso cmbSection.DataSource IsNot Nothing Then
+                Dim selectedRow As DataRowView = TryCast(cmbSection.SelectedItem, DataRowView)
 
+                Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+
+                Dim qry As String = $"SELECT s.SectionRoom, t.EmpID, CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as FullName
+                                  FROM section s 
+                                  JOIN teacher t ON s.Adviser_ID = t.ID
+                                  WHERE s.ID = {selectedSectionID}"
+                Query(qry)
+
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    txtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
+                    txtAdviser.Text = ds.Tables("QueryTb").Rows(0)("FullName").ToString()
+                Else
+                    txtAdviserID.Clear()
+                    txtAdviser.Clear()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 #Region "Auto Complete/ Populate"
     Private Sub LoadSubjectAutoComplet()
         Query("SELECT ID, GradeLevel_ID, SubjectCode, SubjectName, Units FROM subject")
         Dim autoCompleteCollection As New AutoCompleteStringCollection()
 
         For Each row As DataRow In ds.Tables("QueryTb").Rows
-            autoCompleteCollection.Add(row("SubjectCOde").ToString())
+            autoCompleteCollection.Add(row("SubjectCode").ToString())
         Next
 
         txtSubjCode.AutoCompleteCustomSource = autoCompleteCollection
         txtSubjCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         txtSubjCode.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
+    Public subjID = Nothing
     Private Sub txtSubjCode_TextChanged(sender As Object, e As EventArgs) Handles txtSubjCode.TextChanged
         Dim selectedSubjName As String = txtSubjCode.Text.Trim()
 
@@ -102,6 +123,7 @@
 
         If row IsNot Nothing AndAlso row.Table.Columns.Contains("SubjectName") Then
             txtSubjName.Text = row("SubjectName").ToString()
+            subjID = row("ID").ToString()
         Else
             txtSubjName.Clear()
         End If
@@ -118,7 +140,7 @@
         txtTeacherName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         txtTeacherName.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
-
+    Public teacherid = Nothing
     Private Sub txtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
         Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
 
@@ -127,6 +149,7 @@
 
         If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
             txtTeacherID.Text = row("EmpID").ToString()
+            teacherid = row("ID").ToString()
         Else
             txtTeacherID.Clear()
         End If
@@ -136,5 +159,35 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
+        ClassSchedule.SchedRef()
     End Sub
+
+    Public Function chckBox()
+        'If cbM.Checked = True Then
+        '    Return "Monday"
+        'ElseIf cbT.Checked = True Then
+        '    Return "Tuesday"
+        'ElseIf cbW.Checked = True Then
+        '    Return "Wednesday"
+        'ElseIf cbTH.Checked = True Then
+        '    Return "Thursday"
+        'ElseIf cbF.Checked = True Then
+        '    Return "Friday"
+        'Else
+        'End If
+
+        Dim days = ""
+        Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
+        For i = 0 To ckbx.Length - 1
+            If ckbx(i).Checked Then
+                days &= ckbx(i).Text & " "
+                'cbM.Checked = False
+                'cbT.Checked = False
+                'cbW.Checked = False
+                'cbTH.Checked = False
+                'cbF.Checked = False
+            End If
+        Next
+        Return days
+    End Function
 End Class

@@ -142,3 +142,4 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\stdole.dll
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmPayment.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmSchedule.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmEnrollmentReport.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmPayments.resources

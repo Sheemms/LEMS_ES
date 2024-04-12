@@ -6,21 +6,28 @@
         clear()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT  sec.ID, gl.GradeLevel, sec.SectionRoom, sec.Capacity
+        Query("SELECT  sec.ID, gl.GradeLevel, sec.SectionRoom, sec.Capacity, CONCAT(t.Lastname, ' ', t.Firstname, ' ', MiddleInitial) as Adviser
                 FROM section sec
-                JOIN gradelevel gl ON sec.GradeLevel_ID = gl.ID")
+                JOIN gradelevel gl ON sec.GradeLevel_ID = gl.ID
+                JOIN teacher t ON sec.Adviser_ID = t.ID")
         dgvSection.DataSource = ds.Tables("QueryTb")
 
         Query("SELECT * FROM gradelevel")
         cmbGradeLevel.DataSource = ds.Tables("QueryTb")
         cmbGradeLevel.ValueMember = "ID"
         cmbGradeLevel.DisplayMember = "GradeLevel"
+
+        Query("SELECT ID, EmpID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) as Adviser FROM teacher")
+        cmbAdviser.DataSource = ds.Tables("QueryTb")
+        cmbAdviser.ValueMember = "ID"
+        cmbAdviser.DisplayMember = "Adviser"
     End Sub
     Public Sub clear()
         idSection = 0
         cmbGradeLevel.Text = ""
         txtSectionName.Clear()
         txtSectionCapacity.Clear()
+        cmbAdviser.Text = ""
     End Sub
     Private Sub dgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
         Try
@@ -30,6 +37,7 @@
                 cmbGradeLevel.Text = row.Cells(1).Value
                 txtSectionName.Text = row.Cells(2).Value
                 txtSectionCapacity.Text = row.Cells(3).Value
+                cmbAdviser.Text = row.Cells(4).Value
             ElseIf e.ColumnIndex >= 0 Then
                 clear()
             End If

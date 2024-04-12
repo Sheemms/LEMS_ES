@@ -6,11 +6,18 @@ Public Class frmEnrollmentRegistration
     Private Sub frmEnrollmentRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         GetSchoolYear(lblSY)
-        LoadStudentAutoComplete()
+        LoadStudAutoComplet()
+        LoadRequirements()
     End Sub
 
     Public Sub loadrecords()
-
+        Query("SELECT ID, LRN, SchoolYear, SectionID, GradeLevel_ID FROM enrollment")
+    End Sub
+    Public Sub LoadRequirements()
+        Query("SELECT rq.ID, rqcl.Classification, rq.Requirement 
+                FROM requirements rq
+                JOIN req_classification rqcl ON rq.Classification_ID = rqcl.ID")
+        dgvRequirements.DataSource = ds.Tables("QueryTb")
     End Sub
 
     Public Sub loadSubject()
@@ -30,24 +37,6 @@ Public Class frmEnrollmentRegistration
 
     End Sub
 
-    Private Sub LoadStudentAutoComplete()
-        ' Load teacher data from the database
-        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student")
-
-        ' Create a new AutoCompleteStringCollection
-        Dim autoCompleteCollection As New AutoCompleteStringCollection()
-
-        ' Add teacher names to the AutoCompleteStringCollection
-        For Each row As DataRow In ds.Tables("QueryTb").Rows
-            autoCompleteCollection.Add(row("FullName").ToString())
-        Next
-
-        ' Assign the AutoCompleteStringCollection to the TextBox
-        txtSearch.AutoCompleteCustomSource = autoCompleteCollection
-        txtSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource
-    End Sub
-
 #Region "ESD"
     Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
         'PopulateSearch()
@@ -64,6 +53,35 @@ Public Class frmEnrollmentRegistration
         'txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest
         'txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource
         'txtSearch.AutoCompleteCustomSource = autoCompleteCollection
+    End Sub
+#End Region
+#Region "AutoComplete/Populate"
+    Private Sub LoadStudAutoComplet()
+        Query("SELECT ID, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student")
+        Dim autoCompleteCollection As New AutoCompleteStringCollection()
+
+        For Each row As DataRow In ds.Tables("QueryTb").Rows
+            autoCompleteCollection.Add(row("LRN").ToString())
+            autoCompleteCollection.Add(row("FullName").ToString())
+        Next
+
+        txtSearch.AutoCompleteCustomSource = autoCompleteCollection
+        txtSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource
+    End Sub
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Dim selectedStudName As String = txtSearch.Text.Trim()
+
+        Query("SELECT ID, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student")
+        Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedStudName}'").FirstOrDefault()
+
+        If row IsNot Nothing AndAlso row.Table.Columns.Contains("LRN") Then
+            txtStudLRN.Text = row("LRN").ToString()
+            txtStudName.Text = row("FullName").ToString()
+        Else
+            txtStudLRN.Clear()
+            txtStudName.Clear()
+        End If
     End Sub
 #End Region
 

@@ -166,10 +166,10 @@
     <Compile Include="Forms\Enrollment\frmEnrollmentReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmBilling.Designer.vb">
+    <Compile Include="Forms\Payments\frmBilling.Designer.vb">
       <DependentUpon>frmBilling.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmBilling.vb">
+    <Compile Include="Forms\Payments\frmBilling.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Dashboard\frmCharts.Designer.vb">
@@ -324,6 +324,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Forms\Payments\frmPayments.Designer.vb">
+      <DependentUpon>frmPayments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Payments\frmPayments.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Audit Trail\frmAuditTrail.resx">
@@ -335,7 +341,7 @@
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentReport.resx">
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmBilling.resx">
+    <EmbeddedResource Include="Forms\Payments\frmBilling.resx">
       <DependentUpon>frmBilling.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard\frmCharts.resx">
@@ -409,6 +415,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Payments\frmPayments.resx">
+      <DependentUpon>frmPayments.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
