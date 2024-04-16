@@ -31,8 +31,8 @@ Public Class frmCharts
         lblSections.Text = total.ToString()
     End Sub
     Sub ActiveSchoolYear()
-        Command("SELECT SchoolYear FROM schoolyear WHERE Status = 'Open'")
-        Dim total As Integer = CInt(cmd.ExecuteScalar())
+        Command("SELECT CONCAT(Start_Year, '-', End_Year) as SchoolYear FROM schoolyear WHERE Status = 'Open'")
+        Dim total As String = cmd.ExecuteScalar()
         lblSY.Text = total.ToString()
     End Sub
     Sub ChartEnrolled()

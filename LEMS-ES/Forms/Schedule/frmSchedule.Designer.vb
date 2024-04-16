@@ -27,6 +27,9 @@ Partial Class frmSchedule
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtRoom = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtAdviser = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSubjCode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -58,10 +61,8 @@ Partial Class frmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtAdviser = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtRoom = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,9 +70,19 @@ Partial Class frmSchedule
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -89,6 +100,9 @@ Partial Class frmSchedule
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.TabControl1)
+        Me.Panel1.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.txtRoom)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.txtAdviser)
@@ -101,7 +115,6 @@ Partial Class frmSchedule
         Me.Panel1.Controls.Add(Me.cbT)
         Me.Panel1.Controls.Add(Me.cbM)
         Me.Panel1.Controls.Add(Me.lblSY)
-        Me.Panel1.Controls.Add(Me.dgvSchedule)
         Me.Panel1.Controls.Add(Me.txtTeacherName)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.txtTeacherID)
@@ -130,6 +143,57 @@ Partial Class frmSchedule
         Me.Panel1.Size = New System.Drawing.Size(754, 578)
         Me.Panel1.TabIndex = 0
         '
+        'txtRoom
+        '
+        Me.txtRoom.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRoom.DefaultText = ""
+        Me.txtRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRoom.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtRoom.ForeColor = System.Drawing.Color.Black
+        Me.txtRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRoom.Location = New System.Drawing.Point(100, 178)
+        Me.txtRoom.Name = "txtRoom"
+        Me.txtRoom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRoom.PlaceholderText = ""
+        Me.txtRoom.SelectedText = ""
+        Me.txtRoom.Size = New System.Drawing.Size(200, 36)
+        Me.txtRoom.TabIndex = 43
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(55, 190)
+        Me.Label14.Name = "Label14"
+        Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label14.Size = New System.Drawing.Size(39, 14)
+        Me.Label14.TabIndex = 42
+        Me.Label14.Text = "Room"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txtAdviser
+        '
+        Me.txtAdviser.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtAdviser.DefaultText = ""
+        Me.txtAdviser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtAdviser.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtAdviser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdviser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtAdviser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtAdviser.ForeColor = System.Drawing.Color.Black
+        Me.txtAdviser.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtAdviser.Location = New System.Drawing.Point(403, 52)
+        Me.txtAdviser.Name = "txtAdviser"
+        Me.txtAdviser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtAdviser.PlaceholderText = ""
+        Me.txtAdviser.SelectedText = ""
+        Me.txtAdviser.Size = New System.Drawing.Size(200, 36)
+        Me.txtAdviser.TabIndex = 41
+        '
         'btnSave
         '
         Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -138,9 +202,9 @@ Partial Class frmSchedule
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(873, 178)
+        Me.btnSave.Location = New System.Drawing.Point(866, 178)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(91, 36)
+        Me.btnSave.Size = New System.Drawing.Size(98, 36)
         Me.btnSave.TabIndex = 40
         Me.btnSave.Text = "Save"
         '
@@ -156,7 +220,7 @@ Partial Class frmSchedule
         Me.txtSubjCode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtSubjCode.ForeColor = System.Drawing.Color.Black
         Me.txtSubjCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjCode.Location = New System.Drawing.Point(400, 94)
+        Me.txtSubjCode.Location = New System.Drawing.Point(403, 94)
         Me.txtSubjCode.Name = "txtSubjCode"
         Me.txtSubjCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubjCode.PlaceholderText = ""
@@ -254,7 +318,7 @@ Partial Class frmSchedule
         Me.dgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSchedule.ColumnHeadersHeight = 44
         Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
+        Me.dgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column8, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -263,12 +327,13 @@ Partial Class frmSchedule
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvSchedule.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvSchedule.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSchedule.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSchedule.Location = New System.Drawing.Point(20, 229)
+        Me.dgvSchedule.Location = New System.Drawing.Point(3, 3)
         Me.dgvSchedule.MultiSelect = False
         Me.dgvSchedule.Name = "dgvSchedule"
         Me.dgvSchedule.RowHeadersVisible = False
-        Me.dgvSchedule.Size = New System.Drawing.Size(1057, 464)
+        Me.dgvSchedule.Size = New System.Drawing.Size(1043, 431)
         Me.dgvSchedule.TabIndex = 29
         Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -424,7 +489,7 @@ Partial Class frmSchedule
         Me.txtSubjName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtSubjName.ForeColor = System.Drawing.Color.Black
         Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Location = New System.Drawing.Point(400, 136)
+        Me.txtSubjName.Location = New System.Drawing.Point(403, 136)
         Me.txtSubjName.Name = "txtSubjName"
         Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubjName.PlaceholderText = ""
@@ -476,7 +541,7 @@ Partial Class frmSchedule
         Me.txtAdviserID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAdviserID.ForeColor = System.Drawing.Color.Black
         Me.txtAdviserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviserID.Location = New System.Drawing.Point(400, 10)
+        Me.txtAdviserID.Location = New System.Drawing.Point(403, 10)
         Me.txtAdviserID.Name = "txtAdviserID"
         Me.txtAdviserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAdviserID.PlaceholderText = ""
@@ -512,7 +577,7 @@ Partial Class frmSchedule
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(45, 146)
+        Me.Label4.Location = New System.Drawing.Point(42, 146)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 14)
         Me.Label4.TabIndex = 6
@@ -537,7 +602,7 @@ Partial Class frmSchedule
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 105)
+        Me.Label3.Location = New System.Drawing.Point(15, 105)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 14)
         Me.Label3.TabIndex = 4
@@ -562,7 +627,7 @@ Partial Class frmSchedule
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 64)
+        Me.Label2.Location = New System.Drawing.Point(14, 64)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(77, 14)
         Me.Label2.TabIndex = 2
@@ -572,63 +637,12 @@ Partial Class frmSchedule
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(20, 24)
+        Me.Label1.Location = New System.Drawing.Point(17, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 14)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txtAdviser
-        '
-        Me.txtAdviser.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtAdviser.DefaultText = ""
-        Me.txtAdviser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtAdviser.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtAdviser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAdviser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtAdviser.ForeColor = System.Drawing.Color.Black
-        Me.txtAdviser.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviser.Location = New System.Drawing.Point(400, 52)
-        Me.txtAdviser.Name = "txtAdviser"
-        Me.txtAdviser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAdviser.PlaceholderText = ""
-        Me.txtAdviser.SelectedText = ""
-        Me.txtAdviser.Size = New System.Drawing.Size(200, 36)
-        Me.txtAdviser.TabIndex = 41
-        '
-        'txtRoom
-        '
-        Me.txtRoom.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtRoom.DefaultText = ""
-        Me.txtRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtRoom.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtRoom.ForeColor = System.Drawing.Color.Black
-        Me.txtRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtRoom.Location = New System.Drawing.Point(400, 178)
-        Me.txtRoom.Name = "txtRoom"
-        Me.txtRoom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtRoom.PlaceholderText = ""
-        Me.txtRoom.SelectedText = ""
-        Me.txtRoom.Size = New System.Drawing.Size(200, 36)
-        Me.txtRoom.TabIndex = 43
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(310, 188)
-        Me.Label14.Name = "Label14"
-        Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label14.Size = New System.Drawing.Size(39, 14)
-        Me.Label14.TabIndex = 42
-        Me.Label14.Text = "Room"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'colID
         '
@@ -637,57 +651,145 @@ Partial Class frmSchedule
         Me.colID.Name = "colID"
         Me.colID.Visible = False
         '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "SY_Code"
+        Me.Column8.HeaderText = "School Year"
+        Me.Column8.Name = "Column8"
+        '
         'Column1
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column1.DataPropertyName = "SubjectCode"
         Me.Column1.HeaderText = "Subject Code"
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 96
         '
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "SubjectName"
-        Me.Column2.HeaderText = "Subject Name"
+        Me.Column2.DataPropertyName = "Department"
+        Me.Column2.HeaderText = "Department"
         Me.Column2.Name = "Column2"
         '
         'Column3
         '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.HeaderText = "Time"
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "SectionRoom"
+        Me.Column3.HeaderText = "Section"
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 62
         '
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "Days"
-        Me.Column4.HeaderText = "Day"
+        Me.Column4.DataPropertyName = "Room"
+        Me.Column4.HeaderText = "Room"
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 55
+        Me.Column4.Width = 64
         '
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "Grade"
+        Me.Column5.DataPropertyName = "Adviser"
+        Me.Column5.HeaderText = "EmpID"
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 67
+        Me.Column5.Width = 70
         '
         'Column6
         '
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.DataPropertyName = "Section"
-        Me.Column6.HeaderText = "Section"
+        Me.Column6.DataPropertyName = "Days"
+        Me.Column6.HeaderText = "Days"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 74
+        Me.Column6.Width = 60
         '
         'Column7
         '
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.DataPropertyName = "EmpID"
-        Me.Column7.HeaderText = "Teacher"
+        Me.Column7.DataPropertyName = "Time"
+        Me.Column7.HeaderText = "Time"
         Me.Column7.Name = "Column7"
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column9.DataPropertyName = "Teacher"
+        Me.Column9.HeaderText = "Teacher"
+        Me.Column9.Name = "Column9"
+        Me.Column9.Width = 79
+        '
+        'Guna2TextBox1
+        '
+        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2TextBox1.DefaultText = ""
+        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(403, 178)
+        Me.Guna2TextBox1.Name = "Guna2TextBox1"
+        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Guna2TextBox1.PlaceholderText = ""
+        Me.Guna2TextBox1.SelectedText = ""
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2TextBox1.TabIndex = 45
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(349, 190)
+        Me.Label15.Name = "Label15"
+        Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label15.Size = New System.Drawing.Size(48, 14)
+        Me.Label15.TabIndex = 44
+        Me.Label15.Text = "Unit(s)"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(20, 229)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1057, 464)
+        Me.TabControl1.TabIndex = 46
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.dgvSchedule)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1049, 437)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Lists"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.CrystalReportViewer1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1049, 437)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Print Preview"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'CrystalReportViewer1
+        '
+        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 3)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1043, 431)
+        Me.CrystalReportViewer1.TabIndex = 0
         '
         'frmSchedule
         '
@@ -703,6 +805,9 @@ Partial Class frmSchedule
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -744,6 +849,7 @@ Partial Class frmSchedule
     Friend WithEvents txtRoom As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents colID As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -751,4 +857,11 @@ Partial Class frmSchedule
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

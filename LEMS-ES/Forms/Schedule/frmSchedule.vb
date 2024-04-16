@@ -7,14 +7,31 @@
         LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
+    Public Sub ClearFields()
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtAdviserID, txtAdviser, txtSubjCode, txtSubjName, txtRoom, txtstartTime, txtendTime, txtTeacherID, txtTeacherName}
+        For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
+            textBox.Clear()
+        Next
+        cmbDepartment.Text = ""
+        cmbGradeLevel.Text = ""
+        cmbSection.Text = ""
+        cbM.Checked = False
+        cbT.Checked = False
+        cbW.Checked = False
+        cbTH.Checked = False
+        cbF.Checked = False
+    End Sub
 #Region "Loads"
     Public Sub LoadRecords()
-        Query("SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, t.EmpID, sub.SubjectCode, sc.Days, sc.Time_From, sc.Time_To, t.EmpID 
+        Query("SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, 
+                CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sub.SubjectCode, sc.Days, 
+                CONCAT(sc.Time_From, '-', sc.Time_To) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
                FROM schedule sc
                JOIN section sec ON sc.Sec_ID = sec.ID
                JOIN teacher t ON sc.Adviser_ID = t.ID
                JOIN subject sub ON sc.Subj_ID = sub.ID
-               JOIN department dpt ON sc.Department_ID = dpt.ID")
+               JOIN department dpt ON sc.Department_ID = dpt.ID
+               JOIN teacher tr ON sc.Teacher_ID = tr.ID")
         dgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub LoadDepartment()
@@ -30,24 +47,19 @@
         If cmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf cmbDepartment.SelectedItem Is DataRowView Then
             selectedDepartmentID = Convert.ToInt32(DirectCast(cmbDepartment.SelectedItem, DataRowView).Row("ID"))
         Else
-            ' Handle the case where the selected item is not valid
             MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
-        ' Execute the query to retrieve grade levels based on the selected department ID
         Dim qry As String = $"SELECT ID, GradeLevel FROM gradelevel WHERE Department_ID = {selectedDepartmentID}"
         Query(qry)
 
-        ' Populate cmbGradeLevel with the retrieved data
         Dim gradeLevelTable As DataTable = ds.Tables("QueryTb")
         If gradeLevelTable.Rows.Count > 0 Then
-            ' If grade levels are found, populate cmbGradeLevel
             cmbGradeLevel.DataSource = gradeLevelTable
-            cmbGradeLevel.ValueMember = "ID" ' Assuming "ID" is the column name for the value
-            cmbGradeLevel.DisplayMember = "GradeLevel" ' Assuming "GradeLevel" is the column name for the display text
+            cmbGradeLevel.ValueMember = "ID"
+            cmbGradeLevel.DisplayMember = "GradeLevel"
         Else
-            ' If no grade levels found, clear cmbGradeLevel
             cmbGradeLevel.DataSource = Nothing
             cmbGradeLevel.Items.Clear()
         End If
@@ -76,6 +88,7 @@
             txtAdviser.Clear()
         End If
     End Sub
+    Public AdvID = Nothing
     Private Sub cmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
         Try
             If cmbSection.SelectedIndex <> -1 AndAlso cmbSection.DataSource IsNot Nothing Then
@@ -83,7 +96,7 @@
 
                 Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
 
-                Dim qry As String = $"SELECT s.SectionRoom, t.EmpID, CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as FullName
+                Dim qry As String = $"SELECT s.SectionRoom, t.EmpID, s.Adviser_ID, CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as FullName
                                   FROM section s 
                                   JOIN teacher t ON s.Adviser_ID = t.ID
                                   WHERE s.ID = {selectedSectionID}"
@@ -92,6 +105,8 @@
                 If ds.Tables("QueryTb").Rows.Count > 0 Then
                     txtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
                     txtAdviser.Text = ds.Tables("QueryTb").Rows(0)("FullName").ToString()
+                    AdvID = ds.Tables("QueryTb").Rows(0)("Adviser_ID").ToString()
+
                 Else
                     txtAdviserID.Clear()
                     txtAdviser.Clear()
@@ -158,8 +173,10 @@
 #End Region
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If IS_EMPTY(cmbDepartment) Then Return
 
         ClassSchedule.SchedRef()
+        ClearFields()
     End Sub
 
     Public Function chckBox()

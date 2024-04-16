@@ -9,7 +9,7 @@ Public Class ClassSchedule
                     New MySqlParameter("@Department_ID", frmSchedule.cmbDepartment.SelectedValue),
                     New MySqlParameter("@Sec_ID", frmSchedule.cmbSection.SelectedValue),
                     New MySqlParameter("@Room", frmSchedule.txtRoom.Text),
-                    New MySqlParameter("@Adviser_ID", frmSchedule.advID),
+                    New MySqlParameter("@Adviser_ID", frmSchedule.AdvID),
                     New MySqlParameter("@Subj_ID", frmSchedule.subjID),
                     New MySqlParameter("@Days", frmSchedule.chckBox()),
                     New MySqlParameter("@Time_From", frmSchedule.txtstartTime.Text),

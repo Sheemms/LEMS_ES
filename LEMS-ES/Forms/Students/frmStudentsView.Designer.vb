@@ -25,6 +25,9 @@ Partial Class frmStudentsView
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbStudType = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtStudNum = New Guna.UI2.WinForms.Guna2TextBox()
@@ -32,32 +35,14 @@ Partial Class frmStudentsView
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.gbReq = New System.Windows.Forms.GroupBox()
+        Me.dgvRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.cmbStudSuffix = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cbFemale = New System.Windows.Forms.RadioButton()
         Me.cbMale = New System.Windows.Forms.RadioButton()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtCitizenship = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dgvSubmittedRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -100,28 +85,53 @@ Partial Class frmStudentsView
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txtFatherName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtSchoolAddress = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.txtYrAttended = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txtGrAttended = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.txtSchoolName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.txtSchoolName = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.txtGrAttended = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.txtYrAttended = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.txtSchoolAddress = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel1.SuspendLayout()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.gbReq.SuspendLayout()
+        CType(Me.dgvRequirements, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvSubmittedRequirements, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.dgvSubmittedRequirements, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -222,12 +232,10 @@ Partial Class frmStudentsView
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.gbReq)
         Me.TabPage1.Controls.Add(Me.cmbStudSuffix)
         Me.TabPage1.Controls.Add(Me.cbFemale)
         Me.TabPage1.Controls.Add(Me.cbMale)
-        Me.TabPage1.Controls.Add(Me.Panel4)
-        Me.TabPage1.Controls.Add(Me.Panel5)
-        Me.TabPage1.Controls.Add(Me.Panel3)
         Me.TabPage1.Controls.Add(Me.txtCitizenship)
         Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.dgvSubmittedRequirements)
@@ -252,6 +260,97 @@ Partial Class frmStudentsView
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Personal Information"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'gbReq
+        '
+        Me.gbReq.Controls.Add(Me.dgvRequirements)
+        Me.gbReq.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbReq.Location = New System.Drawing.Point(502, 13)
+        Me.gbReq.Name = "gbReq"
+        Me.gbReq.Size = New System.Drawing.Size(322, 328)
+        Me.gbReq.TabIndex = 76
+        Me.gbReq.TabStop = False
+        Me.gbReq.Text = "Requirements"
+        '
+        'dgvRequirements
+        '
+        Me.dgvRequirements.AllowUserToAddRows = False
+        Me.dgvRequirements.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvRequirements.ColumnHeadersHeight = 30
+        Me.dgvRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewCheckBoxColumn1})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvRequirements.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRequirements.Location = New System.Drawing.Point(3, 21)
+        Me.dgvRequirements.Name = "dgvRequirements"
+        Me.dgvRequirements.ReadOnly = True
+        Me.dgvRequirements.RowHeadersVisible = False
+        Me.dgvRequirements.Size = New System.Drawing.Size(316, 304)
+        Me.dgvRequirements.TabIndex = 77
+        Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.dgvRequirements.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRequirements.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRequirements.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvRequirements.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvRequirements.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.dgvRequirements.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.dgvRequirements.ThemeStyle.HeaderStyle.Height = 30
+        Me.dgvRequirements.ThemeStyle.ReadOnly = True
+        Me.dgvRequirements.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvRequirements.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvRequirements.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.dgvRequirements.ThemeStyle.RowsStyle.Height = 22
+        Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.dgvRequirements.Visible = False
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Requirement"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewCheckBoxColumn1.HeaderText = ""
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Width = 5
         '
         'cmbStudSuffix
         '
@@ -295,246 +394,6 @@ Partial Class frmStudentsView
         Me.cbMale.Text = "Male"
         Me.cbMale.UseVisualStyleBackColor = True
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.CheckBox11)
-        Me.Panel4.Controls.Add(Me.CheckBox10)
-        Me.Panel4.Controls.Add(Me.CheckBox6)
-        Me.Panel4.Controls.Add(Me.CheckBox5)
-        Me.Panel4.Controls.Add(Me.CheckBox7)
-        Me.Panel4.Controls.Add(Me.CheckBox8)
-        Me.Panel4.Controls.Add(Me.CheckBox9)
-        Me.Panel4.Controls.Add(Me.Label12)
-        Me.Panel4.Location = New System.Drawing.Point(512, 136)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(312, 170)
-        Me.Panel4.TabIndex = 39
-        Me.Panel4.Visible = False
-        '
-        'CheckBox11
-        '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(16, 141)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(231, 18)
-        Me.CheckBox11.TabIndex = 41
-        Me.CheckBox11.Text = "Copy of TOR (Transcript of Records)"
-        Me.CheckBox11.UseVisualStyleBackColor = True
-        '
-        'CheckBox10
-        '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(168, 117)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(143, 18)
-        Me.CheckBox10.TabIndex = 40
-        Me.CheckBox10.Text = "Honorable Dismissal"
-        Me.CheckBox10.UseVisualStyleBackColor = True
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(16, 93)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(243, 18)
-        Me.CheckBox6.TabIndex = 38
-        Me.CheckBox6.Text = "Recent Photo (2pcs 2x2 and 2pcs 1x1)"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(16, 117)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(146, 18)
-        Me.CheckBox5.TabIndex = 39
-        Me.CheckBox5.Text = "ESC ID Number Cert."
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(134, 69)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(167, 18)
-        Me.CheckBox7.TabIndex = 37
-        Me.CheckBox7.Text = "Certificate of Good Moral"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(16, 69)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(95, 18)
-        Me.CheckBox8.TabIndex = 36
-        Me.CheckBox8.Text = "Report Card"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(16, 45)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(289, 18)
-        Me.CheckBox9.TabIndex = 35
-        Me.CheckBox9.Text = "Copy of PSA or NSO Authenticated Birth Cert."
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(13, 17)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(186, 14)
-        Me.Label12.TabIndex = 34
-        Me.Label12.Text = "Requirements for TRANSFEREE"
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.CheckBox17)
-        Me.Panel5.Controls.Add(Me.CheckBox12)
-        Me.Panel5.Controls.Add(Me.CheckBox13)
-        Me.Panel5.Controls.Add(Me.Label15)
-        Me.Panel5.Controls.Add(Me.CheckBox14)
-        Me.Panel5.Controls.Add(Me.CheckBox15)
-        Me.Panel5.Controls.Add(Me.Label13)
-        Me.Panel5.Location = New System.Drawing.Point(512, 136)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(312, 200)
-        Me.Panel5.TabIndex = 39
-        Me.Panel5.Visible = False
-        '
-        'CheckBox17
-        '
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(16, 171)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(125, 18)
-        Me.CheckBox17.TabIndex = 42
-        Me.CheckBox17.Text = "Evaluation Sheet"
-        Me.CheckBox17.UseVisualStyleBackColor = True
-        '
-        'CheckBox12
-        '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(16, 147)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(202, 18)
-        Me.CheckBox12.TabIndex = 41
-        Me.CheckBox12.Text = "Last Semester Report of Rating"
-        Me.CheckBox12.UseVisualStyleBackColor = True
-        '
-        'CheckBox13
-        '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(16, 123)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(214, 18)
-        Me.CheckBox13.TabIndex = 40
-        Me.CheckBox13.Text = "Copy of Curriculum with Grades"
-        Me.CheckBox13.UseVisualStyleBackColor = True
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(13, 99)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(214, 14)
-        Me.Label15.TabIndex = 39
-        Me.Label15.Text = "Requirements for OLD (Graduating)"
-        '
-        'CheckBox14
-        '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(16, 69)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(202, 18)
-        Me.CheckBox14.TabIndex = 36
-        Me.CheckBox14.Text = "Last Semester Report of Rating"
-        Me.CheckBox14.UseVisualStyleBackColor = True
-        '
-        'CheckBox15
-        '
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(16, 45)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(214, 18)
-        Me.CheckBox15.TabIndex = 35
-        Me.CheckBox15.Text = "Copy of Curriculum with Grades"
-        Me.CheckBox15.UseVisualStyleBackColor = True
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(13, 17)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(133, 14)
-        Me.Label13.TabIndex = 34
-        Me.Label13.Text = "Requirements for OLD"
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.CheckBox4)
-        Me.Panel3.Controls.Add(Me.CheckBox3)
-        Me.Panel3.Controls.Add(Me.CheckBox2)
-        Me.Panel3.Controls.Add(Me.CheckBox1)
-        Me.Panel3.Controls.Add(Me.Label11)
-        Me.Panel3.Location = New System.Drawing.Point(512, 13)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(312, 117)
-        Me.Panel3.TabIndex = 33
-        Me.Panel3.Visible = False
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(16, 93)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(243, 18)
-        Me.CheckBox4.TabIndex = 38
-        Me.CheckBox4.Text = "Recent Photo (2pcs 2x2 and 2pcs 1x1)"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(134, 69)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(167, 18)
-        Me.CheckBox3.TabIndex = 37
-        Me.CheckBox3.Text = "Certificate of Good Moral"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(16, 69)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(95, 18)
-        Me.CheckBox2.TabIndex = 36
-        Me.CheckBox2.Text = "Report Card"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(16, 45)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(289, 18)
-        Me.CheckBox1.TabIndex = 35
-        Me.CheckBox1.Text = "Copy of PSA or NSO Authenticated Birth Cert."
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(13, 17)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(137, 14)
-        Me.Label11.TabIndex = 34
-        Me.Label11.Text = "Requirements for NEW"
-        '
         'txtCitizenship
         '
         Me.txtCitizenship.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -568,27 +427,27 @@ Partial Class frmStudentsView
         '
         Me.dgvSubmittedRequirements.AllowUserToAddRows = False
         Me.dgvSubmittedRequirements.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvSubmittedRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSubmittedRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvSubmittedRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSubmittedRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSubmittedRequirements.ColumnHeadersHeight = 30
         Me.dgvSubmittedRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSubmittedRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column1, Me.colcbSubmittedReq})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubmittedRequirements.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSubmittedRequirements.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSubmittedRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubmittedRequirements.Location = New System.Drawing.Point(281, 220)
         Me.dgvSubmittedRequirements.Name = "dgvSubmittedRequirements"
@@ -854,10 +713,10 @@ Partial Class frmStudentsView
         Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Controls.Add(Me.txtFatherName)
         Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 84)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 44)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(531, 307)
+        Me.TabPage2.Size = New System.Drawing.Size(832, 347)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Parents/Guardian Details"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1162,6 +1021,383 @@ Partial Class frmStudentsView
         Me.Label14.TabIndex = 12
         Me.Label14.Text = "Father Name"
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Panel4)
+        Me.TabPage3.Controls.Add(Me.Panel5)
+        Me.TabPage3.Controls.Add(Me.Panel3)
+        Me.TabPage3.Controls.Add(Me.txtSchoolAddress)
+        Me.TabPage3.Controls.Add(Me.Label27)
+        Me.TabPage3.Controls.Add(Me.txtYrAttended)
+        Me.TabPage3.Controls.Add(Me.Label28)
+        Me.TabPage3.Controls.Add(Me.txtGrAttended)
+        Me.TabPage3.Controls.Add(Me.Label29)
+        Me.TabPage3.Controls.Add(Me.txtSchoolName)
+        Me.TabPage3.Controls.Add(Me.Label30)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 44)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(832, 347)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Educational Background"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.CheckBox11)
+        Me.Panel4.Controls.Add(Me.CheckBox10)
+        Me.Panel4.Controls.Add(Me.CheckBox6)
+        Me.Panel4.Controls.Add(Me.CheckBox5)
+        Me.Panel4.Controls.Add(Me.CheckBox7)
+        Me.Panel4.Controls.Add(Me.CheckBox8)
+        Me.Panel4.Controls.Add(Me.CheckBox9)
+        Me.Panel4.Controls.Add(Me.Label12)
+        Me.Panel4.Location = New System.Drawing.Point(433, 141)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(312, 170)
+        Me.Panel4.TabIndex = 45
+        Me.Panel4.Visible = False
+        '
+        'CheckBox11
+        '
+        Me.CheckBox11.AutoSize = True
+        Me.CheckBox11.Location = New System.Drawing.Point(16, 141)
+        Me.CheckBox11.Name = "CheckBox11"
+        Me.CheckBox11.Size = New System.Drawing.Size(231, 18)
+        Me.CheckBox11.TabIndex = 41
+        Me.CheckBox11.Text = "Copy of TOR (Transcript of Records)"
+        Me.CheckBox11.UseVisualStyleBackColor = True
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Location = New System.Drawing.Point(168, 117)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(143, 18)
+        Me.CheckBox10.TabIndex = 40
+        Me.CheckBox10.Text = "Honorable Dismissal"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Location = New System.Drawing.Point(16, 93)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(243, 18)
+        Me.CheckBox6.TabIndex = 38
+        Me.CheckBox6.Text = "Recent Photo (2pcs 2x2 and 2pcs 1x1)"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Location = New System.Drawing.Point(16, 117)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(146, 18)
+        Me.CheckBox5.TabIndex = 39
+        Me.CheckBox5.Text = "ESC ID Number Cert."
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Location = New System.Drawing.Point(134, 69)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(167, 18)
+        Me.CheckBox7.TabIndex = 37
+        Me.CheckBox7.Text = "Certificate of Good Moral"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Location = New System.Drawing.Point(16, 69)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(95, 18)
+        Me.CheckBox8.TabIndex = 36
+        Me.CheckBox8.Text = "Report Card"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Location = New System.Drawing.Point(16, 45)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(289, 18)
+        Me.CheckBox9.TabIndex = 35
+        Me.CheckBox9.Text = "Copy of PSA or NSO Authenticated Birth Cert."
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(13, 17)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(186, 14)
+        Me.Label12.TabIndex = 34
+        Me.Label12.Text = "Requirements for TRANSFEREE"
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.CheckBox17)
+        Me.Panel5.Controls.Add(Me.CheckBox12)
+        Me.Panel5.Controls.Add(Me.CheckBox13)
+        Me.Panel5.Controls.Add(Me.Label15)
+        Me.Panel5.Controls.Add(Me.CheckBox14)
+        Me.Panel5.Controls.Add(Me.CheckBox15)
+        Me.Panel5.Controls.Add(Me.Label13)
+        Me.Panel5.Location = New System.Drawing.Point(433, 141)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(312, 200)
+        Me.Panel5.TabIndex = 44
+        Me.Panel5.Visible = False
+        '
+        'CheckBox17
+        '
+        Me.CheckBox17.AutoSize = True
+        Me.CheckBox17.Location = New System.Drawing.Point(16, 171)
+        Me.CheckBox17.Name = "CheckBox17"
+        Me.CheckBox17.Size = New System.Drawing.Size(125, 18)
+        Me.CheckBox17.TabIndex = 42
+        Me.CheckBox17.Text = "Evaluation Sheet"
+        Me.CheckBox17.UseVisualStyleBackColor = True
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.Location = New System.Drawing.Point(16, 147)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(202, 18)
+        Me.CheckBox12.TabIndex = 41
+        Me.CheckBox12.Text = "Last Semester Report of Rating"
+        Me.CheckBox12.UseVisualStyleBackColor = True
+        '
+        'CheckBox13
+        '
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.Location = New System.Drawing.Point(16, 123)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(214, 18)
+        Me.CheckBox13.TabIndex = 40
+        Me.CheckBox13.Text = "Copy of Curriculum with Grades"
+        Me.CheckBox13.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(13, 99)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(214, 14)
+        Me.Label15.TabIndex = 39
+        Me.Label15.Text = "Requirements for OLD (Graduating)"
+        '
+        'CheckBox14
+        '
+        Me.CheckBox14.AutoSize = True
+        Me.CheckBox14.Location = New System.Drawing.Point(16, 69)
+        Me.CheckBox14.Name = "CheckBox14"
+        Me.CheckBox14.Size = New System.Drawing.Size(202, 18)
+        Me.CheckBox14.TabIndex = 36
+        Me.CheckBox14.Text = "Last Semester Report of Rating"
+        Me.CheckBox14.UseVisualStyleBackColor = True
+        '
+        'CheckBox15
+        '
+        Me.CheckBox15.AutoSize = True
+        Me.CheckBox15.Location = New System.Drawing.Point(16, 45)
+        Me.CheckBox15.Name = "CheckBox15"
+        Me.CheckBox15.Size = New System.Drawing.Size(214, 18)
+        Me.CheckBox15.TabIndex = 35
+        Me.CheckBox15.Text = "Copy of Curriculum with Grades"
+        Me.CheckBox15.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(13, 17)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(133, 14)
+        Me.Label13.TabIndex = 34
+        Me.Label13.Text = "Requirements for OLD"
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.CheckBox4)
+        Me.Panel3.Controls.Add(Me.CheckBox3)
+        Me.Panel3.Controls.Add(Me.CheckBox2)
+        Me.Panel3.Controls.Add(Me.CheckBox1)
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Location = New System.Drawing.Point(433, 18)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(312, 117)
+        Me.Panel3.TabIndex = 43
+        Me.Panel3.Visible = False
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(16, 93)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(243, 18)
+        Me.CheckBox4.TabIndex = 38
+        Me.CheckBox4.Text = "Recent Photo (2pcs 2x2 and 2pcs 1x1)"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(134, 69)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(167, 18)
+        Me.CheckBox3.TabIndex = 37
+        Me.CheckBox3.Text = "Certificate of Good Moral"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(16, 69)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(95, 18)
+        Me.CheckBox2.TabIndex = 36
+        Me.CheckBox2.Text = "Report Card"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(16, 45)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(289, 18)
+        Me.CheckBox1.TabIndex = 35
+        Me.CheckBox1.Text = "Copy of PSA or NSO Authenticated Birth Cert."
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(13, 17)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(137, 14)
+        Me.Label11.TabIndex = 34
+        Me.Label11.Text = "Requirements for NEW"
+        '
+        'txtSchoolAddress
+        '
+        Me.txtSchoolAddress.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSchoolAddress.DefaultText = ""
+        Me.txtSchoolAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSchoolAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSchoolAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSchoolAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSchoolAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSchoolAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSchoolAddress.ForeColor = System.Drawing.Color.Black
+        Me.txtSchoolAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSchoolAddress.Location = New System.Drawing.Point(623, 35)
+        Me.txtSchoolAddress.Name = "txtSchoolAddress"
+        Me.txtSchoolAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSchoolAddress.PlaceholderText = ""
+        Me.txtSchoolAddress.SelectedText = ""
+        Me.txtSchoolAddress.Size = New System.Drawing.Size(174, 36)
+        Me.txtSchoolAddress.TabIndex = 42
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(620, 18)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(92, 14)
+        Me.Label27.TabIndex = 41
+        Me.Label27.Text = "School Address"
+        '
+        'txtYrAttended
+        '
+        Me.txtYrAttended.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtYrAttended.DefaultText = ""
+        Me.txtYrAttended.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtYrAttended.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtYrAttended.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtYrAttended.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtYrAttended.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtYrAttended.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtYrAttended.ForeColor = System.Drawing.Color.Black
+        Me.txtYrAttended.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtYrAttended.Location = New System.Drawing.Point(420, 35)
+        Me.txtYrAttended.Name = "txtYrAttended"
+        Me.txtYrAttended.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtYrAttended.PlaceholderText = ""
+        Me.txtYrAttended.SelectedText = ""
+        Me.txtYrAttended.Size = New System.Drawing.Size(197, 36)
+        Me.txtYrAttended.TabIndex = 40
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(417, 18)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(90, 14)
+        Me.Label28.TabIndex = 39
+        Me.Label28.Text = "Year Attended"
+        '
+        'txtGrAttended
+        '
+        Me.txtGrAttended.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtGrAttended.DefaultText = ""
+        Me.txtGrAttended.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtGrAttended.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtGrAttended.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGrAttended.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGrAttended.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtGrAttended.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtGrAttended.ForeColor = System.Drawing.Color.Black
+        Me.txtGrAttended.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtGrAttended.Location = New System.Drawing.Point(227, 35)
+        Me.txtGrAttended.Name = "txtGrAttended"
+        Me.txtGrAttended.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtGrAttended.PlaceholderText = ""
+        Me.txtGrAttended.SelectedText = ""
+        Me.txtGrAttended.Size = New System.Drawing.Size(187, 36)
+        Me.txtGrAttended.TabIndex = 38
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(224, 18)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(98, 14)
+        Me.Label29.TabIndex = 37
+        Me.Label29.Text = "Grade Attended"
+        '
+        'txtSchoolName
+        '
+        Me.txtSchoolName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSchoolName.DefaultText = ""
+        Me.txtSchoolName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSchoolName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSchoolName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSchoolName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSchoolName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSchoolName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSchoolName.ForeColor = System.Drawing.Color.Black
+        Me.txtSchoolName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSchoolName.Location = New System.Drawing.Point(11, 35)
+        Me.txtSchoolName.Name = "txtSchoolName"
+        Me.txtSchoolName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSchoolName.PlaceholderText = ""
+        Me.txtSchoolName.SelectedText = ""
+        Me.txtSchoolName.Size = New System.Drawing.Size(210, 36)
+        Me.txtSchoolName.TabIndex = 36
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(8, 18)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(81, 14)
+        Me.Label30.TabIndex = 35
+        Me.Label30.Text = "School Name"
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.btnUpdate)
@@ -1200,140 +1436,6 @@ Partial Class frmStudentsView
         Me.btnSave.TabIndex = 27
         Me.btnSave.Text = "Save"
         '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(8, 18)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(81, 14)
-        Me.Label30.TabIndex = 35
-        Me.Label30.Text = "School Name"
-        '
-        'txtSchoolName
-        '
-        Me.txtSchoolName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSchoolName.DefaultText = ""
-        Me.txtSchoolName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSchoolName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSchoolName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSchoolName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSchoolName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSchoolName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSchoolName.ForeColor = System.Drawing.Color.Black
-        Me.txtSchoolName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSchoolName.Location = New System.Drawing.Point(11, 35)
-        Me.txtSchoolName.Name = "txtSchoolName"
-        Me.txtSchoolName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSchoolName.PlaceholderText = ""
-        Me.txtSchoolName.SelectedText = ""
-        Me.txtSchoolName.Size = New System.Drawing.Size(210, 36)
-        Me.txtSchoolName.TabIndex = 36
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(224, 18)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(98, 14)
-        Me.Label29.TabIndex = 37
-        Me.Label29.Text = "Grade Attended"
-        '
-        'txtGrAttended
-        '
-        Me.txtGrAttended.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtGrAttended.DefaultText = ""
-        Me.txtGrAttended.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtGrAttended.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtGrAttended.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtGrAttended.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtGrAttended.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGrAttended.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtGrAttended.ForeColor = System.Drawing.Color.Black
-        Me.txtGrAttended.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGrAttended.Location = New System.Drawing.Point(227, 35)
-        Me.txtGrAttended.Name = "txtGrAttended"
-        Me.txtGrAttended.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtGrAttended.PlaceholderText = ""
-        Me.txtGrAttended.SelectedText = ""
-        Me.txtGrAttended.Size = New System.Drawing.Size(187, 36)
-        Me.txtGrAttended.TabIndex = 38
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(417, 18)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(90, 14)
-        Me.Label28.TabIndex = 39
-        Me.Label28.Text = "Year Attended"
-        '
-        'txtYrAttended
-        '
-        Me.txtYrAttended.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtYrAttended.DefaultText = ""
-        Me.txtYrAttended.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtYrAttended.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtYrAttended.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtYrAttended.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtYrAttended.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtYrAttended.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtYrAttended.ForeColor = System.Drawing.Color.Black
-        Me.txtYrAttended.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtYrAttended.Location = New System.Drawing.Point(420, 35)
-        Me.txtYrAttended.Name = "txtYrAttended"
-        Me.txtYrAttended.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtYrAttended.PlaceholderText = ""
-        Me.txtYrAttended.SelectedText = ""
-        Me.txtYrAttended.Size = New System.Drawing.Size(197, 36)
-        Me.txtYrAttended.TabIndex = 40
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(620, 18)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(92, 14)
-        Me.Label27.TabIndex = 41
-        Me.Label27.Text = "School Address"
-        '
-        'txtSchoolAddress
-        '
-        Me.txtSchoolAddress.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSchoolAddress.DefaultText = ""
-        Me.txtSchoolAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSchoolAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSchoolAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSchoolAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSchoolAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSchoolAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSchoolAddress.ForeColor = System.Drawing.Color.Black
-        Me.txtSchoolAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSchoolAddress.Location = New System.Drawing.Point(623, 35)
-        Me.txtSchoolAddress.Name = "txtSchoolAddress"
-        Me.txtSchoolAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSchoolAddress.PlaceholderText = ""
-        Me.txtSchoolAddress.SelectedText = ""
-        Me.txtSchoolAddress.Size = New System.Drawing.Size(174, 36)
-        Me.txtSchoolAddress.TabIndex = 42
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.txtSchoolAddress)
-        Me.TabPage3.Controls.Add(Me.Label27)
-        Me.TabPage3.Controls.Add(Me.txtYrAttended)
-        Me.TabPage3.Controls.Add(Me.Label28)
-        Me.TabPage3.Controls.Add(Me.txtGrAttended)
-        Me.TabPage3.Controls.Add(Me.Label29)
-        Me.TabPage3.Controls.Add(Me.txtSchoolName)
-        Me.TabPage3.Controls.Add(Me.Label30)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 44)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(832, 347)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Educational Background"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
         'frmStudentsView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -1351,18 +1453,20 @@ Partial Class frmStudentsView
         Me.Guna2TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.gbReq.ResumeLayout(False)
+        CType(Me.dgvRequirements, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvSubmittedRequirements, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.dgvSubmittedRequirements, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1419,29 +1523,6 @@ Partial Class frmStudentsView
     Friend WithEvents Label10 As Label
     Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents CheckBox11 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents CheckBox14 As CheckBox
-    Friend WithEvents CheckBox15 As CheckBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents CheckBox17 As CheckBox
-    Friend WithEvents CheckBox12 As CheckBox
-    Friend WithEvents CheckBox13 As CheckBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents cbFemale As RadioButton
     Friend WithEvents cbMale As RadioButton
     Friend WithEvents cmbStudSuffix As Guna.UI2.WinForms.Guna2ComboBox
@@ -1454,4 +1535,32 @@ Partial Class frmStudentsView
     Friend WithEvents Label29 As Label
     Friend WithEvents txtSchoolName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label30 As Label
+    Friend WithEvents gbReq As GroupBox
+    Friend WithEvents dgvRequirements As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents CheckBox11 As CheckBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents CheckBox17 As CheckBox
+    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents CheckBox13 As CheckBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents CheckBox14 As CheckBox
+    Friend WithEvents CheckBox15 As CheckBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Label11 As Label
 End Class

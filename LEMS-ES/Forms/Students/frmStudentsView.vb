@@ -5,12 +5,21 @@ Public Class frmStudentsView
     Private Sub frmStudentsView_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
+        LoadReq()
+        LoadReqClass()
     End Sub
     Public Sub loadrecords()
         Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
                 FROM requirements rq
                 JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID")
         dgvSubmittedRequirements.DataSource = ds.Tables("QueryTb")
+    End Sub
+    Public Sub LoadReq()
+        Query("SELECT rqc.Classification, r.Requirement
+                FROM requirements r
+                JOIN req_classification rqc ON r.Classification_ID = rqc.ID
+                WHERE Classification = ")
+        dgvRequirements.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub ClearFields()
         Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox =
@@ -23,6 +32,12 @@ Public Class frmStudentsView
         cbFemale.Checked = False
     End Sub
 
+    Public Sub LoadReqClass()
+        Query("SELECT * FROM req_Classification")
+        cmbStudType.DataSource = ds.Tables("QueryTb")
+        cmbStudType.ValueMember = "ID"
+        cmbStudType.DisplayMember = "Classification"
+    End Sub
     Public Function GenderSelection() As String
         If cbMale.Checked Then
             cbFemale.Checked = False
@@ -55,4 +70,5 @@ Public Class frmStudentsView
     Private Sub dtpBday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBday.ValueChanged
         CalculateAge()
     End Sub
+
 End Class
