@@ -7,7 +7,7 @@
         frmStudentsView.Show()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT ID, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS Fullname, Suffix, Gender, Age, Birthday, Address, 
+        Query("SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS Fullname, Suffix, Gender, Age, Birthday, Address, 
                 MotherName, MothersMaiden, Mother_Occupation, FatherName, Father_Occupation, GuardianName, GuardianContact, Citizenship
                 FROM student")
         dgvStudents.DataSource = ds.Tables("QueryTb")
@@ -18,20 +18,19 @@
             Dim selectedRow As DataGridViewRow = dgvStudents.SelectedRows(0)
             Dim studID As Integer = Convert.ToInt32(selectedRow.Cells("colID").Value)
 
-            Dim requirementsTable As DataTable = GetSubmittedRequirements(studID)
+            Query("SELECT rq.ID, reqclass.Classification, rq.Requirement, IF(sr.ID IS NOT NULL, 1, 0) AS IsSubmitted
+            FROM requirements rq
+            JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID
+            LEFT JOIN submitted_requirements sr ON rq.ID = sr.RequirementID AND sr.StudentID = " & studID)
+            frmStudentsView.dgvRequirements.DataSource = ds.Tables("QueryTb")
 
-            If requirementsTable.Rows.Count > 0 Then
-                Dim requirementsView As New DataView(requirementsTable)
-                requirementsView.RowFilter = "ID =" & studID
-                frmStudentsView.dgvSubmittedRequirements.DataSource = requirementsView.ToTable()
-            Else
-                frmStudentsView.dgvSubmittedRequirements.DataSource = Nothing
-                MsgBox("No requirements found for the selected student.")
-            End If
-
+            For Each row As DataGridViewRow In frmStudentsView.dgvRequirements.Rows
+                Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("IsSubmitted").Value)
+                row.Cells("colCheckBox").Value = isChecked
+            Next
 
             Dim studLRN As String = selectedRow.Cells("colLRN").Value.ToString()
-            'Dim studType As String = selectedRow.Cells("colStudType").Value.ToString()
+            Dim studType As String = selectedRow.Cells("colStudType").Value.ToString()
             Dim studFullname As String = selectedRow.Cells("colStudName").Value.ToString()
             Dim nameParts() As String = studFullname.Split(" "c)
 
@@ -61,10 +60,7 @@
 
             frmStudentsView.idStud = studID
             frmStudentsView.txtStudNum.Text = studLRN
-            'frmStudentsView.cmbStudType.ValueMember = studType
-            'frmStudentsView.txtStudLname.Text = studLname
-            'frmStudentsView.txtStudFname.Text = studFname
-            'frmStudentsView.txtStudMname.Text = studMname
+            frmStudentsView.cmbStudType.ValueMember = studType
             frmStudentsView.cmbStudSuffix.Text = studSuffix
             If studGender = "Male" Then
                 frmStudentsView.cbMale.Checked = True
@@ -88,18 +84,4 @@
             frmStudentsView.Show()
         End If
     End Sub
-    Private Function GetSubmittedRequirements(studentID As Integer) As DataTable
-
-        Query("SELECT s.ID, r.Requirement
-            FROM submitted_requirements sr
-            JOIN requirements r ON sr.RequirementID = r.ID
-            JOIN student s ON sr.StudentID = s.ID")
-
-        If ds IsNot Nothing AndAlso ds.Tables.Contains("QueryTb") Then
-            Return ds.Tables("QueryTb")
-        Else
-            Return New DataTable()
-        End If
-    End Function
-
 End Class

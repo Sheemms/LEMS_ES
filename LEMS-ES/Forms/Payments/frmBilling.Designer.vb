@@ -36,6 +36,7 @@ Partial Class frmBilling
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPay = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvSY, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,7 +85,7 @@ Partial Class frmBilling
         Me.dgvSY.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSY.ColumnHeadersHeight = 44
         Me.dgvSY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
+        Me.dgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.colPay})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -192,6 +193,14 @@ Partial Class frmBilling
         Me.Column8.ReadOnly = True
         Me.Column8.Width = 69
         '
+        'colPay
+        '
+        Me.colPay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colPay.HeaderText = ""
+        Me.colPay.Name = "colPay"
+        Me.colPay.ReadOnly = True
+        Me.colPay.Width = 5
+        '
         'frmBilling
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -220,4 +229,5 @@ Partial Class frmBilling
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents colPay As DataGridViewButtonColumn
 End Class

@@ -96,7 +96,6 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmDashboard.reso
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmEnrollment.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmMaintenance.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmSections.resources
-C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmStudentRegistration.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmStudents.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmStudentsView.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmSubjects.resources
@@ -143,3 +142,4 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmPayment.resour
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmSchedule.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmEnrollmentReport.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmPayments.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmGrading.resources

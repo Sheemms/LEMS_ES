@@ -4,23 +4,23 @@ Public Class frmStudentsView
     Public idStud As Integer = 0
     Private Sub frmStudentsView_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
-        LoadReq()
+        'LoadRequirements()
         LoadReqClass()
     End Sub
-    Public Sub loadrecords()
-        Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
-                FROM requirements rq
-                JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID")
-        dgvSubmittedRequirements.DataSource = ds.Tables("QueryTb")
-    End Sub
-    Public Sub LoadReq()
-        Query("SELECT rqc.Classification, r.Requirement
-                FROM requirements r
-                JOIN req_classification rqc ON r.Classification_ID = rqc.ID
-                WHERE Classification = ")
+    Public Sub LoadRequirements()
+        Query("SELECT rq.ID, reqclass.Classification, rq.Requirement, IF(sr.ID IS NOT NULL, 1, 0) AS IsSubmitted
+        FROM requirements rq
+        JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID
+        LEFT JOIN submitted_requirements sr ON rq.ID = sr.RequirementID AND sr.StudentID = " & idStud)
         dgvRequirements.DataSource = ds.Tables("QueryTb")
+
+        ' Iterate through the rows to set the checkbox status based on the IsSubmitted column
+        For Each row As DataGridViewRow In dgvRequirements.Rows
+            Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
+            row.Cells("colCheckBox").Value = isChecked
+        Next
     End Sub
+
     Public Sub ClearFields()
         Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox =
             {txtStudNum, txtStudLname, txtStudFname, txtStudMname, txtGuardianName, txtGuardianAddress}
@@ -31,9 +31,8 @@ Public Class frmStudentsView
         cbMale.Checked = False
         cbFemale.Checked = False
     End Sub
-
     Public Sub LoadReqClass()
-        Query("SELECT * FROM req_Classification")
+        Query("SELECT * FROM req_classification")
         cmbStudType.DataSource = ds.Tables("QueryTb")
         cmbStudType.ValueMember = "ID"
         cmbStudType.DisplayMember = "Classification"
@@ -70,5 +69,25 @@ Public Class frmStudentsView
     Private Sub dtpBday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBday.ValueChanged
         CalculateAge()
     End Sub
+    Private Sub cmbStudType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStudType.SelectedIndexChanged
+        If cmbStudType.SelectedItem IsNot Nothing Then
+            Dim selectedDataRowView As DataRowView = CType(cmbStudType.SelectedItem, DataRowView)
 
+            ' Extract the value of the "ID" column from the DataRowView
+            Dim selectedID As Integer = CInt(selectedDataRowView("ID"))
+
+            ' Update the DataGridView based on the selected ID
+            UpdateRequirementsGrid(selectedID)
+        End If
+    End Sub
+
+    Private Sub UpdateRequirementsGrid(ByVal selectedID As Integer)
+        Query("SELECT ID, Classification_ID, Requirement FROM requirements WHERE Classification_ID = " & selectedID)
+
+        If ds.Tables.Contains("QueryTb") AndAlso ds.Tables("QueryTb").Rows.Count > 0 Then
+            dgvRequirements.DataSource = ds.Tables("QueryTb")
+        Else
+            dgvRequirements.DataSource = Nothing
+        End If
+    End Sub
 End Class

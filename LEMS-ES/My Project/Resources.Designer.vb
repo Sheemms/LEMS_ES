@@ -173,6 +173,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property database_storage() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("database-storage", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property delete() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("delete", resourceCulture)
@@ -246,6 +256,16 @@ Namespace My.Resources
         Friend ReadOnly Property invoice() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("invoice", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ip_address() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ip-address", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
