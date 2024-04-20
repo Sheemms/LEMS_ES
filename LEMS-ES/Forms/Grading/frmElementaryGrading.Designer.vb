@@ -22,10 +22,10 @@ Partial Class frmElementaryGrading
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvSubject = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,41 +49,39 @@ Partial Class frmElementaryGrading
         '
         'dgvSubject
         '
-        Me.dgvSubject.AllowUserToAddRows = False
         Me.dgvSubject.AllowUserToDeleteRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        Me.dgvSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgvSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSubject.BackgroundColor = System.Drawing.Color.DimGray
         Me.dgvSubject.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSubject.ColumnHeadersHeight = 44
         Me.dgvSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12})
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubject.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSubject.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvSubject.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSubject.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubject.Location = New System.Drawing.Point(0, 45)
         Me.dgvSubject.MultiSelect = False
         Me.dgvSubject.Name = "dgvSubject"
-        Me.dgvSubject.ReadOnly = True
         Me.dgvSubject.RowHeadersVisible = False
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSubject.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvSubject.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvSubject.Size = New System.Drawing.Size(933, 440)
         Me.dgvSubject.TabIndex = 5
         Me.dgvSubject.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -99,7 +97,7 @@ Partial Class frmElementaryGrading
         Me.dgvSubject.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgvSubject.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvSubject.ThemeStyle.HeaderStyle.Height = 44
-        Me.dgvSubject.ThemeStyle.ReadOnly = True
+        Me.dgvSubject.ThemeStyle.ReadOnly = False
         Me.dgvSubject.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvSubject.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvSubject.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -113,7 +111,6 @@ Partial Class frmElementaryGrading
         Me.Column1.DataPropertyName = "ID"
         Me.Column1.HeaderText = "ID"
         Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
         Me.Column1.Visible = False
         '
         'Column4
@@ -122,7 +119,6 @@ Partial Class frmElementaryGrading
         Me.Column4.DataPropertyName = "LRN"
         Me.Column4.HeaderText = "LRN"
         Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
         Me.Column4.Width = 53
         '
         'Column2
@@ -131,7 +127,6 @@ Partial Class frmElementaryGrading
         Me.Column2.DataPropertyName = "Fullname"
         Me.Column2.HeaderText = "Name"
         Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
         '
         'Column3
         '
@@ -139,7 +134,6 @@ Partial Class frmElementaryGrading
         Me.Column3.DataPropertyName = "SubjectCode"
         Me.Column3.HeaderText = "Subject Code"
         Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
         '
         'Column5
         '
@@ -147,7 +141,6 @@ Partial Class frmElementaryGrading
         Me.Column5.DataPropertyName = "SubjectName"
         Me.Column5.HeaderText = "Subject Name"
         Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'Column6
         '
@@ -155,7 +148,6 @@ Partial Class frmElementaryGrading
         Me.Column6.DataPropertyName = "Units"
         Me.Column6.HeaderText = "Unit(s)"
         Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
         Me.Column6.Width = 81
         '
         'Column7
@@ -163,7 +155,6 @@ Partial Class frmElementaryGrading
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column7.HeaderText = "1st Grd"
         Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
         Me.Column7.Width = 81
         '
         'Column8
@@ -171,7 +162,6 @@ Partial Class frmElementaryGrading
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column8.HeaderText = "2nd Grd"
         Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
         Me.Column8.Width = 81
         '
         'Column9
@@ -179,7 +169,6 @@ Partial Class frmElementaryGrading
         Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column9.HeaderText = "3rd Grd"
         Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
         Me.Column9.Width = 81
         '
         'Column10
@@ -187,7 +176,6 @@ Partial Class frmElementaryGrading
         Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column10.HeaderText = "4th Grd"
         Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
         Me.Column10.Width = 81
         '
         'Column11
@@ -195,7 +183,6 @@ Partial Class frmElementaryGrading
         Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column11.HeaderText = "Average"
         Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
         Me.Column11.Width = 81
         '
         'Column12
@@ -203,7 +190,6 @@ Partial Class frmElementaryGrading
         Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column12.HeaderText = "Remarks"
         Me.Column12.Name = "Column12"
-        Me.Column12.ReadOnly = True
         Me.Column12.Width = 81
         '
         'Panel1

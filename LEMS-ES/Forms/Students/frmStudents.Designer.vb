@@ -22,15 +22,15 @@ Partial Class frmStudents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmStudents))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmStudents))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.AddNew = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudName = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +61,30 @@ Partial Class frmStudents
         Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'AddNew
+        '
+        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
+        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.AddNew.Name = "AddNew"
+        Me.AddNew.Size = New System.Drawing.Size(51, 22)
+        Me.AddNew.Text = "New"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(115, 22)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(115, 22)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
         '
         'dgvStudents
         '
@@ -117,30 +141,6 @@ Partial Class frmStudents
         Me.dgvStudents.ThemeStyle.RowsStyle.Height = 22
         Me.dgvStudents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvStudents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'AddNew
-        '
-        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
-        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.AddNew.Name = "AddNew"
-        Me.AddNew.Size = New System.Drawing.Size(51, 22)
-        Me.AddNew.Text = "New"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(115, 22)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(115, 22)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
         '
         'colID
         '

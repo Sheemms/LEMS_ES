@@ -22,9 +22,6 @@ Partial Class frmStudentsView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -35,6 +32,8 @@ Partial Class frmStudentsView
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txtGuardianAddress = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.gbReq = New System.Windows.Forms.GroupBox()
         Me.dgvRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.cmbStudSuffix = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -84,18 +83,10 @@ Partial Class frmStudentsView
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtGuardianAddress = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
         Me.colCheckBox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dgvSubmittedRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.colSubmittedCheckBox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colSubmittedID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -104,8 +95,6 @@ Partial Class frmStudentsView
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.dgvSubmittedRequirements, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -206,7 +195,6 @@ Partial Class frmStudentsView
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.txtGuardianAddress)
         Me.TabPage1.Controls.Add(Me.Label26)
         Me.TabPage1.Controls.Add(Me.gbReq)
@@ -235,6 +223,36 @@ Partial Class frmStudentsView
         Me.TabPage1.Text = "Personal Information"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'txtGuardianAddress
+        '
+        Me.txtGuardianAddress.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtGuardianAddress.DefaultText = ""
+        Me.txtGuardianAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtGuardianAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtGuardianAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGuardianAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtGuardianAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtGuardianAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtGuardianAddress.ForeColor = System.Drawing.Color.Black
+        Me.txtGuardianAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtGuardianAddress.Location = New System.Drawing.Point(281, 158)
+        Me.txtGuardianAddress.Multiline = True
+        Me.txtGuardianAddress.Name = "txtGuardianAddress"
+        Me.txtGuardianAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtGuardianAddress.PlaceholderText = ""
+        Me.txtGuardianAddress.SelectedText = ""
+        Me.txtGuardianAddress.Size = New System.Drawing.Size(210, 102)
+        Me.txtGuardianAddress.TabIndex = 78
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(278, 141)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(52, 14)
+        Me.Label26.TabIndex = 77
+        Me.Label26.Text = "Address"
+        '
         'gbReq
         '
         Me.gbReq.Controls.Add(Me.dgvRequirements)
@@ -252,31 +270,30 @@ Partial Class frmStudentsView
         Me.dgvRequirements.AllowUserToDeleteRows = False
         Me.dgvRequirements.AllowUserToResizeColumns = False
         Me.dgvRequirements.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvRequirements.ColumnHeadersHeight = 30
         Me.dgvRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCheckBox, Me.colID, Me.Column2, Me.DataGridViewTextBoxColumn2})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCheckBox, Me.colID, Me.DataGridViewTextBoxColumn2, Me.Column1})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvRequirements.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRequirements.Location = New System.Drawing.Point(3, 21)
-        Me.dgvRequirements.MultiSelect = False
         Me.dgvRequirements.Name = "dgvRequirements"
         Me.dgvRequirements.RowHeadersVisible = False
         Me.dgvRequirements.Size = New System.Drawing.Size(316, 223)
@@ -388,14 +405,15 @@ Partial Class frmStudentsView
         Me.dtpBday.AutoRoundedCorners = True
         Me.dtpBday.BorderRadius = 17
         Me.dtpBday.Checked = True
+        Me.dtpBday.CustomFormat = "MMM / dd / yyyy"
         Me.dtpBday.FillColor = System.Drawing.Color.White
         Me.dtpBday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.dtpBday.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpBday.Location = New System.Drawing.Point(368, 30)
+        Me.dtpBday.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpBday.Location = New System.Drawing.Point(356, 30)
         Me.dtpBday.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpBday.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtpBday.Name = "dtpBday"
-        Me.dtpBday.Size = New System.Drawing.Size(123, 36)
+        Me.dtpBday.Size = New System.Drawing.Size(135, 36)
         Me.dtpBday.TabIndex = 15
         Me.dtpBday.Value = New Date(2024, 1, 29, 19, 23, 5, 488)
         '
@@ -416,7 +434,7 @@ Partial Class frmStudentsView
         Me.txtStudAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudAge.PlaceholderText = ""
         Me.txtStudAge.SelectedText = ""
-        Me.txtStudAge.Size = New System.Drawing.Size(81, 36)
+        Me.txtStudAge.Size = New System.Drawing.Size(69, 36)
         Me.txtStudAge.TabIndex = 14
         '
         'txtStudMname
@@ -491,7 +509,7 @@ Partial Class frmStudentsView
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(365, 13)
+        Me.Label7.Location = New System.Drawing.Point(361, 13)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(79, 14)
         Me.Label7.TabIndex = 4
@@ -973,41 +991,13 @@ Partial Class frmStudentsView
         Me.btnSave.TabIndex = 27
         Me.btnSave.Text = "Save"
         '
-        'txtGuardianAddress
-        '
-        Me.txtGuardianAddress.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtGuardianAddress.DefaultText = ""
-        Me.txtGuardianAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtGuardianAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtGuardianAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtGuardianAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtGuardianAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGuardianAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtGuardianAddress.ForeColor = System.Drawing.Color.Black
-        Me.txtGuardianAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGuardianAddress.Location = New System.Drawing.Point(281, 158)
-        Me.txtGuardianAddress.Multiline = True
-        Me.txtGuardianAddress.Name = "txtGuardianAddress"
-        Me.txtGuardianAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtGuardianAddress.PlaceholderText = ""
-        Me.txtGuardianAddress.SelectedText = ""
-        Me.txtGuardianAddress.Size = New System.Drawing.Size(210, 102)
-        Me.txtGuardianAddress.TabIndex = 78
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(278, 141)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(52, 14)
-        Me.Label26.TabIndex = 77
-        Me.Label26.Text = "Address"
-        '
         'colCheckBox
         '
         Me.colCheckBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colCheckBox.FalseValue = "False"
         Me.colCheckBox.HeaderText = ""
         Me.colCheckBox.Name = "colCheckBox"
+        Me.colCheckBox.TrueValue = "True"
         Me.colCheckBox.Width = 5
         '
         'colID
@@ -1015,14 +1005,6 @@ Partial Class frmStudentsView
         Me.colID.DataPropertyName = "ID"
         Me.colID.HeaderText = "ID"
         Me.colID.Name = "colID"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.DataPropertyName = "Classification_ID"
-        Me.Column2.HeaderText = "Classification"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 119
         '
         'DataGridViewTextBoxColumn2
         '
@@ -1032,100 +1014,11 @@ Partial Class frmStudentsView
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
-        'GroupBox1
+        'Column1
         '
-        Me.GroupBox1.Controls.Add(Me.dgvSubmittedRequirements)
-        Me.GroupBox1.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(502, 136)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(322, 124)
-        Me.GroupBox1.TabIndex = 78
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Submitted Requirements"
-        Me.GroupBox1.Visible = False
-        '
-        'dgvSubmittedRequirements
-        '
-        Me.dgvSubmittedRequirements.AllowUserToAddRows = False
-        Me.dgvSubmittedRequirements.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvSubmittedRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSubmittedRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvSubmittedRequirements.ColumnHeadersHeight = 30
-        Me.dgvSubmittedRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSubmittedRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSubmittedCheckBox, Me.colSubmittedID, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubmittedRequirements.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvSubmittedRequirements.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvSubmittedRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubmittedRequirements.Location = New System.Drawing.Point(3, 21)
-        Me.dgvSubmittedRequirements.MultiSelect = False
-        Me.dgvSubmittedRequirements.Name = "dgvSubmittedRequirements"
-        Me.dgvSubmittedRequirements.RowHeadersVisible = False
-        Me.dgvSubmittedRequirements.Size = New System.Drawing.Size(316, 100)
-        Me.dgvSubmittedRequirements.TabIndex = 77
-        Me.dgvSubmittedRequirements.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSubmittedRequirements.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgvSubmittedRequirements.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgvSubmittedRequirements.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgvSubmittedRequirements.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgvSubmittedRequirements.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSubmittedRequirements.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubmittedRequirements.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubmittedRequirements.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgvSubmittedRequirements.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSubmittedRequirements.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgvSubmittedRequirements.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSubmittedRequirements.ThemeStyle.HeaderStyle.Height = 30
-        Me.dgvSubmittedRequirements.ThemeStyle.ReadOnly = False
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.Height = 22
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubmittedRequirements.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'colSubmittedCheckBox
-        '
-        Me.colSubmittedCheckBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colSubmittedCheckBox.HeaderText = ""
-        Me.colSubmittedCheckBox.Name = "colSubmittedCheckBox"
-        Me.colSubmittedCheckBox.Width = 5
-        '
-        'colSubmittedID
-        '
-        Me.colSubmittedID.DataPropertyName = "ID"
-        Me.colSubmittedID.HeaderText = "ID"
-        Me.colSubmittedID.Name = "colSubmittedID"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "StudentID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "StudentID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "RequirementID"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Description"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.Column1.DataPropertyName = "issubmitted"
+        Me.Column1.HeaderText = "value"
+        Me.Column1.Name = "Column1"
         '
         'frmStudentsView
         '
@@ -1151,8 +1044,6 @@ Partial Class frmStudentsView
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        CType(Me.dgvSubmittedRequirements, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1217,12 +1108,6 @@ Partial Class frmStudentsView
     Friend WithEvents Label26 As Label
     Friend WithEvents colCheckBox As DataGridViewCheckBoxColumn
     Friend WithEvents colID As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents dgvSubmittedRequirements As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents colSubmittedCheckBox As DataGridViewCheckBoxColumn
-    Friend WithEvents colSubmittedID As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
 End Class

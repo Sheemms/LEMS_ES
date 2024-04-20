@@ -4,21 +4,47 @@ Public Class frmStudentsView
     Public idStud As Integer = 0
     Private Sub frmStudentsView_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        'LoadRequirements()
+        LoadRequirements()
         LoadReqClass()
+        LoadStudentData()
+    End Sub
+    Public Sub LoadStudentData()
+        Query("SELECT * FROM student WHERE LRN = '" & txtStudNum.Text & "'")
+        With ds.Tables("QueryTb")
+            cmbStudType.SelectedValue = .Rows(0)(1)
+            txtStudLname.Text = .Rows(0)(3)
+            txtStudFname.Text = .Rows(0)(4)
+            txtStudMname.Text = .Rows(0)(5)
+            cmbStudSuffix.Text = .Rows(0)(6)
+            If .Rows(0)(7).ToString = "Male" Then
+                cbMale.Checked = True
+            Else
+                cbFemale.Checked = True
+            End If
+            txtStudAge.Text = .Rows(0)(8)
+            dtpBday.Value = .Rows(0)(9).ToString
+            txtGuardianAddress.Text = .Rows(0)(10)
+            txtCitizenship.Text = .Rows(0)(19)
+        End With
     End Sub
     Public Sub LoadRequirements()
-        Query("SELECT rq.ID, reqclass.Classification, rq.Requirement, IF(sr.ID IS NOT NULL, 1, 0) AS IsSubmitted
-        FROM requirements rq
-        JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID
-        LEFT JOIN submitted_requirements sr ON rq.ID = sr.RequirementID AND sr.StudentID = " & idStud)
+        Query("SELECT
+               r.id,
+               r.Requirement,
+               if(sr.DateSubmitted IS NULL , 'No','Yes') as issubmitted
+               FROM student s
+               LEFT JOIN requirements r ON r.Classification_ID = s.StudType
+               LEFT JOIN submitted_requirements sr ON s.ID = sr.StudentID AND r.ID = sr.RequirementID
+               WHERE s.ID = '" & idStud & "' ORDER BY s.Lastname, r.Requirement")
         dgvRequirements.DataSource = ds.Tables("QueryTb")
 
-        ' Iterate through the rows to set the checkbox status based on the IsSubmitted column
         For Each row As DataGridViewRow In dgvRequirements.Rows
-            Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
-            row.Cells("colCheckBox").Value = isChecked
+            Dim submittedvalue As String = row.Cells("Column1").Value
+            If submittedvalue = "Yes" Then
+                row.Cells("colCheckBox").Value = True
+            End If
         Next
+
     End Sub
 
     Public Sub ClearFields()
@@ -36,6 +62,7 @@ Public Class frmStudentsView
         cmbStudType.DataSource = ds.Tables("QueryTb")
         cmbStudType.ValueMember = "ID"
         cmbStudType.DisplayMember = "Classification"
+        cmbStudType.SelectedIndex = -1
     End Sub
     Public Function GenderSelection() As String
         If cbMale.Checked Then
@@ -68,26 +95,5 @@ Public Class frmStudentsView
 
     Private Sub dtpBday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBday.ValueChanged
         CalculateAge()
-    End Sub
-    Private Sub cmbStudType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStudType.SelectedIndexChanged
-        If cmbStudType.SelectedItem IsNot Nothing Then
-            Dim selectedDataRowView As DataRowView = CType(cmbStudType.SelectedItem, DataRowView)
-
-            ' Extract the value of the "ID" column from the DataRowView
-            Dim selectedID As Integer = CInt(selectedDataRowView("ID"))
-
-            ' Update the DataGridView based on the selected ID
-            UpdateRequirementsGrid(selectedID)
-        End If
-    End Sub
-
-    Private Sub UpdateRequirementsGrid(ByVal selectedID As Integer)
-        Query("SELECT ID, Classification_ID, Requirement FROM requirements WHERE Classification_ID = " & selectedID)
-
-        If ds.Tables.Contains("QueryTb") AndAlso ds.Tables("QueryTb").Rows.Count > 0 Then
-            dgvRequirements.DataSource = ds.Tables("QueryTb")
-        Else
-            dgvRequirements.DataSource = Nothing
-        End If
     End Sub
 End Class
