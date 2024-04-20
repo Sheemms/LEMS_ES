@@ -4,7 +4,12 @@
         loadrecords()
     End Sub
     Public Sub loadrecords()
-        Query("SELECT * FROM Enrollment")
+        Query("SELECT e.ID, e.SchoolYear, e.LRN, CONCAT(st.Lastname, ' ',st.Firstname, ' ',st.MiddleInitial) as Fullname, s.SectionRoom as Section, gl.GradeLevel, e.Enrollment_Date, e.Status 
+                FROM enrollment e 
+                JOIN student st ON e.LRN = st.LRN
+                JOIN section s ON e.SectionID = s.ID
+                JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID
+                ")
         dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
 
@@ -36,6 +41,38 @@
         Else
             ' If search text is empty, reload original data
             loadrecords()
+        End If
+    End Sub
+
+    Private Sub dgvEnrolled_DoubleClick(sender As Object, e As EventArgs) Handles dgvEnrolled.DoubleClick
+        If dgvEnrolled.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = dgvEnrolled.SelectedRows(0)
+            Dim enrollID As Integer = Convert.ToInt32(selectedRow.Cells("colID").Value)
+
+            Dim studLRN As String = selectedRow.Cells("colLRN").Value.ToString()
+            Dim studFullname As String = selectedRow.Cells("colFullname").Value.ToString()
+            'Dim nameParts() As String = studFullname.Split(" "c)
+
+            'If nameParts.Length >= 1 Then
+            '    frmStudentsView.txtStudLname.Text = nameParts(0) ' Lastname
+            'End If
+            'If nameParts.Length >= 2 Then
+            '    frmStudentsView.txtStudFname.Text = nameParts(1) ' Firstname
+            'End If
+            'If nameParts.Length >= 3 Then
+            '    frmStudentsView.txtStudMname.Text = nameParts(2) ' Middle Initial
+            'End If
+
+            Dim studSection As String = selectedRow.Cells("colSection").Value.ToString()
+            Dim studGradelevel As String = selectedRow.Cells("colGradeLevel").Value.ToString()
+
+            frmEnrollmentRegistration.EnrollmentID = enrollID
+            frmEnrollmentRegistration.txtStudLRN.Text = studLRN
+            frmEnrollmentRegistration.txtStudName.Text = studFullname
+            frmEnrollmentRegistration.cmbSection.ValueMember = studSection
+            frmEnrollmentRegistration.cmbGradeLevel.ValueMember = studGradelevel
+
+            frmEnrollmentRegistration.Show()
         End If
     End Sub
 End Class

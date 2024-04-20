@@ -18,11 +18,17 @@
         frmStudents.Close()
         frmTeachers.Close()
         frmBilling.Close()
-        frmReports.Close()
+        frmElementaryGrading.Close()
+        frmJHSGrading.Close()
         frmMaintenance.Close()
+        frmReports.Close()
+
     End Sub
     Public Sub MaintenanceRemovePanel()
+        frmEnrollmentRegistration.Close()
+        frmPayments.Close()
         frmTeacherMaintenance.Close()
+        frmStudentsView.Close()
         frmDepartment.Close()
         frmRequirements.Close()
         frmSubjects.Close()

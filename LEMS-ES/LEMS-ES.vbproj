@@ -166,10 +166,16 @@
     <Compile Include="Forms\Enrollment\frmEnrollmentReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Grading\frmGrading.Designer.vb">
-      <DependentUpon>frmGrading.vb</DependentUpon>
+    <Compile Include="Forms\Grading\frmElementaryGrading.Designer.vb">
+      <DependentUpon>frmElementaryGrading.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Grading\frmGrading.vb">
+    <Compile Include="Forms\Grading\frmElementaryGrading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grading\frmJHSGrading.Designer.vb">
+      <DependentUpon>frmJHSGrading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grading\frmJHSGrading.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Payments\frmBilling.Designer.vb">
@@ -341,8 +347,11 @@
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentReport.resx">
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Grading\frmGrading.resx">
-      <DependentUpon>frmGrading.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Grading\frmElementaryGrading.resx">
+      <DependentUpon>frmElementaryGrading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grading\frmJHSGrading.resx">
+      <DependentUpon>frmJHSGrading.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payments\frmBilling.resx">
       <DependentUpon>frmBilling.vb</DependentUpon>

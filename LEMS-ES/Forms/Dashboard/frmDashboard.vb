@@ -97,6 +97,9 @@
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         If MsgBox("Do You Want to Logout?", vbYesNo + vbQuestion) = vbYes Then
             'LogAction("has been logged out", "Logout")
+            RemovePanel()
+            MaintenanceRemovePanel()
+
             Login.Show()
             Me.Close()
         End If
@@ -179,4 +182,14 @@
         ShowHideGradingPanel()
     End Sub
 
+    Private Sub btnElemGrading_Click(sender As Object, e As EventArgs) Handles btnElemGrading.Click
+        RemovePanel()
+        With frmElementaryGrading
+            .TopLevel = False
+            Panel3.Controls.Add(frmElementaryGrading)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class

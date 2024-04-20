@@ -21,27 +21,19 @@ Public Class frmEnrollmentRegistration
         dgvRequirements.DataSource = ds.Tables("QueryTb")
     End Sub
 
-    Public Sub loadSubject()
-        Query("SELECT ID, LRN, SchoolYear, SectionID, GradeLevel_ID 
-               FROM enrollment e
-               JOIN section s ON e.SectionID = s.ID
-               JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID")
-        dgvSubjectList.DataSource = ds.Tables("QueryTb")
-
-        Query("SELECT ID, GradeLevel FROM gradelevel")
-        cmbGradeLevel.DataSource = ds.Tables("QueryTb")
-        cmbGradeLevel.ValueMember = "ID"
-        cmbGradeLevel.DisplayMember = "GradeLevel"
-    End Sub
     Public Sub loadDeprtment()
-        Query("SELECT ID, Department FROM department")
+        Query("SELECT * FROM department")
         cmbDepartment.DataSource = ds.Tables("QueryTb")
         cmbDepartment.ValueMember = "ID"
         cmbDepartment.DisplayMember = "Department"
+
     End Sub
+    Public Sub LoadMode()
+        Query("SELECT * FROM mop")
 
+    End Sub
     Private Sub btnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
-
+        ClassEnroll.EnrollmentRef()
     End Sub
 
 #Region "AutoComplete/Populate"
@@ -72,6 +64,53 @@ Public Class frmEnrollmentRegistration
             txtStudName.Clear()
         End If
     End Sub
+
+    Private Sub cmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartment.SelectedIndexChanged
+        Dim selectedDepartmentID As Integer
+        If cmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf cmbDepartment.SelectedItem Is DataRowView Then
+            selectedDepartmentID = Convert.ToInt32(DirectCast(cmbDepartment.SelectedItem, DataRowView).Row("ID"))
+        Else
+            MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim qry As String = $"SELECT ID, GradeLevel FROM gradelevel WHERE Department_ID = {selectedDepartmentID}"
+        Query(qry)
+
+        Dim gradeLevelTable As DataTable = ds.Tables("QueryTb")
+        If gradeLevelTable.Rows.Count > 0 Then
+            cmbGradeLevel.DataSource = gradeLevelTable
+            cmbGradeLevel.ValueMember = "ID"
+            cmbGradeLevel.DisplayMember = "GradeLevel"
+        Else
+            cmbGradeLevel.DataSource = Nothing
+            cmbGradeLevel.Items.Clear()
+        End If
+    End Sub
+
+    Private Sub cmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbGradeLevel.SelectedIndexChanged
+        Dim selectedGradeLevelID As Integer
+        If cmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf cmbGradeLevel.SelectedItem Is DataRowView Then
+            selectedGradeLevelID = Convert.ToInt32(DirectCast(cmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
+        Else
+            MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim qry As String = $"SELECT ID, SectionRoom, Adviser_ID FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
+        Query(qry)
+
+        Dim sectionTable As DataTable = ds.Tables("QueryTb")
+        If sectionTable.Rows.Count > 0 Then
+            cmbSection.DataSource = sectionTable
+            cmbSection.ValueMember = "ID"
+            cmbSection.DisplayMember = "SectionRoom"
+        Else
+            cmbSection.DataSource = Nothing
+            cmbSection.Items.Clear()
+        End If
+    End Sub
+
 #End Region
 
 End Class
