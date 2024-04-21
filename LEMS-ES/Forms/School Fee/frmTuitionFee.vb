@@ -61,38 +61,38 @@
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub btnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click
+    Private Sub BtnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click
         If IS_EMPTY(cmbGradeLevel) Then Return
         If IS_EMPTY(txtAmountTuition) Then Return
 
         ClassTuition.TuitionRef()
+        ClearFields(Me, idTuition)
+    End Sub
+
+    Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
         clear()
     End Sub
 
-    Private Sub btnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
-        clear()
-    End Sub
-
-    Private Sub btnSaveMiscellaneous_Click(sender As Object, e As EventArgs) Handles btnSaveMiscellaneous.Click
+    Private Sub BtnSaveMiscellaneous_Click(sender As Object, e As EventArgs) Handles btnSaveMiscellaneous.Click
         If IS_EMPTY(txtAmountMiscellaneous) Then Return
 
         ClassTuition.MiscellaneousRef()
-        clear()
+        ClearFields(Me, idMiscellaneous)
     End Sub
 
-    Private Sub btnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click
+    Private Sub BtnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click
         If IS_EMPTY(txtOtherFeeDesc) Then Return
         If IS_EMPTY(txtAmountOtherFee) Then Return
 
         ClassTuition.OtherFeeRef()
-        clear()
+        ClearFields(Me, idOtherFee)
     End Sub
 
     Private Sub btnMOP_Click(sender As Object, e As EventArgs) Handles btnMOP.Click
         If IS_EMPTY(txtMOP) Then Return
 
         ClassTuition.MoPRef()
-        clear()
+        ClearFields(Me, idMOP)
     End Sub
 
     Private Sub btnTOP_Click(sender As Object, e As EventArgs) Handles btnTOP.Click

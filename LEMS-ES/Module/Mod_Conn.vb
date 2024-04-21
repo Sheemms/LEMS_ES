@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Module Mod_Conn
-    Public con As New MySqlConnection("server=localhost;user id=root;password=password;database=lems_es")
+    Public con As New MySqlConnection(My.Settings.Conn_String)
     Public cmd As New MySqlCommand
     Public adp As New MySqlDataAdapter
     Public ds As New DataSet

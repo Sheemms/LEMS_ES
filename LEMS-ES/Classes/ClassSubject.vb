@@ -9,6 +9,7 @@ Public Class ClassSubject
                     New MySqlParameter("@GradeLevel_ID", frmSubjects.CmbGradeLevel.SelectedValue),
                     New MySqlParameter("@SubjectCode", frmSubjects.txtSubjCode.Text),
                     New MySqlParameter("@SubjectName", frmSubjects.txtSubjName.Text),
+                    New MySqlParameter("@Description", frmSubjects.TxtDesc.Text),
                     New MySqlParameter("@Units", frmSubjects.txtUnit.Text)
                 }
             Return syParam
@@ -21,12 +22,12 @@ Public Class ClassSubject
             Dim dynamicParams As MySqlParameter() = SubjectParameters()
             If frmSubjects.idSubj = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO subject(GradeLevel_ID, SubjectCode, SubjectName, Units) VALUES (@GradeLevel_ID, @SubjectCode, @SubjectName, @Units)", dynamicParams)
+                    Command("INSERT INTO subject(GradeLevel_ID, SubjectCode, SubjectName, Description, Units) VALUES (@GradeLevel_ID, @SubjectCode, @SubjectName, @Description, @Units)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE subject SET GradeLevel_ID=@GradeLevel_ID, SubjectCode=@SubjectCode, SubjectName=@SubjectName, Units=@Units WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE subject SET GradeLevel_ID=@GradeLevel_ID, SubjectCode=@SubjectCode, SubjectName=@SubjectName, Description=@Description, Units=@Units WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If

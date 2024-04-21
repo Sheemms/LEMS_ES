@@ -27,6 +27,9 @@ Partial Class frmSchedule
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtendTime = New System.Windows.Forms.MaskedTextBox()
+        Me.txtstartTime = New System.Windows.Forms.MaskedTextBox()
+        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.searchBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -76,9 +79,6 @@ Partial Class frmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtstartTime = New System.Windows.Forms.MaskedTextBox()
-        Me.txtendTime = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -147,6 +147,49 @@ Partial Class frmSchedule
         Me.Panel1.Size = New System.Drawing.Size(947, 538)
         Me.Panel1.TabIndex = 0
         '
+        'txtendTime
+        '
+        Me.txtendTime.Font = New System.Drawing.Font("Georgia", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtendTime.Location = New System.Drawing.Point(864, 52)
+        Me.txtendTime.Mask = "00:00"
+        Me.txtendTime.Name = "txtendTime"
+        Me.txtendTime.Size = New System.Drawing.Size(100, 36)
+        Me.txtendTime.TabIndex = 51
+        '
+        'txtstartTime
+        '
+        Me.txtstartTime.Font = New System.Drawing.Font("Georgia", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtstartTime.Location = New System.Drawing.Point(717, 52)
+        Me.txtstartTime.Mask = "00:00"
+        Me.txtstartTime.Name = "txtstartTime"
+        Me.txtstartTime.Size = New System.Drawing.Size(100, 36)
+        Me.txtstartTime.TabIndex = 50
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Animated = True
+        Me.TxtSearch.AutoRoundedCorners = True
+        Me.TxtSearch.BorderRadius = 17
+        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSearch.DefaultText = ""
+        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.FillColor = System.Drawing.Color.LemonChiffon
+        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.ForeColor = System.Drawing.Color.Black
+        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtSearch.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
+        Me.TxtSearch.Location = New System.Drawing.Point(717, 178)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSearch.PlaceholderText = ""
+        Me.TxtSearch.SelectedText = ""
+        Me.TxtSearch.Size = New System.Drawing.Size(247, 36)
+        Me.TxtSearch.TabIndex = 49
+        '
         'searchBtn
         '
         Me.searchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -193,7 +236,7 @@ Partial Class frmSchedule
         Me.dgvSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -204,7 +247,7 @@ Partial Class frmSchedule
         Me.dgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column8, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -280,7 +323,7 @@ Partial Class frmSchedule
         Me.Column4.DataPropertyName = "Room"
         Me.Column4.HeaderText = "Room"
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 60
+        Me.Column4.Width = 64
         '
         'Column5
         '
@@ -288,7 +331,7 @@ Partial Class frmSchedule
         Me.Column5.DataPropertyName = "Adviser"
         Me.Column5.HeaderText = "EmpID"
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 67
+        Me.Column5.Width = 70
         '
         'Column6
         '
@@ -311,7 +354,7 @@ Partial Class frmSchedule
         Me.Column9.DataPropertyName = "Teacher"
         Me.Column9.HeaderText = "Teacher"
         Me.Column9.Name = "Column9"
-        Me.Column9.Width = 81
+        Me.Column9.Width = 79
         '
         'TabPage2
         '
@@ -319,7 +362,7 @@ Partial Class frmSchedule
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1095, 341)
+        Me.TabPage2.Size = New System.Drawing.Size(1095, 392)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Print Preview"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -332,7 +375,7 @@ Partial Class frmSchedule
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 3)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1089, 335)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1089, 386)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'TxtUnits
@@ -515,10 +558,11 @@ Partial Class frmSchedule
         'lblSY
         '
         Me.lblSY.AutoSize = True
+        Me.lblSY.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSY.ForeColor = System.Drawing.Color.Red
-        Me.lblSY.Location = New System.Drawing.Point(100, 24)
+        Me.lblSY.Location = New System.Drawing.Point(97, 20)
         Me.lblSY.Name = "lblSY"
-        Me.lblSY.Size = New System.Drawing.Size(75, 14)
+        Me.lblSY.Size = New System.Drawing.Size(86, 18)
         Me.lblSY.TabIndex = 31
         Me.lblSY.Text = "0000-0000"
         Me.lblSY.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -769,49 +813,6 @@ Partial Class frmSchedule
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'TxtSearch
-        '
-        Me.TxtSearch.Animated = True
-        Me.TxtSearch.AutoRoundedCorners = True
-        Me.TxtSearch.BorderRadius = 17
-        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtSearch.DefaultText = ""
-        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.FillColor = System.Drawing.Color.LemonChiffon
-        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtSearch.ForeColor = System.Drawing.Color.Black
-        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtSearch.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
-        Me.TxtSearch.Location = New System.Drawing.Point(717, 178)
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtSearch.PlaceholderText = ""
-        Me.TxtSearch.SelectedText = ""
-        Me.TxtSearch.Size = New System.Drawing.Size(247, 36)
-        Me.TxtSearch.TabIndex = 49
-        '
-        'txtstartTime
-        '
-        Me.txtstartTime.Font = New System.Drawing.Font("Georgia", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtstartTime.Location = New System.Drawing.Point(717, 52)
-        Me.txtstartTime.Mask = "00:00"
-        Me.txtstartTime.Name = "txtstartTime"
-        Me.txtstartTime.Size = New System.Drawing.Size(100, 36)
-        Me.txtstartTime.TabIndex = 50
-        '
-        'txtendTime
-        '
-        Me.txtendTime.Font = New System.Drawing.Font("Georgia", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtendTime.Location = New System.Drawing.Point(864, 52)
-        Me.txtendTime.Mask = "00:00"
-        Me.txtendTime.Name = "txtendTime"
-        Me.txtendTime.Size = New System.Drawing.Size(100, 36)
-        Me.txtendTime.TabIndex = 51
         '
         'frmSchedule
         '

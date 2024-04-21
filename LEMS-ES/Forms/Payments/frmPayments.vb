@@ -1,10 +1,13 @@
 ﻿Public Class frmPayments
     Public idPayment As Integer = 0
-    Private Sub frmPayments_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmPayments_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadData()
+        GetSchoolYear(LabelSY)
+        LabelORNO.Text = ORNOGenerate()
     End Sub
     Public Sub LoadData()
-        Query("SELECT a.ID, a.SchoolYear, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, c.SectionRoom, d.GradeLevel, e.Amount
+        Query("SELECT a.ID, a.EID, a.SchoolYear, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
+                        c.SectionRoom, d.GradeLevel, e.Amount
                 FROM enrollment a
                 JOIN student b ON a.LRN = b.LRN 
                 JOIN section c ON a.SectionID = c.ID
@@ -13,12 +16,13 @@
                 WHERE b.LRN = '" & txtLRN.Text & "'")
         DgvTransactionHistory.DataSource = ds.Tables("QueryTb")
         With ds.Tables("QueryTb")
-            lblSY.Text = .Rows(0)(1).ToString
-            txtLRN.Text = .Rows(0)(2)
-            txtStudName.Text = .Rows(0)(3)
-            txtSection.Text = .Rows(0)(4)
-            txtGradeLvl.Text = .Rows(0)(5)
-            txtTuition.Text = .Rows(0)(6)
+            LabelEID.Text = .Rows(0)(1)
+            LabelSY.Text = .Rows(0)(2).ToString
+            txtLRN.Text = .Rows(0)(3)
+            txtStudName.Text = .Rows(0)(4)
+            txtSection.Text = .Rows(0)(5)
+            txtGradeLvl.Text = .Rows(0)(6)
+            txtTuition.Text = .Rows(0)(7)
         End With
 
 
@@ -46,6 +50,21 @@
         cmbModeofPayment.DisplayMember = "Mode"
         cmbModeofPayment.SelectedIndex = -1
 
+
+        DgvReceipt.Rows.Add("Tuition", Val(txtTuition.Text))
+        DgvReceipt.Rows.Add("Miscellaneous", Val(txtMiscellaneous.Text))
+
+        Dim total As Double = 0
+
+        For Each row As DataGridViewRow In DgvReceipt.Rows
+            For Each cell As DataGridViewCell In row.Cells
+                If cell.Value IsNot Nothing AndAlso IsNumeric(cell.Value) Then
+                    total += CDbl(cell.Value)
+                End If
+            Next
+        Next
+
+        LabelTotalPayment.Text = total
     End Sub
 
     Public Function RbChanges() As String
@@ -59,22 +78,22 @@
             Return Nothing
         End If
     End Function
-    Private Sub TxtChanges_TextChanged(sender As Object, e As EventArgs) Handles TxtChanges.TextChanged
-        TxtChanges.Enabled = RbAdditional.Checked Or RbDiscount.Checked
-    End Sub
-
-    Private Sub btnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
-
-    End Sub
-
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-        DgvReceipt.Rows.Add("Tuition", Val(txtTuition.Text))
-        DgvReceipt.Rows.Add("Miscellaneous", Val(txtMiscellaneous.Text))
-
         Query("SELECT OF_Amount FROM otherfee WHERE ID ='" & cmbOtherFee.SelectedValue & "'")
         Dim amount As Decimal = ds.Tables("QueryTb").Rows(0)(0)
         DgvReceipt.Rows.Add(cmbOtherFee.Text, amount)
+    End Sub
+
+    Private Sub BtnPayments_Click(sender As Object, e As EventArgs) Handles BtnPayments.Click
+        ClassPayments.PaymentsRef()
+        ClearFields(Me, idPayment)
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         DgvReceipt.Rows.Add(RbChanges(), Val(TxtChanges.Text))
     End Sub
 
+    Private Sub RbNoChanges_CheckedChanged(sender As Object, e As EventArgs) Handles RbNoChanges.CheckedChanged
+        TxtChanges.Enabled = Not RbNoChanges.Checked
+    End Sub
 End Class

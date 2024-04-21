@@ -3,7 +3,7 @@
     Private Sub frmRequirements_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
-        clear()
+        ClearFields(Me, idRequirements)
     End Sub
     Public Sub loadrecords()
         Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
@@ -16,12 +16,7 @@
         cmbClassification.ValueMember = "ID"
         cmbClassification.DisplayMember = "Classification"
     End Sub
-    Public Sub clear()
-        idRequirements = 0
-        cmbClassification.Text = ""
-        txtRequirements.Clear()
-    End Sub
-    Private Sub dgvRequirements_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequirements.CellClick
+    Private Sub DgvRequirements_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRequirements.CellClick
         Try
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = dgvRequirements.Rows(e.RowIndex)
@@ -29,21 +24,21 @@
                 cmbClassification.Text = row.Cells(1).Value
                 txtRequirements.Text = row.Cells(2).Value
             ElseIf e.ColumnIndex >= 0 Then
-                clear()
+                ClearFields(Me, idRequirements)
             End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If IS_EMPTY(cmbClassification) = True Then Return
         If IS_EMPTY(txtRequirements) = True Then Return
 
         ClassRequirements.RequirementsRef()
-        clear()
+        ClearFields(Me, idRequirements)
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) 
-        clear()
+    Private Sub BtnClear_Click(sender As Object, e As EventArgs)
+        ClearFields(Me, idRequirements)
     End Sub
 End Class

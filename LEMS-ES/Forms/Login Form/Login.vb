@@ -1,8 +1,7 @@
 ﻿Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Connection()
     End Sub
-    Public Sub clear()
+    Public Sub Clear()
         txtUsername.Clear()
         txtPassword.Clear()
     End Sub
@@ -26,46 +25,49 @@
         ValidateInput(CType(sender, Control), "Please enter a value")
     End Sub
 
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+    Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         ValidateInput(txtUsername, "Please enter a username")
         ValidateInput(txtPassword, "Please enter a password")
 
 
+        Try
+            If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
+                Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & txtPassword.Text & "'")
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    userID = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
+                    Success("Login success!")
+                    frmDashboard.Show()
+                    clear()
+                    'LogAction("Logged in")
+                    Me.Hide()
+                    Exit Sub
+                Else
+                    Critical("Wrong Username or Password!")
+                End If
 
-        If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
-            Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & txtPassword.Text & "'")
-            If ds.Tables("QueryTb").Rows.Count > 0 Then
-                userID = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
-                Success("Login success!")
-                frmDashboard.Show()
-                clear()
-                'LogAction("Logged in")
-                Me.Hide()
-                Exit Sub
+                'Command("SELECT * FROM user")
+                'dr = cmd.ExecuteReader
+                'While dr.Read
+                '    If txtUsername.Text = dr.Item("Username").ToString And txtPassword.Text = DecryptData(dr.Item("Password").ToString) Then
+                '        Success("Login success!")
+                '        frmDashboard.Show()
+                '        clear()
+                '        Me.Hide()
+                '        Exit Sub
+                '    Else
+                '        Critical("Wrong Username or Password!")
+                '    End If
+                'End While
+                'dr.Close()
             Else
-                Critical("Wrong Username or Password!")
+                Critical("Error Login cannot be Null or Empty")
             End If
-
-            'Command("SELECT * FROM user")
-            'dr = cmd.ExecuteReader
-            'While dr.Read
-            '    If txtUsername.Text = dr.Item("Username").ToString And txtPassword.Text = DecryptData(dr.Item("Password").ToString) Then
-            '        Success("Login success!")
-            '        frmDashboard.Show()
-            '        clear()
-            '        Me.Hide()
-            '        Exit Sub
-            '    Else
-            '        Critical("Wrong Username or Password!")
-            '    End If
-            'End While
-            'dr.Close()
-        Else
-            Critical("Error Login cannot be Null or Empty")
-        End If
+        Catch ex As Exception
+            MsgBox("You are not connected to the database, Please connect first!")
+        End Try
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Application.Exit()
     End Sub
 
@@ -73,7 +75,7 @@
         Application.Exit()
     End Sub
 
-    Private Sub cbShow_CheckedChanged(sender As Object, e As EventArgs) Handles cbShow.CheckedChanged
+    Private Sub CbShow_CheckedChanged(sender As Object, e As EventArgs) Handles cbShow.CheckedChanged
         If cbShow.Checked Then
             txtPassword.PasswordChar = ""
         Else
@@ -81,7 +83,7 @@
         End If
     End Sub
 
-    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
+    Private Sub TxtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
         Select Case Asc(e.KeyChar)
             Case 8, 48, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 65 To 90, 97 To 122
                 e.Handled = False
@@ -98,5 +100,9 @@
         End If
 
         e.SuppressKeyPress = True
+    End Sub
+
+    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox1.Click
+        FormDatabase.Show()
     End Sub
 End Class

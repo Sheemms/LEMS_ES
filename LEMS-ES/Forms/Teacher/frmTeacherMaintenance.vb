@@ -1,12 +1,12 @@
 ﻿Public Class frmTeacherMaintenance
     Public idTeacher As Integer = 0
-    Private Sub frmTeacherMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmTeacherMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
-        clear()
+        Loadrecords()
+        Clear()
         TextBoxOnlyLetters(txtMiddleInitial)
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT t.ID, t.EmpID, d.Department, CONCAT(t.Lastname, ', ', t.Firstname, ' ', t.MiddleInitial) AS Fullname, 
                 t.Contact, t.Address 
                 FROM teacher t
@@ -18,7 +18,7 @@
         cmbDept.ValueMember = "ID"
         cmbDept.DisplayMember = "Department"
     End Sub
-    Public Sub clear()
+    Public Sub Clear()
         idTeacher = 0
         txtEmpID.Clear()
         cmbDept.Text = ""
@@ -28,7 +28,7 @@
         txtContact.Clear()
         txtAddress.Clear()
     End Sub
-    Private Sub dgvTeacher_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTeacher.CellClick
+    Private Sub DgvTeacher_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTeacher.CellClick
         Try
             For Each row As DataGridViewRow In dgvTeacher.SelectedRows
                 idTeacher = row.Cells(0).Value
@@ -53,7 +53,7 @@
     End Sub
 
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 #Region "IS_EMPTY"
         If IS_EMPTY(txtEmpID) = True Then Return
         If IS_EMPTY(cmbDept) = True Then Return
@@ -68,18 +68,18 @@
         clear()
     End Sub
 
-    Private Sub btnClearUserMaintenance_Click(sender As Object, e As EventArgs)
+    Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs)
         clear()
     End Sub
 
 #Region "TextBoxValidation"
-    Private Sub txtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtLastname.KeyPress, txtMiddleInitial.KeyPress
+    Private Sub TxtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtLastname.KeyPress, txtMiddleInitial.KeyPress
         TextBoxOnlyLetters(txtFirstname)
         TextBoxOnlyLetters(txtLastname)
         TextBoxOnlyLetters(txtMiddleInitial)
     End Sub
 
-    Private Sub txtEmpID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpID.KeyPress, txtContact.KeyPress
+    Private Sub TxtEmpID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpID.KeyPress, txtContact.KeyPress
         TextBoxDigitsOnly(txtEmpID)
         TextBoxDigitsOnly(txtContact)
     End Sub

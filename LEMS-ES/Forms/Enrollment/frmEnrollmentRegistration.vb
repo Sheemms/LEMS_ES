@@ -8,6 +8,7 @@ Public Class frmEnrollmentRegistration
         GetSchoolYear(lblSY)
         LoadStudAutoComplet()
         loadDeprtment()
+        LabelEID.Text = EIDGenerate()
     End Sub
 
     Public Sub loadrecords()
@@ -18,8 +19,7 @@ Public Class frmEnrollmentRegistration
         Query("SELECT * FROM department")
         cmbDepartment.DataSource = ds.Tables("QueryTb")
         cmbDepartment.ValueMember = "ID"
-        cmbDepartment.DisplayMember = "Department"
-
+        CmbDepartment.DisplayMember = "Department"
     End Sub
     Public Sub LoadMode()
         Query("SELECT * FROM mop")

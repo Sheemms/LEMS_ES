@@ -167,6 +167,12 @@
     <Compile Include="Forms\Enrollment\frmEnrollmentReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormDatabase.Designer.vb">
+      <DependentUpon>FormDatabase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDatabase.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Grading\frmElementaryGrading.Designer.vb">
       <DependentUpon>frmElementaryGrading.vb</DependentUpon>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentReport.resx">
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDatabase.resx">
+      <DependentUpon>FormDatabase.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grading\frmElementaryGrading.resx">
       <DependentUpon>frmElementaryGrading.vb</DependentUpon>

@@ -5,8 +5,13 @@ Public Class ClassPayments
         Try
             Dim RequirementsParam() As MySqlParameter = {
                 New MySqlParameter("@ID", frmPayments.idPayment),
+                New MySqlParameter("@ORNo", frmPayments.LabelORNO),
+                New MySqlParameter("@EnrollmentID", frmPayments.LabelEID.Text),
                 New MySqlParameter("@LRN", frmPayments.txtLRN.Text),
-                New MySqlParameter("@StudName", frmPayments.txtStudName.Text)
+                New MySqlParameter("@Mode", frmPayments.cmbModeofPayment.SelectedItem),
+                New MySqlParameter("@Tuition", frmPayments.txtTuition.Text),
+                New MySqlParameter("@OtherFee", frmPayments.cmbOtherFee.Text),
+                New MySqlParameter("@Miscellaneous", frmPayments.txtMiscellaneous.Text)
             }
             Return RequirementsParam
         Catch ex As Exception
@@ -16,20 +21,21 @@ Public Class ClassPayments
     Public Shared Sub PaymentsRef()
         Try
             Dim dynamicParams As MySqlParameter() = PaymentsParameters()
-            If frmRequirements.idRequirements = 0 Then
+            If frmPayments.idPayment = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO requirements(Classification_ID, Requirement) VALUES (@Classification_ID, @Requirement)", dynamicParams)
+                    Command("INSERT INTO payment(ORNo, ORDate, EnrollmentID, LRN, Mode, Tuition, OtherFee, Miscellaneous, EncodedBy) 
+                    VALUES (@ORNo, @ORDate, @EnrollmentID, @LRN, @Mode, @Tuition, @OtherFee, @Miscellaneous, @EncodedBy)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
-                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE requirements SET Classification_ID=@Classification_ID, Requirement=@Requirement WHERE ID=@ID", dynamicParams)
-                    Success("Successfully Updated!")
-                End If
+                'If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                '    Command("UPDATE payment SET ORNo=@ORNo, ORDate=@ORDate, EnrollmentID=@EnrollmentID, LRN=@LRN, Mode=@Mode, Tuition=@Tuition, OtherFee=@OtherFee, Miscellaneous=@Miscellaneous, EncodedBy=@EncodedBy WHERE ID=@ID", dynamicParams)
+                '    Success("Successfully Updated!")
+                'End If
             End If
-            frmRequirements.loadrecords()
+
         Catch ex As MySqlException When ex.Number = 1062
-            Critical("Requirements already exists.")
+            Critical("ORNO already exists.")
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)

@@ -1,6 +1,6 @@
 ﻿Public Class frmUserMaintenance
     Public idUserMaintenance As Integer = 0
-    Private Sub frmUserMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmUserMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         loadrecords()
     End Sub
@@ -12,13 +12,6 @@
         cmbUserLevel.DataSource = ds.Tables("QueryTb")
         cmbUserLevel.ValueMember = "userlevel"
         cmbUserLevel.DisplayMember = "userlevel"
-    End Sub
-    Public Sub clear()
-        idUserMaintenance = 0
-        txtUsername.Clear()
-        txtPassword.Clear()
-        txtFullname.Clear()
-        cmbUserLevel.Text = ""
     End Sub
     Private Sub dgvUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUser.CellClick
         Try
@@ -33,7 +26,7 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 #Region "IS_EMPTY"
         If IS_EMPTY(txtUsername) = True Then Return
         If IS_EMPTY(txtPassword) = True Then Return
@@ -47,23 +40,23 @@
 #End Region
 
         ClassUserMaintenance.UserMRef()
-        clear()
+        ClearFields(Me, idUserMaintenance)
     End Sub
 
-    Private Sub btnClearUserMaintenance_Click(sender As Object, e As EventArgs) Handles btnClearUserMaintenance.Click
-        clear()
+    Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs) Handles btnClearUserMaintenance.Click
+        ClearFields(Me, idUserMaintenance)
     End Sub
 
-    Private Sub btnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
+    Private Sub BtnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
         ClassUserMaintenance.UserMDeact()
-        clear()
+        ClearFields(Me, idUserMaintenance)
     End Sub
 
-    Private Sub btnAddUserLevel_Click(sender As Object, e As EventArgs) Handles btnAddUserLevel.Click
+    Private Sub BtnAddUserLevel_Click(sender As Object, e As EventArgs) Handles btnAddUserLevel.Click
         frmAddUserLevel.Show()
     End Sub
 
-    Private Sub cmbUserLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbUserLevel.KeyPress
+    Private Sub CmbUserLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbUserLevel.KeyPress
         e.Handled = True
     End Sub
 End Class

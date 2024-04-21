@@ -33,6 +33,10 @@ Module ModDisplay
                 DirectCast(ctrl, DataGridView).ClearSelection()
             ElseIf TypeOf ctrl Is Guna2DataGridView Then
                 DirectCast(ctrl, Guna2DataGridView).ClearSelection()
+            ElseIf TypeOf ctrl Is CheckBox Then
+                DirectCast(ctrl, CheckBox).Checked = False
+            ElseIf TypeOf ctrl Is Guna2CheckBox Then
+                DirectCast(ctrl, Guna2CheckBox).Checked = False
             End If
         Next
         id = 0
@@ -91,6 +95,34 @@ Module ModDisplay
         End If
     End Sub
 
+    Public Function EIDGenerate() As String
+        Try
+            Dim eidvalue As String
+            Query("Select ID from enrollment order by ID DESC LIMIT 1")
+            If ds.Tables("QueryTb").Rows.Count = 0 Then
+                eidvalue = "EID" & Format(Now, "yyyyMMdd") & "001"
+            Else
+                eidvalue = "EID" & Format(Now, "yyyyMMdd") & "00" & (ds.Tables("QueryTb").Rows(0)(0) + 1)
+            End If
+            Return eidvalue
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+    Public Function ORNOGenerate() As String
+        Try
+            Dim orvalue As String
+            Query("Select ID from payment order by ID DESC LIMIT 1")
+            If ds.Tables("QueryTb").Rows.Count = 0 Then
+                orvalue = "ORNO" & Format(Now, "yyyyMMdd") & "001"
+            Else
+                orvalue = "ORNO" & Format(Now, "yyyyMMdd") & "00" & (ds.Tables("QueryTb").Rows(0)(0) + 1)
+            End If
+            Return orvalue
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
     Public Sub GetSchoolYear(ByVal lblSY As Label)
         Try
             Query("SELECT Start_Year, End_Year FROM schoolyear WHERE Status = 'Open'")
@@ -98,7 +130,7 @@ Module ModDisplay
             If result IsNot Nothing Then
                 Dim startYear As String = ds.Tables("QueryTb").Rows(0)("Start_Year").ToString()
                 Dim endYear As String = ds.Tables("QueryTb").Rows(0)("End_Year").ToString()
-                lblSY.Text = startYear & " - " & endYear
+                lblSY.Text = startYear & "-" & endYear
             Else
                 lblSY.Text = "No open school year found"
             End If

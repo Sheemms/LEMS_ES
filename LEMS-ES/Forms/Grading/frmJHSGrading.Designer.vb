@@ -31,6 +31,9 @@ Partial Class frmJHSGrading
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CmbSubj = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.CmbSubjCode = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dgvSubject = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,6 +118,9 @@ Partial Class frmJHSGrading
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.CmbSubj)
+        Me.Panel2.Controls.Add(Me.CmbSubjCode)
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.txtSearch)
         Me.Panel2.Controls.Add(Me.dgvSubject)
@@ -124,6 +130,47 @@ Partial Class frmJHSGrading
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(927, 417)
         Me.Panel2.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(123, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(91, 14)
+        Me.Label1.TabIndex = 24
+        Me.Label1.Text = "Filtered By:"
+        '
+        'CmbSubj
+        '
+        Me.CmbSubj.BackColor = System.Drawing.Color.Transparent
+        Me.CmbSubj.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbSubj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbSubj.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbSubj.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbSubj.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbSubj.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CmbSubj.ItemHeight = 30
+        Me.CmbSubj.Location = New System.Drawing.Point(366, 5)
+        Me.CmbSubj.Name = "CmbSubj"
+        Me.CmbSubj.Size = New System.Drawing.Size(140, 36)
+        Me.CmbSubj.TabIndex = 23
+        '
+        'CmbSubjCode
+        '
+        Me.CmbSubjCode.BackColor = System.Drawing.Color.Transparent
+        Me.CmbSubjCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbSubjCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbSubjCode.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbSubjCode.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbSubjCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CmbSubjCode.ItemHeight = 30
+        Me.CmbSubjCode.Location = New System.Drawing.Point(220, 5)
+        Me.CmbSubjCode.Name = "CmbSubjCode"
+        Me.CmbSubjCode.Size = New System.Drawing.Size(140, 36)
+        Me.CmbSubjCode.TabIndex = 22
         '
         'Label9
         '
@@ -318,4 +365,7 @@ Partial Class frmJHSGrading
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
+    Friend WithEvents CmbSubj As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CmbSubjCode As Guna.UI2.WinForms.Guna2ComboBox
 End Class

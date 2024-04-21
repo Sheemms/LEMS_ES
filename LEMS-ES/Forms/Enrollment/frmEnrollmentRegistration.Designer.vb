@@ -26,7 +26,7 @@ Partial Class frmEnrollmentRegistration
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelEID = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtStudLRN = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -41,23 +41,23 @@ Partial Class frmEnrollmentRegistration
         Me.btnEnroll = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvSubjectList = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.CmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.CmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbSection = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.CmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.CmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvSubjectList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -72,16 +72,16 @@ Partial Class frmEnrollmentRegistration
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Enrollment ID"
         '
-        'Label2
+        'LabelEID
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Courier New", 8.25!)
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(131, 61)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 14)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "EID000000000"
+        Me.LabelEID.AutoSize = True
+        Me.LabelEID.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelEID.ForeColor = System.Drawing.Color.Red
+        Me.LabelEID.Location = New System.Drawing.Point(131, 61)
+        Me.LabelEID.Name = "LabelEID"
+        Me.LabelEID.Size = New System.Drawing.Size(104, 16)
+        Me.LabelEID.TabIndex = 1
+        Me.LabelEID.Text = "EID000000000"
         '
         'Label3
         '
@@ -228,11 +228,11 @@ Partial Class frmEnrollmentRegistration
         'lblSY
         '
         Me.lblSY.AutoSize = True
-        Me.lblSY.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.lblSY.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSY.ForeColor = System.Drawing.Color.Red
         Me.lblSY.Location = New System.Drawing.Point(131, 34)
         Me.lblSY.Name = "lblSY"
-        Me.lblSY.Size = New System.Drawing.Size(70, 14)
+        Me.lblSY.Size = New System.Drawing.Size(80, 16)
         Me.lblSY.TabIndex = 18
         Me.lblSY.Text = "0000-0000"
         '
@@ -276,28 +276,6 @@ Partial Class frmEnrollmentRegistration
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(771, 342)
         Me.TabControl1.TabIndex = 21
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.CrystalReportViewer1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 27)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(833, 311)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Print Preview"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'CrystalReportViewer1
-        '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 3)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(827, 305)
-        Me.CrystalReportViewer1.TabIndex = 0
         '
         'TabPage1
         '
@@ -367,28 +345,12 @@ Partial Class frmEnrollmentRegistration
         Me.dgvSubjectList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSubjectList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column5
+        'Column1
         '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "Teacher"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 101
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.HeaderText = "Time | Date"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 141
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "Subject Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
         '
         'Column2
         '
@@ -398,12 +360,50 @@ Partial Class frmEnrollmentRegistration
         Me.Column2.ReadOnly = True
         Me.Column2.Width = 151
         '
-        'Column1
+        'Column3
         '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "Subject Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.HeaderText = "Time | Date"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 141
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "Teacher"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 101
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.CrystalReportViewer1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 27)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(763, 311)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Print Preview"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'CrystalReportViewer1
+        '
+        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 3)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(757, 305)
+        Me.CrystalReportViewer1.TabIndex = 0
         '
         'GroupBox1
         '
@@ -424,7 +424,7 @@ Partial Class frmEnrollmentRegistration
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtStudLRN)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.LabelEID)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Font = New System.Drawing.Font("Courier New", 12.0!)
@@ -434,36 +434,6 @@ Partial Class frmEnrollmentRegistration
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enrollment Form"
-        '
-        'CmbDepartment
-        '
-        Me.CmbDepartment.BackColor = System.Drawing.Color.Transparent
-        Me.CmbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CmbDepartment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CmbDepartment.ItemHeight = 30
-        Me.CmbDepartment.Location = New System.Drawing.Point(283, 108)
-        Me.CmbDepartment.Name = "CmbDepartment"
-        Me.CmbDepartment.Size = New System.Drawing.Size(242, 36)
-        Me.CmbDepartment.TabIndex = 87
-        '
-        'CmbGradeLevel
-        '
-        Me.CmbGradeLevel.BackColor = System.Drawing.Color.Transparent
-        Me.CmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CmbGradeLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CmbGradeLevel.ItemHeight = 30
-        Me.CmbGradeLevel.Location = New System.Drawing.Point(283, 171)
-        Me.CmbGradeLevel.Name = "CmbGradeLevel"
-        Me.CmbGradeLevel.Size = New System.Drawing.Size(242, 36)
-        Me.CmbGradeLevel.TabIndex = 88
         '
         'CmbSection
         '
@@ -480,6 +450,36 @@ Partial Class frmEnrollmentRegistration
         Me.CmbSection.Size = New System.Drawing.Size(242, 36)
         Me.CmbSection.TabIndex = 89
         '
+        'CmbGradeLevel
+        '
+        Me.CmbGradeLevel.BackColor = System.Drawing.Color.Transparent
+        Me.CmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbGradeLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CmbGradeLevel.ItemHeight = 30
+        Me.CmbGradeLevel.Location = New System.Drawing.Point(283, 171)
+        Me.CmbGradeLevel.Name = "CmbGradeLevel"
+        Me.CmbGradeLevel.Size = New System.Drawing.Size(242, 36)
+        Me.CmbGradeLevel.TabIndex = 88
+        '
+        'CmbDepartment
+        '
+        Me.CmbDepartment.BackColor = System.Drawing.Color.Transparent
+        Me.CmbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbDepartment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CmbDepartment.ItemHeight = 30
+        Me.CmbDepartment.Location = New System.Drawing.Point(283, 108)
+        Me.CmbDepartment.Name = "CmbDepartment"
+        Me.CmbDepartment.Size = New System.Drawing.Size(242, 36)
+        Me.CmbDepartment.TabIndex = 87
+        '
         'frmEnrollmentRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -491,9 +491,9 @@ Partial Class frmEnrollmentRegistration
         Me.Name = "frmEnrollmentRegistration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         CType(Me.dgvSubjectList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -501,7 +501,7 @@ Partial Class frmEnrollmentRegistration
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LabelEID As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txtStudLRN As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label

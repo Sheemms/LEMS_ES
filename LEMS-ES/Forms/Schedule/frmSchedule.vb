@@ -7,20 +7,6 @@
         LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
-    Public Sub ClearFields()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtAdviserID, txtAdviser, txtSubjCode, txtSubjName, txtRoom, txtTeacherID, txtTeacherName}
-        For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
-            textBox.Clear()
-        Next
-        cmbDepartment.Text = ""
-        cmbGradeLevel.Text = ""
-        cmbSection.Text = ""
-        cbM.Checked = False
-        cbT.Checked = False
-        cbW.Checked = False
-        cbTH.Checked = False
-        cbF.Checked = False
-    End Sub
 #Region "Loads"
     Public Sub LoadRecords()
         Query("SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, 
@@ -177,7 +163,7 @@
         If IS_EMPTY(cmbDepartment) Then Return
 
         ClassSchedule.SchedRef()
-        ClearFields()
+        ClearFields(Me, idSched)
     End Sub
 
     Public Function chckBox()

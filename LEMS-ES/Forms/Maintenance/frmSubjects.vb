@@ -5,7 +5,7 @@
         LoadRecords()
     End Sub
     Public Sub LoadRecords()
-        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName , sub.Units
+        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName, sub.Description, sub.Units
                 FROM subject sub
                 JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID
                 ORDER BY gl.GradeLevel")
@@ -58,7 +58,7 @@
         TextBoxOnlyLetters(txtSubjName)
     End Sub
 
-    Private Sub TxtUnit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress
+    Private Sub TxtUnit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress, TxtDesc.KeyPress
         TextBoxDigitsOnly(txtUnit)
     End Sub
 End Class
