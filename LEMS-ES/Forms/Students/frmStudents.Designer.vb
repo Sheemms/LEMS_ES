@@ -22,14 +22,11 @@ Partial Class frmStudents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmStudents))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.AddNew = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,13 +46,15 @@ Partial Class frmStudents
         Me.colCitizenship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.TextSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNew, Me.ToolStripButton2, Me.ToolStripButton3})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNew, Me.TextSearch, Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
@@ -69,22 +68,6 @@ Partial Class frmStudents
         Me.AddNew.Name = "AddNew"
         Me.AddNew.Size = New System.Drawing.Size(51, 22)
         Me.AddNew.Text = "New"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(115, 22)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(115, 22)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
         '
         'dgvStudents
         '
@@ -315,6 +298,23 @@ Partial Class frmStudents
         Me.colStudType.Visible = False
         Me.colStudType.Width = 99
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'TextSearch
+        '
+        Me.TextSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TextSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextSearch.Name = "TextSearch"
+        Me.TextSearch.Size = New System.Drawing.Size(200, 25)
+        '
         'frmStudents
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -336,8 +336,6 @@ Partial Class frmStudents
 
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents AddNew As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
-    Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents dgvStudents As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colLRN As DataGridViewTextBoxColumn
@@ -357,4 +355,6 @@ Partial Class frmStudents
     Friend WithEvents colCitizenship As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents colStudType As DataGridViewTextBoxColumn
+    Friend WithEvents TextSearch As ToolStripTextBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

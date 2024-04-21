@@ -1,4 +1,4 @@
-﻿Public Class frmSubjects
+﻿Public Class FrmSubjects
     Public idSubj As Integer = 0
     Private Sub FrmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
@@ -33,7 +33,7 @@
                 txtSubjName.Text = row.Cells(3).Value
                 txtUnit.Text = row.Cells(4).Value
             ElseIf e.ColumnIndex >= 0 Then
-                clear()
+                Clear()
             End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
@@ -47,11 +47,11 @@
 
 
         ClassSubject.SubjectRef()
-        clear()
+        Clear()
     End Sub
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ClassSubject.DeleteRef()
-        clear()
+        Clear()
     End Sub
 
     Private Sub TxtSubjName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjName.KeyPress

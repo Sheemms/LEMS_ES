@@ -40,6 +40,7 @@ Partial Class frmEnrollment
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BtnSearch = New System.Windows.Forms.ToolStripButton()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvEnrolled, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -202,7 +203,7 @@ Partial Class frmEnrollment
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.txtSearch, Me.ToolStripSeparator1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.txtSearch, Me.ToolStripSeparator1, Me.BtnSearch})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
@@ -230,6 +231,16 @@ Partial Class frmEnrollment
         Me.ToolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BtnSearch
+        '
+        Me.BtnSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.BtnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.BtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(23, 22)
+        Me.BtnSearch.Text = "ToolStripButton2"
         '
         'frmEnrollment
         '
@@ -266,4 +277,5 @@ Partial Class frmEnrollment
     Friend WithEvents colSection As DataGridViewTextBoxColumn
     Friend WithEvents colEnrollDate As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn
+    Friend WithEvents BtnSearch As ToolStripButton
 End Class

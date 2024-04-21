@@ -1,3 +1,3 @@
-﻿Public Class frmEnrollmentReport
+﻿Public Class FrmEnrollmentReport
 
 End Class

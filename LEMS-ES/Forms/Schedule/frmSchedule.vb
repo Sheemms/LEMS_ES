@@ -1,6 +1,8 @@
-﻿Public Class frmSchedule
+﻿Imports MySql.Data.MySqlClient
+Public Class FrmSchedule
     Public idSched As Integer = 0
-    Private Sub frmSchedule_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmSchedule_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Connection()
         LoadRecords()
         LoadDepartment()
         LoadSubjectAutoComplet()
@@ -28,7 +30,7 @@
     End Sub
 #End Region
 
-    Private Sub cmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartment.SelectedIndexChanged
+    Private Sub CmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartment.SelectedIndexChanged
         Dim selectedDepartmentID As Integer
         If cmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf cmbDepartment.SelectedItem Is DataRowView Then
             selectedDepartmentID = Convert.ToInt32(DirectCast(cmbDepartment.SelectedItem, DataRowView).Row("ID"))
@@ -51,7 +53,7 @@
         End If
     End Sub
 
-    Private Sub cmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbGradeLevel.SelectedIndexChanged
+    Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbGradeLevel.SelectedIndexChanged
         Dim selectedGradeLevelID As Integer
         If cmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf cmbGradeLevel.SelectedItem Is DataRowView Then
             selectedGradeLevelID = Convert.ToInt32(DirectCast(cmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
@@ -75,7 +77,7 @@
         End If
     End Sub
     Public AdvID = Nothing
-    Private Sub cmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
+    Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
         Try
             If cmbSection.SelectedIndex <> -1 AndAlso cmbSection.DataSource IsNot Nothing Then
                 Dim selectedRow As DataRowView = TryCast(cmbSection.SelectedItem, DataRowView)
@@ -116,7 +118,7 @@
         txtSubjCode.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
     Public subjID = Nothing
-    Private Sub txtSubjCode_TextChanged(sender As Object, e As EventArgs) Handles txtSubjCode.TextChanged
+    Private Sub TxtSubjCode_TextChanged(sender As Object, e As EventArgs) Handles txtSubjCode.TextChanged
         Dim selectedSubjName As String = txtSubjCode.Text.Trim()
 
         Query("SELECT ID, GradeLevel_ID, SubjectCode, SubjectName, Units FROM subject")
@@ -143,7 +145,7 @@
         txtTeacherName.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
     Public teacherid = Nothing
-    Private Sub txtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
+    Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
         Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
 
         Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
@@ -159,14 +161,14 @@
 
 #End Region
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If IS_EMPTY(cmbDepartment) Then Return
 
         ClassSchedule.SchedRef()
         ClearFields(Me, idSched)
     End Sub
 
-    Public Function chckBox()
+    Public Function ChckBox()
         Dim days = ""
         Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
         For i = 0 To ckbx.Length - 1
@@ -177,7 +179,7 @@
         Return days
     End Function
 
-    Private Sub searchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
+    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
         Query($"SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, 
                 CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sub.SubjectCode, sc.Days, 
                 CONCAT(sc.Time_From, '-', sc.Time_To) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
@@ -187,7 +189,31 @@
                JOIN subject sub ON sc.Subj_ID = sub.ID
                JOIN department dpt ON sc.Department_ID = dpt.ID
                JOIN teacher tr ON sc.Teacher_ID = tr.ID
-               WHERE CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) LIKE '{TxtSearch.Text}'")
+               WHERE tr.Lastname LIKE '{TxtSearch.Text}' OR tr.Firstname LIKE '{TxtSearch.Text}' OR tr.MiddleInitial LIKE '{TxtSearch.Text}'")
         dgvSchedule.DataSource = ds.Tables("QueryTb")
+    End Sub
+
+    Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
+        Dim searchText As String = TxtSearch.Text.Trim()
+
+        If searchText <> String.Empty Then
+            Dim dataTable As DataTable = CType(dgvSchedule.DataSource, DataTable)
+            Dim filteredData As New DataTable()
+
+            filteredData = dataTable.Clone()
+
+            For Each row As DataRow In dataTable.Rows
+                For Each col As DataColumn In dataTable.Columns
+                    If row(col.ColumnName).ToString().Contains(searchText) Then
+                        filteredData.ImportRow(row)
+                        Exit For
+                    End If
+                Next
+            Next
+
+            dgvSchedule.DataSource = filteredData
+        Else
+            LoadRecords()
+        End If
     End Sub
 End Class

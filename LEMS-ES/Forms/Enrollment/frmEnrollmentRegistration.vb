@@ -1,31 +1,67 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class frmEnrollmentRegistration
+Public Class FrmEnrollmentRegistration
     Public EnrollmentID As Integer = 0
 
-    Private Sub frmEnrollmentRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmEnrollmentRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         GetSchoolYear(lblSY)
         LoadStudAutoComplet()
-        loadDeprtment()
+        LoadDeprtment()
         LabelEID.Text = EIDGenerate()
+        LoadSub()
     End Sub
 
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT ID, LRN, SchoolYear, SectionID, GradeLevel_ID FROM enrollment")
     End Sub
 
-    Public Sub loadDeprtment()
+    Public Sub LoadSub()
+        Query("SELECT  a.ID, d.SubjectCode, d.SubjectName, CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, a.Days, CONCAT(e.Lastname, ' ',e.Firstname) Teacher
+                                FROM schedule a
+                                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                                JOIN section c ON a.Sec_ID = c.ID
+                                JOIN subject d ON a.Subj_ID = d.ID
+                                JOIN teacher e ON a.Teacher_ID = e.ID
+                                WHERE a.GradeLevel_ID LIKE '" & CmbGradeLevel.SelectedValue & "'")
+        dgvSubjectList.DataSource = ds.Tables("QueryTb")
+    End Sub
+
+    Public Sub LoadDeprtment()
         Query("SELECT * FROM department")
-        cmbDepartment.DataSource = ds.Tables("QueryTb")
-        cmbDepartment.ValueMember = "ID"
+        CmbDepartment.DataSource = ds.Tables("QueryTb")
+        CmbDepartment.ValueMember = "ID"
         CmbDepartment.DisplayMember = "Department"
     End Sub
     Public Sub LoadMode()
         Query("SELECT * FROM mop")
 
     End Sub
-    Private Sub btnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
+    Private Sub PopulateSubjectsByGradeLevel(ByVal gradeLevel As String)
+        Try
+            Dim sql As String = "SELECT * FROM schedule WHERE GradeLevel_ID = @GradeLevel_ID"
+
+            dgvSubjectList.Rows.Clear()
+
+            Command(sql)
+            cmd.Parameters.AddWithValue("@GradeLevel", gradeLevel)
+            dr = cmd.ExecuteReader()
+
+            If dr.HasRows Then
+                While dr.Read()
+                    dgvSubjectList.Rows.Add(dr("ID"), dr("SubjectCode"), dr("SubjectName"), dr("Description"), dr("Units"))
+                End While
+            Else
+                MessageBox.Show("No subjects found for the selected grade level.")
+            End If
+
+            dr.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
         ClassEnroll.EnrollmentRef()
     End Sub
 
@@ -43,7 +79,7 @@ Public Class frmEnrollmentRegistration
         txtSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+    Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         Dim selectedStudName As String = txtSearch.Text.Trim()
 
         Query("SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student")
@@ -58,10 +94,10 @@ Public Class frmEnrollmentRegistration
         End If
     End Sub
 
-    Private Sub cmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDepartment.SelectedIndexChanged
+    Private Sub CmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbDepartment.SelectedIndexChanged
         Dim selectedDepartmentID As Integer
-        If cmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf cmbDepartment.SelectedItem Is DataRowView Then
-            selectedDepartmentID = Convert.ToInt32(DirectCast(cmbDepartment.SelectedItem, DataRowView).Row("ID"))
+        If CmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf CmbDepartment.SelectedItem Is DataRowView Then
+            selectedDepartmentID = Convert.ToInt32(DirectCast(CmbDepartment.SelectedItem, DataRowView).Row("ID"))
         Else
             MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -72,19 +108,19 @@ Public Class frmEnrollmentRegistration
 
         Dim gradeLevelTable As DataTable = ds.Tables("QueryTb")
         If gradeLevelTable.Rows.Count > 0 Then
-            cmbGradeLevel.DataSource = gradeLevelTable
-            cmbGradeLevel.ValueMember = "ID"
-            cmbGradeLevel.DisplayMember = "GradeLevel"
+            CmbGradeLevel.DataSource = gradeLevelTable
+            CmbGradeLevel.ValueMember = "ID"
+            CmbGradeLevel.DisplayMember = "GradeLevel"
         Else
-            cmbGradeLevel.DataSource = Nothing
-            cmbGradeLevel.Items.Clear()
+            CmbGradeLevel.DataSource = Nothing
+            CmbGradeLevel.Items.Clear()
         End If
     End Sub
 
-    Private Sub cmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbGradeLevel.SelectedIndexChanged
+    Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedIndexChanged
         Dim selectedGradeLevelID As Integer
-        If cmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf cmbGradeLevel.SelectedItem Is DataRowView Then
-            selectedGradeLevelID = Convert.ToInt32(DirectCast(cmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
+        If CmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf CmbGradeLevel.SelectedItem Is DataRowView Then
+            selectedGradeLevelID = Convert.ToInt32(DirectCast(CmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
         Else
             MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -95,13 +131,14 @@ Public Class frmEnrollmentRegistration
 
         Dim sectionTable As DataTable = ds.Tables("QueryTb")
         If sectionTable.Rows.Count > 0 Then
-            cmbSection.DataSource = sectionTable
-            cmbSection.ValueMember = "ID"
-            cmbSection.DisplayMember = "SectionRoom"
+            CmbSection.DataSource = sectionTable
+            CmbSection.ValueMember = "ID"
+            CmbSection.DisplayMember = "SectionRoom"
         Else
-            cmbSection.DataSource = Nothing
-            cmbSection.Items.Clear()
+            CmbSection.DataSource = Nothing
+            CmbSection.Items.Clear()
         End If
+
     End Sub
 #End Region
 

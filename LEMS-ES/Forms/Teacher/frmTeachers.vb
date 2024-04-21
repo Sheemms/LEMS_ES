@@ -1,8 +1,8 @@
-﻿Public Class frmTeachers
-    Private Sub frmTeachers_Load(sender As Object, e As EventArgs) Handles Me.Load
-        loadrecords()
+﻿Public Class FrmTeachers
+    Private Sub FrmTeachers_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Loadrecords()
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT t.ID, t.EmpID, d.Department, CONCAT(t.Lastname, ', ', t.Firstname, ' ', t.MiddleInitial) AS Fullname, 
                 t.Contact, t.Address 
                 FROM teacher t

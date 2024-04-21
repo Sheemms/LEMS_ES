@@ -1,5 +1,5 @@
 ﻿Public Class frmEnrollment
-    Private Sub frmEnrollment_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmEnrollment_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()
     End Sub
@@ -24,22 +24,19 @@
             Dim dataTable As DataTable = CType(dgvEnrolled.DataSource, DataTable)
             Dim filteredData As New DataTable()
 
-            ' Clone the structure of the original DataTable
             filteredData = dataTable.Clone()
 
-            ' Filter the rows based on the search text
             For Each row As DataRow In dataTable.Rows
                 For Each col As DataColumn In dataTable.Columns
                     If row(col.ColumnName).ToString().Contains(searchText) Then
                         filteredData.ImportRow(row)
-                        Exit For ' Break out of the inner loop once a match is found
+                        Exit For 
                     End If
                 Next
             Next
 
             dgvEnrolled.DataSource = filteredData
         Else
-            ' If search text is empty, reload original data
             loadrecords()
         End If
     End Sub
@@ -74,5 +71,15 @@
 
             frmEnrollmentRegistration.Show()
         End If
+    End Sub
+
+    Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
+        Query($"SELECT e.ID, e.SchoolYear, e.LRN, CONCAT(st.Lastname, ' ',st.Firstname, ' ',st.MiddleInitial) as Fullname, s.SectionRoom as Section, gl.GradeLevel, e.Enrollment_Date, e.Status 
+                FROM enrollment e 
+                JOIN student st ON e.LRN = st.LRN
+                JOIN section s ON e.SectionID = s.ID
+                JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID
+                WHERE st.LRN LIKE '{txtSearch.Text}' OR st.Lastname LIKE '{txtSearch.Text}' OR st.Firstname LIKE '{txtSearch.Text}' ")
+        dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
 End Class

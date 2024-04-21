@@ -1,15 +1,15 @@
 ﻿Public Class frmSY
     Public idSY As Integer = 0
-    Private Sub frmSY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmSY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Connection()
-        loadrecords()
+        Loadrecords()
         txtStartYear.Text = Year(Now)
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT * FROM schoolyear ORDER BY ID DESC ")
         DgvSY.DataSource = ds.Tables("QueryTb")
     End Sub
-    Public Sub clear()
+    Public Sub Clear()
         idSY = 0
         txtStartYear.Clear()
         txtEndYear.Clear()
@@ -32,10 +32,10 @@
     End Sub
 
 
-    Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
+    Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
         If IS_EMPTY(txtEndYear) = True Then Return
 
         ClassSchoolYear.SchoolYearRef()
-        clear()
+        Clear()
     End Sub
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class frmTeacherMaintenance
+﻿Public Class FrmTeacherMaintenance
     Public idTeacher As Integer = 0
     Private Sub FrmTeacherMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
@@ -65,11 +65,11 @@
 #End Region
 
         ClassTeacher.TeacherRef()
-        clear()
+        Clear()
     End Sub
 
     Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs)
-        clear()
+        Clear()
     End Sub
 
 #Region "TextBoxValidation"

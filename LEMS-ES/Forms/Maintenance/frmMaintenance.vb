@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class frmMaintenance
+Public Class FrmMaintenance
     Public Shared Function SectionParameter() As MySqlParameter()
         Try
             Dim SectionParam() As MySqlParameter = {

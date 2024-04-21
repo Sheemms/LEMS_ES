@@ -4,6 +4,7 @@
         LoadData()
         GetSchoolYear(LabelSY)
         LabelORNO.Text = ORNOGenerate()
+        CalculateTotalPayment()
     End Sub
     Public Sub LoadData()
         Query("SELECT a.ID, a.EID, a.SchoolYear, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
@@ -22,7 +23,7 @@
             txtStudName.Text = .Rows(0)(4)
             txtSection.Text = .Rows(0)(5)
             txtGradeLvl.Text = .Rows(0)(6)
-            txtTuition.Text = .Rows(0)(7)
+            txtTuition.Text = Format(CDbl(.Rows(0)(7)))
         End With
 
 
@@ -53,18 +54,24 @@
 
         DgvReceipt.Rows.Add("Tuition", Val(txtTuition.Text))
         DgvReceipt.Rows.Add("Miscellaneous", Val(txtMiscellaneous.Text))
+    End Sub
 
-        Dim total As Double = 0
+    Private Sub CalculateTotalPayment()
+        Dim total As Decimal = 0
 
         For Each row As DataGridViewRow In DgvReceipt.Rows
             For Each cell As DataGridViewCell In row.Cells
                 If cell.Value IsNot Nothing AndAlso IsNumeric(cell.Value) Then
-                    total += CDbl(cell.Value)
+                    total += cell.Value
                 End If
             Next
         Next
 
-        LabelTotalPayment.Text = total
+        LabelTotalPayment.Text = total.ToString()
+    End Sub
+    Public Sub SubtractPayments(currentPayment As Decimal, totalPayment As Decimal) ' Assuming payment amounts are in decimal format
+        Dim remainingPayment As Decimal = currentPayment - totalPayment
+        MessageBox.Show($"Remaining Payment: {remainingPayment}")
     End Sub
 
     Public Function RbChanges() As String
@@ -80,12 +87,14 @@
     End Function
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
         Query("SELECT OF_Amount FROM otherfee WHERE ID ='" & cmbOtherFee.SelectedValue & "'")
+        'If cmbOtherFee.SelectedIndex = -1 Then
         Dim amount As Decimal = ds.Tables("QueryTb").Rows(0)(0)
         DgvReceipt.Rows.Add(cmbOtherFee.Text, amount)
     End Sub
 
     Private Sub BtnPayments_Click(sender As Object, e As EventArgs) Handles BtnPayments.Click
-        ClassPayments.PaymentsRef()
+        'ClassPayments.PaymentsRef()
+        SubtractPayments(LabelTotalPayment.Text, TxtCurPayment.Text)
         ClearFields(Me, idPayment)
     End Sub
 
@@ -96,4 +105,9 @@
     Private Sub RbNoChanges_CheckedChanged(sender As Object, e As EventArgs) Handles RbNoChanges.CheckedChanged
         TxtChanges.Enabled = Not RbNoChanges.Checked
     End Sub
+
+    Private Sub DgvReceipt_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DgvReceipt.RowsAdded
+        CalculateTotalPayment()
+    End Sub
+
 End Class

@@ -2,11 +2,9 @@
 
 Public Class frmStudentsView
     Public idStud As Integer = 0
-    Private Sub frmStudentsView_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmStudentsView_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         LoadRequirements()
-        LoadReqClass()
-        LoadStudentData()
     End Sub
     Public Sub LoadStudentData()
         Query("SELECT * FROM student WHERE LRN = '" & txtStudNum.Text & "'")
@@ -75,11 +73,11 @@ Public Class frmStudentsView
             Return "Not Specified"
         End If
     End Function
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         ClassStudents.StudRef()
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+    Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         ClassStudents.StudUpdate()
     End Sub
     Private Sub CalculateAge()
@@ -93,7 +91,7 @@ Public Class frmStudentsView
         txtStudAge.Text = age.ToString()
     End Sub
 
-    Private Sub dtpBday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBday.ValueChanged
+    Private Sub DtpBday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBday.ValueChanged
         CalculateAge()
     End Sub
 End Class

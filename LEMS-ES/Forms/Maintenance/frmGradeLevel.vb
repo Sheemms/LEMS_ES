@@ -1,11 +1,11 @@
-﻿Public Class frmGradeLevel
+﻿Public Class FrmGradeLevel
     Public idGradeLevel As Integer = 0
-    Private Sub frmGradeLevel_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmGradeLevel_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
+        Loadrecords()
         ClearFields(Me, idGradeLevel)
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT gl.ID, d.Department , gl.GradeLevel 
                 FROM gradelevel gl
                 JOIN department d ON gl.Department_ID = d.ID
@@ -17,7 +17,7 @@
         cmbDept.ValueMember = "ID"
         cmbDept.DisplayMember = "Department"
     End Sub
-    Private Sub dgvGradeLevel_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGradeLevel.CellClick
+    Private Sub DgvGradeLevel_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGradeLevel.CellClick
         Try
             For Each row As DataGridViewRow In dgvGradeLevel.SelectedRows
                 idGradeLevel = row.Cells(0).Value
@@ -28,7 +28,7 @@
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub btnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
+    Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
         If IS_EMPTY(cmbDept) = True Then Return
         If IS_EMPTY(txtAddGradeLevel) = True Then Return
 
@@ -37,7 +37,7 @@
     End Sub
 
 
-    Private Sub txtAddGradeLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddGradeLevel.KeyPress
+    Private Sub TxtAddGradeLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddGradeLevel.KeyPress
         If e.KeyChar = "0"c AndAlso txtAddGradeLevel.TextLength = 0 Then
             e.Handled = True
         End If

@@ -4,7 +4,7 @@
         Connection()
         loadrecords()
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT * FROM user")
         dgvUser.DataSource = ds.Tables("QueryTb")
 
@@ -13,7 +13,7 @@
         cmbUserLevel.ValueMember = "userlevel"
         cmbUserLevel.DisplayMember = "userlevel"
     End Sub
-    Private Sub dgvUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUser.CellClick
+    Private Sub DgvUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUser.CellClick
         Try
             For Each row As DataGridViewRow In dgvUser.SelectedRows
                 idUserMaintenance = row.Cells(0).Value

@@ -1,6 +1,6 @@
 ﻿Public Class frmDashboard
 
-    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+    Private Sub BtnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         RemovePanel()
         With frmCharts
             .TopLevel = False
@@ -10,7 +10,7 @@
             .Show()
         End With
     End Sub
-    Private Sub btnEnrollment_Click(sender As Object, e As EventArgs) Handles btnEnrollment.Click
+    Private Sub BtnEnrollment_Click(sender As Object, e As EventArgs) Handles btnEnrollment.Click
         RemovePanel()
         With frmEnrollment
             .TopLevel = False
@@ -20,7 +20,7 @@
             .Show()
         End With
     End Sub
-    Private Sub btnScheduling_Click(sender As Object, e As EventArgs) Handles btnScheduling.Click
+    Private Sub BtnScheduling_Click(sender As Object, e As EventArgs) Handles btnScheduling.Click
         RemovePanel()
         With frmSchedule
             .TopLevel = False
@@ -30,7 +30,7 @@
             .Show()
         End With
     End Sub
-    Private Sub btnStudents_Click(sender As Object, e As EventArgs) Handles btnStudents.Click
+    Private Sub BtnStudents_Click(sender As Object, e As EventArgs) Handles btnStudents.Click
         RemovePanel()
         With frmStudents
             .TopLevel = False
@@ -40,7 +40,7 @@
             .Show()
         End With
     End Sub
-    Private Sub btnTeachers_Click(sender As Object, e As EventArgs) Handles btnTeachers.Click
+    Private Sub BtnTeachers_Click(sender As Object, e As EventArgs) Handles btnTeachers.Click
         RemovePanel()
         With frmTeachers
             .TopLevel = False
@@ -50,7 +50,7 @@
             .Show()
         End With
     End Sub
-    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+    Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
         RemovePanel()
         With frmBilling
             .TopLevel = False
@@ -61,7 +61,7 @@
         End With
     End Sub
 
-    Private Sub btnSubjects_Click(sender As Object, e As EventArgs)
+    Private Sub BtnSubjects_Click(sender As Object, e As EventArgs)
         RemovePanel()
         With frmSubjects
             .TopLevel = False
@@ -72,7 +72,7 @@
         End With
     End Sub
 
-    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
+    Private Sub BtnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         RemovePanel()
         With frmReports
             .TopLevel = False
@@ -83,7 +83,7 @@
         End With
     End Sub
 
-    Private Sub btnMaintenance_Click(sender As Object, e As EventArgs) Handles btnMaintenance.Click
+    Private Sub BtnMaintenance_Click(sender As Object, e As EventArgs) Handles btnMaintenance.Click
         RemovePanel()
         With frmMaintenance
             .TopLevel = False
@@ -94,8 +94,8 @@
         End With
     End Sub
 
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        If MsgBox("Do You Want to Logout?", vbYesNo + vbQuestion) = vbYes Then
+    Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        If MsgBox("Are you sure you want to Logout?", vbYesNo + vbQuestion) = vbYes Then
             'LogAction("has been logged out", "Logout")
             RemovePanel()
             MaintenanceRemovePanel()
@@ -105,7 +105,7 @@
         End If
     End Sub
 
-    Private Sub btnSY_Click(sender As Object, e As EventArgs)
+    Private Sub BtnSY_Click(sender As Object, e As EventArgs)
         RemovePanel()
         With frmSY
             .TopLevel = False
@@ -120,11 +120,11 @@
         Label5.Text = DateTime.Now.ToString("g")
     End Sub
 
-    Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
         dropdownMenu()
     End Sub
-    Private Sub dropdownMenu()
+    Private Sub DropdownMenu()
         TransactionPanel.Visible = False
         DataEntryPanel.Visible = False
         GradingPanel.Visible = False
@@ -170,23 +170,34 @@
         End If
     End Sub
 
-    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
+    Private Sub BtnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
         ShowHideTransactionPanel()
     End Sub
 
-    Private Sub btnDataEntry_Click(sender As Object, e As EventArgs) Handles btnDataEntry.Click
+    Private Sub BtnDataEntry_Click(sender As Object, e As EventArgs) Handles btnDataEntry.Click
         ShowHideDataEntryPanel()
     End Sub
 
-    Private Sub btnGrading_Click(sender As Object, e As EventArgs) Handles btnGrading.Click
+    Private Sub BtnGrading_Click(sender As Object, e As EventArgs) Handles btnGrading.Click
         ShowHideGradingPanel()
     End Sub
 
-    Private Sub btnElemGrading_Click(sender As Object, e As EventArgs) Handles btnElemGrading.Click
+    Private Sub BtnElemGrading_Click(sender As Object, e As EventArgs) Handles btnElemGrading.Click
         RemovePanel()
         With frmElementaryGrading
             .TopLevel = False
             Panel3.Controls.Add(frmElementaryGrading)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub BtnJHSGrading_Click(sender As Object, e As EventArgs) Handles btnJHSGrading.Click
+        RemovePanel()
+        With frmJHSGrading
+            .TopLevel = False
+            Panel3.Controls.Add(frmJHSGrading)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()

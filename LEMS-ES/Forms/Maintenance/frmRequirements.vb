@@ -1,11 +1,11 @@
 ﻿Public Class frmRequirements
     Public idRequirements As Integer = 0
-    Private Sub frmRequirements_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmRequirements_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
+        Loadrecords()
         ClearFields(Me, idRequirements)
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
                 FROM requirements rq
                 JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID")

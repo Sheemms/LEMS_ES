@@ -4,12 +4,12 @@
     Public idOtherFee As Integer = 0
     Public idMOP As Integer = 0
     Public idTOP As Integer = 0
-    Private Sub frmTuitionFee_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmTuitionFee_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
-        clear()
+        Loadrecords()
+        Clear()
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT tf.ID, gl.GradeLevel, tf.Amount
                 FROM tuition tf
                 JOIN gradelevel gl ON tf.GradeLevel_ID = gl.ID")
@@ -32,7 +32,7 @@
         Query("SELECT * FROM top")
         dgvTOP.DataSource = ds.Tables("QueryTb")
     End Sub
-    Public Sub clear()
+    Public Sub Clear()
         idTuition = 0
         cmbGradeLevel.Text = ""
         txtAmountTuition.Clear()
@@ -47,7 +47,7 @@
         txtMOP.Clear()
     End Sub
 
-    Private Sub dgvTuitionFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTuitionFee.CellClick
+    Private Sub DgvTuitionFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTuitionFee.CellClick
         Try
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = dgvTuitionFee.Rows(e.RowIndex)
@@ -88,14 +88,14 @@
         ClearFields(Me, idOtherFee)
     End Sub
 
-    Private Sub btnMOP_Click(sender As Object, e As EventArgs) Handles btnMOP.Click
+    Private Sub BtnMOP_Click(sender As Object, e As EventArgs) Handles btnMOP.Click
         If IS_EMPTY(txtMOP) Then Return
 
         ClassTuition.MoPRef()
         ClearFields(Me, idMOP)
     End Sub
 
-    Private Sub btnTOP_Click(sender As Object, e As EventArgs) Handles btnTOP.Click
+    Private Sub BtnTOP_Click(sender As Object, e As EventArgs) Handles btnTOP.Click
         If IS_EMPTY(txtTOP) Then Return
 
         ClassTuition.ToPRef()

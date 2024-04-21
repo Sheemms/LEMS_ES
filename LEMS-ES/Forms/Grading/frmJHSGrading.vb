@@ -1,5 +1,5 @@
 ﻿Public Class frmJHSGrading
-    Private Sub frmJHSGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmJHSGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
 
     End Sub
     Public Sub LoadRecords()
