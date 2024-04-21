@@ -6,7 +6,7 @@ Public Class ClassSubject
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmSubjects.idSubj),
-                    New MySqlParameter("@GradeLevel_ID", frmSubjects.cmbGradeLevel.SelectedValue),
+                    New MySqlParameter("@GradeLevel_ID", frmSubjects.CmbGradeLevel.SelectedValue),
                     New MySqlParameter("@SubjectCode", frmSubjects.txtSubjCode.Text),
                     New MySqlParameter("@SubjectName", frmSubjects.txtSubjName.Text),
                     New MySqlParameter("@Units", frmSubjects.txtUnit.Text)

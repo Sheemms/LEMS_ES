@@ -24,13 +24,12 @@ Partial Class frmMaintenance
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdminControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TeacherMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GradeLevelMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequirementsMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TuitionFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,18 +48,18 @@ Partial Class frmMaintenance
         '
         'AdminControlsToolStripMenuItem
         '
-        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SchoolYearMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.TeacherMaintenanceToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
+        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SchoolYearMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
         Me.AdminControlsToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AdminControlsToolStripMenuItem.Text = "Admin Controls"
         '
-        'TeacherMaintenanceToolStripMenuItem
+        'SchoolYearMaintenanceToolStripMenuItem
         '
-        Me.TeacherMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.teacher
-        Me.TeacherMaintenanceToolStripMenuItem.Name = "TeacherMaintenanceToolStripMenuItem"
-        Me.TeacherMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.TeacherMaintenanceToolStripMenuItem.Text = "Teacher Maintenance"
+        Me.SchoolYearMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.calendar
+        Me.SchoolYearMaintenanceToolStripMenuItem.Name = "SchoolYearMaintenanceToolStripMenuItem"
+        Me.SchoolYearMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.SchoolYearMaintenanceToolStripMenuItem.Text = "School Year Maintenance"
         '
         'DepartmentToolStripMenuItem
         '
@@ -96,13 +95,6 @@ Partial Class frmMaintenance
         Me.RequirementsMaintenanceToolStripMenuItem.Name = "RequirementsMaintenanceToolStripMenuItem"
         Me.RequirementsMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.RequirementsMaintenanceToolStripMenuItem.Text = "Requirements Maintenance"
-        '
-        'SchoolYearMaintenanceToolStripMenuItem
-        '
-        Me.SchoolYearMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.calendar
-        Me.SchoolYearMaintenanceToolStripMenuItem.Name = "SchoolYearMaintenanceToolStripMenuItem"
-        Me.SchoolYearMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.SchoolYearMaintenanceToolStripMenuItem.Text = "School Year Maintenance"
         '
         'TuitionFeeToolStripMenuItem
         '
@@ -163,6 +155,5 @@ Partial Class frmMaintenance
     Friend WithEvents Panel1 As Panel
     Friend WithEvents UserMaintenanceToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GradeLevelMaintenanceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TeacherMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DepartmentToolStripMenuItem As ToolStripMenuItem
 End Class

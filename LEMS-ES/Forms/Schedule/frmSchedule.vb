@@ -8,7 +8,7 @@
         GetSchoolYear(lblSY)
     End Sub
     Public Sub ClearFields()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtAdviserID, txtAdviser, txtSubjCode, txtSubjName, txtRoom, txtstartTime, txtendTime, txtTeacherID, txtTeacherName}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtAdviserID, txtAdviser, txtSubjCode, txtSubjName, txtRoom, txtTeacherID, txtTeacherName}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
@@ -25,7 +25,7 @@
     Public Sub LoadRecords()
         Query("SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, 
                 CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sub.SubjectCode, sc.Days, 
-                CONCAT(sc.Time_From, '-', sc.Time_To) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
+                CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-',TIME_FORMAT(Time_To, '%H:%i')) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
                FROM schedule sc
                JOIN section sec ON sc.Sec_ID = sec.ID
                JOIN teacher t ON sc.Adviser_ID = t.ID
@@ -138,6 +138,7 @@
 
         If row IsNot Nothing AndAlso row.Table.Columns.Contains("SubjectName") Then
             txtSubjName.Text = row("SubjectName").ToString()
+            TxtUnits.Text = row("Units").ToString()
             subjID = row("ID").ToString()
         Else
             txtSubjName.Clear()
@@ -180,29 +181,11 @@
     End Sub
 
     Public Function chckBox()
-        'If cbM.Checked = True Then
-        '    Return "Monday"
-        'ElseIf cbT.Checked = True Then
-        '    Return "Tuesday"
-        'ElseIf cbW.Checked = True Then
-        '    Return "Wednesday"
-        'ElseIf cbTH.Checked = True Then
-        '    Return "Thursday"
-        'ElseIf cbF.Checked = True Then
-        '    Return "Friday"
-        'Else
-        'End If
-
         Dim days = ""
         Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
         For i = 0 To ckbx.Length - 1
             If ckbx(i).Checked Then
                 days &= ckbx(i).Text & " "
-                'cbM.Checked = False
-                'cbT.Checked = False
-                'cbW.Checked = False
-                'cbTH.Checked = False
-                'cbF.Checked = False
             End If
         Next
         Return days
@@ -218,7 +201,7 @@
                JOIN subject sub ON sc.Subj_ID = sub.ID
                JOIN department dpt ON sc.Department_ID = dpt.ID
                JOIN teacher tr ON sc.Teacher_ID = tr.ID
-               WHERE CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) LIKE '{searchTeacherBox.Text}'")
+               WHERE CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) LIKE '{TxtSearch.Text}'")
         dgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
 End Class

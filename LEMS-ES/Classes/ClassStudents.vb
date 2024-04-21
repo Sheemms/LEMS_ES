@@ -15,7 +15,7 @@ Public Class ClassStudents
                 New MySqlParameter("@Gender", frmStudentsView.GenderSelection()),
                 New MySqlParameter("@Age", frmStudentsView.txtStudAge.Text),
                 New MySqlParameter("@Birthday", frmStudentsView.dtpBday.Value),
-                New MySqlParameter("@Address", frmStudentsView.txtGuardianAddress.Text),
+                New MySqlParameter("@Address", frmStudentsView.txtAddress.Text),
                 New MySqlParameter("@MotherName", frmStudentsView.txtMother.Text),
                 New MySqlParameter("@Mother_Occupation", frmStudentsView.txtMotherOccupation.Text),
                 New MySqlParameter("@MothersMaiden", frmStudentsView.txtMotherMaidenName.Text),

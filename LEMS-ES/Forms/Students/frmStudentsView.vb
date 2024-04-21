@@ -17,13 +17,13 @@ Public Class frmStudentsView
             txtStudMname.Text = .Rows(0)(5)
             cmbStudSuffix.Text = .Rows(0)(6)
             If .Rows(0)(7).ToString = "Male" Then
-                cbMale.Checked = True
+                RbMale.Checked = True
             Else
-                cbFemale.Checked = True
+                RbFemale.Checked = True
             End If
             txtStudAge.Text = .Rows(0)(8)
             dtpBday.Value = .Rows(0)(9).ToString
-            txtGuardianAddress.Text = .Rows(0)(10)
+            txtAddress.Text = .Rows(0)(10)
             txtCitizenship.Text = .Rows(0)(19)
         End With
     End Sub
@@ -49,13 +49,13 @@ Public Class frmStudentsView
 
     Public Sub ClearFields()
         Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox =
-            {txtStudNum, txtStudLname, txtStudFname, txtStudMname, txtGuardianName, txtGuardianAddress}
+            {txtStudNum, txtStudLname, txtStudFname, txtStudMname, txtGuardianName, txtAddress}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
         cmbStudSuffix.Items.Clear()
-        cbMale.Checked = False
-        cbFemale.Checked = False
+        RbMale.Checked = False
+        RbFemale.Checked = False
     End Sub
     Public Sub LoadReqClass()
         Query("SELECT * FROM req_classification")
@@ -65,11 +65,11 @@ Public Class frmStudentsView
         cmbStudType.SelectedIndex = -1
     End Sub
     Public Function GenderSelection() As String
-        If cbMale.Checked Then
-            cbFemale.Checked = False
+        If RbMale.Checked Then
+            RbFemale.Checked = False
             Return "Male"
-        ElseIf cbFemale.Checked Then
-            cbMale.Checked = False
+        ElseIf RbFemale.Checked Then
+            RbMale.Checked = False
             Return "Female"
         Else
             Return "Not Specified"

@@ -5,6 +5,7 @@ Public Class ClassSchoolYear
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmSY.idSY),
+                    New MySqlParameter("@Start_Year", frmSY.txtStartYear.Text),
                     New MySqlParameter("@End_Year", frmSY.txtEndYear.Text)
                 }
             Return syParam
@@ -18,14 +19,14 @@ Public Class ClassSchoolYear
             If frmSY.idSY = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Dim dynamicParams() As MySqlParameter = SchoolYearParameters()
-                    Command("UPDATE schoolyear SET Status = 'Closed' WHERE ID = (SELECT MAX(ID) FROM schoolyear)", New MySqlParameter() {})
+                    Command("UPDATE schoolyear SET Status = 'Closed'", New MySqlParameter() {})
                     Command("INSERT INTO schoolyear(End_Year) VALUES (@End_Year)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             ElseIf isOpen Then
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Dim closeParams() As MySqlParameter = {New MySqlParameter()}
-                    Command("UPDATE schoolyear SET Start_Year=@Start_Year, End_Year=@End_Year", closeParams)
+                    Dim closeParams() As MySqlParameter = SchoolYearParameters()
+                    Command("UPDATE schoolyear SET Start_Year=@Start_Year, End_Year=@End_Year WHERE ID=@ID", closeParams)
                     MsgBox("School Year is updated.")
                 End If
             Else
@@ -33,11 +34,12 @@ Public Class ClassSchoolYear
                 Exit Sub
             End If
             frmSY.loadrecords()
-        Catch ex As MySqlException When ex.Number = 1062
+        Catch ex As MySqlException
             Critical("School year already exists.")
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
 #End Region

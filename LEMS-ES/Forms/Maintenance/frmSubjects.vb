@@ -1,33 +1,34 @@
 ﻿Public Class frmSubjects
     Public idSubj As Integer = 0
-    Private Sub frmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmSubjects_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         LoadRecords()
     End Sub
     Public Sub LoadRecords()
         Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName , sub.Units
                 FROM subject sub
-                JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID")
-        dgvSubject.DataSource = ds.Tables("QueryTb")
+                JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID
+                ORDER BY gl.GradeLevel")
+        DgvSubject.DataSource = ds.Tables("QueryTb")
 
         Query("SELECT * FROM gradelevel")
-        cmbGradeLevel.DataSource = ds.Tables("QueryTb")
-        cmbGradeLevel.ValueMember = "ID"
-        cmbGradeLevel.DisplayMember = "GradeLevel"
+        CmbGradeLevel.DataSource = ds.Tables("QueryTb")
+        CmbGradeLevel.ValueMember = "ID"
+        CmbGradeLevel.DisplayMember = "GradeLevel"
     End Sub
-    Public Sub clear()
+    Public Sub Clear()
         idSubj = 0
-        cmbGradeLevel.Text = ""
+        CmbGradeLevel.Text = ""
         txtSubjCode.Clear()
         txtSubjName.Clear()
         txtUnit.Clear()
     End Sub
-    Private Sub dgvSubject_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSubject.CellClick
+    Private Sub DgvSubject_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSubject.CellClick
         Try
             If e.RowIndex >= 0 Then
-                Dim row As DataGridViewRow = dgvSubject.Rows(e.RowIndex)
+                Dim row As DataGridViewRow = DgvSubject.Rows(e.RowIndex)
                 idSubj = row.Cells(0).Value
-                cmbGradeLevel.Text = row.Cells(1).Value
+                CmbGradeLevel.Text = row.Cells(1).Value
                 txtSubjCode.Text = row.Cells(2).Value
                 txtSubjName.Text = row.Cells(3).Value
                 txtUnit.Text = row.Cells(4).Value
@@ -38,8 +39,8 @@
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub btnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
-        If IS_EMPTY(cmbGradeLevel) = True Then Return
+    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
+        If IS_EMPTY(CmbGradeLevel) = True Then Return
         If IS_EMPTY(txtSubjCode) = True Then Return
         If IS_EMPTY(txtSubjName) = True Then Return
         If IS_EMPTY(txtUnit) = True Then Return
@@ -48,16 +49,16 @@
         ClassSubject.SubjectRef()
         clear()
     End Sub
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ClassSubject.DeleteRef()
         clear()
     End Sub
 
-    Private Sub txtSubjName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjName.KeyPress
+    Private Sub TxtSubjName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjName.KeyPress
         TextBoxOnlyLetters(txtSubjName)
     End Sub
 
-    Private Sub txtUnit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress
+    Private Sub TxtUnit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress
         TextBoxDigitsOnly(txtUnit)
     End Sub
 End Class

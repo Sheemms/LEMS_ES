@@ -1,9 +1,9 @@
 ﻿Public Class frmEnrollment
     Private Sub frmEnrollment_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
+        Loadrecords()
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT e.ID, e.SchoolYear, e.LRN, CONCAT(st.Lastname, ' ',st.Firstname, ' ',st.MiddleInitial) as Fullname, s.SectionRoom as Section, gl.GradeLevel, e.Enrollment_Date, e.Status 
                 FROM enrollment e 
                 JOIN student st ON e.LRN = st.LRN
@@ -17,7 +17,7 @@
         frmEnrollmentRegistration.Show()
     End Sub
 
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+    Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         Dim searchText As String = txtSearch.Text.Trim()
 
         If searchText <> String.Empty Then
@@ -44,7 +44,7 @@
         End If
     End Sub
 
-    Private Sub dgvEnrolled_DoubleClick(sender As Object, e As EventArgs) Handles dgvEnrolled.DoubleClick
+    Private Sub DgvEnrolled_DoubleClick(sender As Object, e As EventArgs) Handles dgvEnrolled.DoubleClick
         If dgvEnrolled.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = dgvEnrolled.SelectedRows(0)
             Dim enrollID As Integer = Convert.ToInt32(selectedRow.Cells("colID").Value)

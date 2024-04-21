@@ -7,18 +7,11 @@ Public Class frmEnrollmentRegistration
         Connection()
         GetSchoolYear(lblSY)
         LoadStudAutoComplet()
-        LoadRequirements()
         loadDeprtment()
     End Sub
 
     Public Sub loadrecords()
         Query("SELECT ID, LRN, SchoolYear, SectionID, GradeLevel_ID FROM enrollment")
-    End Sub
-    Public Sub LoadRequirements()
-        Query("SELECT rq.ID, rqcl.Classification, rq.Requirement 
-                FROM requirements rq
-                JOIN req_classification rqcl ON rq.Classification_ID = rqcl.ID")
-        dgvRequirements.DataSource = ds.Tables("QueryTb")
     End Sub
 
     Public Sub loadDeprtment()
@@ -110,7 +103,6 @@ Public Class frmEnrollmentRegistration
             cmbSection.Items.Clear()
         End If
     End Sub
-
 #End Region
 
 End Class

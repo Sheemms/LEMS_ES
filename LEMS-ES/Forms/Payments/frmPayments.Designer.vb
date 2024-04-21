@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPayments
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,14 @@ Partial Class frmPayments
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtLRN = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,26 +39,14 @@ Partial Class frmPayments
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbOtherFee = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPayment = New Guna.UI2.WinForms.Guna2TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox4 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnEnroll = New Guna.UI2.WinForms.Guna2Button()
-        Me.cmbModeofPayment = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtMiscellaneous = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtTuition = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Addbtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DgvReceipt = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.lblSY = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.dgvSubjectList = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DgvTransactionHistory = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -63,9 +54,30 @@ Partial Class frmPayments
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TxtChanges = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.RbDiscount = New System.Windows.Forms.RadioButton()
+        Me.RbNoChanges = New System.Windows.Forms.RadioButton()
+        Me.RbAdditional = New System.Windows.Forms.RadioButton()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TxtCurPayment = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btnEnroll = New Guna.UI2.WinForms.Guna2Button()
+        Me.cmbModeofPayment = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtMiscellaneous = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtTuition = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DgvReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.dgvSubjectList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvTransactionHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtLRN
@@ -79,7 +91,7 @@ Partial Class frmPayments
         Me.txtLRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLRN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.Location = New System.Drawing.Point(21, 49)
+        Me.txtLRN.Location = New System.Drawing.Point(21, 96)
         Me.txtLRN.Name = "txtLRN"
         Me.txtLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLRN.PlaceholderText = ""
@@ -91,7 +103,7 @@ Partial Class frmPayments
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(18, 32)
+        Me.Label1.Location = New System.Drawing.Point(18, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(28, 14)
         Me.Label1.TabIndex = 1
@@ -101,7 +113,7 @@ Partial Class frmPayments
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 88)
+        Me.Label2.Location = New System.Drawing.Point(18, 135)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(91, 14)
         Me.Label2.TabIndex = 3
@@ -117,8 +129,9 @@ Partial Class frmPayments
         Me.txtStudName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtStudName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtStudName.ForeColor = System.Drawing.Color.Black
         Me.txtStudName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudName.Location = New System.Drawing.Point(21, 105)
+        Me.txtStudName.Location = New System.Drawing.Point(21, 152)
         Me.txtStudName.Name = "txtStudName"
         Me.txtStudName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudName.PlaceholderText = ""
@@ -130,7 +143,7 @@ Partial Class frmPayments
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(18, 144)
+        Me.Label3.Location = New System.Drawing.Point(18, 191)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(84, 14)
         Me.Label3.TabIndex = 5
@@ -146,8 +159,9 @@ Partial Class frmPayments
         Me.txtGradeLvl.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtGradeLvl.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGradeLvl.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtGradeLvl.ForeColor = System.Drawing.Color.Black
         Me.txtGradeLvl.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGradeLvl.Location = New System.Drawing.Point(21, 161)
+        Me.txtGradeLvl.Location = New System.Drawing.Point(21, 208)
         Me.txtGradeLvl.Name = "txtGradeLvl"
         Me.txtGradeLvl.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGradeLvl.PlaceholderText = ""
@@ -159,7 +173,7 @@ Partial Class frmPayments
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(129, 144)
+        Me.Label4.Location = New System.Drawing.Point(129, 191)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 14)
         Me.Label4.TabIndex = 7
@@ -175,8 +189,9 @@ Partial Class frmPayments
         Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSection.ForeColor = System.Drawing.Color.Black
         Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Location = New System.Drawing.Point(129, 161)
+        Me.txtSection.Location = New System.Drawing.Point(129, 208)
         Me.txtSection.Name = "txtSection"
         Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSection.PlaceholderText = ""
@@ -188,7 +203,7 @@ Partial Class frmPayments
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(260, 144)
+        Me.Label5.Location = New System.Drawing.Point(18, 359)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(70, 14)
         Me.Label5.TabIndex = 8
@@ -202,54 +217,38 @@ Partial Class frmPayments
         Me.cmbOtherFee.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbOtherFee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbOtherFee.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbOtherFee.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmbOtherFee.ForeColor = System.Drawing.Color.Black
         Me.cmbOtherFee.ItemHeight = 30
-        Me.cmbOtherFee.Location = New System.Drawing.Point(263, 161)
+        Me.cmbOtherFee.Location = New System.Drawing.Point(21, 376)
         Me.cmbOtherFee.Name = "cmbOtherFee"
-        Me.cmbOtherFee.Size = New System.Drawing.Size(164, 36)
+        Me.cmbOtherFee.Size = New System.Drawing.Size(146, 36)
         Me.cmbOtherFee.TabIndex = 9
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(653, 32)
+        Me.Label6.Font = New System.Drawing.Font("Courier New", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(262, 403)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(98, 14)
+        Me.Label6.Size = New System.Drawing.Size(208, 27)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Total Payment"
-        '
-        'txtPayment
-        '
-        Me.txtPayment.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtPayment.DefaultText = ""
-        Me.txtPayment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPayment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPayment.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPayment.Location = New System.Drawing.Point(656, 49)
-        Me.txtPayment.Name = "txtPayment"
-        Me.txtPayment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPayment.PlaceholderText = ""
-        Me.txtPayment.SelectedText = ""
-        Me.txtPayment.Size = New System.Drawing.Size(164, 36)
-        Me.txtPayment.TabIndex = 10
+        Me.Label6.Text = "Total Payment:"
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Addbtn)
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
+        Me.GroupBox1.Controls.Add(Me.lblSY)
+        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Controls.Add(Me.Guna2TextBox1)
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.TxtChanges)
+        Me.GroupBox1.Controls.Add(Me.RbDiscount)
+        Me.GroupBox1.Controls.Add(Me.RbNoChanges)
+        Me.GroupBox1.Controls.Add(Me.RbAdditional)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Guna2TextBox4)
+        Me.GroupBox1.Controls.Add(Me.TxtCurPayment)
         Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.Guna2TextBox3)
         Me.GroupBox1.Controls.Add(Me.btnEnroll)
         Me.GroupBox1.Controls.Add(Me.cmbModeofPayment)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -258,9 +257,10 @@ Partial Class frmPayments
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtTuition)
         Me.GroupBox1.Controls.Add(Me.txtLRN)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtPayment)
         Me.GroupBox1.Controls.Add(Me.txtStudName)
         Me.GroupBox1.Controls.Add(Me.cmbOtherFee)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -273,298 +273,183 @@ Partial Class frmPayments
         Me.GroupBox1.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(843, 569)
+        Me.GroupBox1.Size = New System.Drawing.Size(673, 591)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Payment"
         '
-        'Guna2TextBox1
+        'Addbtn
         '
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(458, 161)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderText = ""
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(164, 36)
-        Me.Guna2TextBox1.TabIndex = 39
+        Me.Addbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Addbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Addbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Addbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Addbtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Addbtn.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Addbtn.ForeColor = System.Drawing.Color.White
+        Me.Addbtn.Location = New System.Drawing.Point(173, 376)
+        Me.Addbtn.Name = "Addbtn"
+        Me.Addbtn.Size = New System.Drawing.Size(63, 36)
+        Me.Addbtn.TabIndex = 44
+        Me.Addbtn.Text = "Add"
         '
-        'RadioButton3
+        'GroupBox3
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton3.Location = New System.Drawing.Point(458, 134)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(81, 18)
-        Me.RadioButton3.TabIndex = 38
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Discount"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.GroupBox3.Controls.Add(Me.DgvReceipt)
+        Me.GroupBox3.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(264, 79)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(394, 312)
+        Me.GroupBox3.TabIndex = 42
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Receipt"
         '
-        'RadioButton2
+        'DgvReceipt
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton2.Location = New System.Drawing.Point(559, 110)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(95, 18)
-        Me.RadioButton2.TabIndex = 37
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "No Changes"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.DgvReceipt.AllowUserToAddRows = False
+        Me.DgvReceipt.AllowUserToDeleteRows = False
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
+        Me.DgvReceipt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
+        Me.DgvReceipt.BackgroundColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvReceipt.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
+        Me.DgvReceipt.ColumnHeadersHeight = 32
+        Me.DgvReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvReceipt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.Column9})
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvReceipt.DefaultCellStyle = DataGridViewCellStyle21
+        Me.DgvReceipt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvReceipt.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvReceipt.Location = New System.Drawing.Point(3, 20)
+        Me.DgvReceipt.MultiSelect = False
+        Me.DgvReceipt.Name = "DgvReceipt"
+        Me.DgvReceipt.ReadOnly = True
+        Me.DgvReceipt.RowHeadersVisible = False
+        Me.DgvReceipt.Size = New System.Drawing.Size(388, 289)
+        Me.DgvReceipt.TabIndex = 1
+        Me.DgvReceipt.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvReceipt.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgvReceipt.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgvReceipt.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgvReceipt.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgvReceipt.ThemeStyle.BackColor = System.Drawing.Color.DimGray
+        Me.DgvReceipt.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvReceipt.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvReceipt.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvReceipt.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvReceipt.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgvReceipt.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvReceipt.ThemeStyle.HeaderStyle.Height = 32
+        Me.DgvReceipt.ThemeStyle.ReadOnly = True
+        Me.DgvReceipt.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvReceipt.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgvReceipt.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvReceipt.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvReceipt.ThemeStyle.RowsStyle.Height = 22
+        Me.DgvReceipt.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvReceipt.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'RadioButton1
+        'lblSY
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(458, 110)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(95, 18)
-        Me.RadioButton1.TabIndex = 36
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Additional"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.lblSY.AutoSize = True
+        Me.lblSY.Font = New System.Drawing.Font("Courier New", 8.25!)
+        Me.lblSY.ForeColor = System.Drawing.Color.Red
+        Me.lblSY.Location = New System.Drawing.Point(115, 46)
+        Me.lblSY.Name = "lblSY"
+        Me.lblSY.Size = New System.Drawing.Size(70, 14)
+        Me.lblSY.TabIndex = 43
+        Me.lblSY.Text = "0000-0000"
         '
-        'Label13
+        'Label10
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(455, 93)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(56, 14)
-        Me.Label13.TabIndex = 35
-        Me.Label13.Text = "Changes"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(653, 144)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(112, 14)
-        Me.Label12.TabIndex = 33
-        Me.Label12.Text = "Current Payment"
-        '
-        'Guna2TextBox4
-        '
-        Me.Guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox4.DefaultText = ""
-        Me.Guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox4.Location = New System.Drawing.Point(656, 161)
-        Me.Guna2TextBox4.Name = "Guna2TextBox4"
-        Me.Guna2TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox4.PlaceholderText = ""
-        Me.Guna2TextBox4.SelectedText = ""
-        Me.Guna2TextBox4.Size = New System.Drawing.Size(164, 36)
-        Me.Guna2TextBox4.TabIndex = 32
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(653, 88)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(112, 14)
-        Me.Label11.TabIndex = 31
-        Me.Label11.Text = "Current Balance"
-        '
-        'Guna2TextBox3
-        '
-        Me.Guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox3.DefaultText = ""
-        Me.Guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox3.Location = New System.Drawing.Point(656, 105)
-        Me.Guna2TextBox3.Name = "Guna2TextBox3"
-        Me.Guna2TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox3.PlaceholderText = ""
-        Me.Guna2TextBox3.SelectedText = ""
-        Me.Guna2TextBox3.Size = New System.Drawing.Size(164, 36)
-        Me.Guna2TextBox3.TabIndex = 30
-        '
-        'btnEnroll
-        '
-        Me.btnEnroll.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEnroll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEnroll.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEnroll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEnroll.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEnroll.ForeColor = System.Drawing.Color.White
-        Me.btnEnroll.Location = New System.Drawing.Point(656, 527)
-        Me.btnEnroll.Name = "btnEnroll"
-        Me.btnEnroll.Size = New System.Drawing.Size(164, 36)
-        Me.btnEnroll.TabIndex = 20
-        Me.btnEnroll.Text = "Save"
-        '
-        'cmbModeofPayment
-        '
-        Me.cmbModeofPayment.BackColor = System.Drawing.Color.Transparent
-        Me.cmbModeofPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbModeofPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbModeofPayment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbModeofPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbModeofPayment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmbModeofPayment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmbModeofPayment.ItemHeight = 30
-        Me.cmbModeofPayment.Location = New System.Drawing.Point(458, 49)
-        Me.cmbModeofPayment.Name = "cmbModeofPayment"
-        Me.cmbModeofPayment.Size = New System.Drawing.Size(164, 36)
-        Me.cmbModeofPayment.TabIndex = 27
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(455, 32)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(112, 14)
-        Me.Label9.TabIndex = 26
-        Me.Label9.Text = "Mode of Payment"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(260, 88)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(98, 14)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Miscellaneous"
-        '
-        'txtMiscellaneous
-        '
-        Me.txtMiscellaneous.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtMiscellaneous.DefaultText = ""
-        Me.txtMiscellaneous.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtMiscellaneous.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtMiscellaneous.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtMiscellaneous.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtMiscellaneous.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMiscellaneous.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtMiscellaneous.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMiscellaneous.Location = New System.Drawing.Point(263, 105)
-        Me.txtMiscellaneous.Name = "txtMiscellaneous"
-        Me.txtMiscellaneous.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtMiscellaneous.PlaceholderText = ""
-        Me.txtMiscellaneous.SelectedText = ""
-        Me.txtMiscellaneous.Size = New System.Drawing.Size(164, 36)
-        Me.txtMiscellaneous.TabIndex = 23
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(260, 32)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 14)
-        Me.Label7.TabIndex = 22
-        Me.Label7.Text = "Tuition"
-        '
-        'txtTuition
-        '
-        Me.txtTuition.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtTuition.DefaultText = ""
-        Me.txtTuition.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtTuition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtTuition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTuition.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTuition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTuition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtTuition.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTuition.Location = New System.Drawing.Point(263, 49)
-        Me.txtTuition.Name = "txtTuition"
-        Me.txtTuition.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTuition.PlaceholderText = ""
-        Me.txtTuition.SelectedText = ""
-        Me.txtTuition.Size = New System.Drawing.Size(164, 36)
-        Me.txtTuition.TabIndex = 21
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(21, 46)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(84, 14)
+        Me.Label10.TabIndex = 42
+        Me.Label10.Text = "School Year"
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.dgvSubjectList)
+        Me.GroupBox2.Controls.Add(Me.DgvTransactionHistory)
         Me.GroupBox2.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 203)
+        Me.GroupBox2.Location = New System.Drawing.Point(748, 392)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(799, 318)
+        Me.GroupBox2.Size = New System.Drawing.Size(406, 271)
         Me.GroupBox2.TabIndex = 41
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Transaction History"
+        Me.GroupBox2.Visible = False
         '
-        'dgvSubjectList
+        'DgvTransactionHistory
         '
-        Me.dgvSubjectList.AllowUserToAddRows = False
-        Me.dgvSubjectList.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgvSubjectList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvSubjectList.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSubjectList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvSubjectList.ColumnHeadersHeight = 32
-        Me.dgvSubjectList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSubjectList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSubjectList.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvSubjectList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvSubjectList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubjectList.Location = New System.Drawing.Point(3, 20)
-        Me.dgvSubjectList.MultiSelect = False
-        Me.dgvSubjectList.Name = "dgvSubjectList"
-        Me.dgvSubjectList.ReadOnly = True
-        Me.dgvSubjectList.RowHeadersVisible = False
-        Me.dgvSubjectList.Size = New System.Drawing.Size(793, 295)
-        Me.dgvSubjectList.TabIndex = 1
-        Me.dgvSubjectList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSubjectList.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgvSubjectList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgvSubjectList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgvSubjectList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgvSubjectList.ThemeStyle.BackColor = System.Drawing.Color.DimGray
-        Me.dgvSubjectList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubjectList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubjectList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgvSubjectList.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSubjectList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgvSubjectList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSubjectList.ThemeStyle.HeaderStyle.Height = 32
-        Me.dgvSubjectList.ThemeStyle.ReadOnly = True
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.Height = 22
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSubjectList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvTransactionHistory.AllowUserToAddRows = False
+        Me.DgvTransactionHistory.AllowUserToDeleteRows = False
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
+        Me.DgvTransactionHistory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
+        Me.DgvTransactionHistory.BackgroundColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvTransactionHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        Me.DgvTransactionHistory.ColumnHeadersHeight = 32
+        Me.DgvTransactionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvTransactionHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvTransactionHistory.DefaultCellStyle = DataGridViewCellStyle24
+        Me.DgvTransactionHistory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvTransactionHistory.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTransactionHistory.Location = New System.Drawing.Point(3, 20)
+        Me.DgvTransactionHistory.MultiSelect = False
+        Me.DgvTransactionHistory.Name = "DgvTransactionHistory"
+        Me.DgvTransactionHistory.ReadOnly = True
+        Me.DgvTransactionHistory.RowHeadersVisible = False
+        Me.DgvTransactionHistory.Size = New System.Drawing.Size(400, 248)
+        Me.DgvTransactionHistory.TabIndex = 1
+        Me.DgvTransactionHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvTransactionHistory.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgvTransactionHistory.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgvTransactionHistory.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgvTransactionHistory.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgvTransactionHistory.ThemeStyle.BackColor = System.Drawing.Color.DimGray
+        Me.DgvTransactionHistory.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTransactionHistory.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTransactionHistory.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvTransactionHistory.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvTransactionHistory.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgvTransactionHistory.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvTransactionHistory.ThemeStyle.HeaderStyle.Height = 32
+        Me.DgvTransactionHistory.ThemeStyle.ReadOnly = True
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.Height = 22
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTransactionHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'Column1
         '
@@ -620,11 +505,255 @@ Partial Class frmPayments
         Me.Column7.ReadOnly = True
         Me.Column7.Width = 67
         '
+        'TxtChanges
+        '
+        Me.TxtChanges.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtChanges.DefaultText = ""
+        Me.TxtChanges.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtChanges.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtChanges.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtChanges.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtChanges.Enabled = False
+        Me.TxtChanges.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtChanges.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtChanges.ForeColor = System.Drawing.Color.Black
+        Me.TxtChanges.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtChanges.Location = New System.Drawing.Point(21, 544)
+        Me.TxtChanges.Name = "TxtChanges"
+        Me.TxtChanges.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtChanges.PlaceholderText = ""
+        Me.TxtChanges.SelectedText = ""
+        Me.TxtChanges.Size = New System.Drawing.Size(215, 36)
+        Me.TxtChanges.TabIndex = 39
+        '
+        'RbDiscount
+        '
+        Me.RbDiscount.AutoSize = True
+        Me.RbDiscount.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbDiscount.Location = New System.Drawing.Point(21, 517)
+        Me.RbDiscount.Name = "RbDiscount"
+        Me.RbDiscount.Size = New System.Drawing.Size(81, 18)
+        Me.RbDiscount.TabIndex = 38
+        Me.RbDiscount.TabStop = True
+        Me.RbDiscount.Text = "Discount"
+        Me.RbDiscount.UseVisualStyleBackColor = True
+        '
+        'RbNoChanges
+        '
+        Me.RbNoChanges.AutoSize = True
+        Me.RbNoChanges.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbNoChanges.Location = New System.Drawing.Point(122, 493)
+        Me.RbNoChanges.Name = "RbNoChanges"
+        Me.RbNoChanges.Size = New System.Drawing.Size(95, 18)
+        Me.RbNoChanges.TabIndex = 37
+        Me.RbNoChanges.TabStop = True
+        Me.RbNoChanges.Text = "No Changes"
+        Me.RbNoChanges.UseVisualStyleBackColor = True
+        '
+        'RbAdditional
+        '
+        Me.RbAdditional.AutoSize = True
+        Me.RbAdditional.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbAdditional.Location = New System.Drawing.Point(21, 493)
+        Me.RbAdditional.Name = "RbAdditional"
+        Me.RbAdditional.Size = New System.Drawing.Size(95, 18)
+        Me.RbAdditional.TabIndex = 36
+        Me.RbAdditional.TabStop = True
+        Me.RbAdditional.Text = "Additional"
+        Me.RbAdditional.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(18, 476)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(56, 14)
+        Me.Label13.TabIndex = 35
+        Me.Label13.Text = "Changes"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Courier New", 18.0!)
+        Me.Label12.Location = New System.Drawing.Point(262, 484)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(236, 27)
+        Me.Label12.TabIndex = 33
+        Me.Label12.Text = "Current Payment:"
+        '
+        'TxtCurPayment
+        '
+        Me.TxtCurPayment.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtCurPayment.DefaultText = ""
+        Me.TxtCurPayment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtCurPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtCurPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtCurPayment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtCurPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtCurPayment.Font = New System.Drawing.Font("Courier New", 18.0!)
+        Me.TxtCurPayment.ForeColor = System.Drawing.Color.Black
+        Me.TxtCurPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtCurPayment.Location = New System.Drawing.Point(504, 484)
+        Me.TxtCurPayment.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.TxtCurPayment.Name = "TxtCurPayment"
+        Me.TxtCurPayment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtCurPayment.PlaceholderText = ""
+        Me.TxtCurPayment.SelectedText = ""
+        Me.TxtCurPayment.Size = New System.Drawing.Size(154, 37)
+        Me.TxtCurPayment.TabIndex = 32
+        Me.TxtCurPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Courier New", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(262, 444)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(236, 27)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Current Balance:"
+        '
+        'btnEnroll
+        '
+        Me.btnEnroll.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEnroll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEnroll.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEnroll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEnroll.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.btnEnroll.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnroll.ForeColor = System.Drawing.Color.White
+        Me.btnEnroll.Location = New System.Drawing.Point(494, 544)
+        Me.btnEnroll.Name = "btnEnroll"
+        Me.btnEnroll.Size = New System.Drawing.Size(164, 36)
+        Me.btnEnroll.TabIndex = 20
+        Me.btnEnroll.Text = "Save"
+        '
+        'cmbModeofPayment
+        '
+        Me.cmbModeofPayment.BackColor = System.Drawing.Color.Transparent
+        Me.cmbModeofPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbModeofPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbModeofPayment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbModeofPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmbModeofPayment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbModeofPayment.ForeColor = System.Drawing.Color.Black
+        Me.cmbModeofPayment.ItemHeight = 30
+        Me.cmbModeofPayment.Location = New System.Drawing.Point(21, 432)
+        Me.cmbModeofPayment.Name = "cmbModeofPayment"
+        Me.cmbModeofPayment.Size = New System.Drawing.Size(215, 36)
+        Me.cmbModeofPayment.TabIndex = 27
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(18, 415)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(112, 14)
+        Me.Label9.TabIndex = 26
+        Me.Label9.Text = "Mode of Payment"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(18, 303)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 14)
+        Me.Label8.TabIndex = 24
+        Me.Label8.Text = "Miscellaneous"
+        '
+        'txtMiscellaneous
+        '
+        Me.txtMiscellaneous.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtMiscellaneous.DefaultText = ""
+        Me.txtMiscellaneous.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtMiscellaneous.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtMiscellaneous.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtMiscellaneous.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtMiscellaneous.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtMiscellaneous.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtMiscellaneous.ForeColor = System.Drawing.Color.Black
+        Me.txtMiscellaneous.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtMiscellaneous.Location = New System.Drawing.Point(21, 320)
+        Me.txtMiscellaneous.Name = "txtMiscellaneous"
+        Me.txtMiscellaneous.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtMiscellaneous.PlaceholderText = ""
+        Me.txtMiscellaneous.SelectedText = ""
+        Me.txtMiscellaneous.Size = New System.Drawing.Size(215, 36)
+        Me.txtMiscellaneous.TabIndex = 23
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(18, 247)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(56, 14)
+        Me.Label7.TabIndex = 22
+        Me.Label7.Text = "Tuition"
+        '
+        'txtTuition
+        '
+        Me.txtTuition.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtTuition.DefaultText = ""
+        Me.txtTuition.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtTuition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtTuition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTuition.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTuition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTuition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtTuition.ForeColor = System.Drawing.Color.Black
+        Me.txtTuition.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtTuition.Location = New System.Drawing.Point(21, 264)
+        Me.txtTuition.Name = "txtTuition"
+        Me.txtTuition.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTuition.PlaceholderText = ""
+        Me.txtTuition.SelectedText = ""
+        Me.txtTuition.Size = New System.Drawing.Size(215, 36)
+        Me.txtTuition.TabIndex = 21
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Courier New", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(517, 444)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(138, 27)
+        Me.Label15.TabIndex = 11
+        Me.Label15.Text = " 0,000.00"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Courier New", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(517, 402)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(138, 27)
+        Me.Label14.TabIndex = 11
+        Me.Label14.Text = " 0,000.00"
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column8.HeaderText = "Remarks"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column9.HeaderText = "Amount"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 85
+        '
         'frmPayments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(843, 569)
+        Me.ClientSize = New System.Drawing.Size(673, 591)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -632,8 +761,10 @@ Partial Class frmPayments
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        CType(Me.DgvReceipt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.dgvSubjectList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvTransactionHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -649,7 +780,6 @@ Partial Class frmPayments
     Friend WithEvents Label5 As Label
     Friend WithEvents cmbOtherFee As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtPayment As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnEnroll As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label8 As Label
@@ -659,16 +789,15 @@ Partial Class frmPayments
     Friend WithEvents cmbModeofPayment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents Guna2TextBox4 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtCurPayment As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Guna2TextBox3 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents TxtChanges As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents RbDiscount As RadioButton
+    Friend WithEvents RbNoChanges As RadioButton
+    Friend WithEvents RbAdditional As RadioButton
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents dgvSubjectList As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents DgvTransactionHistory As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -676,4 +805,13 @@ Partial Class frmPayments
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Label10 As Label
+    Friend WithEvents lblSY As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents DgvReceipt As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Addbtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
 End Class

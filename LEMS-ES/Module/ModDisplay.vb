@@ -1,4 +1,6 @@
-﻿Module ModDisplay
+﻿Imports Guna.UI2.WinForms
+
+Module ModDisplay
     Public Function IS_EMPTY(ByVal ptext As Object) As Boolean
         If ptext.text = String.Empty Then
             ptext.backcolor = Color.LemonChiffon
@@ -10,6 +12,31 @@
             IS_EMPTY = False
         End If
     End Function
+
+    Public Sub ClearFields(ByVal form As Form, ByRef id As Integer)
+        For Each ctrl As Control In form.Controls
+            If TypeOf ctrl Is TextBox Then
+                DirectCast(ctrl, TextBox).Clear()
+            ElseIf TypeOf ctrl Is Guna2TextBox Then
+                DirectCast(ctrl, Guna2TextBox).Clear()
+            ElseIf TypeOf ctrl Is ComboBox Then
+                Dim cmbBox As ComboBox = DirectCast(ctrl, ComboBox)
+                cmbBox.SelectedIndex = -1
+            ElseIf TypeOf ctrl Is Guna2ComboBox Then
+                Dim cmbBox As Guna2ComboBox = DirectCast(ctrl, Guna2ComboBox)
+                cmbBox.SelectedIndex = -1
+            ElseIf TypeOf ctrl Is CheckBox Then
+                DirectCast(ctrl, CheckBox).Checked = False
+            ElseIf TypeOf ctrl Is Guna2CheckBox Then
+                DirectCast(ctrl, Guna2CheckBox).Checked = False
+            ElseIf TypeOf ctrl Is DataGridView Then
+                DirectCast(ctrl, DataGridView).ClearSelection()
+            ElseIf TypeOf ctrl Is Guna2DataGridView Then
+                DirectCast(ctrl, Guna2DataGridView).ClearSelection()
+            End If
+        Next
+        id = 0
+    End Sub
     Public Sub RemovePanel()
         frmCharts.Close()
         frmEnrollment.Close()
