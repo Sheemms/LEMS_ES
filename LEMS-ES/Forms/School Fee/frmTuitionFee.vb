@@ -1,4 +1,4 @@
-﻿Public Class frmTuitionFee
+﻿Public Class FrmTuitionFee
     Public idTuition As Integer = 0
     Public idMiscellaneous As Integer = 0
     Public idOtherFee As Integer = 0
@@ -55,7 +55,7 @@
                 cmbGradeLevel.Text = row.Cells(1).Value
                 txtAmountTuition.Text = row.Cells(2).Value
             ElseIf e.ColumnIndex >= 0 Then
-                clear()
+                Clear()
             End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
@@ -70,7 +70,7 @@
     End Sub
 
     Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
-        clear()
+        Clear()
     End Sub
 
     Private Sub BtnSaveMiscellaneous_Click(sender As Object, e As EventArgs) Handles btnSaveMiscellaneous.Click
@@ -99,7 +99,7 @@
         If IS_EMPTY(txtTOP) Then Return
 
         ClassTuition.ToPRef()
-        clear()
+        Clear()
     End Sub
 
 End Class

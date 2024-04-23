@@ -29,6 +29,8 @@ Module ModDisplay
                 DirectCast(ctrl, CheckBox).Checked = False
             ElseIf TypeOf ctrl Is Guna2CheckBox Then
                 DirectCast(ctrl, Guna2CheckBox).Checked = False
+            ElseIf TypeOf ctrl Is RadioButton Then
+                DirectCast(ctrl, RadioButton).Checked = False
             ElseIf TypeOf ctrl Is DataGridView Then
                 DirectCast(ctrl, DataGridView).ClearSelection()
             ElseIf TypeOf ctrl Is Guna2DataGridView Then
@@ -80,11 +82,22 @@ Module ModDisplay
     Public Sub TextBoxOnlyLetters(ByVal textBox As Guna.UI2.WinForms.Guna2TextBox)
         AddHandler textBox.KeyPress, AddressOf TextBoxLetters_KeyPress
     End Sub
+
     Private Sub TextBoxLetters_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
+        ' Allow letters, spaces, and control characters (like Backspace)
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso e.KeyChar <> " " Then
+            e.Handled = True ' Block the input
+        End If
+
+        ' Check if the entered character is a space
+        If e.KeyChar = " " Then
+            ' Check if there's already a space after the last character
+            If DirectCast(sender, Guna.UI2.WinForms.Guna2TextBox).Text.Contains(" ") Then
+                e.Handled = True ' Block the input
+            End If
         End If
     End Sub
+
     Public Sub TextBoxDigitsOnly(ByVal textBox As Guna.UI2.WinForms.Guna2TextBox)
         AddHandler textBox.KeyPress, AddressOf TextBoxDigits_Keypress
     End Sub
@@ -93,7 +106,6 @@ Module ModDisplay
             e.Handled = True
         End If
     End Sub
-
     Public Function EIDGenerate() As String
         Try
             Dim eidvalue As String

@@ -1,20 +1,14 @@
-﻿Public Class frmSY
+﻿Public Class FrmSY
     Public idSY As Integer = 0
     Private Sub FrmSY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Connection()
         Loadrecords()
-        txtStartYear.Text = Year(Now)
     End Sub
     Public Sub Loadrecords()
         Query("SELECT * FROM schoolyear ORDER BY ID DESC ")
         DgvSY.DataSource = ds.Tables("QueryTb")
+        txtStartYear.Text = Year(Now)
     End Sub
-    Public Sub Clear()
-        idSY = 0
-        txtStartYear.Clear()
-        txtEndYear.Clear()
-    End Sub
-
     Private Sub DgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSY.CellClick
         Try
             If e.RowIndex >= 0 Then
@@ -23,7 +17,7 @@
                 txtStartYear.Text = row.Cells(1).Value
                 txtEndYear.Text = row.Cells(2).Value
             ElseIf e.ColumnIndex >= 0 Then
-                clear()
+                ClearFields(Me, idSY)
             End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
@@ -36,6 +30,6 @@
         If IS_EMPTY(txtEndYear) = True Then Return
 
         ClassSchoolYear.SchoolYearRef()
-        Clear()
+        ClearFields(Me, idSY)
     End Sub
 End Class

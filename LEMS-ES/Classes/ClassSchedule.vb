@@ -39,7 +39,7 @@ Public Class ClassSchedule
                     Success("Successfully Updated!")
                 End If
             End If
-            frmSchedule.LoadRecords()
+            FrmSchedule.LoadRecords()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

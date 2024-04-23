@@ -36,6 +36,10 @@ Partial Class frmStudentsView
         Me.Label26 = New System.Windows.Forms.Label()
         Me.gbReq = New System.Windows.Forms.GroupBox()
         Me.dgvRequirements = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.colCheckBox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmbStudSuffix = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.RbFemale = New System.Windows.Forms.RadioButton()
         Me.RbMale = New System.Windows.Forms.RadioButton()
@@ -74,10 +78,6 @@ Partial Class frmStudentsView
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
-        Me.colCheckBox = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -309,6 +309,37 @@ Partial Class frmStudentsView
         Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRequirements.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'colCheckBox
+        '
+        Me.colCheckBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colCheckBox.FalseValue = "False"
+        Me.colCheckBox.HeaderText = ""
+        Me.colCheckBox.Name = "colCheckBox"
+        Me.colCheckBox.TrueValue = "True"
+        Me.colCheckBox.Width = 5
+        '
+        'colID
+        '
+        Me.colID.DataPropertyName = "ID"
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Requirement"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "issubmitted"
+        Me.Column1.HeaderText = "Value"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        '
         'cmbStudSuffix
         '
         Me.cmbStudSuffix.BackColor = System.Drawing.Color.Transparent
@@ -400,7 +431,7 @@ Partial Class frmStudentsView
         Me.dtpBday.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpBday.Location = New System.Drawing.Point(281, 30)
         Me.dtpBday.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.dtpBday.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtpBday.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
         Me.dtpBday.Name = "dtpBday"
         Me.dtpBday.Size = New System.Drawing.Size(135, 36)
         Me.dtpBday.TabIndex = 15
@@ -422,6 +453,7 @@ Partial Class frmStudentsView
         Me.txtStudAge.Name = "txtStudAge"
         Me.txtStudAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudAge.PlaceholderText = ""
+        Me.txtStudAge.ReadOnly = True
         Me.txtStudAge.SelectedText = ""
         Me.txtStudAge.Size = New System.Drawing.Size(69, 36)
         Me.txtStudAge.TabIndex = 14
@@ -846,37 +878,6 @@ Partial Class frmStudentsView
         Me.btnSave.Size = New System.Drawing.Size(131, 36)
         Me.btnSave.TabIndex = 27
         Me.btnSave.Text = "Save"
-        '
-        'colCheckBox
-        '
-        Me.colCheckBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colCheckBox.FalseValue = "False"
-        Me.colCheckBox.HeaderText = ""
-        Me.colCheckBox.Name = "colCheckBox"
-        Me.colCheckBox.TrueValue = "True"
-        Me.colCheckBox.Width = 5
-        '
-        'colID
-        '
-        Me.colID.DataPropertyName = "ID"
-        Me.colID.HeaderText = "ID"
-        Me.colID.Name = "colID"
-        Me.colID.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Requirement"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Description"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "issubmitted"
-        Me.Column1.HeaderText = "Value"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
         '
         'frmStudentsView
         '

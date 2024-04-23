@@ -32,6 +32,7 @@ Public Class ClassEnroll
                 End If
             End If
             frmEnrollment.Loadrecords()
+            FrmEnrollmentRegistration.Close()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Student already enrolled.")
             Exit Sub

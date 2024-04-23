@@ -34,6 +34,7 @@ Partial Class FrmMaintenance
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ROOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,7 +49,7 @@ Partial Class FrmMaintenance
         '
         'AdminControlsToolStripMenuItem
         '
-        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SchoolYearMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
+        Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SchoolYearMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.ROOMToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
         Me.AdminControlsToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
@@ -125,7 +126,14 @@ Partial Class FrmMaintenance
         Me.Panel1.Size = New System.Drawing.Size(953, 589)
         Me.Panel1.TabIndex = 1
         '
-        'frmMaintenance
+        'ROOMToolStripMenuItem
+        '
+        Me.ROOMToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.sections
+        Me.ROOMToolStripMenuItem.Name = "ROOMToolStripMenuItem"
+        Me.ROOMToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.ROOMToolStripMenuItem.Text = "Room"
+        '
+        'FrmMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -135,7 +143,7 @@ Partial Class FrmMaintenance
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "frmMaintenance"
+        Me.Name = "FrmMaintenance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -156,4 +164,5 @@ Partial Class FrmMaintenance
     Friend WithEvents UserMaintenanceToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GradeLevelMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DepartmentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ROOMToolStripMenuItem As ToolStripMenuItem
 End Class

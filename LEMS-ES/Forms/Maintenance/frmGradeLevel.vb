@@ -38,8 +38,6 @@
 
 
     Private Sub TxtAddGradeLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddGradeLevel.KeyPress
-        If e.KeyChar = "0"c AndAlso txtAddGradeLevel.TextLength = 0 Then
-            e.Handled = True
-        End If
+        TextBoxDigitsOnly(txtAddGradeLevel)
     End Sub
 End Class

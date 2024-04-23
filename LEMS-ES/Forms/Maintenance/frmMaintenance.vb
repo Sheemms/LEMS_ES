@@ -95,4 +95,8 @@ Public Class FrmMaintenance
             .Show()
         End With
     End Sub
+
+    Private Sub ROOMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ROOMToolStripMenuItem.Click
+
+    End Sub
 End Class

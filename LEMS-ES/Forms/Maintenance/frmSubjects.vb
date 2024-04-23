@@ -48,7 +48,7 @@
 
 
         ClassSubject.SubjectRef()
-        ClearFields(Me, idSubj)
+        Clear()
     End Sub
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ClassSubject.DeleteRef()
@@ -61,5 +61,9 @@
 
     Private Sub TxtUnit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress, TxtDesc.KeyPress
         TextBoxDigitsOnly(txtUnit)
+    End Sub
+
+    Private Sub TxtSubjCode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjCode.KeyPress
+        'TextBoxOnlyLettersAndDigits(txtSubjCode)
     End Sub
 End Class

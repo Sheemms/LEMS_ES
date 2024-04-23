@@ -26,15 +26,17 @@ Public Class ClassTeacher
                     Command("INSERT INTO teacher(EmpID, Department_ID, Lastname, Firstname, MiddleInitial, Contact, Address) 
                             VALUES (@EmpID, @Department_ID, @Lastname, @Firstname, @MiddleInitial, @Contact, @Address)", dynamicParams)
                     Success("Successfully Added!")
+                    FrmTeacherMaintenance.Close()
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE teacher SET EmpID=@EmpID, Department_ID=@Department_ID, Lastname=@Lastname, Firstname=@Firstname, 
                             MiddleInitial=@MiddleInitial, Contact=@Contact, Address=@Address WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
+                    FrmTeacherMaintenance.Close()
                 End If
             End If
-                frmTeacherMaintenance.loadrecords()
+            FrmTeachers.Loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Employee ID already exists.")
             Exit Sub

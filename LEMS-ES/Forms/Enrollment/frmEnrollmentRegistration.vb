@@ -35,7 +35,6 @@ Public Class FrmEnrollmentRegistration
     End Sub
     Public Sub LoadMode()
         Query("SELECT * FROM mop")
-
     End Sub
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
         ClassEnroll.EnrollmentRef()

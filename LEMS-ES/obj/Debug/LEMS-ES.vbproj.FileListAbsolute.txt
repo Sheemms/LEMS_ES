@@ -149,3 +149,4 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmBillingRecords
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmReportStudent.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmRoom.resources

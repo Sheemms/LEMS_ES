@@ -4,11 +4,9 @@ Public Class ClassSection
     Public Shared Function SectionParameters() As MySqlParameter()
         Try
             Dim syParam() As MySqlParameter = {
-                    New MySqlParameter("@ID", frmSections.idSection),
-                    New MySqlParameter("@GradeLevel_ID", frmSections.cmbGradeLevel.SelectedValue),
-                    New MySqlParameter("@SectionRoom", frmSections.txtSectionName.Text),
-                    New MySqlParameter("@Capacity", frmSections.txtSectionCapacity.Text),
-                    New MySqlParameter("@Adviser_ID", frmSections.cmbAdviser.SelectedValue)
+                    New MySqlParameter("@ID", FrmSections.idSection),
+                    New MySqlParameter("@GradeLevel_ID", FrmSections.cmbGradeLevel.SelectedValue),
+                    New MySqlParameter("@SectionRoom", FrmSections.txtSectionName.Text)
                 }
             Return syParam
         Catch ex As Exception
@@ -18,18 +16,19 @@ Public Class ClassSection
     Public Shared Sub SectionRef()
         Try
             Dim dynamicParams As MySqlParameter() = SectionParameters()
-            If frmSections.idSection = 0 Then
+            If FrmSections.idSection = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO section(GradeLevel_ID, SectionRoom, Capacity, Adviser_ID) VALUES (@GradeLevel_ID, @SectionRoom, @Capacity, @Adviser_ID)", dynamicParams)
+                    Command("INSERT INTO section(GradeLevel_ID, SectionRoom) VALUES (@GradeLevel_ID, @SectionRoom)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom, Capacity=@Capacity, Adviser_ID=@Adviser_ID WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If
-            frmSections.loadrecords()
+            FrmSections.Loadrecords()
+            ClearFields(FrmSections, FrmSections.idSection)
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Section already exists.")
             Exit Sub

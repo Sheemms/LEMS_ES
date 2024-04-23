@@ -18,8 +18,8 @@
             txtLastname.Text = .Rows(0)(3)
             txtFirstname.Text = .Rows(0)(4)
             txtMiddleInitial.Text = .Rows(0)(5)
-            txtContact.Text = .Rows(0)(7)
-            txtAddress.Text = .Rows(0)(8)
+            txtContact.Text = .Rows(0)(6)
+            txtAddress.Text = .Rows(0)(7)
         End With
     End Sub
 
