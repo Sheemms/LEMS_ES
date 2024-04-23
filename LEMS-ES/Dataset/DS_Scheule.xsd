@@ -12,8 +12,11 @@
   <xs:element name="DS_Scheule" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Scheule" msprop:Generator_UserDSName="DS_Scheule">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="Dt_Schedule" msprop:Generator_TableClassName="Dt_ScheduleDataTable" msprop:Generator_TableVarName="tableDt_Schedule" msprop:Generator_RowChangedName="Dt_ScheduleRowChanged" msprop:Generator_TablePropName="Dt_Schedule" msprop:Generator_RowDeletingName="Dt_ScheduleRowDeleting" msprop:Generator_RowChangingName="Dt_ScheduleRowChanging" msprop:Generator_RowEvHandlerName="Dt_ScheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="Dt_ScheduleRowDeleted" msprop:Generator_RowClassName="Dt_ScheduleRow" msprop:Generator_UserTableName="Dt_Schedule" msprop:Generator_RowEvArgName="Dt_ScheduleRowChangeEvent">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

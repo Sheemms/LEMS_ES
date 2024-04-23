@@ -10,7 +10,7 @@
             .Show()
         End With
     End Sub
-    Private Sub BtnEnrollment_Click(sender As Object, e As EventArgs) Handles btnEnrollment.Click
+    Private Sub BtnEnrollment_Click(sender As Object, e As EventArgs) Handles BtnEnrollment.Click
         RemovePanel()
         With frmEnrollment
             .TopLevel = False

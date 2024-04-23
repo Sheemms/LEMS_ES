@@ -44,7 +44,7 @@ Module ModDisplay
     Public Sub RemovePanel()
         frmCharts.Close()
         frmEnrollment.Close()
-        frmSchedule.Close()
+        FrmSchedule.Close()
         FrmBillingRecords.Close()
         frmStudents.Close()
         frmTeachers.Close()
@@ -53,7 +53,6 @@ Module ModDisplay
         frmJHSGrading.Close()
         frmMaintenance.Close()
         frmReports.Close()
-
     End Sub
     Public Sub MaintenanceRemovePanel()
         frmEnrollmentRegistration.Close()

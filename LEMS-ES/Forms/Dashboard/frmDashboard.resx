@@ -117,6 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Guna2CirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gsICR4CEKJsqwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJqSURBVFhH
+        zZe9ahRRGIa3yqJIYkAIFjZim3tIIYTcgRALfy7AeAEpxE7TpAm5gVxE0gVMr20awVKwMYKi4uZ5Z96z
+        njNz9jgzq24eeGH3+97vzJnzNzOjrkwmkzHaQofoFJ2jC0u/FVNOnrHL5ofG1tAB+oy6Iq9q1txMfyhe
+        QrtIdzgU1aqNJTfbDQp0129Qjh/oDB2hPUu/FVMuh9rqNhoY19EHVTXQPG+jm7a2UM4eeZuozXVb82DQ
+        nTcv/gvto+u2VfD/HnqNXqG7DlfIi1Sj2hi1nR8JEprz5rC/Rxu2TCF2B/2UwXxHt52eQmwDqY0YXaO9
+        JghqscSocMXpBOIvK0fKC6cTiK+gZid2na4hoKGPV7uGrnXnAXLPK1fKM6dbkNNIxNOha/2eCv5oz8bs
+        O5WF/Cr6VDlrPqJlp7OQ15qIOQgJnXDxIaMVnCy4HPKgp+gJuubwTOyPd4euOVZCR2fMtmv+Omq7vsSU
+        LQV1fgd0kMzc5zH4HqJ36C164HARtY3iw+pQQT1EAmf2FsF3C2nrBb6hVaeL4NOJGThVIJ6XI/uK4Htc
+        2xMeOV0En47twLkC8fbbs68Ivp3anrDjdBF8enYELq5EB4ZMwTwdaE3BkEU4Twdai7D3NsQzqAN4stuw
+        90GEZ2gHsgdR76OYfO8OkM8fxU72fRgN6UD+YST40/dxrGO4ycypI1d+HAsCfV5IltFXmcwXdMPpBOJ/
+        fiERBDu/kgnim+gEHaP7DieoFjUvnn8lEyQ6v5SWkNc18bCL2S+lAQyLey0PYFzch0mAgsV9msVQrNH4
+        /x+nTWjsH3yej0aXX5O1Am1zLG4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Guna2CirclePictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Guna2CirclePictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 3</value>
+  </data>
+  <data name="Guna2CirclePictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="Guna2CirclePictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Guna2CirclePictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
   <data name="&gt;&gt;Guna2CirclePictureBox1.Name" xml:space="preserve">
     <value>Guna2CirclePictureBox1</value>
   </data>
@@ -129,11 +165,9 @@
   <data name="&gt;&gt;Guna2CirclePictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TopPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TopPanel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 8.25pt</value>
   </data>
@@ -143,7 +177,6 @@
   <data name="TopPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>1366, 38</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TopPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -282,6 +315,24 @@
   <data name="&gt;&gt;btnMaintenance.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnJHSGrading.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnJHSGrading.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="btnJHSGrading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="btnJHSGrading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="btnJHSGrading.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnJHSGrading.Text" xml:space="preserve">
+    <value>Junior High School</value>
+  </data>
   <data name="&gt;&gt;btnJHSGrading.Name" xml:space="preserve">
     <value>btnJHSGrading</value>
   </data>
@@ -293,6 +344,24 @@
   </data>
   <data name="&gt;&gt;btnJHSGrading.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnElemGrading.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnElemGrading.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="btnElemGrading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnElemGrading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="btnElemGrading.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnElemGrading.Text" xml:space="preserve">
+    <value>Elementary</value>
   </data>
   <data name="&gt;&gt;btnElemGrading.Name" xml:space="preserve">
     <value>btnElemGrading</value>
@@ -360,6 +429,24 @@
   <data name="&gt;&gt;btnGrading.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnTeachers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnTeachers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="btnTeachers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="btnTeachers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="btnTeachers.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnTeachers.Text" xml:space="preserve">
+    <value>Teachers</value>
+  </data>
   <data name="&gt;&gt;btnTeachers.Name" xml:space="preserve">
     <value>btnTeachers</value>
   </data>
@@ -371,6 +458,24 @@
   </data>
   <data name="&gt;&gt;btnTeachers.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnStudents.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnStudents.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="btnStudents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnStudents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="btnStudents.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnStudents.Text" xml:space="preserve">
+    <value>Students</value>
   </data>
   <data name="&gt;&gt;btnStudents.Name" xml:space="preserve">
     <value>btnStudents</value>
@@ -438,6 +543,24 @@
   <data name="&gt;&gt;btnDataEntry.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="btnPayment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnPayment.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="btnPayment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 90</value>
+  </data>
+  <data name="btnPayment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="btnPayment.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnPayment.Text" xml:space="preserve">
+    <value>Billing</value>
+  </data>
   <data name="&gt;&gt;btnPayment.Name" xml:space="preserve">
     <value>btnPayment</value>
   </data>
@@ -449,6 +572,24 @@
   </data>
   <data name="&gt;&gt;btnPayment.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnScheduling.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnScheduling.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="btnScheduling.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="btnScheduling.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="btnScheduling.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnScheduling.Text" xml:space="preserve">
+    <value>Schedule</value>
   </data>
   <data name="&gt;&gt;btnScheduling.Name" xml:space="preserve">
     <value>btnScheduling</value>
@@ -462,16 +603,34 @@
   <data name="&gt;&gt;btnScheduling.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;btnEnrollment.Name" xml:space="preserve">
-    <value>btnEnrollment</value>
+  <data name="BtnEnrollment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;btnEnrollment.Type" xml:space="preserve">
+  <data name="BtnEnrollment.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Georgia, 9pt</value>
+  </data>
+  <data name="BtnEnrollment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="BtnEnrollment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 45</value>
+  </data>
+  <data name="BtnEnrollment.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BtnEnrollment.Text" xml:space="preserve">
+    <value>Enrollment</value>
+  </data>
+  <data name="&gt;&gt;BtnEnrollment.Name" xml:space="preserve">
+    <value>BtnEnrollment</value>
+  </data>
+  <data name="&gt;&gt;BtnEnrollment.Type" xml:space="preserve">
     <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
-  <data name="&gt;&gt;btnEnrollment.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnEnrollment.Parent" xml:space="preserve">
     <value>TransactionPanel</value>
   </data>
-  <data name="&gt;&gt;btnEnrollment.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnEnrollment.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="TransactionPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -729,216 +888,6 @@
   <data name="&gt;&gt;PanelSidebar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnJHSGrading.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnJHSGrading.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnJHSGrading.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 45</value>
-  </data>
-  <data name="btnJHSGrading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnJHSGrading.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnJHSGrading.Text" xml:space="preserve">
-    <value>Junior High School</value>
-  </data>
-  <data name="&gt;&gt;btnJHSGrading.Name" xml:space="preserve">
-    <value>btnJHSGrading</value>
-  </data>
-  <data name="&gt;&gt;btnJHSGrading.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnJHSGrading.Parent" xml:space="preserve">
-    <value>GradingPanel</value>
-  </data>
-  <data name="&gt;&gt;btnJHSGrading.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnElemGrading.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnElemGrading.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnElemGrading.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnElemGrading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnElemGrading.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnElemGrading.Text" xml:space="preserve">
-    <value>Elementary</value>
-  </data>
-  <data name="&gt;&gt;btnElemGrading.Name" xml:space="preserve">
-    <value>btnElemGrading</value>
-  </data>
-  <data name="&gt;&gt;btnElemGrading.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnElemGrading.Parent" xml:space="preserve">
-    <value>GradingPanel</value>
-  </data>
-  <data name="&gt;&gt;btnElemGrading.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnTeachers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnTeachers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnTeachers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 45</value>
-  </data>
-  <data name="btnTeachers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnTeachers.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnTeachers.Text" xml:space="preserve">
-    <value>Teachers</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.Name" xml:space="preserve">
-    <value>btnTeachers</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.Parent" xml:space="preserve">
-    <value>DataEntryPanel</value>
-  </data>
-  <data name="&gt;&gt;btnTeachers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnStudents.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnStudents.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnStudents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnStudents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnStudents.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnStudents.Text" xml:space="preserve">
-    <value>Students</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.Name" xml:space="preserve">
-    <value>btnStudents</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.Parent" xml:space="preserve">
-    <value>DataEntryPanel</value>
-  </data>
-  <data name="&gt;&gt;btnStudents.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnPayment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnPayment.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnPayment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 90</value>
-  </data>
-  <data name="btnPayment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnPayment.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnPayment.Text" xml:space="preserve">
-    <value>Billing</value>
-  </data>
-  <data name="&gt;&gt;btnPayment.Name" xml:space="preserve">
-    <value>btnPayment</value>
-  </data>
-  <data name="&gt;&gt;btnPayment.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnPayment.Parent" xml:space="preserve">
-    <value>TransactionPanel</value>
-  </data>
-  <data name="&gt;&gt;btnPayment.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnScheduling.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnScheduling.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnScheduling.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 45</value>
-  </data>
-  <data name="btnScheduling.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnScheduling.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btnScheduling.Text" xml:space="preserve">
-    <value>Schedule</value>
-  </data>
-  <data name="&gt;&gt;btnScheduling.Name" xml:space="preserve">
-    <value>btnScheduling</value>
-  </data>
-  <data name="&gt;&gt;btnScheduling.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnScheduling.Parent" xml:space="preserve">
-    <value>TransactionPanel</value>
-  </data>
-  <data name="&gt;&gt;btnScheduling.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnEnrollment.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnEnrollment.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Georgia, 9pt</value>
-  </data>
-  <data name="btnEnrollment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnEnrollment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 45</value>
-  </data>
-  <data name="btnEnrollment.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnEnrollment.Text" xml:space="preserve">
-    <value>Enrollment</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.Name" xml:space="preserve">
-    <value>btnEnrollment</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.Parent" xml:space="preserve">
-    <value>TransactionPanel</value>
-  </data>
-  <data name="&gt;&gt;btnEnrollment.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -964,51 +913,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gsICR4CEKJsqwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJqSURBVFhH
-        zZe9ahRRGIa3yqJIYkAIFjZim3tIIYTcgRALfy7AeAEpxE7TpAm5gVxE0gVMr20awVKwMYKi4uZ5Z96z
-        njNz9jgzq24eeGH3+97vzJnzNzOjrkwmkzHaQofoFJ2jC0u/FVNOnrHL5ofG1tAB+oy6Iq9q1txMfyhe
-        QrtIdzgU1aqNJTfbDQp0129Qjh/oDB2hPUu/FVMuh9rqNhoY19EHVTXQPG+jm7a2UM4eeZuozXVb82DQ
-        nTcv/gvto+u2VfD/HnqNXqG7DlfIi1Sj2hi1nR8JEprz5rC/Rxu2TCF2B/2UwXxHt52eQmwDqY0YXaO9
-        JghqscSocMXpBOIvK0fKC6cTiK+gZid2na4hoKGPV7uGrnXnAXLPK1fKM6dbkNNIxNOha/2eCv5oz8bs
-        O5WF/Cr6VDlrPqJlp7OQ15qIOQgJnXDxIaMVnCy4HPKgp+gJuubwTOyPd4euOVZCR2fMtmv+Omq7vsSU
-        LQV1fgd0kMzc5zH4HqJ36C164HARtY3iw+pQQT1EAmf2FsF3C2nrBb6hVaeL4NOJGThVIJ6XI/uK4Htc
-        2xMeOV0En47twLkC8fbbs68Ivp3anrDjdBF8enYELq5EB4ZMwTwdaE3BkEU4Twdai7D3NsQzqAN4stuw
-        90GEZ2gHsgdR76OYfO8OkM8fxU72fRgN6UD+YST40/dxrGO4ycypI1d+HAsCfV5IltFXmcwXdMPpBOJ/
-        fiERBDu/kgnim+gEHaP7DieoFjUvnn8lEyQ6v5SWkNc18bCL2S+lAQyLey0PYFzch0mAgsV9msVQrNH4
-        /x+nTWjsH3yej0aXX5O1Am1zLG4AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 29</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="Guna2CirclePictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.Name" xml:space="preserve">
-    <value>Guna2CirclePictureBox1</value>
-  </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.Parent" xml:space="preserve">
-    <value>TopPanel</value>
-  </data>
-  <data name="&gt;&gt;Guna2CirclePictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

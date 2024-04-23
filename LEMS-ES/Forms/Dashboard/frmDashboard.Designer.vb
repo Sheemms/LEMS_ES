@@ -25,6 +25,7 @@ Partial Class frmDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.TopPanel = New System.Windows.Forms.Panel()
+        Me.Guna2CirclePictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelSidebar = New System.Windows.Forms.Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
@@ -41,7 +42,7 @@ Partial Class frmDashboard
         Me.TransactionPanel = New System.Windows.Forms.Panel()
         Me.btnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.btnScheduling = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnEnrollment = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnEnrollment = New Guna.UI2.WinForms.Guna2Button()
         Me.btnTransaction = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
         Me.PanelLogo = New System.Windows.Forms.Panel()
@@ -51,15 +52,14 @@ Partial Class frmDashboard
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Guna2CirclePictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TopPanel.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSidebar.SuspendLayout()
         Me.GradingPanel.SuspendLayout()
         Me.DataEntryPanel.SuspendLayout()
         Me.TransactionPanel.SuspendLayout()
         Me.PanelLogo.SuspendLayout()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TopPanel
@@ -68,6 +68,12 @@ Partial Class frmDashboard
         Me.TopPanel.Controls.Add(Me.Guna2CirclePictureBox1)
         resources.ApplyResources(Me.TopPanel, "TopPanel")
         Me.TopPanel.Name = "TopPanel"
+        '
+        'Guna2CirclePictureBox1
+        '
+        resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.TabStop = False
         '
         'PanelSidebar
         '
@@ -248,7 +254,7 @@ Partial Class frmDashboard
         Me.TransactionPanel.BackColor = System.Drawing.Color.Silver
         Me.TransactionPanel.Controls.Add(Me.btnPayment)
         Me.TransactionPanel.Controls.Add(Me.btnScheduling)
-        Me.TransactionPanel.Controls.Add(Me.btnEnrollment)
+        Me.TransactionPanel.Controls.Add(Me.BtnEnrollment)
         resources.ApplyResources(Me.TransactionPanel, "TransactionPanel")
         Me.TransactionPanel.Name = "TransactionPanel"
         '
@@ -280,19 +286,19 @@ Partial Class frmDashboard
         Me.btnScheduling.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnScheduling.Name = "btnScheduling"
         '
-        'btnEnrollment
+        'BtnEnrollment
         '
-        Me.btnEnrollment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEnrollment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEnrollment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEnrollment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        resources.ApplyResources(Me.btnEnrollment, "btnEnrollment")
-        Me.btnEnrollment.FillColor = System.Drawing.Color.Transparent
-        Me.btnEnrollment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.btnEnrollment.Image = Global.LEMS_ES.My.Resources.Resources.enrollment
-        Me.btnEnrollment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEnrollment.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btnEnrollment.Name = "btnEnrollment"
+        Me.BtnEnrollment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnEnrollment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnEnrollment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnEnrollment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.BtnEnrollment, "BtnEnrollment")
+        Me.BtnEnrollment.FillColor = System.Drawing.Color.Transparent
+        Me.BtnEnrollment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.BtnEnrollment.Image = Global.LEMS_ES.My.Resources.Resources.enrollment
+        Me.BtnEnrollment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BtnEnrollment.ImageSize = New System.Drawing.Size(30, 30)
+        Me.BtnEnrollment.Name = "BtnEnrollment"
         '
         'btnTransaction
         '
@@ -364,12 +370,6 @@ Partial Class frmDashboard
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
-        'Guna2CirclePictureBox1
-        '
-        resources.ApplyResources(Me.Guna2CirclePictureBox1, "Guna2CirclePictureBox1")
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.TabStop = False
-        '
         'frmDashboard
         '
         resources.ApplyResources(Me, "$this")
@@ -382,6 +382,7 @@ Partial Class frmDashboard
         Me.Name = "frmDashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TopPanel.ResumeLayout(False)
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSidebar.ResumeLayout(False)
         Me.GradingPanel.ResumeLayout(False)
         Me.DataEntryPanel.ResumeLayout(False)
@@ -389,7 +390,6 @@ Partial Class frmDashboard
         Me.PanelLogo.ResumeLayout(False)
         Me.PanelLogo.PerformLayout()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -402,7 +402,7 @@ Partial Class frmDashboard
     Friend WithEvents btnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnMaintenance As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnEnrollment As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnEnrollment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label

@@ -19,7 +19,7 @@ Public Class ClassEnroll
     Public Shared Sub EnrollmentRef()
         Try
             Dim dynamicParams As MySqlParameter() = EnrollmentParameters()
-            If frmDepartment.idDept = 0 Then
+            If FrmEnrollmentRegistration.EnrollmentID = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID, GradeLevel_ID) 
                                 VALUES (@EID, @SchoolYear, @LRN, @SectionID, @GradeLevel_ID)", dynamicParams)

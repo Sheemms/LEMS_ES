@@ -232,17 +232,17 @@ LEMS-ES
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule.DataTable1DataTable">
+<member name="T:LEMS_ES.DS_Scheule.Dt_ScheduleDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule.DataTable1Row">
+<member name="T:LEMS_ES.DS_Scheule.Dt_ScheduleRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule.DataTable1RowChangeEvent">
+<member name="T:LEMS_ES.DS_Scheule.Dt_ScheduleRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
