@@ -31,7 +31,8 @@
                 CmbGradeLevel.Text = row.Cells(1).Value
                 txtSubjCode.Text = row.Cells(2).Value
                 txtSubjName.Text = row.Cells(3).Value
-                txtUnit.Text = row.Cells(4).Value
+                TxtDesc.Text = row.Cells(4).Value
+                txtUnit.Text = row.Cells(5).Value
             ElseIf e.ColumnIndex >= 0 Then
                 Clear()
             End If
@@ -47,7 +48,7 @@
 
 
         ClassSubject.SubjectRef()
-        Clear()
+        ClearFields(Me, idSubj)
     End Sub
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ClassSubject.DeleteRef()

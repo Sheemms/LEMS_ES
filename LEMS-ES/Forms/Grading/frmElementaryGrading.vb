@@ -2,6 +2,9 @@
     Private Sub FrmElementaryGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
 
     End Sub
+    Public Sub LoadData()
+        Query("SELECT * FROM enrollment")
+    End Sub
     Sub LoadRecords(ByVal sql As String)
         Dim i As Integer
         DgvElemGrading.Rows.Clear()

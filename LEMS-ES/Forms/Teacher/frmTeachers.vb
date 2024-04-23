@@ -12,4 +12,15 @@
     Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
         frmTeacherMaintenance.Show()
     End Sub
+
+    Private Sub DgvTeacher_DoubleClick(sender As Object, e As EventArgs) Handles dgvTeacher.DoubleClick
+        If dgvTeacher.SelectedRows.Count > 0 Then
+            With dgvTeacher.SelectedRows(0)
+                FrmTeacherMaintenance.idTeacher = .Cells(0).Value
+                FrmTeacherMaintenance.txtEmpID.Text = .Cells(1).Value
+            End With
+            FrmTeacherMaintenance.LoadStudentData()
+            FrmTeacherMaintenance.Show()
+        End If
+    End Sub
 End Class

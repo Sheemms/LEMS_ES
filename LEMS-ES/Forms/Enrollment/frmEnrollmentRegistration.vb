@@ -8,8 +8,8 @@ Public Class FrmEnrollmentRegistration
         GetSchoolYear(lblSY)
         LoadStudAutoComplet()
         LoadDeprtment()
-        LabelEID.Text = EIDGenerate()
-        LoadSub()
+        ClearFields(Me, EnrollmentID)
+        'LoadSub()
     End Sub
 
     Public Sub Loadrecords()
@@ -17,13 +17,13 @@ Public Class FrmEnrollmentRegistration
     End Sub
 
     Public Sub LoadSub()
-        Query("SELECT  a.ID, d.SubjectCode, d.SubjectName, CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, a.Days, CONCAT(e.Lastname, ' ',e.Firstname) Teacher
+        Query($"SELECT  a.ID, d.SubjectCode, d.SubjectName, CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, a.Days, CONCAT(e.Lastname, ' ',e.Firstname) Teacher
                                 FROM schedule a
                                 JOIN gradelevel b ON a.GradeLevel_ID = b.ID
                                 JOIN section c ON a.Sec_ID = c.ID
                                 JOIN subject d ON a.Subj_ID = d.ID
                                 JOIN teacher e ON a.Teacher_ID = e.ID
-                                WHERE a.GradeLevel_ID LIKE '" & CmbGradeLevel.SelectedValue & "'")
+                                WHERE a.GradeLevel_ID LIKE '{CmbGradeLevel.SelectedValue}'")
         dgvSubjectList.DataSource = ds.Tables("QueryTb")
     End Sub
 
@@ -37,32 +37,9 @@ Public Class FrmEnrollmentRegistration
         Query("SELECT * FROM mop")
 
     End Sub
-    Private Sub PopulateSubjectsByGradeLevel(ByVal gradeLevel As String)
-        Try
-            Dim sql As String = "SELECT * FROM schedule WHERE GradeLevel_ID = @GradeLevel_ID"
-
-            dgvSubjectList.Rows.Clear()
-
-            Command(sql)
-            cmd.Parameters.AddWithValue("@GradeLevel", gradeLevel)
-            dr = cmd.ExecuteReader()
-
-            If dr.HasRows Then
-                While dr.Read()
-                    dgvSubjectList.Rows.Add(dr("ID"), dr("SubjectCode"), dr("SubjectName"), dr("Description"), dr("Units"))
-                End While
-            Else
-                MessageBox.Show("No subjects found for the selected grade level.")
-            End If
-
-            dr.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
-    End Sub
-
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
         ClassEnroll.EnrollmentRef()
+        ClearFields(Me, EnrollmentID)
     End Sub
 
 #Region "AutoComplete/Populate"
@@ -114,6 +91,7 @@ Public Class FrmEnrollmentRegistration
         Else
             CmbGradeLevel.DataSource = Nothing
             CmbGradeLevel.Items.Clear()
+            CmbGradeLevel.SelectedIndex = -1
         End If
     End Sub
 
@@ -137,8 +115,13 @@ Public Class FrmEnrollmentRegistration
         Else
             CmbSection.DataSource = Nothing
             CmbSection.Items.Clear()
+            CmbSection.SelectedIndex = -1
         End If
 
+    End Sub
+
+    Private Sub CmbGradeLevel_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedValueChanged
+        LoadSub()
     End Sub
 #End Region
 

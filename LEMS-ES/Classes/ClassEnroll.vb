@@ -31,7 +31,7 @@ Public Class ClassEnroll
                     Success("Successfully Updated!")
                 End If
             End If
-            frmDepartment.loadrecords()
+            frmEnrollment.Loadrecords()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Student already enrolled.")
             Exit Sub

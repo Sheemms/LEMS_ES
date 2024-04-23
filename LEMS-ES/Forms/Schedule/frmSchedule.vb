@@ -11,15 +11,15 @@ Public Class FrmSchedule
     End Sub
 #Region "Loads"
     Public Sub LoadRecords()
-        Query("SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, 
-                CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sub.SubjectCode, sc.Days, 
+        Query($"SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, sub.SubjectCode, sub.SubjectName,
+                CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sc.Days, 
                 CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-',TIME_FORMAT(Time_To, '%H:%i')) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
                FROM schedule sc
                JOIN section sec ON sc.Sec_ID = sec.ID
                JOIN teacher t ON sc.Adviser_ID = t.ID
                JOIN subject sub ON sc.Subj_ID = sub.ID
                JOIN department dpt ON sc.Department_ID = dpt.ID
-               JOIN teacher tr ON sc.Teacher_ID = tr.ID")
+               JOIN teacher tr ON sc.Teacher_ID = tr.ID	")
         dgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub LoadDepartment()

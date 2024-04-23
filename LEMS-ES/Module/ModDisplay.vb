@@ -45,7 +45,7 @@ Module ModDisplay
         frmCharts.Close()
         frmEnrollment.Close()
         frmSchedule.Close()
-        frmPayment.Close()
+        FrmBillingRecords.Close()
         frmStudents.Close()
         frmTeachers.Close()
         frmBilling.Close()

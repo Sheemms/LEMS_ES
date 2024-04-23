@@ -3,55 +3,25 @@
     Private Sub FrmTeacherMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()
-        Clear()
+        ClearFields(Me, idTeacher)
         TextBoxOnlyLetters(txtMiddleInitial)
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT t.ID, t.EmpID, d.Department, CONCAT(t.Lastname, ', ', t.Firstname, ' ', t.MiddleInitial) AS Fullname, 
-                t.Contact, t.Address 
-                FROM teacher t
-                JOIN department d ON t.Department_ID = d.ID")
-        dgvTeacher.DataSource = ds.Tables("QueryTb")
-
         Query("SELECT * FROM department")
         cmbDept.DataSource = ds.Tables("QueryTb")
         cmbDept.ValueMember = "ID"
         cmbDept.DisplayMember = "Department"
     End Sub
-    Public Sub Clear()
-        idTeacher = 0
-        txtEmpID.Clear()
-        cmbDept.Text = ""
-        txtLastname.Clear()
-        txtFirstname.Clear()
-        txtMiddleInitial.Clear()
-        txtContact.Clear()
-        txtAddress.Clear()
+    Public Sub LoadStudentData()
+        Query("SELECT * FROM teacher WHERE EmpID = '" & txtEmpID.Text & "'")
+        With ds.Tables("QueryTb")
+            txtLastname.Text = .Rows(0)(3)
+            txtFirstname.Text = .Rows(0)(4)
+            txtMiddleInitial.Text = .Rows(0)(5)
+            txtContact.Text = .Rows(0)(7)
+            txtAddress.Text = .Rows(0)(8)
+        End With
     End Sub
-    Private Sub DgvTeacher_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTeacher.CellClick
-        Try
-            For Each row As DataGridViewRow In dgvTeacher.SelectedRows
-                idTeacher = row.Cells(0).Value
-                txtEmpID.Text = row.Cells(1).Value
-                cmbDept.Text = row.Cells(2).Value
-                Dim fullName As String = row.Cells(3).Value.ToString()
-                Dim names() As String = fullName.Split(","c)
-                If names.Length >= 1 Then txtLastname.Text = names(0)
-                If names.Length >= 2 Then
-                    Dim firstNameAndInitial() As String = names(1).Trim().Split(" "c)
-                    txtFirstname.Text = firstNameAndInitial(0)
-                    If firstNameAndInitial.Length >= 2 Then
-                        txtMiddleInitial.Text = firstNameAndInitial(1)
-                    End If
-                End If
-                txtContact.Text = row.Cells(4).Value
-                txtAddress.Text = row.Cells(5).Value
-            Next
-        Catch ex As Exception
-            MsgBox("ERROR!", vbCritical)
-        End Try
-    End Sub
-
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 #Region "IS_EMPTY"
@@ -65,11 +35,11 @@
 #End Region
 
         ClassTeacher.TeacherRef()
-        Clear()
+        ClearFields(Me, idTeacher)
     End Sub
 
     Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs)
-        Clear()
+        ClearFields(Me, idTeacher)
     End Sub
 
 #Region "TextBoxValidation"

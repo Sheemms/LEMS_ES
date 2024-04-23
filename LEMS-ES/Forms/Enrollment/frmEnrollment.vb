@@ -4,17 +4,17 @@
         Loadrecords()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT e.ID, e.SchoolYear, e.LRN, CONCAT(st.Lastname, ' ',st.Firstname, ' ',st.MiddleInitial) as Fullname, s.SectionRoom as Section, gl.GradeLevel, e.Enrollment_Date, e.Status 
+        Query("SELECT e.ID, e.SchoolYear, e.EID, e.LRN, CONCAT(st.Lastname, ' ',st.Firstname, ' ',st.MiddleInitial) as Fullname, s.SectionRoom as Section, gl.GradeLevel, e.Enrollment_Date, e.Status 
                 FROM enrollment e 
                 JOIN student st ON e.LRN = st.LRN
                 JOIN section s ON e.SectionID = s.ID
-                JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID
-                ")
+                JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID")
         dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        frmEnrollmentRegistration.Show()
+        FrmEnrollmentRegistration.Show()
+        FrmEnrollmentRegistration.LabelEID.Text = EIDGenerate()
     End Sub
 
     Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -45,6 +45,7 @@
         If dgvEnrolled.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = dgvEnrolled.SelectedRows(0)
             Dim enrollID As Integer = Convert.ToInt32(selectedRow.Cells("colID").Value)
+            Dim EID As String = selectedRow.Cells("Column1").Value.ToString
 
             Dim studLRN As String = selectedRow.Cells("colLRN").Value.ToString()
             Dim studFullname As String = selectedRow.Cells("colFullname").Value.ToString()
@@ -63,8 +64,9 @@
             Dim studSection As String = selectedRow.Cells("colSection").Value.ToString()
             Dim studGradelevel As String = selectedRow.Cells("colGradeLevel").Value.ToString()
 
-            frmEnrollmentRegistration.EnrollmentID = enrollID
-            frmEnrollmentRegistration.txtStudLRN.Text = studLRN
+            FrmEnrollmentRegistration.EnrollmentID = enrollID
+            FrmEnrollmentRegistration.LabelEID.Text = EID
+            FrmEnrollmentRegistration.txtStudLRN.Text = studLRN
             frmEnrollmentRegistration.txtStudName.Text = studFullname
             frmEnrollmentRegistration.cmbSection.ValueMember = studSection
             frmEnrollmentRegistration.cmbGradeLevel.ValueMember = studGradelevel
@@ -82,4 +84,5 @@
                 WHERE st.LRN LIKE '{txtSearch.Text}' OR st.Lastname LIKE '{txtSearch.Text}' OR st.Firstname LIKE '{txtSearch.Text}' ")
         dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
+
 End Class

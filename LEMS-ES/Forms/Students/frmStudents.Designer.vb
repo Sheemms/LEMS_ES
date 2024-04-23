@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmStudents
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,15 @@ Partial Class frmStudents
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmStudents))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.AddNew = New System.Windows.Forms.ToolStripButton()
+        Me.TextSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,55 +48,59 @@ Partial Class frmStudents
         Me.colCitizenship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddNew = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.TextSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.DS_StudentList = New LEMS_ES.DS_StudentList()
+        Me.DtStudentListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1.SuspendLayout()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DS_StudentList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DtStudentListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNew, Me.TextSearch, Me.ToolStripButton1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNew, Me.TextSearch, Me.ToolStripButton1, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'AddNew
+        'TextSearch
         '
-        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
-        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.AddNew.Name = "AddNew"
-        Me.AddNew.Size = New System.Drawing.Size(51, 22)
-        Me.AddNew.Text = "New"
+        Me.TextSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TextSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextSearch.Name = "TextSearch"
+        Me.TextSearch.Size = New System.Drawing.Size(200, 25)
         '
         'dgvStudents
         '
         Me.dgvStudents.AllowUserToAddRows = False
         Me.dgvStudents.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvStudents.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        Me.dgvStudents.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvStudents.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dgvStudents.ColumnHeadersHeight = 44
         Me.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colLRN, Me.colStudName, Me.colSuffix, Me.colGender, Me.colAge, Me.colBday, Me.colAddress, Me.colMother, Me.colMothersMaiden, Me.colMotherOcc, Me.colFather, Me.colFatherOcc, Me.colGuardianName, Me.colGuardianContact, Me.colCitizenship, Me.Column15, Me.colStudType})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvStudents.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvStudents.DefaultCellStyle = DataGridViewCellStyle15
         Me.dgvStudents.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvStudents.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvStudents.Location = New System.Drawing.Point(0, 25)
@@ -298,6 +304,14 @@ Partial Class frmStudents
         Me.colStudType.Visible = False
         Me.colStudType.Width = 99
         '
+        'AddNew
+        '
+        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
+        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.AddNew.Name = "AddNew"
+        Me.AddNew.Size = New System.Drawing.Size(51, 22)
+        Me.AddNew.Text = "New"
+        '
         'ToolStripButton1
         '
         Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -308,12 +322,24 @@ Partial Class frmStudents
         Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton1.Text = "ToolStripButton1"
         '
-        'TextSearch
+        'ToolStripButton2
         '
-        Me.TextSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.TextSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextSearch.Name = "TextSearch"
-        Me.TextSearch.Size = New System.Drawing.Size(200, 25)
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(43, 22)
+        Me.ToolStripButton2.Text = "PRINT"
+        '
+        'DS_StudentList
+        '
+        Me.DS_StudentList.DataSetName = "DS_StudentList"
+        Me.DS_StudentList.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DtStudentListBindingSource
+        '
+        Me.DtStudentListBindingSource.DataMember = "Dt_StudentList"
+        Me.DtStudentListBindingSource.DataSource = Me.DS_StudentList
         '
         'frmStudents
         '
@@ -329,6 +355,8 @@ Partial Class frmStudents
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DS_StudentList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DtStudentListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -357,4 +385,7 @@ Partial Class frmStudents
     Friend WithEvents colStudType As DataGridViewTextBoxColumn
     Friend WithEvents TextSearch As ToolStripTextBox
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents DS_StudentList As DS_StudentList
+    Friend WithEvents DtStudentListBindingSource As BindingSource
 End Class

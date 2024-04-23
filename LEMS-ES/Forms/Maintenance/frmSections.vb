@@ -1,11 +1,11 @@
-﻿Public Class frmSections
+﻿Public Class FrmSections
     Public idSection As Integer = 0
-    Private Sub frmSections_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub FrmSections_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
-        clear()
+        Loadrecords()
+        Clear()
     End Sub
-    Public Sub loadrecords()
+    Public Sub Loadrecords()
         Query("SELECT  sec.ID, gl.GradeLevel, sec.SectionRoom, sec.Capacity, CONCAT(t.Lastname, ' ', t.Firstname, ' ', MiddleInitial) as Adviser
                 FROM section sec
                 JOIN gradelevel gl ON sec.GradeLevel_ID = gl.ID
@@ -22,14 +22,14 @@
         cmbAdviser.ValueMember = "ID"
         cmbAdviser.DisplayMember = "Adviser"
     End Sub
-    Public Sub clear()
+    Public Sub Clear()
         idSection = 0
         cmbGradeLevel.Text = ""
         txtSectionName.Clear()
         txtSectionCapacity.Clear()
         cmbAdviser.Text = ""
     End Sub
-    Private Sub dgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
+    Private Sub DgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
         Try
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = dgvSection.Rows(e.RowIndex)
@@ -39,26 +39,26 @@
                 txtSectionCapacity.Text = row.Cells(3).Value
                 cmbAdviser.Text = row.Cells(4).Value
             ElseIf e.ColumnIndex >= 0 Then
-                clear()
+                Clear()
             End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub btnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
+    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
         If IS_EMPTY(cmbGradeLevel) = True Then Return
         If IS_EMPTY(txtSectionName) = True Then Return
         If IS_EMPTY(txtSectionCapacity) = True Then Return
 
         ClassSection.SectionRef()
-        clear()
+        Clear()
     End Sub
 
-    Private Sub txtSectionCapacity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionCapacity.KeyPress
+    Private Sub TxtSectionCapacity_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionCapacity.KeyPress
         TextBoxDigitsOnly(txtSectionCapacity)
     End Sub
 
-    Private Sub txtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionName.KeyPress
+    Private Sub TxtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionName.KeyPress
         TextBoxOnlyLetters(txtSectionName)
     End Sub
 End Class

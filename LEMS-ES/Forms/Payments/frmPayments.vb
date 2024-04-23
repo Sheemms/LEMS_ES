@@ -3,8 +3,6 @@
     Private Sub FrmPayments_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadData()
         GetSchoolYear(LabelSY)
-        LabelORNO.Text = ORNOGenerate()
-        CalculateTotalPayment()
     End Sub
     Public Sub LoadData()
         Query("SELECT a.ID, a.EID, a.SchoolYear, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
@@ -51,6 +49,12 @@
         cmbModeofPayment.DisplayMember = "Mode"
         cmbModeofPayment.SelectedIndex = -1
 
+        Query("SELECT * FROM top")
+        CmbTerms.DataSource = ds.Tables("QueryTb")
+        CmbTerms.ValueMember = "ID"
+        CmbTerms.DisplayMember = "Terms"
+        CmbTerms.SelectedIndex = -1
+
 
         DgvReceipt.Rows.Add("Tuition", Val(txtTuition.Text))
         DgvReceipt.Rows.Add("Miscellaneous", Val(txtMiscellaneous.Text))
@@ -67,7 +71,7 @@
             Next
         Next
 
-        LabelTotalPayment.Text = total.ToString()
+        LabelTotalPayment.Text = total
     End Sub
     Public Sub SubtractPayments(currentPayment As Decimal, totalPayment As Decimal) ' Assuming payment amounts are in decimal format
         Dim remainingPayment As Decimal = currentPayment - totalPayment
@@ -86,21 +90,52 @@
         End If
     End Function
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-        Query("SELECT OF_Amount FROM otherfee WHERE ID ='" & cmbOtherFee.SelectedValue & "'")
-        'If cmbOtherFee.SelectedIndex = -1 Then
-        Dim amount As Decimal = ds.Tables("QueryTb").Rows(0)(0)
-        DgvReceipt.Rows.Add(cmbOtherFee.Text, amount)
+        ' Check if cmbOtherFee.SelectedValue is already in DgvReceipt
+        Dim isAlreadyAdded As Boolean = False
+        For Each row As DataGridViewRow In DgvReceipt.Rows
+            If row.Cells(0).Value IsNot Nothing AndAlso row.Cells(0).Value.ToString() = cmbOtherFee.Text Then
+                isAlreadyAdded = True
+                Exit For
+            End If
+        Next
+
+        If isAlreadyAdded Then
+            MsgBox("This fee has already been added.")
+        Else
+            ' Retrieve the amount from the database
+            Query("SELECT OF_Amount FROM otherfee WHERE ID ='" & cmbOtherFee.SelectedValue & "'")
+
+            ' Check if any rows were returned by the query
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                Dim amount As Decimal = Convert.ToDecimal(ds.Tables("QueryTb").Rows(0)("OF_Amount"))
+
+                ' Add the fee to the DataGridView
+                DgvReceipt.Rows.Add(cmbOtherFee.Text, amount)
+            Else
+                MsgBox("Please select other fee first")
+            End If
+        End If
     End Sub
 
+
     Private Sub BtnPayments_Click(sender As Object, e As EventArgs) Handles BtnPayments.Click
-        'ClassPayments.PaymentsRef()
-        SubtractPayments(LabelTotalPayment.Text, TxtCurPayment.Text)
+
+        ClassPayments.PaymentsRef()
         ClearFields(Me, idPayment)
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        DgvReceipt.Rows.Add(RbChanges(), Val(TxtChanges.Text))
+        Dim selectedValue As String = RbChanges()
+
+        If selectedValue IsNot Nothing Then
+            ' Add a row to DgvReceipt
+            DgvReceipt.Rows.Add(selectedValue, Val(TxtChanges.Text))
+        Else
+            ' Display a message if no RadioButton is checked
+            MsgBox("Please select another fee first")
+        End If
     End Sub
+
 
     Private Sub RbNoChanges_CheckedChanged(sender As Object, e As EventArgs) Handles RbNoChanges.CheckedChanged
         TxtChanges.Enabled = Not RbNoChanges.Checked
@@ -110,4 +145,16 @@
         CalculateTotalPayment()
     End Sub
 
+    Private Sub DgvReceipt_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvReceipt.CellContentClick
+        CalculateTotalPayment()
+
+        If e.ColumnIndex = DgvReceipt.Columns("colDelete").Index AndAlso e.RowIndex >= 0 Then
+            DgvReceipt.Rows.RemoveAt(e.RowIndex)
+            CalculateTotalPayment()
+        End If
+    End Sub
+
+    Private Sub TxtCurPayment_TextChanged(sender As Object, e As EventArgs) Handles TxtCurPayment.TextChanged
+        'SubtractPayments(LabelTotalPayment.Text, TxtCurPayment.Text)
+    End Sub
 End Class

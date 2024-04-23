@@ -138,10 +138,14 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.ReportAp
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\stdole.dll
-C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmPayment.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmSchedule.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmEnrollmentReport.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmPayments.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmElementaryGrading.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.frmJHSGrading.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FormDatabase.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmFee.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmBillingRecords.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmReportStudent.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.Web.dll

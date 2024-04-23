@@ -28,19 +28,20 @@ Partial Class frmEnrollment
         Me.GBEnrollmentForm = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvEnrolled = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BtnSearch = New System.Windows.Forms.ToolStripButton()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colSY = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colGradeLevel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colSection = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEnrollDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BtnSearch = New System.Windows.Forms.ToolStripButton()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvEnrolled, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +92,7 @@ Partial Class frmEnrollment
         Me.dgvEnrolled.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvEnrolled.ColumnHeadersHeight = 44
         Me.dgvEnrolled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvEnrolled.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colSY, Me.colLRN, Me.colFullname, Me.colGradeLevel, Me.colSection, Me.colEnrollDate, Me.colStatus})
+        Me.dgvEnrolled.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colSY, Me.Column1, Me.colLRN, Me.colFullname, Me.colGradeLevel, Me.colSection, Me.colEnrollDate, Me.colStatus})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -131,6 +132,47 @@ Partial Class frmEnrollment
         Me.dgvEnrolled.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvEnrolled.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.txtSearch, Me.ToolStripSeparator1, Me.BtnSearch})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
+        Me.ToolStrip1.TabIndex = 3
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.ForeColor = System.Drawing.Color.Black
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.add
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(51, 22)
+        Me.ToolStripButton1.Text = "New"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(200, 25)
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'BtnSearch
+        '
+        Me.BtnSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.BtnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.BtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(23, 22)
+        Me.BtnSearch.Text = "ToolStripButton2"
+        '
         'colID
         '
         Me.colID.DataPropertyName = "ID"
@@ -147,6 +189,15 @@ Partial Class frmEnrollment
         Me.colSY.Name = "colSY"
         Me.colSY.ReadOnly = True
         Me.colSY.Width = 96
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.DataPropertyName = "EID"
+        Me.Column1.HeaderText = "EID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 51
         '
         'colLRN
         '
@@ -201,47 +252,6 @@ Partial Class frmEnrollment
         Me.colStatus.ReadOnly = True
         Me.colStatus.Width = 69
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.txtSearch, Me.ToolStripSeparator1, Me.BtnSearch})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(953, 25)
-        Me.ToolStrip1.TabIndex = 3
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.add
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(51, 22)
-        Me.ToolStripButton1.Text = "New"
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(200, 25)
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BtnSearch
-        '
-        Me.BtnSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.BtnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.BtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(23, 22)
-        Me.BtnSearch.Text = "ToolStripButton2"
-        '
         'frmEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -269,13 +279,14 @@ Partial Class frmEnrollment
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents txtSearch As ToolStripTextBox
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents BtnSearch As ToolStripButton
     Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colSY As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents colLRN As DataGridViewTextBoxColumn
     Friend WithEvents colFullname As DataGridViewTextBoxColumn
     Friend WithEvents colGradeLevel As DataGridViewTextBoxColumn
     Friend WithEvents colSection As DataGridViewTextBoxColumn
     Friend WithEvents colEnrollDate As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn
-    Friend WithEvents BtnSearch As ToolStripButton
 End Class

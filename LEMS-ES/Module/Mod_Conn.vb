@@ -24,6 +24,11 @@ Module Mod_Conn
         cmd.ExecuteNonQuery()
         cmd.Parameters.Clear()
     End Sub
+    Public Sub OtherCommand(ByVal CommandStatement As String)
+        cmd = New MySqlCommand(CommandStatement, con)
+        cmd.ExecuteNonQuery()
+    End Sub
+
     Public Function CmdScalar(ByVal ScalarStatement As String)
         Try
             cmd = New MySqlCommand(ScalarStatement, con)
@@ -45,6 +50,9 @@ Module Mod_Conn
             Return Nothing
         End Try
     End Function
+
+
+
     Sub LogAction(ByVal plog As String)
         Try
             Command("INSERT INTO AuditTrail (UserID, Description) VALUES (@UserID, @Description)",

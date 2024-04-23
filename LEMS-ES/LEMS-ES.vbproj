@@ -51,6 +51,7 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <Compile Include="Classes\ClassDepartment.vb" />
     <Compile Include="Classes\ClassEnroll.vb" />
+    <Compile Include="Classes\ClassFees.vb" />
     <Compile Include="Classes\ClassGradeLevel.vb" />
     <Compile Include="Classes\ClassPayments.vb" />
     <Compile Include="Classes\ClassRequirements.vb" />
@@ -149,6 +151,25 @@
     <Compile Include="Classes\ClassTeacher.vb" />
     <Compile Include="Classes\ClassTuition.vb" />
     <Compile Include="Classes\ClassUserMaintenance.vb" />
+    <Compile Include="CrystalRep\MyReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dataset\DS_Scheule.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_StudentList.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_StudentList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_StudentList.vb">
+      <DependentUpon>DS_StudentList.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Audit Trail\frmAuditTrail.Designer.vb">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </Compile>
@@ -246,10 +267,22 @@
     <Compile Include="Forms\Maintenance\frmSections.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Payments\FrmFee.Designer.vb">
+      <DependentUpon>FrmFee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Payments\FrmFee.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Schedule\frmSchedule.Designer.vb">
       <DependentUpon>frmSchedule.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Schedule\frmSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Students\FrmReportStudent.Designer.vb">
+      <DependentUpon>FrmReportStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Students\FrmReportStudent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Students\frmStudents.Designer.vb">
@@ -288,10 +321,10 @@
     <Compile Include="Forms\Teacher\frmTeachers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Transaction\frmPayment.Designer.vb">
-      <DependentUpon>frmPayment.vb</DependentUpon>
+    <Compile Include="Forms\Transaction\FrmBillingRecords.Designer.vb">
+      <DependentUpon>FrmBillingRecords.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Transaction\frmPayment.vb">
+    <Compile Include="Forms\Transaction\FrmBillingRecords.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\School Fee\frmTuitionFee.Designer.vb">
@@ -345,6 +378,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalRep\MyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MyReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Audit Trail\frmAuditTrail.resx">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>
     </EmbeddedResource>
@@ -393,8 +430,14 @@
     <EmbeddedResource Include="Forms\Maintenance\frmSections.resx">
       <DependentUpon>frmSections.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Payments\FrmFee.resx">
+      <DependentUpon>FrmFee.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Schedule\frmSchedule.resx">
       <DependentUpon>frmSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Students\FrmReportStudent.resx">
+      <DependentUpon>FrmReportStudent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\frmStudents.resx">
       <DependentUpon>frmStudents.vb</DependentUpon>
@@ -414,8 +457,8 @@
     <EmbeddedResource Include="Forms\Teacher\frmTeachers.resx">
       <DependentUpon>frmTeachers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Transaction\frmPayment.resx">
-      <DependentUpon>frmPayment.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Transaction\FrmBillingRecords.resx">
+      <DependentUpon>FrmBillingRecords.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\School Fee\frmTuitionFee.resx">
       <DependentUpon>frmTuitionFee.vb</DependentUpon>
@@ -440,6 +483,28 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dataset\DS_Scheule.xsc">
+      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_Scheule.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Scheule.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_Scheule.xss">
+      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_StudentList.xsc">
+      <DependentUpon>DS_StudentList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_StudentList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_StudentList.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_StudentList.xss">
+      <DependentUpon>DS_StudentList.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -581,6 +646,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ip-address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
