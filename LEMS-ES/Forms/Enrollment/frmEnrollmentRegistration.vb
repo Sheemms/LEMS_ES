@@ -40,7 +40,7 @@ Public Class FrmEnrollmentRegistration
     End Sub
     Public Sub LoadSubjectEnrolled()
         Query("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year)SYID, a.EID, d.SubjectCode ,d.SubjectName, 
-                    CONCAT(c.Time_From, '-', c.Time_To) Time, c.Days, 
+                    CONCAT(TIME_FORMAT(c.Time_From, '%H:%i'), '-', TIME_FORMAT(c.Time_To, '%H:%i')) Time, c.Days, 
                     CONCAT(e.Lastname, ', ', e.Firstname, ' ',e.MiddleInitial) Teacher
                     FROM enrolled_sched a
                     JOIN schoolyear b ON a.SYID = b.ID
