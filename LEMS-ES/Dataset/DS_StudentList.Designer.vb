@@ -285,15 +285,11 @@ Partial Public Class DS_StudentList
         
         Private columnID As Global.System.Data.DataColumn
         
-        Private columnStudType As Global.System.Data.DataColumn
+        Private columnClassification As Global.System.Data.DataColumn
         
         Private columnLRN As Global.System.Data.DataColumn
         
-        Private columnLastname As Global.System.Data.DataColumn
-        
-        Private columnFirstname As Global.System.Data.DataColumn
-        
-        Private columnMiddleInitial As Global.System.Data.DataColumn
+        Private columnFullname As Global.System.Data.DataColumn
         
         Private columnGender As Global.System.Data.DataColumn
         
@@ -344,9 +340,9 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property StudTypeColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ClassificationColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStudType
+                Return Me.columnClassification
             End Get
         End Property
         
@@ -360,25 +356,9 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property LastnameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property FullnameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnLastname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property FirstnameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFirstname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property MiddleInitialColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnMiddleInitial
+                Return Me.columnFullname
             End Get
         End Property
         
@@ -435,9 +415,9 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDt_StudentListRow(ByVal ID As String, ByVal StudType As String, ByVal LRN As String, ByVal Lastname As String, ByVal Firstname As String, ByVal MiddleInitial As String, ByVal Gender As String, ByVal Address As String) As Dt_StudentListRow
+        Public Overloads Function AddDt_StudentListRow(ByVal ID As String, ByVal Classification As String, ByVal LRN As String, ByVal Fullname As String, ByVal Gender As String, ByVal Address As String) As Dt_StudentListRow
             Dim rowDt_StudentListRow As Dt_StudentListRow = CType(Me.NewRow,Dt_StudentListRow)
-            Dim columnValuesArray() As Object = New Object() {ID, StudType, LRN, Lastname, Firstname, MiddleInitial, Gender, Address}
+            Dim columnValuesArray() As Object = New Object() {ID, Classification, LRN, Fullname, Gender, Address}
             rowDt_StudentListRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDt_StudentListRow)
             Return rowDt_StudentListRow
@@ -461,11 +441,9 @@ Partial Public Class DS_StudentList
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
-            Me.columnStudType = MyBase.Columns("StudType")
+            Me.columnClassification = MyBase.Columns("Classification")
             Me.columnLRN = MyBase.Columns("LRN")
-            Me.columnLastname = MyBase.Columns("Lastname")
-            Me.columnFirstname = MyBase.Columns("Firstname")
-            Me.columnMiddleInitial = MyBase.Columns("MiddleInitial")
+            Me.columnFullname = MyBase.Columns("Fullname")
             Me.columnGender = MyBase.Columns("Gender")
             Me.columnAddress = MyBase.Columns("Address")
         End Sub
@@ -475,16 +453,12 @@ Partial Public Class DS_StudentList
         Private Sub InitClass()
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
-            Me.columnStudType = New Global.System.Data.DataColumn("StudType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStudType)
+            Me.columnClassification = New Global.System.Data.DataColumn("Classification", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnClassification)
             Me.columnLRN = New Global.System.Data.DataColumn("LRN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLRN)
-            Me.columnLastname = New Global.System.Data.DataColumn("Lastname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnLastname)
-            Me.columnFirstname = New Global.System.Data.DataColumn("Firstname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFirstname)
-            Me.columnMiddleInitial = New Global.System.Data.DataColumn("MiddleInitial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMiddleInitial)
+            Me.columnFullname = New Global.System.Data.DataColumn("Fullname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFullname)
             Me.columnGender = New Global.System.Data.DataColumn("Gender", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGender)
             Me.columnAddress = New Global.System.Data.DataColumn("Address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -650,16 +624,16 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property StudType() As String
+        Public Property Classification() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_StudentList.StudTypeColumn),String)
+                    Return CType(Me(Me.tableDt_StudentList.ClassificationColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'StudType' in table 'Dt_StudentList' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Classification' in table 'Dt_StudentList' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDt_StudentList.StudTypeColumn) = value
+                Me(Me.tableDt_StudentList.ClassificationColumn) = value
             End Set
         End Property
         
@@ -680,46 +654,16 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Lastname() As String
+        Public Property Fullname() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_StudentList.LastnameColumn),String)
+                    Return CType(Me(Me.tableDt_StudentList.FullnameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Lastname' in table 'Dt_StudentList' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fullname' in table 'Dt_StudentList' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDt_StudentList.LastnameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Firstname() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableDt_StudentList.FirstnameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Firstname' in table 'Dt_StudentList' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDt_StudentList.FirstnameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property MiddleInitial() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableDt_StudentList.MiddleInitialColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'MiddleInitial' in table 'Dt_StudentList' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDt_StudentList.MiddleInitialColumn) = value
+                Me(Me.tableDt_StudentList.FullnameColumn) = value
             End Set
         End Property
         
@@ -767,14 +711,14 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsStudTypeNull() As Boolean
-            Return Me.IsNull(Me.tableDt_StudentList.StudTypeColumn)
+        Public Function IsClassificationNull() As Boolean
+            Return Me.IsNull(Me.tableDt_StudentList.ClassificationColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetStudTypeNull()
-            Me(Me.tableDt_StudentList.StudTypeColumn) = Global.System.Convert.DBNull
+        Public Sub SetClassificationNull()
+            Me(Me.tableDt_StudentList.ClassificationColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -791,38 +735,14 @@ Partial Public Class DS_StudentList
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsLastnameNull() As Boolean
-            Return Me.IsNull(Me.tableDt_StudentList.LastnameColumn)
+        Public Function IsFullnameNull() As Boolean
+            Return Me.IsNull(Me.tableDt_StudentList.FullnameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetLastnameNull()
-            Me(Me.tableDt_StudentList.LastnameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsFirstnameNull() As Boolean
-            Return Me.IsNull(Me.tableDt_StudentList.FirstnameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetFirstnameNull()
-            Me(Me.tableDt_StudentList.FirstnameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsMiddleInitialNull() As Boolean
-            Return Me.IsNull(Me.tableDt_StudentList.MiddleInitialColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetMiddleInitialNull()
-            Me(Me.tableDt_StudentList.MiddleInitialColumn) = Global.System.Convert.DBNull
+        Public Sub SetFullnameNull()
+            Me(Me.tableDt_StudentList.FullnameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

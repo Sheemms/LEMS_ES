@@ -1,4 +1,4 @@
-﻿Public Class frmJHSGrading
+﻿Public Class FrmJHSGrading
     'Private Sub FrmJHSGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
 
     'End Sub

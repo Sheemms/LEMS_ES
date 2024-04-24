@@ -152,10 +152,10 @@
     <Compile Include="Classes\ClassTeacher.vb" />
     <Compile Include="Classes\ClassTuition.vb" />
     <Compile Include="Classes\ClassUserMaintenance.vb" />
-    <Compile Include="CrystalRep\MyReport.vb">
+    <Compile Include="CrystalRep\StudentsReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyReport.rpt</DependentUpon>
+      <DependentUpon>StudentsReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Dataset\DS_Scheule.Designer.vb">
@@ -388,9 +388,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CrystalRep\MyReport.rpt">
+    <EmbeddedResource Include="CrystalRep\StudentsReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MyReport.vb</LastGenOutput>
+      <LastGenOutput>StudentsReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Audit Trail\frmAuditTrail.resx">
       <DependentUpon>frmAuditTrail.vb</DependentUpon>

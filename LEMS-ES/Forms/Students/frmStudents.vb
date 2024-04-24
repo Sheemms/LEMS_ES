@@ -37,7 +37,9 @@ Public Class FrmStudents
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Dim dt = New DataTable("DS_StudentList")
-        Dim adp = New MySqlDataAdapter("SELECT * FROM student", con)
+        Dim adp = New MySqlDataAdapter("SELECT b.Classification, a.LRN, CONCAT(a.Lastname, ', ', a.Firstname, ' ', a.MiddleInitial) Fullname, a.Gender, a.Address
+                                        FROM student a
+                                        JOIN req_classification b ON a.StudType = b.ID", con)
         adp.Fill(dt)
 
         If dt.Rows.Count = 0 Then
@@ -45,7 +47,7 @@ Public Class FrmStudents
             Exit Sub
         End If
 
-        Dim crystal As New MyReport
+        Dim crystal As New StudentsReport
         crystal.SetDataSource(dt)
         FrmReportStudent.CrystalReportViewer1.ReportSource = crystal
         FrmReportStudent.CrystalReportViewer1.Refresh()
