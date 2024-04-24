@@ -10,7 +10,7 @@ Public Class ClassStudents
                 New MySqlParameter("@LRN", frmStudentsView.txtStudNum.Text),
                 New MySqlParameter("@Lastname", frmStudentsView.txtStudLname.Text),
                 New MySqlParameter("@Firstname", frmStudentsView.txtStudFname.Text),
-                New MySqlParameter("@MiddleInitial", frmStudentsView.txtStudMname.Text),
+                New MySqlParameter("@MiddleInitial", frmStudentsView.txtStudMI.Text),
                 New MySqlParameter("@Suffix", frmStudentsView.cmbStudSuffix.Text),
                 New MySqlParameter("@Gender", frmStudentsView.GenderSelection()),
                 New MySqlParameter("@Age", frmStudentsView.txtStudAge.Text),
@@ -49,7 +49,7 @@ Public Class ClassStudents
                         Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
 
                         If isChecked Then
-                            Dim requirementID As Integer = Convert.ToInt32(row.Cells("colID").Value)
+                            Dim requirementID As Integer = Convert.ToInt32(row.Cells("ID").Value)
                             Dim reqParam As MySqlParameter() = {
                             New MySqlParameter("@StudentID", lastInsertedId),
                             New MySqlParameter("@RequirementID", requirementID)
@@ -59,35 +59,6 @@ Public Class ClassStudents
                     Next
 
                     Success("Successfully added!")
-                    frmStudentsView.Close()
-                End If
-            Else
-                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE student SET StudType=@StudType, LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial, Suffix=@Suffix, Gender=@Gender, Age=@Age, 
-                    Birthday=@Birthday, Address=@Address, MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, 
-                    FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName,
-                    GuardianRelation=@GuardianRelation, GuardianContact=@GuardianContact, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
-
-                    For Each row As DataGridViewRow In frmStudentsView.dgvRequirements.Rows
-                        Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
-                        Dim requirementID As Integer = Convert.ToInt32(row.Cells("colID").Value)
-
-                        If isChecked Then
-                            Dim reqParam As MySqlParameter() = {
-                            New MySqlParameter("@StudentID", frmStudentsView.idStud),
-                            New MySqlParameter("@RequirementID", requirementID)
-                        }
-                            Command("INSERT IGNORE INTO submitted_requirements (StudentID, RequirementID) VALUES (@StudentID, @RequirementID)", reqParam)
-                        Else
-                            ' Unchecked requirement, delete from submitted_requirements
-                            Command("DELETE FROM submitted_requirements WHERE StudentID=@StudentID AND RequirementID=@RequirementID", {
-                            New MySqlParameter("@StudentID", frmStudentsView.idStud),
-                            New MySqlParameter("@RequirementID", requirementID)
-                        })
-                        End If
-                    Next
-
-                    Success("Successfully updated!")
                     frmStudentsView.Close()
                 End If
             End If
@@ -110,12 +81,31 @@ Public Class ClassStudents
 
             If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                 Command("UPDATE student SET StudType=@StudType, LRN=@LRN, Lastname=@Lastname, Firstname=@Firstname, MiddleInitial=@MiddleInitial, Suffix=@Suffix, Gender=@Gender, Age=@Age, 
-                            Birthday=@Birthday, Address=@Address, MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, 
-                            FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName, 
-                            GuardianRelation=@GuardianRelation, GuardianContact=@GuardianContact, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
-                Success("Successfully updated!")
-            Else
+                    Birthday=@Birthday, Address=@Address, MotherName=@MotherName, MothersMaiden=@MothersMaiden, Mother_Occupation=@Mother_Occupation, 
+                    FatherName=@FatherName, Father_Occupation=@Father_Occupation, GuardianName=@GuardianName,
+                    GuardianRelation=@GuardianRelation, GuardianContact=@GuardianContact, Citizenship=@Citizenship WHERE ID=@ID", dynamicParams)
 
+                For Each row As DataGridViewRow In frmStudentsView.dgvRequirements.Rows
+                    Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
+                    Dim requirementID As Integer = Convert.ToInt32(row.Cells("ID").Value)
+
+                    If isChecked Then
+                        Dim reqParam As MySqlParameter() = {
+                            New MySqlParameter("@StudentID", frmStudentsView.idStud),
+                            New MySqlParameter("@RequirementID", requirementID)
+                        }
+                        Command("INSERT IGNORE INTO submitted_requirements (StudentID, RequirementID) VALUES (@StudentID, @RequirementID)", reqParam)
+                    Else
+                        ' Unchecked requirement, delete from submitted_requirements
+                        Command("DELETE FROM submitted_requirements WHERE StudentID=@StudentID AND RequirementID=@RequirementID", {
+                            New MySqlParameter("@StudentID", frmStudentsView.idStud),
+                            New MySqlParameter("@RequirementID", requirementID)
+                        })
+                    End If
+                Next
+
+                Success("Successfully updated!")
+                frmStudentsView.Close()
             End If
             frmStudents.loadrecords()
         Catch ex As Exception
