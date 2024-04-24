@@ -1,4 +1,4 @@
-﻿Public Class frmRequirements
+﻿Public Class FrmRequirements
     Public idRequirements As Integer = 0
     Private Sub FrmRequirements_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()

@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class frmStudents
+Public Class FrmStudents
     Private Sub FrmStudents_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()
@@ -32,7 +32,7 @@ Public Class frmStudents
                 MotherName, MothersMaiden, Mother_Occupation, FatherName, Father_Occupation, GuardianName, GuardianContact, Citizenship
                 FROM student WHERE LRN LIKE '{TextSearch.Text}' OR Lastname LIKE '{TextSearch.Text}' OR Firstname LIKE '{TextSearch.Text}'")
         dgvStudents.DataSource = ds.Tables("QueryTb")
-        dgvStudents.autogeneratecolumns = false
+        dgvStudents.AutoGenerateColumns = False
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
@@ -40,10 +40,10 @@ Public Class frmStudents
         Dim adp = New MySqlDataAdapter("SELECT * FROM student", con)
         adp.Fill(dt)
 
-            If dt.Rows.Count = 0 Then
-                MessageBox.Show("No Records")
-                Exit Sub
-            End If
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show("No Records")
+            Exit Sub
+        End If
 
         Dim crystal As New MyReport
         crystal.SetDataSource(dt)

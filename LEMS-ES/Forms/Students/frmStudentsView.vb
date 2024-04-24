@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel
 
-Public Class frmStudentsView
+Public Class FrmStudentsView
     Public idStud As Integer = 0
     Private Sub FrmStudentsView_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
@@ -11,7 +11,7 @@ Public Class frmStudentsView
 
         If ds.Tables("QueryTb").Rows.Count > 0 Then
             With ds.Tables("QueryTb").Rows(0)
-                cmbStudType.SelectedValue = .Item(1) 'Cannot Set the SelectedValue In a ListControl With an empty ValueMember.'
+                cmbStudType.SelectedValue = .Item(1)
                 txtStudLname.Text = .Item(3)
                 txtStudFname.Text = .Item(4)
                 txtStudMI.Text = .Item(5)
@@ -38,7 +38,6 @@ Public Class frmStudentsView
                 txtCitizenship.Text = .Item(19)
             End With
         Else
-            ' Handle the case when no rows are returned (e.g., clear fields or show a message)
             ClearFields(Me, idStud)
         End If
     End Sub
@@ -71,8 +70,6 @@ Public Class frmStudentsView
                 End If
             Next
         Else
-            ' Handle the case where no item is selected in cmbStudType
-            ' For example, you might want to clear dgvRequirements
             dgvRequirements.DataSource = Nothing
         End If
     End Sub
@@ -129,10 +126,6 @@ Public Class frmStudentsView
     End Sub
     Private Sub CmbStudType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStudType.SelectedIndexChanged
         If cmbStudType.SelectedItem IsNot Nothing Then
-            'Dim selectedDataRowView As DataRowView = CType(cmbStudType.SelectedItem, DataRowView)
-            'Dim selectedID As Integer = Convert.ToInt32(selectedDataRowView("ID"))
-
-            'LoadRequirementsByStudType(selectedID)
             LoadRequirements()
         End If
     End Sub

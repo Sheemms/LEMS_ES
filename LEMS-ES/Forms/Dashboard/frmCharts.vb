@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting
 
-Public Class frmCharts
+Public Class FrmCharts
     Private Sub FrmCharts_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         StudentsCount()

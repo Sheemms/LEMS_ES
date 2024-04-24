@@ -1,4 +1,4 @@
-﻿Public Class frmDepartment
+﻿Public Class FrmDepartment
     Public idDept As Integer = 0
     Private Sub FrmDepartment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Connection()
@@ -26,7 +26,7 @@
         End Try
     End Sub
 
-    Private Sub txtDeptName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDeptName.KeyPress
+    Private Sub TxtDeptName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDeptName.KeyPress
         TextBoxOnlyLetters(txtDeptName)
     End Sub
 End Class
