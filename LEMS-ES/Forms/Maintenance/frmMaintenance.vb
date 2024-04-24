@@ -21,7 +21,16 @@ Public Class FrmMaintenance
             .Show()
         End With
     End Sub
-
+    Private Sub ROOMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ROOMToolStripMenuItem.Click
+        MaintenanceRemovePanel()
+        With FrmRoom
+            .TopLevel = False
+            Panel1.Controls.Add(FrmRoom)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
     Private Sub SubjectMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubjectMaintenanceToolStripMenuItem.Click
         MaintenanceRemovePanel()
         With frmSubjects
@@ -96,7 +105,4 @@ Public Class FrmMaintenance
         End With
     End Sub
 
-    Private Sub ROOMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ROOMToolStripMenuItem.Click
-
-    End Sub
 End Class

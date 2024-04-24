@@ -64,8 +64,9 @@ Module ModDisplay
         frmDepartment.Close()
         frmRequirements.Close()
         frmSubjects.Close()
-        frmSections.Close()
-        frmGradeLevel.Close()
+        FrmSections.Close()
+        FrmRoom.Close()
+        FrmGradeLevel.Close()
         frmRequirements.Close()
         frmSY.Close()
         frmTuitionFee.Close()
@@ -134,6 +135,8 @@ Module ModDisplay
             Return Nothing
         End Try
     End Function
+    'I want to lblSY value get
+
     Public Sub GetSchoolYear(ByVal lblSY As Label)
         Try
             Query("SELECT Start_Year, End_Year FROM schoolyear WHERE Status = 'Open'")

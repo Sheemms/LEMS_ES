@@ -283,7 +283,15 @@ Partial Public Class DS_Scheule
     Partial Public Class Dt_ScheduleDataTable
         Inherits Global.System.Data.TypedTableBase(Of Dt_ScheduleRow)
         
-        Private columnID As Global.System.Data.DataColumn
+        Private columnCode As Global.System.Data.DataColumn
+        
+        Private columnDescription As Global.System.Data.DataColumn
+        
+        Private columnDay As Global.System.Data.DataColumn
+        
+        Private columnTime As Global.System.Data.DataColumn
+        
+        Private columnTeacher As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -322,9 +330,41 @@ Partial Public Class DS_Scheule
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CodeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnID
+                Return Me.columnCode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DescriptionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescription
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDay
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property TimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTime
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property TeacherColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTeacher
             End Get
         End Property
         
@@ -365,9 +405,9 @@ Partial Public Class DS_Scheule
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDt_ScheduleRow(ByVal ID As String) As Dt_ScheduleRow
+        Public Overloads Function AddDt_ScheduleRow(ByVal Code As String, ByVal Description As String, ByVal Day As String, ByVal Time As String, ByVal Teacher As String) As Dt_ScheduleRow
             Dim rowDt_ScheduleRow As Dt_ScheduleRow = CType(Me.NewRow,Dt_ScheduleRow)
-            Dim columnValuesArray() As Object = New Object() {ID}
+            Dim columnValuesArray() As Object = New Object() {Code, Description, Day, Time, Teacher}
             rowDt_ScheduleRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDt_ScheduleRow)
             Return rowDt_ScheduleRow
@@ -390,14 +430,26 @@ Partial Public Class DS_Scheule
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnID = MyBase.Columns("ID")
+            Me.columnCode = MyBase.Columns("Code")
+            Me.columnDescription = MyBase.Columns("Description")
+            Me.columnDay = MyBase.Columns("Day")
+            Me.columnTime = MyBase.Columns("Time")
+            Me.columnTeacher = MyBase.Columns("Teacher")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnID)
+            Me.columnCode = New Global.System.Data.DataColumn("Code", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCode)
+            Me.columnDescription = New Global.System.Data.DataColumn("Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescription)
+            Me.columnDay = New Global.System.Data.DataColumn("Day", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDay)
+            Me.columnTime = New Global.System.Data.DataColumn("Time", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTime)
+            Me.columnTeacher = New Global.System.Data.DataColumn("Teacher", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTeacher)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -544,29 +596,137 @@ Partial Public Class DS_Scheule
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ID() As String
+        Public Property Code() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Schedule.IDColumn),String)
+                    Return CType(Me(Me.tableDt_Schedule.CodeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID' in table 'Dt_Schedule' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Code' in table 'Dt_Schedule' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDt_Schedule.IDColumn) = value
+                Me(Me.tableDt_Schedule.CodeColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsIDNull() As Boolean
-            Return Me.IsNull(Me.tableDt_Schedule.IDColumn)
+        Public Property Description() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDt_Schedule.DescriptionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Description' in table 'Dt_Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDt_Schedule.DescriptionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Day() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDt_Schedule.DayColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Day' in table 'Dt_Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDt_Schedule.DayColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Time() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDt_Schedule.TimeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Time' in table 'Dt_Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDt_Schedule.TimeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Teacher() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDt_Schedule.TeacherColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Teacher' in table 'Dt_Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDt_Schedule.TeacherColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCodeNull() As Boolean
+            Return Me.IsNull(Me.tableDt_Schedule.CodeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetIDNull()
-            Me(Me.tableDt_Schedule.IDColumn) = Global.System.Convert.DBNull
+        Public Sub SetCodeNull()
+            Me(Me.tableDt_Schedule.CodeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDescriptionNull() As Boolean
+            Return Me.IsNull(Me.tableDt_Schedule.DescriptionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDescriptionNull()
+            Me(Me.tableDt_Schedule.DescriptionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDayNull() As Boolean
+            Return Me.IsNull(Me.tableDt_Schedule.DayColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDayNull()
+            Me(Me.tableDt_Schedule.DayColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsTimeNull() As Boolean
+            Return Me.IsNull(Me.tableDt_Schedule.TimeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetTimeNull()
+            Me(Me.tableDt_Schedule.TimeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsTeacherNull() As Boolean
+            Return Me.IsNull(Me.tableDt_Schedule.TeacherColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetTeacherNull()
+            Me(Me.tableDt_Schedule.TeacherColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

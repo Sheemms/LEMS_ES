@@ -5,7 +5,9 @@ Public Class FrmSchedule
         Connection()
         LoadRecords()
         LoadDepartment()
-        LoadSubjectAutoComplet()
+        LoadTeacher()
+        LoadRoom()
+        LoadSubject()
         LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
@@ -27,6 +29,30 @@ Public Class FrmSchedule
         cmbDepartment.DataSource = ds.Tables("QueryTb")
         cmbDepartment.ValueMember = "ID"
         cmbDepartment.DisplayMember = "Department"
+    End Sub
+    Public Sub LoadTeacher()
+        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) as Fullname FROM teacher")
+        CmbAdviser.DataSource = ds.Tables("QueryTb")
+        CmbAdviser.ValueMember = "ID"
+        CmbAdviser.DisplayMember = "Fullname"
+        CmbAdviser.SelectedIndex = -1
+        txtAdviserID.Clear()
+    End Sub
+    Public Sub LoadRoom()
+        Query("SELECT * FROM room")
+        CmbRoom.DataSource = ds.Tables("QueryTb")
+        CmbRoom.ValueMember = "ID"
+        CmbRoom.DisplayMember = "Room"
+        CmbRoom.SelectedIndex = -1
+    End Sub
+    Public Sub LoadSubject()
+        Query("SELECT * FROM subject")
+        CmbSubjectCode.DataSource = ds.Tables("QueryTb")
+        CmbSubjectCode.ValueMember = "ID"
+        CmbSubjectCode.DisplayMember = "SubjectCode"
+        CmbSubjectCode.SelectedIndex = -1
+        txtSubjName.Clear()
+        TxtUnits.Clear()
     End Sub
 #End Region
 
@@ -62,7 +88,7 @@ Public Class FrmSchedule
             Return
         End If
 
-        Dim qry As String = $"SELECT ID, SectionRoom, Adviser_ID FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
+        Dim qry As String = $"SELECT ID, SectionRoom FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
         Query(qry)
 
         Dim sectionTable As DataTable = ds.Tables("QueryTb")
@@ -73,65 +99,89 @@ Public Class FrmSchedule
         Else
             cmbSection.DataSource = Nothing
             cmbSection.Items.Clear()
-            txtAdviser.Clear()
+            'txtAdviser.Clear()
         End If
     End Sub
-    Public AdvID = Nothing
-    Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
+    'Public AdvID = Nothing
+    'Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
+    '    Try
+    '        If cmbSection.SelectedIndex <> -1 AndAlso cmbSection.DataSource IsNot Nothing Then
+    '            Dim selectedRow As DataRowView = TryCast(cmbSection.SelectedItem, DataRowView)
+
+    '            Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+
+    '            Dim qry As String = $"SELECT s.SectionRoom, t.EmpID, CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as FullName
+    '                              FROM section s 
+    '                              JOIN teacher t ON s.Adviser_ID = t.ID
+    '                              WHERE s.ID = {selectedSectionID}"
+    '            Query(qry)
+
+    '            If ds.Tables("QueryTb").Rows.Count > 0 Then
+    '                txtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
+    '                txtAdviser.Text = ds.Tables("QueryTb").Rows(0)("FullName").ToString()
+    '                AdvID = ds.Tables("QueryTb").Rows(0)("Adviser_ID").ToString()
+
+    '            Else
+    '                txtAdviserID.Clear()
+    '                txtAdviser.Clear()
+    '            End If
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End Try
+    'End Sub
+    Public idAdv = Nothing
+    Private Sub CmbAdviser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbAdviser.SelectedIndexChanged
         Try
-            If cmbSection.SelectedIndex <> -1 AndAlso cmbSection.DataSource IsNot Nothing Then
-                Dim selectedRow As DataRowView = TryCast(cmbSection.SelectedItem, DataRowView)
+            If CmbAdviser.SelectedIndex <> -1 AndAlso CmbAdviser.DataSource IsNot Nothing Then
+                Dim selectedRow As DataRowView = TryCast(CmbAdviser.SelectedItem, DataRowView)
 
                 Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
 
-                Dim qry As String = $"SELECT s.SectionRoom, t.EmpID, s.Adviser_ID, CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as FullName
-                                  FROM section s 
-                                  JOIN teacher t ON s.Adviser_ID = t.ID
-                                  WHERE s.ID = {selectedSectionID}"
+                Dim qry As String = $"SELECT a.ID, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname, ' ',a.MiddleInitial) as Fullname
+                                  FROM teacher a 
+                                  WHERE a.ID = {selectedSectionID}"
                 Query(qry)
 
                 If ds.Tables("QueryTb").Rows.Count > 0 Then
                     txtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
-                    txtAdviser.Text = ds.Tables("QueryTb").Rows(0)("FullName").ToString()
-                    AdvID = ds.Tables("QueryTb").Rows(0)("Adviser_ID").ToString()
-
+                    idAdv = ds.Tables("QueryTb").Rows(0)("ID").ToString()
                 Else
                     txtAdviserID.Clear()
-                    txtAdviser.Clear()
                 End If
             End If
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Public idSub = Nothing
+    Private Sub CmbSubjectCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSubjectCode.SelectedIndexChanged
+        Try
+            If CmbSubjectCode.SelectedIndex <> -1 AndAlso CmbSubjectCode.DataSource IsNot Nothing Then
+                Dim selectedRow As DataRowView = TryCast(CmbSubjectCode.SelectedItem, DataRowView)
+
+                Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+
+                Dim qry As String = $"SELECT a.ID, b.GradeLevel,  a.SubjectCode, a.SubjectName, a.Units
+                                  FROM subject a 
+                                  JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                                  WHERE a.ID = {selectedSectionID}"
+                Query(qry)
+
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    txtSubjName.Text = ds.Tables("QueryTb").Rows(0)("SubjectName").ToString()
+                    TxtUnits.Text = ds.Tables("QueryTb").Rows(0)("Units")
+                    idSub = ds.Tables("QueryTb").Rows(0)("ID").ToString()
+                Else
+                    txtSubjName.Clear()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
 #Region "Auto Complete/ Populate"
-    Private Sub LoadSubjectAutoComplet()
-        Query("SELECT ID, GradeLevel_ID, SubjectCode, SubjectName, Units FROM subject")
-        Dim autoCompleteCollection As New AutoCompleteStringCollection()
-
-        For Each row As DataRow In ds.Tables("QueryTb").Rows
-            autoCompleteCollection.Add(row("SubjectCode").ToString())
-        Next
-
-        txtSubjCode.AutoCompleteCustomSource = autoCompleteCollection
-        txtSubjCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        txtSubjCode.AutoCompleteSource = AutoCompleteSource.CustomSource
-    End Sub
-    Public subjID = Nothing
-    Private Sub TxtSubjCode_TextChanged(sender As Object, e As EventArgs) Handles txtSubjCode.TextChanged
-        Dim selectedSubjName As String = txtSubjCode.Text.Trim()
-
-        Query("SELECT ID, GradeLevel_ID, SubjectCode, SubjectName, Units FROM subject")
-        Dim row As DataRow = ds.Tables("QueryTb").Select($"SubjectCode = '{selectedSubjName}'").FirstOrDefault()
-
-        If row IsNot Nothing AndAlso row.Table.Columns.Contains("SubjectName") Then
-            txtSubjName.Text = row("SubjectName").ToString()
-            TxtUnits.Text = row("Units").ToString()
-            subjID = row("ID").ToString()
-        Else
-            txtSubjName.Clear()
-        End If
-    End Sub
     Private Sub LoadTeacherAutoComplete()
         Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
         Dim autoCompleteCollection As New AutoCompleteStringCollection()
@@ -216,4 +266,5 @@ Public Class FrmSchedule
             LoadRecords()
         End If
     End Sub
+
 End Class

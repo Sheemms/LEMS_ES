@@ -41,4 +41,77 @@ Public Class ClassEnroll
         End Try
     End Sub
 #End Region
+
+#Region "EnrollSubject"
+    Public Shared Function GetSchoolYearID() As Integer
+        Try
+            Query("SELECT ID FROM schoolyear WHERE Status = 'Open'")
+
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                Dim schoolYearID As Integer = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
+                Return schoolYearID
+            Else
+                Return -1 
+            End If
+        Catch ex As Exception
+            MsgBox("Error getting school year ID: " & ex.Message)
+            Return -1
+        End Try
+    End Function
+
+    Public Shared Function EnrollSubjParameters() As MySqlParameter()
+        Try
+            Dim schoolYearID As Integer = GetSchoolYearID()
+            Dim scheduleID As Integer = -1
+
+            If FrmEnrollmentRegistration.DgvSubjectList IsNot Nothing AndAlso FrmEnrollmentRegistration.DgvSubjectList.SelectedRows.Count > 0 Then
+                scheduleID = Convert.ToInt32(FrmEnrollmentRegistration.DgvSubjectList.SelectedRows(0).Cells(0).Value)
+            End If
+            If schoolYearID <> -1 Then
+                Dim enrollsubjParam() As MySqlParameter = {
+                New MySqlParameter("@ID", FrmEnrollmentRegistration.EnrollSubjID),
+                New MySqlParameter("@SYID", schoolYearID),
+                New MySqlParameter("@EID", FrmEnrollmentRegistration.LabelEID.Text),
+                New MySqlParameter("@ScheduleID", scheduleID)
+            }
+                Return enrollsubjParam
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Public Shared Sub EnrollSubjRef()
+        Try
+            Dim dynamicParams As MySqlParameter() = EnrollSubjParameters()
+
+            ' Check if dynamicParams is not Nothing
+            If dynamicParams IsNot Nothing Then
+                If FrmEnrollmentRegistration.EnrollSubjID = 0 Then
+                    If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+                        Command("INSERT INTO enrolled_sched(SYID, EID, ScheduleID) 
+                                VALUES (@SYID, @EID, @ScheduleID)", dynamicParams)
+                        Success("Successfully Added!")
+                    End If
+                Else
+                    If MsgBox("Do u want to update it?", vbQuestion + vbYesNo) = vbYes Then
+                        Command("UPDATE enrolled_sched SET SYID=@SYID, EID=@EID, ScheduleID=@ScheduleID WHERE ID=@ID", dynamicParams)
+                        Success("Successfully Updated!")
+                    End If
+                End If
+                FrmEnrollmentRegistration.LoadSubjectEnrolled()
+            Else
+                MsgBox("Error: dynamicParams is Nothing")
+            End If
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("Subject already enrolled.")
+            Exit Sub
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+#End Region
 End Class

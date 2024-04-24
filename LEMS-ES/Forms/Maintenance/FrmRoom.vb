@@ -8,6 +8,11 @@
         Query("SELECT * FROM room")
         DgvRoom.DataSource = ds.Tables("QueryTb")
     End Sub
+    Public Sub Clear()
+        TxtRoom.Clear()
+        TxtCapacity.Clear()
+        idRoom = 0
+    End Sub
     Private Sub DgvRoom_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvRoom.CellClick
         Try
             If e.RowIndex >= 0 Then
@@ -29,6 +34,6 @@
         If IS_EMPTY(TxtRoom) = True Then Return
 
         ClassRoom.RoomRef()
-        ClearFields(Me, idRoom)
+        Clear()
     End Sub
 End Class

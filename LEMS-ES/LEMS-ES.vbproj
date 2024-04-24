@@ -152,6 +152,12 @@
     <Compile Include="Classes\ClassTeacher.vb" />
     <Compile Include="Classes\ClassTuition.vb" />
     <Compile Include="Classes\ClassUserMaintenance.vb" />
+    <Compile Include="CrystalRep\ScheduleReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalRep\StudentsReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -388,6 +394,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalRep\ScheduleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ScheduleReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalRep\StudentsReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StudentsReport.vb</LastGenOutput>
