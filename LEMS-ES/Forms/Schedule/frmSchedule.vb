@@ -13,10 +13,11 @@ Public Class FrmSchedule
     End Sub
 #Region "Loads"
     Public Sub LoadRecords()
-        Query($"SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, sub.SubjectCode, sub.SubjectName,
+        Query($"SELECT sc.ID, CONCAT(sy.Start_Year, '-',sy.End_Year)SchoolYear, dpt.Department, sec.SectionRoom, sc.Room, sub.SubjectCode, sub.SubjectName,
                 CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sc.Days, 
                 CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-',TIME_FORMAT(Time_To, '%H:%i')) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
                FROM schedule sc
+               JOIN schoolyear sy ON sc.SYID = sy.ID
                JOIN section sec ON sc.Sec_ID = sec.ID
                JOIN teacher t ON sc.Adviser_ID = t.ID
                JOIN subject sub ON sc.Subj_ID = sub.ID

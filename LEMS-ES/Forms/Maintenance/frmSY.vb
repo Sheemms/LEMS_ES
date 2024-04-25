@@ -5,7 +5,7 @@
         Loadrecords()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT * FROM schoolyear ORDER BY ID DESC ")
+        Query("SELECT ID, CONCAT(Start_Year, '-', End_Year) SchoolYear, Status FROM schoolyear ORDER BY ID DESC ")
         DgvSY.DataSource = ds.Tables("QueryTb")
         txtStartYear.Text = Year(Now)
     End Sub
@@ -14,8 +14,10 @@
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = DgvSY.Rows(e.RowIndex)
                 idSY = row.Cells(0).Value
-                txtStartYear.Text = row.Cells(1).Value
-                txtEndYear.Text = row.Cells(2).Value
+                Dim schoolYear As String = row.Cells(1).Value.ToString() ' Get the concatenated string
+                Dim years() As String = schoolYear.Split("-"c) ' Split the concatenated string
+                txtStartYear.Text = years(0) ' Set the start year
+                txtEndYear.Text = years(1) ' Set the end year
             ElseIf e.ColumnIndex >= 0 Then
                 ClearFields(Me, idSY)
             End If
@@ -26,8 +28,20 @@
     End Sub
 
 
+
     Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
         If IS_EMPTY(txtEndYear) = True Then Return
+        Dim endYear As Integer
+        If Not Integer.TryParse(txtEndYear.Text, endYear) Then
+            MessageBox.Show("Invalid end year.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim currentYear As Integer = Year(Now)
+        If endYear < currentYear OrElse endYear > currentYear + 1 Then
+            MessageBox.Show("End year should be between " & currentYear & " and " & (currentYear + 1) & ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
 
         ClassSchoolYear.SchoolYearRef()
         ClearFields(Me, idSY)

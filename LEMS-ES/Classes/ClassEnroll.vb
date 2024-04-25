@@ -43,21 +43,6 @@ Public Class ClassEnroll
 #End Region
 
 #Region "EnrollSubject"
-    Public Shared Function GetSchoolYearID() As Integer
-        Try
-            Query("SELECT ID FROM schoolyear WHERE Status = 'Open'")
-
-            If ds.Tables("QueryTb").Rows.Count > 0 Then
-                Dim schoolYearID As Integer = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
-                Return schoolYearID
-            Else
-                Return -1 
-            End If
-        Catch ex As Exception
-            MsgBox("Error getting school year ID: " & ex.Message)
-            Return -1
-        End Try
-    End Function
 
     Public Shared Function EnrollSubjParameters() As MySqlParameter()
         Try

@@ -34,12 +34,11 @@ Partial Class FrmSY
         Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
         Me.txtStartYear = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgvSY, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +90,7 @@ Partial Class FrmSY
         Me.DgvSY.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvSY.ColumnHeadersHeight = 44
         Me.DgvSY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.DgvSY.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -219,40 +218,6 @@ Partial Class FrmSY
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Start Year"
         '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.DataPropertyName = "Start_Year"
-        Me.Column2.HeaderText = "School Year"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 99
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "End_Year"
-        Me.Column3.HeaderText = ""
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 19
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.DataPropertyName = "Status"
-        Me.Column4.HeaderText = "Status"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -268,6 +233,31 @@ Partial Class FrmSY
         Me.DataGridViewImageColumn2.Image = Global.LEMS_ES.My.Resources.Resources.close
         Me.DataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
         Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.DataPropertyName = "SchoolYear"
+        Me.Column2.HeaderText = "School Year"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 99
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.DataPropertyName = "Status"
+        Me.Column4.HeaderText = "Status"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
         '
         'FrmSY
         '
@@ -301,6 +291,5 @@ Partial Class FrmSY
     Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class
