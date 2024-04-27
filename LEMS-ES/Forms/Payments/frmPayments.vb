@@ -83,7 +83,6 @@
         If IS_EMPTY(txtMiscellaneous) Then Return
         If IS_EMPTY(cmbOtherFee) Then Return
         If IS_EMPTY(cmbModeofPayment) Then Return
-        If IS_EMPTY(TxtChanges) Then Return
 #End Region
         ClassPayments.PaymentsRef()
         ClearFields(Me, idPayment)
