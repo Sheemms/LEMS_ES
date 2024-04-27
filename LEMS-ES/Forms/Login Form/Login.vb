@@ -37,11 +37,12 @@
                     userID = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
                     Success("Login success!")
                     frmDashboard.Show()
-                    clear()
+                    Clear()
                     'LogAction("Logged in")
                     Me.Hide()
                     Exit Sub
                 Else
+                    Clear()
                     Critical("Wrong Username or Password!")
                 End If
 
@@ -60,9 +61,11 @@
                 'End While
                 'dr.Close()
             Else
+                Clear()
                 Critical("Error Login cannot be Null or Empty")
             End If
         Catch ex As Exception
+            Clear()
             MsgBox("You are not connected to the database, Please connect first!")
         End Try
     End Sub

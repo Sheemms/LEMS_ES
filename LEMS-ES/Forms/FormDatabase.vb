@@ -18,6 +18,12 @@
             If con.State = ConnectionState.Closed Then
                 con.Open()
                 MsgBox("You are successfully connected")
+                txtdatabase.Clear()
+                txtIPAdd.Clear()
+                txtUsername.Clear()
+                txtPassword.Clear()
+                Me.Close()
+                Login.Show()
             End If
         Catch ex As Exception
             MsgBox("Unable to Connect")

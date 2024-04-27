@@ -231,7 +231,7 @@ Public Class FrmSchedule
     End Function
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
-        Query($"SELECT sc.ID, sc.SY_Code, dpt.Department, sec.SectionRoom, sc.Room, 
+        Query($"SELECT sc.ID, sc.SYID, dpt.Department, sec.SectionRoom, sc.Room, 
                 CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sub.SubjectCode, sc.Days, 
                 CONCAT(sc.Time_From, '-', sc.Time_To) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
                FROM schedule sc
