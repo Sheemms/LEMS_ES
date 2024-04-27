@@ -9,7 +9,8 @@
                 FROM enrollment a
                 JOIN student b ON a.LRN = b.LRN 
                 JOIN section c ON a.SectionID = c.ID
-                JOIN gradelevel d ON a.GradeLevel_ID = d.ID")
+                JOIN gradelevel d ON a.GradeLevel_ID = d.ID
+                WHERE a.Status = 'Enrolled'")
         dgvBilling.AutoGenerateColumns = False
         dgvBilling.DataSource = ds.Tables("QueryTb")
     End Sub
@@ -80,6 +81,6 @@
     End Sub
 
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        FrmFee.Show()
+        frmPayments.Show()
     End Sub
 End Class

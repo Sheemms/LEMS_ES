@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmCharts
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FrmCharts
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,14 @@ Partial Class frmCharts
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblStud = New System.Windows.Forms.Label()
@@ -52,7 +51,13 @@ Partial Class frmCharts
         Me.lblSY = New System.Windows.Forms.Label()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox6 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Panel2.SuspendLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -65,23 +70,12 @@ Partial Class frmCharts
         CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
+        CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Chart1
-        '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(12, 205)
-        Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(652, 302)
-        Me.Chart1.TabIndex = 9
-        Me.Chart1.Text = "Chart1"
         '
         'Label2
         '
@@ -374,12 +368,100 @@ Partial Class frmCharts
         Me.Guna2CirclePictureBox2.TabIndex = 20
         Me.Guna2CirclePictureBox2.TabStop = False
         '
-        'frmCharts
+        'Chart1
+        '
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(12, 205)
+        Me.Chart1.Name = "Chart1"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(652, 302)
+        Me.Chart1.TabIndex = 9
+        Me.Chart1.Text = "Chart1"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label3)
+        Me.GroupBox5.Controls.Add(Me.Guna2PictureBox5)
+        Me.GroupBox5.Location = New System.Drawing.Point(696, 205)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(201, 110)
+        Me.GroupBox5.TabIndex = 16
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Total Subjects"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Georgia", 18.0!)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label3.Location = New System.Drawing.Point(113, 39)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 29)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "0,000"
+        '
+        'Guna2PictureBox5
+        '
+        Me.Guna2PictureBox5.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox5.Image = Global.LEMS_ES.My.Resources.Resources.subject
+        Me.Guna2PictureBox5.ImageRotate = 0!
+        Me.Guna2PictureBox5.Location = New System.Drawing.Point(6, 19)
+        Me.Guna2PictureBox5.Name = "Guna2PictureBox5"
+        Me.Guna2PictureBox5.Size = New System.Drawing.Size(101, 91)
+        Me.Guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox5.TabIndex = 0
+        Me.Guna2PictureBox5.TabStop = False
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.Label5)
+        Me.GroupBox6.Controls.Add(Me.Guna2PictureBox6)
+        Me.GroupBox6.Location = New System.Drawing.Point(696, 347)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(201, 110)
+        Me.GroupBox6.TabIndex = 17
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Total Subjects"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Georgia", 18.0!)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label5.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label5.Location = New System.Drawing.Point(113, 39)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(79, 29)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "0,000"
+        '
+        'Guna2PictureBox6
+        '
+        Me.Guna2PictureBox6.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox6.Image = Global.LEMS_ES.My.Resources.Resources.subject
+        Me.Guna2PictureBox6.ImageRotate = 0!
+        Me.Guna2PictureBox6.Location = New System.Drawing.Point(6, 19)
+        Me.Guna2PictureBox6.Name = "Guna2PictureBox6"
+        Me.Guna2PictureBox6.Size = New System.Drawing.Size(101, 91)
+        Me.Guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox6.TabIndex = 0
+        Me.Guna2PictureBox6.TabStop = False
+        '
+        'FrmCharts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1386, 711)
+        Me.ClientSize = New System.Drawing.Size(1166, 711)
+        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Guna2CirclePictureBox2)
         Me.Controls.Add(Me.Guna2CirclePictureBox1)
         Me.Controls.Add(Me.lblSY)
@@ -393,9 +475,8 @@ Partial Class frmCharts
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmCharts"
+        Me.Name = "FrmCharts"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -413,12 +494,17 @@ Partial Class frmCharts
         CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lblStud As Label
@@ -442,4 +528,11 @@ Partial Class frmCharts
     Friend WithEvents lblSY As Label
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Guna2PictureBox5 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Guna2PictureBox6 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

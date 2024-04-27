@@ -14,10 +14,10 @@
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = DgvSY.Rows(e.RowIndex)
                 idSY = row.Cells(0).Value
-                Dim schoolYear As String = row.Cells(1).Value.ToString() ' Get the concatenated string
-                Dim years() As String = schoolYear.Split("-"c) ' Split the concatenated string
-                txtStartYear.Text = years(0) ' Set the start year
-                txtEndYear.Text = years(1) ' Set the end year
+                Dim schoolYear As String = row.Cells(1).Value.ToString()
+                Dim years() As String = schoolYear.Split("-"c)
+                txtStartYear.Text = years(0)
+                txtEndYear.Text = years(1)
             ElseIf e.ColumnIndex >= 0 Then
                 ClearFields(Me, idSY)
             End If

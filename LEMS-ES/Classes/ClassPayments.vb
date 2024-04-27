@@ -8,9 +8,10 @@ Public Class ClassPayments
                 New MySqlParameter("@ORNo", frmPayments.LabelORNO.Text),
                 New MySqlParameter("@EnrollmentID", frmPayments.LabelEID.Text),
                 New MySqlParameter("@LRN", frmPayments.txtLRN.Text),
-                New MySqlParameter("@Mode", frmPayments.cmbModeofPayment.SelectedValue),
                 New MySqlParameter("@Tuition", frmPayments.txtTuition.Text),
                 New MySqlParameter("@Miscellaneous", frmPayments.txtMiscellaneous.Text),
+                New MySqlParameter("@Mode", frmPayments.cmbModeofPayment.SelectedItem),
+                New MySqlParameter("@Terms", frmPayments.Guna2NumericUpDown1.Text),
                 New MySqlParameter("@EncodedBy", frmDashboard.Label3.Text)
             }
             Return RequirementsParam
@@ -32,8 +33,8 @@ Public Class ClassPayments
                             OtherCommand("Insert into feeor(ORID,OFID)VALUES('" & frmPayments.LabelORNO.Text & "', '" & ofid & "')")
                         End If
                     Next
-                    Command("INSERT INTO payment(ORNo, EnrollmentID, LRN, Mode, Tuition, Miscellaneous, EncodedBy) 
-                        VALUES (@ORNo, @EnrollmentID, @LRN, @Mode, @Tuition, @Miscellaneous, @EncodedBy)", dynamicParams)
+                    Command("INSERT INTO payment(ORNo, EnrollmentID, LRN, Tuition, Miscellaneous, Mode, Terms, EncodedBy) 
+                        VALUES (@ORNo, @EnrollmentID, @LRN, @Tuition, @Miscellaneous, @Mode, @Terms, @EncodedBy)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else

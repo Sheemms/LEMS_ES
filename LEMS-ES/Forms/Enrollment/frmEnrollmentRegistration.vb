@@ -3,6 +3,7 @@
 Public Class FrmEnrollmentRegistration
     Public EnrollmentID As Integer = 0
     Public EnrollSubjID As Integer = 0
+    Public scheduleID As Integer = 0
     Public _subjectno, _title, _unit, _pre As String
     Public _id, _sub As String
     Private Sub FrmEnrollmentRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -145,10 +146,19 @@ Public Class FrmEnrollmentRegistration
     End Sub
 #End Region
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        ClassEnroll.EnrollSubjRef()
+        If DgvSubjectList IsNot Nothing AndAlso DgvSubjectList.SelectedRows.Count > 0 Then
+            scheduleID = Convert.ToInt32(DgvSubjectList.SelectedRows(0).Cells(0).Value)
+            ClassEnroll.EnrollSubjRef()
+        End If
+        ClearFields(Me, scheduleID)
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
-
+        If DgvEnrolledSubjects IsNot Nothing AndAlso DgvEnrolledSubjects.SelectedRows.Count > 0 Then
+            EnrollSubjID = Convert.ToInt32(DgvEnrolledSubjects.SelectedRows(0).Cells(0).Value)
+            MsgBox(EnrollSubjID)
+            ClassEnroll.RemoveSubjRef()
+            ClearFields(Me, EnrollSubjID)
+        End If
     End Sub
 End Class
