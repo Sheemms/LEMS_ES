@@ -24,6 +24,12 @@ Public Class FrmSchedule
                JOIN department dpt ON sc.Department_ID = dpt.ID
                JOIN teacher tr ON sc.Teacher_ID = tr.ID	")
         dgvSchedule.DataSource = ds.Tables("QueryTb")
+
+        Query("SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ', ', a.Firstname) Teacher
+                FROM teacher a
+                JOIN department b ON a.Department_ID = b.ID")
+        DgvTeacher.AutoGenerateColumns = False
+        DgvTeacher.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub LoadDepartment()
         Query("SELECT * FROM department")
@@ -231,10 +237,11 @@ Public Class FrmSchedule
     End Function
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
-        Query($"SELECT sc.ID, sc.SYID, dpt.Department, sec.SectionRoom, sc.Room, 
-                CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sub.SubjectCode, sc.Days, 
-                CONCAT(sc.Time_From, '-', sc.Time_To) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
+        Query($"SELECT sc.ID, CONCAT(sy.Start_Year, '-',sy.End_Year)SchoolYear, dpt.Department, sec.SectionRoom, sc.Room, sub.SubjectCode, sub.SubjectName,
+                CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sc.Days, 
+                CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-',TIME_FORMAT(Time_To, '%H:%i')) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
                FROM schedule sc
+               JOIN schoolyear sy ON sc.SYID = sy.ID
                JOIN section sec ON sc.Sec_ID = sec.ID
                JOIN teacher t ON sc.Adviser_ID = t.ID
                JOIN subject sub ON sc.Subj_ID = sub.ID
@@ -268,4 +275,34 @@ Public Class FrmSchedule
         End If
     End Sub
 
+    Private Sub DgvTeacher_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvTeacher.CellContentClick
+        Dim column As String = DgvTeacher.Columns(e.ColumnIndex).Name
+
+        If column = "colPrint" AndAlso e.RowIndex >= 0 Then
+            Dim teacherID As String = DgvTeacher.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Dim dt = New DataTable("DS_Schedule")
+            Dim adp = New MySqlDataAdapter("SELECT CONCAT(b.Start_Year, '-', b.End_Year) SY, d.GradeLevel as Grade, e.SectionRoom as Section, c.SubjectCode as Code, 
+                                            c.SubjectName as Subject, f.Room, a.Days, CONCAT(a.Time_From, '-',a.Time_To) Time, CONCAT(g.Lastname, ', ',g.Firstname) Teacher
+                                            FROM schedule a 
+                                            JOIN schoolyear b ON a.SYID = b.ID
+                                            JOIN subject c ON a.Subj_ID = c.ID
+                                            JOIN gradelevel d ON a.GradeLevel_ID = d.ID
+                                            JOIN section e ON a.Sec_ID = e.ID
+                                            JOIN room f ON a.Room = f.ID
+                                            JOIN teacher g ON a.Teacher_ID = g.ID
+                                            WHERE a.Teacher_ID = " & teacherID, con)
+            adp.Fill(dt)
+
+            If dt.Rows.Count = 0 Then
+                MessageBox.Show("No Schedule")
+                Exit Sub
+            End If
+
+            Dim crystal As New ScheduleReport
+            crystal.SetDataSource(dt)
+            FrmScheduleReport.CrystalReportViewer1.ReportSource = crystal
+            FrmScheduleReport.CrystalReportViewer1.Refresh()
+            FrmScheduleReport.Show()
+        End If
+    End Sub
 End Class

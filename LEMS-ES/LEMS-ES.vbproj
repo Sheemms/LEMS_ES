@@ -412,6 +412,12 @@
     <Compile Include="Forms\Payments\frmPayments.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\Scheduling\FrmScheduleReport.Designer.vb">
+      <DependentUpon>FrmScheduleReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Scheduling\FrmScheduleReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CrystalRep\RegForm.rpt">
@@ -530,6 +536,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payments\frmPayments.resx">
       <DependentUpon>frmPayments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Scheduling\FrmScheduleReport.resx">
+      <DependentUpon>FrmScheduleReport.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -695,9 +704,7 @@
   <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\Scheduling\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

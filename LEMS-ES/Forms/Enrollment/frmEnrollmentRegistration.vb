@@ -30,12 +30,13 @@ Public Class FrmEnrollmentRegistration
         'End If
     End Sub
     Public Sub LoadSub()
-        Query($"SELECT  a.ID, d.SubjectCode, d.SubjectName, CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, a.Days, CONCAT(e.Lastname, ' ',e.Firstname) Teacher
+        Query($"SELECT  a.ID, CONCAT(f.Start_Year, '-',f.End_Year) SY, d.SubjectCode, d.SubjectName, CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, a.Days, CONCAT(e.Lastname, ' ',e.Firstname) Teacher
                                 FROM schedule a
                                 JOIN gradelevel b ON a.GradeLevel_ID = b.ID
                                 JOIN section c ON a.Sec_ID = c.ID
                                 JOIN subject d ON a.Subj_ID = d.ID
                                 JOIN teacher e ON a.Teacher_ID = e.ID
+                                JOIN schoolyear f ON a.SYID = f.ID
                                 WHERE a.GradeLevel_ID LIKE '{CmbGradeLevel.SelectedValue}'")
         DgvSubjectList.DataSource = ds.Tables("QueryTb")
     End Sub

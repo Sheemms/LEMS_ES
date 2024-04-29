@@ -25,6 +25,9 @@ Partial Class FrmSchedule
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CmbRoom = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -32,8 +35,6 @@ Partial Class FrmSchedule
         Me.CmbSubjectCode = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtendTime = New System.Windows.Forms.MaskedTextBox()
         Me.txtstartTime = New System.Windows.Forms.MaskedTextBox()
-        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.searchBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvSchedule = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -49,7 +50,15 @@ Partial Class FrmSchedule
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.DgvTeacher = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPrint = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.TxtUnits = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -80,12 +89,18 @@ Partial Class FrmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.SearchBtn = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
+        Me.ToolStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -108,8 +123,6 @@ Partial Class FrmSchedule
         Me.Panel1.Controls.Add(Me.CmbSubjectCode)
         Me.Panel1.Controls.Add(Me.txtendTime)
         Me.Panel1.Controls.Add(Me.txtstartTime)
-        Me.Panel1.Controls.Add(Me.TxtSearch)
-        Me.Panel1.Controls.Add(Me.searchBtn)
         Me.Panel1.Controls.Add(Me.TabControl1)
         Me.Panel1.Controls.Add(Me.TxtUnits)
         Me.Panel1.Controls.Add(Me.Label15)
@@ -211,45 +224,6 @@ Partial Class FrmSchedule
         Me.txtstartTime.Size = New System.Drawing.Size(100, 36)
         Me.txtstartTime.TabIndex = 50
         '
-        'TxtSearch
-        '
-        Me.TxtSearch.Animated = True
-        Me.TxtSearch.AutoRoundedCorners = True
-        Me.TxtSearch.BorderRadius = 17
-        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtSearch.DefaultText = ""
-        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.FillColor = System.Drawing.Color.LemonChiffon
-        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtSearch.ForeColor = System.Drawing.Color.Black
-        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtSearch.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
-        Me.TxtSearch.Location = New System.Drawing.Point(741, 607)
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtSearch.PlaceholderText = ""
-        Me.TxtSearch.SelectedText = ""
-        Me.TxtSearch.Size = New System.Drawing.Size(247, 36)
-        Me.TxtSearch.TabIndex = 49
-        '
-        'searchBtn
-        '
-        Me.searchBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.searchBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.searchBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.searchBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.searchBtn.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBtn.ForeColor = System.Drawing.Color.White
-        Me.searchBtn.Location = New System.Drawing.Point(661, 607)
-        Me.searchBtn.Name = "searchBtn"
-        Me.searchBtn.Size = New System.Drawing.Size(78, 36)
-        Me.searchBtn.TabIndex = 48
-        Me.searchBtn.Text = "Search"
-        '
         'TabControl1
         '
         Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -260,16 +234,17 @@ Partial Class FrmSchedule
         Me.TabControl1.Location = New System.Drawing.Point(42, 229)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(950, 379)
+        Me.TabControl1.Size = New System.Drawing.Size(950, 418)
         Me.TabControl1.TabIndex = 46
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.dgvSchedule)
+        Me.TabPage1.Controls.Add(Me.ToolStrip2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(942, 352)
+        Me.TabPage1.Size = New System.Drawing.Size(942, 391)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Lists"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -304,12 +279,12 @@ Partial Class FrmSchedule
         Me.dgvSchedule.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvSchedule.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSchedule.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSchedule.Location = New System.Drawing.Point(3, 3)
+        Me.dgvSchedule.Location = New System.Drawing.Point(3, 28)
         Me.dgvSchedule.MultiSelect = False
         Me.dgvSchedule.Name = "dgvSchedule"
         Me.dgvSchedule.ReadOnly = True
         Me.dgvSchedule.RowHeadersVisible = False
-        Me.dgvSchedule.Size = New System.Drawing.Size(936, 346)
+        Me.dgvSchedule.Size = New System.Drawing.Size(936, 360)
         Me.dgvSchedule.TabIndex = 29
         Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -427,25 +402,144 @@ Partial Class FrmSchedule
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.CrystalReportViewer1)
+        Me.TabPage2.Controls.Add(Me.DgvTeacher)
+        Me.TabPage2.Controls.Add(Me.ToolStrip1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(942, 352)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Print Preview"
+        Me.TabPage2.Text = "Schedule"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'CrystalReportViewer1
+        'DgvTeacher
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 3)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(936, 346)
-        Me.CrystalReportViewer1.TabIndex = 0
+        Me.DgvTeacher.AllowUserToAddRows = False
+        Me.DgvTeacher.AllowUserToDeleteRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgvTeacher.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DgvTeacher.BackgroundColor = System.Drawing.Color.DimGray
+        Me.DgvTeacher.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.DgvTeacher.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DgvTeacher.ColumnHeadersHeight = 44
+        Me.DgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvTeacher.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn11, Me.colPrint})
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvTeacher.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DgvTeacher.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvTeacher.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTeacher.Location = New System.Drawing.Point(3, 28)
+        Me.DgvTeacher.MultiSelect = False
+        Me.DgvTeacher.Name = "DgvTeacher"
+        Me.DgvTeacher.ReadOnly = True
+        Me.DgvTeacher.RowHeadersVisible = False
+        Me.DgvTeacher.Size = New System.Drawing.Size(936, 321)
+        Me.DgvTeacher.TabIndex = 30
+        Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgvTeacher.ThemeStyle.BackColor = System.Drawing.Color.DimGray
+        Me.DgvTeacher.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTeacher.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.White
+        Me.DgvTeacher.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
+        Me.DgvTeacher.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvTeacher.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgvTeacher.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvTeacher.ThemeStyle.HeaderStyle.Height = 44
+        Me.DgvTeacher.ThemeStyle.ReadOnly = True
+        Me.DgvTeacher.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvTeacher.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.DgvTeacher.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvTeacher.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvTeacher.ThemeStyle.RowsStyle.Height = 22
+        Me.DgvTeacher.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvTeacher.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Department"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Department"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 102
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "EmpID"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Teacher ID"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 87
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Teacher"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Teacher"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        '
+        'colPrint
+        '
+        Me.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colPrint.HeaderText = ""
+        Me.colPrint.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.colPrint.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colPrint.Name = "colPrint"
+        Me.colPrint.ReadOnly = True
+        Me.colPrint.Width = 5
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.ToolStripButton1})
+        Me.ToolStrip1.Location = New System.Drawing.Point(3, 3)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(936, 25)
+        Me.ToolStrip1.TabIndex = 0
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'TxtUnits
         '
@@ -500,7 +594,7 @@ Partial Class FrmSchedule
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(832, 653)
+        Me.btnSave.Location = New System.Drawing.Point(839, 653)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(153, 36)
         Me.btnSave.TabIndex = 40
@@ -827,6 +921,32 @@ Partial Class FrmSchedule
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'ToolStrip2
+        '
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.SearchBtn})
+        Me.ToolStrip2.Location = New System.Drawing.Point(3, 3)
+        Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolStrip2.Size = New System.Drawing.Size(936, 25)
+        Me.ToolStrip2.TabIndex = 30
+        Me.ToolStrip2.Text = "ToolStrip2"
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(200, 25)
+        '
+        'SearchBtn
+        '
+        Me.SearchBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.SearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.SearchBtn.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.Size = New System.Drawing.Size(23, 22)
+        Me.SearchBtn.Text = "ToolStripButton1"
+        '
         'FrmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -842,8 +962,15 @@ Partial Class FrmSchedule
         Me.Panel1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
+        Me.ToolStrip2.ResumeLayout(False)
+        Me.ToolStrip2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -883,10 +1010,6 @@ Partial Class FrmSchedule
     Friend WithEvents Label15 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents searchBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtendTime As MaskedTextBox
     Friend WithEvents txtstartTime As MaskedTextBox
     Friend WithEvents CmbSubjectCode As Guna.UI2.WinForms.Guna2ComboBox
@@ -903,4 +1026,17 @@ Partial Class FrmSchedule
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents DgvTeacher As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents colPrint As DataGridViewImageColumn
+    Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents TxtSearch As ToolStripTextBox
+    Friend WithEvents SearchBtn As ToolStripButton
 End Class
