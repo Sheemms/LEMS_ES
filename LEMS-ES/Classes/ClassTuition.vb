@@ -38,8 +38,8 @@ Public Class ClassTuition
     Public Shared Function MiscellaneousParameters() As MySqlParameter()
         Try
             Dim miscellaneousParam() As MySqlParameter = {
-                    New MySqlParameter("@ID", frmTuitionFee.idMiscellaneous),
-                    New MySqlParameter("@M_Amount", frmTuitionFee.txtAmountMiscellaneous.Text)
+                    New MySqlParameter("@ID", FrmTuitionFee.idMiscellaneous),
+                    New MySqlParameter("@Amount", FrmTuitionFee.txtAmountMiscellaneous.Text)
                     }
             Return miscellaneousParam
         Catch ex As Exception
@@ -52,12 +52,12 @@ Public Class ClassTuition
 
             If existingCount = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO miscellaneous(M_Amount) VALUES (@M_Amount)", MiscellaneousParameters())
+                    Command("INSERT INTO miscellaneous(Amount) VALUES (@Amount)", MiscellaneousParameters())
                     Success("Successfully added!")
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE miscellaneous SET M_Amount=@M_Amount", MiscellaneousParameters())
+                    Command("UPDATE miscellaneous SET Amount=@Amount", MiscellaneousParameters())
                     Success("Successfully updated!")
                 End If
             End If
@@ -72,9 +72,9 @@ Public Class ClassTuition
     Public Shared Function OtherFeeParameters() As MySqlParameter()
         Try
             Dim OtherFeeParam() As MySqlParameter = {
-                    New MySqlParameter("@ID", frmTuitionFee.idOtherFee),
-                    New MySqlParameter("@Description", frmTuitionFee.txtOtherFeeDesc.Text),
-                    New MySqlParameter("@OF_Amount", frmTuitionFee.txtAmountOtherFee.Text)
+                    New MySqlParameter("@ID", FrmTuitionFee.idOtherFee),
+                    New MySqlParameter("@Description", FrmTuitionFee.txtOtherFeeDesc.Text),
+                    New MySqlParameter("@Amount", FrmTuitionFee.txtAmountOtherFee.Text)
                     }
             Return OtherFeeParam
         Catch ex As Exception
@@ -87,7 +87,7 @@ Public Class ClassTuition
 
             If frmTuitionFee.idOtherFee = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO otherfee(Description, OF_Amount) VALUES (@Description, @OF_Amount)", OtherFeeParameters())
+                    Command("INSERT INTO otherfee(Description, Amount) VALUES (@Description, @Amount)", OtherFeeParameters())
                     Success("Successfully Added!")
                 End If
             Else

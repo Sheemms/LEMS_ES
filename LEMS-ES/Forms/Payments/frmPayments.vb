@@ -73,10 +73,10 @@
         If isAlreadyAdded Then
             MsgBox("This fee has already been added.")
         Else
-            Query("SELECT OF_Amount FROM otherfee WHERE ID ='" & cmbOtherFee.SelectedValue & "'")
+            Query("SELECT Amount FROM otherfee WHERE ID ='" & cmbOtherFee.SelectedValue & "'")
 
             If ds.Tables("QueryTb").Rows.Count > 0 Then
-                Dim amount As Decimal = Convert.ToDecimal(ds.Tables("QueryTb").Rows(0)("OF_Amount"))
+                Dim amount As Decimal = Convert.ToDecimal(ds.Tables("QueryTb").Rows(0)("Amount"))
 
                 DgvReceipt.Rows.Add(cmbOtherFee.Text, Format(CDec(amount)))
             Else

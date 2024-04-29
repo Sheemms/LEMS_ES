@@ -5,7 +5,7 @@ Public Class ClassPayments
         Try
             Dim RequirementsParam() As MySqlParameter = {
                 New MySqlParameter("@ID", frmPayments.idPayment),
-                New MySqlParameter("@ORNo", frmPayments.LabelORNO.Text),
+                New MySqlParameter("@ORID", frmPayments.LabelORNO.Text),
                 New MySqlParameter("@EID", frmPayments.LabelEID.Text),
                 New MySqlParameter("@LRN", frmPayments.txtLRN.Text),
                 New MySqlParameter("@Tuition", frmPayments.txtTuition.Text),
@@ -25,8 +25,8 @@ Public Class ClassPayments
             Dim dynamicParams As MySqlParameter() = PaymentsParameters()
             If frmPayments.idPayment = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO payment(ORNo, EID, LRN, Tuition, Miscellaneous, Mode, Terms, Amount, EncodedBy) 
-                        VALUES (@ORNo, @EID, @LRN, @Tuition, @Miscellaneous, @Mode, @Terms, @Amount, @EncodedBy)", dynamicParams)
+                    Command("INSERT INTO payment(ORID, EID, LRN, Tuition, Miscellaneous, Mode, Terms, Amount, EncodedBy) 
+                        VALUES (@ORID, @EID, @LRN, @Tuition, @Miscellaneous, @Mode, @Terms, @Amount, @EncodedBy)", dynamicParams)
                     Success("Successfully Added!")
 
                     For Each row As DataGridViewRow In frmPayments.DgvReceipt.Rows
@@ -51,10 +51,10 @@ Public Class ClassPayments
                                 Try
                                     Dim parameters As New List(Of MySqlParameter)()
                                     parameters.Add(New MySqlParameter("@ORID", frmPayments.LabelORNO.Text))
-                                    parameters.Add(New MySqlParameter("@Changes", selectedValue))
+                                    parameters.Add(New MySqlParameter("@Description", selectedValue))
                                     parameters.Add(New MySqlParameter("@Amount", amount))
 
-                                    Command("INSERT INTO fee_changes (ORID, Changes, Amount) VALUES (@ORID, @Changes, @Amount)", parameters.ToArray())
+                                    Command("INSERT INTO fee_changes (ORID, Description, Amount) VALUES (@ORID, @Description, @Amount)", parameters.ToArray())
                                 Catch ex As Exception
                                     MsgBox("Error inserting change into database: " & ex.Message)
                                 End Try
