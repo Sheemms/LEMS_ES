@@ -24,11 +24,15 @@
     Private Sub DgvBilling_DoubleClick(sender As Object, e As EventArgs) Handles dgvBilling.DoubleClick
         If dgvBilling.SelectedRows.Count > 0 Then
             With dgvBilling.SelectedRows(0)
-                frmPayments.idPayment = .Cells(0).Value
-                frmPayments.txtLRN.Text = .Cells(1).Value
+                FrmFee.idFees = .Cells(0).Value
+                FrmFee.txtLRN.Text = .Cells(1).Value
+                FrmFee.txtStudName.Text = .Cells(2).Value
+                FrmFee.txtGradeLvl.Text = .Cells(3).Value
+                FrmFee.txtSection.Text = .Cells(4).Value
+                FrmFee.LabelSY.Text = .Cells(5).Value
             End With
-            frmPayments.LabelORNO.Text = ORNOGenerate()
-            frmPayments.Show()
+            FrmFee.LabelORNO.Text = ORNOGenerate()
+            FrmFee.Show()
         End If
     End Sub
 

@@ -12,6 +12,7 @@ Public Class ClassPayments
                 New MySqlParameter("@Miscellaneous", frmPayments.txtMiscellaneous.Text),
                 New MySqlParameter("@Mode", frmPayments.cmbModeofPayment.SelectedItem),
                 New MySqlParameter("@Terms", frmPayments.Guna2NumericUpDown1.Text),
+                New MySqlParameter("@Amount", frmPayments.TxtCurPayment.Text),
                 New MySqlParameter("@EncodedBy", frmDashboard.Label3.Text)
             }
             Return RequirementsParam
@@ -24,8 +25,8 @@ Public Class ClassPayments
             Dim dynamicParams As MySqlParameter() = PaymentsParameters()
             If frmPayments.idPayment = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO payment(ORNo, EID, LRN, Tuition, Miscellaneous, Mode, Terms, EncodedBy) 
-                        VALUES (@ORNo, @EID, @LRN, @Tuition, @Miscellaneous, @Mode, @Terms, @EncodedBy)", dynamicParams)
+                    Command("INSERT INTO payment(ORNo, EID, LRN, Tuition, Miscellaneous, Mode, Terms, Amount, EncodedBy) 
+                        VALUES (@ORNo, @EID, @LRN, @Tuition, @Miscellaneous, @Mode, @Terms, @Amount, @EncodedBy)", dynamicParams)
                     Success("Successfully Added!")
 
                     For Each row As DataGridViewRow In frmPayments.DgvReceipt.Rows
@@ -62,10 +63,14 @@ Public Class ClassPayments
                             End If
                         End If
                     Next
+
+                    Command("UPDATE enrollment SET Status = 'Enrolled' WHERE ID = @ID", New MySqlParameter("@ID", frmPayments.idRegisteredStudents))
                 End If
             Else
 
             End If
+            FrmBilling.LoadRecords()
+            frmPayments.Close()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Student bills already exists.")
             Exit Sub

@@ -7,6 +7,17 @@
         txtTuition.Clear()
         txtMiscellaneous.Clear()
     End Sub
+    Public Sub Clear()
+        idPayment = 0
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox =
+            {txtLRN, txtStudName, txtGradeLvl, txtSection, txtTuition, txtMiscellaneous, TxtCurPayment}
+        cmbOtherFee.SelectedIndex = -1
+        cmbModeofPayment.SelectedIndex = -1
+        Guna2NumericUpDown1.Value = 0
+        RbAdditional.Checked = False
+        RbDiscount.Checked = False
+        RbNoChanges.Checked = False
+    End Sub
     Public Sub LoadData()
         'Query("SELECT a.ID, a.EID, a.SchoolYear, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
         '                c.SectionRoom, d.GradeLevel, e.Amount
@@ -85,7 +96,7 @@
         If IS_EMPTY(cmbModeofPayment) Then Return
 #End Region
         ClassPayments.PaymentsRef()
-        ClearFields(Me, idPayment)
+        Clear()
     End Sub
     Private Sub CalculateTotalPayment()
         Dim total As Decimal = 0
