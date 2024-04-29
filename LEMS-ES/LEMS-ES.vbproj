@@ -175,6 +175,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RegForm.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DS_RegForm.vb">
+      <DependentUpon>DS_RegForm.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DS_Schedule.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

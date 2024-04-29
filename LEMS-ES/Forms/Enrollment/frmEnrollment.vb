@@ -128,7 +128,35 @@ Public Class frmEnrollment
                 End Try
             End If
         ElseIf column = "colPrint" AndAlso e.RowIndex >= 0 Then
+            Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Dim dt = New DataTable("DS_RegForm")
+            Dim adp = New MySqlDataAdapter("SELECT  CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
+                                            CONCAT(c.Lastname, ', ', c.Firstname, ' ',c.MiddleInitial) Fullname, c.Gender, d.GradeLevel as Grade,
+                                            e.SectionRoom as Section, f.Classification as Type, i.SubjectCode as Code, i.SubjectName as Subject, j.Room, h.Days, CONCAT(h.Time_From,'-',h.Time_To) Time, CONCAT(k.Lastname, ', ', k.Firstname) Teacher
+                                            FROM enrollment a
+                                            JOIN schoolyear b ON a.SchoolYear = b.ID
+                                            JOIN student c ON a.LRN = c.LRN
+                                            JOIN gradelevel d ON a.GradeLevel_ID = d.ID
+                                            JOIN section e ON a.SectionID = e.ID
+                                            JOIN req_classification f ON c.StudType = f.ID
+                                            JOIN enrolled_sched g ON c.LRN= g.LRN
+                                            JOIN schedule h ON g.ScheduleID = h.ID
+                                            JOIN subject i ON h.Subj_ID = i.ID
+                                            JOIN room j ON h.Room = j.ID
+                                            JOIN teacher k ON h.Teacher_ID = k.ID
+                                            WHERE a.ID = " & enrollmentId, con)
+            adp.Fill(dt)
 
+            If dt.Rows.Count = 0 Then
+                MessageBox.Show("No Records")
+                Exit Sub
+            End If
+
+            Dim crystal As New RegForm
+            crystal.SetDataSource(dt)
+            FrmRegForm.CrystalReportViewer1.ReportSource = crystal
+            FrmRegForm.CrystalReportViewer1.Refresh()
+            FrmRegForm.Show()
         End If
     End Sub
 End Class

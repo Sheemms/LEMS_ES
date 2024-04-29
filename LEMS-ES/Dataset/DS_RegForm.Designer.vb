@@ -309,7 +309,7 @@ Partial Public Class DS_RegForm
         
         Private columnTime As Global.System.Data.DataColumn
         
-        Private columnDataColumn1 As Global.System.Data.DataColumn
+        Private columnTeacher As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -452,9 +452,9 @@ Partial Public Class DS_RegForm
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property DataColumn1Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property TeacherColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn1
+                Return Me.columnTeacher
             End Get
         End Property
         
@@ -495,9 +495,9 @@ Partial Public Class DS_RegForm
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDt_RegFormRow(ByVal SY As String, ByVal EID As String, ByVal LRN As String, ByVal Fullname As String, ByVal Gender As String, ByVal Grade As String, ByVal Section As String, ByVal Type As String, ByVal Code As String, ByVal Subject As String, ByVal Room As String, ByVal Days As String, ByVal Time As String, ByVal DataColumn1 As String) As Dt_RegFormRow
+        Public Overloads Function AddDt_RegFormRow(ByVal SY As String, ByVal EID As String, ByVal LRN As String, ByVal Fullname As String, ByVal Gender As String, ByVal Grade As String, ByVal Section As String, ByVal Type As String, ByVal Code As String, ByVal Subject As String, ByVal Room As String, ByVal Days As String, ByVal Time As String, ByVal Teacher As String) As Dt_RegFormRow
             Dim rowDt_RegFormRow As Dt_RegFormRow = CType(Me.NewRow,Dt_RegFormRow)
-            Dim columnValuesArray() As Object = New Object() {SY, EID, LRN, Fullname, Gender, Grade, Section, Type, Code, Subject, Room, Days, Time, DataColumn1}
+            Dim columnValuesArray() As Object = New Object() {SY, EID, LRN, Fullname, Gender, Grade, Section, Type, Code, Subject, Room, Days, Time, Teacher}
             rowDt_RegFormRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDt_RegFormRow)
             Return rowDt_RegFormRow
@@ -533,7 +533,7 @@ Partial Public Class DS_RegForm
             Me.columnRoom = MyBase.Columns("Room")
             Me.columnDays = MyBase.Columns("Days")
             Me.columnTime = MyBase.Columns("Time")
-            Me.columnDataColumn1 = MyBase.Columns("DataColumn1")
+            Me.columnTeacher = MyBase.Columns("Teacher")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -565,8 +565,8 @@ Partial Public Class DS_RegForm
             MyBase.Columns.Add(Me.columnDays)
             Me.columnTime = New Global.System.Data.DataColumn("Time", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTime)
-            Me.columnDataColumn1 = New Global.System.Data.DataColumn("DataColumn1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn1)
+            Me.columnTeacher = New Global.System.Data.DataColumn("Teacher", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTeacher)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -908,16 +908,16 @@ Partial Public Class DS_RegForm
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DataColumn1() As String
+        Public Property Teacher() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_RegForm.DataColumn1Column),String)
+                    Return CType(Me(Me.tableDt_RegForm.TeacherColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn1' in table 'Dt_RegForm' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Teacher' in table 'Dt_RegForm' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDt_RegForm.DataColumn1Column) = value
+                Me(Me.tableDt_RegForm.TeacherColumn) = value
             End Set
         End Property
         
@@ -1079,14 +1079,14 @@ Partial Public Class DS_RegForm
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsDataColumn1Null() As Boolean
-            Return Me.IsNull(Me.tableDt_RegForm.DataColumn1Column)
+        Public Function IsTeacherNull() As Boolean
+            Return Me.IsNull(Me.tableDt_RegForm.TeacherColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetDataColumn1Null()
-            Me(Me.tableDt_RegForm.DataColumn1Column) = Global.System.Convert.DBNull
+        Public Sub SetTeacherNull()
+            Me(Me.tableDt_RegForm.TeacherColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
