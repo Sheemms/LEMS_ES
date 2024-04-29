@@ -1,14 +1,19 @@
-﻿Public Class frmEnrollment
+﻿Imports MySql.Data.MySqlClient
+Public Class frmEnrollment
     Private Sub FrmEnrollment_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT e.ID, e.SchoolYear, e.EID, e.LRN, CONCAT(st.Lastname, ' ',st.Firstname, ' ',st.MiddleInitial) as Fullname, s.SectionRoom as Section, gl.GradeLevel, e.Enrollment_Date, e.Status 
+        Query("SELECT e.ID,CONCAT(sy.Start_Year, '-', sy.End_Year) SchoolYear, e.EID, e.LRN, 
+                CONCAT(st.Lastname, ', ',st.Firstname, ' ',st.MiddleInitial) as Fullname, 
+                gl.GradeLevel, s.SectionRoom as Section, e.Enrollment_Date, e.Status 
                 FROM enrollment e 
+                JOIN schoolyear sy ON e.SchoolYear = sy.ID
                 JOIN student st ON e.LRN = st.LRN
                 JOIN section s ON e.SectionID = s.ID
                 JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID")
+        dgvEnrolled.AutoGenerateColumns = False
         dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
 
@@ -30,14 +35,14 @@
                 For Each col As DataColumn In dataTable.Columns
                     If row(col.ColumnName).ToString().Contains(searchText) Then
                         filteredData.ImportRow(row)
-                        Exit For 
+                        Exit For
                     End If
                 Next
             Next
 
             dgvEnrolled.DataSource = filteredData
         Else
-            loadrecords()
+            Loadrecords()
         End If
     End Sub
 
@@ -98,4 +103,32 @@
         dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
 
+    Private Sub DgvEnrolled_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEnrolled.CellContentClick
+        Dim column As String = dgvEnrolled.Columns(e.ColumnIndex).Name
+
+        If column = "colDrop" AndAlso e.RowIndex >= 0 Then
+            If MsgBox("Do you want to drop this student?") Then
+                Try
+                    Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells(0).Value.ToString()
+                    Dim parameters As New List(Of MySqlParameter)()
+                    parameters.Add(New MySqlParameter("@EID", enrollmentId))
+
+                    Command("UPDATE enrollment SET status = 'Dropped' WHERE EID = @EID")
+
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        MsgBox("Student has been successfully dropped!")
+                        Loadrecords()
+                    Else
+                        MsgBox("No student was dropped.")
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            End If
+        ElseIf column = "colPrint" AndAlso e.RowIndex >= 0 Then
+
+        End If
+    End Sub
 End Class

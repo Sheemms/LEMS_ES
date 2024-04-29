@@ -92,6 +92,11 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:LEMS_ES.My.Resources.Resources.drop">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:LEMS_ES.My.Resources.Resources.enrollment">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -153,6 +158,11 @@ LEMS-ES
 </summary>
 </member>
 <member name="P:LEMS_ES.My.Resources.Resources.padlock">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LEMS_ES.My.Resources.Resources.printer">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -227,22 +237,42 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule">
+<member name="T:LEMS_ES.DS_RegForm">
 <summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule.Dt_ScheduleDataTable">
+<member name="T:LEMS_ES.DS_RegForm.Dt_RegFormDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule.Dt_ScheduleRow">
+<member name="T:LEMS_ES.DS_RegForm.Dt_RegFormRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:LEMS_ES.DS_Scheule.Dt_ScheduleRowChangeEvent">
+<member name="T:LEMS_ES.DS_RegForm.Dt_RegFormRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_Schedule">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_Schedule.Dt_scheduleDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_Schedule.Dt_scheduleRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_Schedule.Dt_scheduleRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

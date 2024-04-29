@@ -119,8 +119,8 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="ZstdSharp, Version=0.7.6.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZstdSharp.Port.0.7.6\lib\net462\ZstdSharp.dll</HintPath>
+    <Reference Include="ZstdSharp, Version=0.8.0.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.0\lib\net462\ZstdSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +152,12 @@
     <Compile Include="Classes\ClassTeacher.vb" />
     <Compile Include="Classes\ClassTuition.vb" />
     <Compile Include="Classes\ClassUserMaintenance.vb" />
+    <Compile Include="CrystalRep\RegForm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalRep\ScheduleReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,13 +170,18 @@
       <DependentUpon>StudentsReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Dataset\DS_Scheule.Designer.vb">
+    <Compile Include="Dataset\DS_RegForm.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+      <DependentUpon>DS_RegForm.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dataset\DS_Scheule.vb">
-      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+    <Compile Include="Dataset\DS_Schedule.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Schedule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_Schedule.vb">
+      <DependentUpon>DS_Schedule.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DS_StudentList.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -196,6 +207,12 @@
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Enrollment\frmEnrollmentReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Registration Form\FrmRegForm.Designer.vb">
+      <DependentUpon>FrmRegForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Registration Form\FrmRegForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormDatabase.Designer.vb">
@@ -394,6 +411,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalRep\RegForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegForm.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalRep\ScheduleReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ScheduleReport.vb</LastGenOutput>
@@ -410,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentReport.resx">
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Registration Form\FrmRegForm.resx">
+      <DependentUpon>FrmRegForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDatabase.resx">
       <DependentUpon>FormDatabase.vb</DependentUpon>
@@ -506,16 +530,27 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dataset\DS_Scheule.xsc">
-      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+    <None Include="Dataset\DS_RegForm.xsc">
+      <DependentUpon>DS_RegForm.xsd</DependentUpon>
     </None>
-    <None Include="Dataset\DS_Scheule.xsd">
+    <None Include="Dataset\DS_RegForm.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_Scheule.Designer.vb</LastGenOutput>
+      <LastGenOutput>DS_RegForm.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Dataset\DS_Scheule.xss">
-      <DependentUpon>DS_Scheule.xsd</DependentUpon>
+    <None Include="Dataset\DS_RegForm.xss">
+      <DependentUpon>DS_RegForm.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_Schedule.xsc">
+      <DependentUpon>DS_Schedule.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_Schedule.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Schedule.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_Schedule.xss">
+      <DependentUpon>DS_Schedule.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DS_StudentList.xsc">
       <DependentUpon>DS_StudentList.xsd</DependentUpon>
@@ -658,7 +693,6 @@
     <None Include="Resources\close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Reports\RegistrationForm\" />
     <Folder Include="Reports\Scheduling\" />
   </ItemGroup>
   <ItemGroup>
@@ -672,6 +706,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

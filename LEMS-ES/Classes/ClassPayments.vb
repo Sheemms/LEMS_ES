@@ -65,19 +65,18 @@ Public Class ClassPayments
                     Next
 
                     Command("UPDATE enrollment SET Status = 'Enrolled' WHERE ID = @ID", New MySqlParameter("@ID", frmPayments.idRegisteredStudents))
+                    FrmBilling.LoadRecords()
+                    frmPayments.Close()
                 End If
             Else
 
             End If
-            FrmBilling.LoadRecords()
-            frmPayments.Close()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Student bills already exists.")
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 #End Region
 End Class

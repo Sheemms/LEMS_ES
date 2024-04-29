@@ -29,9 +29,11 @@ Partial Class frmEnrollment
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvEnrolled = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.BtnSearch = New System.Windows.Forms.ToolStripButton()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colSY = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,6 +44,8 @@ Partial Class frmEnrollment
         Me.colSection = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEnrollDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPrint = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.colDrop = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvEnrolled, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,11 +96,11 @@ Partial Class frmEnrollment
         Me.dgvEnrolled.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvEnrolled.ColumnHeadersHeight = 44
         Me.dgvEnrolled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvEnrolled.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colSY, Me.Column1, Me.colLRN, Me.colFullname, Me.colGradeLevel, Me.colSection, Me.colEnrollDate, Me.colStatus})
+        Me.dgvEnrolled.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colSY, Me.Column1, Me.colLRN, Me.colFullname, Me.colGradeLevel, Me.colSection, Me.colEnrollDate, Me.colStatus, Me.colPrint, Me.colDrop})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -141,19 +145,9 @@ Partial Class frmEnrollment
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.ForeColor = System.Drawing.Color.Black
-        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.add
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(51, 22)
-        Me.ToolStripButton1.Text = "New"
-        '
         'txtSearch
         '
         Me.txtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(200, 25)
         '
@@ -162,6 +156,33 @@ Partial Class frmEnrollment
         Me.ToolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ReadOnly = True
+        Me.DataGridViewImageColumn1.Width = 5
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.HeaderText = ""
+        Me.DataGridViewImageColumn2.Image = Global.LEMS_ES.My.Resources.Resources.drop
+        Me.DataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Width = 210
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.ForeColor = System.Drawing.Color.Black
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.add
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(51, 22)
+        Me.ToolStripButton1.Text = "New"
         '
         'BtnSearch
         '
@@ -252,6 +273,26 @@ Partial Class frmEnrollment
         Me.colStatus.ReadOnly = True
         Me.colStatus.Width = 69
         '
+        'colPrint
+        '
+        Me.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colPrint.HeaderText = ""
+        Me.colPrint.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.colPrint.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colPrint.Name = "colPrint"
+        Me.colPrint.ReadOnly = True
+        Me.colPrint.Width = 5
+        '
+        'colDrop
+        '
+        Me.colDrop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colDrop.HeaderText = ""
+        Me.colDrop.Image = Global.LEMS_ES.My.Resources.Resources.drop
+        Me.colDrop.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colDrop.Name = "colDrop"
+        Me.colDrop.ReadOnly = True
+        Me.colDrop.Width = 5
+        '
         'frmEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -280,6 +321,7 @@ Partial Class frmEnrollment
     Friend WithEvents txtSearch As ToolStripTextBox
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents BtnSearch As ToolStripButton
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colSY As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
@@ -289,4 +331,7 @@ Partial Class frmEnrollment
     Friend WithEvents colSection As DataGridViewTextBoxColumn
     Friend WithEvents colEnrollDate As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn
+    Friend WithEvents colPrint As DataGridViewImageColumn
+    Friend WithEvents colDrop As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
 End Class

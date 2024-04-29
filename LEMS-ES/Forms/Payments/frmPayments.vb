@@ -115,7 +115,7 @@
 
         LabelTotalPayment.Text = Format(CDec(total))
     End Sub
-    Public Sub SubtractPayments(currentPayment As Decimal, totalPayment As Decimal) ' Assuming payment amounts are in decimal format
+    Public Sub SubtractPayments(currentPayment As Decimal, totalPayment As Decimal)
         Dim remainingPayment As Decimal = currentPayment - totalPayment
         LabelCurrentBalance.Text = Format(CDec(remainingPayment))
     End Sub
