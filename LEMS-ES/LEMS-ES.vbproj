@@ -159,6 +159,12 @@
       <DependentUpon>RegForm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalRep\ReportCard.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportCard.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalRep\ScheduleReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,6 +176,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentsReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dataset\DS_Grading.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Grading.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_Grading.vb">
+      <DependentUpon>DS_Grading.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DS_RegForm.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -211,6 +225,12 @@
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Enrollment\frmEnrollmentReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grading\FrmGradeReport.Designer.vb">
+      <DependentUpon>FrmGradeReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grading\FrmGradeReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Registration Form\FrmRegForm.Designer.vb">
@@ -425,6 +445,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegForm.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalRep\ReportCard.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportCard.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalRep\ScheduleReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ScheduleReport.vb</LastGenOutput>
@@ -441,6 +465,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentReport.resx">
       <DependentUpon>frmEnrollmentReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grading\FrmGradeReport.resx">
+      <DependentUpon>FrmGradeReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Registration Form\FrmRegForm.resx">
       <DependentUpon>FrmRegForm.vb</DependentUpon>
@@ -543,6 +570,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dataset\DS_Grading.xsc">
+      <DependentUpon>DS_Grading.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_Grading.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Grading.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_Grading.xss">
+      <DependentUpon>DS_Grading.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DS_RegForm.xsc">
       <DependentUpon>DS_RegForm.xsd</DependentUpon>
     </None>

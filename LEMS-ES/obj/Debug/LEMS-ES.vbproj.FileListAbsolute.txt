@@ -152,3 +152,4 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmRoom.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmRegForm.resources
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmScheduleReport.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.FrmGradeReport.resources

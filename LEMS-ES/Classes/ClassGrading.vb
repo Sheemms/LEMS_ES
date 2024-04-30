@@ -7,6 +7,7 @@ Public Class ClassGrading
 
             If schoolYearID <> -1 Then
                 Dim gradingParam() As MySqlParameter = {
+                    New MySqlParameter("@ID", dgv.Rows(rowIndex).Cells("ID").Value),
                     New MySqlParameter("@FirstGrd", dgv.Rows(rowIndex).Cells("firstg").Value),
                     New MySqlParameter("@SecondGrd", dgv.Rows(rowIndex).Cells("secondg").Value),
                     New MySqlParameter("@ThirdGrd", dgv.Rows(rowIndex).Cells("thirdg").Value),
@@ -30,7 +31,7 @@ Public Class ClassGrading
             If dynamicParams IsNot Nothing Then
                 If FrmEnrollmentRegistration.EnrollSubjID = 0 Then
                     If MsgBox("Do you want to add this grades?", vbQuestion + vbYesNo) = vbYes Then
-                        Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks", dynamicParams)
+                        Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks WHERE ID=@ID", dynamicParams)
                         Success("Successfully Save!")
                     End If
                 End If
