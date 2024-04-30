@@ -32,15 +32,15 @@ Partial Class FrmElementaryGrading
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.CmbSubject = New System.Windows.Forms.ToolStripComboBox()
         Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,7 +76,7 @@ Partial Class FrmElementaryGrading
         Me.DgvElemGrading.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvElemGrading.ColumnHeadersHeight = 44
         Me.DgvElemGrading.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvElemGrading.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column13, Me.Column14, Me.Column4, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.firstg, Me.secondg, Me.thirdg, Me.fourthg, Me.average, Me.remarks})
+        Me.DgvElemGrading.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column13, Me.colEID, Me.colLRN, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.firstg, Me.secondg, Me.thirdg, Me.fourthg, Me.average, Me.remarks})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.0!)
@@ -142,7 +142,7 @@ Partial Class FrmElementaryGrading
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripTextBox1, Me.ToolStripButton3, Me.CmbSubject, Me.CmbSubjCode, Me.ToolStripLabel1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.TxtSearch, Me.ToolStripButton3, Me.CmbSubject, Me.CmbSubjCode, Me.ToolStripLabel1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1109, 25)
@@ -165,12 +165,12 @@ Partial Class FrmElementaryGrading
         Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
         Me.ToolStripButton2.Text = "Print"
         '
-        'ToolStripTextBox1
+        'TxtSearch
         '
-        Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
+        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(200, 25)
         '
         'ToolStripButton3
         '
@@ -201,12 +201,11 @@ Partial Class FrmElementaryGrading
         Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
         Me.ToolStripLabel1.Text = "Filtered By:"
         '
-        'Column1
+        'ID
         '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
         '
         'Column13
         '
@@ -215,20 +214,20 @@ Partial Class FrmElementaryGrading
         Me.Column13.Name = "Column13"
         Me.Column13.Visible = False
         '
-        'Column14
+        'colEID
         '
-        Me.Column14.DataPropertyName = "EID"
-        Me.Column14.HeaderText = "EID"
-        Me.Column14.Name = "Column14"
-        Me.Column14.Visible = False
+        Me.colEID.DataPropertyName = "EID"
+        Me.colEID.HeaderText = "EID"
+        Me.colEID.Name = "colEID"
+        Me.colEID.Visible = False
         '
-        'Column4
+        'colLRN
         '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "LRN"
-        Me.Column4.HeaderText = "LRN"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 53
+        Me.colLRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colLRN.DataPropertyName = "LRN"
+        Me.colLRN.HeaderText = "LRN"
+        Me.colLRN.Name = "colLRN"
+        Me.colLRN.Width = 53
         '
         'Column2
         '
@@ -262,6 +261,7 @@ Partial Class FrmElementaryGrading
         'firstg
         '
         Me.firstg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.firstg.DataPropertyName = "FirstGrd"
         Me.firstg.HeaderText = "1st Grd"
         Me.firstg.Name = "firstg"
         Me.firstg.Width = 81
@@ -269,6 +269,7 @@ Partial Class FrmElementaryGrading
         'secondg
         '
         Me.secondg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.secondg.DataPropertyName = "SecondGrd"
         Me.secondg.HeaderText = "2nd Grd"
         Me.secondg.Name = "secondg"
         Me.secondg.Width = 81
@@ -276,6 +277,7 @@ Partial Class FrmElementaryGrading
         'thirdg
         '
         Me.thirdg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.thirdg.DataPropertyName = "ThirdGrd"
         Me.thirdg.HeaderText = "3rd Grd"
         Me.thirdg.Name = "thirdg"
         Me.thirdg.Width = 81
@@ -283,6 +285,7 @@ Partial Class FrmElementaryGrading
         'fourthg
         '
         Me.fourthg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.fourthg.DataPropertyName = "FourthGrd"
         Me.fourthg.HeaderText = "4th Grd"
         Me.fourthg.Name = "fourthg"
         Me.fourthg.Width = 81
@@ -329,15 +332,15 @@ Partial Class FrmElementaryGrading
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents ToolStripButton2 As ToolStripButton
-    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents TxtSearch As ToolStripTextBox
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents CmbSubject As ToolStripComboBox
     Friend WithEvents CmbSubjCode As ToolStripComboBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents colEID As DataGridViewTextBoxColumn
+    Friend WithEvents colLRN As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn

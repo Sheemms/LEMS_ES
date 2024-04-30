@@ -39,12 +39,13 @@
         'End With
 
         'this query is for DgvRegisteredStudents
-        Query("SELECT a.ID, a.SchoolYear, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
+        Query("SELECT a.ID, CONCAT(e.Start_Year, '-', e.End_Year) SchoolYear, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
                 c.SectionRoom, d.GradeLevel, DATE_FORMAT(a.Enrollment_Date, '%Y-%m-%d') Enrollment_Date, a.Status 
                 FROM enrollment a
                 JOIN student b ON a.LRN = b.LRN 
                 JOIN section c ON a.SectionID = c.ID
-                JOIN gradelevel d ON a.GradeLevel_ID = d.ID")
+                JOIN gradelevel d ON a.GradeLevel_ID = d.ID
+                JOIN schoolyear e ON a.SchoolYear = e.ID")
         DgvRegisteredStudents.DataSource = ds.Tables("QueryTb")
 
 
@@ -205,6 +206,7 @@
             End With
             LabelORNO.Text = ORNOGenerate()
         End If
+        DgvReceipt.Rows.Clear()
 
         Query("SELECT * FROM tuition")
         DgvTransactionHistory.DataSource = ds.Tables("QueryTb")

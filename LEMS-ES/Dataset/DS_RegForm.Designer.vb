@@ -495,7 +495,7 @@ Partial Public Class DS_RegForm
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDt_RegFormRow(ByVal SY As String, ByVal EID As String, ByVal LRN As String, ByVal Fullname As String, ByVal Gender As String, ByVal Grade As String, ByVal Section As String, ByVal Type As String, ByVal Code As String, ByVal Subject As String, ByVal Room As String, ByVal Days As String, ByVal Time As String, ByVal Teacher As String) As Dt_RegFormRow
+        Public Overloads Function AddDt_RegFormRow(ByVal SY As String, ByVal EID As String, ByVal LRN As Long, ByVal Fullname As String, ByVal Gender As String, ByVal Grade As String, ByVal Section As String, ByVal Type As String, ByVal Code As String, ByVal Subject As String, ByVal Room As String, ByVal Days As String, ByVal Time As String, ByVal Teacher As String) As Dt_RegFormRow
             Dim rowDt_RegFormRow As Dt_RegFormRow = CType(Me.NewRow,Dt_RegFormRow)
             Dim columnValuesArray() As Object = New Object() {SY, EID, LRN, Fullname, Gender, Grade, Section, Type, Code, Subject, Room, Days, Time, Teacher}
             rowDt_RegFormRow.ItemArray = columnValuesArray
@@ -543,7 +543,7 @@ Partial Public Class DS_RegForm
             MyBase.Columns.Add(Me.columnSY)
             Me.columnEID = New Global.System.Data.DataColumn("EID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEID)
-            Me.columnLRN = New Global.System.Data.DataColumn("LRN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnLRN = New Global.System.Data.DataColumn("LRN", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLRN)
             Me.columnFullname = New Global.System.Data.DataColumn("Fullname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFullname)
@@ -743,10 +743,10 @@ Partial Public Class DS_RegForm
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property LRN() As String
+        Public Property LRN() As Long
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_RegForm.LRNColumn),String)
+                    Return CType(Me(Me.tableDt_RegForm.LRNColumn),Long)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'LRN' in table 'Dt_RegForm' is DBNull.", e)
                 End Try

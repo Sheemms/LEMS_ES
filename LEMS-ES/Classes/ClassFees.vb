@@ -6,8 +6,8 @@ Public Class ClassFees
             Dim RequirementsParam() As MySqlParameter = {
                 New MySqlParameter("@ID", FrmFee.idFees),
                 New MySqlParameter("@EID", FrmFee.LabelEID.Text),
-                New MySqlParameter("@Amount", FrmFee.TxtCurrentPayment.Text),
-                New MySqlParameter("@Pdate", FrmFee.txtLRN.Text)
+                New MySqlParameter("@LRN", FrmFee.txtLRN.Text),
+                New MySqlParameter("@Amount", FrmFee.TxtCurrentPayment.Text)
             }
             Return RequirementsParam
         Catch ex As Exception
@@ -19,8 +19,8 @@ Public Class ClassFees
             Dim dynamicParams As MySqlParameter() = FeesParameters()
             If frmPayments.idPayment = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO fees(EID, Amount) 
-                    VALUES (@EID, @Amount)", dynamicParams)
+                    Command("INSERT INTO fees(EID, LRN, Amount) 
+                    VALUES (@EID, @LRN, @Amount)", dynamicParams)
                     Success("Successfully Added!")
                 End If
             Else

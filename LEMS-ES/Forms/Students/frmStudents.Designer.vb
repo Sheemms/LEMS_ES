@@ -25,9 +25,11 @@ Partial Class FrmStudents
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmStudents))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.AddNew = New System.Windows.Forms.ToolStripButton()
         Me.TextSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.dgvStudents = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,9 +49,6 @@ Partial Class FrmStudents
         Me.colCitizenship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStudType = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddNew = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.dgvStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,12 +62,38 @@ Partial Class FrmStudents
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'AddNew
+        '
+        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
+        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.AddNew.Name = "AddNew"
+        Me.AddNew.Size = New System.Drawing.Size(51, 22)
+        Me.AddNew.Text = "New"
+        '
         'TextSearch
         '
         Me.TextSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.TextSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TextSearch.Name = "TextSearch"
         Me.TextSearch.Size = New System.Drawing.Size(200, 25)
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
+        Me.ToolStripButton2.Text = "Print"
         '
         'dgvStudents
         '
@@ -299,34 +324,7 @@ Partial Class FrmStudents
         Me.colStudType.Visible = False
         Me.colStudType.Width = 99
         '
-        'AddNew
-        '
-        Me.AddNew.Image = Global.LEMS_ES.My.Resources.Resources.new_document
-        Me.AddNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.AddNew.Name = "AddNew"
-        Me.AddNew.Size = New System.Drawing.Size(51, 22)
-        Me.AddNew.Text = "New"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(43, 22)
-        Me.ToolStripButton2.Text = "PRINT"
-        '
-        'frmStudents
+        'FrmStudents
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -335,7 +333,7 @@ Partial Class FrmStudents
         Me.Controls.Add(Me.ToolStrip1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmStudents"
+        Me.Name = "FrmStudents"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

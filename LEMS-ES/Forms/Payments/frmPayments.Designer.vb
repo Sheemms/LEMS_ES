@@ -22,15 +22,15 @@ Partial Class FrmPayments
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtLRN = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -93,6 +93,12 @@ Partial Class FrmPayments
         Me.txtTuition = New Guna.UI2.WinForms.Guna2TextBox()
         Me.LabelCurrentBalance = New System.Windows.Forms.Label()
         Me.LabelTotalPayment = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Guna2NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
@@ -102,6 +108,9 @@ Partial Class FrmPayments
         CType(Me.DgvTransactionHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DgvReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtLRN
@@ -257,7 +266,7 @@ Partial Class FrmPayments
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(663, 396)
+        Me.Label6.Location = New System.Drawing.Point(29, 12)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(192, 23)
         Me.Label6.TabIndex = 11
@@ -265,6 +274,9 @@ Partial Class FrmPayments
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Panel5)
+        Me.GroupBox1.Controls.Add(Me.Panel4)
+        Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Controls.Add(Me.Guna2NumericUpDown1)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
@@ -280,9 +292,6 @@ Partial Class FrmPayments
         Me.GroupBox1.Controls.Add(Me.RbNoChanges)
         Me.GroupBox1.Controls.Add(Me.RbAdditional)
         Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.TxtCurPayment)
-        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.BtnPayments)
         Me.GroupBox1.Controls.Add(Me.cmbModeofPayment)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -291,9 +300,6 @@ Partial Class FrmPayments
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtTuition)
         Me.GroupBox1.Controls.Add(Me.txtLRN)
-        Me.GroupBox1.Controls.Add(Me.LabelCurrentBalance)
-        Me.GroupBox1.Controls.Add(Me.LabelTotalPayment)
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtStudName)
         Me.GroupBox1.Controls.Add(Me.cmbOtherFee)
@@ -347,28 +353,28 @@ Partial Class FrmPayments
         '
         Me.DgvRegisteredStudents.AllowUserToAddRows = False
         Me.DgvRegisteredStudents.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgvRegisteredStudents.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        Me.DgvRegisteredStudents.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         Me.DgvRegisteredStudents.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvRegisteredStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvRegisteredStudents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DgvRegisteredStudents.ColumnHeadersHeight = 32
         Me.DgvRegisteredStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvRegisteredStudents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvRegisteredStudents.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvRegisteredStudents.DefaultCellStyle = DataGridViewCellStyle12
         Me.DgvRegisteredStudents.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvRegisteredStudents.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvRegisteredStudents.Location = New System.Drawing.Point(0, 0)
@@ -496,28 +502,28 @@ Partial Class FrmPayments
         '
         Me.DgvTransactionHistory.AllowUserToAddRows = False
         Me.DgvTransactionHistory.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DgvTransactionHistory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        Me.DgvTransactionHistory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.DgvTransactionHistory.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvTransactionHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvTransactionHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DgvTransactionHistory.ColumnHeadersHeight = 32
         Me.DgvTransactionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvTransactionHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvTransactionHistory.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvTransactionHistory.DefaultCellStyle = DataGridViewCellStyle15
         Me.DgvTransactionHistory.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvTransactionHistory.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvTransactionHistory.Location = New System.Drawing.Point(3, 20)
@@ -680,28 +686,28 @@ Partial Class FrmPayments
         '
         Me.DgvReceipt.AllowUserToAddRows = False
         Me.DgvReceipt.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.DgvReceipt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        Me.DgvReceipt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DgvReceipt.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvReceipt.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvReceipt.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DgvReceipt.ColumnHeadersHeight = 32
         Me.DgvReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvReceipt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.Column9, Me.ColDelete})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvReceipt.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Courier New", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvReceipt.DefaultCellStyle = DataGridViewCellStyle18
         Me.DgvReceipt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvReceipt.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvReceipt.Location = New System.Drawing.Point(3, 20)
@@ -840,7 +846,7 @@ Partial Class FrmPayments
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(637, 478)
+        Me.Label12.Location = New System.Drawing.Point(3, 12)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(218, 23)
         Me.Label12.TabIndex = 33
@@ -858,7 +864,7 @@ Partial Class FrmPayments
         Me.TxtCurPayment.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCurPayment.ForeColor = System.Drawing.Color.Black
         Me.TxtCurPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtCurPayment.Location = New System.Drawing.Point(869, 467)
+        Me.TxtCurPayment.Location = New System.Drawing.Point(221, 4)
         Me.TxtCurPayment.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TxtCurPayment.Name = "TxtCurPayment"
         Me.TxtCurPayment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -872,7 +878,7 @@ Partial Class FrmPayments
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(637, 438)
+        Me.Label11.Location = New System.Drawing.Point(3, 12)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(218, 23)
         Me.Label11.TabIndex = 31
@@ -887,7 +893,7 @@ Partial Class FrmPayments
         Me.BtnPayments.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.BtnPayments.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPayments.ForeColor = System.Drawing.Color.White
-        Me.BtnPayments.Location = New System.Drawing.Point(835, 512)
+        Me.BtnPayments.Location = New System.Drawing.Point(835, 522)
         Me.BtnPayments.Name = "BtnPayments"
         Me.BtnPayments.Size = New System.Drawing.Size(164, 36)
         Me.BtnPayments.TabIndex = 20
@@ -988,7 +994,7 @@ Partial Class FrmPayments
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCurrentBalance.AutoSize = True
         Me.LabelCurrentBalance.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCurrentBalance.Location = New System.Drawing.Point(882, 439)
+        Me.LabelCurrentBalance.Location = New System.Drawing.Point(243, 12)
         Me.LabelCurrentBalance.Name = "LabelCurrentBalance"
         Me.LabelCurrentBalance.Size = New System.Drawing.Size(114, 23)
         Me.LabelCurrentBalance.TabIndex = 11
@@ -1001,13 +1007,88 @@ Partial Class FrmPayments
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelTotalPayment.AutoSize = True
         Me.LabelTotalPayment.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTotalPayment.Location = New System.Drawing.Point(882, 396)
+        Me.LabelTotalPayment.Location = New System.Drawing.Point(243, 10)
         Me.LabelTotalPayment.Name = "LabelTotalPayment"
         Me.LabelTotalPayment.Size = New System.Drawing.Size(114, 23)
         Me.LabelTotalPayment.TabIndex = 11
         Me.LabelTotalPayment.Text = "00000.00"
         '
-        'frmPayments
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Label15)
+        Me.Panel5.Controls.Add(Me.TxtCurPayment)
+        Me.Panel5.Controls.Add(Me.Label12)
+        Me.Panel5.Location = New System.Drawing.Point(639, 468)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(357, 46)
+        Me.Panel5.TabIndex = 53
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(531, 12)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(114, 23)
+        Me.Label15.TabIndex = 36
+        Me.Label15.Text = "00000.00"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(114, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.Label17)
+        Me.Panel4.Controls.Add(Me.Label11)
+        Me.Panel4.Controls.Add(Me.LabelCurrentBalance)
+        Me.Panel4.Location = New System.Drawing.Point(639, 430)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(357, 46)
+        Me.Panel4.TabIndex = 52
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.Location = New System.Drawing.Point(531, 12)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(114, 23)
+        Me.Label17.TabIndex = 36
+        Me.Label17.Text = "00000.00"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label19)
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.LabelTotalPayment)
+        Me.Panel3.Location = New System.Drawing.Point(639, 388)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(357, 46)
+        Me.Panel3.TabIndex = 51
+        '
+        'Label19
+        '
+        Me.Label19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Black
+        Me.Label19.Location = New System.Drawing.Point(531, 12)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(114, 23)
+        Me.Label19.TabIndex = 36
+        Me.Label19.Text = "00000.00"
+        '
+        'FrmPayments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1015,7 +1096,7 @@ Partial Class FrmPayments
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "frmPayments"
+        Me.Name = "FrmPayments"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -1027,6 +1108,12 @@ Partial Class FrmPayments
         CType(Me.DgvTransactionHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DgvReceipt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1093,4 +1180,10 @@ Partial Class FrmPayments
     Friend WithEvents TxtChanges As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TxtCurPayment As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2NumericUpDown1 As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label19 As Label
 End Class

@@ -7,7 +7,7 @@
     End Sub
 
     Public Sub LoadRecords()
-        Query("SELECT a.ID, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, c.SectionRoom, d.GradeLevel, CONCAT(e.Start_Year, '-', e.End_Year) SchoolYearA, 
+        Query("SELECT a.ID, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, c.SectionRoom, d.GradeLevel, CONCAT(e.Start_Year, '-', e.End_Year) SchoolYear, 
                 DATE_FORMAT(a.Enrollment_Date, '%Y-%m-%d') Enrollment_Date, a.Status
                 FROM enrollment a
                 JOIN student b ON a.LRN = b.LRN 
@@ -53,8 +53,12 @@
                                              JOIN payment b ON a.ORID = b.ORID
                                              WHERE b.EID = '" & StudEID & "'"))
 
-            _totalPayment = Convert.ToDouble(CmdScalar("SELECT IFNULL(SUM(Amount), 0) FROM payment
-                                                    WHERE EID ='" & StudEID & "'"))
+            _totalPayment = Convert.ToDouble(CmdScalar("SELECT SUM(TotalAmount) AS TotalPayment FROM (
+                                                                    SELECT SUM(Amount) AS TotalAmount FROM payment
+                                                                    WHERE EID = '" & StudEID & "'
+                                                                    UNION ALL
+                                                                    SELECT SUM(Amount) AS TotalAmount FROM fees
+                                                                    WHERE EID = '" & StudEID & "') AS CombinedAmounts"))
 
             Dim totalAmount As Double = _totalbill + _totalOtherFee + _totalChanges
 
@@ -74,9 +78,7 @@
             If Double.TryParse(currentPaymentText, currentPaymentValue) Then
                 FrmFee.TxtCurrentBalance.Text = (totalAmount - currentPaymentValue).ToString("N2")
             Else
-                ' Handle the case where the text is not a valid number, such as showing an error message or setting a default value
-                ' For example:
-                FrmFee.TxtCurrentBalance.Text = "Invalid input"
+                FrmFee.TxtCurrentBalance.Text = ""
             End If
             FrmFee.LabelORNO.Text = ORNOGenerate()
             FrmFee.Show()
@@ -159,8 +161,12 @@
                                              JOIN payment b ON a.ORID = b.ORID
                                              WHERE b.EID = '" & StudEID & "'"))
 
-        _totalPayment = Convert.ToDouble(CmdScalar("SELECT Amount FROM payment
-                                                    WHERE EID ='" & StudEID & "'"))
+        _totalPayment = Convert.ToDouble(CmdScalar("SELECT SUM(TotalAmount) AS TotalPayment FROM (
+                                                                    SELECT SUM(Amount) AS TotalAmount FROM payment
+                                                                    WHERE EID = '" & StudEID & "'
+                                                                    UNION ALL
+                                                                    SELECT SUM(Amount) AS TotalAmount FROM fees
+                                                                    WHERE EID = '" & StudEID & "') AS CombinedAmounts"))
 
         Dim totalAmount As Double = _totalbill + _totalOtherFee + _totalChanges
 
@@ -214,7 +220,9 @@
             DgvBillingRecords.DataSource = ds.Tables("QueryTb")
 
 
-            Query("SELECT DATE_FORMAT(ORDate, '%m-%d-%Y') ORDate, Amount FROM payment WHERE EID = '" & StudEID & "'")
+            Query("SELECT DATE_FORMAT(ORDate, '%m-%d-%Y') ORDate, Amount FROM payment WHERE EID ='" & StudEID & "'
+                    UNION ALL
+                    SELECT DATE_FORMAT(ORDate, '%m-%d-%Y') ORDate, Amount From fees WHERE EID ='" & StudEID & "'")
             DgvTransactionHistory.DataSource = ds.Tables("QueryTb")
         End If
     End Sub

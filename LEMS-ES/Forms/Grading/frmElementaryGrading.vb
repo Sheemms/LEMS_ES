@@ -1,4 +1,5 @@
-﻿Public Class FrmElementaryGrading
+﻿Imports MySql.Data.MySqlClient
+Public Class FrmElementaryGrading
     Private Sub CmbSubjCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSubjCode.SelectedIndexChanged
         'Dim selectedSubjectCode As String = CmbSubjCode.SelectedItem.ToString()
 
@@ -9,6 +10,7 @@
     End Sub
 
     Private Sub FrmElementaryGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Connection()
         LoadData()
     End Sub
     Public Sub LoadSubject()
@@ -18,9 +20,9 @@
         CmbSubjCode.ComboBox.DisplayMember = "SubjectCode"
     End Sub
     Public Sub LoadData()
-        Query("SELECT  CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+        Query("SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
                 CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-                f.SubjectCode, f.SubjectName, f.Units, a.Average, a.Remarks
+                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
                 FROM enrolled_sched a 
                 JOIN schoolyear b ON a.SYID = b.ID
                 JOIN student c ON a.LRN = c.LRN
@@ -138,9 +140,8 @@
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        Dim rowIndex As Integer = DgvElemGrading.CurrentRow.Index
 
-        ClassGrading.GradingRef(DgvElemGrading, rowIndex)
+        ClassGrading.GradingRef(DgvElemGrading)
         LoadData()
     End Sub
 
@@ -165,5 +166,52 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        Query($"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+                FROM enrolled_sched a 
+                JOIN schoolyear b ON a.SYID = b.ID
+                JOIN student c ON a.LRN = c.LRN
+                JOIN enrollment d ON c.LRN = d.LRN
+                JOIN schedule e ON a.ScheduleID = e.ID
+                JOIN subject f ON e.Subj_ID = f.ID
+               WHERE c.Lastname LIKE '{TxtSearch.Text}' OR c.Firstname LIKE '{TxtSearch.Text}' OR c.MiddleInitial LIKE '{TxtSearch.Text}'")
+        DgvElemGrading.DataSource = ds.Tables("QueryTb")
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Dim dt As New DataTable("DS_Grading")
+
+        For Each row As DataGridViewRow In DgvElemGrading.Rows
+            Dim StudentLRN As String = row.Cells("colLRN").Value
+            Dim adp = New MySqlDataAdapter("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
+                                            CONCAT(c.Lastname, ', ', c.Firstname) Fullname, e.SubjectCode as Code, 
+                                            e.SubjectName as Subject, e.Units, a.FirstGrd as '1', a.SecondGrd as '2', a.ThirdGrd as '3', a.FourthGrd as '4',
+                                            a.Average, a.Remarks, f.GradeLevel as Grade, g.SectionRoom as Section, c.Gender, CONCAT(h.Lastname, ', ', h.Firstname) Teacher
+                                            FROM enrolled_sched a
+                                            JOIN schoolyear b ON a.SYID = b.ID
+                                            JOIN student c ON a.LRN = c.LRN
+                                            JOIN schedule d ON a.ScheduleID = d.ID
+                                            JOIN subject e ON d.Subj_ID = e.ID
+                                            JOIN gradelevel f ON d.GradeLevel_ID = f.ID
+                                            JOIN section g ON d.Sec_ID = g.ID
+                                            JOIN teacher h ON d.Teacher_ID = h.ID
+                                            WHERE c.LRN = " & StudentLRN, con)
+
+            adp.Fill(dt)
+
+            If dt.Rows.Count = 0 Then
+                MessageBox.Show("No Records")
+                Exit Sub
+            End If
+        Next
+        Dim crystal As New ReportCard
+        crystal.SetDataSource(dt)
+        FrmGradeReport.CrystalReportViewer1.ReportSource = crystal
+        FrmGradeReport.CrystalReportViewer1.Refresh()
+        FrmGradeReport.Show()
     End Sub
 End Class

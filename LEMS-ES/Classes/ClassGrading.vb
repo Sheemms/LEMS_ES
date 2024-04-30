@@ -1,46 +1,40 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class ClassGrading
 #Region "Grading"
-    Public Shared Function GradingParameters(dgv As DataGridView, rowIndex As Integer) As MySqlParameter()
+    Public Shared Function GradingParameters(row As DataGridViewRow) As MySqlParameter()
         Try
-            Dim schoolYearID As Integer = GetSchoolYearID()
-
-            If schoolYearID <> -1 Then
-                Dim gradingParam() As MySqlParameter = {
-                    New MySqlParameter("@ID", dgv.Rows(rowIndex).Cells("ID").Value),
-                    New MySqlParameter("@FirstGrd", dgv.Rows(rowIndex).Cells("firstg").Value),
-                    New MySqlParameter("@SecondGrd", dgv.Rows(rowIndex).Cells("secondg").Value),
-                    New MySqlParameter("@ThirdGrd", dgv.Rows(rowIndex).Cells("thirdg").Value),
-                    New MySqlParameter("@FourthGrd", dgv.Rows(rowIndex).Cells("fourthg").Value),
-                    New MySqlParameter("@Average", dgv.Rows(rowIndex).Cells("average").Value),
-                    New MySqlParameter("@Remarks", dgv.Rows(rowIndex).Cells("remarks").Value)
-                }
-                Return gradingParam
-            Else
-                Return Nothing
-            End If
+            Dim gradingParam() As MySqlParameter = {
+                New MySqlParameter("@ID", If(String.IsNullOrWhiteSpace(row.Cells("ID").Value), DBNull.Value, row.Cells("ID").Value)),
+                New MySqlParameter("@FirstGrd", If(String.IsNullOrWhiteSpace(row.Cells("firstg").Value), DBNull.Value, row.Cells("firstg").Value)),
+                New MySqlParameter("@SecondGrd", If(String.IsNullOrWhiteSpace(row.Cells("secondg").Value), DBNull.Value, row.Cells("secondg").Value)),
+                New MySqlParameter("@ThirdGrd", If(String.IsNullOrWhiteSpace(row.Cells("thirdg").Value), DBNull.Value, row.Cells("thirdg").Value)),
+                New MySqlParameter("@FourthGrd", If(String.IsNullOrWhiteSpace(row.Cells("fourthg").Value), DBNull.Value, row.Cells("fourthg").Value)),
+                New MySqlParameter("@Average", If(String.IsNullOrWhiteSpace(row.Cells("average").Value), DBNull.Value, row.Cells("average").Value)),
+                New MySqlParameter("@Remarks", If(String.IsNullOrWhiteSpace(row.Cells("remarks").Value), DBNull.Value, row.Cells("remarks").Value))
+            }
+            Return gradingParam
         Catch ex As Exception
             Return Nothing
         End Try
     End Function
 
-    Public Shared Sub GradingRef(dgv As DataGridView, rowIndex As Integer)
+    Public Shared Sub GradingRef(dgv As DataGridView)
         Try
-            Dim dynamicParams As MySqlParameter() = GradingParameters(dgv, rowIndex)
-
-            If dynamicParams IsNot Nothing Then
-                If FrmEnrollmentRegistration.EnrollSubjID = 0 Then
-                    If MsgBox("Do you want to add this grades?", vbQuestion + vbYesNo) = vbYes Then
+            If MsgBox("Do you want to add this grades?", vbQuestion + vbYesNo) = vbYes Then
+                For Each row As DataGridViewRow In dgv.Rows
+                    Dim dynamicParams As MySqlParameter() = GradingParameters(row)
+                    If dynamicParams IsNot Nothing Then
+                        MsgBox(row.Cells("ID").Value)
                         Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks WHERE ID=@ID", dynamicParams)
                         Success("Successfully Save!")
                     End If
-                End If
-            Else
-                MsgBox("Error: dynamicParams is Nothing")
+                Next
             End If
-        Catch ex As MySqlException When ex.Number = 1062
-            Critical("Grades already added to this student.")
-            Exit Sub
+        Catch ex As MySqlException
+            MsgBox(ex.Message)
+            'Catch ex As MySqlException When ex.Number = 1062
+            '    Critical("Grades already added to this student.")
+            '    Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

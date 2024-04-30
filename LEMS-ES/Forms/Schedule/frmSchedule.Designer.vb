@@ -49,6 +49,9 @@ Partial Class FrmSchedule
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.SearchBtn = New System.Windows.Forms.ToolStripButton()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DgvTeacher = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -89,18 +92,15 @@ Partial Class FrmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
-        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
-        Me.SearchBtn = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        Me.ToolStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -400,6 +400,33 @@ Partial Class FrmSchedule
         Me.Column9.ReadOnly = True
         Me.Column9.Width = 79
         '
+        'ToolStrip2
+        '
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.SearchBtn})
+        Me.ToolStrip2.Location = New System.Drawing.Point(3, 3)
+        Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolStrip2.Size = New System.Drawing.Size(936, 25)
+        Me.ToolStrip2.TabIndex = 30
+        Me.ToolStrip2.Text = "ToolStrip2"
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(200, 25)
+        '
+        'SearchBtn
+        '
+        Me.SearchBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.SearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.SearchBtn.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.Size = New System.Drawing.Size(23, 22)
+        Me.SearchBtn.Text = "ToolStripButton1"
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.DgvTeacher)
@@ -407,7 +434,7 @@ Partial Class FrmSchedule
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(942, 352)
+        Me.TabPage2.Size = New System.Drawing.Size(942, 391)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Schedule"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -447,7 +474,7 @@ Partial Class FrmSchedule
         Me.DgvTeacher.Name = "DgvTeacher"
         Me.DgvTeacher.ReadOnly = True
         Me.DgvTeacher.RowHeadersVisible = False
-        Me.DgvTeacher.Size = New System.Drawing.Size(936, 321)
+        Me.DgvTeacher.Size = New System.Drawing.Size(936, 360)
         Me.DgvTeacher.TabIndex = 30
         Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -528,6 +555,7 @@ Partial Class FrmSchedule
         '
         Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
         '
@@ -921,32 +949,6 @@ Partial Class FrmSchedule
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'ToolStrip2
-        '
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.SearchBtn})
-        Me.ToolStrip2.Location = New System.Drawing.Point(3, 3)
-        Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(936, 25)
-        Me.ToolStrip2.TabIndex = 30
-        Me.ToolStrip2.Text = "ToolStrip2"
-        '
-        'TxtSearch
-        '
-        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.TxtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.Size = New System.Drawing.Size(200, 25)
-        '
-        'SearchBtn
-        '
-        Me.SearchBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.SearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.SearchBtn.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.SearchBtn.Name = "SearchBtn"
-        Me.SearchBtn.Size = New System.Drawing.Size(23, 22)
-        Me.SearchBtn.Text = "ToolStripButton1"
-        '
         'FrmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -964,13 +966,13 @@ Partial Class FrmSchedule
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip2.ResumeLayout(False)
+        Me.ToolStrip2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.ToolStrip2.ResumeLayout(False)
-        Me.ToolStrip2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

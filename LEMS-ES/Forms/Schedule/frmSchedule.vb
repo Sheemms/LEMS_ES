@@ -305,4 +305,5 @@ Public Class FrmSchedule
             FrmScheduleReport.Show()
         End If
     End Sub
+
 End Class

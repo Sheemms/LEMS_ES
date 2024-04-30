@@ -528,16 +528,16 @@ Partial Public Class DS_Grading
         Public Overloads Function AddDt_GradesRow( _
                     ByVal SY As String,  _
                     ByVal EID As String,  _
-                    ByVal LRN As String,  _
+                    ByVal LRN As Long,  _
                     ByVal Fullname As String,  _
                     ByVal Code As String,  _
                     ByVal Subject As String,  _
                     ByVal Units As String,  _
-                    ByVal _1 As String,  _
-                    ByVal _2 As String,  _
-                    ByVal _3 As String,  _
-                    ByVal _4 As String,  _
-                    ByVal Average As String,  _
+                    ByVal _1 As Integer,  _
+                    ByVal _2 As Integer,  _
+                    ByVal _3 As Integer,  _
+                    ByVal _4 As Integer,  _
+                    ByVal Average As Integer,  _
                     ByVal Remarks As String,  _
                     ByVal Grade As String,  _
                     ByVal Section As String,  _
@@ -593,7 +593,7 @@ Partial Public Class DS_Grading
             MyBase.Columns.Add(Me.columnSY)
             Me.columnEID = New Global.System.Data.DataColumn("EID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEID)
-            Me.columnLRN = New Global.System.Data.DataColumn("LRN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnLRN = New Global.System.Data.DataColumn("LRN", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLRN)
             Me.columnFullname = New Global.System.Data.DataColumn("Fullname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFullname)
@@ -603,23 +603,23 @@ Partial Public Class DS_Grading
             MyBase.Columns.Add(Me.columnSubject)
             Me.columnUnits = New Global.System.Data.DataColumn("Units", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUnits)
-            Me.column1 = New Global.System.Data.DataColumn("1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column1 = New Global.System.Data.DataColumn("1", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             Me.column1.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column1")
             Me.column1.ExtendedProperties.Add("Generator_UserColumnName", "1")
             MyBase.Columns.Add(Me.column1)
-            Me.column2 = New Global.System.Data.DataColumn("2", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column2 = New Global.System.Data.DataColumn("2", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             Me.column2.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column2")
             Me.column2.ExtendedProperties.Add("Generator_UserColumnName", "2")
             MyBase.Columns.Add(Me.column2)
-            Me.column3 = New Global.System.Data.DataColumn("3", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column3 = New Global.System.Data.DataColumn("3", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             Me.column3.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column3")
             Me.column3.ExtendedProperties.Add("Generator_UserColumnName", "3")
             MyBase.Columns.Add(Me.column3)
-            Me.column4 = New Global.System.Data.DataColumn("4", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column4 = New Global.System.Data.DataColumn("4", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             Me.column4.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column4")
             Me.column4.ExtendedProperties.Add("Generator_UserColumnName", "4")
             MyBase.Columns.Add(Me.column4)
-            Me.columnAverage = New Global.System.Data.DataColumn("Average", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnAverage = New Global.System.Data.DataColumn("Average", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAverage)
             Me.columnRemarks = New Global.System.Data.DataColumn("Remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRemarks)
@@ -807,10 +807,10 @@ Partial Public Class DS_Grading
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property LRN() As String
+        Public Property LRN() As Long
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Grades.LRNColumn),String)
+                    Return CType(Me(Me.tableDt_Grades.LRNColumn),Long)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'LRN' in table 'Dt_Grades' is DBNull.", e)
                 End Try
@@ -882,10 +882,10 @@ Partial Public Class DS_Grading
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property _1() As String
+        Public Property _1() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Grades._1Column),String)
+                    Return CType(Me(Me.tableDt_Grades._1Column),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column '1' in table 'Dt_Grades' is DBNull.", e)
                 End Try
@@ -897,10 +897,10 @@ Partial Public Class DS_Grading
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property _2() As String
+        Public Property _2() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Grades._2Column),String)
+                    Return CType(Me(Me.tableDt_Grades._2Column),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column '2' in table 'Dt_Grades' is DBNull.", e)
                 End Try
@@ -912,10 +912,10 @@ Partial Public Class DS_Grading
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property _3() As String
+        Public Property _3() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Grades._3Column),String)
+                    Return CType(Me(Me.tableDt_Grades._3Column),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column '3' in table 'Dt_Grades' is DBNull.", e)
                 End Try
@@ -927,10 +927,10 @@ Partial Public Class DS_Grading
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property _4() As String
+        Public Property _4() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Grades._4Column),String)
+                    Return CType(Me(Me.tableDt_Grades._4Column),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column '4' in table 'Dt_Grades' is DBNull.", e)
                 End Try
@@ -942,10 +942,10 @@ Partial Public Class DS_Grading
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Average() As String
+        Public Property Average() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_Grades.AverageColumn),String)
+                    Return CType(Me(Me.tableDt_Grades.AverageColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Average' in table 'Dt_Grades' is DBNull.", e)
                 End Try
