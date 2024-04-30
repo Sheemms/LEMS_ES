@@ -195,34 +195,34 @@
   <data name="PanelSidebar.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Guna2Button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BtnSystemUtilities.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="Guna2Button1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="BtnSystemUtilities.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 9pt</value>
   </data>
-  <data name="Guna2Button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnSystemUtilities.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 702</value>
   </data>
-  <data name="Guna2Button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnSystemUtilities.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 45</value>
   </data>
-  <data name="Guna2Button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnSystemUtilities.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="Guna2Button1.Text" xml:space="preserve">
+  <data name="BtnSystemUtilities.Text" xml:space="preserve">
     <value>System Utilities</value>
   </data>
-  <data name="&gt;&gt;Guna2Button1.Name" xml:space="preserve">
-    <value>Guna2Button1</value>
+  <data name="&gt;&gt;BtnSystemUtilities.Name" xml:space="preserve">
+    <value>BtnSystemUtilities</value>
   </data>
-  <data name="&gt;&gt;Guna2Button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnSystemUtilities.Type" xml:space="preserve">
     <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
-  <data name="&gt;&gt;Guna2Button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnSystemUtilities.Parent" xml:space="preserve">
     <value>PanelSidebar</value>
   </data>
-  <data name="&gt;&gt;Guna2Button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnSystemUtilities.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btnLogout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

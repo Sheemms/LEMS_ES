@@ -7,6 +7,12 @@ Module Mod_Conn
     Public dt As New DataTable
     Public dr As MySqlDataReader
     Public userID As Integer
+    Public str_user As String
+    Public str_password As String
+    Public str_role As String
+    Public str_name As String
+    Public pbox As Image
+
     Public Sub Connection()
         If con.State = ConnectionState.Closed Then
             con.Open()

@@ -93,32 +93,35 @@
             End If
         End If
     End Sub
-    Private Sub DgvElemGrading_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DgvElemGrading.CellValueChanged
-        If e.RowIndex >= 0 AndAlso e.RowIndex < DgvElemGrading.Rows.Count Then
-            Dim totalScore As Double = 0
-            For i As Integer = 8 To 11
-                If DgvElemGrading.Rows(e.RowIndex).Cells(i).Value IsNot Nothing AndAlso IsNumeric(DgvElemGrading.Rows(e.RowIndex).Cells(i).Value) Then
-                    totalScore += Convert.ToDouble(DgvElemGrading.Rows(e.RowIndex).Cells(i).Value)
-                End If
-            Next
-            Dim averageScore As Double = totalScore / 4
+    'Private Sub DgvElemGrading_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DgvElemGrading.CellValueChanged
+    '    If e.RowIndex >= 0 AndAlso e.RowIndex < DgvElemGrading.Rows.Count Then
+    '        Dim totalScore As Integer = 0
+    '        For Each row As DataGridViewRow In DgvElemGrading.Rows
+    '            Dim c8 As Integer = DgvElemGrading.Rows(e.RowIndex).Cells("firstg").Value
+    '            Dim c9 As Integer = DgvElemGrading.Rows(e.RowIndex).Cells("secondg").Value
+    '            Dim c10 As Integer = DgvElemGrading.Rows(e.RowIndex).Cells("thirdg").Value
+    '            Dim c11 As Integer = DgvElemGrading.Rows(e.RowIndex).Cells("fourthg").Value
 
-            DgvElemGrading.Rows(e.RowIndex).Cells(12).Value = averageScore '
-            If averageScore >= 75 Then
-                DgvElemGrading.Rows(e.RowIndex).Cells(13).Value = "Passed"
-            Else
-                DgvElemGrading.Rows(e.RowIndex).Cells(13).Value = "Failed"
-            End If
-        End If
-    End Sub
+    '            totalScore = c8 + c8 + c10 + c11
+    '        Next
+    '        Dim averageScore As Double = totalScore / 4
+
+    '        DgvElemGrading.Rows(e.RowIndex).Cells("average").Value = averageScore '
+    '        If averageScore >= 75 Then
+    '            DgvElemGrading.Rows(e.RowIndex).Cells("remarks").Value = "Passed"
+    '        Else
+    '            DgvElemGrading.Rows(e.RowIndex).Cells("remarks").Value = "Failed"
+    '        End If
+    '    End If
+    'End Sub
     Private Sub DgvElemGrading_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DgvElemGrading.EditingControlShowing
-        'Dim columnIndex As Integer = DgvElemGrading.CurrentCell.ColumnIndex
+        Dim columnIndex As Integer = DgvElemGrading.CurrentCell.ColumnIndex
 
-        'If columnIndex = 11 Then
-        '    AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress
-        'Else
-        '    AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress1
-        'End If
+        If columnIndex = 11 Then
+            AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress
+        Else
+            AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress1
+        End If
     End Sub
 
     Private Sub TextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
@@ -139,5 +142,28 @@
 
         ClassGrading.GradingRef(DgvElemGrading, rowIndex)
         LoadData()
+    End Sub
+
+    Private Sub DgvElemGrading_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DgvElemGrading.CellEndEdit
+        Try
+
+            Dim totalScore As Integer = 0
+            Dim c8 As Integer = If(String.IsNullOrWhiteSpace(DgvElemGrading.Rows(e.RowIndex).Cells("firstg").Value), "0", DgvElemGrading.Rows(e.RowIndex).Cells("firstg").Value)
+            Dim c9 As Integer = If(String.IsNullOrWhiteSpace(DgvElemGrading.Rows(e.RowIndex).Cells("secondg").Value), "0", DgvElemGrading.Rows(e.RowIndex).Cells("secondg").Value)
+            Dim c10 As Integer = If(String.IsNullOrWhiteSpace(DgvElemGrading.Rows(e.RowIndex).Cells("thirdg").Value), "0", DgvElemGrading.Rows(e.RowIndex).Cells("thirdg").Value)
+            Dim c11 As Integer = If(String.IsNullOrWhiteSpace(DgvElemGrading.Rows(e.RowIndex).Cells("fourthg").Value), "0", DgvElemGrading.Rows(e.RowIndex).Cells("fourthg").Value)
+            totalScore = c8 + c9 + c10 + c11
+            Dim averageScore As Double = totalScore / 4
+
+            DgvElemGrading.Rows(e.RowIndex).Cells("average").Value = averageScore '
+            If averageScore >= 75 Then
+                DgvElemGrading.Rows(e.RowIndex).Cells("remarks").Value = "Passed"
+            Else
+                DgvElemGrading.Rows(e.RowIndex).Cells("remarks").Value = "Failed"
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

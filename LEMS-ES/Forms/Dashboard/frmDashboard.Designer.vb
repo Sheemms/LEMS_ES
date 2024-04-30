@@ -27,7 +27,7 @@ Partial Class frmDashboard
         Me.TopPanel = New System.Windows.Forms.Panel()
         Me.Guna2CirclePictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelSidebar = New System.Windows.Forms.Panel()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnSystemUtilities = New Guna.UI2.WinForms.Guna2Button()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMaintenance = New Guna.UI2.WinForms.Guna2Button()
@@ -79,7 +79,7 @@ Partial Class frmDashboard
         '
         resources.ApplyResources(Me.PanelSidebar, "PanelSidebar")
         Me.PanelSidebar.BackColor = System.Drawing.Color.White
-        Me.PanelSidebar.Controls.Add(Me.Guna2Button1)
+        Me.PanelSidebar.Controls.Add(Me.BtnSystemUtilities)
         Me.PanelSidebar.Controls.Add(Me.btnLogout)
         Me.PanelSidebar.Controls.Add(Me.btnReports)
         Me.PanelSidebar.Controls.Add(Me.btnMaintenance)
@@ -93,19 +93,19 @@ Partial Class frmDashboard
         Me.PanelSidebar.Controls.Add(Me.PanelLogo)
         Me.PanelSidebar.Name = "PanelSidebar"
         '
-        'Guna2Button1
+        'BtnSystemUtilities
         '
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        resources.ApplyResources(Me.Guna2Button1, "Guna2Button1")
-        Me.Guna2Button1.FillColor = System.Drawing.Color.White
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
-        Me.Guna2Button1.Image = Global.LEMS_ES.My.Resources.Resources.maintenance
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(30, 30)
-        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.BtnSystemUtilities.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSystemUtilities.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSystemUtilities.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnSystemUtilities.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        resources.ApplyResources(Me.BtnSystemUtilities, "BtnSystemUtilities")
+        Me.BtnSystemUtilities.FillColor = System.Drawing.Color.White
+        Me.BtnSystemUtilities.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(116, Byte), Integer))
+        Me.BtnSystemUtilities.Image = Global.LEMS_ES.My.Resources.Resources.maintenance
+        Me.BtnSystemUtilities.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BtnSystemUtilities.ImageSize = New System.Drawing.Size(30, 30)
+        Me.BtnSystemUtilities.Name = "BtnSystemUtilities"
         '
         'btnLogout
         '
@@ -420,6 +420,6 @@ Partial Class frmDashboard
     Friend WithEvents TransactionPanel As Panel
     Friend WithEvents btnScheduling As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnTransaction As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnSystemUtilities As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2CirclePictureBox1 As PictureBox
 End Class

@@ -141,6 +141,7 @@
     <Compile Include="Classes\ClassEnroll.vb" />
     <Compile Include="Classes\ClassFees.vb" />
     <Compile Include="Classes\ClassGradeLevel.vb" />
+    <Compile Include="Classes\ClassGrading.vb" />
     <Compile Include="Classes\ClassPayments.vb" />
     <Compile Include="Classes\ClassRequirements.vb" />
     <Compile Include="Classes\ClassRoom.vb" />

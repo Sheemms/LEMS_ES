@@ -1,4 +1,5 @@
-﻿Public Class Login
+﻿Imports MySql.Data.MySqlClient
+Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
     End Sub
     Public Sub Clear()
@@ -26,9 +27,50 @@
     End Sub
 
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        ValidateInput(txtUsername, "Please enter a username")
-        ValidateInput(txtPassword, "Please enter a password")
+        '    ValidateInput(txtUsername, "Please enter a username")
+        '    ValidateInput(txtPassword, "Please enter a password")
 
+        '    Try
+        '        If Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtUsername)) OrElse Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtPassword)) Then
+        '            Clear()
+        '            Critical("Error: Username and password cannot be empty")
+        '            Exit Sub
+        '        End If
+
+        '        Query("SELECT * FROM user WHERE BINARY Username = @Username AND BINARY Password = @Password")
+
+        '        Dim dt As DataTable = ds.Tables("QueryTb")
+        '        If dt.Rows.Count > 0 Then
+        '            For Each row As DataRow In dt.Rows
+        '                userID = Convert.ToInt32(row("ID"))
+        '                str_user = row("Username").ToString
+        '                str_password = row("Password").ToString
+        '                str_role = row("UserLevel").ToString
+        '                str_name = row("Fullname").ToString
+        '            Next
+        '            With frmDashboard
+        '                .btnDashboard.Enabled = True
+        '                .btnTransaction.Enabled = (str_role = "Admin" OrElse str_role = "Office Staff")
+        '                .btnDataEntry.Enabled = (str_role = "Admin" OrElse str_role = "Office Staff")
+        '                .btnGrading.Enabled = True
+        '                .btnMaintenance.Enabled = (str_role = "Admin")
+        '                .btnReports.Enabled = (str_role = "Admin" OrElse str_role = "Office Staff")
+        '                .BtnSystemUtilities.Enabled = (str_role = "Admin")
+        '                .Label3.Text = str_name
+        '                .Label4.Text = str_role
+        '                Clear()
+        '                Me.Hide()
+        '                .Show()
+        '            End With
+        '        Else
+        '            Clear()
+        '            Critical("Wrong Username or Password!")
+        '        End If
+        '    Catch ex As MySqlException When ex.Number = 1062
+        '        Critical("Subject already added to this student.")
+        '    Catch ex As Exception
+        '        MsgBox("Database error: " & ex.Message)
+        '    End Try
 
         Try
             If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
@@ -70,6 +112,8 @@
         End Try
     End Sub
 
+
+
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Application.Exit()
     End Sub
@@ -97,7 +141,7 @@
 
     Private Sub TextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown, txtUsername.KeyDown
         If e.KeyCode = Keys.Enter Then
-            btnLogin_Click(Nothing, Nothing)
+            BtnLogin_Click(Nothing, Nothing)
         Else
             Exit Sub
         End If
