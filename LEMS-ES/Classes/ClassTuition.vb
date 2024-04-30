@@ -92,7 +92,7 @@ Public Class ClassTuition
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE otherfee SET Description=@Description, OF_Amount=@OF_Amount", OtherFeeParameters())
+                    Command("UPDATE otherfee SET Description=@Description, Amount=@Amount", OtherFeeParameters())
                     Success("Successfully Updated!")
                 End If
             End If

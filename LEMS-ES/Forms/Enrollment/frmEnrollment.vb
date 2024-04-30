@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class frmEnrollment
+Public Class FrmEnrollment
     Private Sub FrmEnrollment_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()

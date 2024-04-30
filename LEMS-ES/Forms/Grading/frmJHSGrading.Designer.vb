@@ -26,15 +26,8 @@ Partial Class FrmJHSGrading
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CmbSubj = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.CmbSubjCode = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.dgvJHSGrading = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,138 +41,42 @@ Partial Class FrmJHSGrading
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.CmbSubject = New System.Windows.Forms.ToolStripComboBox()
+        Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvJHSGrading, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Animated = True
-        Me.txtSearch.AutoRoundedCorners = True
-        Me.txtSearch.BorderRadius = 18
-        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSearch.DefaultText = ""
-        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearch.FillColor = System.Drawing.Color.LemonChiffon
-        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSearch.ForeColor = System.Drawing.Color.Black
-        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
-        Me.txtSearch.Location = New System.Drawing.Point(651, 3)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PlaceholderText = ""
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.Size = New System.Drawing.Size(267, 38)
-        Me.txtSearch.TabIndex = 17
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Font = New System.Drawing.Font("Courier New", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(933, 485)
+        Me.GroupBox1.Size = New System.Drawing.Size(1115, 711)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Junior High Module"
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.btnSave)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(3, 439)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(927, 45)
-        Me.Panel1.TabIndex = 6
-        '
-        'btnSave
-        '
-        Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(769, 6)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(149, 36)
-        Me.btnSave.TabIndex = 9
-        Me.btnSave.Text = "Save"
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.dgvJHSGrading)
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Controls.Add(Me.ToolStrip1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Font = New System.Drawing.Font("Courier New", 8.0!)
         Me.Panel2.Location = New System.Drawing.Point(3, 22)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(927, 417)
+        Me.Panel2.Size = New System.Drawing.Size(1109, 686)
         Me.Panel2.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Courier New", 8.25!)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(207, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 14)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "Filtered By:"
-        '
-        'CmbSubj
-        '
-        Me.CmbSubj.BackColor = System.Drawing.Color.Transparent
-        Me.CmbSubj.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CmbSubj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbSubj.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbSubj.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbSubj.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CmbSubj.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CmbSubj.ItemHeight = 30
-        Me.CmbSubj.Location = New System.Drawing.Point(450, 5)
-        Me.CmbSubj.Name = "CmbSubj"
-        Me.CmbSubj.Size = New System.Drawing.Size(140, 36)
-        Me.CmbSubj.TabIndex = 23
-        '
-        'CmbSubjCode
-        '
-        Me.CmbSubjCode.BackColor = System.Drawing.Color.Transparent
-        Me.CmbSubjCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CmbSubjCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbSubjCode.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbSubjCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbSubjCode.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CmbSubjCode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CmbSubjCode.ItemHeight = 30
-        Me.CmbSubjCode.Location = New System.Drawing.Point(304, 5)
-        Me.CmbSubjCode.Name = "CmbSubjCode"
-        Me.CmbSubjCode.Size = New System.Drawing.Size(140, 36)
-        Me.CmbSubjCode.TabIndex = 22
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Courier New", 8.25!)
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(596, 17)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 14)
-        Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Search"
         '
         'dgvJHSGrading
         '
@@ -210,13 +107,13 @@ Partial Class FrmJHSGrading
         Me.dgvJHSGrading.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvJHSGrading.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvJHSGrading.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvJHSGrading.Location = New System.Drawing.Point(0, 47)
+        Me.dgvJHSGrading.Location = New System.Drawing.Point(0, 25)
         Me.dgvJHSGrading.MultiSelect = False
         Me.dgvJHSGrading.Name = "dgvJHSGrading"
         Me.dgvJHSGrading.RowHeadersVisible = False
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvJHSGrading.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvJHSGrading.Size = New System.Drawing.Size(927, 370)
+        Me.dgvJHSGrading.Size = New System.Drawing.Size(1109, 661)
         Me.dgvJHSGrading.TabIndex = 5
         Me.dgvJHSGrading.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvJHSGrading.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -326,45 +223,88 @@ Partial Class FrmJHSGrading
         Me.Column12.Name = "Column12"
         Me.Column12.Width = 81
         '
-        'Panel3
+        'ToolStrip1
         '
-        Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Controls.Add(Me.CmbSubj)
-        Me.Panel3.Controls.Add(Me.txtSearch)
-        Me.Panel3.Controls.Add(Me.CmbSubjCode)
-        Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(927, 47)
-        Me.Panel3.TabIndex = 25
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripTextBox1, Me.ToolStripButton3, Me.CmbSubject, Me.CmbSubjCode, Me.ToolStripLabel1})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(1109, 25)
+        Me.ToolStrip1.TabIndex = 28
+        Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'frmJHSGrading
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.floppy_disk
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(100, 22)
+        Me.ToolStripButton1.Text = "Save Changes"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
+        Me.ToolStripButton2.Text = "Print"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
+        '
+        'CmbSubject
+        '
+        Me.CmbSubject.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbSubject.Name = "CmbSubject"
+        Me.CmbSubject.Size = New System.Drawing.Size(121, 25)
+        '
+        'CmbSubjCode
+        '
+        Me.CmbSubjCode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbSubjCode.Name = "CmbSubjCode"
+        Me.CmbSubjCode.Size = New System.Drawing.Size(121, 25)
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
+        Me.ToolStripLabel1.Text = "Filtered By:"
+        '
+        'FrmJHSGrading
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(933, 485)
+        Me.ClientSize = New System.Drawing.Size(1115, 711)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmJHSGrading"
+        Me.Name = "FrmJHSGrading"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me.dgvJHSGrading, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label9 As Label
     Friend WithEvents dgvJHSGrading As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
@@ -378,8 +318,12 @@ Partial Class FrmJHSGrading
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
-    Friend WithEvents CmbSubj As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents CmbSubjCode As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents CmbSubject As ToolStripComboBox
+    Friend WithEvents CmbSubjCode As ToolStripComboBox
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
 End Class

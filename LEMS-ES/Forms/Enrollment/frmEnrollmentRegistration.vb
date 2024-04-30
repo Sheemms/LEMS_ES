@@ -3,6 +3,8 @@
 Public Class FrmEnrollmentRegistration
     Public EnrollmentID As Integer = 0
     Public EnrollSubjID As Integer = 0
+    Public Ave As String
+    Public Rmrks As String
     Public scheduleID As Integer = 0
     Public _subjectno, _title, _unit, _pre As String
     Public _id, _sub As String

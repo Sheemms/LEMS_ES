@@ -1,4 +1,4 @@
-﻿Public Class frmPayments
+﻿Public Class FrmPayments
     Public idPayment As Integer = 0
     Public idRegisteredStudents As Integer = 0
     Private Sub FrmPayments_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -221,7 +221,7 @@
         DgvReceipt.Rows.Add("Tuition", Decimal.Parse(txtTuition.Text))
         DgvReceipt.Rows.Add("Miscellaneous", Decimal.Parse(txtMiscellaneous.Text))
     End Sub
-    Private Sub cmbModeofPayment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbModeofPayment.SelectedIndexChanged
+    Private Sub CmbModeofPayment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbModeofPayment.SelectedIndexChanged
         If cmbModeofPayment.SelectedIndex = 0 Then
             Guna2NumericUpDown1.Value = 0
             Guna2NumericUpDown1.Enabled = False

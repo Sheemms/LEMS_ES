@@ -1,8 +1,8 @@
-﻿Public Class frmUserMaintenance
+﻿Public Class FrmUserMaintenance
     Public idUserMaintenance As Integer = 0
     Private Sub FrmUserMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        loadrecords()
+        Loadrecords()
     End Sub
     Public Sub Loadrecords()
         Query("SELECT * FROM user")

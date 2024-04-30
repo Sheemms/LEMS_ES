@@ -112,6 +112,11 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:LEMS_ES.My.Resources.Resources.floppy_disk">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:LEMS_ES.My.Resources.Resources.grading">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
