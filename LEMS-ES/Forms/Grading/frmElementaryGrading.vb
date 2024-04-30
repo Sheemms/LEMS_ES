@@ -114,15 +114,15 @@
     '        End If
     '    End If
     'End Sub
-    Private Sub DgvElemGrading_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DgvElemGrading.EditingControlShowing
-        Dim columnIndex As Integer = DgvElemGrading.CurrentCell.ColumnIndex
+    'Private Sub DgvElemGrading_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DgvElemGrading.EditingControlShowing
+    '    Dim columnIndex As Integer = DgvElemGrading.CurrentCell.ColumnIndex
 
-        If columnIndex = 11 Then
-            AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress
-        Else
-            AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress1
-        End If
-    End Sub
+    '    If columnIndex >= 8 AndAlso columnIndex <= 11 Then
+    '        AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress
+    '    Else
+    '        AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress1
+    '    End If
+    'End Sub
 
     Private Sub TextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
         Select Case Asc(e.KeyChar)

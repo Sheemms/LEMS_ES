@@ -23,7 +23,7 @@
         'CmbSubject.DisplayMember = "Department"
     End Sub
 
-    Private Sub DgvJHSGrading_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvJHSGrading.CellFormatting
+    Private Sub DgvJHSGrading_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         For i As Integer = 0 To dgvJHSGrading.Rows.Count - 1
             If dgvJHSGrading.Rows(i).Cells(11).Value = "Failed" Then
                 For x As Integer = 0 To 11
@@ -45,22 +45,27 @@
         Next
     End Sub
 
-    Private Sub DgvJHSGrading_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dgvJHSGrading.CellValueChanged
-        'Dim totalScore As Double = 0
+    Private Sub DgvJHSGrading_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DgvJHSGrading.CellEndEdit
+        Try
 
-        'For i As Integer = 6 To 9
-        '    If dgvJHSGrading.Rows(e.RowIndex).Cells(i).Value IsNot Nothing AndAlso IsNumeric(dgvJHSGrading.Rows(e.RowIndex).Cells(i).Value) Then
-        '        totalScore += Convert.ToDouble(dgvJHSGrading.Rows(e.RowIndex).Cells(i).Value)
-        '    End If
-        'Next
-        'Dim averageScore As Double = totalScore / 4
+            Dim totalScore As Integer = 0
+            Dim c8 As Integer = If(String.IsNullOrWhiteSpace(DgvJHSGrading.Rows(e.RowIndex).Cells("firstg").Value), "0", DgvJHSGrading.Rows(e.RowIndex).Cells("firstg").Value)
+            Dim c9 As Integer = If(String.IsNullOrWhiteSpace(DgvJHSGrading.Rows(e.RowIndex).Cells("secondg").Value), "0", DgvJHSGrading.Rows(e.RowIndex).Cells("secondg").Value)
+            Dim c10 As Integer = If(String.IsNullOrWhiteSpace(DgvJHSGrading.Rows(e.RowIndex).Cells("thirdg").Value), "0", DgvJHSGrading.Rows(e.RowIndex).Cells("thirdg").Value)
+            Dim c11 As Integer = If(String.IsNullOrWhiteSpace(DgvJHSGrading.Rows(e.RowIndex).Cells("fourthg").Value), "0", DgvJHSGrading.Rows(e.RowIndex).Cells("fourthg").Value)
+            totalScore = c8 + c9 + c10 + c11
+            Dim averageScore As Double = totalScore / 4
 
-        'dgvJHSGrading.Rows(e.RowIndex).Cells(10).Value = averageScore
-        'If dgvJHSGrading.Rows(e.RowIndex).Cells(10).Value >= 75 Then
-        '    dgvJHSGrading.Rows(e.RowIndex).Cells(11).Value = "Passed"
-        'End If
-        'If dgvJHSGrading.Rows(e.RowIndex).Cells(10).Value <= 74 Then
-        '    dgvJHSGrading.Rows(e.RowIndex).Cells(11).Value = "Failed"
-        'End If
+            DgvJHSGrading.Rows(e.RowIndex).Cells("average").Value = averageScore '
+            If averageScore >= 75 Then
+                DgvJHSGrading.Rows(e.RowIndex).Cells("remarks").Value = "Passed"
+            Else
+                DgvJHSGrading.Rows(e.RowIndex).Cells("remarks").Value = "Failed"
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
+
 End Class

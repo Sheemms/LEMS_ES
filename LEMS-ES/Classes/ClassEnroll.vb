@@ -60,10 +60,8 @@ Public Class ClassEnroll
                 New MySqlParameter("@SYID", schoolYearID),
                 New MySqlParameter("@EID", FrmEnrollmentRegistration.LabelEID.Text),
                 New MySqlParameter("@LRN", FrmEnrollmentRegistration.txtStudLRN.Text),
-                New MySqlParameter("@ScheduleID", FrmEnrollmentRegistration.scheduleID),
-                New MySqlParameter("@Average", FrmEnrollmentRegistration.Ave),
-                New MySqlParameter("@Remarks", FrmEnrollmentRegistration.Rmrks)
-            }
+                New MySqlParameter("@ScheduleID", FrmEnrollmentRegistration.scheduleID)
+                }
                 Return enrollsubjParam
             Else
                 Return Nothing
@@ -80,8 +78,8 @@ Public Class ClassEnroll
             If dynamicParams IsNot Nothing Then
                 If FrmEnrollmentRegistration.EnrollSubjID = 0 Then
                     If MsgBox("Do you want to add this subject?", vbQuestion + vbYesNo) = vbYes Then
-                        Command("INSERT INTO enrolled_sched(SYID, EID, LRN, ScheduleID, Average, Remarks) 
-                                VALUES (@SYID, @EID, @LRN, @ScheduleID, @Average, @Remarks)", dynamicParams)
+                        Command("INSERT INTO enrolled_sched(SYID, EID, LRN, ScheduleID) 
+                                VALUES (@SYID, @EID, @LRN, @ScheduleID)", dynamicParams)
                         Success("Successfully Added!")
                     End If
                 End If

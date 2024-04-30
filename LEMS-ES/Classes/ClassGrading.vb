@@ -7,8 +7,12 @@ Public Class ClassGrading
 
             If schoolYearID <> -1 Then
                 Dim gradingParam() As MySqlParameter = {
-                    New MySqlParameter("@Average", dgv.Rows(rowIndex).Cells(12).Value),
-                    New MySqlParameter("@Remarks", dgv.Rows(rowIndex).Cells(13).Value)
+                    New MySqlParameter("@FirstGrd", dgv.Rows(rowIndex).Cells("firstg").Value),
+                    New MySqlParameter("@SecondGrd", dgv.Rows(rowIndex).Cells("secondg").Value),
+                    New MySqlParameter("@ThirdGrd", dgv.Rows(rowIndex).Cells("thirdg").Value),
+                    New MySqlParameter("@FourthGrd", dgv.Rows(rowIndex).Cells("fourthg").Value),
+                    New MySqlParameter("@Average", dgv.Rows(rowIndex).Cells("average").Value),
+                    New MySqlParameter("@Remarks", dgv.Rows(rowIndex).Cells("remarks").Value)
                 }
                 Return gradingParam
             Else
@@ -25,8 +29,8 @@ Public Class ClassGrading
 
             If dynamicParams IsNot Nothing Then
                 If FrmEnrollmentRegistration.EnrollSubjID = 0 Then
-                    If MsgBox("Do you want to add this subject?", vbQuestion + vbYesNo) = vbYes Then
-                        Command("UPDATE enrolled_sched SET Average=@Average", dynamicParams)
+                    If MsgBox("Do you want to add this grades?", vbQuestion + vbYesNo) = vbYes Then
+                        Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks", dynamicParams)
                         Success("Successfully Save!")
                     End If
                 End If
@@ -34,7 +38,7 @@ Public Class ClassGrading
                 MsgBox("Error: dynamicParams is Nothing")
             End If
         Catch ex As MySqlException When ex.Number = 1062
-            Critical("Subject already added to this student.")
+            Critical("Grades already added to this student.")
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
