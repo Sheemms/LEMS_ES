@@ -242,6 +242,26 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="T:LEMS_ES.DS_ClassList">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_ClassList.Dt_ClassListDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_ClassList.Dt_ClassListRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_ClassList.Dt_ClassListRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:LEMS_ES.DS_Grading">
 <summary>
 Represents a strongly typed in-memory cache of data.

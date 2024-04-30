@@ -153,6 +153,12 @@
     <Compile Include="Classes\ClassTeacher.vb" />
     <Compile Include="Classes\ClassTuition.vb" />
     <Compile Include="Classes\ClassUserMaintenance.vb" />
+    <Compile Include="CrystalRep\ClassList.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalRep\RegForm.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +182,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentsReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dataset\DS_ClassList.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_ClassList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_ClassList.vb">
+      <DependentUpon>DS_ClassList.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DS_Grading.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -441,6 +455,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalRep\ClassList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClassList.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalRep\RegForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegForm.vb</LastGenOutput>
@@ -570,6 +588,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dataset\DS_ClassList.xsc">
+      <DependentUpon>DS_ClassList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_ClassList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_ClassList.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_ClassList.xss">
+      <DependentUpon>DS_ClassList.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DS_Grading.xsc">
       <DependentUpon>DS_Grading.xsd</DependentUpon>
     </None>
