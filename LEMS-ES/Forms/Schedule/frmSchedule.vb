@@ -202,17 +202,31 @@ Public Class FrmSchedule
         txtTeacherName.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
     Public teacherid = Nothing
-    Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
-        Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
+    'Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
+    '    Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
 
-        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
-        Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedTeacherName}'").FirstOrDefault()
+    '    Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
+    '    Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedTeacherName}'").FirstOrDefault()
 
-        If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
+    '    If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
+    '        txtTeacherID.Text = row("EmpID").ToString()
+    '        teacherid = row("ID").ToString()
+    '    Else
+    '        txtTeacherID.Clear()
+    '    End If
+    'End Sub
+    Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
+        Query($"SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher WHERE Lastname LIKE '{TxtSearch.Text}' OR Firstname LIKE '{TxtSearch.Text}' OR MiddleInitial LIKE '{TxtSearch.Text}'")
+        Dim row As DataRow = ds.Tables("QueryTb").Rows.Cast(Of DataRow)().FirstOrDefault() ' Get the first row if exists
+        If row IsNot Nothing AndAlso row.Table.Columns.Contains("ID") Then
+            txtTeacherName.Text = row("FullName").ToString()
             txtTeacherID.Text = row("EmpID").ToString()
             teacherid = row("ID").ToString()
         Else
+            ' Clear the text boxes and teacherid if no teacher is found
+            txtTeacherName.Clear()
             txtTeacherID.Clear()
+            teacherid = Nothing
         End If
     End Sub
 
@@ -251,29 +265,29 @@ Public Class FrmSchedule
         dgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
 
-    Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
-        Dim searchText As String = TxtSearch.Text.Trim()
+    'Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
+    '    Dim searchText As String = TxtSearch.Text.Trim()
 
-        If searchText <> String.Empty Then
-            Dim dataTable As DataTable = CType(dgvSchedule.DataSource, DataTable)
-            Dim filteredData As New DataTable()
+    '    If searchText <> String.Empty Then
+    '        Dim dataTable As DataTable = CType(dgvSchedule.DataSource, DataTable)
+    '        Dim filteredData As New DataTable()
 
-            filteredData = dataTable.Clone()
+    '        filteredData = dataTable.Clone()
 
-            For Each row As DataRow In dataTable.Rows
-                For Each col As DataColumn In dataTable.Columns
-                    If row(col.ColumnName).ToString().Contains(searchText) Then
-                        filteredData.ImportRow(row)
-                        Exit For
-                    End If
-                Next
-            Next
+    '        For Each row As DataRow In dataTable.Rows
+    '            For Each col As DataColumn In dataTable.Columns
+    '                If row(col.ColumnName).ToString().Contains(searchText) Then
+    '                    filteredData.ImportRow(row)
+    '                    Exit For
+    '                End If
+    '            Next
+    '        Next
 
-            dgvSchedule.DataSource = filteredData
-        Else
-            LoadRecords()
-        End If
-    End Sub
+    '        dgvSchedule.DataSource = filteredData
+    '    Else
+    '        LoadRecords()
+    '    End If
+    'End Sub
 
     Private Sub DgvTeacher_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvTeacher.CellContentClick
         Dim column As String = DgvTeacher.Columns(e.ColumnIndex).Name

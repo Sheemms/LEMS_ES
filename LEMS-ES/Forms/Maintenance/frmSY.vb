@@ -7,7 +7,7 @@
     Public Sub Loadrecords()
         Query("SELECT ID, CONCAT(Start_Year, '-', End_Year) SchoolYear, Status FROM schoolyear ORDER BY ID DESC ")
         DgvSY.DataSource = ds.Tables("QueryTb")
-        txtStartYear.Text = Year(Now)
+        TxtStartYear.Text = Year(Now)
     End Sub
     Private Sub DgvSY_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSY.CellClick
         Try
@@ -16,8 +16,8 @@
                 idSY = row.Cells(0).Value
                 Dim schoolYear As String = row.Cells(1).Value.ToString()
                 Dim years() As String = schoolYear.Split("-"c)
-                txtStartYear.Text = years(0)
-                txtEndYear.Text = years(1)
+                TxtStartYear.Text = years(0)
+                TxtEndYear.Text = years(1)
             ElseIf e.ColumnIndex >= 0 Then
                 ClearFields(Me, idSY)
             End If
@@ -29,10 +29,10 @@
 
 
 
-    Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
-        If IS_EMPTY(txtEndYear) = True Then Return
+    Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        If IS_EMPTY(TxtEndYear) = True Then Return
         Dim endYear As Integer
-        If Not Integer.TryParse(txtEndYear.Text, endYear) Then
+        If Not Integer.TryParse(TxtEndYear.Text, endYear) Then
             MessageBox.Show("Invalid end year.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
@@ -45,5 +45,13 @@
 
         ClassSchoolYear.SchoolYearRef()
         ClearFields(Me, idSY)
+    End Sub
+
+    Private Sub TxtEndYear_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress
+        TextBoxDigitsOnly(TxtEndYear)
+    End Sub
+
+    Private Sub DgvSY_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSY.CellContentClick
+
     End Sub
 End Class

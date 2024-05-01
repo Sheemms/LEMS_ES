@@ -33,7 +33,11 @@ Public Class FrmCharts
     Sub ActiveSchoolYear()
         Command("SELECT CONCAT(Start_Year, '-', End_Year) as SchoolYear FROM schoolyear WHERE Status = 'Open'")
         Dim total As String = cmd.ExecuteScalar()
-        lblSY.Text = total.ToString()
+        If total IsNot Nothing Then
+            lblSY.Text = total.ToString()
+        Else
+            lblSY.Text = "0000-0000"
+        End If
     End Sub
     Sub ChartEnrolled()
         With Chart1

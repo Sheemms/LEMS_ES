@@ -8,8 +8,8 @@
         Query("SELECT * FROM department")
         dgvDepartment.DataSource = ds.Tables("QueryTb")
     End Sub
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If IS_EMPTY(txtDeptName) = True Then Return
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        If IS_EMPTY(TxtDeptName) = True Then Return
 
         ClassDepartment.DepartmentRef()
         ClearFields(Me, idDept)
@@ -19,14 +19,14 @@
         Try
             For Each row As DataGridViewRow In dgvDepartment.SelectedRows
                 idDept = row.Cells(0).Value
-                txtDeptName.Text = row.Cells(1).Value
+                TxtDeptName.Text = row.Cells(1).Value
             Next
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
 
-    Private Sub TxtDeptName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDeptName.KeyPress
-        TextBoxOnlyLetters(txtDeptName)
+    Private Sub TxtDeptName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDeptName.KeyPress
+        TextBoxOnlyLetters(TxtDeptName)
     End Sub
 End Class

@@ -19,25 +19,6 @@
         RbNoChanges.Checked = False
     End Sub
     Public Sub LoadData()
-        'Query("SELECT a.ID, a.EID, a.SchoolYear, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
-        '                c.SectionRoom, d.GradeLevel, e.Amount
-        '        FROM enrollment a
-        '        JOIN student b ON a.LRN = b.LRN 
-        '        JOIN section c ON a.SectionID = c.ID
-        '        JOIN gradelevel d ON a.GradeLevel_ID = d.ID
-        '        JOIN tuition e ON d.ID = e.GradeLevel_ID
-        '        WHERE b.LRN = '" & txtLRN.Text & "'")
-        'DgvTransactionHistory.DataSource = ds.Tables("QueryTb")
-        'With ds.Tables("QueryTb")
-        '    LabelEID.Text = .Rows(0)(1)
-        '    LabelSY.Text = .Rows(0)(2).ToString
-        '    txtLRN.Text = .Rows(0)(3)
-        '    txtStudName.Text = .Rows(0)(4)
-        '    txtSection.Text = .Rows(0)(5)
-        '    txtGradeLvl.Text = .Rows(0)(6)
-        '    txtTuition.Text = Format(CDbl(.Rows(0)(7)))
-        'End With
-
         'this query is for DgvRegisteredStudents
         Query("SELECT a.ID, CONCAT(e.Start_Year, '-', e.End_Year) SchoolYear, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, 
                 c.SectionRoom, d.GradeLevel, DATE_FORMAT(a.Enrollment_Date, '%Y-%m-%d') Enrollment_Date, a.Status 
@@ -51,15 +32,20 @@
 
         Query("SELECT * FROM otherfee")
         DgvTransactionHistory.DataSource = ds.Tables("QueryTb")
-        With ds.Tables("QueryTb")
-            cmbOtherFee.Text = .Rows(0)(1)
-        End With
 
-        Query("SELECT * FROM otherfee")
+        ' Populate cmbOtherFee
         cmbOtherFee.DataSource = ds.Tables("QueryTb")
         cmbOtherFee.ValueMember = "ID"
         cmbOtherFee.DisplayMember = "Description"
         cmbOtherFee.SelectedIndex = -1
+
+        ' Check if there are rows in the table before accessing them
+        If ds.Tables("QueryTb").Rows.Count > 0 Then
+            cmbOtherFee.Text = ds.Tables("QueryTb").Rows(0)("Description").ToString()
+        Else
+            ' Handle case where there are no rows in the table
+            cmbOtherFee.Text = "" ' or any default value you want to set
+        End If
     End Sub
 
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click

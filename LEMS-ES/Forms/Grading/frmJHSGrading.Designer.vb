@@ -29,6 +29,14 @@ Partial Class FrmJHSGrading
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DgvJHSGrading = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.CmbSubject = New System.Windows.Forms.ToolStripComboBox()
+        Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,14 +51,6 @@ Partial Class FrmJHSGrading
         Me.fourthg = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.average = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.CmbSubject = New System.Windows.Forms.ToolStripComboBox()
-        Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgvJHSGrading, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,6 +140,67 @@ Partial Class FrmJHSGrading
         Me.DgvJHSGrading.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvJHSGrading.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripTextBox1, Me.ToolStripButton3, Me.CmbSubject, Me.CmbSubjCode, Me.ToolStripLabel1})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(1109, 25)
+        Me.ToolStrip1.TabIndex = 28
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.floppy_disk
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(100, 22)
+        Me.ToolStripButton1.Text = "Save Changes"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
+        Me.ToolStripButton2.Text = "Print"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
+        '
+        'CmbSubject
+        '
+        Me.CmbSubject.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbSubject.Name = "CmbSubject"
+        Me.CmbSubject.Size = New System.Drawing.Size(121, 25)
+        '
+        'CmbSubjCode
+        '
+        Me.CmbSubjCode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbSubjCode.Name = "CmbSubjCode"
+        Me.CmbSubjCode.Size = New System.Drawing.Size(121, 25)
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
+        Me.ToolStripLabel1.Text = "Filtered By:"
+        '
         'Column1
         '
         Me.Column1.DataPropertyName = "ID"
@@ -201,6 +262,7 @@ Partial Class FrmJHSGrading
         'firstg
         '
         Me.firstg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.firstg.DataPropertyName = "FirstGrd"
         Me.firstg.HeaderText = "1st Grd"
         Me.firstg.Name = "firstg"
         Me.firstg.Width = 81
@@ -208,6 +270,7 @@ Partial Class FrmJHSGrading
         'secondg
         '
         Me.secondg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.secondg.DataPropertyName = "SecondGrd"
         Me.secondg.HeaderText = "2nd Grd"
         Me.secondg.Name = "secondg"
         Me.secondg.Width = 81
@@ -215,6 +278,7 @@ Partial Class FrmJHSGrading
         'thirdg
         '
         Me.thirdg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.thirdg.DataPropertyName = "ThirdGrd"
         Me.thirdg.HeaderText = "3rd Grd"
         Me.thirdg.Name = "thirdg"
         Me.thirdg.Width = 81
@@ -222,6 +286,7 @@ Partial Class FrmJHSGrading
         'fourthg
         '
         Me.fourthg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.fourthg.DataPropertyName = "FourthGrd"
         Me.fourthg.HeaderText = "4th Grd"
         Me.fourthg.Name = "fourthg"
         Me.fourthg.Width = 81
@@ -241,67 +306,6 @@ Partial Class FrmJHSGrading
         Me.remarks.HeaderText = "Remarks"
         Me.remarks.Name = "remarks"
         Me.remarks.Width = 81
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripTextBox1, Me.ToolStripButton3, Me.CmbSubject, Me.CmbSubjCode, Me.ToolStripLabel1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1109, 25)
-        Me.ToolStrip1.TabIndex = 28
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.floppy_disk
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(100, 22)
-        Me.ToolStripButton1.Text = "Save Changes"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
-        Me.ToolStripButton2.Text = "Print"
-        '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
-        '
-        'CmbSubject
-        '
-        Me.CmbSubject.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbSubject.Name = "CmbSubject"
-        Me.CmbSubject.Size = New System.Drawing.Size(121, 25)
-        '
-        'CmbSubjCode
-        '
-        Me.CmbSubjCode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbSubjCode.Name = "CmbSubjCode"
-        Me.CmbSubjCode.Size = New System.Drawing.Size(121, 25)
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
-        Me.ToolStripLabel1.Text = "Filtered By:"
         '
         'FrmJHSGrading
         '

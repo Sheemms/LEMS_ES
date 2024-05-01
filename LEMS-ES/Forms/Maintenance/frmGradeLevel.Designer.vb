@@ -32,6 +32,7 @@ Partial Class FrmGradeLevel
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSaveSY = New Guna.UI2.WinForms.Guna2Button()
@@ -50,11 +51,11 @@ Partial Class FrmGradeLevel
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2GroupBox1.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(953, 589)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(817, 547)
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "GRADE LEVEL"
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -63,10 +64,10 @@ Partial Class FrmGradeLevel
         '
         Me.Panel2.Controls.Add(Me.dgvGradeLevel)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Font = New System.Drawing.Font("Georgia", 11.0!)
-        Me.Panel2.Location = New System.Drawing.Point(230, 40)
+        Me.Panel2.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(197, 40)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(723, 549)
+        Me.Panel2.Size = New System.Drawing.Size(620, 507)
         Me.Panel2.TabIndex = 4
         '
         'dgvGradeLevel
@@ -80,7 +81,7 @@ Partial Class FrmGradeLevel
         Me.dgvGradeLevel.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 11.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -91,7 +92,7 @@ Partial Class FrmGradeLevel
         Me.dgvGradeLevel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column3, Me.Column2})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 11.0!)
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -105,7 +106,7 @@ Partial Class FrmGradeLevel
         Me.dgvGradeLevel.ReadOnly = True
         Me.dgvGradeLevel.RowHeadersVisible = False
         Me.dgvGradeLevel.RowTemplate.Height = 25
-        Me.dgvGradeLevel.Size = New System.Drawing.Size(723, 549)
+        Me.dgvGradeLevel.Size = New System.Drawing.Size(620, 507)
         Me.dgvGradeLevel.TabIndex = 2
         Me.dgvGradeLevel.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvGradeLevel.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -144,7 +145,7 @@ Partial Class FrmGradeLevel
         Me.Column3.HeaderText = "Department"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 113
+        Me.Column3.Width = 112
         '
         'Column2
         '
@@ -156,17 +157,34 @@ Partial Class FrmGradeLevel
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.BtnUpdate)
         Me.Panel1.Controls.Add(Me.cmbDept)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnSaveSY)
         Me.Panel1.Controls.Add(Me.txtAddGradeLevel)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 549)
+        Me.Panel1.Size = New System.Drawing.Size(197, 507)
         Me.Panel1.TabIndex = 3
+        '
+        'BtnUpdate
+        '
+        Me.BtnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.BtnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUpdate.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdate.Location = New System.Drawing.Point(3, 174)
+        Me.BtnUpdate.Name = "BtnUpdate"
+        Me.BtnUpdate.Size = New System.Drawing.Size(189, 33)
+        Me.BtnUpdate.TabIndex = 19
+        Me.BtnUpdate.Text = "Update"
+        Me.BtnUpdate.Visible = False
         '
         'cmbDept
         '
@@ -175,20 +193,20 @@ Partial Class FrmGradeLevel
         Me.cmbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDept.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDept.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDept.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDept.ForeColor = System.Drawing.Color.Black
         Me.cmbDept.ItemHeight = 30
-        Me.cmbDept.Location = New System.Drawing.Point(3, 35)
+        Me.cmbDept.Location = New System.Drawing.Point(3, 34)
         Me.cmbDept.Name = "cmbDept"
-        Me.cmbDept.Size = New System.Drawing.Size(221, 36)
+        Me.cmbDept.Size = New System.Drawing.Size(190, 36)
         Me.cmbDept.TabIndex = 11
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 84)
+        Me.Label2.Location = New System.Drawing.Point(3, 78)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 14)
+        Me.Label2.Size = New System.Drawing.Size(78, 16)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Grade Level"
         '
@@ -201,9 +219,9 @@ Partial Class FrmGradeLevel
         Me.btnSaveSY.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.btnSaveSY.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveSY.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSY.Location = New System.Drawing.Point(3, 143)
+        Me.btnSaveSY.Location = New System.Drawing.Point(3, 135)
         Me.btnSaveSY.Name = "btnSaveSY"
-        Me.btnSaveSY.Size = New System.Drawing.Size(221, 36)
+        Me.btnSaveSY.Size = New System.Drawing.Size(189, 33)
         Me.btnSaveSY.TabIndex = 8
         Me.btnSaveSY.Text = "Save"
         '
@@ -216,33 +234,33 @@ Partial Class FrmGradeLevel
         Me.txtAddGradeLevel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAddGradeLevel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAddGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddGradeLevel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtAddGradeLevel.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddGradeLevel.ForeColor = System.Drawing.Color.Black
         Me.txtAddGradeLevel.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddGradeLevel.Location = New System.Drawing.Point(3, 101)
+        Me.txtAddGradeLevel.Location = New System.Drawing.Point(3, 96)
         Me.txtAddGradeLevel.Name = "txtAddGradeLevel"
         Me.txtAddGradeLevel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAddGradeLevel.PlaceholderText = ""
         Me.txtAddGradeLevel.SelectedText = ""
-        Me.txtAddGradeLevel.Size = New System.Drawing.Size(221, 36)
+        Me.txtAddGradeLevel.Size = New System.Drawing.Size(189, 33)
         Me.txtAddGradeLevel.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 18)
+        Me.Label1.Location = New System.Drawing.Point(3, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 14)
+        Me.Label1.Size = New System.Drawing.Size(77, 16)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Department"
         '
         'FrmGradeLevel
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 589)
+        Me.ClientSize = New System.Drawing.Size(817, 547)
         Me.Controls.Add(Me.Guna2GroupBox1)
-        Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmGradeLevel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -267,4 +285,5 @@ Partial Class FrmGradeLevel
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents BtnUpdate As Guna.UI2.WinForms.Guna2Button
 End Class

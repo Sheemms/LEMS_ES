@@ -12,9 +12,9 @@
         dgvSection.DataSource = ds.Tables("QueryTb")
 
         Query("SELECT * FROM gradelevel")
-        cmbGradeLevel.DataSource = ds.Tables("QueryTb")
-        cmbGradeLevel.ValueMember = "ID"
-        cmbGradeLevel.DisplayMember = "GradeLevel"
+        CmbGradeLevel.DataSource = ds.Tables("QueryTb")
+        CmbGradeLevel.ValueMember = "ID"
+        CmbGradeLevel.DisplayMember = "GradeLevel"
 
         'Query("SELECT ID, EmpID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) as Adviser FROM teacher")
         'cmbAdviser.DataSource = ds.Tables("QueryTb")
@@ -26,8 +26,8 @@
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = dgvSection.Rows(e.RowIndex)
                 idSection = row.Cells(0).Value
-                cmbGradeLevel.Text = row.Cells(1).Value
-                txtSectionName.Text = row.Cells(2).Value
+                CmbGradeLevel.Text = row.Cells(1).Value
+                TxtSectionName.Text = row.Cells(2).Value
             ElseIf e.ColumnIndex >= 0 Then
                 ClearFields(Me, idSection)
             End If
@@ -36,14 +36,14 @@
         End Try
     End Sub
     Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
-        If IS_EMPTY(cmbGradeLevel) = True Then Return
-        If IS_EMPTY(txtSectionName) = True Then Return
+        If IS_EMPTY(CmbGradeLevel) = True Then Return
+        If IS_EMPTY(TxtSectionName) = True Then Return
 
         ClassSection.SectionRef()
         ClearFields(Me, idSection)
     End Sub
 
-    Private Sub TxtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSectionName.KeyPress
-        TextBoxOnlyLetters(txtSectionName)
+    Private Sub TxtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtSectionName.KeyPress
+        TextBoxOnlyLetters(TxtSectionName)
     End Sub
 End Class

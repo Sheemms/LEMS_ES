@@ -5,8 +5,8 @@ Public Class ClassSchoolYear
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmSY.idSY),
-                    New MySqlParameter("@Start_Year", frmSY.txtStartYear.Text),
-                    New MySqlParameter("@End_Year", frmSY.txtEndYear.Text)
+                    New MySqlParameter("@Start_Year", frmSY.TxtStartYear.Text),
+                    New MySqlParameter("@End_Year", frmSY.TxtEndYear.Text)
                 }
             Return syParam
         Catch ex As Exception

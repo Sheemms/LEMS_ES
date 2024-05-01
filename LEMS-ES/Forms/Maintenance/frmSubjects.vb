@@ -40,7 +40,7 @@
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
+    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If IS_EMPTY(CmbGradeLevel) = True Then Return
         If IS_EMPTY(txtSubjCode) = True Then Return
         If IS_EMPTY(txtSubjName) = True Then Return
@@ -50,7 +50,7 @@
         ClassSubject.SubjectRef()
         Clear()
     End Sub
-    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         ClassSubject.DeleteRef()
         Clear()
     End Sub

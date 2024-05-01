@@ -274,7 +274,7 @@ Partial Class FrmEnrollment
         Me.BtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnSearch.Name = "BtnSearch"
         Me.BtnSearch.Size = New System.Drawing.Size(23, 22)
-        Me.BtnSearch.Text = "ToolStripButton2"
+        Me.BtnSearch.Text = "Search"
         '
         'DataGridViewImageColumn1
         '
@@ -293,7 +293,7 @@ Partial Class FrmEnrollment
         Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
         Me.DataGridViewImageColumn2.Width = 210
         '
-        'frmEnrollment
+        'FrmEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -301,7 +301,7 @@ Partial Class FrmEnrollment
         Me.Controls.Add(Me.GBEnrollmentForm)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmEnrollment"
+        Me.Name = "FrmEnrollment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GBEnrollmentForm.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)

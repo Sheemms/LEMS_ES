@@ -5,8 +5,8 @@ Public Class ClassSection
         Try
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", FrmSections.idSection),
-                    New MySqlParameter("@GradeLevel_ID", FrmSections.cmbGradeLevel.SelectedValue),
-                    New MySqlParameter("@SectionRoom", FrmSections.txtSectionName.Text)
+                    New MySqlParameter("@GradeLevel_ID", FrmSections.CmbGradeLevel.SelectedValue),
+                    New MySqlParameter("@SectionRoom", FrmSections.TxtSectionName.Text)
                 }
             Return syParam
         Catch ex As Exception

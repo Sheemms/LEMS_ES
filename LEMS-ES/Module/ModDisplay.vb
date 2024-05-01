@@ -135,8 +135,6 @@ Module ModDisplay
             Return Nothing
         End Try
     End Function
-    'I want to lblSY value get
-
     Public Sub GetSchoolYear(ByVal lblSY As Label)
         Try
             Query("SELECT Start_Year, End_Year FROM schoolyear WHERE Status = 'Open'")
@@ -146,10 +144,10 @@ Module ModDisplay
                 Dim endYear As String = ds.Tables("QueryTb").Rows(0)("End_Year").ToString()
                 lblSY.Text = startYear & "-" & endYear
             Else
-                lblSY.Text = "No open school year found"
+                lblSY.Text = "0000-0000"
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("No open school year found")
         End Try
     End Sub
     Public Function GetSchoolYearID() As Integer

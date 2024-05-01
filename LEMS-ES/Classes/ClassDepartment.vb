@@ -6,7 +6,7 @@ Public Class ClassDepartment
         Try
             Dim DeptParam() As MySqlParameter = {
                     New MySqlParameter("@ID", frmDepartment.idDept),
-                    New MySqlParameter("@Department", frmDepartment.txtDeptName.Text)
+                    New MySqlParameter("@Department", frmDepartment.TxtDeptName.Text)
                 }
             Return DeptParam
         Catch ex As Exception

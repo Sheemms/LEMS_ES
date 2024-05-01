@@ -92,6 +92,7 @@ Partial Class FrmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PbSearch = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -101,6 +102,7 @@ Partial Class FrmSchedule
         Me.TabPage2.SuspendLayout()
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -118,6 +120,7 @@ Partial Class FrmSchedule
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.PbSearch)
         Me.Panel1.Controls.Add(Me.CmbRoom)
         Me.Panel1.Controls.Add(Me.CmbAdviser)
         Me.Panel1.Controls.Add(Me.CmbSubjectCode)
@@ -425,7 +428,7 @@ Partial Class FrmSchedule
         Me.SearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.SearchBtn.Name = "SearchBtn"
         Me.SearchBtn.Size = New System.Drawing.Size(23, 22)
-        Me.SearchBtn.Text = "ToolStripButton1"
+        Me.SearchBtn.Text = "Search"
         '
         'TabPage2
         '
@@ -622,7 +625,7 @@ Partial Class FrmSchedule
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(839, 653)
+        Me.btnSave.Location = New System.Drawing.Point(667, 187)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(153, 36)
         Me.btnSave.TabIndex = 40
@@ -717,7 +720,7 @@ Partial Class FrmSchedule
         Me.txtTeacherName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTeacherName.PlaceholderText = ""
         Me.txtTeacherName.SelectedText = ""
-        Me.txtTeacherName.Size = New System.Drawing.Size(247, 36)
+        Me.txtTeacherName.Size = New System.Drawing.Size(211, 36)
         Me.txtTeacherName.TabIndex = 28
         '
         'Label12
@@ -949,6 +952,16 @@ Partial Class FrmSchedule
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'PbSearch
+        '
+        Me.PbSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.PbSearch.Location = New System.Drawing.Point(937, 145)
+        Me.PbSearch.Name = "PbSearch"
+        Me.PbSearch.Size = New System.Drawing.Size(30, 36)
+        Me.PbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PbSearch.TabIndex = 55
+        Me.PbSearch.TabStop = False
+        '
         'FrmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -973,6 +986,7 @@ Partial Class FrmSchedule
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1041,4 +1055,5 @@ Partial Class FrmSchedule
     Friend WithEvents ToolStrip2 As ToolStrip
     Friend WithEvents TxtSearch As ToolStripTextBox
     Friend WithEvents SearchBtn As ToolStripButton
+    Friend WithEvents PbSearch As PictureBox
 End Class
