@@ -3,19 +3,34 @@ Public Class FrmJHSGrading
     Private Sub FrmJHSGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         LoadData()
+        LoadSubjectCode()
     End Sub
     Public Sub LoadData()
         Query("SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
-                CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
-                FROM enrolled_sched a 
-                JOIN schoolyear b ON a.SYID = b.ID
-                JOIN student c ON a.LRN = c.LRN
-                JOIN enrollment d ON c.LRN = d.LRN
-                JOIN schedule e ON a.ScheduleID = e.ID
-                JOIN subject f ON e.Subj_ID = f.ID")
+                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+                                        FROM enrolled_sched a 
+                                        JOIN schoolyear b ON a.SYID = b.ID
+                                        JOIN student c ON a.LRN = c.LRN
+                                        JOIN enrollment d ON c.LRN = d.LRN
+                                        JOIN schedule e ON a.ScheduleID = e.ID
+                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                                        JOIN department h ON g.Department_ID = h.ID
+                                  WHERE h.Department = 'Junior Highschool'")
         DgvJHSGrading.DataSource = ds.Tables("QueryTb")
         DgvJHSGrading.AutoGenerateColumns = False
+    End Sub
+    Public Sub LoadSubjectCode()
+        Query("SELECT a.ID, a.SubjectCode, a.SubjectName, a.Units
+                FROM subject a
+                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                JOIN department c ON b.Department_ID = c.ID
+                WHERE c.Department = 'Junior Highschool'")
+        CmbSubjCode.ComboBox.DataSource = ds.Tables("QueryTb")
+        CmbSubjCode.ComboBox.ValueMember = "ID"
+        CmbSubjCode.ComboBox.DisplayMember = "SubjectCode"
+        CmbSubjCode.ComboBox.SelectedIndex = -1
     End Sub
     Public Sub LoadRecords()
         'Query("SELECT * FROM subject")
@@ -71,34 +86,57 @@ Public Class FrmJHSGrading
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Dim dt As New DataTable("DS_Grading")
+        Dim StudentLRN As String = TxtLRN.Text.Trim()
 
-        For Each row As DataGridViewRow In DgvJHSGrading.Rows
-            Dim StudentLRN As String = row.Cells("colLRN").Value
-            Dim adp = New MySqlDataAdapter("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
-                                            CONCAT(c.Lastname, ', ', c.Firstname) Fullname, e.SubjectCode as Code, 
-                                            e.SubjectName as Subject, e.Units, a.FirstGrd as '1', a.SecondGrd as '2', a.ThirdGrd as '3', a.FourthGrd as '4',
-                                            a.Average, a.Remarks, f.GradeLevel as Grade, g.SectionRoom as Section, c.Gender, CONCAT(h.Lastname, ', ', h.Firstname) Teacher
-                                            FROM enrolled_sched a
-                                            JOIN schoolyear b ON a.SYID = b.ID
-                                            JOIN student c ON a.LRN = c.LRN
-                                            JOIN schedule d ON a.ScheduleID = d.ID
-                                            JOIN subject e ON d.Subj_ID = e.ID
-                                            JOIN gradelevel f ON d.GradeLevel_ID = f.ID
-                                            JOIN section g ON d.Sec_ID = g.ID
-                                            JOIN teacher h ON d.Teacher_ID = h.ID
-                                            WHERE c.LRN = " & StudentLRN, con)
+        Dim adp = New MySqlDataAdapter("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
+                                        CONCAT(c.Lastname, ', ', c.Firstname) Fullname, e.SubjectCode as Code, 
+                                        e.SubjectName as Subject, e.Units, a.FirstGrd as '1', a.SecondGrd as '2', a.ThirdGrd as '3', a.FourthGrd as '4',
+                                        a.Average, a.Remarks, f.GradeLevel as Grade, g.SectionRoom as Section, c.Gender, CONCAT(h.Lastname, ', ', h.Firstname) Teacher
+                                        FROM enrolled_sched a
+                                        JOIN schoolyear b ON a.SYID = b.ID
+                                        JOIN student c ON a.LRN = c.LRN
+                                        JOIN schedule d ON a.ScheduleID = d.ID
+                                        JOIN subject e ON d.Subj_ID = e.ID
+                                        JOIN gradelevel f ON d.GradeLevel_ID = f.ID
+                                        JOIN section g ON d.Sec_ID = g.ID
+                                        JOIN teacher h ON d.Teacher_ID = h.ID
+                                        WHERE c.LRN = '" & StudentLRN & "'", con)
 
-            adp.Fill(dt)
+        adp.Fill(dt)
 
-            If dt.Rows.Count = 0 Then
-                MessageBox.Show("No Records")
-                Exit Sub
-            End If
-        Next
-        Dim crystal As New ReportCard
-        crystal.SetDataSource(dt)
-        FrmGradeReport.CrystalReportViewer1.ReportSource = crystal
-        FrmGradeReport.CrystalReportViewer1.Refresh()
-        FrmGradeReport.Show()
+        If dt.Rows.Count > 0 Then
+            Dim crystal As New ReportCard
+            crystal.SetDataSource(dt)
+            FrmGradeReport.CrystalReportViewer1.ReportSource = crystal
+            FrmGradeReport.CrystalReportViewer1.Refresh()
+            FrmGradeReport.Show()
+        Else
+            MessageBox.Show("No Records")
+        End If
+    End Sub
+
+    Private Sub CmbSubjCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSubjCode.SelectedIndexChanged
+        Dim selectedValue As String = CmbSubjCode.SelectedIndex.ToString()
+        If CmbSubjCode.SelectedIndex <> -1 AndAlso CmbSubjCode.ComboBox.DataSource IsNot Nothing Then
+            Dim selectedRow As DataRowView = TryCast(CmbSubjCode.SelectedItem, DataRowView)
+
+            Dim selectedSubjectCodeID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+
+            Dim qry As String = $"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+                                        FROM enrolled_sched a 
+                                        JOIN schoolyear b ON a.SYID = b.ID
+                                        JOIN student c ON a.LRN = c.LRN
+                                        JOIN enrollment d ON c.LRN = d.LRN
+                                        JOIN schedule e ON a.ScheduleID = e.ID
+                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                                        JOIN department h ON g.Department_ID = h.ID
+                                  WHERE f.ID = {selectedSubjectCodeID}"
+            Query(qry)
+            DgvJHSGrading.DataSource = ds.Tables("QueryTb")
+
+        End If
     End Sub
 End Class

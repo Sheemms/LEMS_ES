@@ -1,45 +1,94 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FrmElementaryGrading
     Private Sub CmbSubjCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSubjCode.SelectedIndexChanged
-        Try
-            If CmbSubjCode.SelectedIndex <> -1 AndAlso CmbSubjCode.ComboBox.DataSource IsNot Nothing Then
-                Dim selectedRow As DataRowView = TryCast(CmbSubjCode.SelectedItem, DataRowView)
+        Dim selectedValue As String = CmbSubjCode.SelectedIndex.ToString()
+        If CmbSubjCode.SelectedIndex <> -1 AndAlso CmbSubjCode.ComboBox.DataSource IsNot Nothing Then
+            Dim selectedRow As DataRowView = TryCast(CmbSubjCode.SelectedItem, DataRowView)
 
-                Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+            Dim selectedSubjectCodeID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
 
-                Dim qry As String = $"SELECT a.ID, b.GradeLevel,  a.SubjectCode, a.SubjectName, a.Units
-                                  FROM subject a 
-                                  JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                                  WHERE a.ID = {selectedSectionID}"
-                Query(qry)
+            Dim qry As String = $"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+                                        FROM enrolled_sched a 
+                                        JOIN schoolyear b ON a.SYID = b.ID
+                                        JOIN student c ON a.LRN = c.LRN
+                                        JOIN enrollment d ON c.LRN = d.LRN
+                                        JOIN schedule e ON a.ScheduleID = e.ID
+                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                                        JOIN department h ON g.Department_ID = h.ID
+                                  WHERE f.ID = {selectedSubjectCodeID}"
+            Query(qry)
+            DgvElemGrading.DataSource = ds.Tables("QueryTb")
 
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        End If
     End Sub
+    Private Sub CmbSubject_SelectedIndexChanged(sender As Object, e As EventArgs)
+        'If CmbSubject.SelectedIndex <> -1 AndAlso CmbSubject.ComboBox.DataSource IsNot Nothing Then
+        '    Dim selectedRow As DataRowView = TryCast(CmbSubject.SelectedItem, DataRowView)
 
+        '    Dim selectedDeptID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+
+        '    Dim qry As String = $"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+        '                                CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+        '                                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+        '                                FROM enrolled_sched a 
+        '                                JOIN schoolyear b ON a.SYID = b.ID
+        '                                JOIN student c ON a.LRN = c.LRN
+        '                                JOIN enrollment d ON c.LRN = d.LRN
+        '                                JOIN schedule e ON a.ScheduleID = e.ID
+        '                                JOIN subject f ON e.Subj_ID = f.ID
+        '                                JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+        '                                JOIN department h ON g.Department_ID = h.ID
+        '                          WHERE h.ID = {selectedDeptID}"
+        '    Query(qry)
+        '    DgvElemGrading.DataSource = ds.Tables("QueryTb")
+
+        'End If
+    End Sub
     Private Sub FrmElementaryGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         LoadData()
-        LoadSubject()
+        LoadSubjectCode()
+        'LoadDepartment()
     End Sub
-    Public Sub LoadSubject()
-        Query("SELECT * FROM subject")
+    Public Sub LoadSubjectCode()
+        Query("SELECT a.ID, a.SubjectCode, a.SubjectName, a.Units
+                FROM subject a
+                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                JOIN department c ON b.Department_ID = c.ID
+                WHERE c.Department = 'Elementary'")
         CmbSubjCode.ComboBox.DataSource = ds.Tables("QueryTb")
         CmbSubjCode.ComboBox.ValueMember = "ID"
         CmbSubjCode.ComboBox.DisplayMember = "SubjectCode"
+        CmbSubjCode.ComboBox.SelectedIndex = -1
     End Sub
+    'Public Sub LoadSubject()
+    '    Query("SELECT * FROM subject")
+    '    CmbSubject.ComboBox.DataSource = ds.Tables("QueryTb")
+    '    CmbSubject.ComboBox.ValueMember = "ID"
+    '    CmbSubject.ComboBox.DisplayMember = "SubjectName"
+    'End Sub
+    'Public Sub LoadDepartment()
+    '    Query("SELECT * FROM department")
+    '    CmbSubject.ComboBox.DataSource = ds.Tables("QueryTb")
+    '    CmbSubject.ComboBox.ValueMember = "ID"
+    '    CmbSubject.ComboBox.DisplayMember = "Department"
+    'End Sub
     Public Sub LoadData()
-        Query("SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
-                CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
-                FROM enrolled_sched a 
-                JOIN schoolyear b ON a.SYID = b.ID
-                JOIN student c ON a.LRN = c.LRN
-                JOIN enrollment d ON c.LRN = d.LRN
-                JOIN schedule e ON a.ScheduleID = e.ID
-                JOIN subject f ON e.Subj_ID = f.ID")
+        Query($"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+                                        FROM enrolled_sched a 
+                                        JOIN schoolyear b ON a.SYID = b.ID
+                                        JOIN student c ON a.LRN = c.LRN
+                                        JOIN enrollment d ON c.LRN = d.LRN
+                                        JOIN schedule e ON a.ScheduleID = e.ID
+                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                                        JOIN department h ON g.Department_ID = h.ID
+                                  WHERE h.Department = 'Elementary'")
         DgvElemGrading.DataSource = ds.Tables("QueryTb")
         DgvElemGrading.AutoGenerateColumns = False
     End Sub
@@ -182,15 +231,17 @@ Public Class FrmElementaryGrading
     End Sub
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         Query($"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
-                CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
-                FROM enrolled_sched a 
-                JOIN schoolyear b ON a.SYID = b.ID
-                JOIN student c ON a.LRN = c.LRN
-                JOIN enrollment d ON c.LRN = d.LRN
-                JOIN schedule e ON a.ScheduleID = e.ID
-                JOIN subject f ON e.Subj_ID = f.ID
-               WHERE c.Lastname LIKE '{TxtSearch.Text}' OR c.Firstname LIKE '{TxtSearch.Text}' OR c.MiddleInitial LIKE '{TxtSearch.Text}'")
+                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
+                                        FROM enrolled_sched a 
+                                        JOIN schoolyear b ON a.SYID = b.ID
+                                        JOIN student c ON a.LRN = c.LRN
+                                        JOIN enrollment d ON c.LRN = d.LRN
+                                        JOIN schedule e ON a.ScheduleID = e.ID
+                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                                        JOIN department h ON g.Department_ID = h.ID
+                                  WHERE h.Department = 'Elementary' AND c.Lastname LIKE '{TxtSearch.Text}' OR c.Firstname LIKE '{TxtSearch.Text}' OR c.MiddleInitial LIKE '{TxtSearch.Text}'")
         DgvElemGrading.DataSource = ds.Tables("QueryTb")
     End Sub
 
@@ -225,4 +276,6 @@ Public Class FrmElementaryGrading
             MessageBox.Show("No Records")
         End If
     End Sub
+
+
 End Class
