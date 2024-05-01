@@ -6,6 +6,9 @@
         ClearFields(Me, idTeacher)
         TextBoxOnlyLetters(txtMiddleInitial)
     End Sub
+    Public Sub Clear()
+        txtLastname.Clear()
+    End Sub
     Public Sub Loadrecords()
         Query("SELECT * FROM department")
         cmbDept.DataSource = ds.Tables("QueryTb")
@@ -52,6 +55,11 @@
     Private Sub TxtEmpID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpID.KeyPress, txtContact.KeyPress
         TextBoxDigitsOnly(txtEmpID)
         TextBoxDigitsOnly(txtContact)
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Me.Close()
+
     End Sub
 #End Region
 End Class

@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Globalization
+Imports MySql.Data.MySqlClient
 Public Class FrmSchedule
     Public idSched As Integer = 0
     Private Sub FrmSchedule_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -10,6 +11,29 @@ Public Class FrmSchedule
         LoadSubject()
         LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
+    End Sub
+    Public Sub Clear()
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtAdviserID, txtSubjName, TxtUnits, txtTeacherID, txtTeacherName}
+        For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
+            textBox.Clear()
+        Next
+        TxtSearch.Clear()
+        txtstartTime.Clear()
+        txtendTime.Clear()
+        cmbDepartment.SelectedIndex = -1
+        cmbGradeLevel.SelectedIndex = -1
+        cmbSection.SelectedIndex = -1
+        CmbRoom.SelectedIndex = -1
+        CmbAdviser.SelectedIndex = -1
+        CmbSubjectCode.SelectedIndex = -1
+        cbM.Checked = False
+        cbT.Checked = False
+        cbW.Checked = False
+        cbTH.Checked = False
+        cbF.Checked = False
+        idAdv = 0
+        idSched = 0
+        idSub = 0
     End Sub
 #Region "Loads"
     Public Sub LoadRecords()
@@ -23,7 +47,7 @@ Public Class FrmSchedule
                JOIN subject sub ON sc.Subj_ID = sub.ID
                JOIN department dpt ON sc.Department_ID = dpt.ID
                JOIN teacher tr ON sc.Teacher_ID = tr.ID	")
-        dgvSchedule.DataSource = ds.Tables("QueryTb")
+        DgvSchedule.DataSource = ds.Tables("QueryTb")
 
         Query("SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ', ', a.Firstname) Teacher
                 FROM teacher a
@@ -36,6 +60,7 @@ Public Class FrmSchedule
         cmbDepartment.DataSource = ds.Tables("QueryTb")
         cmbDepartment.ValueMember = "ID"
         cmbDepartment.DisplayMember = "Department"
+        cmbDepartment.SelectedIndex = -1
     End Sub
     Public Sub LoadTeacher()
         Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) as Fullname FROM teacher")
@@ -68,7 +93,7 @@ Public Class FrmSchedule
         If cmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf cmbDepartment.SelectedItem Is DataRowView Then
             selectedDepartmentID = Convert.ToInt32(DirectCast(cmbDepartment.SelectedItem, DataRowView).Row("ID"))
         Else
-            MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
@@ -83,6 +108,7 @@ Public Class FrmSchedule
         Else
             cmbGradeLevel.DataSource = Nothing
             cmbGradeLevel.Items.Clear()
+            cmbGradeLevel.SelectedIndex = -1
         End If
     End Sub
 
@@ -91,7 +117,7 @@ Public Class FrmSchedule
         If cmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf cmbGradeLevel.SelectedItem Is DataRowView Then
             selectedGradeLevelID = Convert.ToInt32(DirectCast(cmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
         Else
-            MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
@@ -106,37 +132,9 @@ Public Class FrmSchedule
         Else
             cmbSection.DataSource = Nothing
             cmbSection.Items.Clear()
-            'txtAdviser.Clear()
+            cmbSection.SelectedIndex = -1
         End If
     End Sub
-    'Public AdvID = Nothing
-    'Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedIndexChanged
-    '    Try
-    '        If cmbSection.SelectedIndex <> -1 AndAlso cmbSection.DataSource IsNot Nothing Then
-    '            Dim selectedRow As DataRowView = TryCast(cmbSection.SelectedItem, DataRowView)
-
-    '            Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
-
-    '            Dim qry As String = $"SELECT s.SectionRoom, t.EmpID, CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as FullName
-    '                              FROM section s 
-    '                              JOIN teacher t ON s.Adviser_ID = t.ID
-    '                              WHERE s.ID = {selectedSectionID}"
-    '            Query(qry)
-
-    '            If ds.Tables("QueryTb").Rows.Count > 0 Then
-    '                txtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
-    '                txtAdviser.Text = ds.Tables("QueryTb").Rows(0)("FullName").ToString()
-    '                AdvID = ds.Tables("QueryTb").Rows(0)("Adviser_ID").ToString()
-
-    '            Else
-    '                txtAdviserID.Clear()
-    '                txtAdviser.Clear()
-    '            End If
-    '        End If
-    '    Catch ex As Exception
-    '        MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
-    'End Sub
     Public idAdv = Nothing
     Private Sub CmbAdviser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbAdviser.SelectedIndexChanged
         Try
@@ -158,7 +156,7 @@ Public Class FrmSchedule
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message)
         End Try
     End Sub
     Public idSub = Nothing
@@ -184,7 +182,7 @@ Public Class FrmSchedule
                 End If
             End If
         Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -202,41 +200,44 @@ Public Class FrmSchedule
         txtTeacherName.AutoCompleteSource = AutoCompleteSource.CustomSource
     End Sub
     Public teacherid = Nothing
-    'Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
-    '    Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
+    Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
+        Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
 
-    '    Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
-    '    Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedTeacherName}'").FirstOrDefault()
+        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
+        Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedTeacherName}'").FirstOrDefault()
 
-    '    If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
-    '        txtTeacherID.Text = row("EmpID").ToString()
-    '        teacherid = row("ID").ToString()
-    '    Else
-    '        txtTeacherID.Clear()
-    '    End If
-    'End Sub
-    Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
-        Query($"SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher WHERE Lastname LIKE '{TxtSearch.Text}' OR Firstname LIKE '{TxtSearch.Text}' OR MiddleInitial LIKE '{TxtSearch.Text}'")
-        Dim row As DataRow = ds.Tables("QueryTb").Rows.Cast(Of DataRow)().FirstOrDefault() ' Get the first row if exists
-        If row IsNot Nothing AndAlso row.Table.Columns.Contains("ID") Then
-            txtTeacherName.Text = row("FullName").ToString()
+        If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
             txtTeacherID.Text = row("EmpID").ToString()
             teacherid = row("ID").ToString()
         Else
-            ' Clear the text boxes and teacherid if no teacher is found
-            txtTeacherName.Clear()
             txtTeacherID.Clear()
-            teacherid = Nothing
         End If
     End Sub
+    'Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
+    '    Query($"SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher WHERE Lastname LIKE '{TxtSearch.Text}' OR Firstname LIKE '{TxtSearch.Text}' OR MiddleInitial LIKE '{TxtSearch.Text}'")
+    '    Dim row As DataRow = ds.Tables("QueryTb").Rows.Cast(Of DataRow)().FirstOrDefault() ' Get the first row if exists
+    '    If row IsNot Nothing AndAlso row.Table.Columns.Contains("ID") Then
+    '        txtTeacherName.Text = row("FullName").ToString()
+    '        txtTeacherID.Text = row("EmpID").ToString()
+    '        teacherid = row("ID").ToString()
+    '    Else
+    '        txtTeacherName.Clear()
+    '        txtTeacherID.Clear()
+    '        teacherid = Nothing
+    '    End If
+    'End Sub
 
 #End Region
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If IS_EMPTY(cmbDepartment) Then Return
+        If IS_EMPTY(cmbGradeLevel) Then Return
+        If IS_EMPTY(cmbSection) Then Return
+        If IS_EMPTY(CmbRoom) Then Return
+        If IS_EMPTY(CmbAdviser) Then Return
 
         ClassSchedule.SchedRef()
-        ClearFields(Me, idSched)
+        Clear()
     End Sub
 
     Public Function ChckBox()
@@ -250,7 +251,7 @@ Public Class FrmSchedule
         Return days
     End Function
 
-    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles searchBtn.Click
+    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         Query($"SELECT sc.ID, CONCAT(sy.Start_Year, '-',sy.End_Year)SchoolYear, dpt.Department, sec.SectionRoom, sc.Room, sub.SubjectCode, sub.SubjectName,
                 CONCAT(t.Lastname, ' ', t.Firstname, ' ', t.MiddleInitial) as Adviser, sc.Days, 
                 CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-',TIME_FORMAT(Time_To, '%H:%i')) as Time, CONCAT(tr.Lastname, ' ', tr.Firstname, ' ', tr.MiddleInitial) as Teacher 
@@ -262,7 +263,7 @@ Public Class FrmSchedule
                JOIN department dpt ON sc.Department_ID = dpt.ID
                JOIN teacher tr ON sc.Teacher_ID = tr.ID
                WHERE tr.Lastname LIKE '{TxtSearch.Text}' OR tr.Firstname LIKE '{TxtSearch.Text}' OR tr.MiddleInitial LIKE '{TxtSearch.Text}'")
-        dgvSchedule.DataSource = ds.Tables("QueryTb")
+        DgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
 
     'Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged

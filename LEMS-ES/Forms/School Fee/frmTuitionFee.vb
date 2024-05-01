@@ -26,11 +26,11 @@
         Query("SELECT * FROM otherfee")
         dgvOtherFee.DataSource = ds.Tables("QueryTb")
 
-        Query("SELECT * FROM mop")
-        dgvMOP.DataSource = ds.Tables("QueryTb")
+        'Query("SELECT * FROM mop")
+        'dgvMOP.DataSource = ds.Tables("QueryTb")
 
-        Query("SELECT * FROM top")
-        dgvTOP.DataSource = ds.Tables("QueryTb")
+        'Query("SELECT * FROM top")
+        'dgvTOP.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub Clear()
         idTuition = 0
@@ -44,7 +44,7 @@
         txtOtherFeeDesc.Clear()
 
         idMOP = 0
-        txtMOP.Clear()
+        'txtMOP.Clear()
     End Sub
 
     Private Sub DgvTuitionFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTuitionFee.CellClick
@@ -69,7 +69,7 @@
         ClearFields(Me, idTuition)
     End Sub
 
-    Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click, btnMOPClear.Click, btnTOPClear.Click
+    Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click
         Clear()
     End Sub
 
@@ -77,7 +77,7 @@
         If IS_EMPTY(txtAmountMiscellaneous) Then Return
 
         ClassTuition.MiscellaneousRef()
-        ClearFields(Me, idMiscellaneous)
+        Clear()
     End Sub
 
     Private Sub BtnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click
@@ -85,21 +85,21 @@
         If IS_EMPTY(txtAmountOtherFee) Then Return
 
         ClassTuition.OtherFeeRef()
-        ClearFields(Me, idOtherFee)
-    End Sub
-
-    Private Sub BtnMOP_Click(sender As Object, e As EventArgs) Handles btnMOP.Click
-        If IS_EMPTY(txtMOP) Then Return
-
-        ClassTuition.MoPRef()
-        ClearFields(Me, idMOP)
-    End Sub
-
-    Private Sub BtnTOP_Click(sender As Object, e As EventArgs) Handles btnTOP.Click
-        If IS_EMPTY(txtTOP) Then Return
-
-        ClassTuition.ToPRef()
         Clear()
     End Sub
+
+    'Private Sub BtnMOP_Click(sender As Object, e As EventArgs)
+    '    If IS_EMPTY(txtMOP) Then Return
+
+    '    ClassTuition.MoPRef()
+    '    Clear()
+    'End Sub
+
+    'Private Sub BtnTOP_Click(sender As Object, e As EventArgs)
+    '    If IS_EMPTY(txtTOP) Then Return
+
+    '    ClassTuition.ToPRef()
+    '    Clear()
+    'End Sub
 
 End Class

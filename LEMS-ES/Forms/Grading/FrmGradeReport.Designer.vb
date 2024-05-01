@@ -31,6 +31,7 @@ Partial Class FrmGradeReport
         '
         Me.GroupBox1.Controls.Add(Me.CrystalReportViewer1)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(800, 450)
@@ -44,9 +45,9 @@ Partial Class FrmGradeReport
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 16)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 19)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(794, 431)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(794, 428)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'FrmGradeReport
@@ -55,6 +56,7 @@ Partial Class FrmGradeReport
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmGradeReport"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

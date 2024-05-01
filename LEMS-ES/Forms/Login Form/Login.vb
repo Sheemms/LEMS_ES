@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Connection()
     End Sub
     Public Sub Clear()
         txtUsername.Clear()
@@ -27,8 +28,8 @@ Public Class Login
     End Sub
 
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        '    ValidateInput(txtUsername, "Please enter a username")
-        '    ValidateInput(txtPassword, "Please enter a password")
+        'ValidateInput(txtUsername, "Please enter a username")
+        'ValidateInput(txtPassword, "Please enter a password")
 
         '    Try
         '        If Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtUsername)) OrElse Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtPassword)) Then
@@ -72,13 +73,15 @@ Public Class Login
         '        MsgBox("Database error: " & ex.Message)
         '    End Try
 
+        ValidateInput(txtUsername, "Please enter a username")
+        ValidateInput(txtPassword, "Please enter a password")
         Try
             If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
                 Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & txtPassword.Text & "'")
                 If ds.Tables("QueryTb").Rows.Count > 0 Then
                     userID = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
                     Success("Login success!")
-                    frmDashboard.Show()
+                    FrmDashboard.Show()
                     Clear()
                     'LogAction("Logged in")
                     Me.Hide()
@@ -110,6 +113,8 @@ Public Class Login
             Clear()
             MsgBox("You are not connected to the database, Please connect first!")
         End Try
+
+
     End Sub
 
 

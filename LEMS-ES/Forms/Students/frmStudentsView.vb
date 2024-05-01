@@ -6,6 +6,9 @@ Public Class FrmStudentsView
         Connection()
         LoadRequirements()
     End Sub
+    Public Sub Clear()
+
+    End Sub
     Public Sub LoadStudentData()
         Query("SELECT * FROM student WHERE LRN = '" & txtStudNum.Text & "'")
 
@@ -103,7 +106,7 @@ Public Class FrmStudentsView
         If IS_EMPTY(txtAddress) Then Return
 #End Region
         ClassStudents.StudRef()
-        ClearFields(Me, idStud)
+        Clear()
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -128,5 +131,13 @@ Public Class FrmStudentsView
         If cmbStudType.SelectedItem IsNot Nothing Then
             LoadRequirements()
         End If
+    End Sub
+
+    Private Sub TxtStudNum_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudNum.KeyPress
+        TextBoxDigitsOnly(txtStudNum)
+    End Sub
+
+    Private Sub TxtCitizenship_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCitizenship.KeyPress
+        TextBoxOnlyLetters(txtCitizenship)
     End Sub
 End Class

@@ -156,10 +156,11 @@
                                              JOIN payment c ON a.ORID = c.ORID
                                              WHERE c.EID = '" & StudEID & "'"))
 
-        _totalChanges = Convert.ToDouble(CmdScalar("SELECT IFNULL(SUM(a.Amount), 0)
-                                             FROM fee_changes a
-                                             JOIN payment b ON a.ORID = b.ORID
-                                             WHERE b.EID = '" & StudEID & "'"))
+        _totalChanges = Convert.ToDouble(CmdScalar("SELECT IFNULL(SUM(
+                                    CASE WHEN a.Description = 'Discount' THEN -a.Amount ELSE a.Amount END), 0)
+                                FROM fee_changes a
+                                JOIN payment b ON a.ORID = b.ORID
+                                WHERE b.EID = '" & StudEID & "'"))
 
         _totalPayment = Convert.ToDouble(CmdScalar("SELECT SUM(TotalAmount) AS TotalPayment FROM (
                                                                     SELECT SUM(Amount) AS TotalAmount FROM payment

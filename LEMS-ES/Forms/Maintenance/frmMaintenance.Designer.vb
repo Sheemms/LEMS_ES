@@ -24,23 +24,22 @@ Partial Class FrmMaintenance
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdminControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SchoolYearMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DepartmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GradeLevelMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubjectMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectionMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ROOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequirementsMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TuitionFeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserMaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AuditTrailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ROOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdminControlsToolStripMenuItem, Me.AuditTrailToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdminControlsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(953, 26)
@@ -54,6 +53,14 @@ Partial Class FrmMaintenance
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
         Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AdminControlsToolStripMenuItem.Text = "Admin Controls"
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 26)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(953, 589)
+        Me.Panel1.TabIndex = 1
         '
         'SchoolYearMaintenanceToolStripMenuItem
         '
@@ -90,6 +97,13 @@ Partial Class FrmMaintenance
         Me.SectionMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
         Me.SectionMaintenanceToolStripMenuItem.Text = "Section Maintenance"
         '
+        'ROOMToolStripMenuItem
+        '
+        Me.ROOMToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.sections
+        Me.ROOMToolStripMenuItem.Name = "ROOMToolStripMenuItem"
+        Me.ROOMToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
+        Me.ROOMToolStripMenuItem.Text = "Room"
+        '
         'RequirementsMaintenanceToolStripMenuItem
         '
         Me.RequirementsMaintenanceToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.requirement
@@ -110,28 +124,6 @@ Partial Class FrmMaintenance
         Me.UserMaintenanceToolStripMenuItem1.Name = "UserMaintenanceToolStripMenuItem1"
         Me.UserMaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(260, 22)
         Me.UserMaintenanceToolStripMenuItem1.Text = "User Maintenance"
-        '
-        'AuditTrailToolStripMenuItem
-        '
-        Me.AuditTrailToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AuditTrailToolStripMenuItem.Name = "AuditTrailToolStripMenuItem"
-        Me.AuditTrailToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
-        Me.AuditTrailToolStripMenuItem.Text = "Audit Trail"
-        '
-        'Panel1
-        '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 26)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(953, 589)
-        Me.Panel1.TabIndex = 1
-        '
-        'ROOMToolStripMenuItem
-        '
-        Me.ROOMToolStripMenuItem.Image = Global.LEMS_ES.My.Resources.Resources.sections
-        Me.ROOMToolStripMenuItem.Name = "ROOMToolStripMenuItem"
-        Me.ROOMToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.ROOMToolStripMenuItem.Text = "Room"
         '
         'FrmMaintenance
         '
@@ -159,7 +151,6 @@ Partial Class FrmMaintenance
     Friend WithEvents RequirementsMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SchoolYearMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TuitionFeeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AuditTrailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents UserMaintenanceToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GradeLevelMaintenanceToolStripMenuItem As ToolStripMenuItem

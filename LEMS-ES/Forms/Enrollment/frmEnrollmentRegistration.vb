@@ -16,6 +16,19 @@ Public Class FrmEnrollmentRegistration
         ClearFields(Me, EnrollmentID)
         'LoadSub()
     End Sub
+    Public Sub Clear()
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN, txtStudName}
+        For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
+            textBox.Clear()
+        Next
+        txtSearch.Clear()
+        CmbDepartment.SelectedIndex = -1
+        CmbGradeLevel.SelectedIndex = -1
+        CmbSection.SelectedIndex = -1
+        EnrollmentID = 0
+        EnrollSubjID = 0
+        scheduleID = 0
+    End Sub
     Public Sub LoadStudentData()
         'Query("SELECT * FROM enrollment WHERE LRN = '" & txtStudLRN.Text & "'")
 
@@ -65,7 +78,7 @@ Public Class FrmEnrollmentRegistration
     End Sub
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
         ClassEnroll.EnrollmentRef()
-        ClearFields(Me, EnrollmentID)
+        Clear()
     End Sub
 
 #Region "AutoComplete/Populate"
@@ -102,7 +115,7 @@ Public Class FrmEnrollmentRegistration
         If CmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf CmbDepartment.SelectedItem Is DataRowView Then
             selectedDepartmentID = Convert.ToInt32(DirectCast(CmbDepartment.SelectedItem, DataRowView).Row("ID"))
         Else
-            MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
@@ -117,15 +130,20 @@ Public Class FrmEnrollmentRegistration
         Else
             CmbGradeLevel.DataSource = Nothing
             CmbGradeLevel.Items.Clear()
-            CmbGradeLevel.SelectedIndex = -1
+            'CmbGradeLevel.SelectedIndex = -1
         End If
     End Sub
+
+    Private Sub TxtStudLRN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudLRN.KeyPress
+        TextBoxDigitsOnly(txtStudLRN)
+    End Sub
+
     Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedIndexChanged
         Dim selectedGradeLevelID As Integer
         If CmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf CmbGradeLevel.SelectedItem Is DataRowView Then
             selectedGradeLevelID = Convert.ToInt32(DirectCast(CmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
         Else
-            MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
@@ -140,7 +158,7 @@ Public Class FrmEnrollmentRegistration
         Else
             CmbSection.DataSource = Nothing
             CmbSection.Items.Clear()
-            CmbSection.SelectedIndex = -1
+            'CmbSection.SelectedIndex = -1
         End If
     End Sub
 
@@ -153,7 +171,6 @@ Public Class FrmEnrollmentRegistration
             scheduleID = Convert.ToInt32(DgvSubjectList.SelectedRows(0).Cells(0).Value)
             ClassEnroll.EnrollSubjRef()
         End If
-        ClearFields(Me, scheduleID)
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
@@ -161,7 +178,6 @@ Public Class FrmEnrollmentRegistration
             EnrollSubjID = Convert.ToInt32(DgvEnrolledSubjects.SelectedRows(0).Cells(0).Value)
             MsgBox(EnrollSubjID)
             ClassEnroll.RemoveSubjRef()
-            ClearFields(Me, EnrollSubjID)
         End If
     End Sub
 End Class

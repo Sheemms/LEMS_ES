@@ -7,6 +7,8 @@ Public Class FrmCharts
         TeachersCount()
         EnrolledCount()
         SectionsCount()
+        SubjectsCount()
+        DeptCount()
         ActiveSchoolYear()
         ChartEnrolled()
     End Sub
@@ -29,6 +31,16 @@ Public Class FrmCharts
         Command("SELECT COUNT(*) FROM section")
         Dim total As Integer = CInt(cmd.ExecuteScalar())
         lblSections.Text = total.ToString()
+    End Sub
+    Sub SubjectsCount()
+        Command("SELECT COUNT(*) FROM subject")
+        Dim total As Integer = CInt(cmd.ExecuteScalar())
+        LblSubjects.Text = total.ToString()
+    End Sub
+    Sub DeptCount()
+        Command("SELECT COUNT(*) FROM department")
+        Dim total As Integer = CInt(cmd.ExecuteScalar())
+        LblDept.Text = total.ToString()
     End Sub
     Sub ActiveSchoolYear()
         Command("SELECT CONCAT(Start_Year, '-', End_Year) as SchoolYear FROM schoolyear WHERE Status = 'Open'")

@@ -223,10 +223,15 @@
     <Compile Include="Dataset\DS_StudentList.vb">
       <DependentUpon>DS_StudentList.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Audit Trail\frmAuditTrail.Designer.vb">
-      <DependentUpon>frmAuditTrail.vb</DependentUpon>
+    <Compile Include="Dataset\DS_TeacherList.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_TeacherList.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Audit Trail\frmAuditTrail.vb">
+    <Compile Include="Forms\Audit Trail\FrmAuditTrail.Designer.vb">
+      <DependentUpon>FrmAuditTrail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Audit Trail\FrmAuditTrail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Enrollment\frmEnrollmentRegistration.Designer.vb">
@@ -475,8 +480,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StudentsReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Audit Trail\frmAuditTrail.resx">
-      <DependentUpon>frmAuditTrail.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Audit Trail\FrmAuditTrail.resx">
+      <DependentUpon>FrmAuditTrail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentRegistration.resx">
       <DependentUpon>frmEnrollmentRegistration.vb</DependentUpon>
@@ -643,6 +648,17 @@
     <None Include="Dataset\DS_StudentList.xss">
       <DependentUpon>DS_StudentList.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DS_TeacherList.xsc">
+      <DependentUpon>DS_TeacherList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_TeacherList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_TeacherList.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_TeacherList.xss">
+      <DependentUpon>DS_TeacherList.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -792,6 +808,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

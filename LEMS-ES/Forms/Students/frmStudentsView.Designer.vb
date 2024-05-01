@@ -22,9 +22,9 @@ Partial Class FrmStudentsView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbStudType = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtStudNum = New Guna.UI2.WinForms.Guna2TextBox()
@@ -94,9 +94,10 @@ Partial Class FrmStudentsView
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(840, 73)
+        Me.Panel1.Size = New System.Drawing.Size(720, 68)
         Me.Panel1.TabIndex = 1
         '
         'cmbStudType
@@ -106,12 +107,12 @@ Partial Class FrmStudentsView
         Me.cmbStudType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbStudType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbStudType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbStudType.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbStudType.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbStudType.ForeColor = System.Drawing.Color.Black
         Me.cmbStudType.ItemHeight = 30
-        Me.cmbStudType.Location = New System.Drawing.Point(518, 12)
+        Me.cmbStudType.Location = New System.Drawing.Point(444, 11)
         Me.cmbStudType.Name = "cmbStudType"
-        Me.cmbStudType.Size = New System.Drawing.Size(201, 36)
+        Me.cmbStudType.Size = New System.Drawing.Size(173, 36)
         Me.cmbStudType.TabIndex = 3
         '
         'txtStudNum
@@ -123,32 +124,32 @@ Partial Class FrmStudentsView
         Me.txtStudNum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudNum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudNum.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtStudNum.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtStudNum.ForeColor = System.Drawing.Color.Black
         Me.txtStudNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudNum.Location = New System.Drawing.Point(143, 12)
+        Me.txtStudNum.Location = New System.Drawing.Point(123, 11)
         Me.txtStudNum.Name = "txtStudNum"
         Me.txtStudNum.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudNum.PlaceholderText = ""
         Me.txtStudNum.SelectedText = ""
-        Me.txtStudNum.Size = New System.Drawing.Size(224, 36)
+        Me.txtStudNum.Size = New System.Drawing.Size(192, 33)
         Me.txtStudNum.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(410, 21)
+        Me.Label2.Location = New System.Drawing.Point(351, 19)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 14)
+        Me.Label2.Size = New System.Drawing.Size(81, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Student Type"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(47, 21)
+        Me.Label1.Location = New System.Drawing.Point(40, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 14)
+        Me.Label1.Size = New System.Drawing.Size(79, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Student LRN"
         '
@@ -158,10 +159,10 @@ Partial Class FrmStudentsView
         Me.Guna2TabControl1.Controls.Add(Me.TabPage2)
         Me.Guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2TabControl1.ItemSize = New System.Drawing.Size(180, 40)
-        Me.Guna2TabControl1.Location = New System.Drawing.Point(0, 73)
+        Me.Guna2TabControl1.Location = New System.Drawing.Point(0, 68)
         Me.Guna2TabControl1.Name = "Guna2TabControl1"
         Me.Guna2TabControl1.SelectedIndex = 0
-        Me.Guna2TabControl1.Size = New System.Drawing.Size(840, 329)
+        Me.Guna2TabControl1.Size = New System.Drawing.Size(720, 305)
         Me.Guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.Guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.Guna2TabControl1.TabButtonHoverState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
@@ -204,10 +205,11 @@ Partial Class FrmStudentsView
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 44)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(832, 281)
+        Me.TabPage1.Size = New System.Drawing.Size(712, 257)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Personal Information"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -224,31 +226,31 @@ Partial Class FrmStudentsView
         Me.txtAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAddress.ForeColor = System.Drawing.Color.Black
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddress.Location = New System.Drawing.Point(281, 158)
+        Me.txtAddress.Location = New System.Drawing.Point(223, 147)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
-        Me.txtAddress.Size = New System.Drawing.Size(210, 102)
+        Me.txtAddress.Size = New System.Drawing.Size(198, 95)
         Me.txtAddress.TabIndex = 78
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(278, 141)
+        Me.Label26.Location = New System.Drawing.Point(224, 131)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(52, 14)
+        Me.Label26.Size = New System.Drawing.Size(57, 16)
         Me.Label26.TabIndex = 77
         Me.Label26.Text = "Address"
         '
         'gbReq
         '
         Me.gbReq.Controls.Add(Me.dgvRequirements)
-        Me.gbReq.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbReq.Location = New System.Drawing.Point(502, 13)
+        Me.gbReq.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbReq.Location = New System.Drawing.Point(430, 12)
         Me.gbReq.Name = "gbReq"
-        Me.gbReq.Size = New System.Drawing.Size(322, 247)
+        Me.gbReq.Size = New System.Drawing.Size(276, 229)
         Me.gbReq.TabIndex = 76
         Me.gbReq.TabStop = False
         Me.gbReq.Text = "Requirements"
@@ -259,33 +261,33 @@ Partial Class FrmStudentsView
         Me.dgvRequirements.AllowUserToDeleteRows = False
         Me.dgvRequirements.AllowUserToResizeColumns = False
         Me.dgvRequirements.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvRequirements.ColumnHeadersHeight = 30
         Me.dgvRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCheckBox, Me.ID, Me.Requirement, Me.Column1})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRequirements.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvRequirements.Location = New System.Drawing.Point(3, 21)
+        Me.dgvRequirements.Location = New System.Drawing.Point(3, 22)
         Me.dgvRequirements.Name = "dgvRequirements"
         Me.dgvRequirements.RowHeadersVisible = False
-        Me.dgvRequirements.Size = New System.Drawing.Size(316, 223)
+        Me.dgvRequirements.Size = New System.Drawing.Size(270, 204)
         Me.dgvRequirements.TabIndex = 77
         Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvRequirements.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -351,9 +353,9 @@ Partial Class FrmStudentsView
         Me.cmbStudSuffix.ForeColor = System.Drawing.Color.Black
         Me.cmbStudSuffix.ItemHeight = 30
         Me.cmbStudSuffix.Items.AddRange(New Object() {"None", "Jr", "Sr", "I", "II", "III", "IV"})
-        Me.cmbStudSuffix.Location = New System.Drawing.Point(155, 158)
+        Me.cmbStudSuffix.Location = New System.Drawing.Point(130, 150)
         Me.cmbStudSuffix.Name = "cmbStudSuffix"
-        Me.cmbStudSuffix.Size = New System.Drawing.Size(84, 36)
+        Me.cmbStudSuffix.Size = New System.Drawing.Size(73, 36)
         Me.cmbStudSuffix.TabIndex = 75
         '
         'RbFemale
@@ -361,7 +363,7 @@ Partial Class FrmStudentsView
         Me.RbFemale.AutoSize = True
         Me.RbFemale.Font = New System.Drawing.Font("Courier New", 9.0!)
         Me.RbFemale.ForeColor = System.Drawing.Color.Black
-        Me.RbFemale.Location = New System.Drawing.Point(130, 229)
+        Me.RbFemale.Location = New System.Drawing.Point(111, 213)
         Me.RbFemale.Name = "RbFemale"
         Me.RbFemale.Size = New System.Drawing.Size(67, 19)
         Me.RbFemale.TabIndex = 74
@@ -374,7 +376,7 @@ Partial Class FrmStudentsView
         Me.RbMale.AutoSize = True
         Me.RbMale.Font = New System.Drawing.Font("Courier New", 9.0!)
         Me.RbMale.ForeColor = System.Drawing.Color.Black
-        Me.RbMale.Location = New System.Drawing.Point(63, 229)
+        Me.RbMale.Location = New System.Drawing.Point(54, 213)
         Me.RbMale.Name = "RbMale"
         Me.RbMale.Size = New System.Drawing.Size(53, 19)
         Me.RbMale.TabIndex = 73
@@ -394,46 +396,46 @@ Partial Class FrmStudentsView
         Me.txtCitizenship.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtCitizenship.ForeColor = System.Drawing.Color.Black
         Me.txtCitizenship.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCitizenship.Location = New System.Drawing.Point(281, 94)
+        Me.txtCitizenship.Location = New System.Drawing.Point(223, 87)
         Me.txtCitizenship.Name = "txtCitizenship"
         Me.txtCitizenship.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCitizenship.PlaceholderText = ""
         Me.txtCitizenship.SelectedText = ""
-        Me.txtCitizenship.Size = New System.Drawing.Size(210, 36)
+        Me.txtCitizenship.Size = New System.Drawing.Size(198, 33)
         Me.txtCitizenship.TabIndex = 32
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(282, 77)
+        Me.Label10.Location = New System.Drawing.Point(224, 71)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(71, 14)
+        Me.Label10.Size = New System.Drawing.Size(70, 16)
         Me.Label10.TabIndex = 31
         Me.Label10.Text = "Citizenship"
         '
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(156, 141)
+        Me.Label31.Location = New System.Drawing.Point(134, 131)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(41, 14)
+        Me.Label31.Size = New System.Drawing.Size(41, 16)
         Me.Label31.TabIndex = 25
         Me.Label31.Text = "Suffix"
         '
         'dtpBday
         '
         Me.dtpBday.AutoRoundedCorners = True
-        Me.dtpBday.BorderRadius = 17
+        Me.dtpBday.BorderRadius = 15
         Me.dtpBday.Checked = True
         Me.dtpBday.CustomFormat = "MMM / dd / yyyy"
         Me.dtpBday.FillColor = System.Drawing.Color.White
         Me.dtpBday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.dtpBday.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpBday.Location = New System.Drawing.Point(281, 30)
+        Me.dtpBday.Location = New System.Drawing.Point(223, 28)
         Me.dtpBday.MaxDate = New Date(2024, 4, 29, 0, 0, 0, 0)
         Me.dtpBday.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
         Me.dtpBday.Name = "dtpBday"
-        Me.dtpBday.Size = New System.Drawing.Size(135, 36)
+        Me.dtpBday.Size = New System.Drawing.Size(134, 33)
         Me.dtpBday.TabIndex = 15
         Me.dtpBday.Value = New Date(2024, 4, 29, 0, 0, 0, 0)
         '
@@ -445,17 +447,18 @@ Partial Class FrmStudentsView
         Me.txtStudAge.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtStudAge.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudAge.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStudAge.Enabled = False
         Me.txtStudAge.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtStudAge.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtStudAge.ForeColor = System.Drawing.Color.Black
         Me.txtStudAge.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudAge.Location = New System.Drawing.Point(422, 30)
+        Me.txtStudAge.Location = New System.Drawing.Point(362, 28)
         Me.txtStudAge.Name = "txtStudAge"
         Me.txtStudAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudAge.PlaceholderText = ""
         Me.txtStudAge.ReadOnly = True
         Me.txtStudAge.SelectedText = ""
-        Me.txtStudAge.Size = New System.Drawing.Size(69, 36)
+        Me.txtStudAge.Size = New System.Drawing.Size(59, 33)
         Me.txtStudAge.TabIndex = 14
         '
         'txtStudMI
@@ -470,12 +473,13 @@ Partial Class FrmStudentsView
         Me.txtStudMI.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtStudMI.ForeColor = System.Drawing.Color.Black
         Me.txtStudMI.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudMI.Location = New System.Drawing.Point(11, 158)
+        Me.txtStudMI.Location = New System.Drawing.Point(6, 150)
+        Me.txtStudMI.MaxLength = 2
         Me.txtStudMI.Name = "txtStudMI"
         Me.txtStudMI.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudMI.PlaceholderText = ""
         Me.txtStudMI.SelectedText = ""
-        Me.txtStudMI.Size = New System.Drawing.Size(138, 36)
+        Me.txtStudMI.Size = New System.Drawing.Size(118, 33)
         Me.txtStudMI.TabIndex = 13
         '
         'txtStudFname
@@ -490,12 +494,12 @@ Partial Class FrmStudentsView
         Me.txtStudFname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtStudFname.ForeColor = System.Drawing.Color.Black
         Me.txtStudFname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudFname.Location = New System.Drawing.Point(11, 94)
+        Me.txtStudFname.Location = New System.Drawing.Point(6, 90)
         Me.txtStudFname.Name = "txtStudFname"
         Me.txtStudFname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudFname.PlaceholderText = ""
         Me.txtStudFname.SelectedText = ""
-        Me.txtStudFname.Size = New System.Drawing.Size(228, 36)
+        Me.txtStudFname.Size = New System.Drawing.Size(195, 33)
         Me.txtStudFname.TabIndex = 12
         '
         'txtStudLname
@@ -510,65 +514,65 @@ Partial Class FrmStudentsView
         Me.txtStudLname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtStudLname.ForeColor = System.Drawing.Color.Black
         Me.txtStudLname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStudLname.Location = New System.Drawing.Point(11, 30)
+        Me.txtStudLname.Location = New System.Drawing.Point(6, 31)
         Me.txtStudLname.Name = "txtStudLname"
         Me.txtStudLname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudLname.PlaceholderText = ""
         Me.txtStudLname.SelectedText = ""
-        Me.txtStudLname.Size = New System.Drawing.Size(228, 36)
+        Me.txtStudLname.Size = New System.Drawing.Size(195, 33)
         Me.txtStudLname.TabIndex = 11
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 204)
+        Me.Label9.Location = New System.Drawing.Point(10, 189)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 14)
+        Me.Label9.Size = New System.Drawing.Size(50, 16)
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "Gender"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(286, 13)
+        Me.Label7.Location = New System.Drawing.Point(224, 12)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(79, 14)
+        Me.Label7.Size = New System.Drawing.Size(80, 16)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Date of Birth"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(423, 13)
+        Me.Label6.Location = New System.Drawing.Point(363, 12)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(29, 14)
+        Me.Label6.Size = New System.Drawing.Size(30, 16)
         Me.Label6.TabIndex = 3
         Me.Label6.Text = "Age"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 141)
+        Me.Label5.Location = New System.Drawing.Point(10, 131)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 14)
+        Me.Label5.Size = New System.Drawing.Size(81, 16)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Middle Initial"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 77)
+        Me.Label4.Location = New System.Drawing.Point(10, 71)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 14)
+        Me.Label4.Size = New System.Drawing.Size(72, 16)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "First Name"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 13)
+        Me.Label3.Location = New System.Drawing.Point(10, 12)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 14)
+        Me.Label3.Size = New System.Drawing.Size(70, 16)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Last Name"
         '
@@ -594,7 +598,7 @@ Partial Class FrmStudentsView
         Me.TabPage2.Location = New System.Drawing.Point(4, 44)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(832, 281)
+        Me.TabPage2.Size = New System.Drawing.Size(712, 257)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Parents/Guardian Details"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -611,20 +615,20 @@ Partial Class FrmStudentsView
         Me.txtGuardianRelation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtGuardianRelation.ForeColor = System.Drawing.Color.Black
         Me.txtGuardianRelation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGuardianRelation.Location = New System.Drawing.Point(281, 206)
+        Me.txtGuardianRelation.Location = New System.Drawing.Point(241, 191)
         Me.txtGuardianRelation.Name = "txtGuardianRelation"
         Me.txtGuardianRelation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardianRelation.PlaceholderText = ""
         Me.txtGuardianRelation.SelectedText = ""
-        Me.txtGuardianRelation.Size = New System.Drawing.Size(210, 36)
+        Me.txtGuardianRelation.Size = New System.Drawing.Size(180, 33)
         Me.txtGuardianRelation.TabIndex = 34
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(278, 189)
+        Me.Label22.Location = New System.Drawing.Point(238, 175)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(114, 14)
+        Me.Label22.Size = New System.Drawing.Size(96, 13)
         Me.Label22.TabIndex = 33
         Me.Label22.Text = "Guardian Relation"
         '
@@ -640,20 +644,20 @@ Partial Class FrmStudentsView
         Me.txtGuardianContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtGuardianContact.ForeColor = System.Drawing.Color.Black
         Me.txtGuardianContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGuardianContact.Location = New System.Drawing.Point(514, 206)
+        Me.txtGuardianContact.Location = New System.Drawing.Point(441, 191)
         Me.txtGuardianContact.Name = "txtGuardianContact"
         Me.txtGuardianContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardianContact.PlaceholderText = ""
         Me.txtGuardianContact.SelectedText = ""
-        Me.txtGuardianContact.Size = New System.Drawing.Size(210, 36)
+        Me.txtGuardianContact.Size = New System.Drawing.Size(180, 33)
         Me.txtGuardianContact.TabIndex = 30
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(511, 189)
+        Me.Label24.Location = New System.Drawing.Point(438, 175)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(111, 14)
+        Me.Label24.Size = New System.Drawing.Size(93, 13)
         Me.Label24.TabIndex = 29
         Me.Label24.Text = "Guardian Contact"
         '
@@ -669,29 +673,29 @@ Partial Class FrmStudentsView
         Me.txtGuardianName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtGuardianName.ForeColor = System.Drawing.Color.Black
         Me.txtGuardianName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtGuardianName.Location = New System.Drawing.Point(11, 206)
+        Me.txtGuardianName.Location = New System.Drawing.Point(9, 191)
         Me.txtGuardianName.Name = "txtGuardianName"
         Me.txtGuardianName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardianName.PlaceholderText = ""
         Me.txtGuardianName.SelectedText = ""
-        Me.txtGuardianName.Size = New System.Drawing.Size(247, 36)
+        Me.txtGuardianName.Size = New System.Drawing.Size(212, 33)
         Me.txtGuardianName.TabIndex = 28
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(8, 189)
+        Me.Label25.Location = New System.Drawing.Point(7, 175)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(100, 14)
+        Me.Label25.Size = New System.Drawing.Size(84, 13)
         Me.Label25.TabIndex = 27
         Me.Label25.Text = "Guardian Name"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(8, 160)
+        Me.Label21.Location = New System.Drawing.Point(7, 149)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(132, 14)
+        Me.Label21.Size = New System.Drawing.Size(112, 13)
         Me.Label21.TabIndex = 26
         Me.Label21.Text = "If Guardian is Other *"
         '
@@ -707,20 +711,20 @@ Partial Class FrmStudentsView
         Me.txtMotherMaidenName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMotherMaidenName.ForeColor = System.Drawing.Color.Black
         Me.txtMotherMaidenName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMotherMaidenName.Location = New System.Drawing.Point(281, 101)
+        Me.txtMotherMaidenName.Location = New System.Drawing.Point(241, 94)
         Me.txtMotherMaidenName.Name = "txtMotherMaidenName"
         Me.txtMotherMaidenName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMotherMaidenName.PlaceholderText = ""
         Me.txtMotherMaidenName.SelectedText = ""
-        Me.txtMotherMaidenName.Size = New System.Drawing.Size(247, 36)
+        Me.txtMotherMaidenName.Size = New System.Drawing.Size(212, 33)
         Me.txtMotherMaidenName.TabIndex = 25
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(278, 84)
+        Me.Label20.Location = New System.Drawing.Point(238, 78)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(137, 14)
+        Me.Label20.Size = New System.Drawing.Size(122, 13)
         Me.Label20.TabIndex = 24
         Me.Label20.Text = "Mother's Maiden Name"
         '
@@ -736,20 +740,20 @@ Partial Class FrmStudentsView
         Me.txtMotherOccupation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMotherOccupation.ForeColor = System.Drawing.Color.Black
         Me.txtMotherOccupation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMotherOccupation.Location = New System.Drawing.Point(550, 34)
+        Me.txtMotherOccupation.Location = New System.Drawing.Point(471, 32)
         Me.txtMotherOccupation.Name = "txtMotherOccupation"
         Me.txtMotherOccupation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMotherOccupation.PlaceholderText = ""
         Me.txtMotherOccupation.SelectedText = ""
-        Me.txtMotherOccupation.Size = New System.Drawing.Size(247, 36)
+        Me.txtMotherOccupation.Size = New System.Drawing.Size(212, 33)
         Me.txtMotherOccupation.TabIndex = 23
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(547, 17)
+        Me.Label17.Location = New System.Drawing.Point(469, 16)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(117, 14)
+        Me.Label17.Size = New System.Drawing.Size(100, 13)
         Me.Label17.TabIndex = 22
         Me.Label17.Text = "Mother Occupation"
         '
@@ -765,20 +769,20 @@ Partial Class FrmStudentsView
         Me.txtMother.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMother.ForeColor = System.Drawing.Color.Black
         Me.txtMother.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMother.Location = New System.Drawing.Point(281, 34)
+        Me.txtMother.Location = New System.Drawing.Point(241, 32)
         Me.txtMother.Name = "txtMother"
         Me.txtMother.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMother.PlaceholderText = ""
         Me.txtMother.SelectedText = ""
-        Me.txtMother.Size = New System.Drawing.Size(247, 36)
+        Me.txtMother.Size = New System.Drawing.Size(212, 33)
         Me.txtMother.TabIndex = 19
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(278, 17)
+        Me.Label19.Location = New System.Drawing.Point(238, 16)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(85, 14)
+        Me.Label19.Size = New System.Drawing.Size(75, 13)
         Me.Label19.TabIndex = 18
         Me.Label19.Text = "Mother Name"
         '
@@ -794,20 +798,20 @@ Partial Class FrmStudentsView
         Me.txtFatherOccupation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFatherOccupation.ForeColor = System.Drawing.Color.Black
         Me.txtFatherOccupation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFatherOccupation.Location = New System.Drawing.Point(11, 101)
+        Me.txtFatherOccupation.Location = New System.Drawing.Point(9, 94)
         Me.txtFatherOccupation.Name = "txtFatherOccupation"
         Me.txtFatherOccupation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFatherOccupation.PlaceholderText = ""
         Me.txtFatherOccupation.SelectedText = ""
-        Me.txtFatherOccupation.Size = New System.Drawing.Size(247, 36)
+        Me.txtFatherOccupation.Size = New System.Drawing.Size(212, 33)
         Me.txtFatherOccupation.TabIndex = 17
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(8, 84)
+        Me.Label16.Location = New System.Drawing.Point(7, 78)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(115, 14)
+        Me.Label16.Size = New System.Drawing.Size(97, 13)
         Me.Label16.TabIndex = 16
         Me.Label16.Text = "Father Occupation"
         '
@@ -823,20 +827,20 @@ Partial Class FrmStudentsView
         Me.txtFatherName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFatherName.ForeColor = System.Drawing.Color.Black
         Me.txtFatherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFatherName.Location = New System.Drawing.Point(11, 34)
+        Me.txtFatherName.Location = New System.Drawing.Point(9, 32)
         Me.txtFatherName.Name = "txtFatherName"
         Me.txtFatherName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFatherName.PlaceholderText = ""
         Me.txtFatherName.SelectedText = ""
-        Me.txtFatherName.Size = New System.Drawing.Size(247, 36)
+        Me.txtFatherName.Size = New System.Drawing.Size(212, 33)
         Me.txtFatherName.TabIndex = 13
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(8, 17)
+        Me.Label14.Location = New System.Drawing.Point(7, 16)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(83, 14)
+        Me.Label14.Size = New System.Drawing.Size(72, 13)
         Me.Label14.TabIndex = 12
         Me.Label14.Text = "Father Name"
         '
@@ -845,9 +849,10 @@ Partial Class FrmStudentsView
         Me.Panel2.Controls.Add(Me.btnUpdate)
         Me.Panel2.Controls.Add(Me.btnSave)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 402)
+        Me.Panel2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(0, 373)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(840, 47)
+        Me.Panel2.Size = New System.Drawing.Size(720, 44)
         Me.Panel2.TabIndex = 3
         '
         'btnUpdate
@@ -858,9 +863,9 @@ Partial Class FrmStudentsView
         Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(684, 6)
+        Me.btnUpdate.Location = New System.Drawing.Point(586, 6)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(144, 36)
+        Me.btnUpdate.Size = New System.Drawing.Size(123, 33)
         Me.btnUpdate.TabIndex = 28
         Me.btnUpdate.Text = "Update"
         '
@@ -873,21 +878,21 @@ Partial Class FrmStudentsView
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(547, 6)
+        Me.btnSave.Location = New System.Drawing.Point(469, 6)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(131, 36)
+        Me.btnSave.Size = New System.Drawing.Size(112, 33)
         Me.btnSave.TabIndex = 27
         Me.btnSave.Text = "Save"
         '
         'FrmStudentsView
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(840, 453)
+        Me.ClientSize = New System.Drawing.Size(720, 421)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Guna2TabControl1)
         Me.Controls.Add(Me.Panel1)
-        Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmStudentsView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

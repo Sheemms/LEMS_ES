@@ -22,21 +22,11 @@ Partial Class FrmElementaryGrading
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DgvElemGrading = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.CmbSubject = New System.Windows.Forms.ToolStripComboBox()
-        Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,6 +41,19 @@ Partial Class FrmElementaryGrading
         Me.fourthg = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.average = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.CmbSubject = New System.Windows.Forms.ToolStripComboBox()
+        Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
+        Me.TxtLRN = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         CType(Me.DgvElemGrading, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -61,39 +64,39 @@ Partial Class FrmElementaryGrading
         '
         Me.DgvElemGrading.AllowUserToAddRows = False
         Me.DgvElemGrading.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgvElemGrading.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        Me.DgvElemGrading.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvElemGrading.BackgroundColor = System.Drawing.Color.DimGray
         Me.DgvElemGrading.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.DgvElemGrading.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 8.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvElemGrading.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvElemGrading.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DgvElemGrading.ColumnHeadersHeight = 44
         Me.DgvElemGrading.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvElemGrading.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column13, Me.colEID, Me.colLRN, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.firstg, Me.secondg, Me.thirdg, Me.fourthg, Me.average, Me.remarks})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvElemGrading.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvElemGrading.DefaultCellStyle = DataGridViewCellStyle7
         Me.DgvElemGrading.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvElemGrading.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvElemGrading.Location = New System.Drawing.Point(0, 25)
         Me.DgvElemGrading.MultiSelect = False
         Me.DgvElemGrading.Name = "DgvElemGrading"
         Me.DgvElemGrading.RowHeadersVisible = False
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgvElemGrading.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DgvElemGrading.Size = New System.Drawing.Size(1109, 661)
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvElemGrading.RowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.DgvElemGrading.Size = New System.Drawing.Size(950, 609)
         Me.DgvElemGrading.TabIndex = 5
         Me.DgvElemGrading.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvElemGrading.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -116,90 +119,6 @@ Partial Class FrmElementaryGrading
         Me.DgvElemGrading.ThemeStyle.RowsStyle.Height = 22
         Me.DgvElemGrading.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvElemGrading.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Panel2)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Font = New System.Drawing.Font("Courier New", 12.0!)
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1115, 711)
-        Me.GroupBox1.TabIndex = 7
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Elementary Module"
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.DgvElemGrading)
-        Me.Panel2.Controls.Add(Me.ToolStrip1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Font = New System.Drawing.Font("Courier New", 8.0!)
-        Me.Panel2.Location = New System.Drawing.Point(3, 22)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1109, 686)
-        Me.Panel2.TabIndex = 0
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.TxtSearch, Me.ToolStripButton3, Me.CmbSubject, Me.CmbSubjCode, Me.ToolStripLabel1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1109, 25)
-        Me.ToolStrip1.TabIndex = 27
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.floppy_disk
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(100, 22)
-        Me.ToolStripButton1.Text = "Save Changes"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
-        Me.ToolStripButton2.Text = "Print"
-        '
-        'TxtSearch
-        '
-        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.Size = New System.Drawing.Size(200, 25)
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
-        '
-        'CmbSubject
-        '
-        Me.CmbSubject.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbSubject.Name = "CmbSubject"
-        Me.CmbSubject.Size = New System.Drawing.Size(121, 25)
-        '
-        'CmbSubjCode
-        '
-        Me.CmbSubjCode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbSubjCode.Name = "CmbSubjCode"
-        Me.CmbSubjCode.Size = New System.Drawing.Size(121, 25)
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(65, 22)
-        Me.ToolStripLabel1.Text = "Filtered By:"
         '
         'ID
         '
@@ -256,7 +175,7 @@ Partial Class FrmElementaryGrading
         Me.Column6.DataPropertyName = "Units"
         Me.Column6.HeaderText = "Unit(s)"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 81
+        Me.Column6.Width = 66
         '
         'firstg
         '
@@ -264,7 +183,7 @@ Partial Class FrmElementaryGrading
         Me.firstg.DataPropertyName = "FirstGrd"
         Me.firstg.HeaderText = "1st Grd"
         Me.firstg.Name = "firstg"
-        Me.firstg.Width = 81
+        Me.firstg.Width = 67
         '
         'secondg
         '
@@ -272,7 +191,7 @@ Partial Class FrmElementaryGrading
         Me.secondg.DataPropertyName = "SecondGrd"
         Me.secondg.HeaderText = "2nd Grd"
         Me.secondg.Name = "secondg"
-        Me.secondg.Width = 81
+        Me.secondg.Width = 71
         '
         'thirdg
         '
@@ -280,7 +199,7 @@ Partial Class FrmElementaryGrading
         Me.thirdg.DataPropertyName = "ThirdGrd"
         Me.thirdg.HeaderText = "3rd Grd"
         Me.thirdg.Name = "thirdg"
-        Me.thirdg.Width = 81
+        Me.thirdg.Width = 70
         '
         'fourthg
         '
@@ -288,7 +207,7 @@ Partial Class FrmElementaryGrading
         Me.fourthg.DataPropertyName = "FourthGrd"
         Me.fourthg.HeaderText = "4th Grd"
         Me.fourthg.Name = "fourthg"
-        Me.fourthg.Width = 81
+        Me.fourthg.Width = 69
         '
         'average
         '
@@ -296,7 +215,7 @@ Partial Class FrmElementaryGrading
         Me.average.DataPropertyName = "Average"
         Me.average.HeaderText = "Average"
         Me.average.Name = "average"
-        Me.average.Width = 81
+        Me.average.Width = 74
         '
         'remarks
         '
@@ -304,15 +223,119 @@ Partial Class FrmElementaryGrading
         Me.remarks.DataPropertyName = "Remarks"
         Me.remarks.HeaderText = "Remarks"
         Me.remarks.Name = "remarks"
-        Me.remarks.Width = 81
+        Me.remarks.Width = 77
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Panel2)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Font = New System.Drawing.Font("Bahnschrift", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(956, 660)
+        Me.GroupBox1.TabIndex = 7
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Elementary Module"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.DgvElemGrading)
+        Me.Panel2.Controls.Add(Me.ToolStrip1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(3, 23)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(950, 634)
+        Me.Panel2.TabIndex = 0
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.TxtSearch, Me.ToolStripButton3, Me.CmbSubject, Me.ToolStripLabel3, Me.CmbSubjCode, Me.ToolStripLabel1, Me.ToolStripLabel2, Me.TxtLRN})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(950, 25)
+        Me.ToolStrip1.TabIndex = 27
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.floppy_disk
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(100, 22)
+        Me.ToolStripButton1.Text = "Save Changes"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(53, 22)
+        Me.ToolStripButton2.Text = "Print"
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtSearch.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(172, 25)
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
+        '
+        'CmbSubject
+        '
+        Me.CmbSubject.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbSubject.Name = "CmbSubject"
+        Me.CmbSubject.Size = New System.Drawing.Size(104, 25)
+        '
+        'CmbSubjCode
+        '
+        Me.CmbSubjCode.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbSubjCode.Name = "CmbSubjCode"
+        Me.CmbSubjCode.Size = New System.Drawing.Size(104, 25)
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(36, 22)
+        Me.ToolStripLabel1.Text = "Code:"
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(50, 22)
+        Me.ToolStripLabel3.Text = "Subject:"
+        '
+        'TxtLRN
+        '
+        Me.TxtLRN.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtLRN.Name = "TxtLRN"
+        Me.TxtLRN.Size = New System.Drawing.Size(150, 25)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(30, 22)
+        Me.ToolStripLabel2.Text = "LRN"
         '
         'FrmElementaryGrading
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1115, 711)
+        Me.ClientSize = New System.Drawing.Size(956, 660)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmElementaryGrading"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -351,4 +374,7 @@ Partial Class FrmElementaryGrading
     Friend WithEvents fourthg As DataGridViewTextBoxColumn
     Friend WithEvents average As DataGridViewTextBoxColumn
     Friend WithEvents remarks As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripLabel3 As ToolStripLabel
+    Friend WithEvents TxtLRN As ToolStripTextBox
+    Friend WithEvents ToolStripLabel2 As ToolStripLabel
 End Class

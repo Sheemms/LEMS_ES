@@ -71,7 +71,7 @@ Module ModDisplay
         FrmSY.Close()
         FrmTuitionFee.Close()
         FrmUserMaintenance.Close()
-        frmAuditTrail.Close()
+        FrmAuditTrail.Close()
     End Sub
     Public Sub Critical(ByVal MessageStatement As String)
         MsgBox(MessageStatement, MsgBoxStyle.Critical, "LEMS_ES")

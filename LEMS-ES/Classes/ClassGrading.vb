@@ -24,11 +24,12 @@ Public Class ClassGrading
                 For Each row As DataGridViewRow In dgv.Rows
                     Dim dynamicParams As MySqlParameter() = GradingParameters(row)
                     If dynamicParams IsNot Nothing Then
-                        MsgBox(row.Cells("ID").Value)
-                        Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks WHERE ID=@ID", dynamicParams)
-                        Success("Successfully Save!")
+                        If dynamicParams(0).Value IsNot DBNull.Value Then
+                            Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks WHERE ID=@ID", dynamicParams)
+                        End If
                     End If
                 Next
+                Success("Successfully Save!")
             End If
         Catch ex As MySqlException
             MsgBox(ex.Message)

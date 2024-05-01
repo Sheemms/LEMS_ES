@@ -39,6 +39,7 @@ Partial Class FrmTeacherMaintenance
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtEmpID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -49,17 +50,18 @@ Partial Class FrmTeacherMaintenance
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2GroupBox1.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(586, 305)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(502, 283)
         Me.Guna2GroupBox1.TabIndex = 2
         Me.Guna2GroupBox1.Text = "TEACHER MAINTENANCE"
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Guna2Button2)
         Me.Panel1.Controls.Add(Me.cmbDept)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.txtAddress)
@@ -76,10 +78,10 @@ Partial Class FrmTeacherMaintenance
         Me.Panel1.Controls.Add(Me.txtEmpID)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(586, 265)
+        Me.Panel1.Size = New System.Drawing.Size(502, 243)
         Me.Panel1.TabIndex = 3
         '
         'cmbDept
@@ -89,20 +91,20 @@ Partial Class FrmTeacherMaintenance
         Me.cmbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDept.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDept.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDept.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDept.ForeColor = System.Drawing.Color.Black
         Me.cmbDept.ItemHeight = 30
-        Me.cmbDept.Location = New System.Drawing.Point(290, 27)
+        Me.cmbDept.Location = New System.Drawing.Point(248, 28)
         Me.cmbDept.Name = "cmbDept"
-        Me.cmbDept.Size = New System.Drawing.Size(221, 36)
+        Me.cmbDept.Size = New System.Drawing.Size(189, 36)
         Me.cmbDept.TabIndex = 24
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(291, 10)
+        Me.Label8.Location = New System.Drawing.Point(249, 9)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 14)
+        Me.Label8.Size = New System.Drawing.Size(77, 16)
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Department"
         '
@@ -115,24 +117,24 @@ Partial Class FrmTeacherMaintenance
         Me.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtAddress.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddress.ForeColor = System.Drawing.Color.Black
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddress.Location = New System.Drawing.Point(289, 152)
+        Me.txtAddress.Location = New System.Drawing.Point(248, 144)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
-        Me.txtAddress.Size = New System.Drawing.Size(221, 78)
+        Me.txtAddress.Size = New System.Drawing.Size(189, 72)
         Me.txtAddress.TabIndex = 22
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(290, 135)
+        Me.Label7.Location = New System.Drawing.Point(249, 125)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 14)
+        Me.Label7.Size = New System.Drawing.Size(57, 16)
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Address"
         '
@@ -145,23 +147,24 @@ Partial Class FrmTeacherMaintenance
         Me.txtContact.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtContact.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtContact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtContact.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContact.ForeColor = System.Drawing.Color.Black
         Me.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContact.Location = New System.Drawing.Point(290, 87)
+        Me.txtContact.Location = New System.Drawing.Point(248, 84)
+        Me.txtContact.MaxLength = 11
         Me.txtContact.Name = "txtContact"
         Me.txtContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtContact.PlaceholderText = ""
         Me.txtContact.SelectedText = ""
-        Me.txtContact.Size = New System.Drawing.Size(221, 36)
+        Me.txtContact.Size = New System.Drawing.Size(189, 33)
         Me.txtContact.TabIndex = 20
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(290, 70)
+        Me.Label6.Location = New System.Drawing.Point(249, 65)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 14)
+        Me.Label6.Size = New System.Drawing.Size(51, 16)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Contact"
         '
@@ -174,24 +177,24 @@ Partial Class FrmTeacherMaintenance
         Me.txtMiddleInitial.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtMiddleInitial.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtMiddleInitial.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMiddleInitial.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtMiddleInitial.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMiddleInitial.ForeColor = System.Drawing.Color.Black
         Me.txtMiddleInitial.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMiddleInitial.Location = New System.Drawing.Point(181, 152)
+        Me.txtMiddleInitial.Location = New System.Drawing.Point(156, 144)
         Me.txtMiddleInitial.MaxLength = 2
         Me.txtMiddleInitial.Name = "txtMiddleInitial"
         Me.txtMiddleInitial.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMiddleInitial.PlaceholderText = ""
         Me.txtMiddleInitial.SelectedText = ""
-        Me.txtMiddleInitial.Size = New System.Drawing.Size(79, 36)
+        Me.txtMiddleInitial.Size = New System.Drawing.Size(68, 33)
         Me.txtMiddleInitial.TabIndex = 16
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(176, 135)
+        Me.Label4.Location = New System.Drawing.Point(151, 125)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(84, 14)
+        Me.Label4.Size = New System.Drawing.Size(81, 16)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Middle Initial"
         '
@@ -204,23 +207,23 @@ Partial Class FrmTeacherMaintenance
         Me.txtFirstname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtFirstname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtFirstname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFirstname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtFirstname.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFirstname.ForeColor = System.Drawing.Color.Black
         Me.txtFirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFirstname.Location = New System.Drawing.Point(40, 152)
+        Me.txtFirstname.Location = New System.Drawing.Point(34, 144)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstname.PlaceholderText = ""
         Me.txtFirstname.SelectedText = ""
-        Me.txtFirstname.Size = New System.Drawing.Size(135, 36)
+        Me.txtFirstname.Size = New System.Drawing.Size(116, 33)
         Me.txtFirstname.TabIndex = 14
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(40, 135)
+        Me.Label3.Location = New System.Drawing.Point(34, 125)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 14)
+        Me.Label3.Size = New System.Drawing.Size(67, 16)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Firstname"
         '
@@ -233,23 +236,23 @@ Partial Class FrmTeacherMaintenance
         Me.txtLastname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtLastname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtLastname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLastname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtLastname.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastname.ForeColor = System.Drawing.Color.Black
         Me.txtLastname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLastname.Location = New System.Drawing.Point(40, 87)
+        Me.txtLastname.Location = New System.Drawing.Point(34, 84)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastname.PlaceholderText = ""
         Me.txtLastname.SelectedText = ""
-        Me.txtLastname.Size = New System.Drawing.Size(221, 36)
+        Me.txtLastname.Size = New System.Drawing.Size(189, 33)
         Me.txtLastname.TabIndex = 12
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(40, 70)
+        Me.Label2.Location = New System.Drawing.Point(34, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 14)
+        Me.Label2.Size = New System.Drawing.Size(65, 16)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Lastname"
         '
@@ -260,11 +263,11 @@ Partial Class FrmTeacherMaintenance
         Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(40, 194)
+        Me.btnSave.Location = New System.Drawing.Point(35, 183)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(221, 36)
+        Me.btnSave.Size = New System.Drawing.Size(90, 33)
         Me.btnSave.TabIndex = 8
         Me.btnSave.Text = "Save"
         '
@@ -277,33 +280,48 @@ Partial Class FrmTeacherMaintenance
         Me.txtEmpID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtEmpID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtEmpID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmpID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtEmpID.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmpID.ForeColor = System.Drawing.Color.Black
         Me.txtEmpID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmpID.Location = New System.Drawing.Point(40, 27)
+        Me.txtEmpID.Location = New System.Drawing.Point(34, 28)
         Me.txtEmpID.Name = "txtEmpID"
         Me.txtEmpID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmpID.PlaceholderText = ""
         Me.txtEmpID.SelectedText = ""
-        Me.txtEmpID.Size = New System.Drawing.Size(221, 36)
+        Me.txtEmpID.Size = New System.Drawing.Size(189, 33)
         Me.txtEmpID.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(41, 10)
+        Me.Label1.Location = New System.Drawing.Point(35, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 14)
+        Me.Label1.Size = New System.Drawing.Size(81, 16)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Employee ID"
         '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.DimGray
+        Me.Guna2Button2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(134, 183)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(90, 33)
+        Me.Guna2Button2.TabIndex = 60
+        Me.Guna2Button2.Text = "Cancel"
+        '
         'FrmTeacherMaintenance
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(586, 305)
+        Me.ClientSize = New System.Drawing.Size(502, 283)
         Me.Controls.Add(Me.Guna2GroupBox1)
-        Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmTeacherMaintenance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -332,4 +350,5 @@ Partial Class FrmTeacherMaintenance
     Friend WithEvents Label8 As Label
     Friend WithEvents cmbDept As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

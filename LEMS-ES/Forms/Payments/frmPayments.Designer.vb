@@ -99,6 +99,7 @@ Partial Class FrmPayments
         Me.txtMiscellaneous = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtTuition = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.GroupBox1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -274,6 +275,7 @@ Partial Class FrmPayments
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.GroupBox1.Controls.Add(Me.Panel5)
         Me.GroupBox1.Controls.Add(Me.Panel4)
         Me.GroupBox1.Controls.Add(Me.Panel3)
@@ -573,7 +575,7 @@ Partial Class FrmPayments
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
         Me.Column12.Visible = False
-        Me.Column12.Width = 58
+        Me.Column12.Width = 54
         '
         'Column13
         '
@@ -619,7 +621,7 @@ Partial Class FrmPayments
         Me.Column17.Name = "Column17"
         Me.Column17.ReadOnly = True
         Me.Column17.Visible = False
-        Me.Column17.Width = 166
+        Me.Column17.Width = 139
         '
         'Column18
         '
@@ -994,9 +996,9 @@ Partial Class FrmPayments
         Me.BtnPayments.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.BtnPayments.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPayments.ForeColor = System.Drawing.Color.White
-        Me.BtnPayments.Location = New System.Drawing.Point(723, 505)
+        Me.BtnPayments.Location = New System.Drawing.Point(666, 504)
         Me.BtnPayments.Name = "BtnPayments"
-        Me.BtnPayments.Size = New System.Drawing.Size(130, 33)
+        Me.BtnPayments.Size = New System.Drawing.Size(89, 33)
         Me.BtnPayments.TabIndex = 20
         Me.BtnPayments.Text = "Save"
         '
@@ -1087,6 +1089,21 @@ Partial Class FrmPayments
         Me.txtTuition.SelectedText = ""
         Me.txtTuition.Size = New System.Drawing.Size(87, 33)
         Me.txtTuition.TabIndex = 21
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.DimGray
+        Me.Guna2Button2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(761, 504)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(89, 33)
+        Me.Guna2Button2.TabIndex = 59
+        Me.Guna2Button2.Text = "Cancel"
         '
         'FrmPayments
         '
@@ -1186,4 +1203,5 @@ Partial Class FrmPayments
     Friend WithEvents Label17 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label19 As Label
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

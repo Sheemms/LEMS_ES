@@ -104,67 +104,67 @@ Public Class ClassTuition
     End Sub
 #End Region
 #Region "ModeofPaymentParameters"
-    Public Shared Function MoPParameters() As MySqlParameter()
-        Try
-            Dim MoPParam() As MySqlParameter = {
-                    New MySqlParameter("@ID", frmTuitionFee.idMOP),
-                    New MySqlParameter("@Mode", frmTuitionFee.txtMOP.Text)
-                    }
-            Return MoPParam
-        Catch ex As Exception
-            Return Nothing
-        End Try
-    End Function
-    Public Shared Sub MoPRef()
-        Try
-            If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO mop(Mode) 
-                            VALUES (@Mode)", MoPParameters())
-                    Success("Successfully Added!")
-                End If
-            Else
-                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE mop SET Mode=@Mode", MoPParameters())
-                    Success("Successfully Updated!")
-                End If
-            End If
-            frmTuitionFee.loadrecords()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
+    'Public Shared Function MoPParameters() As MySqlParameter()
+    '    Try
+    '        Dim MoPParam() As MySqlParameter = {
+    '                New MySqlParameter("@ID", frmTuitionFee.idMOP),
+    '                New MySqlParameter("@Mode", frmTuitionFee.txtMOP.Text)
+    '                }
+    '        Return MoPParam
+    '    Catch ex As Exception
+    '        Return Nothing
+    '    End Try
+    'End Function
+    'Public Shared Sub MoPRef()
+    '    Try
+    '        If frmTuitionFee.idTuition = 0 Then
+    '            If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+    '                Command("INSERT INTO mop(Mode) 
+    '                        VALUES (@Mode)", MoPParameters())
+    '                Success("Successfully Added!")
+    '            End If
+    '        Else
+    '            If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
+    '                Command("UPDATE mop SET Mode=@Mode", MoPParameters())
+    '                Success("Successfully Updated!")
+    '            End If
+    '        End If
+    '        frmTuitionFee.loadrecords()
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 #End Region
 #Region "TermsofPaymentParameters"
-    Public Shared Function ToPParameters() As MySqlParameter()
-        Try
-            Dim ToPParam() As MySqlParameter = {
-                    New MySqlParameter("@ID", frmTuitionFee.idTOP),
-                    New MySqlParameter("@Terms", frmTuitionFee.txtTOP.Text)
-                    }
-            Return ToPParam
-        Catch ex As Exception
-            Return Nothing
-        End Try
-    End Function
-    Public Shared Sub ToPRef()
-        Try
-            If frmTuitionFee.idTuition = 0 Then
-                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO top(Terms) 
-                            VALUES (@Terms)", ToPParameters())
-                    Success("Successfully Added!")
-                End If
-            Else
-                If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE top SET Terms=@Terms", ToPParameters())
-                    Success("Successfully Updated!")
-                End If
-            End If
-            frmTuitionFee.loadrecords()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
+    'Public Shared Function ToPParameters() As MySqlParameter()
+    '    Try
+    '        Dim ToPParam() As MySqlParameter = {
+    '                New MySqlParameter("@ID", frmTuitionFee.idTOP),
+    '                New MySqlParameter("@Terms", frmTuitionFee.txtTOP.Text)
+    '                }
+    '        Return ToPParam
+    '    Catch ex As Exception
+    '        Return Nothing
+    '    End Try
+    'End Function
+    'Public Shared Sub ToPRef()
+    '    Try
+    '        If frmTuitionFee.idTuition = 0 Then
+    '            If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+    '                Command("INSERT INTO top(Terms) 
+    '                        VALUES (@Terms)", ToPParameters())
+    '                Success("Successfully Added!")
+    '            End If
+    '        Else
+    '            If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
+    '                Command("UPDATE top SET Terms=@Terms", ToPParameters())
+    '                Success("Successfully Updated!")
+    '            End If
+    '        End If
+    '        frmTuitionFee.loadrecords()
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 #End Region
 End Class

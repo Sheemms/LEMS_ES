@@ -1,3 +1,3 @@
-﻿Public Class frmAuditTrail
+﻿Public Class FrmAuditTrail
 
 End Class

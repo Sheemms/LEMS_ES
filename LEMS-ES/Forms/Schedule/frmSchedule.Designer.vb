@@ -22,14 +22,15 @@ Partial Class FrmSchedule
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PbSearch = New System.Windows.Forms.PictureBox()
         Me.CmbRoom = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbAdviser = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbSubjectCode = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -37,7 +38,7 @@ Partial Class FrmSchedule
         Me.txtstartTime = New System.Windows.Forms.MaskedTextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.dgvSchedule = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DgvSchedule = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -92,27 +93,26 @@ Partial Class FrmSchedule
         Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PbSearch = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Font = New System.Drawing.Font("Georgia", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Bahnschrift", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1007, 735)
+        Me.GroupBox1.Size = New System.Drawing.Size(1007, 734)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Scheduling"
@@ -158,11 +158,21 @@ Partial Class FrmSchedule
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(3, 34)
+        Me.Panel1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Location = New System.Drawing.Point(3, 36)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1001, 698)
+        Me.Panel1.Size = New System.Drawing.Size(1001, 695)
         Me.Panel1.TabIndex = 0
+        '
+        'PbSearch
+        '
+        Me.PbSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.PbSearch.Location = New System.Drawing.Point(937, 145)
+        Me.PbSearch.Name = "PbSearch"
+        Me.PbSearch.Size = New System.Drawing.Size(30, 36)
+        Me.PbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PbSearch.TabIndex = 55
+        Me.PbSearch.TabStop = False
         '
         'CmbRoom
         '
@@ -171,7 +181,7 @@ Partial Class FrmSchedule
         Me.CmbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbRoom.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CmbRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbRoom.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbRoom.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbRoom.ForeColor = System.Drawing.Color.Black
         Me.CmbRoom.ItemHeight = 30
         Me.CmbRoom.Location = New System.Drawing.Point(103, 187)
@@ -186,7 +196,7 @@ Partial Class FrmSchedule
         Me.CmbAdviser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbAdviser.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CmbAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbAdviser.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbAdviser.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbAdviser.ForeColor = System.Drawing.Color.Black
         Me.CmbAdviser.ItemHeight = 30
         Me.CmbAdviser.Location = New System.Drawing.Point(406, 61)
@@ -201,7 +211,7 @@ Partial Class FrmSchedule
         Me.CmbSubjectCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbSubjectCode.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CmbSubjectCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbSubjectCode.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbSubjectCode.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbSubjectCode.ForeColor = System.Drawing.Color.Black
         Me.CmbSubjectCode.ItemHeight = 30
         Me.CmbSubjectCode.Location = New System.Drawing.Point(406, 103)
@@ -211,20 +221,20 @@ Partial Class FrmSchedule
         '
         'txtendTime
         '
-        Me.txtendTime.Font = New System.Drawing.Font("Georgia", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtendTime.Font = New System.Drawing.Font("Bahnschrift", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtendTime.Location = New System.Drawing.Point(867, 61)
         Me.txtendTime.Mask = "00:00"
         Me.txtendTime.Name = "txtendTime"
-        Me.txtendTime.Size = New System.Drawing.Size(100, 36)
+        Me.txtendTime.Size = New System.Drawing.Size(100, 38)
         Me.txtendTime.TabIndex = 51
         '
         'txtstartTime
         '
-        Me.txtstartTime.Font = New System.Drawing.Font("Georgia", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtstartTime.Font = New System.Drawing.Font("Bahnschrift", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtstartTime.Location = New System.Drawing.Point(720, 61)
         Me.txtstartTime.Mask = "00:00"
         Me.txtstartTime.Name = "txtstartTime"
-        Me.txtstartTime.Size = New System.Drawing.Size(100, 36)
+        Me.txtstartTime.Size = New System.Drawing.Size(100, 38)
         Me.txtstartTime.TabIndex = 50
         '
         'TabControl1
@@ -237,79 +247,79 @@ Partial Class FrmSchedule
         Me.TabControl1.Location = New System.Drawing.Point(42, 229)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(950, 418)
+        Me.TabControl1.Size = New System.Drawing.Size(950, 416)
         Me.TabControl1.TabIndex = 46
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.dgvSchedule)
+        Me.TabPage1.Controls.Add(Me.DgvSchedule)
         Me.TabPage1.Controls.Add(Me.ToolStrip2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(942, 391)
+        Me.TabPage1.Size = New System.Drawing.Size(942, 387)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Lists"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'dgvSchedule
+        'DgvSchedule
         '
-        Me.dgvSchedule.AllowUserToAddRows = False
-        Me.dgvSchedule.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvSchedule.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvSchedule.BackgroundColor = System.Drawing.Color.DimGray
-        Me.dgvSchedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
-        Me.dgvSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvSchedule.ColumnHeadersHeight = 44
-        Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column8, Me.Column2, Me.Column1, Me.Column10, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSchedule.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvSchedule.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvSchedule.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSchedule.Location = New System.Drawing.Point(3, 28)
-        Me.dgvSchedule.MultiSelect = False
-        Me.dgvSchedule.Name = "dgvSchedule"
-        Me.dgvSchedule.ReadOnly = True
-        Me.dgvSchedule.RowHeadersVisible = False
-        Me.dgvSchedule.Size = New System.Drawing.Size(936, 360)
-        Me.dgvSchedule.TabIndex = 29
-        Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgvSchedule.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgvSchedule.ThemeStyle.BackColor = System.Drawing.Color.DimGray
-        Me.dgvSchedule.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSchedule.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSchedule.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        Me.dgvSchedule.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSchedule.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgvSchedule.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSchedule.ThemeStyle.HeaderStyle.Height = 44
-        Me.dgvSchedule.ThemeStyle.ReadOnly = True
-        Me.dgvSchedule.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgvSchedule.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
-        Me.dgvSchedule.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSchedule.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgvSchedule.ThemeStyle.RowsStyle.Height = 22
-        Me.dgvSchedule.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgvSchedule.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvSchedule.AllowUserToAddRows = False
+        Me.DgvSchedule.AllowUserToDeleteRows = False
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.DgvSchedule.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        Me.DgvSchedule.BackgroundColor = System.Drawing.Color.DimGray
+        Me.DgvSchedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.DgvSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.DgvSchedule.ColumnHeadersHeight = 44
+        Me.DgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column8, Me.Column2, Me.Column1, Me.Column10, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9})
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvSchedule.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DgvSchedule.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvSchedule.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvSchedule.Location = New System.Drawing.Point(3, 28)
+        Me.DgvSchedule.MultiSelect = False
+        Me.DgvSchedule.Name = "DgvSchedule"
+        Me.DgvSchedule.ReadOnly = True
+        Me.DgvSchedule.RowHeadersVisible = False
+        Me.DgvSchedule.Size = New System.Drawing.Size(936, 356)
+        Me.DgvSchedule.TabIndex = 29
+        Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgvSchedule.ThemeStyle.BackColor = System.Drawing.Color.DimGray
+        Me.DgvSchedule.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvSchedule.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.White
+        Me.DgvSchedule.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
+        Me.DgvSchedule.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvSchedule.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgvSchedule.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvSchedule.ThemeStyle.HeaderStyle.Height = 44
+        Me.DgvSchedule.ThemeStyle.ReadOnly = True
+        Me.DgvSchedule.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvSchedule.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.DgvSchedule.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvSchedule.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvSchedule.ThemeStyle.RowsStyle.Height = 22
+        Me.DgvSchedule.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvSchedule.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'colID
         '
@@ -341,7 +351,7 @@ Partial Class FrmSchedule
         Me.Column1.HeaderText = "Code"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 59
+        Me.Column1.Width = 62
         '
         'Column10
         '
@@ -366,7 +376,7 @@ Partial Class FrmSchedule
         Me.Column4.HeaderText = "Room"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 64
+        Me.Column4.Width = 66
         '
         'Column5
         '
@@ -375,7 +385,7 @@ Partial Class FrmSchedule
         Me.Column5.HeaderText = "Adviser"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        Me.Column5.Width = 77
+        Me.Column5.Width = 78
         '
         'Column6
         '
@@ -384,7 +394,7 @@ Partial Class FrmSchedule
         Me.Column6.HeaderText = "Days"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 60
+        Me.Column6.Width = 62
         '
         'Column7
         '
@@ -401,10 +411,11 @@ Partial Class FrmSchedule
         Me.Column9.HeaderText = "Teacher"
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
-        Me.Column9.Width = 79
+        Me.Column9.Width = 78
         '
         'ToolStrip2
         '
+        Me.ToolStrip2.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.SearchBtn})
         Me.ToolStrip2.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip2.Name = "ToolStrip2"
@@ -416,7 +427,7 @@ Partial Class FrmSchedule
         '
         Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.TxtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSearch.Name = "TxtSearch"
         Me.TxtSearch.Size = New System.Drawing.Size(200, 25)
         '
@@ -434,10 +445,10 @@ Partial Class FrmSchedule
         '
         Me.TabPage2.Controls.Add(Me.DgvTeacher)
         Me.TabPage2.Controls.Add(Me.ToolStrip1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(942, 391)
+        Me.TabPage2.Size = New System.Drawing.Size(942, 387)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Schedule"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -446,30 +457,30 @@ Partial Class FrmSchedule
         '
         Me.DgvTeacher.AllowUserToAddRows = False
         Me.DgvTeacher.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DgvTeacher.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        Me.DgvTeacher.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         Me.DgvTeacher.BackgroundColor = System.Drawing.Color.DimGray
         Me.DgvTeacher.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.DgvTeacher.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DgvTeacher.ColumnHeadersHeight = 44
         Me.DgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvTeacher.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn11, Me.colPrint})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvTeacher.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvTeacher.DefaultCellStyle = DataGridViewCellStyle12
         Me.DgvTeacher.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvTeacher.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvTeacher.Location = New System.Drawing.Point(3, 28)
@@ -477,7 +488,7 @@ Partial Class FrmSchedule
         Me.DgvTeacher.Name = "DgvTeacher"
         Me.DgvTeacher.ReadOnly = True
         Me.DgvTeacher.RowHeadersVisible = False
-        Me.DgvTeacher.Size = New System.Drawing.Size(936, 360)
+        Me.DgvTeacher.Size = New System.Drawing.Size(936, 356)
         Me.DgvTeacher.TabIndex = 30
         Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -547,6 +558,7 @@ Partial Class FrmSchedule
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -558,7 +570,7 @@ Partial Class FrmSchedule
         '
         Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
         '
@@ -582,7 +594,7 @@ Partial Class FrmSchedule
         Me.TxtUnits.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.TxtUnits.Enabled = False
         Me.TxtUnits.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtUnits.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtUnits.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUnits.ForeColor = System.Drawing.Color.Black
         Me.TxtUnits.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtUnits.Location = New System.Drawing.Point(406, 187)
@@ -591,7 +603,7 @@ Partial Class FrmSchedule
         Me.TxtUnits.PlaceholderText = ""
         Me.TxtUnits.ReadOnly = True
         Me.TxtUnits.SelectedText = ""
-        Me.TxtUnits.Size = New System.Drawing.Size(200, 36)
+        Me.TxtUnits.Size = New System.Drawing.Size(199, 36)
         Me.TxtUnits.TabIndex = 45
         '
         'Label15
@@ -600,7 +612,7 @@ Partial Class FrmSchedule
         Me.Label15.Location = New System.Drawing.Point(352, 199)
         Me.Label15.Name = "Label15"
         Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label15.Size = New System.Drawing.Size(48, 14)
+        Me.Label15.Size = New System.Drawing.Size(46, 16)
         Me.Label15.TabIndex = 44
         Me.Label15.Text = "Unit(s)"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -611,7 +623,7 @@ Partial Class FrmSchedule
         Me.Label14.Location = New System.Drawing.Point(58, 199)
         Me.Label14.Name = "Label14"
         Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label14.Size = New System.Drawing.Size(39, 14)
+        Me.Label14.Size = New System.Drawing.Size(41, 16)
         Me.Label14.TabIndex = 42
         Me.Label14.Text = "Room"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -636,7 +648,7 @@ Partial Class FrmSchedule
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(824, 72)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(31, 14)
+        Me.Label13.Size = New System.Drawing.Size(28, 16)
         Me.Label13.TabIndex = 37
         Me.Label13.Text = "[To]"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -644,9 +656,9 @@ Partial Class FrmSchedule
         'cbF
         '
         Me.cbF.AutoSize = True
-        Me.cbF.Location = New System.Drawing.Point(809, 37)
+        Me.cbF.Location = New System.Drawing.Point(808, 37)
         Me.cbF.Name = "cbF"
-        Me.cbF.Size = New System.Drawing.Size(65, 18)
+        Me.cbF.Size = New System.Drawing.Size(63, 20)
         Me.cbF.TabIndex = 36
         Me.cbF.Text = "Friday"
         Me.cbF.UseVisualStyleBackColor = True
@@ -656,7 +668,7 @@ Partial Class FrmSchedule
         Me.cbTH.AutoSize = True
         Me.cbTH.Location = New System.Drawing.Point(720, 37)
         Me.cbTH.Name = "cbTH"
-        Me.cbTH.Size = New System.Drawing.Size(83, 18)
+        Me.cbTH.Size = New System.Drawing.Size(80, 20)
         Me.cbTH.TabIndex = 35
         Me.cbTH.Text = "Thursday"
         Me.cbTH.UseVisualStyleBackColor = True
@@ -666,7 +678,7 @@ Partial Class FrmSchedule
         Me.cbW.AutoSize = True
         Me.cbW.Location = New System.Drawing.Point(890, 19)
         Me.cbW.Name = "cbW"
-        Me.cbW.Size = New System.Drawing.Size(92, 18)
+        Me.cbW.Size = New System.Drawing.Size(92, 20)
         Me.cbW.TabIndex = 34
         Me.cbW.Text = "Wednesday"
         Me.cbW.UseVisualStyleBackColor = True
@@ -674,9 +686,9 @@ Partial Class FrmSchedule
         'cbT
         '
         Me.cbT.AutoSize = True
-        Me.cbT.Location = New System.Drawing.Point(809, 19)
+        Me.cbT.Location = New System.Drawing.Point(808, 19)
         Me.cbT.Name = "cbT"
-        Me.cbT.Size = New System.Drawing.Size(75, 18)
+        Me.cbT.Size = New System.Drawing.Size(73, 20)
         Me.cbT.TabIndex = 33
         Me.cbT.Text = "Tuesday"
         Me.cbT.UseVisualStyleBackColor = True
@@ -686,7 +698,7 @@ Partial Class FrmSchedule
         Me.cbM.AutoSize = True
         Me.cbM.Location = New System.Drawing.Point(720, 19)
         Me.cbM.Name = "cbM"
-        Me.cbM.Size = New System.Drawing.Size(72, 18)
+        Me.cbM.Size = New System.Drawing.Size(71, 20)
         Me.cbM.TabIndex = 32
         Me.cbM.Text = "Monday"
         Me.cbM.UseVisualStyleBackColor = True
@@ -694,11 +706,11 @@ Partial Class FrmSchedule
         'lblSY
         '
         Me.lblSY.AutoSize = True
-        Me.lblSY.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSY.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSY.ForeColor = System.Drawing.Color.Red
         Me.lblSY.Location = New System.Drawing.Point(100, 29)
         Me.lblSY.Name = "lblSY"
-        Me.lblSY.Size = New System.Drawing.Size(86, 18)
+        Me.lblSY.Size = New System.Drawing.Size(79, 18)
         Me.lblSY.TabIndex = 31
         Me.lblSY.Text = "0000-0000"
         Me.lblSY.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -712,7 +724,7 @@ Partial Class FrmSchedule
         Me.txtTeacherName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTeacherName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTeacherName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtTeacherName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTeacherName.ForeColor = System.Drawing.Color.Black
         Me.txtTeacherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTeacherName.Location = New System.Drawing.Point(720, 145)
@@ -728,7 +740,7 @@ Partial Class FrmSchedule
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(660, 152)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(54, 14)
+        Me.Label12.Size = New System.Drawing.Size(53, 16)
         Me.Label12.TabIndex = 27
         Me.Label12.Text = "Teacher"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -741,8 +753,9 @@ Partial Class FrmSchedule
         Me.txtTeacherID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtTeacherID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTeacherID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTeacherID.Enabled = False
         Me.txtTeacherID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtTeacherID.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTeacherID.ForeColor = System.Drawing.Color.Black
         Me.txtTeacherID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTeacherID.Location = New System.Drawing.Point(720, 103)
@@ -758,7 +771,7 @@ Partial Class FrmSchedule
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(645, 114)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(69, 14)
+        Me.Label11.Size = New System.Drawing.Size(69, 16)
         Me.Label11.TabIndex = 25
         Me.Label11.Text = "Teacher ID"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -768,7 +781,7 @@ Partial Class FrmSchedule
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(633, 72)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(81, 14)
+        Me.Label10.Size = New System.Drawing.Size(77, 16)
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "Time [From]"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -778,7 +791,7 @@ Partial Class FrmSchedule
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(660, 23)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(45, 14)
+        Me.Label9.Size = New System.Drawing.Size(45, 16)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Day(s)"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -793,7 +806,7 @@ Partial Class FrmSchedule
         Me.txtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSubjName.Enabled = False
         Me.txtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSubjName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubjName.ForeColor = System.Drawing.Color.Black
         Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSubjName.Location = New System.Drawing.Point(406, 145)
@@ -801,7 +814,7 @@ Partial Class FrmSchedule
         Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubjName.PlaceholderText = ""
         Me.txtSubjName.SelectedText = ""
-        Me.txtSubjName.Size = New System.Drawing.Size(200, 36)
+        Me.txtSubjName.Size = New System.Drawing.Size(199, 36)
         Me.txtSubjName.TabIndex = 15
         '
         'Label8
@@ -810,7 +823,7 @@ Partial Class FrmSchedule
         Me.Label8.Location = New System.Drawing.Point(313, 155)
         Me.Label8.Name = "Label8"
         Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label8.Size = New System.Drawing.Size(87, 14)
+        Me.Label8.Size = New System.Drawing.Size(87, 16)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Subject Name"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -821,7 +834,7 @@ Partial Class FrmSchedule
         Me.Label7.Location = New System.Drawing.Point(320, 114)
         Me.Label7.Name = "Label7"
         Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label7.Size = New System.Drawing.Size(80, 14)
+        Me.Label7.Size = New System.Drawing.Size(82, 16)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Subject Code"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -831,7 +844,7 @@ Partial Class FrmSchedule
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(345, 73)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 14)
+        Me.Label6.Size = New System.Drawing.Size(53, 16)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Adviser"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -846,7 +859,7 @@ Partial Class FrmSchedule
         Me.txtAdviserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAdviserID.Enabled = False
         Me.txtAdviserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviserID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtAdviserID.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAdviserID.ForeColor = System.Drawing.Color.Black
         Me.txtAdviserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAdviserID.Location = New System.Drawing.Point(406, 19)
@@ -854,7 +867,7 @@ Partial Class FrmSchedule
         Me.txtAdviserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAdviserID.PlaceholderText = ""
         Me.txtAdviserID.SelectedText = ""
-        Me.txtAdviserID.Size = New System.Drawing.Size(200, 36)
+        Me.txtAdviserID.Size = New System.Drawing.Size(199, 36)
         Me.txtAdviserID.TabIndex = 9
         '
         'Label5
@@ -862,7 +875,7 @@ Partial Class FrmSchedule
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(330, 33)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 14)
+        Me.Label5.Size = New System.Drawing.Size(69, 16)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Adviser ID"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -874,7 +887,7 @@ Partial Class FrmSchedule
         Me.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSection.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbSection.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSection.ForeColor = System.Drawing.Color.Black
         Me.cmbSection.ItemHeight = 30
         Me.cmbSection.Location = New System.Drawing.Point(103, 145)
@@ -887,7 +900,7 @@ Partial Class FrmSchedule
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(45, 155)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 14)
+        Me.Label4.Size = New System.Drawing.Size(50, 16)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Section"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -899,7 +912,7 @@ Partial Class FrmSchedule
         Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbGradeLevel.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
         Me.cmbGradeLevel.ItemHeight = 30
         Me.cmbGradeLevel.Location = New System.Drawing.Point(103, 103)
@@ -910,9 +923,9 @@ Partial Class FrmSchedule
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 114)
+        Me.Label3.Location = New System.Drawing.Point(17, 114)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 14)
+        Me.Label3.Size = New System.Drawing.Size(78, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Grade Level"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -924,7 +937,7 @@ Partial Class FrmSchedule
         Me.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmbDepartment.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDepartment.ForeColor = System.Drawing.Color.Black
         Me.cmbDepartment.ItemHeight = 30
         Me.cmbDepartment.Location = New System.Drawing.Point(103, 61)
@@ -937,7 +950,7 @@ Partial Class FrmSchedule
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(17, 73)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 14)
+        Me.Label2.Size = New System.Drawing.Size(77, 16)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Department"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -947,26 +960,16 @@ Partial Class FrmSchedule
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(20, 33)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 14)
+        Me.Label1.Size = New System.Drawing.Size(76, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'PbSearch
-        '
-        Me.PbSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.PbSearch.Location = New System.Drawing.Point(937, 145)
-        Me.PbSearch.Name = "PbSearch"
-        Me.PbSearch.Size = New System.Drawing.Size(30, 36)
-        Me.PbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PbSearch.TabIndex = 55
-        Me.PbSearch.TabStop = False
         '
         'FrmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1007, 735)
+        Me.ClientSize = New System.Drawing.Size(1007, 734)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Georgia", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -975,10 +978,11 @@ Partial Class FrmSchedule
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -986,7 +990,6 @@ Partial Class FrmSchedule
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1012,7 +1015,7 @@ Partial Class FrmSchedule
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbDepartment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents dgvSchedule As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents DgvSchedule As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents cbW As CheckBox
     Friend WithEvents cbT As CheckBox
     Friend WithEvents cbM As CheckBox

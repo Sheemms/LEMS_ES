@@ -62,6 +62,11 @@ LEMS-ES
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:LEMS_ES.My.Resources.Resources.closed">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:LEMS_ES.My.Resources.Resources.credit_card">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -83,6 +88,11 @@ LEMS-ES
 </summary>
 </member>
 <member name="P:LEMS_ES.My.Resources.Resources.delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LEMS_ES.My.Resources.Resources.department">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -158,6 +168,11 @@ LEMS-ES
 </summary>
 </member>
 <member name="P:LEMS_ES.My.Resources.Resources.new_document">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:LEMS_ES.My.Resources.Resources.open">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -340,6 +355,11 @@ Represents strongly named DataRow class.
 <member name="T:LEMS_ES.DS_StudentList.Dt_StudentListRowChangeEvent">
 <summary>
 Row event argument class
+</summary>
+</member>
+<member name="T:LEMS_ES.DS_TeacherList">
+<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
 </members>

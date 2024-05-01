@@ -1,10 +1,10 @@
-﻿Public Class frmDashboard
+﻿Public Class FrmDashboard
 
     Private Sub BtnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         RemovePanel()
-        With frmCharts
+        With FrmCharts
             .TopLevel = False
-            Panel3.Controls.Add(frmCharts)
+            Panel3.Controls.Add(FrmCharts)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -12,9 +12,9 @@
     End Sub
     Private Sub BtnEnrollment_Click(sender As Object, e As EventArgs) Handles BtnEnrollment.Click
         RemovePanel()
-        With frmEnrollment
+        With FrmEnrollment
             .TopLevel = False
-            Panel3.Controls.Add(frmEnrollment)
+            Panel3.Controls.Add(FrmEnrollment)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -22,9 +22,9 @@
     End Sub
     Private Sub BtnScheduling_Click(sender As Object, e As EventArgs) Handles btnScheduling.Click
         RemovePanel()
-        With frmSchedule
+        With FrmSchedule
             .TopLevel = False
-            Panel3.Controls.Add(frmSchedule)
+            Panel3.Controls.Add(FrmSchedule)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -32,9 +32,9 @@
     End Sub
     Private Sub BtnStudents_Click(sender As Object, e As EventArgs) Handles btnStudents.Click
         RemovePanel()
-        With frmStudents
+        With FrmStudents
             .TopLevel = False
-            Panel3.Controls.Add(frmStudents)
+            Panel3.Controls.Add(FrmStudents)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -42,9 +42,9 @@
     End Sub
     Private Sub BtnTeachers_Click(sender As Object, e As EventArgs) Handles btnTeachers.Click
         RemovePanel()
-        With frmTeachers
+        With FrmTeachers
             .TopLevel = False
-            Panel3.Controls.Add(frmTeachers)
+            Panel3.Controls.Add(FrmTeachers)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -52,9 +52,9 @@
     End Sub
     Private Sub BtnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
         RemovePanel()
-        With frmBilling
+        With FrmBilling
             .TopLevel = False
-            Panel3.Controls.Add(frmBilling)
+            Panel3.Controls.Add(FrmBilling)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -63,9 +63,9 @@
 
     Private Sub BtnSubjects_Click(sender As Object, e As EventArgs)
         RemovePanel()
-        With frmSubjects
+        With FrmSubjects
             .TopLevel = False
-            Panel3.Controls.Add(frmSubjects)
+            Panel3.Controls.Add(FrmSubjects)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -85,9 +85,9 @@
 
     Private Sub BtnMaintenance_Click(sender As Object, e As EventArgs) Handles btnMaintenance.Click
         RemovePanel()
-        With frmMaintenance
+        With FrmMaintenance
             .TopLevel = False
-            Panel3.Controls.Add(frmMaintenance)
+            Panel3.Controls.Add(FrmMaintenance)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -107,9 +107,9 @@
 
     Private Sub BtnSY_Click(sender As Object, e As EventArgs)
         RemovePanel()
-        With frmSY
+        With FrmSY
             .TopLevel = False
-            Panel3.Controls.Add(frmSY)
+            Panel3.Controls.Add(FrmSY)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -122,7 +122,7 @@
 
     Private Sub FrmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
-        dropdownMenu()
+        DropdownMenu()
     End Sub
     Private Sub DropdownMenu()
         TransactionPanel.Visible = False
@@ -184,9 +184,9 @@
 
     Private Sub BtnElemGrading_Click(sender As Object, e As EventArgs) Handles btnElemGrading.Click
         RemovePanel()
-        With frmElementaryGrading
+        With FrmElementaryGrading
             .TopLevel = False
-            Panel3.Controls.Add(frmElementaryGrading)
+            Panel3.Controls.Add(FrmElementaryGrading)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()
@@ -195,9 +195,9 @@
 
     Private Sub BtnJHSGrading_Click(sender As Object, e As EventArgs) Handles btnJHSGrading.Click
         RemovePanel()
-        With frmJHSGrading
+        With FrmJHSGrading
             .TopLevel = False
-            Panel3.Controls.Add(frmJHSGrading)
+            Panel3.Controls.Add(FrmJHSGrading)
             .Dock = DockStyle.Fill
             .BringToFront()
             .Show()

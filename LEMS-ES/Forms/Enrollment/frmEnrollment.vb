@@ -104,16 +104,15 @@ Public Class FrmEnrollment
     End Sub
 
     Private Sub DgvEnrolled_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEnrolled.CellContentClick
-        Dim column As String = dgvEnrolled.Columns(e.ColumnIndex).Name
+    Dim column As String = dgvEnrolled.Columns(e.ColumnIndex).Name
 
         If column = "colDrop" AndAlso e.RowIndex >= 0 Then
-            If MsgBox("Do you want to drop this student?") Then
+            If MsgBox("Do you want to drop this student?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 Try
-                    Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells(0).Value.ToString()
-                    Dim parameters As New List(Of MySqlParameter)()
-                    parameters.Add(New MySqlParameter("@EID", enrollmentId))
+                    Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells("colID").Value.ToString()
 
-                    Command("UPDATE enrollment SET status = 'Dropped' WHERE EID = @EID")
+                    ' Using parameterized query to prevent SQL injection
+                    Command("UPDATE enrollment SET Status = 'Dropped' WHERE ID=" & enrollmentId)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 

@@ -5,7 +5,7 @@
         LoadRecords()
     End Sub
     Public Sub LoadRecords()
-        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName, sub.Description, sub.Units
+        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName, sub.Units
                 FROM subject sub
                 JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID
                 ORDER BY gl.GradeLevel")
