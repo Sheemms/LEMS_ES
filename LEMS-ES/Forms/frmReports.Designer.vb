@@ -25,14 +25,19 @@ Partial Class frmReports
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.CrystalReportViewer2 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.GroupBox1.SuspendLayout()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.ToolStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -89,15 +94,16 @@ Partial Class frmReports
         Me.TabPage1.Text = "Class Lists"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'CrystalReportViewer1
         '
-        Me.TabPage2.Location = New System.Drawing.Point(184, 4)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(759, 588)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Enrolled Student Lists"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 28)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(753, 557)
+        Me.CrystalReportViewer1.TabIndex = 1
         '
         'ToolStrip1
         '
@@ -116,16 +122,45 @@ Partial Class frmReports
         Me.ToolStripButton1.Size = New System.Drawing.Size(52, 22)
         Me.ToolStripButton1.Text = "Print"
         '
-        'CrystalReportViewer1
+        'TabPage2
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 28)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(753, 557)
-        Me.CrystalReportViewer1.TabIndex = 1
+        Me.TabPage2.Controls.Add(Me.CrystalReportViewer2)
+        Me.TabPage2.Controls.Add(Me.ToolStrip2)
+        Me.TabPage2.Location = New System.Drawing.Point(184, 4)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(759, 588)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Enrolled Student Lists"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'ToolStrip2
+        '
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton2})
+        Me.ToolStrip2.Location = New System.Drawing.Point(3, 3)
+        Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolStrip2.Size = New System.Drawing.Size(753, 25)
+        Me.ToolStrip2.TabIndex = 0
+        Me.ToolStrip2.Text = "ToolStrip2"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(52, 22)
+        Me.ToolStripButton2.Text = "Print"
+        '
+        'CrystalReportViewer2
+        '
+        Me.CrystalReportViewer2.ActiveViewIndex = -1
+        Me.CrystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer2.Location = New System.Drawing.Point(3, 28)
+        Me.CrystalReportViewer2.Name = "CrystalReportViewer2"
+        Me.CrystalReportViewer2.Size = New System.Drawing.Size(753, 557)
+        Me.CrystalReportViewer2.TabIndex = 1
         '
         'frmReports
         '
@@ -143,6 +178,10 @@ Partial Class frmReports
         Me.TabPage1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.ToolStrip2.ResumeLayout(False)
+        Me.ToolStrip2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -154,4 +193,7 @@ Partial Class frmReports
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents CrystalReportViewer2 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class

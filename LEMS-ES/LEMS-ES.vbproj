@@ -159,6 +159,12 @@
       <DependentUpon>ClassList.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalRep\Enrolled_Students.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enrolled_Students.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalRep\RegForm.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +196,14 @@
     </Compile>
     <Compile Include="Dataset\DS_ClassList.vb">
       <DependentUpon>DS_ClassList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_EnrolledStudents.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_EnrolledStudents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DS_EnrolledStudents.vb">
+      <DependentUpon>DS_EnrolledStudents.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DS_Grading.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -470,6 +484,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClassList.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalRep\Enrolled_Students.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Enrolled_Students.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalRep\RegForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegForm.vb</LastGenOutput>
@@ -612,6 +630,17 @@
     </None>
     <None Include="Dataset\DS_ClassList.xss">
       <DependentUpon>DS_ClassList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_EnrolledStudents.xsc">
+      <DependentUpon>DS_EnrolledStudents.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DS_EnrolledStudents.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_EnrolledStudents.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DS_EnrolledStudents.xss">
+      <DependentUpon>DS_EnrolledStudents.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DS_Grading.xsc">
       <DependentUpon>DS_Grading.xsd</DependentUpon>
