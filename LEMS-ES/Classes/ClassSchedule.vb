@@ -31,7 +31,8 @@ Public Class ClassSchedule
     Public Shared Sub SchedRef()
         Try
             Dim dynamicParams As MySqlParameter() = SchedParameters()
-            If frmSchedule.idSched = 0 Then
+
+            If FrmSchedule.idSched = 0 Then
                 If MsgBox("Do you want to Add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO schedule(SYID, Department_ID, GradeLevel_ID, Sec_ID, Room, Adviser_ID, Subj_ID, Days, Time_From, Time_To, Teacher_ID) 
                                 VALUES (@SYID, @Department_ID, @GradeLevel_ID, @Sec_ID, @Room, @Adviser_ID, @Subj_ID, @Days, @Time_From, @Time_To, @Teacher_ID)", dynamicParams)

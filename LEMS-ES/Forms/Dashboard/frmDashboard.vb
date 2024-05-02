@@ -1,5 +1,5 @@
 ﻿Public Class FrmDashboard
-
+    Public IDuser As Integer = 0
     Private Sub BtnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         RemovePanel()
         With FrmCharts

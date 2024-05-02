@@ -235,7 +235,10 @@ Public Class FrmSchedule
         If IS_EMPTY(cmbSection) Then Return
         If IS_EMPTY(CmbRoom) Then Return
         If IS_EMPTY(CmbAdviser) Then Return
-
+        If Not IsValidTime(txtstartTime.Text) Then
+            MsgBox("Invalid time format")
+            Exit Sub
+        End If
         ClassSchedule.SchedRef()
         Clear()
     End Sub

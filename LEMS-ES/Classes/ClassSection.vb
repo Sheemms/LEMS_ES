@@ -27,6 +27,8 @@ Public Class ClassSection
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
+                    Dim name As String = FrmSections.CmbGradeLevel.Text & ", " & FrmSections.TxtSectionName.Text
+                    LogAction("Updated Section |" & name)
                 End If
             End If
             FrmSections.Loadrecords()

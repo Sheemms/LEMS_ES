@@ -3,6 +3,7 @@
 Public Class FrmCharts
     Private Sub FrmCharts_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
+        LoadAudittrail()
         StudentsCount()
         TeachersCount()
         EnrolledCount()
@@ -11,6 +12,25 @@ Public Class FrmCharts
         DeptCount()
         ActiveSchoolYear()
         ChartEnrolled()
+    End Sub
+    Public Sub LoadAudittrail()
+        Try
+            Query("SELECT a.ID, a.UserID, a.Description, a.Time 
+            FROM audittrail a
+            JOIN user b ON a.UserID = b.ID
+            WHERE b.ID =" & userID)
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                userID = ds.Tables("QueryTB").Rows(0)("ID")
+
+                Guna2DataGridView1.DataSource = ds.Tables("QueryTb")
+                Guna2DataGridView1.AutoGenerateColumns = False
+            Else
+                Guna2DataGridView1.DataSource = Nothing
+                MsgBox("No records found for the specified user ID.")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
     Sub StudentsCount()
         Command("SELECT COUNT(*) FROM student")

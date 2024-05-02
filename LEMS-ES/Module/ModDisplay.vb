@@ -1,4 +1,5 @@
-﻿Imports Guna.UI2.WinForms
+﻿Imports System.Text.RegularExpressions
+Imports Guna.UI2.WinForms
 
 Module ModDisplay
     Public Function IS_EMPTY(ByVal ptext As Object) As Boolean
@@ -164,5 +165,11 @@ Module ModDisplay
             MsgBox("Error getting school year ID: " & ex.Message)
             Return -1
         End Try
+    End Function
+
+    Public Function IsValidTime(timeString As String) As Boolean
+        Dim regex As New Regex("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")
+
+        Return regex.IsMatch(timeString)
     End Function
 End Module

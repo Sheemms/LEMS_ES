@@ -36,33 +36,37 @@ Public Class ClassStudents
         Try
             Dim dynamicParams As MySqlParameter() = StudParameters()
 
-            If frmStudentsView.idStud = 0 Then
-                If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO student(StudType, LRN, Lastname, Firstname, MiddleInitial, Suffix, Gender, Age, Birthday, Address, 
+            If FrmStudentsView.idStud = 0 Then
+                If Convert.ToInt32(FrmStudentsView.txtStudAge.Text) <= 4 Then
+                    MsgBox("Can't input age lower than 5")
+                Else
+                    If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+                        Command("INSERT INTO student(StudType, LRN, Lastname, Firstname, MiddleInitial, Suffix, Gender, Age, Birthday, Address, 
                     MotherName, MothersMaiden, Mother_Occupation, FatherName, Father_Occupation, GuardianName, GuardianRelation, GuardianContact, Citizenship) 
                     VALUES (@StudType, @LRN, @Lastname, @Firstname, @MiddleInitial, @Suffix, @Gender, @Age, @Birthday, @Address, 
                     @MotherName, @MothersMaiden, @Mother_Occupation, @FatherName, @Father_Occupation, @GuardianName, @GuardianRelation, @GuardianContact, @Citizenship)", dynamicParams)
 
-                    Dim lastInsertedId As Integer = Convert.ToInt32(CmdScalar("SELECT LAST_INSERT_ID()"))
+                        Dim lastInsertedId As Integer = Convert.ToInt32(CmdScalar("SELECT LAST_INSERT_ID()"))
 
-                    For Each row As DataGridViewRow In frmStudentsView.dgvRequirements.Rows
-                        Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
+                        For Each row As DataGridViewRow In FrmStudentsView.dgvRequirements.Rows
+                            Dim isChecked As Boolean = Convert.ToBoolean(row.Cells("colCheckBox").Value)
 
-                        If isChecked Then
-                            Dim requirementID As Integer = Convert.ToInt32(row.Cells("ID").Value)
-                            Dim reqParam As MySqlParameter() = {
-                            New MySqlParameter("@StudentID", lastInsertedId),
-                            New MySqlParameter("@RequirementID", requirementID)
-                        }
-                            Command("INSERT IGNORE INTO submitted_requirements (StudentID, RequirementID) VALUES (@StudentID, @RequirementID)", reqParam)
-                        End If
-                    Next
-
-                    Success("Successfully added!")
-                    frmStudentsView.Close()
+                            If isChecked Then
+                                Dim requirementID As Integer = Convert.ToInt32(row.Cells("ID").Value)
+                                Dim reqParam As MySqlParameter() = {
+                                New MySqlParameter("@StudentID", lastInsertedId),
+                                New MySqlParameter("@RequirementID", requirementID)
+                            }
+                                Command("INSERT IGNORE INTO submitted_requirements (StudentID, RequirementID) VALUES (@StudentID, @RequirementID)", reqParam)
+                            End If
+                        Next
+                        FrmStudentsView.Clear()
+                        Success("Successfully added!")
+                        FrmStudentsView.Close()
+                    End If
                 End If
             End If
-            frmStudents.loadrecords()
+            FrmStudents.loadrecords()
         Catch ex As MySqlException
             If ex.Number = 1062 Then
                 Critical("LRN already exists.")

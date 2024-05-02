@@ -2,6 +2,12 @@
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
+        Query("SELECT * FROM user")
+        If ds.Tables("QueryTb").Rows.Count = 0 Then
+            MsgBox("No Admin Registered Yet.")
+            RegistrationForm.Show()
+            Me.Close()
+        End If
     End Sub
     Public Sub Clear()
         txtUsername.Clear()
@@ -75,6 +81,9 @@ Public Class Login
                     .btnReports.Enabled = False
                     .BtnSystemUtilities.Enabled = False
                 End If
+                .IDuser = userID
+                .Label3.Text = str_name
+                .Label4.Text = str_role
                 txtUsername.Clear()
                 txtPassword.Clear()
                 Me.Hide()

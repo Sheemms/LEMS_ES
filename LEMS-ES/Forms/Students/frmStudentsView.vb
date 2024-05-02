@@ -7,7 +7,16 @@ Public Class FrmStudentsView
         LoadRequirements()
     End Sub
     Public Sub Clear()
-
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudNum, txtStudLname, txtStudFname, txtStudMI, txtCitizenship,
+            txtAddress, txtStudAge, txtFatherName, txtFatherOccupation, txtMother, txtMotherMaidenName, txtMotherOccupation, txtGuardianName,
+            txtGuardianRelation, txtGuardianContact}
+        For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
+            textBox.Clear()
+        Next
+        cmbStudSuffix.Text = ""
+        RbMale.Checked = False
+        RbFemale.Checked = False
+        idStud = 0
     End Sub
     Public Sub LoadStudentData()
         Query("SELECT * FROM student WHERE LRN = '" & txtStudNum.Text & "'")
@@ -41,7 +50,7 @@ Public Class FrmStudentsView
                 txtCitizenship.Text = .Item(19)
             End With
         Else
-            ClearFields(Me, idStud)
+            Clear()
         End If
     End Sub
 
@@ -104,14 +113,15 @@ Public Class FrmStudentsView
         If IS_EMPTY(txtStudMI) Then Return
         If IS_EMPTY(cmbStudSuffix) Then Return
         If IS_EMPTY(txtAddress) Then Return
+        If IS_EMPTY(txtStudAge) Then Return
 #End Region
+
         ClassStudents.StudRef()
-        Clear()
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         ClassStudents.StudUpdate()
-        ClearFields(Me, idStud)
+        Clear()
     End Sub
     Private Sub CalculateAge()
         Dim birthdate As Date = dtpBday.Value.Date

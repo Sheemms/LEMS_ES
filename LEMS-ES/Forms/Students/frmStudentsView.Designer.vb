@@ -22,9 +22,9 @@ Partial Class FrmStudentsView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbStudType = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtStudNum = New Guna.UI2.WinForms.Guna2TextBox()
@@ -128,6 +128,7 @@ Partial Class FrmStudentsView
         Me.txtStudNum.ForeColor = System.Drawing.Color.Black
         Me.txtStudNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtStudNum.Location = New System.Drawing.Point(123, 11)
+        Me.txtStudNum.MaxLength = 15
         Me.txtStudNum.Name = "txtStudNum"
         Me.txtStudNum.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudNum.PlaceholderText = ""
@@ -261,27 +262,27 @@ Partial Class FrmStudentsView
         Me.dgvRequirements.AllowUserToDeleteRows = False
         Me.dgvRequirements.AllowUserToResizeColumns = False
         Me.dgvRequirements.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.dgvRequirements.ColumnHeadersHeight = 30
         Me.dgvRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCheckBox, Me.ID, Me.Requirement, Me.Column1})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle21
         Me.dgvRequirements.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRequirements.Location = New System.Drawing.Point(3, 22)
@@ -353,9 +354,9 @@ Partial Class FrmStudentsView
         Me.cmbStudSuffix.ForeColor = System.Drawing.Color.Black
         Me.cmbStudSuffix.ItemHeight = 30
         Me.cmbStudSuffix.Items.AddRange(New Object() {"None", "Jr", "Sr", "I", "II", "III", "IV"})
-        Me.cmbStudSuffix.Location = New System.Drawing.Point(130, 150)
+        Me.cmbStudSuffix.Location = New System.Drawing.Point(119, 150)
         Me.cmbStudSuffix.Name = "cmbStudSuffix"
-        Me.cmbStudSuffix.Size = New System.Drawing.Size(73, 36)
+        Me.cmbStudSuffix.Size = New System.Drawing.Size(84, 36)
         Me.cmbStudSuffix.TabIndex = 75
         '
         'RbFemale
@@ -479,7 +480,7 @@ Partial Class FrmStudentsView
         Me.txtStudMI.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudMI.PlaceholderText = ""
         Me.txtStudMI.SelectedText = ""
-        Me.txtStudMI.Size = New System.Drawing.Size(118, 33)
+        Me.txtStudMI.Size = New System.Drawing.Size(109, 36)
         Me.txtStudMI.TabIndex = 13
         '
         'txtStudFname
@@ -595,6 +596,7 @@ Partial Class FrmStudentsView
         Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Controls.Add(Me.txtFatherName)
         Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage2.Location = New System.Drawing.Point(4, 44)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -628,7 +630,7 @@ Partial Class FrmStudentsView
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(238, 175)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(96, 13)
+        Me.Label22.Size = New System.Drawing.Size(110, 16)
         Me.Label22.TabIndex = 33
         Me.Label22.Text = "Guardian Relation"
         '
@@ -657,7 +659,7 @@ Partial Class FrmStudentsView
         Me.Label24.AutoSize = True
         Me.Label24.Location = New System.Drawing.Point(438, 175)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(93, 13)
+        Me.Label24.Size = New System.Drawing.Size(106, 16)
         Me.Label24.TabIndex = 29
         Me.Label24.Text = "Guardian Contact"
         '
@@ -686,7 +688,7 @@ Partial Class FrmStudentsView
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(7, 175)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(84, 13)
+        Me.Label25.Size = New System.Drawing.Size(97, 16)
         Me.Label25.TabIndex = 27
         Me.Label25.Text = "Guardian Name"
         '
@@ -695,7 +697,7 @@ Partial Class FrmStudentsView
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(7, 149)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(112, 13)
+        Me.Label21.Size = New System.Drawing.Size(128, 16)
         Me.Label21.TabIndex = 26
         Me.Label21.Text = "If Guardian is Other *"
         '
@@ -724,7 +726,7 @@ Partial Class FrmStudentsView
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(238, 78)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(122, 13)
+        Me.Label20.Size = New System.Drawing.Size(139, 16)
         Me.Label20.TabIndex = 24
         Me.Label20.Text = "Mother's Maiden Name"
         '
@@ -753,7 +755,7 @@ Partial Class FrmStudentsView
         Me.Label17.AutoSize = True
         Me.Label17.Location = New System.Drawing.Point(469, 16)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(100, 13)
+        Me.Label17.Size = New System.Drawing.Size(114, 16)
         Me.Label17.TabIndex = 22
         Me.Label17.Text = "Mother Occupation"
         '
@@ -782,7 +784,7 @@ Partial Class FrmStudentsView
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(238, 16)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(75, 13)
+        Me.Label19.Size = New System.Drawing.Size(86, 16)
         Me.Label19.TabIndex = 18
         Me.Label19.Text = "Mother Name"
         '
@@ -811,7 +813,7 @@ Partial Class FrmStudentsView
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(7, 78)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(97, 13)
+        Me.Label16.Size = New System.Drawing.Size(111, 16)
         Me.Label16.TabIndex = 16
         Me.Label16.Text = "Father Occupation"
         '
@@ -840,7 +842,7 @@ Partial Class FrmStudentsView
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(7, 16)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(72, 13)
+        Me.Label14.Size = New System.Drawing.Size(83, 16)
         Me.Label14.TabIndex = 12
         Me.Label14.Text = "Father Name"
         '

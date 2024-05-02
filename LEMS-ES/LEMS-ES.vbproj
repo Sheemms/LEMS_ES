@@ -252,6 +252,12 @@
     <Compile Include="Forms\Grading\FrmGradeReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RegistrationForm.Designer.vb">
+      <DependentUpon>RegistrationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\Registration Form\FrmRegForm.Designer.vb">
       <DependentUpon>FrmRegForm.vb</DependentUpon>
     </Compile>
@@ -491,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grading\FrmGradeReport.resx">
       <DependentUpon>FrmGradeReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Registration Form\FrmRegForm.resx">
       <DependentUpon>FrmRegForm.vb</DependentUpon>
