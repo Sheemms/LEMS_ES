@@ -22,25 +22,11 @@ Partial Class FrmElementaryGrading
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DgvElemGrading = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.firstg = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.secondg = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.thirdg = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fourthg = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.average = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -50,8 +36,22 @@ Partial Class FrmElementaryGrading
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.TxtLRN = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.TxtLRN = New System.Windows.Forms.ToolStripTextBox()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.firstg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.secondg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.thirdg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fourthg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.average = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DgvElemGrading, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -62,38 +62,38 @@ Partial Class FrmElementaryGrading
         '
         Me.DgvElemGrading.AllowUserToAddRows = False
         Me.DgvElemGrading.AllowUserToDeleteRows = False
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
-        Me.DgvElemGrading.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DgvElemGrading.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvElemGrading.BackgroundColor = System.Drawing.Color.DimGray
         Me.DgvElemGrading.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.DgvElemGrading.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvElemGrading.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvElemGrading.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvElemGrading.ColumnHeadersHeight = 44
         Me.DgvElemGrading.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvElemGrading.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column13, Me.colEID, Me.colLRN, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.firstg, Me.secondg, Me.thirdg, Me.fourthg, Me.average, Me.remarks})
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvElemGrading.DefaultCellStyle = DataGridViewCellStyle23
+        Me.DgvElemGrading.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column13, Me.colEID, Me.colLRN, Me.colFullname, Me.Column3, Me.Column5, Me.Column6, Me.firstg, Me.secondg, Me.thirdg, Me.fourthg, Me.average, Me.remarks})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvElemGrading.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgvElemGrading.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvElemGrading.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvElemGrading.Location = New System.Drawing.Point(0, 25)
         Me.DgvElemGrading.MultiSelect = False
         Me.DgvElemGrading.Name = "DgvElemGrading"
         Me.DgvElemGrading.RowHeadersVisible = False
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgvElemGrading.RowsDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvElemGrading.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvElemGrading.Size = New System.Drawing.Size(950, 609)
         Me.DgvElemGrading.TabIndex = 5
         Me.DgvElemGrading.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -117,111 +117,6 @@ Partial Class FrmElementaryGrading
         Me.DgvElemGrading.ThemeStyle.RowsStyle.Height = 22
         Me.DgvElemGrading.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvElemGrading.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'ID
-        '
-        Me.ID.DataPropertyName = "ID"
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        '
-        'Column13
-        '
-        Me.Column13.DataPropertyName = "SY"
-        Me.Column13.HeaderText = "SY"
-        Me.Column13.Name = "Column13"
-        Me.Column13.Visible = False
-        '
-        'colEID
-        '
-        Me.colEID.DataPropertyName = "EID"
-        Me.colEID.HeaderText = "EID"
-        Me.colEID.Name = "colEID"
-        Me.colEID.Visible = False
-        '
-        'colLRN
-        '
-        Me.colLRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colLRN.DataPropertyName = "LRN"
-        Me.colLRN.HeaderText = "LRN"
-        Me.colLRN.Name = "colLRN"
-        Me.colLRN.Width = 53
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Fullname"
-        Me.Column2.HeaderText = "Name"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.DataPropertyName = "SubjectCode"
-        Me.Column3.HeaderText = "Subject Code"
-        Me.Column3.Name = "Column3"
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.DataPropertyName = "SubjectName"
-        Me.Column5.HeaderText = "Subject Name"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.DataPropertyName = "Units"
-        Me.Column6.HeaderText = "Unit(s)"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 66
-        '
-        'firstg
-        '
-        Me.firstg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.firstg.DataPropertyName = "FirstGrd"
-        Me.firstg.HeaderText = "1st Grd"
-        Me.firstg.Name = "firstg"
-        Me.firstg.Width = 67
-        '
-        'secondg
-        '
-        Me.secondg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.secondg.DataPropertyName = "SecondGrd"
-        Me.secondg.HeaderText = "2nd Grd"
-        Me.secondg.Name = "secondg"
-        Me.secondg.Width = 71
-        '
-        'thirdg
-        '
-        Me.thirdg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.thirdg.DataPropertyName = "ThirdGrd"
-        Me.thirdg.HeaderText = "3rd Grd"
-        Me.thirdg.Name = "thirdg"
-        Me.thirdg.Width = 70
-        '
-        'fourthg
-        '
-        Me.fourthg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.fourthg.DataPropertyName = "FourthGrd"
-        Me.fourthg.HeaderText = "4th Grd"
-        Me.fourthg.Name = "fourthg"
-        Me.fourthg.Width = 69
-        '
-        'average
-        '
-        Me.average.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.average.DataPropertyName = "Average"
-        Me.average.HeaderText = "Average"
-        Me.average.Name = "average"
-        Me.average.Width = 74
-        '
-        'remarks
-        '
-        Me.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.remarks.DataPropertyName = "Remarks"
-        Me.remarks.HeaderText = "Remarks"
-        Me.remarks.Name = "remarks"
-        Me.remarks.Width = 77
         '
         'GroupBox1
         '
@@ -302,17 +197,122 @@ Partial Class FrmElementaryGrading
         Me.ToolStripLabel1.Size = New System.Drawing.Size(79, 22)
         Me.ToolStripLabel1.Text = "Subject Code:"
         '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(30, 22)
+        Me.ToolStripLabel2.Text = "LRN"
+        '
         'TxtLRN
         '
         Me.TxtLRN.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtLRN.Name = "TxtLRN"
         Me.TxtLRN.Size = New System.Drawing.Size(150, 25)
         '
-        'ToolStripLabel2
+        'ID
         '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(30, 22)
-        Me.ToolStripLabel2.Text = "LRN"
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        '
+        'Column13
+        '
+        Me.Column13.DataPropertyName = "SY"
+        Me.Column13.HeaderText = "SY"
+        Me.Column13.Name = "Column13"
+        Me.Column13.Visible = False
+        '
+        'colEID
+        '
+        Me.colEID.DataPropertyName = "EID"
+        Me.colEID.HeaderText = "EID"
+        Me.colEID.Name = "colEID"
+        Me.colEID.Visible = False
+        '
+        'colLRN
+        '
+        Me.colLRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colLRN.DataPropertyName = "LRN"
+        Me.colLRN.HeaderText = "LRN"
+        Me.colLRN.Name = "colLRN"
+        Me.colLRN.Width = 53
+        '
+        'colFullname
+        '
+        Me.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colFullname.DataPropertyName = "Fullname"
+        Me.colFullname.HeaderText = "Name"
+        Me.colFullname.Name = "colFullname"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "SubjectCode"
+        Me.Column3.HeaderText = "Subject Code"
+        Me.Column3.Name = "Column3"
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.DataPropertyName = "SubjectName"
+        Me.Column5.HeaderText = "Subject Name"
+        Me.Column5.Name = "Column5"
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.DataPropertyName = "Units"
+        Me.Column6.HeaderText = "Unit(s)"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 66
+        '
+        'firstg
+        '
+        Me.firstg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.firstg.DataPropertyName = "FirstGrd"
+        Me.firstg.HeaderText = "1st Grd"
+        Me.firstg.Name = "firstg"
+        Me.firstg.Width = 67
+        '
+        'secondg
+        '
+        Me.secondg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.secondg.DataPropertyName = "SecondGrd"
+        Me.secondg.HeaderText = "2nd Grd"
+        Me.secondg.Name = "secondg"
+        Me.secondg.Width = 71
+        '
+        'thirdg
+        '
+        Me.thirdg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.thirdg.DataPropertyName = "ThirdGrd"
+        Me.thirdg.HeaderText = "3rd Grd"
+        Me.thirdg.Name = "thirdg"
+        Me.thirdg.Width = 70
+        '
+        'fourthg
+        '
+        Me.fourthg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.fourthg.DataPropertyName = "FourthGrd"
+        Me.fourthg.HeaderText = "4th Grd"
+        Me.fourthg.Name = "fourthg"
+        Me.fourthg.Width = 69
+        '
+        'average
+        '
+        Me.average.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.average.DataPropertyName = "Average"
+        Me.average.HeaderText = "Average"
+        Me.average.Name = "average"
+        Me.average.Width = 74
+        '
+        'remarks
+        '
+        Me.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.remarks.DataPropertyName = "Remarks"
+        Me.remarks.HeaderText = "Remarks"
+        Me.remarks.Name = "remarks"
+        Me.remarks.Width = 77
         '
         'FrmElementaryGrading
         '
@@ -344,11 +344,13 @@ Partial Class FrmElementaryGrading
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents CmbSubjCode As ToolStripComboBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents TxtLRN As ToolStripTextBox
+    Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents colEID As DataGridViewTextBoxColumn
     Friend WithEvents colLRN As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents colFullname As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
@@ -358,6 +360,4 @@ Partial Class FrmElementaryGrading
     Friend WithEvents fourthg As DataGridViewTextBoxColumn
     Friend WithEvents average As DataGridViewTextBoxColumn
     Friend WithEvents remarks As DataGridViewTextBoxColumn
-    Friend WithEvents TxtLRN As ToolStripTextBox
-    Friend WithEvents ToolStripLabel2 As ToolStripLabel
 End Class

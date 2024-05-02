@@ -26,6 +26,8 @@ Public Class ClassGrading
                     If dynamicParams IsNot Nothing Then
                         If dynamicParams(0).Value IsNot DBNull.Value Then
                             Command("UPDATE enrolled_sched SET FirstGrd=@FirstGrd, SecondGrd=@SecondGrd, ThirdGrd=@ThirdGrd, FourthGrd=@FourthGrd, Average=@Average, Remarks=@Remarks WHERE ID=@ID", dynamicParams)
+                            Dim name As String = row.Cells("colLRN").Value.ToString() & ", " & row.Cells("colFullname").Value.ToString()
+                            LogAction("Graded |" & name)
                         End If
                     End If
                 Next

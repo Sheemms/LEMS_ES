@@ -22,6 +22,8 @@ Public Class ClassSchoolYear
                     Command("UPDATE schoolyear SET Status = 'Closed'", New MySqlParameter() {})
                     Command("INSERT INTO schoolyear(End_Year) VALUES (@End_Year)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmSY.TxtStartYear.Text & " - " & FrmSY.TxtEndYear.Text
+                    LogAction("Added School Year |" & name)
                 End If
             ElseIf isOpen Then
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then

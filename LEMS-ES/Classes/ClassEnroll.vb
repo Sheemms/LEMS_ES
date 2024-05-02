@@ -30,6 +30,8 @@ Public Class ClassEnroll
                     Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID, GradeLevel_ID) 
                                 VALUES (@EID, @SchoolYear, @LRN, @SectionID, @GradeLevel_ID)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.txtStudName.Text
+                    LogAction("Enrolled Student |" & name)
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then

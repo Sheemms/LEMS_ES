@@ -39,6 +39,7 @@ Partial Class FrmMaintenance
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdminControlsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -49,9 +50,9 @@ Partial Class FrmMaintenance
         'AdminControlsToolStripMenuItem
         '
         Me.AdminControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SchoolYearMaintenanceToolStripMenuItem, Me.DepartmentToolStripMenuItem, Me.GradeLevelMaintenanceToolStripMenuItem, Me.SubjectMaintenanceToolStripMenuItem, Me.SectionMaintenanceToolStripMenuItem, Me.ROOMToolStripMenuItem, Me.RequirementsMaintenanceToolStripMenuItem, Me.TuitionFeeToolStripMenuItem, Me.UserMaintenanceToolStripMenuItem1})
-        Me.AdminControlsToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AdminControlsToolStripMenuItem.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdminControlsToolStripMenuItem.Name = "AdminControlsToolStripMenuItem"
-        Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.AdminControlsToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.AdminControlsToolStripMenuItem.Text = "Admin Controls"
         '
         'Panel1

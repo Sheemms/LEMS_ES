@@ -111,7 +111,6 @@ Public Class FrmEnrollment
                 Try
                     Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells("colID").Value.ToString()
 
-                    ' Using parameterized query to prevent SQL injection
                     Command("UPDATE enrollment SET Status = 'Dropped' WHERE ID=" & enrollmentId)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
@@ -119,6 +118,8 @@ Public Class FrmEnrollment
                     If rowsAffected > 0 Then
                         MsgBox("Student has been successfully dropped!")
                         Loadrecords()
+                        Dim name As String = dgvEnrolled.Rows(e.RowIndex).Cells("colLRN").Value.ToString() & " - " & dgvEnrolled.Rows(e.RowIndex).Cells("colFullname").Value.ToString()
+                        LogAction("Dropped Students |" & name)
                     Else
                         MsgBox("No student was dropped.")
                     End If

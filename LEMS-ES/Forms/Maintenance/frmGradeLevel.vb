@@ -3,7 +3,7 @@
     Private Sub FrmGradeLevel_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()
-        ClearFields(Me, idGradeLevel)
+        Clear()
     End Sub
     Public Sub Loadrecords()
         Query("SELECT gl.ID, d.Department , gl.GradeLevel 
@@ -16,6 +16,10 @@
         cmbDept.DataSource = ds.Tables("QueryTb")
         cmbDept.ValueMember = "ID"
         cmbDept.DisplayMember = "Department"
+    End Sub
+    Public Sub Clear()
+        txtAddGradeLevel.Clear()
+        idGradeLevel = 0
     End Sub
     Private Sub DgvGradeLevel_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGradeLevel.CellClick
         Try
@@ -33,7 +37,7 @@
         If IS_EMPTY(txtAddGradeLevel) = True Then Return
 
         ClassGradeLevel.GradeLevelRef()
-        ClearFields(Me, idGradeLevel)
+        Clear()
     End Sub
 
 

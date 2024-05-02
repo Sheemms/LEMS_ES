@@ -203,4 +203,15 @@
             .Show()
         End With
     End Sub
+
+    Private Sub BtnSystemUtilities_Click(sender As Object, e As EventArgs) Handles BtnSystemUtilities.Click
+        RemovePanel()
+        With FrmAuditTrail
+            .TopLevel = False
+            Panel3.Controls.Add(FrmAuditTrail)
+            .Dock = DockStyle.Fill
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class

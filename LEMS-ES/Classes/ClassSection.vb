@@ -20,6 +20,8 @@ Public Class ClassSection
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO section(GradeLevel_ID, SectionRoom) VALUES (@GradeLevel_ID, @SectionRoom)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmSections.CmbGradeLevel.Text & ", " & FrmSections.TxtSectionName.Text
+                    LogAction("Added Section |" & name)
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then

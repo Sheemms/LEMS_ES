@@ -3,7 +3,7 @@
     Private Sub FrmSections_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         Loadrecords()
-        ClearFields(Me, idSection)
+        Clear()
     End Sub
     Public Sub Loadrecords()
         Query("SELECT  a.ID, b.GradeLevel, a.SectionRoom
@@ -21,6 +21,10 @@
         'cmbAdviser.ValueMember = "ID"
         'cmbAdviser.DisplayMember = "Adviser"
     End Sub
+    Public Sub Clear()
+        TxtSectionName.Clear()
+        idSection = 0
+    End Sub
     Private Sub DgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
         Try
             If e.RowIndex >= 0 Then
@@ -29,7 +33,7 @@
                 CmbGradeLevel.Text = row.Cells(1).Value
                 TxtSectionName.Text = row.Cells(2).Value
             ElseIf e.ColumnIndex >= 0 Then
-                ClearFields(Me, idSection)
+                Clear()
             End If
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
@@ -40,7 +44,7 @@
         If IS_EMPTY(TxtSectionName) = True Then Return
 
         ClassSection.SectionRef()
-        ClearFields(Me, idSection)
+        Clear()
     End Sub
 
     Private Sub TxtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtSectionName.KeyPress

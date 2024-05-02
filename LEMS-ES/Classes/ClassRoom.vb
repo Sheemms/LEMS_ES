@@ -19,6 +19,8 @@ Public Class ClassRoom
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO room(Room, Capacity) VALUES (@Room, @Capacity)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmRoom.TxtRoom.Text & FrmRoom.TxtCapacity.Text
+                    LogAction("Added Room |" & name)
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then

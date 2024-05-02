@@ -65,6 +65,8 @@ Public Class ClassPayments
                     Next
 
                     Command("UPDATE enrollment SET Status = 'Enrolled' WHERE ID = @ID", New MySqlParameter("@ID", frmPayments.idRegisteredStudents))
+                    Dim name As String = FrmPayments.txtStudName.Text & ", " & FrmPayments.TxtCurPayment.Text
+                    LogAction("Added Payment |" & name)
                     FrmBilling.LoadRecords()
                     FrmBilling.LoadTransactionHistory()
                     FrmPayments.Close()

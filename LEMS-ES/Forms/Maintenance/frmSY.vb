@@ -6,7 +6,6 @@ Public Class FrmSY
         Loadrecords()
     End Sub
     Public Sub Clear()
-        TxtStartYear.Clear()
         TxtEndYear.Clear()
         idSY = 0
     End Sub
@@ -31,7 +30,7 @@ Public Class FrmSY
         End If
 
         ClassSchoolYear.SchoolYearRef()
-        ClearFields(Me, idSY)
+        Clear()
     End Sub
 
     Private Sub TxtEndYear_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress

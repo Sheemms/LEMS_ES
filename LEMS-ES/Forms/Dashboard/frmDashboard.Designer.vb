@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmDashboard
+Partial Class FrmDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class frmDashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDashboard))
         Me.TopPanel = New System.Windows.Forms.Panel()
         Me.Guna2CirclePictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelSidebar = New System.Windows.Forms.Panel()
@@ -370,7 +370,7 @@ Partial Class frmDashboard
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
-        'frmDashboard
+        'FrmDashboard
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -379,7 +379,7 @@ Partial Class frmDashboard
         Me.Controls.Add(Me.PanelSidebar)
         Me.Controls.Add(Me.TopPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmDashboard"
+        Me.Name = "FrmDashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TopPanel.ResumeLayout(False)
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

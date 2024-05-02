@@ -20,6 +20,8 @@ Public Class ClassRequirements
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO requirements(Classification_ID, Requirement) VALUES (@Classification_ID, @Requirement)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmRequirements.cmbClassification.Text & ", " & FrmRequirements.txtRequirements.Text
+                    LogAction("Added Requirements |" & name)
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then

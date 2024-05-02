@@ -139,4 +139,9 @@ Public Class FrmJHSGrading
 
         End If
     End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        ClassGrading.GradingRef(DgvJHSGrading)
+        LoadData()
+    End Sub
 End Class

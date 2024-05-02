@@ -20,6 +20,8 @@ Public Class ClassGradeLevel
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO gradelevel(Department_ID, GradeLevel) VALUES (@Department_ID, @GradeLevel)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmGradeLevel.cmbDept.Text & ", " & FrmGradeLevel.txtAddGradeLevel.Text
+                    LogAction("Added Grade Level |" & name)
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then

@@ -61,7 +61,7 @@ Public Class FrmMaintenance
             .Show()
         End With
     End Sub
-    Private Sub AuditTrailToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub AuditTrailToolStripMenuItem_Click(sender As Object, e As EventArgs)
         MaintenanceRemovePanel()
         With FrmAuditTrail
             .TopLevel = False

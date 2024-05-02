@@ -27,7 +27,9 @@ Public Class ClassDepartment
                     Success("Successfully Updated!")
                 End If
             End If
-            frmDepartment.loadrecords()
+            FrmDepartment.Loadrecords()
+            Dim name As String = FrmDepartment.TxtDeptName.Text
+            LogAction("Added Department |" & name)
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Department already exists.")
             Exit Sub
