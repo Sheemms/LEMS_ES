@@ -23,7 +23,8 @@ Public Class FrmStudents
             End With
             frmStudentsView.LoadReqClass()
             frmStudentsView.LoadStudentData()
-            frmStudentsView.Show()
+            FrmStudentsView.Show()
+            FrmStudentsView.btnSave.Enabled = False
         End If
     End Sub
 

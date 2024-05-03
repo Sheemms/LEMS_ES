@@ -36,15 +36,14 @@
         idTuition = 0
         cmbGradeLevel.Text = ""
         txtAmountTuition.Clear()
+        btnSaveTuitionFee.Enabled = True
 
         idMiscellaneous = 0
         txtAmountMiscellaneous.Clear()
 
         idOtherFee = 0
         txtOtherFeeDesc.Clear()
-
-        idMOP = 0
-        'txtMOP.Clear()
+        txtAmountOtherFee.Clear()
     End Sub
 
     Private Sub DgvTuitionFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTuitionFee.CellClick
@@ -60,16 +59,15 @@
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
+        btnSaveTuitionFee.Enabled = False
     End Sub
-    Private Sub BtnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click
+    Private Sub BtnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click, BtnUpdateTuition.Click
         If IS_EMPTY(cmbGradeLevel) Then Return
         If IS_EMPTY(txtAmountTuition) Then Return
 
         ClassTuition.TuitionRef()
-        ClearFields(Me, idTuition)
     End Sub
-
-    Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles btnClearMiscellaneousFee.Click, btnClearOtherFee.Click
+    Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles BtnClearTuition.Click, btnClearMiscellaneousFee.Click, btnClearOtherFee.Click
         Clear()
     End Sub
 
@@ -77,17 +75,21 @@
         If IS_EMPTY(txtAmountMiscellaneous) Then Return
 
         ClassTuition.MiscellaneousRef()
-        Clear()
     End Sub
 
-    Private Sub BtnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click
+    Private Sub BtnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click, BtnUpdateOtherFee.Click
         If IS_EMPTY(txtOtherFeeDesc) Then Return
         If IS_EMPTY(txtAmountOtherFee) Then Return
 
         ClassTuition.OtherFeeRef()
-        Clear()
     End Sub
 
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAmountTuition.KeyPress, txtAmountMiscellaneous.KeyPress, txtAmountOtherFee.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
     'Private Sub BtnMOP_Click(sender As Object, e As EventArgs)
     '    If IS_EMPTY(txtMOP) Then Return
 

@@ -12,7 +12,7 @@
         TxtDeptName.Clear()
         idDept = 0
     End Sub
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click, BtnUpdate.Click
         If IS_EMPTY(TxtDeptName) = True Then Return
 
         ClassDepartment.DepartmentRef()
@@ -30,7 +30,15 @@
         End Try
     End Sub
 
-    Private Sub TxtDeptName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDeptName.KeyPress
-        TextBoxOnlyLetters(TxtDeptName)
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDeptName.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        ClassDepartment.DeleteDepartment(idDept)
+
     End Sub
 End Class

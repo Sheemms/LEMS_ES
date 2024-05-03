@@ -28,16 +28,19 @@ Partial Class FrmSections
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvSection = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CmbAdviser = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.CmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnSaveSubject = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtSectionName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvSection, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,7 +92,7 @@ Partial Class FrmSections
         Me.dgvSection.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSection.ColumnHeadersHeight = 44
         Me.dgvSection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvSection.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2})
+        Me.dgvSection.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -130,33 +133,10 @@ Partial Class FrmSections
         Me.dgvSection.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSection.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "GradeLevel"
-        Me.Column4.HeaderText = "Grade Level"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 114
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "SectionRoom"
-        Me.Column2.HeaderText = "Section Name"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.CmbAdviser)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BtnUpdate)
         Me.Panel1.Controls.Add(Me.CmbGradeLevel)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -170,6 +150,30 @@ Partial Class FrmSections
         Me.Panel1.Size = New System.Drawing.Size(197, 507)
         Me.Panel1.TabIndex = 4
         '
+        'CmbAdviser
+        '
+        Me.CmbAdviser.BackColor = System.Drawing.Color.Transparent
+        Me.CmbAdviser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbAdviser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbAdviser.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbAdviser.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbAdviser.ForeColor = System.Drawing.Color.Black
+        Me.CmbAdviser.ItemHeight = 30
+        Me.CmbAdviser.Location = New System.Drawing.Point(3, 141)
+        Me.CmbAdviser.Name = "CmbAdviser"
+        Me.CmbAdviser.Size = New System.Drawing.Size(189, 36)
+        Me.CmbAdviser.TabIndex = 21
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 122)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(53, 16)
+        Me.Label2.TabIndex = 20
+        Me.Label2.Text = "Adviser"
+        '
         'BtnUpdate
         '
         Me.BtnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -179,12 +183,11 @@ Partial Class FrmSections
         Me.BtnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.BtnUpdate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUpdate.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdate.Location = New System.Drawing.Point(3, 163)
+        Me.BtnUpdate.Location = New System.Drawing.Point(3, 222)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.Size = New System.Drawing.Size(189, 33)
         Me.BtnUpdate.TabIndex = 19
         Me.BtnUpdate.Text = "Update"
-        Me.BtnUpdate.Visible = False
         '
         'CmbGradeLevel
         '
@@ -219,7 +222,7 @@ Partial Class FrmSections
         Me.btnSaveSubject.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.btnSaveSubject.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveSubject.ForeColor = System.Drawing.Color.White
-        Me.btnSaveSubject.Location = New System.Drawing.Point(3, 124)
+        Me.btnSaveSubject.Location = New System.Drawing.Point(3, 183)
         Me.btnSaveSubject.Name = "btnSaveSubject"
         Me.btnSaveSubject.Size = New System.Drawing.Size(189, 33)
         Me.btnSaveSubject.TabIndex = 8
@@ -254,6 +257,39 @@ Partial Class FrmSections
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Section Name"
         '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.DataPropertyName = "GradeLevel"
+        Me.Column4.HeaderText = "Grade Level"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 114
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "SectionRoom"
+        Me.Column2.HeaderText = "Section Name"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "Adviser"
+        Me.Column3.HeaderText = "Adviser"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
         'FrmSections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -282,8 +318,11 @@ Partial Class FrmSections
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents CmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents BtnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents CmbAdviser As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents BtnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
 End Class

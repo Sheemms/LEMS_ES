@@ -37,110 +37,67 @@ Public Class Login
         ValidateInput(txtUsername, "Please enter a username")
         ValidateInput(txtPassword, "Please enter a password")
 
-        'Try
-        If Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtUsername)) OrElse Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtPassword)) Then
+        Try
+            If Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtUsername)) OrElse Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtPassword)) Then
+                Clear()
+                Critical("Error: Username and password cannot be empty")
+                Exit Sub
+            End If
+
+            Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text.Trim & "' AND BINARY Password = '" & txtPassword.Text.Trim & "'")
+
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                userID = ds.Tables("QueryTB").Rows(0)("ID")
+                str_user = ds.Tables("QueryTB").Rows(0)("Username")
+                str_password = ds.Tables("QueryTB").Rows(0)("Password")
+                str_role = ds.Tables("QueryTB").Rows(0)("UserLevel")
+                str_name = ds.Tables("QueryTB").Rows(0)("Fullname")
+
+
+
+                With FrmDashboard
+                    If str_role = "Administrator" Then
+                        .btnDashboard.Enabled = True
+                        .btnTransaction.Enabled = True
+                        .btnDataEntry.Enabled = True
+                        .btnGrading.Enabled = True
+                        .btnMaintenance.Enabled = True
+                        .btnReports.Enabled = True
+                        .BtnSystemUtilities.Enabled = True
+                    ElseIf str_role = "Office Staff" Then
+                        .btnDashboard.Enabled = True
+                        .btnTransaction.Enabled = False
+                        .btnDataEntry.Enabled = True
+                        .btnGrading.Enabled = True
+                        .btnMaintenance.Enabled = False
+                        .btnReports.Enabled = True
+                        .BtnSystemUtilities.Enabled = False
+                    Else
+                        .btnDashboard.Enabled = False
+                        .btnTransaction.Enabled = False
+                        .btnDataEntry.Enabled = False
+                        .btnGrading.Enabled = True
+                        .btnMaintenance.Enabled = False
+                        .btnReports.Enabled = False
+                        .BtnSystemUtilities.Enabled = False
+                    End If
+                    .IDuser = userID
+                    .Label3.Text = str_name
+                    .Label4.Text = str_role
+                    txtUsername.Clear()
+                    txtPassword.Clear()
+                    Me.Hide()
+                    .Show()
+                End With
+
+                LogAction("Logged in")
+            Else
+                MsgBox("Wrong Credentials, Invalid Username or Password", vbExclamation)
+            End If
+        Catch ex As Exception
             Clear()
-            Critical("Error: Username and password cannot be empty")
-            Exit Sub
-        End If
-
-        Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text.Trim & "' AND BINARY Password = '" & txtPassword.Text.Trim & "'")
-
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            userID = ds.Tables("QueryTB").Rows(0)("ID")
-            str_user = ds.Tables("QueryTB").Rows(0)("Username")
-            str_password = ds.Tables("QueryTB").Rows(0)("Password")
-            str_role = ds.Tables("QueryTB").Rows(0)("UserLevel")
-            str_name = ds.Tables("QueryTB").Rows(0)("Fullname")
-
-
-
-            With FrmDashboard
-                If str_role = "Administrator" Then
-                    .btnDashboard.Enabled = True
-                    .btnTransaction.Enabled = True
-                    .btnDataEntry.Enabled = True
-                    .btnGrading.Enabled = True
-                    .btnMaintenance.Enabled = True
-                    .btnReports.Enabled = True
-                    .BtnSystemUtilities.Enabled = True
-                ElseIf str_role = "Office Staff" Then
-                    .btnDashboard.Enabled = True
-                    .btnTransaction.Enabled = False
-                    .btnDataEntry.Enabled = True
-                    .btnGrading.Enabled = True
-                    .btnMaintenance.Enabled = False
-                    .btnReports.Enabled = True
-                    .BtnSystemUtilities.Enabled = False
-                Else
-                    .btnDashboard.Enabled = False
-                    .btnTransaction.Enabled = False
-                    .btnDataEntry.Enabled = False
-                    .btnGrading.Enabled = True
-                    .btnMaintenance.Enabled = False
-                    .btnReports.Enabled = False
-                    .BtnSystemUtilities.Enabled = False
-                End If
-                .IDuser = userID
-                .Label3.Text = str_name
-                .Label4.Text = str_role
-                txtUsername.Clear()
-                txtPassword.Clear()
-                Me.Hide()
-                .Show()
-            End With
-
-            LogAction("Logged in")
-        Else
-            MsgBox("Wrong Username or Password!", vbExclamation)
-        End If
-
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
-
-        'ValidateInput(txtUsername, "Please enter a username")
-        'ValidateInput(txtPassword, "Please enter a password")
-        'Try
-        '    If ErrorProvider1.GetError(txtUsername) = "" AndAlso ErrorProvider1.GetError(txtPassword) = "" Then
-        '        Query("SELECT * FROM user WHERE BINARY Username = '" & txtUsername.Text & "' and BINARY Password = '" & txtPassword.Text & "'")
-        '        If ds.Tables("QueryTb").Rows.Count > 0 Then
-        '            userID = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
-        '            Success("Login success!")
-        '            FrmDashboard.Show()
-        '            Clear()
-        '            'LogAction("Logged in")
-        '            Me.Hide()
-        '            Exit Sub
-        '        Else
-        '            Clear()
-        '            Critical("Wrong Username or Password!")
-        '        End If
-
-        '        'Command("SELECT * FROM user")
-        '        'dr = cmd.ExecuteReader
-        '        'While dr.Read
-        '        '    If txtUsername.Text = dr.Item("Username").ToString And txtPassword.Text = DecryptData(dr.Item("Password").ToString) Then
-        '        '        Success("Login success!")
-        '        '        frmDashboard.Show()
-        '        '        clear()
-        '        '        Me.Hide()
-        '        '        Exit Sub
-        '        '    Else
-        '        '        Critical("Wrong Username or Password!")
-        '        '    End If
-        '        'End While
-        '        'dr.Close()
-        '    Else
-        '        Clear()
-        '        Critical("Error Login cannot be Null or Empty")
-        '    End If
-        'Catch ex As Exception
-        '    Clear()
-        '    MsgBox("You are not connected to the database, Please connect first!")
-        'End Try
-
-
+            MsgBox("You are not connected to the database, Please connect first!")
+        End Try
     End Sub
 
 

@@ -20,14 +20,19 @@ Public Class ClassTuition
                     Command("INSERT INTO tuition(GradeLevel_ID, Amount) 
                             VALUES (@GradeLevel_ID, @Amount)", TuitionParameters())
                     Success("Successfully Added!")
+                    FrmTuitionFee.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount", TuitionParameters())
                     Success("Successfully Updated!")
+                    FrmTuitionFee.Clear()
                 End If
             End If
-            frmTuitionFee.loadrecords()
+            FrmTuitionFee.Loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("Tuition already exists.")
+            Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -54,11 +59,13 @@ Public Class ClassTuition
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO miscellaneous(Amount) VALUES (@Amount)", MiscellaneousParameters())
                     Success("Successfully added!")
+                    FrmTuitionFee.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE miscellaneous SET Amount=@Amount", MiscellaneousParameters())
                     Success("Successfully updated!")
+                    FrmTuitionFee.Clear()
                 End If
             End If
             frmTuitionFee.loadrecords()
@@ -89,15 +96,16 @@ Public Class ClassTuition
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO otherfee(Description, Amount) VALUES (@Description, @Amount)", OtherFeeParameters())
                     Success("Successfully Added!")
+                    FrmTuitionFee.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE otherfee SET Description=@Description, Amount=@Amount", OtherFeeParameters())
                     Success("Successfully Updated!")
+                    FrmTuitionFee.Clear()
                 End If
             End If
-
-            frmTuitionFee.loadrecords()
+            FrmTuitionFee.Loadrecords()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

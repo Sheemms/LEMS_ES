@@ -20,30 +20,33 @@ Module ModDisplay
                 DirectCast(ctrl, TextBox).Clear()
             ElseIf TypeOf ctrl Is Guna2TextBox Then
                 DirectCast(ctrl, Guna2TextBox).Clear()
-            ElseIf TypeOf ctrl Is ComboBox Then
-                Dim cmbBox As ComboBox = DirectCast(ctrl, ComboBox)
-                cmbBox.SelectedIndex = -1
-            ElseIf TypeOf ctrl Is Guna2ComboBox Then
-                Dim cmbBox As Guna2ComboBox = DirectCast(ctrl, Guna2ComboBox)
-                cmbBox.SelectedIndex = -1
-            ElseIf TypeOf ctrl Is CheckBox Then
-                DirectCast(ctrl, CheckBox).Checked = False
-            ElseIf TypeOf ctrl Is Guna2CheckBox Then
-                DirectCast(ctrl, Guna2CheckBox).Checked = False
+            ElseIf TypeOf ctrl Is ComboBox OrElse TypeOf ctrl Is Guna2ComboBox Then
+                Dim cmbBox As ComboBox = TryCast(ctrl, ComboBox)
+                Dim cmbGuna2Box As Guna2ComboBox = TryCast(ctrl, Guna2ComboBox)
+                If cmbBox IsNot Nothing Then
+                    cmbBox.SelectedIndex = -1
+                ElseIf cmbGuna2Box IsNot Nothing Then
+                    cmbGuna2Box.SelectedIndex = -1
+                End If
+            ElseIf TypeOf ctrl Is CheckBox OrElse TypeOf ctrl Is Guna2CheckBox Then
+                Dim chkBox As CheckBox = TryCast(ctrl, CheckBox)
+                Dim chkGuna2Box As Guna2CheckBox = TryCast(ctrl, Guna2CheckBox)
+                If chkBox IsNot Nothing Then
+                    chkBox.Checked = False
+                ElseIf chkGuna2Box IsNot Nothing Then
+                    chkGuna2Box.Checked = False
+                End If
             ElseIf TypeOf ctrl Is RadioButton Then
                 DirectCast(ctrl, RadioButton).Checked = False
             ElseIf TypeOf ctrl Is DataGridView Then
                 DirectCast(ctrl, DataGridView).ClearSelection()
             ElseIf TypeOf ctrl Is Guna2DataGridView Then
                 DirectCast(ctrl, Guna2DataGridView).ClearSelection()
-            ElseIf TypeOf ctrl Is CheckBox Then
-                DirectCast(ctrl, CheckBox).Checked = False
-            ElseIf TypeOf ctrl Is Guna2CheckBox Then
-                DirectCast(ctrl, Guna2CheckBox).Checked = False
             End If
         Next
         id = 0
     End Sub
+
     Public Sub RemovePanel()
         FrmCharts.Close()
         FrmEnrollment.Close()
@@ -52,6 +55,8 @@ Module ModDisplay
         FrmStudents.Close()
         FrmTeachers.Close()
         FrmBilling.Close()
+        FrmPayments.Close()
+        FrmFee.Close()
         FrmElementaryGrading.Close()
         FrmJHSGrading.Close()
         FrmMaintenance.Close()
@@ -59,7 +64,6 @@ Module ModDisplay
     End Sub
     Public Sub MaintenanceRemovePanel()
         FrmEnrollmentRegistration.Close()
-        FrmPayments.Close()
         FrmTeacherMaintenance.Close()
         FrmStudentsView.Close()
         FrmDepartment.Close()
@@ -79,25 +83,6 @@ Module ModDisplay
     End Sub
     Public Sub Success(ByVal MessageStatement As String)
         MsgBox(MessageStatement, MsgBoxStyle.OkOnly, "LEMS_ES")
-    End Sub
-
-    Public Sub TextBoxOnlyLetters(ByVal textBox As Guna.UI2.WinForms.Guna2TextBox)
-        AddHandler textBox.KeyPress, AddressOf TextBoxLetters_KeyPress
-    End Sub
-
-    Private Sub TextBoxLetters_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-        ' Allow letters, spaces, and control characters (like Backspace)
-        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso e.KeyChar <> " " Then
-            e.Handled = True ' Block the input
-        End If
-
-        ' Check if the entered character is a space
-        If e.KeyChar = " " Then
-            ' Check if there's already a space after the last character
-            If DirectCast(sender, Guna.UI2.WinForms.Guna2TextBox).Text.Contains(" ") Then
-                e.Handled = True ' Block the input
-            End If
-        End If
     End Sub
 
     Public Sub TextBoxDigitsOnly(ByVal textBox As Guna.UI2.WinForms.Guna2TextBox)
@@ -171,5 +156,33 @@ Module ModDisplay
         Dim regex As New Regex("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")
 
         Return regex.IsMatch(timeString)
+    End Function
+    Public Function IsValidInput(inputChar As Char) As Boolean
+        Dim regexPattern As String = "^[a-zA-Z\s]*$"
+
+        If Not Regex.IsMatch(inputChar.ToString(), regexPattern) AndAlso Not Char.IsControl(inputChar) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+    Public Function IsValidAddress(inputAddress As Char) As Boolean
+        Dim regexPattern As String = "^[a-zA-Z0-9\s\.,#-]+$"
+
+        If Not Regex.IsMatch(inputAddress.ToString(), regexPattern) AndAlso Not Char.IsControl(inputAddress) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Public Function IsValidDigits(inputDigits As Char) As Boolean
+        Dim regexPattern As String = "^\d+$"
+
+        If Not Regex.IsMatch(inputDigits.ToString(), regexPattern) AndAlso Not Char.IsControl(inputDigits) Then
+            Return False
+        End If
+
+        Return True
     End Function
 End Module

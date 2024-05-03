@@ -60,8 +60,8 @@ Public Class ClassStudents
                                 Command("INSERT IGNORE INTO submitted_requirements (StudentID, RequirementID) VALUES (@StudentID, @RequirementID)", reqParam)
                             End If
                         Next
-                        FrmStudentsView.Clear()
                         Success("Successfully added!")
+                        FrmStudentsView.Clear()
                         FrmStudentsView.Close()
                     End If
                 End If
@@ -107,9 +107,9 @@ Public Class ClassStudents
                         })
                     End If
                 Next
-
                 Success("Successfully updated!")
-                frmStudentsView.Close()
+                FrmStudentsView.Clear()
+                FrmStudentsView.Close()
             End If
             frmStudents.loadrecords()
         Catch ex As Exception

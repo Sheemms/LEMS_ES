@@ -33,8 +33,11 @@ Public Class FrmSY
         Clear()
     End Sub
 
-    Private Sub TxtEndYear_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress
-        TextBoxDigitsOnly(TxtEndYear)
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 
     Private Sub DgvSY_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSY.CellContentClick

@@ -6,9 +6,10 @@
         Clear()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT  a.ID, b.GradeLevel, a.SectionRoom
+        Query("SELECT  a.ID, b.GradeLevel, a.SectionRoom, CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) as Adviser
                 FROM section a
-                JOIN gradelevel b ON a.GradeLevel_ID = b.ID")
+                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                JOIN teacher c ON a.AdviserID = c.ID")
         dgvSection.DataSource = ds.Tables("QueryTb")
 
         Query("SELECT * FROM gradelevel")
@@ -16,13 +17,15 @@
         CmbGradeLevel.ValueMember = "ID"
         CmbGradeLevel.DisplayMember = "GradeLevel"
 
-        'Query("SELECT ID, EmpID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) as Adviser FROM teacher")
-        'cmbAdviser.DataSource = ds.Tables("QueryTb")
-        'cmbAdviser.ValueMember = "ID"
-        'cmbAdviser.DisplayMember = "Adviser"
+        Query("SELECT ID, EmpID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) as Adviser FROM teacher")
+        CmbAdviser.DataSource = ds.Tables("QueryTb")
+        CmbAdviser.ValueMember = "ID"
+        CmbAdviser.DisplayMember = "Adviser"
     End Sub
     Public Sub Clear()
+        CmbGradeLevel.SelectedIndex = -1
         TxtSectionName.Clear()
+        CmbAdviser.SelectedIndex = -1
         idSection = 0
     End Sub
     Private Sub DgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
@@ -39,15 +42,20 @@
             MsgBox("ERROR!", vbCritical)
         End Try
     End Sub
-    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
+    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click, BtnUpdate.Click
         If IS_EMPTY(CmbGradeLevel) = True Then Return
         If IS_EMPTY(TxtSectionName) = True Then Return
+        If IS_EMPTY(CmbAdviser) = True Then Return
 
         ClassSection.SectionRef()
         Clear()
     End Sub
 
-    Private Sub TxtSectionName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtSectionName.KeyPress
-        TextBoxOnlyLetters(TxtSectionName)
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtSectionName.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
+
 End Class

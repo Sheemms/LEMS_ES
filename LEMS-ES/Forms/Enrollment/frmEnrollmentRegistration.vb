@@ -13,7 +13,7 @@ Public Class FrmEnrollmentRegistration
         GetSchoolYear(lblSY)
         LoadStudAutoComplet()
         LoadDeprtment()
-        ClearFields(Me, EnrollmentID)
+        Clear()
         'LoadSub()
     End Sub
     Public Sub Clear()
@@ -77,6 +77,9 @@ Public Class FrmEnrollmentRegistration
         Query("SELECT * FROM mop")
     End Sub
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
+        If IS_EMPTY(txtStudLRN) Then Return
+        If IS_EMPTY(txtStudName) Then Return
+
         ClassEnroll.EnrollmentRef()
         Clear()
     End Sub
@@ -130,7 +133,7 @@ Public Class FrmEnrollmentRegistration
         Else
             CmbGradeLevel.DataSource = Nothing
             CmbGradeLevel.Items.Clear()
-            'CmbGradeLevel.SelectedIndex = -1
+            CmbGradeLevel.SelectedIndex = -1
         End If
     End Sub
 
@@ -158,7 +161,7 @@ Public Class FrmEnrollmentRegistration
         Else
             CmbSection.DataSource = Nothing
             CmbSection.Items.Clear()
-            'CmbSection.SelectedIndex = -1
+            CmbSection.SelectedIndex = -1
         End If
     End Sub
 

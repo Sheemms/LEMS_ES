@@ -24,6 +24,7 @@ Partial Class FrmTeacherMaintenance
     Private Sub InitializeComponent()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
@@ -39,7 +40,6 @@ Partial Class FrmTeacherMaintenance
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtEmpID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -61,7 +61,7 @@ Partial Class FrmTeacherMaintenance
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Guna2Button2)
+        Me.Panel1.Controls.Add(Me.BtnClear)
         Me.Panel1.Controls.Add(Me.cmbDept)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.txtAddress)
@@ -83,6 +83,21 @@ Partial Class FrmTeacherMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(502, 243)
         Me.Panel1.TabIndex = 3
+        '
+        'BtnClear
+        '
+        Me.BtnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnClear.FillColor = System.Drawing.Color.DimGray
+        Me.BtnClear.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClear.ForeColor = System.Drawing.Color.White
+        Me.BtnClear.Location = New System.Drawing.Point(134, 183)
+        Me.BtnClear.Name = "BtnClear"
+        Me.BtnClear.Size = New System.Drawing.Size(90, 33)
+        Me.BtnClear.TabIndex = 60
+        Me.BtnClear.Text = "Clear"
         '
         'cmbDept
         '
@@ -300,21 +315,6 @@ Partial Class FrmTeacherMaintenance
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Employee ID"
         '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.DimGray
-        Me.Guna2Button2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(134, 183)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(90, 33)
-        Me.Guna2Button2.TabIndex = 60
-        Me.Guna2Button2.Text = "Cancel"
-        '
         'FrmTeacherMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -350,5 +350,5 @@ Partial Class FrmTeacherMaintenance
     Friend WithEvents Label8 As Label
     Friend WithEvents cmbDept As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnClear As Guna.UI2.WinForms.Guna2Button
 End Class

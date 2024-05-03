@@ -8,6 +8,7 @@
                 FROM teacher t
                 JOIN department d ON t.Department_ID = d.ID")
         dgvTeacher.DataSource = ds.Tables("QueryTb")
+        dgvTeacher.AutoGenerateColumns = False
     End Sub
     Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
         frmTeacherMaintenance.Show()
@@ -19,8 +20,9 @@
                 FrmTeacherMaintenance.idTeacher = .Cells(0).Value
                 FrmTeacherMaintenance.txtEmpID.Text = .Cells(1).Value
             End With
-            FrmTeacherMaintenance.LoadStudentData()
+            FrmTeacherMaintenance.LoadTeacherData()
             FrmTeacherMaintenance.Show()
+            FrmTeacherMaintenance.btnSave.Enabled = false
         End If
     End Sub
 End Class

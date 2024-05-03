@@ -22,34 +22,25 @@ Partial Class FrmSchedule
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtDept = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtGradeLevel = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtAdviser = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PbSearch = New System.Windows.Forms.PictureBox()
         Me.CmbRoom = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.CmbAdviser = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbSubjectCode = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtendTime = New System.Windows.Forms.MaskedTextBox()
         Me.txtstartTime = New System.Windows.Forms.MaskedTextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.DgvSchedule = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.SearchBtn = New System.Windows.Forms.ToolStripButton()
@@ -80,19 +71,29 @@ Partial Class FrmSchedule
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtSubjName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtSubjName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtAdviserID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtAdviserID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cmbSection = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.CmbSection = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,9 +121,11 @@ Partial Class FrmSchedule
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.TxtDept)
+        Me.Panel1.Controls.Add(Me.TxtGradeLevel)
+        Me.Panel1.Controls.Add(Me.TxtAdviser)
         Me.Panel1.Controls.Add(Me.PbSearch)
         Me.Panel1.Controls.Add(Me.CmbRoom)
-        Me.Panel1.Controls.Add(Me.CmbAdviser)
         Me.Panel1.Controls.Add(Me.CmbSubjectCode)
         Me.Panel1.Controls.Add(Me.txtendTime)
         Me.Panel1.Controls.Add(Me.txtstartTime)
@@ -144,17 +147,15 @@ Partial Class FrmSchedule
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.txtSubjName)
+        Me.Panel1.Controls.Add(Me.TxtSubjName)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.txtAdviserID)
+        Me.Panel1.Controls.Add(Me.TxtAdviserID)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.cmbSection)
+        Me.Panel1.Controls.Add(Me.CmbSection)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.cmbGradeLevel)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.cmbDepartment)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -163,6 +164,69 @@ Partial Class FrmSchedule
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1001, 695)
         Me.Panel1.TabIndex = 0
+        '
+        'TxtDept
+        '
+        Me.TxtDept.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtDept.DefaultText = ""
+        Me.TxtDept.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtDept.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtDept.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtDept.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtDept.Enabled = False
+        Me.TxtDept.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtDept.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDept.ForeColor = System.Drawing.Color.Black
+        Me.TxtDept.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtDept.Location = New System.Drawing.Point(103, 61)
+        Me.TxtDept.Name = "TxtDept"
+        Me.TxtDept.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtDept.PlaceholderText = ""
+        Me.TxtDept.SelectedText = ""
+        Me.TxtDept.Size = New System.Drawing.Size(200, 36)
+        Me.TxtDept.TabIndex = 58
+        '
+        'TxtGradeLevel
+        '
+        Me.TxtGradeLevel.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtGradeLevel.DefaultText = ""
+        Me.TxtGradeLevel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtGradeLevel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtGradeLevel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtGradeLevel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtGradeLevel.Enabled = False
+        Me.TxtGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtGradeLevel.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtGradeLevel.ForeColor = System.Drawing.Color.Black
+        Me.TxtGradeLevel.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtGradeLevel.Location = New System.Drawing.Point(103, 103)
+        Me.TxtGradeLevel.Name = "TxtGradeLevel"
+        Me.TxtGradeLevel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtGradeLevel.PlaceholderText = ""
+        Me.TxtGradeLevel.SelectedText = ""
+        Me.TxtGradeLevel.Size = New System.Drawing.Size(200, 36)
+        Me.TxtGradeLevel.TabIndex = 57
+        '
+        'TxtAdviser
+        '
+        Me.TxtAdviser.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtAdviser.DefaultText = ""
+        Me.TxtAdviser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtAdviser.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtAdviser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAdviser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAdviser.Enabled = False
+        Me.TxtAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtAdviser.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAdviser.ForeColor = System.Drawing.Color.Black
+        Me.TxtAdviser.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtAdviser.Location = New System.Drawing.Point(406, 61)
+        Me.TxtAdviser.Name = "TxtAdviser"
+        Me.TxtAdviser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtAdviser.PlaceholderText = ""
+        Me.TxtAdviser.SelectedText = ""
+        Me.TxtAdviser.Size = New System.Drawing.Size(199, 36)
+        Me.TxtAdviser.TabIndex = 56
         '
         'PbSearch
         '
@@ -188,21 +252,6 @@ Partial Class FrmSchedule
         Me.CmbRoom.Name = "CmbRoom"
         Me.CmbRoom.Size = New System.Drawing.Size(200, 36)
         Me.CmbRoom.TabIndex = 54
-        '
-        'CmbAdviser
-        '
-        Me.CmbAdviser.BackColor = System.Drawing.Color.Transparent
-        Me.CmbAdviser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CmbAdviser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbAdviser.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbAdviser.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbAdviser.ForeColor = System.Drawing.Color.Black
-        Me.CmbAdviser.ItemHeight = 30
-        Me.CmbAdviser.Location = New System.Drawing.Point(406, 61)
-        Me.CmbAdviser.Name = "CmbAdviser"
-        Me.CmbAdviser.Size = New System.Drawing.Size(200, 36)
-        Me.CmbAdviser.TabIndex = 53
         '
         'CmbSubjectCode
         '
@@ -266,30 +315,30 @@ Partial Class FrmSchedule
         '
         Me.DgvSchedule.AllowUserToAddRows = False
         Me.DgvSchedule.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.DgvSchedule.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DgvSchedule.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvSchedule.BackgroundColor = System.Drawing.Color.DimGray
         Me.DgvSchedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.DgvSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvSchedule.ColumnHeadersHeight = 44
         Me.DgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column8, Me.Column2, Me.Column1, Me.Column10, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvSchedule.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.Column8, Me.Column2, Me.Column11, Me.Column1, Me.Column10, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvSchedule.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgvSchedule.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvSchedule.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvSchedule.Location = New System.Drawing.Point(3, 28)
@@ -320,98 +369,6 @@ Partial Class FrmSchedule
         Me.DgvSchedule.ThemeStyle.RowsStyle.Height = 22
         Me.DgvSchedule.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvSchedule.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'colID
-        '
-        Me.colID.DataPropertyName = "ID"
-        Me.colID.HeaderText = "ID"
-        Me.colID.Name = "colID"
-        Me.colID.ReadOnly = True
-        Me.colID.Visible = False
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "SchoolYear"
-        Me.Column8.HeaderText = "School Year"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Department"
-        Me.Column2.HeaderText = "Department"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.DataPropertyName = "SubjectCode"
-        Me.Column1.HeaderText = "Code"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 62
-        '
-        'Column10
-        '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column10.DataPropertyName = "SubjectName"
-        Me.Column10.HeaderText = "Subject"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.DataPropertyName = "SectionRoom"
-        Me.Column3.HeaderText = "Section"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "Room"
-        Me.Column4.HeaderText = "Room"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 66
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.DataPropertyName = "Adviser"
-        Me.Column5.HeaderText = "Adviser"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 78
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.DataPropertyName = "Days"
-        Me.Column6.HeaderText = "Days"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 62
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.DataPropertyName = "Time"
-        Me.Column7.HeaderText = "Time"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column9
-        '
-        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column9.DataPropertyName = "Teacher"
-        Me.Column9.HeaderText = "Teacher"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Width = 78
         '
         'ToolStrip2
         '
@@ -457,30 +414,30 @@ Partial Class FrmSchedule
         '
         Me.DgvTeacher.AllowUserToAddRows = False
         Me.DgvTeacher.AllowUserToDeleteRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        Me.DgvTeacher.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgvTeacher.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvTeacher.BackgroundColor = System.Drawing.Color.DimGray
         Me.DgvTeacher.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.DgvTeacher.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvTeacher.ColumnHeadersHeight = 44
         Me.DgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvTeacher.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn11, Me.colPrint})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvTeacher.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvTeacher.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgvTeacher.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvTeacher.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvTeacher.Location = New System.Drawing.Point(3, 28)
@@ -796,26 +753,26 @@ Partial Class FrmSchedule
         Me.Label9.Text = "Day(s)"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'txtSubjName
+        'TxtSubjName
         '
-        Me.txtSubjName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSubjName.DefaultText = ""
-        Me.txtSubjName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSubjName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSubjName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubjName.Enabled = False
-        Me.txtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSubjName.ForeColor = System.Drawing.Color.Black
-        Me.txtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjName.Location = New System.Drawing.Point(406, 145)
-        Me.txtSubjName.Name = "txtSubjName"
-        Me.txtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubjName.PlaceholderText = ""
-        Me.txtSubjName.SelectedText = ""
-        Me.txtSubjName.Size = New System.Drawing.Size(199, 36)
-        Me.txtSubjName.TabIndex = 15
+        Me.TxtSubjName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSubjName.DefaultText = ""
+        Me.TxtSubjName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSubjName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSubjName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSubjName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSubjName.Enabled = False
+        Me.TxtSubjName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtSubjName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSubjName.ForeColor = System.Drawing.Color.Black
+        Me.TxtSubjName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtSubjName.Location = New System.Drawing.Point(406, 145)
+        Me.TxtSubjName.Name = "TxtSubjName"
+        Me.TxtSubjName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSubjName.PlaceholderText = ""
+        Me.TxtSubjName.SelectedText = ""
+        Me.TxtSubjName.Size = New System.Drawing.Size(199, 36)
+        Me.TxtSubjName.TabIndex = 15
         '
         'Label8
         '
@@ -849,26 +806,26 @@ Partial Class FrmSchedule
         Me.Label6.Text = "Adviser"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'txtAdviserID
+        'TxtAdviserID
         '
-        Me.txtAdviserID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtAdviserID.DefaultText = ""
-        Me.txtAdviserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtAdviserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtAdviserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAdviserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAdviserID.Enabled = False
-        Me.txtAdviserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviserID.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdviserID.ForeColor = System.Drawing.Color.Black
-        Me.txtAdviserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAdviserID.Location = New System.Drawing.Point(406, 19)
-        Me.txtAdviserID.Name = "txtAdviserID"
-        Me.txtAdviserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAdviserID.PlaceholderText = ""
-        Me.txtAdviserID.SelectedText = ""
-        Me.txtAdviserID.Size = New System.Drawing.Size(199, 36)
-        Me.txtAdviserID.TabIndex = 9
+        Me.TxtAdviserID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtAdviserID.DefaultText = ""
+        Me.TxtAdviserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtAdviserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtAdviserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAdviserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAdviserID.Enabled = False
+        Me.TxtAdviserID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtAdviserID.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAdviserID.ForeColor = System.Drawing.Color.Black
+        Me.TxtAdviserID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtAdviserID.Location = New System.Drawing.Point(406, 19)
+        Me.TxtAdviserID.Name = "TxtAdviserID"
+        Me.TxtAdviserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtAdviserID.PlaceholderText = ""
+        Me.TxtAdviserID.SelectedText = ""
+        Me.TxtAdviserID.Size = New System.Drawing.Size(199, 36)
+        Me.TxtAdviserID.TabIndex = 9
         '
         'Label5
         '
@@ -880,20 +837,20 @@ Partial Class FrmSchedule
         Me.Label5.Text = "Adviser ID"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'cmbSection
+        'CmbSection
         '
-        Me.cmbSection.BackColor = System.Drawing.Color.Transparent
-        Me.cmbSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbSection.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbSection.ForeColor = System.Drawing.Color.Black
-        Me.cmbSection.ItemHeight = 30
-        Me.cmbSection.Location = New System.Drawing.Point(103, 145)
-        Me.cmbSection.Name = "cmbSection"
-        Me.cmbSection.Size = New System.Drawing.Size(200, 36)
-        Me.cmbSection.TabIndex = 7
+        Me.CmbSection.BackColor = System.Drawing.Color.Transparent
+        Me.CmbSection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbSection.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbSection.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbSection.ForeColor = System.Drawing.Color.Black
+        Me.CmbSection.ItemHeight = 30
+        Me.CmbSection.Location = New System.Drawing.Point(103, 145)
+        Me.CmbSection.Name = "CmbSection"
+        Me.CmbSection.Size = New System.Drawing.Size(200, 36)
+        Me.CmbSection.TabIndex = 7
         '
         'Label4
         '
@@ -905,21 +862,6 @@ Partial Class FrmSchedule
         Me.Label4.Text = "Section"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'cmbGradeLevel
-        '
-        Me.cmbGradeLevel.BackColor = System.Drawing.Color.Transparent
-        Me.cmbGradeLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbGradeLevel.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbGradeLevel.ForeColor = System.Drawing.Color.Black
-        Me.cmbGradeLevel.ItemHeight = 30
-        Me.cmbGradeLevel.Location = New System.Drawing.Point(103, 103)
-        Me.cmbGradeLevel.Name = "cmbGradeLevel"
-        Me.cmbGradeLevel.Size = New System.Drawing.Size(200, 36)
-        Me.cmbGradeLevel.TabIndex = 5
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -929,21 +871,6 @@ Partial Class FrmSchedule
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Grade Level"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cmbDepartment
-        '
-        Me.cmbDepartment.BackColor = System.Drawing.Color.Transparent
-        Me.cmbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbDepartment.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbDepartment.ForeColor = System.Drawing.Color.Black
-        Me.cmbDepartment.ItemHeight = 30
-        Me.cmbDepartment.Location = New System.Drawing.Point(103, 61)
-        Me.cmbDepartment.Name = "cmbDepartment"
-        Me.cmbDepartment.Size = New System.Drawing.Size(200, 36)
-        Me.cmbDepartment.TabIndex = 3
         '
         'Label2
         '
@@ -964,6 +891,107 @@ Partial Class FrmSchedule
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'colID
+        '
+        Me.colID.DataPropertyName = "ID"
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.ReadOnly = True
+        Me.colID.Visible = False
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "SchoolYear"
+        Me.Column8.HeaderText = "School Year"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Department"
+        Me.Column2.HeaderText = "Department"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column11
+        '
+        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column11.DataPropertyName = "GradeLevel"
+        Me.Column11.HeaderText = "Grade"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Width = 68
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.DataPropertyName = "SubjectCode"
+        Me.Column1.HeaderText = "Code"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 62
+        '
+        'Column10
+        '
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column10.DataPropertyName = "SubjectName"
+        Me.Column10.HeaderText = "Subject"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "SectionRoom"
+        Me.Column3.HeaderText = "Section"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.DataPropertyName = "Room"
+        Me.Column4.HeaderText = "Room"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 66
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.DataPropertyName = "Adviser"
+        Me.Column5.HeaderText = "Adviser"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 78
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.DataPropertyName = "Days"
+        Me.Column6.HeaderText = "Days"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 62
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.DataPropertyName = "Time"
+        Me.Column7.HeaderText = "Time"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column9.DataPropertyName = "Teacher"
+        Me.Column9.HeaderText = "Teacher"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 78
         '
         'FrmSchedule
         '
@@ -1003,17 +1031,15 @@ Partial Class FrmSchedule
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents txtSubjName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtSubjName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtAdviserID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtAdviserID As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents cmbSection As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CmbSection As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents cmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents cmbDepartment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents DgvSchedule As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents cbW As CheckBox
@@ -1032,19 +1058,7 @@ Partial Class FrmSchedule
     Friend WithEvents txtendTime As MaskedTextBox
     Friend WithEvents txtstartTime As MaskedTextBox
     Friend WithEvents CmbSubjectCode As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents CmbAdviser As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents CmbRoom As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents colID As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents DgvTeacher As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents ToolStrip1 As ToolStrip
@@ -1059,4 +1073,19 @@ Partial Class FrmSchedule
     Friend WithEvents TxtSearch As ToolStripTextBox
     Friend WithEvents SearchBtn As ToolStripButton
     Friend WithEvents PbSearch As PictureBox
+    Friend WithEvents TxtDept As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtGradeLevel As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtAdviser As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents colID As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
 End Class

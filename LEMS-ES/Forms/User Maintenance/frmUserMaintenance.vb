@@ -7,11 +7,19 @@
     Public Sub Loadrecords()
         Query("SELECT * FROM user")
         dgvUser.DataSource = ds.Tables("QueryTb")
+        dgvUser.AutoGenerateColumns = False
 
         Query("SELECT * FROM userlevel")
         cmbUserLevel.DataSource = ds.Tables("QueryTb")
         cmbUserLevel.ValueMember = "userlevel"
         cmbUserLevel.DisplayMember = "userlevel"
+    End Sub
+    Public Sub Clear()
+        txtUsername.Clear()
+        txtPassword.Clear()
+        txtRePassword.Clear()
+        txtFullname.Clear()
+        cmbUserLevel.Text = ""
     End Sub
     Private Sub DgvUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUser.CellClick
         Try
@@ -40,23 +48,23 @@
 #End Region
 
         ClassUserMaintenance.UserMRef()
-        ClearFields(Me, idUserMaintenance)
+        Clear()
     End Sub
 
     Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs) Handles btnClearUserMaintenance.Click
-        ClearFields(Me, idUserMaintenance)
+        Clear()
     End Sub
 
     Private Sub BtnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
         ClassUserMaintenance.UserMDeact()
-        ClearFields(Me, idUserMaintenance)
     End Sub
-
-    Private Sub BtnAddUserLevel_Click(sender As Object, e As EventArgs) Handles btnAddUserLevel.Click
-        frmAddUserLevel.Show()
-    End Sub
-
     Private Sub CmbUserLevel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbUserLevel.KeyPress
         e.Handled = True
+    End Sub
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFullname.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 End Class

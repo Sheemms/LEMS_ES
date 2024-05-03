@@ -40,6 +40,8 @@ Partial Class FrmTuitionFee
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnClearTuition = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnUpdateTuition = New Guna.UI2.WinForms.Guna2Button()
         Me.cmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnSaveTuitionFee = New Guna.UI2.WinForms.Guna2Button()
@@ -62,6 +64,7 @@ Partial Class FrmTuitionFee
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BtnUpdateOtherFee = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAmountOtherFee = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClearOtherFee = New Guna.UI2.WinForms.Guna2Button()
@@ -217,6 +220,8 @@ Partial Class FrmTuitionFee
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.BtnClearTuition)
+        Me.Panel1.Controls.Add(Me.BtnUpdateTuition)
         Me.Panel1.Controls.Add(Me.cmbGradeLevel)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.btnSaveTuitionFee)
@@ -228,6 +233,36 @@ Partial Class FrmTuitionFee
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(230, 505)
         Me.Panel1.TabIndex = 3
+        '
+        'BtnClearTuition
+        '
+        Me.BtnClearTuition.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnClearTuition.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnClearTuition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnClearTuition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnClearTuition.FillColor = System.Drawing.Color.Gray
+        Me.BtnClearTuition.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClearTuition.ForeColor = System.Drawing.Color.White
+        Me.BtnClearTuition.Location = New System.Drawing.Point(3, 219)
+        Me.BtnClearTuition.Name = "BtnClearTuition"
+        Me.BtnClearTuition.Size = New System.Drawing.Size(221, 36)
+        Me.BtnClearTuition.TabIndex = 21
+        Me.BtnClearTuition.Text = "Clear"
+        '
+        'BtnUpdateTuition
+        '
+        Me.BtnUpdateTuition.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnUpdateTuition.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnUpdateTuition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnUpdateTuition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnUpdateTuition.FillColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.BtnUpdateTuition.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUpdateTuition.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateTuition.Location = New System.Drawing.Point(3, 180)
+        Me.BtnUpdateTuition.Name = "BtnUpdateTuition"
+        Me.BtnUpdateTuition.Size = New System.Drawing.Size(221, 33)
+        Me.BtnUpdateTuition.TabIndex = 20
+        Me.BtnUpdateTuition.Text = "Update"
         '
         'cmbGradeLevel
         '
@@ -568,6 +603,7 @@ Partial Class FrmTuitionFee
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.BtnUpdateOtherFee)
         Me.Panel4.Controls.Add(Me.txtAmountOtherFee)
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.btnClearOtherFee)
@@ -580,6 +616,22 @@ Partial Class FrmTuitionFee
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(230, 505)
         Me.Panel4.TabIndex = 7
+        '
+        'BtnUpdateOtherFee
+        '
+        Me.BtnUpdateOtherFee.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnUpdateOtherFee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnUpdateOtherFee.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnUpdateOtherFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnUpdateOtherFee.FillColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.BtnUpdateOtherFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUpdateOtherFee.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateOtherFee.Location = New System.Drawing.Point(3, 181)
+        Me.BtnUpdateOtherFee.Name = "BtnUpdateOtherFee"
+        Me.BtnUpdateOtherFee.Size = New System.Drawing.Size(221, 33)
+        Me.BtnUpdateOtherFee.TabIndex = 21
+        Me.BtnUpdateOtherFee.Text = "Update"
+        Me.BtnUpdateOtherFee.Visible = False
         '
         'txtAmountOtherFee
         '
@@ -619,7 +671,7 @@ Partial Class FrmTuitionFee
         Me.btnClearOtherFee.FillColor = System.Drawing.Color.Gray
         Me.btnClearOtherFee.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearOtherFee.ForeColor = System.Drawing.Color.White
-        Me.btnClearOtherFee.Location = New System.Drawing.Point(3, 181)
+        Me.btnClearOtherFee.Location = New System.Drawing.Point(3, 220)
         Me.btnClearOtherFee.Name = "btnClearOtherFee"
         Me.btnClearOtherFee.Size = New System.Drawing.Size(221, 36)
         Me.btnClearOtherFee.TabIndex = 9
@@ -737,4 +789,7 @@ Partial Class FrmTuitionFee
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents BtnUpdateTuition As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnUpdateOtherFee As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnClearTuition As Guna.UI2.WinForms.Guna2Button
 End Class

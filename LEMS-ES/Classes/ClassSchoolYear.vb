@@ -35,7 +35,7 @@ Public Class ClassSchoolYear
                 MsgBox("You cannot close the current school year without having another one open.")
                 Exit Sub
             End If
-            frmSY.loadrecords()
+            FrmSY.Loadrecords()
         Catch ex As MySqlException
             Critical("School year already exists.")
             Exit Sub

@@ -121,7 +121,6 @@ Public Class FrmStudentsView
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         ClassStudents.StudUpdate()
-        Clear()
     End Sub
     Private Sub CalculateAge()
         Dim birthdate As Date = dtpBday.Value.Date
@@ -143,11 +142,22 @@ Public Class FrmStudentsView
         End If
     End Sub
 
-    Private Sub TxtStudNum_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudNum.KeyPress
-        TextBoxDigitsOnly(txtStudNum)
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudNum.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
-
-    Private Sub TxtCitizenship_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCitizenship.KeyPress
-        TextBoxOnlyLetters(txtCitizenship)
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudLname.KeyPress, txtStudFname.KeyPress, txtStudMI.KeyPress, txtCitizenship.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
+    Private Sub TextBoxAddress_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddress.KeyPress
+        If Not isValidAddress(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 End Class

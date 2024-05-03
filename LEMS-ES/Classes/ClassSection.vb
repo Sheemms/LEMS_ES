@@ -6,7 +6,8 @@ Public Class ClassSection
             Dim syParam() As MySqlParameter = {
                     New MySqlParameter("@ID", FrmSections.idSection),
                     New MySqlParameter("@GradeLevel_ID", FrmSections.CmbGradeLevel.SelectedValue),
-                    New MySqlParameter("@SectionRoom", FrmSections.TxtSectionName.Text)
+                    New MySqlParameter("@SectionRoom", FrmSections.TxtSectionName.Text),
+                    New MySqlParameter("@AdviserID", FrmSections.CmbAdviser.SelectedValue)
                 }
             Return syParam
         Catch ex As Exception
@@ -18,21 +19,23 @@ Public Class ClassSection
             Dim dynamicParams As MySqlParameter() = SectionParameters()
             If FrmSections.idSection = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO section(GradeLevel_ID, SectionRoom) VALUES (@GradeLevel_ID, @SectionRoom)", dynamicParams)
+                    Command("INSERT INTO section(GradeLevel_ID, SectionRoom, AdviserID) VALUES (@GradeLevel_ID, @SectionRoom, @AdviserID)", dynamicParams)
                     Success("Successfully Added!")
-                    Dim name As String = FrmSections.CmbGradeLevel.Text & ", " & FrmSections.TxtSectionName.Text
-                    LogAction("Added Section |" & name)
+                    Dim name As String = FrmSections.CmbGradeLevel.Text & " - " & FrmSections.TxtSectionName.Text & " - " & FrmSections.CmbAdviser.Text
+                    LogAction("Added Section | " & name)
+                    FrmSections.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom, AdviserID=@AdviserID WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
-                    Dim name As String = FrmSections.CmbGradeLevel.Text & ", " & FrmSections.TxtSectionName.Text
-                    LogAction("Updated Section |" & name)
+                    Dim name As String = FrmSections.CmbGradeLevel.Text & " - " & FrmSections.TxtSectionName.Text & " - " & FrmSections.CmbAdviser.Text
+                    LogAction("Updated Section | " & name)
+                    FrmSections.Clear()
                 End If
             End If
             FrmSections.Loadrecords()
-            ClearFields(FrmSections, FrmSections.idSection)
+            'ClearFields(FrmSections, FrmSections.idSection)
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Section already exists.")
             Exit Sub

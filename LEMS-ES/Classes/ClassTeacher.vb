@@ -27,6 +27,7 @@ Public Class ClassTeacher
                             VALUES (@EmpID, @Department_ID, @Lastname, @Firstname, @MiddleInitial, @Contact, @Address)", dynamicParams)
                     Success("Successfully Added!")
                     FrmTeacherMaintenance.Close()
+                    FrmTeacherMaintenance.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
@@ -34,6 +35,7 @@ Public Class ClassTeacher
                             MiddleInitial=@MiddleInitial, Contact=@Contact, Address=@Address WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                     FrmTeacherMaintenance.Close()
+                    FrmTeacherMaintenance.Clear()
                 End If
             End If
             FrmTeachers.Loadrecords()

@@ -2,28 +2,39 @@
     Public idTeacher As Integer = 0
     Private Sub FrmTeacherMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
-        Loadrecords()
-        ClearFields(Me, idTeacher)
-        TextBoxOnlyLetters(txtMiddleInitial)
+        LoadDept()
     End Sub
     Public Sub Clear()
-        txtLastname.Clear()
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtEmpID, txtLastname, txtFirstname, txtMiddleInitial, txtContact,
+            txtAddress}
+        For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
+            textBox.Clear()
+        Next
+        cmbDept.SelectedIndex = -1
+        idTeacher = 0
     End Sub
-    Public Sub Loadrecords()
+    Public Sub LoadDept()
         Query("SELECT * FROM department")
         cmbDept.DataSource = ds.Tables("QueryTb")
         cmbDept.ValueMember = "ID"
         cmbDept.DisplayMember = "Department"
     End Sub
-    Public Sub LoadStudentData()
+    Public Sub LoadTeacherData()
         Query("SELECT * FROM teacher WHERE EmpID = '" & txtEmpID.Text & "'")
-        With ds.Tables("QueryTb")
-            txtLastname.Text = .Rows(0)(3)
-            txtFirstname.Text = .Rows(0)(4)
-            txtMiddleInitial.Text = .Rows(0)(5)
-            txtContact.Text = .Rows(0)(6)
-            txtAddress.Text = .Rows(0)(7)
-        End With
+
+        If ds.Tables("QueryTb").Rows.Count > 0 Then
+            With ds.Tables("QueryTb").Rows(0)
+                txtEmpID.Text = .Item(1)
+                cmbDept.SelectedValue = .Item(2)
+                txtLastname.Text = .Item(3)
+                txtFirstname.Text = .Item(4)
+                txtMiddleInitial.Text = .Item(5)
+                txtContact.Text = .Item(6)
+                txtAddress.Text = .Item(7)
+            End With
+        Else
+            Clear()
+        End If
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -38,28 +49,30 @@
 #End Region
 
         ClassTeacher.TeacherRef()
-        ClearFields(Me, idTeacher)
     End Sub
 
-    Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs)
-        ClearFields(Me, idTeacher)
+    Private Sub BtnClear_Click(sender As Object, e As EventArgs) Handles BtnClear.Click
+        Clear()
     End Sub
 
 #Region "TextBoxValidation"
-    Private Sub TxtFirstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstname.KeyPress, txtLastname.KeyPress, txtMiddleInitial.KeyPress
-        TextBoxOnlyLetters(txtFirstname)
-        TextBoxOnlyLetters(txtLastname)
-        TextBoxOnlyLetters(txtMiddleInitial)
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtLastname.KeyPress, txtFirstname.KeyPress, txtMiddleInitial.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
-
-    Private Sub TxtEmpID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpID.KeyPress, txtContact.KeyPress
-        TextBoxDigitsOnly(txtEmpID)
-        TextBoxDigitsOnly(txtContact)
+    Private Sub TextBoxAddress_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddress.KeyPress
+        If Not IsValidAddress(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        Me.Close()
-
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpID.KeyPress, txtContact.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 #End Region
 End Class
