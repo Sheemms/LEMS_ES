@@ -24,22 +24,21 @@
         txtSubjName.Clear()
         txtUnit.Clear()
     End Sub
-    Private Sub DgvSubject_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-        'Try
-        '    If e.RowIndex >= 0 Then
-        '        Dim row As DataGridViewRow = DgvSubject.Rows(e.RowIndex)
-        '        idSubj = row.Cells(0).Value
-        '        CmbGradeLevel.Text = row.Cells(1).Value
-        '        txtSubjCode.Text = row.Cells(2).Value
-        '        txtSubjName.Text = row.Cells(3).Value
-        '        'TxtDesc.Text = row.Cells(4).Value
-        '        txtUnit.Text = row.Cells(4).Value
-        '    ElseIf e.ColumnIndex >= 0 Then
-        '        Clear()
-        '    End If
-        'Catch ex As Exception
-        '    MsgBox("ERROR!", vbCritical)
-        'End Try
+    Private Sub DgvSubject_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSubject.CellClick
+        Try
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow = DgvSubject.Rows(e.RowIndex)
+                idSubj = row.Cells(0).Value
+                CmbGradeLevel.Text = row.Cells(1).Value
+                txtSubjCode.Text = row.Cells(2).Value
+                txtSubjName.Text = row.Cells(3).Value
+                txtUnit.Text = row.Cells(4).Value
+            ElseIf e.ColumnIndex >= 0 Then
+                Clear()
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR!", vbCritical)
+        End Try
     End Sub
     Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If IS_EMPTY(CmbGradeLevel) = True Then Return
