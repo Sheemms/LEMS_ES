@@ -11,8 +11,7 @@ Public Class ClassEnroll
                     New MySqlParameter("@EID", FrmEnrollmentRegistration.LabelEID.Text),
                     New MySqlParameter("@SchoolYear", schoolYearID),
                     New MySqlParameter("@LRN", FrmEnrollmentRegistration.txtStudLRN.Text),
-                    New MySqlParameter("@SectionID", FrmEnrollmentRegistration.CmbSection.SelectedValue),
-                    New MySqlParameter("@GradeLevel_ID", FrmEnrollmentRegistration.CmbGradeLevel.SelectedValue)
+                    New MySqlParameter("@SectionID", FrmEnrollmentRegistration.CmbSection.SelectedValue)
                 }
                 Return enrollParam
             Else
@@ -27,16 +26,18 @@ Public Class ClassEnroll
             Dim dynamicParams As MySqlParameter() = EnrollmentParameters()
             If FrmEnrollmentRegistration.EnrollmentID = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID, GradeLevel_ID) 
-                                VALUES (@EID, @SchoolYear, @LRN, @SectionID, @GradeLevel_ID)", dynamicParams)
+                    Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID) 
+                                VALUES (@EID, @SchoolYear, @LRN, @SectionID)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.txtStudName.Text
                     LogAction("Enrolled Student |" & name)
+                    FrmEnrollmentRegistration.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE enrollment SET EID=@EID, SchoolYear=@SchoolYear, LRN=@LRN, SectionID=@SectionID, GradeLevel_ID=@GradeLevel_ID WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
+                    FrmEnrollmentRegistration.Clear()
                 End If
             End If
             frmEnrollment.Loadrecords()

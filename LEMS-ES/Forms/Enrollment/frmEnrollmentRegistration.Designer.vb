@@ -25,10 +25,13 @@ Partial Class FrmEnrollmentRegistration
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEnrollmentRegistration))
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEnrollmentRegistration))
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LabelEID = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -51,6 +54,15 @@ Partial Class FrmEnrollmentRegistration
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PbSearch = New System.Windows.Forms.PictureBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DgvStudSubject = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.BtnUpdate = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
@@ -64,12 +76,14 @@ Partial Class FrmEnrollmentRegistration
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.CmbSection = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.CmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.DgvSubjectList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.DgvStudSubject, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DgvEnrolledSubjects, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +139,7 @@ Partial Class FrmEnrollmentRegistration
         Me.txtStudLRN.Name = "txtStudLRN"
         Me.txtStudLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudLRN.PlaceholderText = ""
+        Me.txtStudLRN.ReadOnly = True
         Me.txtStudLRN.SelectedText = ""
         Me.txtStudLRN.Size = New System.Drawing.Size(207, 36)
         Me.txtStudLRN.TabIndex = 3
@@ -148,7 +163,6 @@ Partial Class FrmEnrollmentRegistration
         Me.txtStudName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtStudName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtStudName.Enabled = False
         Me.txtStudName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtStudName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtStudName.ForeColor = System.Drawing.Color.Black
@@ -157,6 +171,7 @@ Partial Class FrmEnrollmentRegistration
         Me.txtStudName.Name = "txtStudName"
         Me.txtStudName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStudName.PlaceholderText = ""
+        Me.txtStudName.ReadOnly = True
         Me.txtStudName.SelectedText = ""
         Me.txtStudName.Size = New System.Drawing.Size(207, 36)
         Me.txtStudName.TabIndex = 5
@@ -279,7 +294,7 @@ Partial Class FrmEnrollmentRegistration
         Me.DgvSubjectList.Name = "DgvSubjectList"
         Me.DgvSubjectList.ReadOnly = True
         Me.DgvSubjectList.RowHeadersVisible = False
-        Me.DgvSubjectList.Size = New System.Drawing.Size(427, 310)
+        Me.DgvSubjectList.Size = New System.Drawing.Size(160, 310)
         Me.DgvSubjectList.TabIndex = 0
         Me.DgvSubjectList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvSubjectList.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -370,6 +385,8 @@ Partial Class FrmEnrollmentRegistration
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.PbSearch)
+        Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.Panel7)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
@@ -380,7 +397,6 @@ Partial Class FrmEnrollmentRegistration
         Me.GroupBox1.Controls.Add(Me.btnEnroll)
         Me.GroupBox1.Controls.Add(Me.lblSY)
         Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.txtSearch)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -394,10 +410,144 @@ Partial Class FrmEnrollmentRegistration
         Me.GroupBox1.Font = New System.Drawing.Font("Bahnschrift", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1123, 561)
+        Me.GroupBox1.Size = New System.Drawing.Size(856, 561)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enrollment Form"
+        '
+        'PbSearch
+        '
+        Me.PbSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.PbSearch.Location = New System.Drawing.Point(433, 13)
+        Me.PbSearch.Name = "PbSearch"
+        Me.PbSearch.Size = New System.Drawing.Size(30, 33)
+        Me.PbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PbSearch.TabIndex = 93
+        Me.PbSearch.TabStop = False
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.Controls.Add(Me.DgvStudSubject)
+        Me.GroupBox4.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(18, 204)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(664, 349)
+        Me.GroupBox4.TabIndex = 92
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Student Subjects"
+        '
+        'DgvStudSubject
+        '
+        Me.DgvStudSubject.AllowUserToAddRows = False
+        Me.DgvStudSubject.AllowUserToDeleteRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgvStudSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DgvStudSubject.BackgroundColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvStudSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DgvStudSubject.ColumnHeadersHeight = 32
+        Me.DgvStudSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvStudSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvStudSubject.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DgvStudSubject.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvStudSubject.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvStudSubject.Location = New System.Drawing.Point(3, 19)
+        Me.DgvStudSubject.MultiSelect = False
+        Me.DgvStudSubject.Name = "DgvStudSubject"
+        Me.DgvStudSubject.ReadOnly = True
+        Me.DgvStudSubject.RowHeadersVisible = False
+        Me.DgvStudSubject.Size = New System.Drawing.Size(658, 327)
+        Me.DgvStudSubject.TabIndex = 1
+        Me.DgvStudSubject.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvStudSubject.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgvStudSubject.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgvStudSubject.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgvStudSubject.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgvStudSubject.ThemeStyle.BackColor = System.Drawing.Color.DimGray
+        Me.DgvStudSubject.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvStudSubject.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvStudSubject.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvStudSubject.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvStudSubject.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgvStudSubject.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvStudSubject.ThemeStyle.HeaderStyle.Height = 32
+        Me.DgvStudSubject.ThemeStyle.ReadOnly = True
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.Height = 22
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvStudSubject.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "SubjectCode"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Code"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 60
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "SubjectName"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Subject Name"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 110
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Time"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Time"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 58
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Days"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Days"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        Me.DataGridViewTextBoxColumn11.Width = 60
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "Teacher"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Teacher"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Width = 76
         '
         'Panel7
         '
@@ -409,7 +559,7 @@ Partial Class FrmEnrollmentRegistration
         Me.Panel7.Controls.Add(Me.BtnSave)
         Me.Panel7.Location = New System.Drawing.Point(457, 218)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(55, 329)
+        Me.Panel7.Size = New System.Drawing.Size(0, 329)
         Me.Panel7.TabIndex = 92
         '
         'BtnUpdate
@@ -445,37 +595,38 @@ Partial Class FrmEnrollmentRegistration
         Me.GroupBox3.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(518, 218)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(595, 332)
+        Me.GroupBox3.Size = New System.Drawing.Size(328, 332)
         Me.GroupBox3.TabIndex = 91
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Student Subjects"
+        Me.GroupBox3.Visible = False
         '
         'DgvEnrolledSubjects
         '
         Me.DgvEnrolledSubjects.AllowUserToAddRows = False
         Me.DgvEnrolledSubjects.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DgvEnrolledSubjects.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.DgvEnrolledSubjects.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DgvEnrolledSubjects.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvEnrolledSubjects.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvEnrolledSubjects.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DgvEnrolledSubjects.ColumnHeadersHeight = 32
         Me.DgvEnrolledSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvEnrolledSubjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvEnrolledSubjects.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvEnrolledSubjects.DefaultCellStyle = DataGridViewCellStyle9
         Me.DgvEnrolledSubjects.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvEnrolledSubjects.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvEnrolledSubjects.Location = New System.Drawing.Point(3, 19)
@@ -483,7 +634,7 @@ Partial Class FrmEnrollmentRegistration
         Me.DgvEnrolledSubjects.Name = "DgvEnrolledSubjects"
         Me.DgvEnrolledSubjects.ReadOnly = True
         Me.DgvEnrolledSubjects.RowHeadersVisible = False
-        Me.DgvEnrolledSubjects.Size = New System.Drawing.Size(589, 310)
+        Me.DgvEnrolledSubjects.Size = New System.Drawing.Size(322, 310)
         Me.DgvEnrolledSubjects.TabIndex = 1
         Me.DgvEnrolledSubjects.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvEnrolledSubjects.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -569,10 +720,11 @@ Partial Class FrmEnrollmentRegistration
         Me.GroupBox2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(18, 218)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(433, 332)
+        Me.GroupBox2.Size = New System.Drawing.Size(166, 332)
         Me.GroupBox2.TabIndex = 90
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Subject Lists"
+        Me.GroupBox2.Visible = False
         '
         'CmbSection
         '
@@ -589,6 +741,30 @@ Partial Class FrmEnrollmentRegistration
         Me.CmbSection.Size = New System.Drawing.Size(208, 36)
         Me.CmbSection.TabIndex = 89
         '
+        'txtSearch
+        '
+        Me.txtSearch.Animated = True
+        Me.txtSearch.AutoRoundedCorners = True
+        Me.txtSearch.BorderRadius = 15
+        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSearch.DefaultText = ""
+        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.FillColor = System.Drawing.Color.LemonChiffon
+        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.ForeColor = System.Drawing.Color.Black
+        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.Location = New System.Drawing.Point(469, 13)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PlaceholderText = "Enter LRN"
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.Size = New System.Drawing.Size(210, 33)
+        Me.txtSearch.TabIndex = 15
+        '
         'CmbGradeLevel
         '
         Me.CmbGradeLevel.BackColor = System.Drawing.Color.Transparent
@@ -596,7 +772,7 @@ Partial Class FrmEnrollmentRegistration
         Me.CmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbGradeLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CmbGradeLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbGradeLevel.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbGradeLevel.Font = New System.Drawing.Font("Bahnschrift", 9.75!)
         Me.CmbGradeLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.CmbGradeLevel.ItemHeight = 30
         Me.CmbGradeLevel.Location = New System.Drawing.Point(243, 162)
@@ -619,47 +795,11 @@ Partial Class FrmEnrollmentRegistration
         Me.CmbDepartment.Size = New System.Drawing.Size(208, 36)
         Me.CmbDepartment.TabIndex = 87
         '
-        'txtSearch
-        '
-        Me.txtSearch.Animated = True
-        Me.txtSearch.AutoRoundedCorners = True
-        Me.txtSearch.BorderRadius = 15
-        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSearch.DefaultText = ""
-        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearch.FillColor = System.Drawing.Color.LemonChiffon
-        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.ForeColor = System.Drawing.Color.Black
-        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.IconLeft = Global.LEMS_ES.My.Resources.Resources.search
-        Me.txtSearch.Location = New System.Drawing.Point(469, 13)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PlaceholderText = ""
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.Size = New System.Drawing.Size(210, 33)
-        Me.txtSearch.TabIndex = 15
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(422, 23)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 16)
-        Me.Label9.TabIndex = 16
-        Me.Label9.Text = "Search"
-        '
         'FrmEnrollmentRegistration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(961, 561)
+        Me.ClientSize = New System.Drawing.Size(694, 561)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -668,6 +808,9 @@ Partial Class FrmEnrollmentRegistration
         CType(Me.DgvSubjectList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        CType(Me.DgvStudSubject, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DgvEnrolledSubjects, System.ComponentModel.ISupportInitialize).EndInit()
@@ -692,8 +835,6 @@ Partial Class FrmEnrollmentRegistration
     Friend WithEvents DgvSubjectList As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CmbSection As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents CmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents CmbDepartment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Panel7 As Panel
@@ -713,6 +854,16 @@ Partial Class FrmEnrollmentRegistration
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Label9 As Label
     Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents DgvStudSubject As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents PbSearch As PictureBox
+    Friend WithEvents CmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CmbDepartment As Guna.UI2.WinForms.Guna2ComboBox
 End Class

@@ -11,19 +11,18 @@ Public Class FrmEnrollmentRegistration
     Private Sub FrmEnrollmentRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         GetSchoolYear(lblSY)
-        LoadStudAutoComplet()
-        LoadDeprtment()
+        'LoadStudAutoComplet()
+        LoadDepartment()
+        LoadSection()
         Clear()
         'LoadSub()
     End Sub
     Public Sub Clear()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN, txtStudName}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN, txtStudName, Guna2TextBox1, Guna2TextBox2}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
         txtSearch.Clear()
-        CmbDepartment.SelectedIndex = -1
-        CmbGradeLevel.SelectedIndex = -1
         CmbSection.SelectedIndex = -1
         EnrollmentID = 0
         EnrollSubjID = 0
@@ -45,15 +44,20 @@ Public Class FrmEnrollmentRegistration
         'End If
     End Sub
     Public Sub LoadSub()
-        Query($"SELECT  a.ID, CONCAT(f.Start_Year, '-',f.End_Year) SY, d.SubjectCode, d.SubjectName, CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, a.Days, CONCAT(e.Lastname, ' ',e.Firstname) Teacher
+        Query($"SELECT  a.ID, CONCAT(b.Start_Year, '-',b.End_Year) SY, g.SubjectCode, g.SubjectName, 
+		CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, 
+        a.Days, CONCAT(h.Lastname, ' ',h.Firstname) Teacher
                                 FROM schedule a
-                                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                                JOIN section c ON a.Sec_ID = c.ID
-                                JOIN subject d ON a.Subj_ID = d.ID
-                                JOIN teacher e ON a.Teacher_ID = e.ID
-                                JOIN schoolyear f ON a.SYID = f.ID
-                                WHERE a.GradeLevel_ID LIKE '{CmbGradeLevel.SelectedValue}'")
-        DgvSubjectList.DataSource = ds.Tables("QueryTb")
+                                JOIN schoolyear b ON a.SYID = b.ID
+                                JOIN section c ON a.SectionID = c.ID
+                                JOIN gradelevel d ON c.GradeLevel_ID = d.ID
+								JOIN department e ON d.Department_ID = e.ID
+                                JOIN room f ON a.Room = f.ID
+								JOIN subject g ON a.SubjectID = g.ID
+								JOIN teacher h ON a.TeacherID = h.ID
+								JOIN teacher i on c.AdviserID = i.ID
+                                WHERE c.ID = '{CmbSection.SelectedValue}'")
+        DgvStudSubject.DataSource = ds.Tables("QueryTb")
     End Sub
     Public Sub LoadSubjectEnrolled()
         Query("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year)SYID, a.EID, d.SubjectCode ,d.SubjectName, 
@@ -67,105 +71,79 @@ Public Class FrmEnrollmentRegistration
                     WHERE a.EID =  '" & LabelEID.Text & "'")
         DgvEnrolledSubjects.DataSource = ds.Tables("QueryTb")
     End Sub
-    Public Sub LoadDeprtment()
+    Public Sub LoadDepartment()
         Query("SELECT * FROM department")
         CmbDepartment.DataSource = ds.Tables("QueryTb")
         CmbDepartment.ValueMember = "ID"
         CmbDepartment.DisplayMember = "Department"
     End Sub
-    Public Sub LoadMode()
-        Query("SELECT * FROM mop")
+    Public Sub LoadSection()
+        Query("SELECT * FROM section")
+        CmbSection.DataSource = ds.Tables("QueryTb")
+        CmbSection.ValueMember = "ID"
+        CmbSection.DisplayMember = "SectionRoom"
     End Sub
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
+#Region "IS_EMPTY"
         If IS_EMPTY(txtStudLRN) Then Return
         If IS_EMPTY(txtStudName) Then Return
-
+        If IS_EMPTY(CmbDepartment) Then Return
+        If IS_EMPTY(CmbSection) Then Return
+        If IS_EMPTY(CmbGradeLevel) Then Return
+#End Region
         ClassEnroll.EnrollmentRef()
-        Clear()
     End Sub
+
+    Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSection.SelectedIndexChanged
+        Dim selectedSection As Integer
+        If CmbSection.SelectedItem IsNot Nothing AndAlso TypeOf CmbSection.SelectedItem Is DataRowView Then
+            selectedSection = Convert.ToInt32(DirectCast(CmbSection.SelectedItem, DataRowView).Row("ID"))
+        Else
+            'MessageBox.Show("Please select a valid section.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Query("SELECT a.ID, b.GradeLevel, c.Department, a.SectionRoom, CONCAT(d.Lastname, ' ', d.Firstname) AS Adviser
+                    FROM section a
+                    JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                    JOIN department c ON b.Department_ID = c.ID
+                    JOIN teacher d ON a.AdviserID = d.ID
+                    WHERE a.ID =" & selectedSection)
+
+        Dim Dtable As DataTable = ds.Tables("QueryTb")
+        If Dtable.Rows.Count > 0 Then
+            ' Populate TextBoxes with the retrieved data
+            'Guna2TextBox2.Text = Dtable.Rows(0)("GradeLevel").ToString()
+            'Guna2TextBox1.Text = Dtable.Rows(0)("Department").ToString()
+        Else
+            ' Clear TextBoxes if no data is found
+            Clear()
+        End If
+    End Sub
+
+
 
 #Region "AutoComplete/Populate"
-    Private Sub LoadStudAutoComplet()
-        Query("SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student")
-        Dim autoCompleteCollection As New AutoCompleteStringCollection()
 
-        For Each row As DataRow In ds.Tables("QueryTb").Rows
-            autoCompleteCollection.Add(row("LRN").ToString())
-            autoCompleteCollection.Add(row("FullName").ToString())
-        Next
-
-        txtSearch.AutoCompleteCustomSource = autoCompleteCollection
-        txtSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource
-    End Sub
-    Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+    Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
         Dim selectedStudName As String = txtSearch.Text.Trim()
 
-        Query("SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student")
-        Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedStudName}'").FirstOrDefault()
+        If Not String.IsNullOrEmpty(selectedStudName) Then
+            Query($"SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student WHERE LRN = '{selectedStudName}' OR Lastname LIKE '%{selectedStudName}%' OR Firstname LIKE '%{selectedStudName}%'")
 
-        If row IsNot Nothing AndAlso row.Table.Columns.Contains("LRN") Then
-            txtStudLRN.Text = row("LRN").ToString()
-            txtStudName.Text = row("FullName").ToString()
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
+                txtStudLRN.Text = row("LRN").ToString()
+                txtStudName.Text = row("FullName").ToString()
+            Else
+                Clear()
+            End If
         Else
-            txtStudLRN.Clear()
-            txtStudName.Clear()
+            Clear()
         End If
     End Sub
 
-    Private Sub CmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbDepartment.SelectedIndexChanged
-        Dim selectedDepartmentID As Integer
-        If CmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf CmbDepartment.SelectedItem Is DataRowView Then
-            selectedDepartmentID = Convert.ToInt32(DirectCast(CmbDepartment.SelectedItem, DataRowView).Row("ID"))
-        Else
-            'MessageBox.Show("Please select a valid department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        Dim qry As String = $"SELECT ID, GradeLevel FROM gradelevel WHERE Department_ID = {selectedDepartmentID}"
-        Query(qry)
-
-        Dim gradeLevelTable As DataTable = ds.Tables("QueryTb")
-        If gradeLevelTable.Rows.Count > 0 Then
-            CmbGradeLevel.DataSource = gradeLevelTable
-            CmbGradeLevel.ValueMember = "ID"
-            CmbGradeLevel.DisplayMember = "GradeLevel"
-        Else
-            CmbGradeLevel.DataSource = Nothing
-            CmbGradeLevel.Items.Clear()
-            CmbGradeLevel.SelectedIndex = -1
-        End If
-    End Sub
-
-    Private Sub TxtStudLRN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudLRN.KeyPress
-        TextBoxDigitsOnly(txtStudLRN)
-    End Sub
-
-    Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedIndexChanged
-        Dim selectedGradeLevelID As Integer
-        If CmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf CmbGradeLevel.SelectedItem Is DataRowView Then
-            selectedGradeLevelID = Convert.ToInt32(DirectCast(CmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
-        Else
-            'MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        Dim qry As String = $"SELECT ID, SectionRoom FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
-        Query(qry)
-
-        Dim sectionTable As DataTable = ds.Tables("QueryTb")
-        If sectionTable.Rows.Count > 0 Then
-            CmbSection.DataSource = sectionTable
-            CmbSection.ValueMember = "ID"
-            CmbSection.DisplayMember = "SectionRoom"
-        Else
-            CmbSection.DataSource = Nothing
-            CmbSection.Items.Clear()
-            CmbSection.SelectedIndex = -1
-        End If
-    End Sub
-
-    Private Sub CmbGradeLevel_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedValueChanged
+    Private Sub CmbSection_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbSection.SelectedValueChanged
         LoadSub()
     End Sub
 #End Region

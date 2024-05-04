@@ -12,7 +12,7 @@ Public Class FrmEnrollment
                 JOIN schoolyear sy ON e.SchoolYear = sy.ID
                 JOIN student st ON e.LRN = st.LRN
                 JOIN section s ON e.SectionID = s.ID
-                JOIN gradelevel gl ON e.GradeLevel_ID = gl.ID")
+                JOIN gradelevel gl ON s.GradeLevel_ID = gl.ID")
         dgvEnrolled.AutoGenerateColumns = False
         dgvEnrolled.DataSource = ds.Tables("QueryTb")
     End Sub
@@ -54,7 +54,7 @@ Public Class FrmEnrollment
                 FrmEnrollmentRegistration.LabelEID.Text = .Cells(2).Value
                 FrmEnrollmentRegistration.txtStudLRN.Text = .Cells(3).Value
                 FrmEnrollmentRegistration.txtStudName.Text = .Cells(4).Value
-                FrmEnrollmentRegistration.CmbGradeLevel.SelectedValue = .Cells(5).Value
+                FrmEnrollmentRegistration.TxtGradeLevel.Text = .Cells(5).Value
                 FrmEnrollmentRegistration.CmbSection.SelectedValue = .Cells(6).Value
             End With
             FrmEnrollmentRegistration.LoadSubjectEnrolled()

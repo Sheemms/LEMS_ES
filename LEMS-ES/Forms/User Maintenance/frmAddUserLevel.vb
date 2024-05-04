@@ -1,4 +1,4 @@
-﻿Public Class frmAddUserLevel
+﻿Public Class FrmAddUserLevel
     Public Sub Clear()
         txtUserLevel.Clear()
     End Sub

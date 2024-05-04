@@ -153,6 +153,12 @@
     <Compile Include="Classes\ClassTeacher.vb" />
     <Compile Include="Classes\ClassTuition.vb" />
     <Compile Include="Classes\ClassUserMaintenance.vb" />
+    <Compile Include="CrystalRep\AuditTrail.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuditTrail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalRep\ClassList.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -480,6 +486,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalRep\AuditTrail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AuditTrail.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalRep\ClassList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClassList.vb</LastGenOutput>

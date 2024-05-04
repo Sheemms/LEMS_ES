@@ -22,11 +22,13 @@ Public Class ClassGradeLevel
                     Success("Successfully Added!")
                     Dim name As String = FrmGradeLevel.cmbDept.Text & ", " & FrmGradeLevel.txtAddGradeLevel.Text
                     LogAction("Added Grade Level |" & name)
+                    FrmGradeLevel.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE gradelevel SET Department_ID=@Department_ID, GradeLevel=@GradeLevel WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
+                    FrmGradeLevel.Clear()
                 End If
             End If
             frmGradeLevel.loadrecords()

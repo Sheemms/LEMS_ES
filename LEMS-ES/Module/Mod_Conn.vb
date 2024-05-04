@@ -57,8 +57,6 @@ Module Mod_Conn
         End Try
     End Function
 
-
-
     Sub LogAction(ByVal plog As String)
         Try
             Command("INSERT INTO AuditTrail (UserID, Description) VALUES (@UserID, @Description)",

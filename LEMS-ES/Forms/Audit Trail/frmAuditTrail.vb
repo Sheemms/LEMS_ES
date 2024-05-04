@@ -6,7 +6,7 @@
         Query("SELECT * FROM audittrail")
         DgvAudittrail.DataSource = ds.Tables("QueryTb")
     End Sub
-    Sub load_usertype()
+    Sub Load_usertype()
         ToolStripComboBox1.Items.Clear()
         ToolStripComboBox1.Items.Add("All")
         OtherCommand("SELECT DISTINCT b.UserLevel 
@@ -18,7 +18,7 @@
         End While
         dr.Close()
     End Sub
-    Sub load_records(ByVal sql As String)
+    Sub Load_records(ByVal sql As String)
         Dim i As Integer
         DgvAudittrail.Rows.Clear()
 
