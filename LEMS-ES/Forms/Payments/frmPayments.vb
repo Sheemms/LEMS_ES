@@ -25,7 +25,7 @@
                 FROM enrollment a
                 JOIN student b ON a.LRN = b.LRN 
                 JOIN section c ON a.SectionID = c.ID
-                JOIN gradelevel d ON a.GradeLevel_ID = d.ID
+                JOIN gradelevel d ON c.GradeLevel_ID = d.ID
                 JOIN schoolyear e ON a.SchoolYear = e.ID")
         DgvRegisteredStudents.DataSource = ds.Tables("QueryTb")
 

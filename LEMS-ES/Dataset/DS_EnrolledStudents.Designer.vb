@@ -291,9 +291,9 @@ Partial Public Class DS_EnrolledStudents
         
         Private columnLRN As Global.System.Data.DataColumn
         
-        Private columnSectionID As Global.System.Data.DataColumn
+        Private columnSection As Global.System.Data.DataColumn
         
-        Private columnGradeLevel_ID As Global.System.Data.DataColumn
+        Private columnGrade As Global.System.Data.DataColumn
         
         Private columnEnrollment_Date As Global.System.Data.DataColumn
         
@@ -370,17 +370,17 @@ Partial Public Class DS_EnrolledStudents
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property SectionIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SectionColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnSectionID
+                Return Me.columnSection
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property GradeLevel_IDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property GradeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnGradeLevel_ID
+                Return Me.columnGrade
             End Get
         End Property
         
@@ -445,9 +445,9 @@ Partial Public Class DS_EnrolledStudents
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDt_EnrolledStudentsRow(ByVal ID As String, ByVal EID As String, ByVal SchoolYear As String, ByVal LRN As Long, ByVal SectionID As String, ByVal GradeLevel_ID As String, ByVal Enrollment_Date As String, ByVal Status As String, ByVal Fullname As String) As Dt_EnrolledStudentsRow
+        Public Overloads Function AddDt_EnrolledStudentsRow(ByVal ID As String, ByVal EID As String, ByVal SchoolYear As String, ByVal LRN As Long, ByVal Section As String, ByVal Grade As String, ByVal Enrollment_Date As String, ByVal Status As String, ByVal Fullname As String) As Dt_EnrolledStudentsRow
             Dim rowDt_EnrolledStudentsRow As Dt_EnrolledStudentsRow = CType(Me.NewRow,Dt_EnrolledStudentsRow)
-            Dim columnValuesArray() As Object = New Object() {ID, EID, SchoolYear, LRN, SectionID, GradeLevel_ID, Enrollment_Date, Status, Fullname}
+            Dim columnValuesArray() As Object = New Object() {ID, EID, SchoolYear, LRN, Section, Grade, Enrollment_Date, Status, Fullname}
             rowDt_EnrolledStudentsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDt_EnrolledStudentsRow)
             Return rowDt_EnrolledStudentsRow
@@ -474,8 +474,8 @@ Partial Public Class DS_EnrolledStudents
             Me.columnEID = MyBase.Columns("EID")
             Me.columnSchoolYear = MyBase.Columns("SchoolYear")
             Me.columnLRN = MyBase.Columns("LRN")
-            Me.columnSectionID = MyBase.Columns("SectionID")
-            Me.columnGradeLevel_ID = MyBase.Columns("GradeLevel_ID")
+            Me.columnSection = MyBase.Columns("Section")
+            Me.columnGrade = MyBase.Columns("Grade")
             Me.columnEnrollment_Date = MyBase.Columns("Enrollment_Date")
             Me.columnStatus = MyBase.Columns("Status")
             Me.columnFullname = MyBase.Columns("Fullname")
@@ -492,10 +492,10 @@ Partial Public Class DS_EnrolledStudents
             MyBase.Columns.Add(Me.columnSchoolYear)
             Me.columnLRN = New Global.System.Data.DataColumn("LRN", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLRN)
-            Me.columnSectionID = New Global.System.Data.DataColumn("SectionID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSectionID)
-            Me.columnGradeLevel_ID = New Global.System.Data.DataColumn("GradeLevel_ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGradeLevel_ID)
+            Me.columnSection = New Global.System.Data.DataColumn("Section", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSection)
+            Me.columnGrade = New Global.System.Data.DataColumn("Grade", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGrade)
             Me.columnEnrollment_Date = New Global.System.Data.DataColumn("Enrollment_Date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEnrollment_Date)
             Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -708,31 +708,31 @@ Partial Public Class DS_EnrolledStudents
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property SectionID() As String
+        Public Property Section() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_EnrolledStudents.SectionIDColumn),String)
+                    Return CType(Me(Me.tableDt_EnrolledStudents.SectionColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'SectionID' in table 'Dt_EnrolledStudents' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Section' in table 'Dt_EnrolledStudents' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDt_EnrolledStudents.SectionIDColumn) = value
+                Me(Me.tableDt_EnrolledStudents.SectionColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property GradeLevel_ID() As String
+        Public Property Grade() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDt_EnrolledStudents.GradeLevel_IDColumn),String)
+                    Return CType(Me(Me.tableDt_EnrolledStudents.GradeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'GradeLevel_ID' in table 'Dt_EnrolledStudents' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Grade' in table 'Dt_EnrolledStudents' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDt_EnrolledStudents.GradeLevel_IDColumn) = value
+                Me(Me.tableDt_EnrolledStudents.GradeColumn) = value
             End Set
         End Property
         
@@ -831,26 +831,26 @@ Partial Public Class DS_EnrolledStudents
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsSectionIDNull() As Boolean
-            Return Me.IsNull(Me.tableDt_EnrolledStudents.SectionIDColumn)
+        Public Function IsSectionNull() As Boolean
+            Return Me.IsNull(Me.tableDt_EnrolledStudents.SectionColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetSectionIDNull()
-            Me(Me.tableDt_EnrolledStudents.SectionIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetSectionNull()
+            Me(Me.tableDt_EnrolledStudents.SectionColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsGradeLevel_IDNull() As Boolean
-            Return Me.IsNull(Me.tableDt_EnrolledStudents.GradeLevel_IDColumn)
+        Public Function IsGradeNull() As Boolean
+            Return Me.IsNull(Me.tableDt_EnrolledStudents.GradeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetGradeLevel_IDNull()
-            Me(Me.tableDt_EnrolledStudents.GradeLevel_IDColumn) = Global.System.Convert.DBNull
+        Public Sub SetGradeNull()
+            Me(Me.tableDt_EnrolledStudents.GradeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

@@ -48,7 +48,6 @@
         If IS_EMPTY(CmbAdviser) = True Then Return
 
         ClassSection.SectionRef()
-        Clear()
     End Sub
 
     Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtSectionName.KeyPress

@@ -5,25 +5,24 @@ Public Class FrmEnrollmentRegistration
     Public EnrollSubjID As Integer = 0
     Public Ave As String
     Public Rmrks As String
-    Public scheduleID As Integer = 0
     Public _subjectno, _title, _unit, _pre As String
     Public _id, _sub As String
     Private Sub FrmEnrollmentRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         GetSchoolYear(lblSY)
-        'LoadStudAutoComplet()
         LoadDepartment()
         LoadSection()
         Clear()
-        'LoadSub()
     End Sub
     Public Sub Clear()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN, txtStudName, Guna2TextBox1, Guna2TextBox2}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN, txtStudName}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
         txtSearch.Clear()
         CmbSection.SelectedIndex = -1
+        CmbDepartment.SelectedIndex = -1
+        CmbGradeLevel.SelectedIndex = -1
         EnrollmentID = 0
         EnrollSubjID = 0
         scheduleID = 0
@@ -83,43 +82,86 @@ Public Class FrmEnrollmentRegistration
         CmbSection.ValueMember = "ID"
         CmbSection.DisplayMember = "SectionRoom"
     End Sub
-    Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
-#Region "IS_EMPTY"
-        If IS_EMPTY(txtStudLRN) Then Return
-        If IS_EMPTY(txtStudName) Then Return
-        If IS_EMPTY(CmbDepartment) Then Return
-        If IS_EMPTY(CmbSection) Then Return
-        If IS_EMPTY(CmbGradeLevel) Then Return
-#End Region
-        ClassEnroll.EnrollmentRef()
-    End Sub
+    Public scheduleID As Integer = 0
 
-    Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSection.SelectedIndexChanged
-        Dim selectedSection As Integer
-        If CmbSection.SelectedItem IsNot Nothing AndAlso TypeOf CmbSection.SelectedItem Is DataRowView Then
-            selectedSection = Convert.ToInt32(DirectCast(CmbSection.SelectedItem, DataRowView).Row("ID"))
-        Else
-            'MessageBox.Show("Please select a valid section.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+
+    Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
+        If IS_EMPTY(txtStudLRN) OrElse IS_EMPTY(txtStudName) OrElse IS_EMPTY(CmbDepartment) OrElse IS_EMPTY(CmbSection) OrElse IS_EMPTY(CmbGradeLevel) Then
             Return
         End If
 
-        Query("SELECT a.ID, b.GradeLevel, c.Department, a.SectionRoom, CONCAT(d.Lastname, ' ', d.Firstname) AS Adviser
-                    FROM section a
-                    JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                    JOIN department c ON b.Department_ID = c.ID
-                    JOIN teacher d ON a.AdviserID = d.ID
-                    WHERE a.ID =" & selectedSection)
+        ClassEnroll.EnrollmentRef()
+    End Sub
 
-        Dim Dtable As DataTable = ds.Tables("QueryTb")
-        If Dtable.Rows.Count > 0 Then
-            ' Populate TextBoxes with the retrieved data
-            'Guna2TextBox2.Text = Dtable.Rows(0)("GradeLevel").ToString()
-            'Guna2TextBox1.Text = Dtable.Rows(0)("Department").ToString()
-        Else
-            ' Clear TextBoxes if no data is found
-            Clear()
+    Private Sub CmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbDepartment.SelectedIndexChanged
+        Dim selectedDepartmentID As Integer
+        If CmbDepartment.SelectedItem IsNot Nothing AndAlso TypeOf CmbDepartment.SelectedItem Is DataRowView Then
+            selectedDepartmentID = Convert.ToInt32(DirectCast(CmbDepartment.SelectedItem, DataRowView).Row("ID"))
+
+            Dim qry As String = $"SELECT ID, GradeLevel FROM gradelevel WHERE Department_ID = {selectedDepartmentID}"
+            Query(qry)
+
+            Dim gradeLevelTable As DataTable = ds.Tables("QueryTb")
+            If gradeLevelTable.Rows.Count > 0 Then
+                CmbGradeLevel.DataSource = gradeLevelTable
+                CmbGradeLevel.ValueMember = "ID"
+                CmbGradeLevel.DisplayMember = "GradeLevel"
+            Else
+                CmbGradeLevel.DataSource = Nothing
+                CmbGradeLevel.Items.Clear()
+                CmbGradeLevel.SelectedIndex = -1
+            End If
         End If
     End Sub
+    Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedIndexChanged
+        Dim selectedGradeLevelID As Integer
+        If CmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf CmbGradeLevel.SelectedItem Is DataRowView Then
+            selectedGradeLevelID = Convert.ToInt32(DirectCast(CmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
+        Else
+            'MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim qry As String = $"SELECT ID, SectionRoom FROM section WHERE GradeLevel_ID = {selectedGradeLevelID}"
+        Query(qry)
+
+        Dim sectionTable As DataTable = ds.Tables("QueryTb")
+        If sectionTable.Rows.Count > 0 Then
+            CmbSection.DataSource = sectionTable
+            CmbSection.ValueMember = "ID"
+            CmbSection.DisplayMember = "SectionRoom"
+        Else
+            CmbSection.DataSource = Nothing
+            CmbSection.Items.Clear()
+            CmbSection.SelectedIndex = -1
+        End If
+    End Sub
+    'Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSection.SelectedIndexChanged
+    '    Dim selectedSection As Integer
+    '    If CmbSection.SelectedItem IsNot Nothing AndAlso TypeOf CmbSection.SelectedItem Is DataRowView Then
+    '        selectedSection = Convert.ToInt32(DirectCast(CmbSection.SelectedItem, DataRowView).Row("ID"))
+    '    Else
+    '        'MessageBox.Show("Please select a valid section.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Return
+    '    End If
+
+    '    Query("SELECT a.ID, b.GradeLevel, c.Department, a.SectionRoom, CONCAT(d.Lastname, ' ', d.Firstname) AS Adviser
+    '                FROM section a
+    '                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+    '                JOIN department c ON b.Department_ID = c.ID
+    '                JOIN teacher d ON a.AdviserID = d.ID
+    '                WHERE a.ID =" & selectedSection)
+
+    '    Dim Dtable As DataTable = ds.Tables("QueryTb")
+    '    If Dtable.Rows.Count > 0 Then
+    '        ' Populate TextBoxes with the retrieved data
+    '        'Guna2TextBox2.Text = Dtable.Rows(0)("GradeLevel").ToString()
+    '        'Guna2TextBox1.Text = Dtable.Rows(0)("Department").ToString()
+    '    Else
+    '        Clear()
+    '    End If
+    'End Sub
 
 
 
@@ -147,18 +189,21 @@ Public Class FrmEnrollmentRegistration
         LoadSub()
     End Sub
 #End Region
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        If DgvSubjectList IsNot Nothing AndAlso DgvSubjectList.SelectedRows.Count > 0 Then
-            scheduleID = Convert.ToInt32(DgvSubjectList.SelectedRows(0).Cells(0).Value)
-            ClassEnroll.EnrollSubjRef()
-        End If
-    End Sub
 
-    Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
-        If DgvEnrolledSubjects IsNot Nothing AndAlso DgvEnrolledSubjects.SelectedRows.Count > 0 Then
-            EnrollSubjID = Convert.ToInt32(DgvEnrolledSubjects.SelectedRows(0).Cells(0).Value)
-            MsgBox(EnrollSubjID)
-            ClassEnroll.RemoveSubjRef()
-        End If
-    End Sub
+#Region "btnwithSelectionofSubject"
+    'Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+    '    If DgvSubjectList IsNot Nothing AndAlso DgvSubjectList.SelectedRows.Count > 0 Then
+    '        scheduleID = Convert.ToInt32(DgvSubjectList.SelectedRows(0).Cells(0).Value)
+    '        ClassEnroll.EnrollSubjRef()
+    '    End If
+    'End Sub
+
+    'Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
+    '    If DgvEnrolledSubjects IsNot Nothing AndAlso DgvEnrolledSubjects.SelectedRows.Count > 0 Then
+    '        EnrollSubjID = Convert.ToInt32(DgvEnrolledSubjects.SelectedRows(0).Cells(0).Value)
+    '        MsgBox(EnrollSubjID)
+    '        ClassEnroll.RemoveSubjRef()
+    '    End If
+    'End Sub
+#End Region
 End Class

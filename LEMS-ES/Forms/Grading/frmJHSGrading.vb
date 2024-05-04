@@ -14,7 +14,7 @@ Public Class FrmJHSGrading
                                         JOIN student c ON a.LRN = c.LRN
                                         JOIN enrollment d ON c.LRN = d.LRN
                                         JOIN schedule e ON a.ScheduleID = e.ID
-                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN subject f ON e.SubjectID = f.ID
                                         JOIN gradelevel g ON f.GradeLevel_ID = g.ID
                                         JOIN department h ON g.Department_ID = h.ID
                                   WHERE h.Department = 'Junior Highschool'")
@@ -26,7 +26,7 @@ Public Class FrmJHSGrading
                 FROM subject a
                 JOIN gradelevel b ON a.GradeLevel_ID = b.ID
                 JOIN department c ON b.Department_ID = c.ID
-                WHERE c.Department = 'Junior Highschool'")
+                WHERE c.Department = 'Junior High School'")
         CmbSubjCode.ComboBox.DataSource = ds.Tables("QueryTb")
         CmbSubjCode.ComboBox.ValueMember = "ID"
         CmbSubjCode.ComboBox.DisplayMember = "SubjectCode"
@@ -91,15 +91,15 @@ Public Class FrmJHSGrading
         Dim adp = New MySqlDataAdapter("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
                                         CONCAT(c.Lastname, ', ', c.Firstname) Fullname, e.SubjectCode as Code, 
                                         e.SubjectName as Subject, e.Units, a.FirstGrd as '1', a.SecondGrd as '2', a.ThirdGrd as '3', a.FourthGrd as '4',
-                                        a.Average, a.Remarks, f.GradeLevel as Grade, g.SectionRoom as Section, c.Gender, CONCAT(h.Lastname, ', ', h.Firstname) Teacher
+                                        a.Average, a.Remarks, g.GradeLevel as Grade, f.SectionRoom as Section, c.Gender, CONCAT(h.Lastname, ', ', h.Firstname) Teacher
                                         FROM enrolled_sched a
                                         JOIN schoolyear b ON a.SYID = b.ID
                                         JOIN student c ON a.LRN = c.LRN
                                         JOIN schedule d ON a.ScheduleID = d.ID
-                                        JOIN subject e ON d.Subj_ID = e.ID
-                                        JOIN gradelevel f ON d.GradeLevel_ID = f.ID
-                                        JOIN section g ON d.Sec_ID = g.ID
-                                        JOIN teacher h ON d.Teacher_ID = h.ID
+                                        JOIN subject e ON d.SubjectID = e.ID
+                                        JOIN section f ON d.SectionID = f.ID
+                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                                        JOIN teacher h ON d.TeacherID = h.ID
                                         WHERE c.LRN = '" & StudentLRN & "'", con)
 
         adp.Fill(dt)
@@ -130,7 +130,7 @@ Public Class FrmJHSGrading
                                         JOIN student c ON a.LRN = c.LRN
                                         JOIN enrollment d ON c.LRN = d.LRN
                                         JOIN schedule e ON a.ScheduleID = e.ID
-                                        JOIN subject f ON e.Subj_ID = f.ID
+                                        JOIN subject f ON e.SubjectID = f.ID
                                         JOIN gradelevel g ON f.GradeLevel_ID = g.ID
                                         JOIN department h ON g.Department_ID = h.ID
                                   WHERE f.ID = {selectedSubjectCodeID}"

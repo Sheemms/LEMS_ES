@@ -12,7 +12,7 @@
   <xs:element name="DS_RegForm" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_RegForm" msprop:Generator_UserDSName="DS_RegForm">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Dt_RegForm" msprop:Generator_TableClassName="Dt_RegFormDataTable" msprop:Generator_TableVarName="tableDt_RegForm" msprop:Generator_TablePropName="Dt_RegForm" msprop:Generator_RowDeletingName="Dt_RegFormRowDeleting" msprop:Generator_RowChangingName="Dt_RegFormRowChanging" msprop:Generator_RowEvHandlerName="Dt_RegFormRowChangeEventHandler" msprop:Generator_RowDeletedName="Dt_RegFormRowDeleted" msprop:Generator_UserTableName="Dt_RegForm" msprop:Generator_RowChangedName="Dt_RegFormRowChanged" msprop:Generator_RowEvArgName="Dt_RegFormRowChangeEvent" msprop:Generator_RowClassName="Dt_RegFormRow">
+        <xs:element name="Dt_RegForm" msprop:Generator_TableClassName="Dt_RegFormDataTable" msprop:Generator_TableVarName="tableDt_RegForm" msprop:Generator_RowChangedName="Dt_RegFormRowChanged" msprop:Generator_TablePropName="Dt_RegForm" msprop:Generator_RowDeletingName="Dt_RegFormRowDeleting" msprop:Generator_RowChangingName="Dt_RegFormRowChanging" msprop:Generator_RowEvHandlerName="Dt_RegFormRowChangeEventHandler" msprop:Generator_RowDeletedName="Dt_RegFormRowDeleted" msprop:Generator_RowClassName="Dt_RegFormRow" msprop:Generator_UserTableName="Dt_RegForm" msprop:Generator_RowEvArgName="Dt_RegFormRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SY" msprop:Generator_ColumnVarNameInTable="columnSY" msprop:Generator_ColumnPropNameInRow="SY" msprop:Generator_ColumnPropNameInTable="SYColumn" msprop:Generator_UserColumnName="SY" type="xs:string" minOccurs="0" />
@@ -29,6 +29,7 @@
               <xs:element name="Days" msprop:Generator_ColumnVarNameInTable="columnDays" msprop:Generator_ColumnPropNameInRow="Days" msprop:Generator_ColumnPropNameInTable="DaysColumn" msprop:Generator_UserColumnName="Days" type="xs:string" minOccurs="0" />
               <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:string" minOccurs="0" />
               <xs:element name="Teacher" msprop:Generator_ColumnVarNameInTable="columnTeacher" msprop:Generator_ColumnPropNameInRow="Teacher" msprop:Generator_ColumnPropNameInTable="TeacherColumn" msprop:Generator_UserColumnName="Teacher" type="xs:string" minOccurs="0" />
+              <xs:element name="Adviser" msprop:Generator_ColumnVarNameInTable="columnAdviser" msprop:Generator_ColumnPropNameInRow="Adviser" msprop:Generator_ColumnPropNameInTable="AdviserColumn" msprop:Generator_UserColumnName="Adviser" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

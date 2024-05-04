@@ -88,13 +88,12 @@ Public Class FrmSchedule
 
                 Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
 
-                Dim qry As String = $"SELECT a.ID, c.Department, b.GradeLevel, d.EmpID, CONCAT(d.Lastname, ' ', d.Firstname) Adviser
+                Query($"SELECT a.ID, c.Department, b.GradeLevel, d.EmpID, CONCAT(d.Lastname, ' ', d.Firstname) Adviser
                                     FROM section a
                                     JOIN gradelevel b ON a.GradeLevel_ID = b.ID
                                     JOIN department c ON b.Department_ID = c.ID
-                                    JOIN teacher d ON a.AdviserID = b.ID 
-                                    WHERE a.ID = {selectedSectionID}"
-                Query(qry)
+                                    JOIN teacher d ON a.AdviserID = d.ID 
+                                    WHERE a.ID = {selectedSectionID}")
 
                 If ds.Tables("QueryTb").Rows.Count > 0 Then
                     idSection = ds.Tables("QueryTb").Rows(0)("ID").ToString()

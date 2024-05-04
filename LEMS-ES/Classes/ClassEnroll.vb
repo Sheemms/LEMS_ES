@@ -27,10 +27,24 @@ Public Class ClassEnroll
             If FrmEnrollmentRegistration.EnrollmentID = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID) 
-                                VALUES (@EID, @SchoolYear, @LRN, @SectionID)", dynamicParams)
+                            VALUES (@EID, @SchoolYear, @LRN, @SectionID)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.txtStudName.Text
                     LogAction("Enrolled Student |" & name)
+
+                    ' Insert enrolled subjects into enrolled_sched
+                    For Each row As DataGridViewRow In FrmEnrollmentRegistration.DgvStudSubject.Rows
+                        Dim scheduleID As Integer = Convert.ToInt32(row.Cells("columnID").Value)
+                        Dim enrolledSubjectParams() As MySqlParameter = {
+                        New MySqlParameter("@SYID", dynamicParams(2).Value), ' Assuming school year ID is at index 2
+                        New MySqlParameter("@EID", dynamicParams(1).Value),  ' Assuming EID is at index 1
+                        New MySqlParameter("@LRN", dynamicParams(3).Value),  ' Assuming LRN is at index 3
+                        New MySqlParameter("@ScheduleID", scheduleID)
+                    }
+                        Command("INSERT INTO enrolled_sched(SYID, EID, LRN, ScheduleID) 
+                                VALUES (@SYID, @EID, @LRN, @ScheduleID)", enrolledSubjectParams)
+                    Next
+
                     FrmEnrollmentRegistration.Clear()
                 End If
             Else
@@ -40,7 +54,7 @@ Public Class ClassEnroll
                     FrmEnrollmentRegistration.Clear()
                 End If
             End If
-            frmEnrollment.Loadrecords()
+            FrmEnrollment.Loadrecords()
             FrmEnrollmentRegistration.Close()
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Student already enrolled.")
@@ -49,9 +63,10 @@ Public Class ClassEnroll
             MsgBox(ex.Message)
         End Try
     End Sub
+
 #End Region
 
-#Region "EnrollSubject"
+#Region "EnrollSubjectwithSelection"
 
     Public Shared Function EnrollSubjParameters() As MySqlParameter()
         Try
@@ -73,7 +88,6 @@ Public Class ClassEnroll
             Return Nothing
         End Try
     End Function
-
     Public Shared Sub EnrollSubjRef()
         Try
             Dim dynamicParams As MySqlParameter() = EnrollSubjParameters()

@@ -7,12 +7,13 @@
     End Sub
 
     Public Sub LoadRecords()
-        Query("SELECT a.ID, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, c.SectionRoom, d.GradeLevel, CONCAT(e.Start_Year, '-', e.End_Year) SchoolYear, 
+        Query("SELECT a.ID, a.EID, b.LRN, CONCAT(b.Lastname, ' ', b.Firstname, ' ', b.MiddleInitial) Fullname, c.SectionRoom, d.GradeLevel, 
+                CONCAT(e.Start_Year, '-', e.End_Year) SchoolYear, 
                 DATE_FORMAT(a.Enrollment_Date, '%Y-%m-%d') Enrollment_Date, a.Status
                 FROM enrollment a
                 JOIN student b ON a.LRN = b.LRN 
                 JOIN section c ON a.SectionID = c.ID
-                JOIN gradelevel d ON a.GradeLevel_ID = d.ID
+                JOIN gradelevel d ON c.GradeLevel_ID = d.ID
                 JOIN schoolyear e ON a.SchoolYear = e.ID
                 JOIN payment f ON b.LRN = f.LRN
                 WHERE a.Status = 'Enrolled'")
@@ -22,13 +23,13 @@
     Public Sub LoadTransactionHistory()
         Query("SELECT  a.ID, a.ORID, a.EID, b.LRN, 
                 CONCAT(b.Lastname, ', ', b.Firstname, ' ', b.MiddleInitial) Fullname,
-                d.GradeLevel as Grade, e.SectionRoom as Section,
+                e.GradeLevel as Grade, d.SectionRoom as Section,
                 a.Amount, a.ORDate as Date, c.Enrollment_Date, a.Terms
                 FROM payment a
                 JOIN student b ON a.LRN = b.LRN
                 JOIN enrollment c ON b.LRN = c.LRN
-                JOIN gradelevel d ON c.GradeLevel_ID = d.ID
-                JOIN section e ON c.SectionID = e.ID")
+                JOIN section d ON c.SectionID = d.ID
+                JOIN gradelevel e ON d.GradeLevel_ID = e.ID")
         DgvEnrolledStudent.AutoGenerateColumns = False
         DgvEnrolledStudent.DataSource = ds.Tables("QueryTb")
     End Sub

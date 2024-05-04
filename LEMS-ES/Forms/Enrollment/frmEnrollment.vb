@@ -54,43 +54,12 @@ Public Class FrmEnrollment
                 FrmEnrollmentRegistration.LabelEID.Text = .Cells(2).Value
                 FrmEnrollmentRegistration.txtStudLRN.Text = .Cells(3).Value
                 FrmEnrollmentRegistration.txtStudName.Text = .Cells(4).Value
-                FrmEnrollmentRegistration.TxtGradeLevel.Text = .Cells(5).Value
+                FrmEnrollmentRegistration.CmbGradeLevel.SelectedValue = .Cells(5).Value
                 FrmEnrollmentRegistration.CmbSection.SelectedValue = .Cells(6).Value
             End With
-            FrmEnrollmentRegistration.LoadSubjectEnrolled()
+            FrmEnrollmentRegistration.LoadSub()
             FrmEnrollmentRegistration.Show()
         End If
-        'If dgvEnrolled.SelectedRows.Count > 0 Then
-        '    Dim selectedRow As DataGridViewRow = dgvEnrolled.SelectedRows(0)
-        '    Dim enrollID As Integer = Convert.ToInt32(selectedRow.Cells("colID").Value)
-        '    Dim EID As String = selectedRow.Cells("Column1").Value.ToString
-
-        '    Dim studLRN As String = selectedRow.Cells("colLRN").Value.ToString()
-        '    Dim studFullname As String = selectedRow.Cells("colFullname").Value.ToString()
-        '    'Dim nameParts() As String = studFullname.Split(" "c)
-
-        '    'If nameParts.Length >= 1 Then
-        '    '    frmStudentsView.txtStudLname.Text = nameParts(0) ' Lastname
-        '    'End If
-        '    'If nameParts.Length >= 2 Then
-        '    '    frmStudentsView.txtStudFname.Text = nameParts(1) ' Firstname
-        '    'End If
-        '    'If nameParts.Length >= 3 Then
-        '    '    frmStudentsView.txtStudMname.Text = nameParts(2) ' Middle Initial
-        '    'End If
-
-        '    Dim studSection As String = selectedRow.Cells("colSection").Value.ToString()
-        '    Dim studGradelevel As String = selectedRow.Cells("colGradeLevel").Value.ToString()
-
-        '    FrmEnrollmentRegistration.EnrollmentID = enrollID
-        '    FrmEnrollmentRegistration.LabelEID.Text = EID
-        '    FrmEnrollmentRegistration.txtStudLRN.Text = studLRN
-        '    FrmEnrollmentRegistration.txtStudName.Text = studFullname
-        '    FrmEnrollmentRegistration.CmbSection.ValueMember = studSection
-        '    FrmEnrollmentRegistration.CmbGradeLevel.ValueMember = studGradelevel
-
-        '    FrmEnrollmentRegistration.Show()
-        'End If
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
@@ -130,20 +99,23 @@ Public Class FrmEnrollment
         ElseIf column = "colPrint" AndAlso e.RowIndex >= 0 Then
             Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells(0).Value.ToString()
             Dim dt = New DataTable("DS_RegForm")
-            Dim adp = New MySqlDataAdapter("SELECT  CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
-                                            CONCAT(c.Lastname, ', ', c.Firstname, ' ',c.MiddleInitial) Fullname, c.Gender, d.GradeLevel as Grade,
-                                            e.SectionRoom as Section, f.Classification as Type, i.SubjectCode as Code, i.SubjectName as Subject, j.Room, h.Days, CONCAT(h.Time_From,'-',h.Time_To) Time, CONCAT(k.Lastname, ', ', k.Firstname) Teacher
+            Dim adp = New MySqlDataAdapter("SELECT  CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN,
+                                            CONCAT(c.Lastname, ', ', c.Firstname, ' ',c.MiddleInitial) Fullname, c.Gender, e.GradeLevel as Grade,
+                                            d.SectionRoom as Section, f.Classification as Type, i.SubjectCode as Code, i.SubjectName as Subject, j.Room,
+                                            h.Days, CONCAT(h.Time_From,'-',h.Time_To) Time, CONCAT(k.Lastname, ', ', k.Firstname) Teacher, 
+                                            CONCAT(l.Lastname, ', ', l.Firstname) Adviser
                                             FROM enrollment a
                                             JOIN schoolyear b ON a.SchoolYear = b.ID
                                             JOIN student c ON a.LRN = c.LRN
-                                            JOIN gradelevel d ON a.GradeLevel_ID = d.ID
-                                            JOIN section e ON a.SectionID = e.ID
+                                            JOIN section d ON a.SectionID = d.ID
+                                            JOIN gradelevel e ON d.GradeLevel_ID = e.ID
                                             JOIN req_classification f ON c.StudType = f.ID
                                             JOIN enrolled_sched g ON c.LRN= g.LRN
                                             JOIN schedule h ON g.ScheduleID = h.ID
-                                            JOIN subject i ON h.Subj_ID = i.ID
+                                            JOIN subject i ON h.SubjectID = i.ID
                                             JOIN room j ON h.Room = j.ID
-                                            JOIN teacher k ON h.Teacher_ID = k.ID
+                                            JOIN teacher k ON h.TeacherID = k.ID
+                                            JOIN teacher l ON d.AdviserID = l.ID
                                             WHERE a.ID = " & enrollmentId, con)
             adp.Fill(dt)
 
