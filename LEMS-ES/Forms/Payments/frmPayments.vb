@@ -82,6 +82,10 @@
         If IS_EMPTY(cmbOtherFee) Then Return
         If IS_EMPTY(cmbModeofPayment) Then Return
 #End Region
+        If Not NoLeadingSpace(TxtCurPayment.Text.Trim()) Then
+            MsgBox("Current payment must have no leading spaces.")
+            Return
+        End If
         ClassPayments.PaymentsRef()
         Clear()
     End Sub

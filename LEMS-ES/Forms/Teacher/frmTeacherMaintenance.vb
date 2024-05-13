@@ -47,7 +47,16 @@
         If IS_EMPTY(txtContact) = True Then Return
         If IS_EMPTY(txtAddress) = True Then Return
 #End Region
-
+        If Not NoLeadingSpace(txtLastname.Text.Trim()) Then
+            MsgBox("Lastname must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtFirstname.Text.Trim()) Then
+            MsgBox("Firstname must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtAddress.Text.Trim()) Then
+            MsgBox("Address must have no leading spaces.")
+            Return
+        End If
         ClassTeacher.TeacherRef()
     End Sub
 

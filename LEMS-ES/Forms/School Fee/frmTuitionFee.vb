@@ -65,6 +65,10 @@
         If IS_EMPTY(cmbGradeLevel) Then Return
         If IS_EMPTY(txtAmountTuition) Then Return
 
+        If Not NoLeadingSpace(txtAmountTuition.Text.Trim()) Then
+            MsgBox("Amount must have no leading spaces.")
+            Return
+        End If
         ClassTuition.TuitionRef()
     End Sub
     Private Sub BtnClearTuitionFee_Click(sender As Object, e As EventArgs) Handles BtnClearTuition.Click, btnClearMiscellaneousFee.Click, btnClearOtherFee.Click
@@ -74,6 +78,10 @@
     Private Sub BtnSaveMiscellaneous_Click(sender As Object, e As EventArgs) Handles btnSaveMiscellaneous.Click
         If IS_EMPTY(txtAmountMiscellaneous) Then Return
 
+        If Not NoLeadingSpace(txtAmountMiscellaneous.Text.Trim()) Then
+            MsgBox("Amount must have no leading spaces.")
+            Return
+        End If
         ClassTuition.MiscellaneousRef()
     End Sub
 
@@ -81,6 +89,13 @@
         If IS_EMPTY(txtOtherFeeDesc) Then Return
         If IS_EMPTY(txtAmountOtherFee) Then Return
 
+        If Not NoLeadingSpace(txtAmountOtherFee.Text.Trim()) Then
+            MsgBox("Amount must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtOtherFeeDesc.Text.Trim()) Then
+            MsgBox("Description must have no leading space.")
+            Return
+        End If
         ClassTuition.OtherFeeRef()
     End Sub
     Private Sub DgvOtherFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvOtherFee.CellClick

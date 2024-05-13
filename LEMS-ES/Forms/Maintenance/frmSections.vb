@@ -47,6 +47,10 @@
         If IS_EMPTY(TxtSectionName) = True Then Return
         If IS_EMPTY(CmbAdviser) = True Then Return
 
+        If Not NoLeadingSpace(TxtSectionName.Text.Trim()) Then
+            MsgBox("Section must have no leading spaces.")
+            Return
+        End If
         ClassSection.SectionRef()
     End Sub
 

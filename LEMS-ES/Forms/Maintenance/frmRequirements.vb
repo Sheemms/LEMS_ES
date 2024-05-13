@@ -38,7 +38,7 @@
         If IS_EMPTY(cmbClassification) = True Then Return
         If IS_EMPTY(txtRequirements) = True Then Return
 
-        If Not SingleSpace(txtRequirements.Text.Trim()) Then
+        If Not NoLeadingSpace(txtRequirements.Text.Trim()) Then
             MsgBox("Requirement name must have no leading spaces.")
             Return
         End If

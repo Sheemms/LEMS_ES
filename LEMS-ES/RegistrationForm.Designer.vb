@@ -23,6 +23,8 @@ Partial Class RegistrationForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtContact = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRePassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtFullname = New Guna.UI2.WinForms.Guna2TextBox()
@@ -32,8 +34,6 @@ Partial Class RegistrationForm
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtContact = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,6 +56,36 @@ Partial Class RegistrationForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(268, 399)
         Me.Panel1.TabIndex = 4
+        '
+        'TxtContact
+        '
+        Me.TxtContact.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtContact.DefaultText = ""
+        Me.TxtContact.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtContact.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtContact.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtContact.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtContact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtContact.ForeColor = System.Drawing.Color.Black
+        Me.TxtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtContact.Location = New System.Drawing.Point(7, 301)
+        Me.TxtContact.MaxLength = 11
+        Me.TxtContact.Name = "TxtContact"
+        Me.TxtContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtContact.PlaceholderText = ""
+        Me.TxtContact.SelectedText = ""
+        Me.TxtContact.Size = New System.Drawing.Size(258, 39)
+        Me.TxtContact.TabIndex = 22
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(7, 283)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(78, 18)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Contact"
         '
         'txtRePassword
         '
@@ -187,35 +217,6 @@ Partial Class RegistrationForm
         Me.Label1.Size = New System.Drawing.Size(88, 18)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Username"
-        '
-        'TxtContact
-        '
-        Me.TxtContact.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtContact.DefaultText = ""
-        Me.TxtContact.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtContact.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtContact.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtContact.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtContact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtContact.ForeColor = System.Drawing.Color.Black
-        Me.TxtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtContact.Location = New System.Drawing.Point(7, 301)
-        Me.TxtContact.Name = "TxtContact"
-        Me.TxtContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtContact.PlaceholderText = ""
-        Me.TxtContact.SelectedText = ""
-        Me.TxtContact.Size = New System.Drawing.Size(258, 39)
-        Me.TxtContact.TabIndex = 22
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(7, 283)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 18)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Contact"
         '
         'RegistrationForm
         '

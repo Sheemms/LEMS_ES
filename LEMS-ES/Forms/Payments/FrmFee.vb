@@ -4,6 +4,10 @@
         GetSchoolYear(LabelSY)
     End Sub
     Private Sub BtnFees_Click(sender As Object, e As EventArgs) Handles BtnFees.Click
+        If Not NoLeadingSpace(TxtCurrentPayment.Text.Trim()) Then
+            MsgBox("Current payment must have no leading spaces.")
+            Return
+        End If
         ClassFees.FeesRef()
     End Sub
     Public Sub SubtractPayments(currentPayment As Decimal, totalPayment As Decimal)

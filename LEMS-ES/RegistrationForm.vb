@@ -1,6 +1,19 @@
 ﻿Public Class RegistrationForm
     Public idUserMaintenance As Integer = 0
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If IS_EMPTY(txtUsername) = True Then Return
+        If IS_EMPTY(txtPassword) = True Then Return
+        If IS_EMPTY(txtFullname) = True Then Return
+        If IS_EMPTY(TxtContact) = True Then Return
+
+        If Not NoLeadingSpace(txtUsername.Text.Trim()) Then
+            MsgBox("Username must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtFullname.Text.Trim()) Then
+            MsgBox("Fullname must have no leading spaces.")
+            Return
+        End If
+
         ClassUserMaintenance.UserAdminRef()
         Login.Show()
         Me.Close()

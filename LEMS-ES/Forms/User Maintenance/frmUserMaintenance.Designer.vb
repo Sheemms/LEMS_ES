@@ -22,13 +22,21 @@ Partial Class FrmUserMaintenance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvUser = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtContact = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtRePassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnDeactivate = New Guna.UI2.WinForms.Guna2Button()
@@ -43,12 +51,6 @@ Partial Class FrmUserMaintenance
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,28 +87,28 @@ Partial Class FrmUserMaintenance
         '
         Me.dgvUser.AllowUserToAddRows = False
         Me.dgvUser.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.dgvUser.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgvUser.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvUser.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvUser.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvUser.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvUser.ColumnHeadersHeight = 44
         Me.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvUser.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvUser.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvUser.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvUser.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvUser.Location = New System.Drawing.Point(0, 0)
@@ -137,8 +139,57 @@ Partial Class FrmUserMaintenance
         Me.dgvUser.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvUser.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Username"
+        Me.Column2.HeaderText = "Username"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.DataPropertyName = "Password"
+        Me.Column3.HeaderText = "Password"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Visible = False
+        Me.Column3.Width = 90
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "Fullname"
+        Me.Column4.HeaderText = "Fullname"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "UserLevel"
+        Me.Column5.HeaderText = "User Level"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "Status"
+        Me.Column6.HeaderText = "Status"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.TxtContact)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtRePassword)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnDeactivate)
@@ -158,6 +209,36 @@ Partial Class FrmUserMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(230, 525)
         Me.Panel1.TabIndex = 3
+        '
+        'TxtContact
+        '
+        Me.TxtContact.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtContact.DefaultText = ""
+        Me.TxtContact.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtContact.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtContact.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtContact.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtContact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtContact.ForeColor = System.Drawing.Color.Black
+        Me.TxtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtContact.Location = New System.Drawing.Point(5, 280)
+        Me.TxtContact.MaxLength = 11
+        Me.TxtContact.Name = "TxtContact"
+        Me.TxtContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtContact.PlaceholderText = ""
+        Me.TxtContact.SelectedText = ""
+        Me.TxtContact.Size = New System.Drawing.Size(221, 36)
+        Me.TxtContact.TabIndex = 22
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 261)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(51, 16)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "Contact"
         '
         'txtRePassword
         '
@@ -197,7 +278,7 @@ Partial Class FrmUserMaintenance
         Me.btnDeactivate.FillColor = System.Drawing.Color.Red
         Me.btnDeactivate.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeactivate.ForeColor = System.Drawing.Color.White
-        Me.btnDeactivate.Location = New System.Drawing.Point(5, 416)
+        Me.btnDeactivate.Location = New System.Drawing.Point(5, 464)
         Me.btnDeactivate.Name = "btnDeactivate"
         Me.btnDeactivate.Size = New System.Drawing.Size(221, 36)
         Me.btnDeactivate.TabIndex = 18
@@ -215,7 +296,7 @@ Partial Class FrmUserMaintenance
         Me.cmbUserLevel.ForeColor = System.Drawing.Color.Black
         Me.cmbUserLevel.ItemHeight = 30
         Me.cmbUserLevel.Items.AddRange(New Object() {"Office Staff", "Instructor"})
-        Me.cmbUserLevel.Location = New System.Drawing.Point(5, 290)
+        Me.cmbUserLevel.Location = New System.Drawing.Point(5, 338)
         Me.cmbUserLevel.Name = "cmbUserLevel"
         Me.cmbUserLevel.Size = New System.Drawing.Size(221, 36)
         Me.cmbUserLevel.TabIndex = 16
@@ -223,7 +304,7 @@ Partial Class FrmUserMaintenance
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 271)
+        Me.Label4.Location = New System.Drawing.Point(5, 319)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 16)
         Me.Label4.TabIndex = 15
@@ -296,7 +377,7 @@ Partial Class FrmUserMaintenance
         Me.btnClearUserMaintenance.FillColor = System.Drawing.Color.Gray
         Me.btnClearUserMaintenance.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearUserMaintenance.ForeColor = System.Drawing.Color.White
-        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(5, 374)
+        Me.btnClearUserMaintenance.Location = New System.Drawing.Point(5, 422)
         Me.btnClearUserMaintenance.Name = "btnClearUserMaintenance"
         Me.btnClearUserMaintenance.Size = New System.Drawing.Size(221, 36)
         Me.btnClearUserMaintenance.TabIndex = 9
@@ -311,7 +392,7 @@ Partial Class FrmUserMaintenance
         Me.btnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(5, 332)
+        Me.btnSave.Location = New System.Drawing.Point(5, 380)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(221, 36)
         Me.btnSave.TabIndex = 8
@@ -354,53 +435,6 @@ Partial Class FrmUserMaintenance
         Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Username"
-        Me.Column2.HeaderText = "Username"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "Password"
-        Me.Column3.HeaderText = "Password"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Visible = False
-        Me.Column3.Width = 90
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "Fullname"
-        Me.Column4.HeaderText = "Fullname"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "UserLevel"
-        Me.Column5.HeaderText = "User Level"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "Status"
-        Me.Column6.HeaderText = "Status"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
         '
         'FrmUserMaintenance
         '
@@ -445,4 +479,6 @@ Partial Class FrmUserMaintenance
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents TxtContact As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label6 As Label
 End Class
