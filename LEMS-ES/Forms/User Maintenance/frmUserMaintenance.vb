@@ -35,13 +35,27 @@
         End Try
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-#Region "IS_EMPTY"
-        If IS_EMPTY(txtUsername) = True Then Return
-        If IS_EMPTY(txtPassword) = True Then Return
-        If IS_EMPTY(txtFullname) = True Then Return
-        If IS_EMPTY(TxtContact) = True Then Return
-        If IS_EMPTY(cmbUserLevel) = True Then Return
-
+#Region "IsEmptyField"
+        If Not IsEmptyField(txtUsername.Text.Trim()) Then
+            MsgBox("Please enter a username.")
+            Return
+        End If
+        If Not IsEmptyField(txtPassword.Text.Trim()) Then
+            MsgBox("Please enter a password.")
+            Return
+        End If
+        If Not IsEmptyField(txtFullname.Text.Trim()) Then
+            MsgBox("Please enter a fullname.")
+            Return
+        End If
+        If Not IsEmptyField(TxtContact.Text.Trim()) Then
+            MsgBox("Please enter a contact.")
+            Return
+        End If
+        If Not IsEmptyField(cmbUserLevel.Text.Trim()) Then
+            MsgBox("Please select a user level.")
+            Return
+        End If
         If txtPassword.Text <> txtRePassword.Text Then
             Critical("Password not match.")
             Return

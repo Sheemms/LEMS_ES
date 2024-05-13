@@ -43,9 +43,19 @@
         End Try
     End Sub
     Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click, BtnUpdate.Click
-        If IS_EMPTY(CmbGradeLevel) = True Then Return
-        If IS_EMPTY(TxtSectionName) = True Then Return
-        If IS_EMPTY(CmbAdviser) = True Then Return
+        If Not IsEmptyField(CmbGradeLevel.Text.Trim()) Then
+            MsgBox("Please select a grade level.")
+            Return
+        End If
+
+        If Not IsEmptyField(TxtSectionName.Text.Trim()) Then
+            MsgBox("Please enter a section name.")
+            Return
+        End If
+        If Not IsEmptyField(CmbAdviser.Text.Trim()) Then
+            MsgBox("Please select a Adviser name.")
+            Return
+        End If
 
         If Not NoLeadingSpace(TxtSectionName.Text.Trim()) Then
             MsgBox("Section must have no leading spaces.")

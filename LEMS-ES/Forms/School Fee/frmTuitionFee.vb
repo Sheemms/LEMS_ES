@@ -62,8 +62,14 @@
         btnSaveTuitionFee.Enabled = False
     End Sub
     Private Sub BtnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click, BtnUpdateTuition.Click
-        If IS_EMPTY(cmbGradeLevel) Then Return
-        If IS_EMPTY(txtAmountTuition) Then Return
+        If Not IsEmptyField(cmbGradeLevel.Text.Trim()) Then
+            MsgBox("Please select a grade level.")
+            Return
+        End If
+        If Not IsEmptyField(txtAmountTuition.Text.Trim()) Then
+            MsgBox("Please enter the amount.")
+            Return
+        End If
 
         If Not NoLeadingSpace(txtAmountTuition.Text.Trim()) Then
             MsgBox("Amount must have no leading spaces.")
@@ -76,7 +82,10 @@
     End Sub
 
     Private Sub BtnSaveMiscellaneous_Click(sender As Object, e As EventArgs) Handles btnSaveMiscellaneous.Click
-        If IS_EMPTY(txtAmountMiscellaneous) Then Return
+        If Not IsEmptyField(txtAmountMiscellaneous.Text.Trim()) Then
+            MsgBox("Please enter the amount.")
+            Return
+        End If
 
         If Not NoLeadingSpace(txtAmountMiscellaneous.Text.Trim()) Then
             MsgBox("Amount must have no leading spaces.")
@@ -86,8 +95,14 @@
     End Sub
 
     Private Sub BtnSaveOtherFee_Click(sender As Object, e As EventArgs) Handles btnSaveOtherFee.Click, BtnUpdateOtherFee.Click
-        If IS_EMPTY(txtOtherFeeDesc) Then Return
-        If IS_EMPTY(txtAmountOtherFee) Then Return
+        If Not IsEmptyField(txtOtherFeeDesc.Text.Trim()) Then
+            MsgBox("Please enter a description.")
+            Return
+        End If
+        If Not IsEmptyField(txtAmountOtherFee.Text.Trim()) Then
+            MsgBox("Please enter the amount.")
+            Return
+        End If
 
         If Not NoLeadingSpace(txtAmountOtherFee.Text.Trim()) Then
             MsgBox("Amount must have no leading spaces.")

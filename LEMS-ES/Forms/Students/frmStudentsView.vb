@@ -105,18 +105,43 @@ Public Class FrmStudentsView
         End If
     End Function
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-#Region "IS_EMPTY"
-        If IS_EMPTY(txtStudNum) Then Return
-        If IS_EMPTY(cmbStudType) Then Return
-        If IS_EMPTY(txtStudLname) Then Return
-        If IS_EMPTY(txtStudFname) Then Return
-        If IS_EMPTY(txtStudMI) Then Return
-        If IS_EMPTY(cmbStudSuffix) Then Return
-        If IS_EMPTY(txtAddress) Then Return
-        If IS_EMPTY(txtStudAge) Then Return
-        If IS_EMPTY(txtGuardianName) Then Return
-        If IS_EMPTY(txtGuardianRelation) Then Return
-        If IS_EMPTY(txtGuardianContact) Then Return
+#Region "IsEmptyField"
+        If Not IsEmptyField(txtStudNum.Text.Trim()) Then
+            MsgBox("Please enter a student LRN.")
+            Return
+        End If
+        If Not IsEmptyField(cmbStudType.Text.Trim()) Then
+            MsgBox("Please select a classification.")
+            Return
+        End If
+        If Not IsEmptyField(txtStudLname.Text.Trim()) Then
+            MsgBox("Please enter a student lastname.")
+            Return
+        End If
+        If Not IsEmptyField(txtStudFname.Text.Trim()) Then
+            MsgBox("Please enter a student firstname.")
+            Return
+        End If
+        If Not IsEmptyField(cmbStudSuffix.Text.Trim()) Then
+            MsgBox("Please select a student suffix.")
+            Return
+        End If
+        If Not IsEmptyField(txtAddress.Text.Trim()) Then
+            MsgBox("Please enter a Address.")
+            Return
+        End If
+        If Not IsEmptyField(txtGuardianName.Text.Trim()) Then
+            MsgBox("Please enter a guardian name.")
+            Return
+        End If
+        If Not IsEmptyField(txtGuardianContact.Text.Trim()) Then
+            MsgBox("Please enter a guardian contact.")
+            Return
+        End If
+        If Not IsEmptyField(txtGuardianRelation.Text.Trim()) Then
+            MsgBox("Please enter a guardian relation.")
+            Return
+        End If
 #End Region
 
 
@@ -128,6 +153,12 @@ Public Class FrmStudentsView
             Return
         ElseIf Not NoLeadingSpace(txtAddress.Text.Trim()) Then
             MsgBox("Address must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtGuardianName.Text.Trim()) Then
+            MsgBox("Guardian name must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtGuardianRelation.Text.Trim()) Then
+            MsgBox("Guardian relation must have no leading spaces.")
             Return
         End If
         ClassStudents.StudRef()

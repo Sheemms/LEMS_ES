@@ -4,6 +4,11 @@
         GetSchoolYear(LabelSY)
     End Sub
     Private Sub BtnFees_Click(sender As Object, e As EventArgs) Handles BtnFees.Click
+        If Not IsEmptyField(TxtCurrentPayment.Text.Trim()) Then
+            MsgBox("Please enter the pay amount.")
+            Return
+        End If
+
         If Not NoLeadingSpace(TxtCurrentPayment.Text.Trim()) Then
             MsgBox("Current payment must have no leading spaces.")
             Return

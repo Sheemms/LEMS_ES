@@ -72,15 +72,39 @@
         End If
     End Sub
     Private Sub BtnPayments_Click(sender As Object, e As EventArgs) Handles BtnPayments.Click
-#Region "IS_EMPTY"
-        If IS_EMPTY(txtLRN) Then Return
-        If IS_EMPTY(txtStudName) Then Return
-        If IS_EMPTY(txtGradeLvl) Then Return
-        If IS_EMPTY(txtSection) Then Return
-        If IS_EMPTY(txtTuition) Then Return
-        If IS_EMPTY(txtMiscellaneous) Then Return
-        If IS_EMPTY(cmbOtherFee) Then Return
-        If IS_EMPTY(cmbModeofPayment) Then Return
+#Region "IsEmptyField"
+        If Not IsEmptyField(txtLRN.Text.Trim()) Then
+            MsgBox("Please enter a student LRN.")
+            Return
+        End If
+        If Not IsEmptyField(txtStudName.Text.Trim()) Then
+            MsgBox("Please enter a student name.")
+            Return
+        End If
+        If Not IsEmptyField(txtGradeLvl.Text.Trim()) Then
+            MsgBox("Please enter a grade level.")
+            Return
+        End If
+        If Not IsEmptyField(txtSection.Text.Trim()) Then
+            MsgBox("Please enter a section.")
+            Return
+        End If
+        If Not IsEmptyField(txtTuition.Text.Trim()) Then
+            MsgBox("Please enter a Tuition.")
+            Return
+        End If
+        If Not IsEmptyField(txtMiscellaneous.Text.Trim()) Then
+            MsgBox("Please enter a miscellaneous.")
+            Return
+        End If
+        If Not IsEmptyField(cmbOtherFee.Text.Trim()) Then
+            MsgBox("Please select a other fee.")
+            Return
+        End If
+        If Not IsEmptyField(cmbModeofPayment.Text.Trim()) Then
+            MsgBox("Please select a mode of payment.")
+            Return
+        End If
 #End Region
         If Not NoLeadingSpace(TxtCurPayment.Text.Trim()) Then
             MsgBox("Current payment must have no leading spaces.")

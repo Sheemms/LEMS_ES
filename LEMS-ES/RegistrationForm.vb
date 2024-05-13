@@ -1,11 +1,29 @@
 ﻿Public Class RegistrationForm
     Public idUserMaintenance As Integer = 0
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If IS_EMPTY(txtUsername) = True Then Return
-        If IS_EMPTY(txtPassword) = True Then Return
-        If IS_EMPTY(txtFullname) = True Then Return
-        If IS_EMPTY(TxtContact) = True Then Return
+#Region "IsEmptyField"
+        If Not IsEmptyField(txtUsername.Text.Trim()) Then
+            MsgBox("Please enter a username.")
+            Return
+        End If
+        If Not IsEmptyField(txtPassword.Text.Trim()) Then
+            MsgBox("Please enter a password.")
+            Return
+        End If
+        If Not IsEmptyField(txtFullname.Text.Trim()) Then
+            MsgBox("Please enter a fullname.")
+            Return
+        End If
+        If Not IsEmptyField(TxtContact.Text.Trim()) Then
+            MsgBox("Please enter a contact.")
+            Return
+        End If
 
+        If txtPassword.Text <> txtRePassword.Text Then
+            Critical("Password not match.")
+            Return
+        End If
+#End Region
         If Not NoLeadingSpace(txtUsername.Text.Trim()) Then
             MsgBox("Username must have no leading spaces.")
             Return

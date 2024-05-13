@@ -16,7 +16,11 @@ Public Class FrmSY
     End Sub
 
     Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles BtnSave.Click, BtnUpdate.Click
-        If IS_EMPTY(TxtEndYear) = True Then Return
+        If Not IsEmptyField(TxtEndYear.Text.Trim()) Then
+            MsgBox("Please enter the end year.")
+            Return
+        End If
+
         Dim endYear As Integer
         If Not Integer.TryParse(TxtEndYear.Text, endYear) Then
             MsgBox("Invalid end year.")

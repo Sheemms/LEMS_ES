@@ -199,11 +199,28 @@ Public Class FrmSchedule
 #End Region
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If IS_EMPTY(CmbSection) Then Return
-        If IS_EMPTY(CmbRoom) Then Return
-        If IS_EMPTY(CmbSubjectCode) Then Return
-        If IS_EMPTY(txtTeacherID) Then Return
-        If IS_EMPTY(txtTeacherName) Then Return
+#Region "IsEmptyField"
+        If Not IsEmptyField(CmbSection.Text.Trim()) Then
+            MsgBox("Please select a section.")
+            Return
+        End If
+        If Not IsEmptyField(CmbRoom.Text.Trim()) Then
+            MsgBox("Please select a room.")
+            Return
+        End If
+        If Not IsEmptyField(CmbSubjectCode.Text.Trim()) Then
+            MsgBox("Please select a subject code.")
+            Return
+        End If
+        If Not IsEmptyField(txtTeacherID.Text.Trim()) Then
+            MsgBox("Please enter a teacher id.")
+            Return
+        End If
+        If Not IsEmptyField(TxtTeacherName.Text.Trim()) Then
+            MsgBox("Please enter a teacher name.")
+            Return
+        End If
+#End Region
         If Not IsValidTime(txtstartTime.Text) Then
             MsgBox("Invalid start time format")
             Exit Sub

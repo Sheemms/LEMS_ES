@@ -38,14 +38,31 @@
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-#Region "IS_EMPTY"
-        If IS_EMPTY(txtEmpID) = True Then Return
-        If IS_EMPTY(cmbDept) = True Then Return
-        If IS_EMPTY(txtLastname) = True Then Return
-        If IS_EMPTY(txtFirstname) = True Then Return
-        If IS_EMPTY(txtMiddleInitial) = True Then Return
-        If IS_EMPTY(txtContact) = True Then Return
-        If IS_EMPTY(txtAddress) = True Then Return
+#Region "IsEmptyField"
+        If Not IsEmptyField(txtEmpID.Text.Trim()) Then
+            MsgBox("Please enter a employee id.")
+            Return
+        End If
+        If Not IsEmptyField(cmbDept.Text.Trim()) Then
+            MsgBox("Please select a department.")
+            Return
+        End If
+        If Not IsEmptyField(txtLastname.Text.Trim()) Then
+            MsgBox("Please enter a lastname.")
+            Return
+        End If
+        If Not IsEmptyField(txtFirstname.Text.Trim()) Then
+            MsgBox("Please enter a firstname.")
+            Return
+        End If
+        If Not IsEmptyField(txtContact.Text.Trim()) Then
+            MsgBox("Please enter a contact.")
+            Return
+        End If
+        If Not IsEmptyField(txtAddress.Text.Trim()) Then
+            MsgBox("Please enter a address.")
+            Return
+        End If
 #End Region
         If Not NoLeadingSpace(txtLastname.Text.Trim()) Then
             MsgBox("Lastname must have no leading spaces.")

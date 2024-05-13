@@ -35,8 +35,15 @@
         End Try
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If IS_EMPTY(cmbClassification) = True Then Return
-        If IS_EMPTY(txtRequirements) = True Then Return
+        If Not IsEmptyField(cmbClassification.Text.Trim()) Then
+            MsgBox("Please select a classification.")
+            Return
+        End If
+
+        If Not IsEmptyField(txtRequirements.Text.Trim()) Then
+            MsgBox("Please enter a requirement name.")
+            Return
+        End If
 
         If Not NoLeadingSpace(txtRequirements.Text.Trim()) Then
             MsgBox("Requirement name must have no leading spaces.")

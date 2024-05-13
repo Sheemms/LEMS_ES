@@ -13,7 +13,10 @@
         idDept = 0
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click, BtnUpdate.Click
-        If IS_EMPTY(TxtDeptName) Then Return
+        If Not IsEmptyField(TxtDeptName.Text.Trim()) Then
+            MsgBox("Please enter a department name.")
+            Return
+        End If
 
         If Not NoLeadingSpace(TxtDeptName.Text.Trim()) Then
             MsgBox("Department name must have no leading spaces.")

@@ -41,10 +41,23 @@
         End Try
     End Sub
     Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        If IS_EMPTY(CmbGradeLevel) = True Then Return
-        If IS_EMPTY(txtSubjCode) = True Then Return
-        If IS_EMPTY(txtSubjName) = True Then Return
-        If IS_EMPTY(txtUnit) = True Then Return
+        If Not IsEmptyField(CmbGradeLevel.Text.Trim()) Then
+            MsgBox("Please select a grade level.")
+            Return
+        End If
+
+        If Not IsEmptyField(txtSubjCode.Text.Trim()) Then
+            MsgBox("Please enter a subject code.")
+            Return
+        End If
+        If Not IsEmptyField(txtSubjName.Text.Trim()) Then
+            MsgBox("Please enter a subject name.")
+            Return
+        End If
+        If Not IsEmptyField(txtUnit.Text.Trim()) Then
+            MsgBox("Please enter the unit for the subject.")
+            Return
+        End If
 
         If Not NoLeadingSpace(txtSubjName.Text.Trim()) Then
             MsgBox("Subject name must have no leading spaces.")

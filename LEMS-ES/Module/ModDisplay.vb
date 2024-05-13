@@ -13,6 +13,10 @@ Module ModDisplay
             IS_EMPTY = False
         End If
     End Function
+    Public Function IsEmptyField(input As String) As Boolean
+        Dim regex As New Regex("^.+$")
+        Return regex.IsMatch(input)
+    End Function
 
     Public Sub ClearFields(ByVal form As Form, ByRef id As Integer)
         For Each ctrl As Control In form.Controls
