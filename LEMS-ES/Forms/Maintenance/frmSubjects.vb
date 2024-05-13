@@ -46,16 +46,29 @@
         If IS_EMPTY(txtSubjName) = True Then Return
         If IS_EMPTY(txtUnit) = True Then Return
 
-        'ContainsOnlyLetters(txtSubjName.Text)
+        If Not NoLeadingSpace(txtSubjName.Text.Trim()) Then
+            MsgBox("Subject name must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtSubjCode.Text.Trim()) Then
+            MsgBox("Subject code must have no leading spaces.")
+            Return
+        End If
         ClassSubject.SubjectRef()
-        Clear()
     End Sub
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         ClassSubject.DeleteRef()
         Clear()
     End Sub
-
-    Private Sub TxtUnit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress
-        TextBoxDigitsOnly(txtUnit)
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjName.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnit.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 End Class

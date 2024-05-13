@@ -36,8 +36,11 @@
         If IS_EMPTY(cmbDept) = True Then Return
         If IS_EMPTY(txtAddGradeLevel) = True Then Return
 
+        If Not NoLeadingSpace(txtAddGradeLevel.Text.Trim()) Then
+            MsgBox("Grade Level must have no leading spaces.")
+            Return
+        End If
         ClassGradeLevel.GradeLevelRef()
-        Clear()
     End Sub
 
     Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAddGradeLevel.KeyPress

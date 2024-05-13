@@ -33,7 +33,25 @@
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If IS_EMPTY(TxtRoom) = True Then Return
 
+        If Not NoLeadingSpace(TxtRoom.Text.Trim()) Then
+            MsgBox("Room name must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(TxtCapacity.Text.Trim()) Then
+            MsgBox("Capacity must have no leading spaces.")
+        End If
         ClassRoom.RoomRef()
         Clear()
+    End Sub
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCapacity.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtRoom.KeyPress
+        If Not IsValidLettersDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 End Class

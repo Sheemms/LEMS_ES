@@ -9,9 +9,10 @@ Public Class FrmStudents
         frmStudentsView.Show()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) Fullname, Suffix, Gender, Age, Birthday, Address, 
-                MotherName, MothersMaiden, Mother_Occupation, FatherName, Father_Occupation, GuardianName, GuardianContact, Citizenship
-                FROM student")
+        Query("SELECT a.ID, b.Classification, a.LRN, CONCAT(a.Lastname, ' ', a.Firstname, ' ', a.MiddleInitial) Fullname, a.Suffix, a.Gender, a.Age, a.Birthday, a.Address, 
+                a.MotherName, a.MothersMaiden, a.Mother_Occupation, a.FatherName, a.Father_Occupation, a.GuardianName, a.GuardianContact, a.Citizenship
+                FROM student a
+                JOIN req_classification b ON a.StudType = b.ID")
         dgvStudents.AutoGenerateColumns = False
         dgvStudents.DataSource = ds.Tables("QueryTb")
     End Sub

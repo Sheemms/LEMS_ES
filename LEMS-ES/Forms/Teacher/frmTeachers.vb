@@ -22,7 +22,6 @@
             End With
             FrmTeacherMaintenance.LoadTeacherData()
             FrmTeacherMaintenance.Show()
-            FrmTeacherMaintenance.btnSave.Enabled = false
         End If
     End Sub
 End Class

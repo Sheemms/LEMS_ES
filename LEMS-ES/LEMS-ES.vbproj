@@ -272,6 +272,18 @@
     <Compile Include="Forms\Grading\FrmGradeReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Enrollment\SearchStudent.Designer.vb">
+      <DependentUpon>SearchStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enrollment\SearchStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Schedule\SearchSection.Designer.vb">
+      <DependentUpon>SearchSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Schedule\SearchSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RegistrationForm.Designer.vb">
       <DependentUpon>RegistrationForm.vb</DependentUpon>
     </Compile>
@@ -351,10 +363,10 @@
     <Compile Include="Forms\Maintenance\frmMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmReports.Designer.vb">
-      <DependentUpon>frmReports.vb</DependentUpon>
+    <Compile Include="Forms\FrmReports.Designer.vb">
+      <DependentUpon>FrmReports.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmReports.vb">
+    <Compile Include="Forms\FrmReports.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Maintenance\frmRequirements.Designer.vb">
@@ -526,6 +538,12 @@
     <EmbeddedResource Include="Forms\Grading\FrmGradeReport.resx">
       <DependentUpon>FrmGradeReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Enrollment\SearchStudent.resx">
+      <DependentUpon>SearchStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Schedule\SearchSection.resx">
+      <DependentUpon>SearchSection.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -565,8 +583,8 @@
     <EmbeddedResource Include="Forms\Maintenance\frmMaintenance.resx">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmReports.resx">
-      <DependentUpon>frmReports.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmReports.resx">
+      <DependentUpon>FrmReports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\frmRequirements.resx">
       <DependentUpon>frmRequirements.vb</DependentUpon>

@@ -37,7 +37,7 @@ Public Class FrmStudentsView
                     RbFemale.Checked = False
                 End If
                 txtStudAge.Text = .Item(8)
-                dtpBday.Value = .Item(9).ToString
+                DtpBday.Value = .Item(9).ToString
                 txtAddress.Text = .Item(10)
                 txtMother.Text = .Item(11)
                 txtMotherMaidenName.Text = .Item(12)
@@ -114,8 +114,22 @@ Public Class FrmStudentsView
         If IS_EMPTY(cmbStudSuffix) Then Return
         If IS_EMPTY(txtAddress) Then Return
         If IS_EMPTY(txtStudAge) Then Return
+        If IS_EMPTY(txtGuardianName) Then Return
+        If IS_EMPTY(txtGuardianRelation) Then Return
+        If IS_EMPTY(txtGuardianContact) Then Return
 #End Region
 
+
+        If Not NoLeadingSpace(txtStudLname.Text.Trim()) Then
+            MsgBox("Student last name must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtStudFname.Text.Trim()) Then
+            MsgBox("Student first name must have no leading spaces.")
+            Return
+        ElseIf Not NoLeadingSpace(txtAddress.Text.Trim()) Then
+            MsgBox("Address must have no leading spaces.")
+            Return
+        End If
         ClassStudents.StudRef()
     End Sub
 
@@ -123,7 +137,7 @@ Public Class FrmStudentsView
         ClassStudents.StudUpdate()
     End Sub
     Private Sub CalculateAge()
-        Dim birthdate As Date = dtpBday.Value.Date
+        Dim birthdate As Date = DtpBday.Value.Date
         Dim currentDate As Date = Date.Today
         Dim age As Integer = currentDate.Year - birthdate.Year
         If (birthdate.Month > currentDate.Month) OrElse (birthdate.Month = currentDate.Month AndAlso birthdate.Day > currentDate.Day) Then
@@ -133,7 +147,7 @@ Public Class FrmStudentsView
         txtStudAge.Text = age.ToString()
     End Sub
 
-    Private Sub DtpBday_ValueChanged(sender As Object, e As EventArgs) Handles dtpBday.ValueChanged
+    Private Sub DtpBday_ValueChanged(sender As Object, e As EventArgs) Handles DtpBday.ValueChanged
         CalculateAge()
     End Sub
     Private Sub CmbStudType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStudType.SelectedIndexChanged
@@ -142,13 +156,13 @@ Public Class FrmStudentsView
         End If
     End Sub
 
-    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudNum.KeyPress
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudNum.KeyPress, txtGuardianContact.KeyPress
         If Not IsValidDigits(e.KeyChar) Then
             e.Handled = True
             Exit Sub
         End If
     End Sub
-    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudLname.KeyPress, txtStudFname.KeyPress, txtStudMI.KeyPress, txtCitizenship.KeyPress
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudLname.KeyPress, txtStudFname.KeyPress, txtStudMI.KeyPress, txtCitizenship.KeyPress, txtFatherName.KeyPress, txtFatherOccupation.KeyPress, txtMother.KeyPress, txtMotherMaidenName.KeyPress, txtMotherOccupation.KeyPress, txtGuardianName.KeyPress, txtGuardianRelation.KeyPress
         If Not IsValidInput(e.KeyChar) Then
             e.Handled = True
             Exit Sub
@@ -160,4 +174,5 @@ Public Class FrmStudentsView
             Exit Sub
         End If
     End Sub
+
 End Class

@@ -24,14 +24,16 @@ Public Class ClassSubject
                     Command("INSERT INTO subject(GradeLevel_ID, SubjectCode, SubjectName, Units) VALUES (@GradeLevel_ID, @SubjectCode, @SubjectName, @Units)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmSubjects.CmbGradeLevel.Text & ", " & FrmSubjects.txtSubjCode.Text & " - " & FrmSubjects.txtSubjName.Text
-                    LogAction("Added Subject |" & name)
+                    LogAction("Added Subject | " & name)
+                    FrmSubjects.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE subject SET GradeLevel_ID=@GradeLevel_ID, SubjectCode=@SubjectCode, SubjectName=@SubjectName, Units=@Units WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                     Dim name As String = FrmSubjects.txtSubjName.Text
-                    LogAction("Updated Subject |" & name)
+                    LogAction("Updated Subject | " & name)
+                    FrmSubjects.Clear()
                 End If
             End If
             frmSubjects.loadrecords()

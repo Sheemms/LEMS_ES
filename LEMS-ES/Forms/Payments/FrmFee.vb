@@ -26,5 +26,10 @@
             End If
         End If
     End Sub
-
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCurrentPayment.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
 End Class

@@ -26,7 +26,6 @@
             For Each row As DataGridViewRow In dgvUser.SelectedRows
                 idUserMaintenance = row.Cells(0).Value
                 txtUsername.Text = row.Cells(1).Value
-                txtPassword.Text = row.Cells(2).Value
                 txtFullname.Text = row.Cells(3).Value
                 cmbUserLevel.Text = row.Cells(4).Value
             Next

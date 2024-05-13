@@ -23,27 +23,27 @@ Public Class FrmEnrollment
     End Sub
 
     Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        Dim searchText As String = txtSearch.Text.Trim()
+        'Dim searchText As String = txtSearch.Text.Trim()
 
-        If searchText <> String.Empty Then
-            Dim dataTable As DataTable = CType(dgvEnrolled.DataSource, DataTable)
-            Dim filteredData As New DataTable()
+        'If searchText <> String.Empty Then
+        '    Dim dataTable As DataTable = CType(dgvEnrolled.DataSource, DataTable)
+        '    Dim filteredData As New DataTable()
 
-            filteredData = dataTable.Clone()
+        '    filteredData = dataTable.Clone()
 
-            For Each row As DataRow In dataTable.Rows
-                For Each col As DataColumn In dataTable.Columns
-                    If row(col.ColumnName).ToString().Contains(searchText) Then
-                        filteredData.ImportRow(row)
-                        Exit For
-                    End If
-                Next
-            Next
+        '    For Each row As DataRow In dataTable.Rows
+        '        For Each col As DataColumn In dataTable.Columns
+        '            If row(col.ColumnName).ToString().Contains(searchText) Then
+        '                filteredData.ImportRow(row)
+        '                Exit For
+        '            End If
+        '        Next
+        '    Next
 
-            dgvEnrolled.DataSource = filteredData
-        Else
-            Loadrecords()
-        End If
+        '    dgvEnrolled.DataSource = filteredData
+        'Else
+        '    Loadrecords()
+        'End If
     End Sub
 
     Private Sub DgvEnrolled_DoubleClick(sender As Object, e As EventArgs) Handles dgvEnrolled.DoubleClick

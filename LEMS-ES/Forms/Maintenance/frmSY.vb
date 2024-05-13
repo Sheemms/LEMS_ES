@@ -33,8 +33,8 @@ Public Class FrmSY
         Clear()
     End Sub
 
-    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress
-        If Not IsValidInput(e.KeyChar) Then
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
             e.Handled = True
             Exit Sub
         End If
@@ -42,13 +42,13 @@ Public Class FrmSY
 
     Private Sub DgvSY_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSY.CellContentClick
         Dim column As String = DgvSY.Columns(e.ColumnIndex).Name
-        Dim isOpen As Boolean = Convert.ToBoolean(CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Open'"))
+        Dim isOpen As Boolean = Convert.ToBoolean(CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Active'"))
         If column = "colOpen" AndAlso e.RowIndex >= 0 Then
             If MsgBox("Do you want to open this school year?") Then
                 Try
                     Dim syID As String = DgvSY.Rows(e.RowIndex).Cells("ID").Value.ToString()
-                    Command("UPDATE schoolyear SET Status = 'Closed'", New MySqlParameter() {})
-                    Command("UPDATE schoolyear SET Status = 'Open' WHERE ID=" & syID)
+                    Command("UPDATE schoolyear SET Status = 'Inactive'", New MySqlParameter() {})
+                    Command("UPDATE schoolyear SET Status = 'Active' WHERE ID=" & syID)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
@@ -56,7 +56,7 @@ Public Class FrmSY
                         MsgBox("School Year has been successfully open!")
                         Loadrecords()
                     Else
-                        MsgBox("No school year was open.")
+                        MsgBox("There is no active school year.")
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)
@@ -67,7 +67,7 @@ Public Class FrmSY
                 Try
                     Dim syID As String = DgvSY.Rows(e.RowIndex).Cells("ID").Value.ToString()
 
-                    Command("UPDATE schoolyear SET Status = 'Closed' WHERE ID=" & syID)
+                    Command("UPDATE schoolyear SET Status = 'Inactive' WHERE ID=" & syID)
 
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
@@ -75,7 +75,7 @@ Public Class FrmSY
                         MsgBox("School Year has been successfully closed!")
                         Loadrecords()
                     Else
-                        MsgBox("No school year was closed.")
+                        MsgBox("There is no inactive school year.")
                     End If
                 Catch ex As Exception
                     MsgBox(ex.Message)

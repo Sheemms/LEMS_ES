@@ -13,10 +13,13 @@
         idDept = 0
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click, BtnUpdate.Click
-        If IS_EMPTY(TxtDeptName) = True Then Return
+        If IS_EMPTY(TxtDeptName) Then Return
 
+        If Not NoLeadingSpace(TxtDeptName.Text.Trim()) Then
+            MsgBox("Department name must have no leading spaces.")
+            Return
+        End If
         ClassDepartment.DepartmentRef()
-        Clear()
     End Sub
 
     Private Sub DgvDepartment_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDepartment.CellClick
@@ -39,6 +42,5 @@
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         ClassDepartment.DeleteDepartment(idDept)
-
     End Sub
 End Class

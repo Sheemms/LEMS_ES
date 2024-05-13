@@ -84,15 +84,6 @@ Module ModDisplay
     Public Sub Success(ByVal MessageStatement As String)
         MsgBox(MessageStatement, MsgBoxStyle.OkOnly, "LEMS_ES")
     End Sub
-
-    Public Sub TextBoxDigitsOnly(ByVal textBox As Guna.UI2.WinForms.Guna2TextBox)
-        AddHandler textBox.KeyPress, AddressOf TextBoxDigits_Keypress
-    End Sub
-    Private Sub TextBoxDigits_Keypress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
     Public Function EIDGenerate() As String
         Try
             Dim eidvalue As String
@@ -123,8 +114,8 @@ Module ModDisplay
     End Function
     Public Sub GetSchoolYear(ByVal lblSY As Label)
         Try
-            Query("SELECT Start_Year, End_Year FROM schoolyear WHERE Status = 'Open'")
-            Dim result As Object = CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Open'")
+            Query("SELECT Start_Year, End_Year FROM schoolyear WHERE Status = 'Active'")
+            Dim result As Object = CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Active'")
             If result IsNot Nothing Then
                 Dim startYear As String = ds.Tables("QueryTb").Rows(0)("Start_Year").ToString()
                 Dim endYear As String = ds.Tables("QueryTb").Rows(0)("End_Year").ToString()
@@ -138,7 +129,7 @@ Module ModDisplay
     End Sub
     Public Function GetSchoolYearID() As Integer
         Try
-            Query("SELECT ID FROM schoolyear WHERE Status = 'Open'")
+            Query("SELECT ID FROM schoolyear WHERE Status = 'Active'")
 
             If ds.Tables("QueryTb").Rows.Count > 0 Then
                 Dim schoolYearID As Integer = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("ID"))
@@ -184,5 +175,22 @@ Module ModDisplay
         End If
 
         Return True
+    End Function
+    Public Function IsValidLettersDigits(inputCharDigits As Char) As Boolean
+        Dim regexPattern As String = "^[a-zA-Z0-9]+$"
+
+        If Not Regex.IsMatch(inputCharDigits.ToString(), regexPattern) AndAlso Not Char.IsControl(inputCharDigits) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+    Public Function NoLeadingSpace(input As String) As Boolean
+        Dim regex As New Regex("^\S+( \S+)*$")
+        Return regex.IsMatch(input)
+    End Function
+    Public Function SpacebetweenLetters(input As String) As Boolean
+        Dim regex As New Regex("^[^\s]+(?:\s[^\s]+)*$")
+        Return regex.IsMatch(input)
     End Function
 End Module

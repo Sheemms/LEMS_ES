@@ -15,17 +15,22 @@ Public Class ClassTuition
     End Function
     Public Shared Sub TuitionRef()
         Try
-            If frmTuitionFee.idTuition = 0 Then
+            Dim dynamicParams As MySqlParameter() = TuitionParameters()
+            If FrmTuitionFee.idTuition = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO tuition(GradeLevel_ID, Amount) 
-                            VALUES (@GradeLevel_ID, @Amount)", TuitionParameters())
+                            VALUES (@GradeLevel_ID, @Amount)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmTuitionFee.cmbGradeLevel.Text & " - " & FrmTuitionFee.txtAmountTuition.Text
+                    LogAction("Added Tuition Fee | " & name)
                     FrmTuitionFee.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount", TuitionParameters())
+                    Command("UPDATE tuition SET GradeLevel_ID=@GradeLevel_ID, Amount=@Amount WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
+                    Dim name As String = FrmTuitionFee.cmbGradeLevel.Text & " - " & FrmTuitionFee.txtAmountTuition.Text
+                    LogAction("Updated Tuition Fee | " & name)
                     FrmTuitionFee.Clear()
                 End If
             End If
@@ -60,11 +65,15 @@ Public Class ClassTuition
                     Command("INSERT INTO miscellaneous(Amount) VALUES (@Amount)", MiscellaneousParameters())
                     Success("Successfully added!")
                     FrmTuitionFee.Clear()
+                    Dim name As String = FrmTuitionFee.txtAmountMiscellaneous.Text
+                    LogAction("Added Miscellaneous Fee | " & name)
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE miscellaneous SET Amount=@Amount", MiscellaneousParameters())
                     Success("Successfully updated!")
+                    Dim name As String = FrmTuitionFee.txtAmountMiscellaneous.Text
+                    LogAction("Updated Miscellaneous Fee | " & name)
                     FrmTuitionFee.Clear()
                 End If
             End If
@@ -91,21 +100,26 @@ Public Class ClassTuition
     Public Shared Sub OtherFeeRef()
         Try
             'Dim existingCount As Integer = CInt(CmdScalar("SELECT COUNT(*) FROM otherfee"))
-
+            Dim dynamicParams As MySqlParameter() = OtherFeeParameters()
             If frmTuitionFee.idOtherFee = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO otherfee(Description, Amount) VALUES (@Description, @Amount)", OtherFeeParameters())
+                    Command("INSERT INTO otherfee(Description, Amount) VALUES (@Description, @Amount)", dynamicParams)
                     Success("Successfully Added!")
+                    Dim name As String = FrmTuitionFee.txtOtherFeeDesc.Text & " - " & FrmTuitionFee.txtAmountOtherFee.Text
+                    LogAction("Added Other Fee | " & name)
                     FrmTuitionFee.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update the existing entry?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE otherfee SET Description=@Description, Amount=@Amount", OtherFeeParameters())
+                    Command("UPDATE otherfee SET Description=@Description, Amount=@Amount WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                     FrmTuitionFee.Clear()
                 End If
             End If
             FrmTuitionFee.Loadrecords()
+        Catch ex As MySqlException When ex.Number = 1062
+            Critical("This fee is already exists.")
+            Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

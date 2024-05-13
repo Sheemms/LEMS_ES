@@ -35,7 +35,6 @@ Public Class ClassSection
                 End If
             End If
             FrmSections.Loadrecords()
-            'ClearFields(FrmSections, FrmSections.idSection)
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Section already exists.")
             Exit Sub

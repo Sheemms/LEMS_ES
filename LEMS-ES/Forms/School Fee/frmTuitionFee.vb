@@ -24,7 +24,7 @@
         dgvMiscellaneous.DataSource = ds.Tables("QueryTb")
 
         Query("SELECT * FROM otherfee")
-        dgvOtherFee.DataSource = ds.Tables("QueryTb")
+        DgvOtherFee.DataSource = ds.Tables("QueryTb")
 
         'Query("SELECT * FROM mop")
         'dgvMOP.DataSource = ds.Tables("QueryTb")
@@ -83,6 +83,20 @@
 
         ClassTuition.OtherFeeRef()
     End Sub
+    Private Sub DgvOtherFee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvOtherFee.CellClick
+        Try
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow = DgvOtherFee.Rows(e.RowIndex)
+                idOtherFee = row.Cells(0).Value
+                txtOtherFeeDesc.Text = row.Cells(1).Value
+                txtAmountOtherFee.Text = row.Cells(2).Value
+            ElseIf e.ColumnIndex >= 0 Then
+                Clear()
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR!", vbCritical)
+        End Try
+    End Sub
 
     Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAmountTuition.KeyPress, txtAmountMiscellaneous.KeyPress, txtAmountOtherFee.KeyPress
         If Not IsValidDigits(e.KeyChar) Then
@@ -90,6 +104,13 @@
             Exit Sub
         End If
     End Sub
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtherFeeDesc.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
+
     'Private Sub BtnMOP_Click(sender As Object, e As EventArgs)
     '    If IS_EMPTY(txtMOP) Then Return
 

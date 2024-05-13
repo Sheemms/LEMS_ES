@@ -86,51 +86,51 @@
         End If
     End Sub
     Private Sub ToolStripTextBox1_Click(sender As Object, e As EventArgs) Handles ToolStripTextBox1.Click
-        Dim searchText As String = txtSearch.Text.Trim()
+        'Dim searchText As String = txtSearch.Text.Trim()
 
-        If searchText <> String.Empty Then
-            Dim dataTable As DataTable = CType(dgvBilling.DataSource, DataTable)
-            Dim filteredData As New DataTable()
+        'If searchText <> String.Empty Then
+        '    Dim dataTable As DataTable = CType(dgvBilling.DataSource, DataTable)
+        '    Dim filteredData As New DataTable()
 
-            filteredData = dataTable.Clone()
+        '    filteredData = dataTable.Clone()
 
-            For Each row As DataRow In dataTable.Rows
-                For Each col As DataColumn In dataTable.Columns
-                    If row(col.ColumnName).ToString().Contains(searchText) Then
-                        filteredData.ImportRow(row)
-                        Exit For
-                    End If
-                Next
-            Next
+        '    For Each row As DataRow In dataTable.Rows
+        '        For Each col As DataColumn In dataTable.Columns
+        '            If row(col.ColumnName).ToString().Contains(searchText) Then
+        '                filteredData.ImportRow(row)
+        '                Exit For
+        '            End If
+        '        Next
+        '    Next
 
-            dgvBilling.DataSource = filteredData
-        Else
-            'LoadRecords()
-        End If
+        '    dgvBilling.DataSource = filteredData
+        'Else
+        '    'LoadRecords()
+        'End If
     End Sub
 
     Private Sub ToolStripTextBox2_Click(sender As Object, e As EventArgs) Handles ToolStripTextBox2.Click
-        Dim searchText As String = txtSearch.Text.Trim()
+        'Dim searchText As String = txtSearch.Text.Trim()
 
-        If searchText <> String.Empty Then
-            Dim dataTable As DataTable = CType(dgvBilling.DataSource, DataTable)
-            Dim filteredData As New DataTable()
+        'If searchText <> String.Empty Then
+        '    Dim dataTable As DataTable = CType(dgvBilling.DataSource, DataTable)
+        '    Dim filteredData As New DataTable()
 
-            filteredData = dataTable.Clone()
+        '    filteredData = dataTable.Clone()
 
-            For Each row As DataRow In dataTable.Rows
-                For Each col As DataColumn In dataTable.Columns
-                    If row(col.ColumnName).ToString().Contains(searchText) Then
-                        filteredData.ImportRow(row)
-                        Exit For
-                    End If
-                Next
-            Next
+        '    For Each row As DataRow In dataTable.Rows
+        '        For Each col As DataColumn In dataTable.Columns
+        '            If row(col.ColumnName).ToString().Contains(searchText) Then
+        '                filteredData.ImportRow(row)
+        '                Exit For
+        '            End If
+        '        Next
+        '    Next
 
-            dgvBilling.DataSource = filteredData
-        Else
-            'LoadRecords()
-        End If
+        '    dgvBilling.DataSource = filteredData
+        'Else
+        '    'LoadRecords()
+        'End If
     End Sub
 
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click

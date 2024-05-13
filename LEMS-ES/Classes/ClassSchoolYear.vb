@@ -15,11 +15,11 @@ Public Class ClassSchoolYear
     End Function
     Public Shared Sub SchoolYearRef()
         Try
-            Dim isOpen As Boolean = Convert.ToBoolean(CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Open'"))
+            Dim isOpen As Boolean = Convert.ToBoolean(CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Active'"))
             If frmSY.idSY = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Dim dynamicParams() As MySqlParameter = SchoolYearParameters()
-                    Command("UPDATE schoolyear SET Status = 'Closed'", New MySqlParameter() {})
+                    Command("UPDATE schoolyear SET Status = 'Inactive'", New MySqlParameter() {})
                     Command("INSERT INTO schoolyear(End_Year) VALUES (@End_Year)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmSY.TxtStartYear.Text & " - " & FrmSY.TxtEndYear.Text

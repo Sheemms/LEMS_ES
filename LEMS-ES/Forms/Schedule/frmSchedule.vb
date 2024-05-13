@@ -8,7 +8,7 @@ Public Class FrmSchedule
         LoadSection()
         LoadRoom()
         LoadSubject()
-        LoadTeacherAutoComplete()
+        'LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
     Public Sub Clear()
@@ -87,13 +87,14 @@ Public Class FrmSchedule
                 Dim selectedRow As DataRowView = TryCast(CmbSection.SelectedItem, DataRowView)
 
                 Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+                Dim selectedGradeLevelID As Integer = Convert.ToInt32(selectedRow.Row("GradeLevel_ID")) ' Assuming GradeLevel_ID is a column in the section table
 
                 Query($"SELECT a.ID, c.Department, b.GradeLevel, d.EmpID, CONCAT(d.Lastname, ' ', d.Firstname) Adviser
-                                    FROM section a
-                                    JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                                    JOIN department c ON b.Department_ID = c.ID
-                                    JOIN teacher d ON a.AdviserID = d.ID 
-                                    WHERE a.ID = {selectedSectionID}")
+                                FROM section a
+                                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                                JOIN department c ON b.Department_ID = c.ID
+                                JOIN teacher d ON a.AdviserID = d.ID 
+                                WHERE a.ID = {selectedSectionID}")
 
                 If ds.Tables("QueryTb").Rows.Count > 0 Then
                     idSection = ds.Tables("QueryTb").Rows(0)("ID").ToString()
@@ -107,6 +108,19 @@ Public Class FrmSchedule
                     TxtGradeLevel.Clear()
                     TxtAdviserID.Clear()
                     TxtAdviser.Clear()
+                End If
+
+                Query($"SELECT ID, SubjectCode FROM subject WHERE GradeLevel_ID = {selectedGradeLevelID}")
+
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    CmbSubjectCode.DataSource = ds.Tables("QueryTb")
+                    CmbSubjectCode.DisplayMember = "SubjectCode"
+                    CmbSubjectCode.ValueMember = "ID"
+                Else
+                    CmbSubjectCode.DataSource = Nothing
+                    CmbSubjectCode.Items.Clear()
+                    TxtSubjName.Clear()
+                    TxtUnits.Clear()
                 End If
             End If
         Catch ex As Exception
@@ -133,6 +147,7 @@ Public Class FrmSchedule
                     idSub = ds.Tables("QueryTb").Rows(0)("ID").ToString()
                 Else
                     TxtSubjName.Clear()
+                    TxtUnits.Clear()
                 End If
             End If
         Catch ex As Exception
@@ -141,32 +156,32 @@ Public Class FrmSchedule
     End Sub
 
 #Region "Auto Complete/ Populate"
-    Private Sub LoadTeacherAutoComplete()
-        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
-        Dim autoCompleteCollection As New AutoCompleteStringCollection()
+    'Private Sub LoadTeacherAutoComplete()
+    '    Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
+    '    Dim autoCompleteCollection As New AutoCompleteStringCollection()
 
-        For Each row As DataRow In ds.Tables("QueryTb").Rows
-            autoCompleteCollection.Add(row("FullName").ToString())
-        Next
+    '    For Each row As DataRow In ds.Tables("QueryTb").Rows
+    '        autoCompleteCollection.Add(row("FullName").ToString())
+    '    Next
 
-        txtTeacherName.AutoCompleteCustomSource = autoCompleteCollection
-        txtTeacherName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        txtTeacherName.AutoCompleteSource = AutoCompleteSource.CustomSource
-    End Sub
-    Public teacherid = Nothing
-    Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
-        Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
+    '    txtTeacherName.AutoCompleteCustomSource = autoCompleteCollection
+    '    txtTeacherName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+    '    txtTeacherName.AutoCompleteSource = AutoCompleteSource.CustomSource
+    'End Sub
+    'Public teacherid = Nothing
+    'Private Sub TxtTeacherName_TextChanged(sender As Object, e As EventArgs) Handles txtTeacherName.TextChanged
+    '    Dim selectedTeacherName As String = txtTeacherName.Text.Trim()
 
-        Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
-        Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedTeacherName}'").FirstOrDefault()
+    '    Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
+    '    Dim row As DataRow = ds.Tables("QueryTb").Select($"FullName = '{selectedTeacherName}'").FirstOrDefault()
 
-        If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
-            txtTeacherID.Text = row("EmpID").ToString()
-            teacherid = row("ID").ToString()
-        Else
-            txtTeacherID.Clear()
-        End If
-    End Sub
+    '    If row IsNot Nothing AndAlso row.Table.Columns.Contains("EmpID") Then
+    '        txtTeacherID.Text = row("EmpID").ToString()
+    '        teacherid = row("ID").ToString()
+    '    Else
+    '        txtTeacherID.Clear()
+    '    End If
+    'End Sub
     'Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
     '    Query($"SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher WHERE Lastname LIKE '{TxtSearch.Text}' OR Firstname LIKE '{TxtSearch.Text}' OR MiddleInitial LIKE '{TxtSearch.Text}'")
     '    Dim row As DataRow = ds.Tables("QueryTb").Rows.Cast(Of DataRow)().FirstOrDefault() ' Get the first row if exists
@@ -187,6 +202,7 @@ Public Class FrmSchedule
         If IS_EMPTY(CmbSection) Then Return
         If IS_EMPTY(CmbRoom) Then Return
         If IS_EMPTY(CmbSubjectCode) Then Return
+        If IS_EMPTY(txtTeacherID) Then Return
         If IS_EMPTY(txtTeacherName) Then Return
         If Not IsValidTime(txtstartTime.Text) Then
             MsgBox("Invalid start time format")
@@ -284,5 +300,26 @@ Public Class FrmSchedule
             FrmScheduleReport.Show()
         End If
     End Sub
+    Public teacherid = Nothing
 
+    Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
+        Dim selectTeacherName As String = TxtTeacherName.Text.Trim()
+
+        If Not String.IsNullOrEmpty(selectTeacherName) Then
+            Query($"SELECT ID, EmpID, Department_ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM teacher WHERE EmpID = '{selectTeacherName}' OR Lastname LIKE '%{selectTeacherName}%' OR Firstname LIKE '%{selectTeacherName}%'")
+
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
+                teacherid = Convert.ToInt32(row("ID"))
+                txtTeacherID.Text = row("EmpID").ToString()
+                TxtTeacherName.Text = row("FullName").ToString()
+            Else
+                txtTeacherID.Clear()
+                TxtTeacherName.Clear()
+            End If
+        Else
+            txtTeacherID.Clear()
+            TxtTeacherName.Clear()
+        End If
+    End Sub
 End Class

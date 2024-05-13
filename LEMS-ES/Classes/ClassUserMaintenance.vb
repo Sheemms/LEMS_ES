@@ -24,14 +24,14 @@ Public Class ClassUserMaintenance
                             VALUES (@Username, @Password, @Fullname, @UserLevel)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmUserMaintenance.cmbUserLevel.Text & " - " & FrmUserMaintenance.txtFullname.Text
-                    LogAction("Added User |" & name)
+                    LogAction("Added User | " & name)
                 End If
             Else
                 If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE user SET Username=@Username, Password=@Password, Fullname=@Fullname, UserLevel=@UserLevel", dynamicParams)
+                    Command("UPDATE user SET Username=@Username, Password=@Password, Fullname=@Fullname, UserLevel=@UserLevel WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                     Dim name As String = FrmUserMaintenance.cmbUserLevel.Text & " - " & FrmUserMaintenance.txtFullname.Text
-                    LogAction("Updated User |" & name)
+                    LogAction("Updated User | " & name)
                 End If
             End If
             frmUserMaintenance.loadrecords()
@@ -64,7 +64,7 @@ Public Class ClassUserMaintenance
                             VALUES (@Username, @Password, @Fullname, 'Administrator')", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = RegistrationForm.txtFullname.Text
-                    LogAction("Added User Admin |" & name)
+                    LogAction("Added User Admin | " & name)
                 End If
             End If
             FrmUserMaintenance.Loadrecords()

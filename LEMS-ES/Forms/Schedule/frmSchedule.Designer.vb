@@ -77,7 +77,7 @@ Partial Class FrmSchedule
         Me.cbT = New System.Windows.Forms.CheckBox()
         Me.cbM = New System.Windows.Forms.CheckBox()
         Me.lblSY = New System.Windows.Forms.Label()
-        Me.txtTeacherName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtTeacherName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtTeacherID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -94,6 +94,8 @@ Partial Class FrmSchedule
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,6 +106,8 @@ Partial Class FrmSchedule
         Me.TabPage2.SuspendLayout()
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -121,6 +125,8 @@ Partial Class FrmSchedule
         'Panel1
         '
         Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.TxtDept)
         Me.Panel1.Controls.Add(Me.TxtGradeLevel)
         Me.Panel1.Controls.Add(Me.TxtAdviser)
@@ -141,7 +147,7 @@ Partial Class FrmSchedule
         Me.Panel1.Controls.Add(Me.cbT)
         Me.Panel1.Controls.Add(Me.cbM)
         Me.Panel1.Controls.Add(Me.lblSY)
-        Me.Panel1.Controls.Add(Me.txtTeacherName)
+        Me.Panel1.Controls.Add(Me.TxtTeacherName)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.txtTeacherID)
         Me.Panel1.Controls.Add(Me.Label11)
@@ -265,7 +271,7 @@ Partial Class FrmSchedule
         Me.CmbSubjectCode.ItemHeight = 30
         Me.CmbSubjectCode.Location = New System.Drawing.Point(406, 103)
         Me.CmbSubjectCode.Name = "CmbSubjectCode"
-        Me.CmbSubjectCode.Size = New System.Drawing.Size(200, 36)
+        Me.CmbSubjectCode.Size = New System.Drawing.Size(163, 36)
         Me.CmbSubjectCode.TabIndex = 52
         '
         'txtendTime
@@ -772,25 +778,25 @@ Partial Class FrmSchedule
         Me.lblSY.Text = "0000-0000"
         Me.lblSY.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'txtTeacherName
+        'TxtTeacherName
         '
-        Me.txtTeacherName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtTeacherName.DefaultText = ""
-        Me.txtTeacherName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtTeacherName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtTeacherName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTeacherName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTeacherName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTeacherName.ForeColor = System.Drawing.Color.Black
-        Me.txtTeacherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherName.Location = New System.Drawing.Point(720, 145)
-        Me.txtTeacherName.Name = "txtTeacherName"
-        Me.txtTeacherName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTeacherName.PlaceholderText = ""
-        Me.txtTeacherName.SelectedText = ""
-        Me.txtTeacherName.Size = New System.Drawing.Size(211, 36)
-        Me.txtTeacherName.TabIndex = 28
+        Me.TxtTeacherName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtTeacherName.DefaultText = ""
+        Me.TxtTeacherName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtTeacherName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtTeacherName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtTeacherName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtTeacherName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtTeacherName.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTeacherName.ForeColor = System.Drawing.Color.Black
+        Me.TxtTeacherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtTeacherName.Location = New System.Drawing.Point(720, 145)
+        Me.TxtTeacherName.Name = "TxtTeacherName"
+        Me.TxtTeacherName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtTeacherName.PlaceholderText = ""
+        Me.TxtTeacherName.SelectedText = ""
+        Me.TxtTeacherName.Size = New System.Drawing.Size(211, 36)
+        Me.TxtTeacherName.TabIndex = 28
         '
         'Label12
         '
@@ -949,7 +955,7 @@ Partial Class FrmSchedule
         Me.CmbSection.ItemHeight = 30
         Me.CmbSection.Location = New System.Drawing.Point(103, 145)
         Me.CmbSection.Name = "CmbSection"
-        Me.CmbSection.Size = New System.Drawing.Size(200, 36)
+        Me.CmbSection.Size = New System.Drawing.Size(164, 36)
         Me.CmbSection.TabIndex = 7
         '
         'Label4
@@ -992,6 +998,26 @@ Partial Class FrmSchedule
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.PictureBox1.Location = New System.Drawing.Point(273, 145)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(30, 36)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 59
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.PictureBox2.Location = New System.Drawing.Point(575, 103)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 36)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 60
+        Me.PictureBox2.TabStop = False
+        '
         'FrmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -1017,6 +1043,8 @@ Partial Class FrmSchedule
         CType(Me.DgvTeacher, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1024,7 +1052,6 @@ Partial Class FrmSchedule
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtTeacherName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents txtTeacherID As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label11 As Label
@@ -1087,4 +1114,8 @@ Partial Class FrmSchedule
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents TxtTeacherName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

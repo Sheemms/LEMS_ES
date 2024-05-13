@@ -73,7 +73,6 @@ Partial Class FrmStudents
         'TextSearch
         '
         Me.TextSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.TextSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TextSearch.Name = "TextSearch"
         Me.TextSearch.Size = New System.Drawing.Size(200, 25)
         '
@@ -183,6 +182,7 @@ Partial Class FrmStudents
         Me.colSuffix.HeaderText = "Suffix"
         Me.colSuffix.Name = "colSuffix"
         Me.colSuffix.ReadOnly = True
+        Me.colSuffix.Visible = False
         Me.colSuffix.Width = 64
         '
         'colGender
@@ -317,12 +317,11 @@ Partial Class FrmStudents
         'colStudType
         '
         Me.colStudType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colStudType.DataPropertyName = "StudType"
-        Me.colStudType.HeaderText = "Student Type"
+        Me.colStudType.DataPropertyName = "Classification"
+        Me.colStudType.HeaderText = "Classification"
         Me.colStudType.Name = "colStudType"
         Me.colStudType.ReadOnly = True
-        Me.colStudType.Visible = False
-        Me.colStudType.Width = 99
+        Me.colStudType.Width = 107
         '
         'FrmStudents
         '
@@ -346,6 +345,9 @@ Partial Class FrmStudents
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents AddNew As ToolStripButton
     Friend WithEvents dgvStudents As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents TextSearch As ToolStripTextBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colLRN As DataGridViewTextBoxColumn
     Friend WithEvents colStudName As DataGridViewTextBoxColumn
@@ -364,7 +366,4 @@ Partial Class FrmStudents
     Friend WithEvents colCitizenship As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents colStudType As DataGridViewTextBoxColumn
-    Friend WithEvents TextSearch As ToolStripTextBox
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class

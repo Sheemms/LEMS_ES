@@ -66,9 +66,9 @@ Partial Class FrmRoom
         Me.Panel2.Controls.Add(Me.DgvRoom)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(230, 43)
+        Me.Panel2.Location = New System.Drawing.Point(230, 40)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(723, 595)
+        Me.Panel2.Size = New System.Drawing.Size(723, 598)
         Me.Panel2.TabIndex = 4
         '
         'DgvRoom
@@ -106,7 +106,7 @@ Partial Class FrmRoom
         Me.DgvRoom.Name = "DgvRoom"
         Me.DgvRoom.ReadOnly = True
         Me.DgvRoom.RowHeadersVisible = False
-        Me.DgvRoom.Size = New System.Drawing.Size(723, 595)
+        Me.DgvRoom.Size = New System.Drawing.Size(723, 598)
         Me.DgvRoom.TabIndex = 2
         Me.DgvRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvRoom.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -165,9 +165,9 @@ Partial Class FrmRoom
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(0, 43)
+        Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(230, 595)
+        Me.Panel1.Size = New System.Drawing.Size(230, 598)
         Me.Panel1.TabIndex = 3
         '
         'BtnUpdate
@@ -199,6 +199,7 @@ Partial Class FrmRoom
         Me.TxtCapacity.ForeColor = System.Drawing.Color.Black
         Me.TxtCapacity.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtCapacity.Location = New System.Drawing.Point(3, 111)
+        Me.TxtCapacity.MaxLength = 2
         Me.TxtCapacity.Name = "TxtCapacity"
         Me.TxtCapacity.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtCapacity.PlaceholderText = ""
@@ -243,6 +244,7 @@ Partial Class FrmRoom
         Me.TxtRoom.ForeColor = System.Drawing.Color.Black
         Me.TxtRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtRoom.Location = New System.Drawing.Point(3, 41)
+        Me.TxtRoom.MaxLength = 15
         Me.TxtRoom.Name = "TxtRoom"
         Me.TxtRoom.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtRoom.PlaceholderText = ""

@@ -45,6 +45,17 @@ Public Class ClassSchedule
                 End If
             End If
             FrmSchedule.LoadRecords()
+        Catch ex As MySqlException
+            If ex.Number = 1062 AndAlso ex.Message.Contains("Days and Time") Then
+                Critical("Teacher has the same days and time added.")
+            ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Section, Subject and Days") Then
+                Critical("Section and Subject Days")
+            ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Section, Room, Days and Time") Then
+                Critical("Section, Room and Days and Time")
+            ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Room, Days and Time") Then
+                Critical("Room and Days and Time")
+            End If
+            Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

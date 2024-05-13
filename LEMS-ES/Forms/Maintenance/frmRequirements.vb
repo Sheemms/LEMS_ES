@@ -38,11 +38,21 @@
         If IS_EMPTY(cmbClassification) = True Then Return
         If IS_EMPTY(txtRequirements) = True Then Return
 
+        If Not SingleSpace(txtRequirements.Text.Trim()) Then
+            MsgBox("Requirement name must have no leading spaces.")
+            Return
+        End If
         ClassRequirements.RequirementsRef()
         Clear()
     End Sub
 
     Private Sub BtnClear_Click(sender As Object, e As EventArgs)
         Clear()
+    End Sub
+    Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRequirements.KeyPress
+        If Not IsValidInput(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
     End Sub
 End Class

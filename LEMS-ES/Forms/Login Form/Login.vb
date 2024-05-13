@@ -39,7 +39,6 @@ Public Class Login
 
         Try
             If Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtUsername)) OrElse Not String.IsNullOrEmpty(ErrorProvider1.GetError(txtPassword)) Then
-                Clear()
                 Critical("Error: Username and password cannot be empty")
                 Exit Sub
             End If

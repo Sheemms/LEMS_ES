@@ -238,6 +238,7 @@ Partial Class FrmGradeLevel
         Me.txtAddGradeLevel.ForeColor = System.Drawing.Color.Black
         Me.txtAddGradeLevel.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAddGradeLevel.Location = New System.Drawing.Point(3, 96)
+        Me.txtAddGradeLevel.MaxLength = 2
         Me.txtAddGradeLevel.Name = "txtAddGradeLevel"
         Me.txtAddGradeLevel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAddGradeLevel.PlaceholderText = ""
