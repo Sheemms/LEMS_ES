@@ -8,6 +8,7 @@ Public Class ClassUserMaintenance
                     New MySqlParameter("@Username", FrmUserMaintenance.txtUsername.Text),
                     New MySqlParameter("@Password", FrmUserMaintenance.txtPassword.Text),
                     New MySqlParameter("@Fullname", FrmUserMaintenance.txtFullname.Text),
+                    New MySqlParameter("@Contact", FrmUserMaintenance.TxtContact.Text),
                     New MySqlParameter("@UserLevel", FrmUserMaintenance.cmbUserLevel.SelectedValue)
                     }
             Return UserParam
@@ -20,15 +21,15 @@ Public Class ClassUserMaintenance
             Dim dynamicParams As MySqlParameter() = UserMParameters()
             If frmUserMaintenance.idUserMaintenance = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO user(Username, Password, Fullname, UserLevel) 
-                            VALUES (@Username, @Password, @Fullname, @UserLevel)", dynamicParams)
+                    Command("INSERT INTO user(Username, Password, Fullname, Contact, UserLevel) 
+                            VALUES (@Username, @Password, @Fullname, @Contact, @UserLevel)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmUserMaintenance.cmbUserLevel.Text & " - " & FrmUserMaintenance.txtFullname.Text
                     LogAction("Added User | " & name)
                 End If
             Else
                 If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE user SET Username=@Username, Password=@Password, Fullname=@Fullname, UserLevel=@UserLevel WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE user SET Username=@Username, Password=@Password, Fullname=@Fullname, Contact=@Contact, UserLevel=@UserLevel WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                     Dim name As String = FrmUserMaintenance.cmbUserLevel.Text & " - " & FrmUserMaintenance.txtFullname.Text
                     LogAction("Updated User | " & name)
@@ -48,7 +49,8 @@ Public Class ClassUserMaintenance
                     New MySqlParameter("@ID", FrmUserMaintenance.idUserMaintenance),
                     New MySqlParameter("@Username", RegistrationForm.txtUsername.Text),
                     New MySqlParameter("@Password", RegistrationForm.txtPassword.Text),
-                    New MySqlParameter("@Fullname", RegistrationForm.txtFullname.Text)
+                    New MySqlParameter("@Fullname", RegistrationForm.txtFullname.Text),
+                    New MySqlParameter("@Contact", RegistrationForm.TxtContact.Text)
                     }
             Return UserParam
         Catch ex As Exception
@@ -60,8 +62,8 @@ Public Class ClassUserMaintenance
             Dim dynamicParams As MySqlParameter() = UserAdminParameters()
             If RegistrationForm.idUserMaintenance = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO user(Username, Password, Fullname, UserLevel) 
-                            VALUES (@Username, @Password, @Fullname, 'Administrator')", dynamicParams)
+                    Command("INSERT INTO user(Username, Password, Fullname, Contact, UserLevel) 
+                            VALUES (@Username, @Password, @Fullname, @Contact, 'Administrator')", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = RegistrationForm.txtFullname.Text
                     LogAction("Added User Admin | " & name)
@@ -107,6 +109,7 @@ Public Class ClassUserMaintenance
                 New MySqlParameter("@Username", FrmUserMaintenance.txtUsername.Text),
                 New MySqlParameter("@Password", FrmUserMaintenance.txtPassword.Text),
                 New MySqlParameter("@Fullname", FrmUserMaintenance.txtFullname.Text),
+                New MySqlParameter("@Contact", FrmUserMaintenance.TxtContact.Text),
                 New MySqlParameter("@UserLevel", FrmUserMaintenance.cmbUserLevel.SelectedValue),
                 New MySqlParameter("@Status", "Inactive")
             }

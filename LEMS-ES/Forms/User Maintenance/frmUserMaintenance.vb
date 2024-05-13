@@ -27,7 +27,8 @@
                 idUserMaintenance = row.Cells(0).Value
                 txtUsername.Text = row.Cells(1).Value
                 txtFullname.Text = row.Cells(3).Value
-                cmbUserLevel.Text = row.Cells(4).Value
+                TxtContact.Text = row.Cells(4).Value
+                cmbUserLevel.Text = row.Cells(5).Value
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -38,6 +39,7 @@
         If IS_EMPTY(txtUsername) = True Then Return
         If IS_EMPTY(txtPassword) = True Then Return
         If IS_EMPTY(txtFullname) = True Then Return
+        If IS_EMPTY(TxtContact) = True Then Return
         If IS_EMPTY(cmbUserLevel) = True Then Return
 
         If txtPassword.Text <> txtRePassword.Text Then
