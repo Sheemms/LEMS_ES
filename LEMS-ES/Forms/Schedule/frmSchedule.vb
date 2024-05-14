@@ -245,6 +245,8 @@ Public Class FrmSchedule
     End Function
 
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+        Dim search As String = TxtSearch.Text.Trim()
+
         Query($"SELECT a.ID, CONCAT(b.Start_Year, '-',b.End_Year) SchoolYear, e.Department, d.GradeLevel, c.SectionRoom, f.Room,
                 g.SubjectCode, g.SubjectName,
                 CONCAT(i.Lastname, ', ', i.Firstname, ' ', i.MiddleInitial) as Adviser, a.Days, 
@@ -259,7 +261,7 @@ Public Class FrmSchedule
                 JOIN subject g ON a.SubjectID = g.ID
                 JOIN teacher h ON a.TeacherID = h.ID
                 JOIN teacher i on c.AdviserID = i.ID
-               WHERE h.Lastname LIKE '{TxtSearch.Text}' OR h.Firstname LIKE '{TxtSearch.Text}' OR h.MiddleInitial LIKE '{TxtSearch.Text}'")
+               WHERE h.Lastname LIKE '%{search}%' OR h.Firstname LIKE '%{search}%' OR h.MiddleInitial LIKE '%{search}%' OR e.Department LIKE '%{search}%'")
         DgvSchedule.DataSource = ds.Tables("QueryTb")
     End Sub
 
@@ -324,7 +326,7 @@ Public Class FrmSchedule
         Dim selectTeacherName As String = TxtTeacherName.Text.Trim()
 
         If Not String.IsNullOrEmpty(selectTeacherName) Then
-            Query($"SELECT ID, EmpID, Department_ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM teacher WHERE EmpID = '{selectTeacherName}' OR Lastname LIKE '%{selectTeacherName}%' OR Firstname LIKE '%{selectTeacherName}%'")
+            Query($"SELECT ID, EmpID, Department_ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM teacher WHERE EmpID LIKE '%{selectTeacherName}%' OR Lastname LIKE '%{selectTeacherName}%' OR Firstname LIKE '%{selectTeacherName}%'")
 
             If ds.Tables("QueryTb").Rows.Count > 0 Then
                 Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
@@ -341,7 +343,16 @@ Public Class FrmSchedule
         End If
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-
+    Private Sub SearchTeacher_Click(sender As Object, e As EventArgs) Handles SearchTeacher.Click
+        Dim selectTeacherName As String = ToolStripTextBox1.Text.Trim()
+        Query($"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ', ', a.Firstname) Teacher
+                FROM teacher a
+                JOIN department b ON a.Department_ID = b.ID 
+                WHERE a.Lastname LIKE '%{selectTeacherName}%' OR a.Firstname LIKE '%{selectTeacherName}%' 
+                OR a.MiddleInitial LIKE '%{selectTeacherName}%' OR a.EmpID LIKE '%{selectTeacherName}%'
+                OR b.Department LIKE '%{selectTeacherName}%'")
+        DgvTeacher.AutoGenerateColumns = False
+        DgvTeacher.DataSource = ds.Tables("QueryTb")
     End Sub
+
 End Class

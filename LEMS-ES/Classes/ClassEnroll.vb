@@ -32,13 +32,12 @@ Public Class ClassEnroll
                     Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.txtStudName.Text
                     LogAction("Enrolled Student |" & name)
 
-                    ' Insert enrolled subjects into enrolled_sched
                     For Each row As DataGridViewRow In FrmEnrollmentRegistration.DgvStudSubject.Rows
                         Dim scheduleID As Integer = Convert.ToInt32(row.Cells("columnID").Value)
                         Dim enrolledSubjectParams() As MySqlParameter = {
-                        New MySqlParameter("@SYID", dynamicParams(2).Value), ' Assuming school year ID is at index 2
-                        New MySqlParameter("@EID", dynamicParams(1).Value),  ' Assuming EID is at index 1
-                        New MySqlParameter("@LRN", dynamicParams(3).Value),  ' Assuming LRN is at index 3
+                        New MySqlParameter("@SYID", dynamicParams(2).Value),
+                        New MySqlParameter("@EID", dynamicParams(1).Value),
+                        New MySqlParameter("@LRN", dynamicParams(3).Value),
                         New MySqlParameter("@ScheduleID", scheduleID)
                     }
                         Command("INSERT INTO enrolled_sched(SYID, EID, LRN, ScheduleID) 
@@ -103,7 +102,7 @@ Public Class ClassEnroll
                 FrmEnrollmentRegistration.LoadSubjectEnrolled()
                 FrmEnrollmentRegistration.DgvEnrolledSubjects.ClearSelection()
             Else
-                MsgBox("Error: dynamicParams is Nothing")
+                Info("Error: dynamicParams is Nothing")
             End If
         Catch ex As MySqlException When ex.Number = 1062
             Critical("Subject already added to this student.")
@@ -128,7 +127,7 @@ Public Class ClassEnroll
                 FrmEnrollmentRegistration.LoadSubjectEnrolled()
                 FrmEnrollmentRegistration.DgvEnrolledSubjects.ClearSelection()
             Else
-                MsgBox("Error: dynamicParams is Nothing")
+                Info("Error: dynamicParams is Nothing")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

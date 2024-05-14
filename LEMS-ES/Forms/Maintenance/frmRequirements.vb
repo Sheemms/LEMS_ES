@@ -36,17 +36,17 @@
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not IsEmptyField(cmbClassification.Text.Trim()) Then
-            MsgBox("Please select a classification.")
+            Info("Please select a classification.")
             Return
         End If
 
         If Not IsEmptyField(txtRequirements.Text.Trim()) Then
-            MsgBox("Please enter a requirement name.")
+            Info("Please enter a requirement name.")
             Return
         End If
 
         If Not NoLeadingSpace(txtRequirements.Text.Trim()) Then
-            MsgBox("Requirement name must have no leading spaces.")
+            Info("Requirement name must have no multiple spaces between letters.")
             Return
         End If
         ClassRequirements.RequirementsRef()
@@ -57,9 +57,8 @@
         Clear()
     End Sub
     Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRequirements.KeyPress
-        If Not IsValidInput(e.KeyChar) Then
+        If Not IsValidLettersDigits(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
-            Exit Sub
         End If
     End Sub
 End Class

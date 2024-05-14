@@ -67,7 +67,7 @@ Partial Class FrmSchedule
         Me.colPrint = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.SearchTeacher = New System.Windows.Forms.ToolStripButton()
         Me.TxtUnits = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -96,6 +96,8 @@ Partial Class FrmSchedule
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -322,17 +324,19 @@ Partial Class FrmSchedule
         Me.TabControl1.Location = New System.Drawing.Point(42, 229)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(950, 416)
+        Me.TabControl1.Size = New System.Drawing.Size(950, 457)
         Me.TabControl1.TabIndex = 46
         '
         'TabPage1
         '
+        Me.TabPage1.AutoScroll = True
         Me.TabPage1.Controls.Add(Me.DgvSchedule)
+        Me.TabPage1.Controls.Add(Me.Panel3)
         Me.TabPage1.Controls.Add(Me.ToolStrip2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(942, 387)
+        Me.TabPage1.Size = New System.Drawing.Size(942, 428)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Lists"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -341,6 +345,8 @@ Partial Class FrmSchedule
         '
         Me.DgvSchedule.AllowUserToAddRows = False
         Me.DgvSchedule.AllowUserToDeleteRows = False
+        Me.DgvSchedule.AllowUserToResizeColumns = False
+        Me.DgvSchedule.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.DgvSchedule.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvSchedule.BackgroundColor = System.Drawing.Color.DimGray
@@ -352,7 +358,7 @@ Partial Class FrmSchedule
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvSchedule.ColumnHeadersHeight = 44
         Me.DgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
@@ -372,7 +378,7 @@ Partial Class FrmSchedule
         Me.DgvSchedule.Name = "DgvSchedule"
         Me.DgvSchedule.ReadOnly = True
         Me.DgvSchedule.RowHeadersVisible = False
-        Me.DgvSchedule.Size = New System.Drawing.Size(936, 356)
+        Me.DgvSchedule.Size = New System.Drawing.Size(936, 397)
         Me.DgvSchedule.TabIndex = 29
         Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvSchedule.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -527,12 +533,14 @@ Partial Class FrmSchedule
         '
         'TabPage2
         '
+        Me.TabPage2.AutoScroll = True
         Me.TabPage2.Controls.Add(Me.DgvTeacher)
+        Me.TabPage2.Controls.Add(Me.Panel2)
         Me.TabPage2.Controls.Add(Me.ToolStrip1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(942, 387)
+        Me.TabPage2.Size = New System.Drawing.Size(942, 428)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Schedule"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -541,6 +549,8 @@ Partial Class FrmSchedule
         '
         Me.DgvTeacher.AllowUserToAddRows = False
         Me.DgvTeacher.AllowUserToDeleteRows = False
+        Me.DgvTeacher.AllowUserToResizeColumns = False
+        Me.DgvTeacher.AllowUserToResizeRows = False
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
         Me.DgvTeacher.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvTeacher.BackgroundColor = System.Drawing.Color.DimGray
@@ -552,7 +562,7 @@ Partial Class FrmSchedule
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvTeacher.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvTeacher.ColumnHeadersHeight = 44
         Me.DgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
@@ -572,7 +582,7 @@ Partial Class FrmSchedule
         Me.DgvTeacher.Name = "DgvTeacher"
         Me.DgvTeacher.ReadOnly = True
         Me.DgvTeacher.RowHeadersVisible = False
-        Me.DgvTeacher.Size = New System.Drawing.Size(936, 356)
+        Me.DgvTeacher.Size = New System.Drawing.Size(936, 397)
         Me.DgvTeacher.TabIndex = 30
         Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvTeacher.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -620,7 +630,7 @@ Partial Class FrmSchedule
         Me.DataGridViewTextBoxColumn2.HeaderText = "Teacher ID"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 87
+        Me.DataGridViewTextBoxColumn2.Width = 94
         '
         'DataGridViewTextBoxColumn11
         '
@@ -643,7 +653,7 @@ Partial Class FrmSchedule
         'ToolStrip1
         '
         Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.ToolStripButton1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.SearchTeacher})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(936, 25)
@@ -658,15 +668,15 @@ Partial Class FrmSchedule
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(200, 25)
         '
-        'ToolStripButton1
+        'SearchTeacher
         '
-        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.SearchTeacher.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.SearchTeacher.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.SearchTeacher.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.SearchTeacher.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SearchTeacher.Name = "SearchTeacher"
+        Me.SearchTeacher.Size = New System.Drawing.Size(23, 22)
+        Me.SearchTeacher.Text = "Search"
         '
         'TxtUnits
         '
@@ -1018,6 +1028,24 @@ Partial Class FrmSchedule
         Me.Label1.Text = "School Year"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'Panel2
+        '
+        Me.Panel2.AutoScroll = True
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 28)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(936, 397)
+        Me.Panel2.TabIndex = 31
+        '
+        'Panel3
+        '
+        Me.Panel3.AutoScroll = True
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(3, 28)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(936, 397)
+        Me.Panel3.TabIndex = 31
+        '
         'FrmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -1089,7 +1117,7 @@ Partial Class FrmSchedule
     Friend WithEvents DgvTeacher As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents SearchTeacher As ToolStripButton
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -1118,4 +1146,6 @@ Partial Class FrmSchedule
     Friend WithEvents TxtTeacherName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

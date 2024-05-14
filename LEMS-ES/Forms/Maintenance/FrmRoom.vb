@@ -56,9 +56,8 @@
         End If
     End Sub
     Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtRoom.KeyPress
-        If Not IsValidLettersDigits(e.KeyChar) Then
+        If Not IsValidLettersDigits(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
-            Exit Sub
         End If
     End Sub
 End Class

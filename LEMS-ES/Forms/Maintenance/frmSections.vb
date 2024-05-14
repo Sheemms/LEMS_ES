@@ -11,6 +11,7 @@
                 JOIN gradelevel b ON a.GradeLevel_ID = b.ID
                 JOIN teacher c ON a.AdviserID = c.ID")
         dgvSection.DataSource = ds.Tables("QueryTb")
+        dgvSection.AutoGenerateColumns = False
 
         Query("SELECT * FROM gradelevel")
         CmbGradeLevel.DataSource = ds.Tables("QueryTb")
@@ -35,11 +36,12 @@
                 idSection = row.Cells(0).Value
                 CmbGradeLevel.Text = row.Cells(1).Value
                 TxtSectionName.Text = row.Cells(2).Value
+                CmbAdviser.Text = row.Cells(3).Value
             ElseIf e.ColumnIndex >= 0 Then
                 Clear()
             End If
         Catch ex As Exception
-            MsgBox("ERROR!", vbCritical)
+            MsgBox("Error selecting section: " & ex.Message, vbCritical)
         End Try
     End Sub
     Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click, BtnUpdate.Click

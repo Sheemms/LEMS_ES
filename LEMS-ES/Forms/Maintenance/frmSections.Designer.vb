@@ -190,7 +190,7 @@ Partial Class FrmSections
         Me.CmbAdviser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbAdviser.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CmbAdviser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbAdviser.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbAdviser.Font = New System.Drawing.Font("Bahnschrift", 9.75!)
         Me.CmbAdviser.ForeColor = System.Drawing.Color.Black
         Me.CmbAdviser.ItemHeight = 30
         Me.CmbAdviser.Location = New System.Drawing.Point(3, 141)

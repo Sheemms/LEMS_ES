@@ -39,9 +39,9 @@ Partial Class FrmAuditTrail
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.CmbUserLevel = New System.Windows.Forms.ToolStripComboBox()
+        Me.CmbModule = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripComboBox1 = New System.Windows.Forms.ToolStripComboBox()
+        Me.CmbUserLevel = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -188,7 +188,7 @@ Partial Class FrmAuditTrail
         'ToolStrip1
         '
         Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.ToolStripButton3, Me.CmbUserLevel, Me.ToolStripLabel1, Me.ToolStripComboBox1, Me.ToolStripLabel2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.ToolStripButton3, Me.CmbModule, Me.ToolStripLabel1, Me.CmbUserLevel, Me.ToolStripLabel2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(947, 25)
@@ -212,12 +212,12 @@ Partial Class FrmAuditTrail
         Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
         Me.ToolStripButton3.Text = "ToolStripButton3"
         '
-        'CmbUserLevel
+        'CmbModule
         '
-        Me.CmbUserLevel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbUserLevel.Items.AddRange(New Object() {"All"})
-        Me.CmbUserLevel.Name = "CmbUserLevel"
-        Me.CmbUserLevel.Size = New System.Drawing.Size(120, 25)
+        Me.CmbModule.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbModule.Items.AddRange(New Object() {"All"})
+        Me.CmbModule.Name = "CmbModule"
+        Me.CmbModule.Size = New System.Drawing.Size(120, 25)
         '
         'ToolStripLabel1
         '
@@ -226,12 +226,12 @@ Partial Class FrmAuditTrail
         Me.ToolStripLabel1.Size = New System.Drawing.Size(48, 22)
         Me.ToolStripLabel1.Text = "Module:"
         '
-        'ToolStripComboBox1
+        'CmbUserLevel
         '
-        Me.ToolStripComboBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripComboBox1.Items.AddRange(New Object() {"All", "Administrator", "Office Staff", "Instructor"})
-        Me.ToolStripComboBox1.Name = "ToolStripComboBox1"
-        Me.ToolStripComboBox1.Size = New System.Drawing.Size(120, 25)
+        Me.CmbUserLevel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbUserLevel.Items.AddRange(New Object() {"All", "Administrator", "Office Staff", "Instructor"})
+        Me.CmbUserLevel.Name = "CmbUserLevel"
+        Me.CmbUserLevel.Size = New System.Drawing.Size(120, 25)
         '
         'ToolStripLabel2
         '
@@ -266,7 +266,7 @@ Partial Class FrmAuditTrail
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
-    Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
+    Friend WithEvents CmbUserLevel As ToolStripComboBox
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -275,6 +275,6 @@ Partial Class FrmAuditTrail
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents TxtSearch As ToolStripTextBox
-    Friend WithEvents CmbUserLevel As ToolStripComboBox
+    Friend WithEvents CmbModule As ToolStripComboBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
 End Class

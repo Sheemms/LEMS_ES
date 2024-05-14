@@ -2,17 +2,6 @@
 Imports Guna.UI2.WinForms
 
 Module ModDisplay
-    Public Function IS_EMPTY(ByVal ptext As Object) As Boolean
-        If ptext.text = String.Empty Then
-            ptext.backcolor = Color.LemonChiffon
-            ptext.focus
-            Critical("Required Missing Field!")
-            IS_EMPTY = True
-        Else
-            ptext.backcolor = Color.White
-            IS_EMPTY = False
-        End If
-    End Function
     Public Function IsEmptyField(input As String) As Boolean
         Dim regex As New Regex("^.+$")
         Return regex.IsMatch(input)
@@ -83,10 +72,13 @@ Module ModDisplay
         FrmAuditTrail.Close()
     End Sub
     Public Sub Critical(ByVal MessageStatement As String)
-        MsgBox(MessageStatement, MsgBoxStyle.Critical, "LEMS_ES")
+        MsgBox(MessageStatement, MsgBoxStyle.Critical, "LEMSEJHS_CES")
     End Sub
     Public Sub Success(ByVal MessageStatement As String)
-        MsgBox(MessageStatement, MsgBoxStyle.OkOnly, "LEMS_ES")
+        MsgBox(MessageStatement, MsgBoxStyle.OkOnly, "LEMSEJHS_CES")
+    End Sub
+    Public Sub Info(ByVal messagestatement As String)
+        MsgBox(messagestatement, MsgBoxStyle.Information, "LEMSEJHS_CES")
     End Sub
     Public Function EIDGenerate() As String
         Try
@@ -179,14 +171,9 @@ Module ModDisplay
 
         Return True
     End Function
-    Public Function IsValidLettersDigits(inputCharDigits As Char) As Boolean
-        Dim regexPattern As String = "^[a-zA-Z0-9]+$"
-
-        If Not Regex.IsMatch(inputCharDigits.ToString(), regexPattern) AndAlso Not Char.IsControl(inputCharDigits) Then
-            Return False
-        End If
-
-        Return True
+    Public Function IsValidLettersDigits(input As String) As Boolean
+        Dim pattern As String = "^[a-zA-Z0-9\s]+$"
+        Return Regex.IsMatch(input, pattern)
     End Function
     Public Function IsValidAmount(inputAmount As String) As Boolean
         Dim regex As New Regex("^(100000(\.0{1,2})?|[0-9]{1,5}(\.[0-9]{1,2})?)$")
