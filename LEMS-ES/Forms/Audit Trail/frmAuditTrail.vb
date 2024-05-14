@@ -18,7 +18,7 @@
         End While
         dr.Close()
     End Sub
-    Sub Load_records(ByVal sql As String)
+    Private Sub Load_records(ByVal sql As String)
         Dim i As Integer
         DgvAudittrail.Rows.Clear()
 

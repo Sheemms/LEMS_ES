@@ -4,6 +4,7 @@ Public Class FrmSchedule
     Public idSched As Integer = 0
     Private Sub FrmSchedule_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
+        Clear()
         LoadRecords()
         LoadSection()
         LoadRoom()
@@ -12,7 +13,7 @@ Public Class FrmSchedule
         GetSchoolYear(lblSY)
     End Sub
     Public Sub Clear()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {TxtAdviserID, TxtAdviser, TxtSubjName, TxtUnits, txtTeacherID, txtTeacherName, TxtDept, TxtGradeLevel}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {TxtAdviserID, TxtAdviser, TxtSubjName, TxtUnits, txtTeacherID, TxtTeacherName, TxtDept, TxtGradeLevel}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
@@ -338,5 +339,9 @@ Public Class FrmSchedule
             txtTeacherID.Clear()
             TxtTeacherName.Clear()
         End If
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+
     End Sub
 End Class

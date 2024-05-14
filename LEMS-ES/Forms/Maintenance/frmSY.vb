@@ -46,46 +46,53 @@ Public Class FrmSY
 
     Private Sub DgvSY_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSY.CellContentClick
         Dim column As String = DgvSY.Columns(e.ColumnIndex).Name
-        Dim isOpen As Boolean = Convert.ToBoolean(CmdScalar("SELECT COUNT(*) FROM schoolyear WHERE Status = 'Active'"))
-        If column = "colOpen" AndAlso e.RowIndex >= 0 Then
-            If MsgBox("Do you want to open this school year?") Then
-                Try
-                    Dim syID As String = DgvSY.Rows(e.RowIndex).Cells("ID").Value.ToString()
-                    Command("UPDATE schoolyear SET Status = 'Inactive'", New MySqlParameter() {})
-                    Command("UPDATE schoolyear SET Status = 'Active' WHERE ID=" & syID)
 
-                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+        If e.RowIndex >= 0 Then
+            Dim syID As String = DgvSY.Rows(e.RowIndex).Cells("ID").Value.ToString()
 
-                    If rowsAffected > 0 Then
-                        MsgBox("School Year has been successfully open!")
+            If column = "colOpen" Then
+                Dim isActive As Boolean = Convert.ToBoolean(CmdScalarwithParam("SELECT COUNT(*) FROM schoolyear WHERE ID=@ID AND Status = 'Active'", New MySqlParameter("@ID", syID)))
+
+                If isActive Then
+                    MsgBox("This school year is already active.")
+                    Return
+                End If
+
+                If MsgBox("Do you want to open this school year?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                    Try
+                        Command("UPDATE schoolyear SET Status = 'Inactive'")
+
+                        Command("UPDATE schoolyear SET Status = 'Active' WHERE ID=@ID", New MySqlParameter("@ID", syID))
+
+                        MsgBox("School Year has been successfully opened!")
                         Loadrecords()
-                    Else
-                        MsgBox("There is no active school year.")
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-            End If
-        ElseIf column = "colClose" AndAlso e.RowIndex >= 0 Then
-            If MsgBox("Do you want to close this school year?") Then
-                Try
-                    Dim syID As String = DgvSY.Rows(e.RowIndex).Cells("ID").Value.ToString()
+                    Catch ex As Exception
+                        MsgBox("Error: " & ex.Message)
+                    End Try
+                End If
 
-                    Command("UPDATE schoolyear SET Status = 'Inactive' WHERE ID=" & syID)
+            ElseIf column = "colClose" Then
+                Dim isActive As Boolean = Convert.ToBoolean(CmdScalarwithParam("SELECT COUNT(*) FROM schoolyear WHERE ID=@ID AND Status = 'Active'", New MySqlParameter("@ID", syID)))
 
-                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                If Not isActive Then
+                    MsgBox("This school year is not active and cannot be closed.")
+                    Return
+                ElseIf isActive Then
+                    MsgBox("There is no active school year to close.")
+                    Return
+                End If
 
-                    If rowsAffected > 0 Then
+                If MsgBox("Do you want to close this school year?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                    Try
+                        Command("UPDATE schoolyear SET Status = 'Inactive' WHERE ID=@ID", New MySqlParameter("@ID", syID))
+
                         MsgBox("School Year has been successfully closed!")
                         Loadrecords()
-                    Else
-                        MsgBox("There is no inactive school year.")
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
+                    Catch ex As Exception
+                        MsgBox("Error: " & ex.Message)
+                    End Try
+                End If
             End If
         End If
     End Sub
-
 End Class

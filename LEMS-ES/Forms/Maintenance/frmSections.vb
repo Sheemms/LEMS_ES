@@ -71,4 +71,31 @@
         End If
     End Sub
 
+    Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedIndexChanged
+        Dim selectedGradeLevelID As Integer
+        If CmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf CmbGradeLevel.SelectedItem Is DataRowView Then
+            selectedGradeLevelID = Convert.ToInt32(DirectCast(CmbGradeLevel.SelectedItem, DataRowView).Row("ID"))
+        Else
+            'MessageBox.Show("Please select a valid grade level.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Dim qry As String = $"SELECT a.ID, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname, ' ', a.MiddleInitial) AS Adviser 
+        FROM teacher a
+        JOIN department b ON a.Department_ID = b.ID
+        JOIN gradelevel c ON b.ID = c.Department_ID
+        WHERE c.ID = {selectedGradeLevelID}"
+        Query(qry)
+
+        Dim adviserTable As DataTable = ds.Tables("QueryTb")
+        If adviserTable.Rows.Count > 0 Then
+            CmbAdviser.DataSource = adviserTable
+            CmbAdviser.ValueMember = "ID"
+            CmbAdviser.DisplayMember = "Adviser"
+        Else
+            CmbAdviser.DataSource = Nothing
+            CmbAdviser.Items.Clear()
+            CmbAdviser.SelectedIndex = -1
+        End If
+    End Sub
 End Class

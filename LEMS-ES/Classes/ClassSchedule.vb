@@ -49,11 +49,11 @@ Public Class ClassSchedule
             If ex.Number = 1062 AndAlso ex.Message.Contains("Days and Time") Then
                 Critical("Teacher has the same days and time added.")
             ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Section, Subject and Days") Then
-                Critical("Section and Subject Days")
+                Critical("Section can't have the duplicate subject and days")
             ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Section, Room, Days and Time") Then
-                Critical("Section, Room and Days and Time")
+                Critical("Section can't have the same room, days and time")
             ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Room, Days and Time") Then
-                Critical("Room and Days and Time")
+                Critical("Room can't have the same schedule days and time.")
             End If
             Exit Sub
         Catch ex As Exception

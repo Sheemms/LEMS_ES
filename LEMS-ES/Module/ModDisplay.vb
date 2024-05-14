@@ -170,7 +170,6 @@ Module ModDisplay
 
         Return True
     End Function
-
     Public Function IsValidDigits(inputDigits As Char) As Boolean
         Dim regexPattern As String = "^\d+$"
 
@@ -188,6 +187,10 @@ Module ModDisplay
         End If
 
         Return True
+    End Function
+    Public Function IsValidAmount(inputAmount As String) As Boolean
+        Dim regex As New Regex("^(100000(\.0{1,2})?|[0-9]{1,5}(\.[0-9]{1,2})?)$")
+        Return regex.IsMatch(inputAmount)
     End Function
     Public Function NoLeadingSpace(input As String) As Boolean
         Dim regex As New Regex("^\S+( \S+)*$")

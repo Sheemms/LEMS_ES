@@ -45,6 +45,18 @@ Module Mod_Conn
             Return Nothing
         End Try
     End Function
+    Public Function CmdScalarwithParam(ByVal ScalarStatement As String, ParamArray parameters() As MySqlParameter) As Object
+        Try
+            Dim cmd As New MySqlCommand(ScalarStatement, con)
+            cmd.Parameters.AddRange(parameters)
+            Dim scalar As Object = cmd.ExecuteScalar()
+            Return scalar
+        Catch ex As Exception
+            MsgBox("Error executing scalar query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function ExecuteReader(ByVal query As String) As MySqlDataReader
         Try
             Dim reader As MySqlDataReader
@@ -63,7 +75,7 @@ Module Mod_Conn
                     New MySqlParameter("@UserID", userID),
                     New MySqlParameter("@Description", plog))
         Catch ex As Exception
-            MsgBox("Error logging action: " & ex.Message, vbCritical)
+            MsgBox("Audit Trail: " & ex.Message, vbCritical)
         End Try
     End Sub
 End Module

@@ -14,6 +14,7 @@
                 FROM tuition tf
                 JOIN gradelevel gl ON tf.GradeLevel_ID = gl.ID")
         dgvTuitionFee.DataSource = ds.Tables("QueryTb")
+        dgvTuitionFee.Columns(2).DefaultCellStyle.Format = "N2"
 
         Query("SELECT * FROM gradelevel")
         cmbGradeLevel.DataSource = ds.Tables("QueryTb")
@@ -22,19 +23,15 @@
 
         Query("SELECT * FROM miscellaneous")
         dgvMiscellaneous.DataSource = ds.Tables("QueryTb")
+        dgvMiscellaneous.Columns(1).DefaultCellStyle.Format = "N2"
 
         Query("SELECT * FROM otherfee")
         DgvOtherFee.DataSource = ds.Tables("QueryTb")
-
-        'Query("SELECT * FROM mop")
-        'dgvMOP.DataSource = ds.Tables("QueryTb")
-
-        'Query("SELECT * FROM top")
-        'dgvTOP.DataSource = ds.Tables("QueryTb")
+        DgvOtherFee.Columns(2).DefaultCellStyle.Format = "N2"
     End Sub
     Public Sub Clear()
         idTuition = 0
-        cmbGradeLevel.Text = ""
+        cmbGradeLevel.SelectedIndex = -1
         txtAmountTuition.Clear()
         btnSaveTuitionFee.Enabled = True
 
@@ -70,7 +67,10 @@
             MsgBox("Please enter the amount.")
             Return
         End If
-
+        If Not IsValidAmount(txtAmountTuition.Text.Trim()) Then
+            MsgBox("Amount can't exceed to 100,000")
+            Return
+        End If
         If Not NoLeadingSpace(txtAmountTuition.Text.Trim()) Then
             MsgBox("Amount must have no leading spaces.")
             Return
