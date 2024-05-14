@@ -21,10 +21,15 @@ Public Class ClassTeacher
     Public Shared Sub TeacherRef()
         Try
             Dim dynamicParams As MySqlParameter() = TeacherParameters()
+            Dim userParams As MySqlParameter() = UserMParameters()
+
             If frmTeacherMaintenance.idTeacher = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO teacher(EmpID, Department_ID, Lastname, Firstname, MiddleInitial, Contact, Address) 
                             VALUES (@EmpID, @Department_ID, @Lastname, @Firstname, @MiddleInitial, @Contact, @Address)", dynamicParams)
+
+                    Command("INSERT INTO user(Username, Password, Fullname, Contact, UserLevel) 
+                            VALUES (@Username, @Password, @Fullname, @Contact, 'Instructor')", userParams)
                     Success("Successfully Added!")
                     FrmTeacherMaintenance.Close()
                     FrmTeacherMaintenance.Clear()
@@ -46,5 +51,20 @@ Public Class ClassTeacher
             MsgBox(ex.Message)
         End Try
     End Sub
+    Public Shared Function UserMParameters() As MySqlParameter()
+        Try
+            Dim fullname As String = FrmTeacherMaintenance.txtLastname.Text & " " & FrmTeacherMaintenance.txtFirstname.Text
+            Dim UserParam() As MySqlParameter = {
+                    New MySqlParameter("@ID", FrmTeacherMaintenance.iduser),
+                    New MySqlParameter("@Username", FrmTeacherMaintenance.TxtUsername.Text),
+                    New MySqlParameter("@Password", FrmTeacherMaintenance.TxtPassword.Text),
+                    New MySqlParameter("@Fullname", fullname),
+                    New MySqlParameter("@Contact", FrmTeacherMaintenance.txtContact.Text)
+                    }
+            Return UserParam
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 #End Region
 End Class

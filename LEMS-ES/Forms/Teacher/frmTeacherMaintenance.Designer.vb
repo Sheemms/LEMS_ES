@@ -24,6 +24,12 @@ Partial Class FrmTeacherMaintenance
     Private Sub InitializeComponent()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtRePassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtPassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtUsername = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.cmbDept = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -40,12 +46,6 @@ Partial Class FrmTeacherMaintenance
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.txtEmpID = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtUsername = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtPassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TxtRePassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -95,6 +95,93 @@ Partial Class FrmTeacherMaintenance
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(681, 243)
         Me.Panel1.TabIndex = 3
+        '
+        'TxtRePassword
+        '
+        Me.TxtRePassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtRePassword.DefaultText = ""
+        Me.TxtRePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtRePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtRePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtRePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtRePassword.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtRePassword.ForeColor = System.Drawing.Color.Black
+        Me.TxtRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtRePassword.Location = New System.Drawing.Point(462, 144)
+        Me.TxtRePassword.Name = "TxtRePassword"
+        Me.TxtRePassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtRePassword.PlaceholderText = ""
+        Me.TxtRePassword.SelectedText = ""
+        Me.TxtRePassword.Size = New System.Drawing.Size(189, 33)
+        Me.TxtRePassword.TabIndex = 66
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(463, 125)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(109, 16)
+        Me.Label10.TabIndex = 65
+        Me.Label10.Text = "Retype Password"
+        '
+        'TxtPassword
+        '
+        Me.TxtPassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtPassword.DefaultText = ""
+        Me.TxtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtPassword.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPassword.ForeColor = System.Drawing.Color.Black
+        Me.TxtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtPassword.Location = New System.Drawing.Point(462, 84)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.PlaceholderText = ""
+        Me.TxtPassword.SelectedText = ""
+        Me.TxtPassword.Size = New System.Drawing.Size(189, 33)
+        Me.TxtPassword.TabIndex = 64
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(463, 65)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(67, 16)
+        Me.Label9.TabIndex = 63
+        Me.Label9.Text = "Password"
+        '
+        'TxtUsername
+        '
+        Me.TxtUsername.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtUsername.DefaultText = ""
+        Me.TxtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtUsername.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtUsername.ForeColor = System.Drawing.Color.Black
+        Me.TxtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtUsername.Location = New System.Drawing.Point(462, 28)
+        Me.TxtUsername.Name = "TxtUsername"
+        Me.TxtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtUsername.PlaceholderText = ""
+        Me.TxtUsername.SelectedText = ""
+        Me.TxtUsername.Size = New System.Drawing.Size(189, 33)
+        Me.TxtUsername.TabIndex = 62
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(463, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(69, 16)
+        Me.Label5.TabIndex = 61
+        Me.Label5.Text = "Username"
         '
         'BtnClear
         '
@@ -326,93 +413,6 @@ Partial Class FrmTeacherMaintenance
         Me.Label1.Size = New System.Drawing.Size(81, 16)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Employee ID"
-        '
-        'TxtUsername
-        '
-        Me.TxtUsername.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtUsername.DefaultText = ""
-        Me.TxtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtUsername.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUsername.ForeColor = System.Drawing.Color.Black
-        Me.TxtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtUsername.Location = New System.Drawing.Point(462, 28)
-        Me.TxtUsername.Name = "TxtUsername"
-        Me.TxtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtUsername.PlaceholderText = ""
-        Me.TxtUsername.SelectedText = ""
-        Me.TxtUsername.Size = New System.Drawing.Size(189, 33)
-        Me.TxtUsername.TabIndex = 62
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(463, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(69, 16)
-        Me.Label5.TabIndex = 61
-        Me.Label5.Text = "Username"
-        '
-        'TxtPassword
-        '
-        Me.TxtPassword.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtPassword.DefaultText = ""
-        Me.TxtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtPassword.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPassword.ForeColor = System.Drawing.Color.Black
-        Me.TxtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtPassword.Location = New System.Drawing.Point(462, 84)
-        Me.TxtPassword.Name = "TxtPassword"
-        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPassword.PlaceholderText = ""
-        Me.TxtPassword.SelectedText = ""
-        Me.TxtPassword.Size = New System.Drawing.Size(189, 33)
-        Me.TxtPassword.TabIndex = 64
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(463, 65)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(67, 16)
-        Me.Label9.TabIndex = 63
-        Me.Label9.Text = "Password"
-        '
-        'TxtRePassword
-        '
-        Me.TxtRePassword.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtRePassword.DefaultText = ""
-        Me.TxtRePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtRePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtRePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtRePassword.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRePassword.ForeColor = System.Drawing.Color.Black
-        Me.TxtRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtRePassword.Location = New System.Drawing.Point(462, 144)
-        Me.TxtRePassword.Name = "TxtRePassword"
-        Me.TxtRePassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtRePassword.PlaceholderText = ""
-        Me.TxtRePassword.SelectedText = ""
-        Me.TxtRePassword.Size = New System.Drawing.Size(189, 33)
-        Me.TxtRePassword.TabIndex = 66
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(463, 125)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(109, 16)
-        Me.Label10.TabIndex = 65
-        Me.Label10.Text = "Retype Password"
         '
         'FrmTeacherMaintenance
         '

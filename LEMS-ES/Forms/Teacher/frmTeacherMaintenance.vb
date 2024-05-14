@@ -1,5 +1,6 @@
 ﻿Public Class FrmTeacherMaintenance
     Public idTeacher As Integer = 0
+    Public iduser As Integer = 0
     Private Sub FrmTeacherMaintenance_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         LoadDept()

@@ -69,7 +69,6 @@
             Return
         End If
         ClassUserMaintenance.UserMRef()
-        Clear()
     End Sub
 
     Private Sub BtnClearUserMaintenance_Click(sender As Object, e As EventArgs) Handles btnClearUserMaintenance.Click

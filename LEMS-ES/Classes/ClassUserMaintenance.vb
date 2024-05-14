@@ -26,6 +26,7 @@ Public Class ClassUserMaintenance
                     Success("Successfully Added!")
                     Dim name As String = FrmUserMaintenance.cmbUserLevel.Text & " - " & FrmUserMaintenance.txtFullname.Text
                     LogAction("Added User | " & name)
+                    FrmUserMaintenance.Clear()
                 End If
             Else
                 If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
@@ -33,6 +34,7 @@ Public Class ClassUserMaintenance
                     Success("Successfully Updated!")
                     Dim name As String = FrmUserMaintenance.cmbUserLevel.Text & " - " & FrmUserMaintenance.txtFullname.Text
                     LogAction("Updated User | " & name)
+                    FrmUserMaintenance.Clear()
                 End If
             End If
             frmUserMaintenance.loadrecords()
