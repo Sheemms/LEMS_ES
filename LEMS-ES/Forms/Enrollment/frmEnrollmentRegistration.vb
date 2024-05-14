@@ -88,23 +88,23 @@ Public Class FrmEnrollmentRegistration
 
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
         If Not IsEmptyField(CmbDepartment.Text.Trim()) Then
-            MsgBox("Please select a department.")
+            Info("Please select a department.")
             Return
         End If
         If Not IsEmptyField(CmbSection.Text.Trim()) Then
-            MsgBox("Please select a section.")
+            Info("Please select a section.")
             Return
         End If
         If Not IsEmptyField(CmbGradeLevel.Text.Trim()) Then
-            MsgBox("Please select a grade level.")
+            Info("Please select a grade level.")
             Return
         End If
         If Not IsEmptyField(txtStudLRN.Text.Trim()) Then
-            MsgBox("Please enter a subject code.")
+            Info("Please enter a subject code.")
             Return
         End If
         If Not IsEmptyField(txtStudName.Text.Trim()) Then
-            MsgBox("Please enter a subject name.")
+            Info("Please enter a subject name.")
             Return
         End If
 

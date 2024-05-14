@@ -17,19 +17,19 @@ Public Class FrmSY
 
     Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles BtnSave.Click, BtnUpdate.Click
         If Not IsEmptyField(TxtEndYear.Text.Trim()) Then
-            MsgBox("Please enter the end year.")
+            Info("Please enter the end year.")
             Return
         End If
 
         Dim endYear As Integer
         If Not Integer.TryParse(TxtEndYear.Text, endYear) Then
-            MsgBox("Invalid end year.")
+            Info("Invalid end year.")
             Return
         End If
 
         Dim currentYear As Integer = Year(Now)
         If endYear < currentYear OrElse endYear > currentYear + 1 Then
-            MsgBox("End year should be between " & currentYear & " and " & (currentYear + 1) & ".")
+            Info("End year should be between " & currentYear & " and " & (currentYear + 1) & ".")
             Return
         End If
 

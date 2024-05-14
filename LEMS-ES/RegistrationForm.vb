@@ -3,19 +3,19 @@
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 #Region "IsEmptyField"
         If Not IsEmptyField(txtUsername.Text.Trim()) Then
-            MsgBox("Please enter a username.")
+            Info("Please enter a username.")
             Return
         End If
         If Not IsEmptyField(txtPassword.Text.Trim()) Then
-            MsgBox("Please enter a password.")
+            Info("Please enter a password.")
             Return
         End If
         If Not IsEmptyField(txtFullname.Text.Trim()) Then
-            MsgBox("Please enter a fullname.")
+            Info("Please enter a fullname.")
             Return
         End If
         If Not IsEmptyField(TxtContact.Text.Trim()) Then
-            MsgBox("Please enter a contact.")
+            Info("Please enter a contact.")
             Return
         End If
 
@@ -25,10 +25,10 @@
         End If
 #End Region
         If Not NoLeadingSpace(txtUsername.Text.Trim()) Then
-            MsgBox("Username must have no leading spaces.")
+            Info("Username must have no multiple spaces between letters.")
             Return
         ElseIf Not NoLeadingSpace(txtFullname.Text.Trim()) Then
-            MsgBox("Fullname must have no leading spaces.")
+            Info("Fullname must have no multiple spaces between letters.")
             Return
         End If
 

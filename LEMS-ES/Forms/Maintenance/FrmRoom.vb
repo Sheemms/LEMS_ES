@@ -32,19 +32,19 @@
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not IsEmptyField(TxtRoom.Text.Trim()) Then
-            MsgBox("Please enter a room name.")
+            Info("Please enter a room name.")
             Return
         End If
         If Not IsEmptyField(TxtCapacity.Text.Trim()) Then
-            MsgBox("Please enter a room capacity.")
+            Info("Please enter a room capacity.")
             Return
         End If
 
         If Not NoLeadingSpace(TxtRoom.Text.Trim()) Then
-            MsgBox("Room name must have no leading spaces.")
+            Info("Room name must have no multiple spaces between letters.")
             Return
         ElseIf Not NoLeadingSpace(TxtCapacity.Text.Trim()) Then
-            MsgBox("Capacity must have no leading spaces.")
+            Info("Capacity must have no multiple spaces between numbers.")
         End If
         ClassRoom.RoomRef()
         Clear()

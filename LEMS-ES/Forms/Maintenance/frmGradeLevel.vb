@@ -34,17 +34,17 @@
     End Sub
     Private Sub BtnSaveSY_Click(sender As Object, e As EventArgs) Handles btnSaveSY.Click
         If Not IsEmptyField(cmbDept.Text.Trim()) Then
-            MsgBox("Please select a department.")
+            Info("Please select a department.")
             Return
         End If
 
         If Not IsEmptyField(txtAddGradeLevel.Text.Trim()) Then
-            MsgBox("Please enter a grade level.")
+            Info("Please enter a grade level.")
             Return
         End If
 
         If Not NoLeadingSpace(txtAddGradeLevel.Text.Trim()) Then
-            MsgBox("Grade Level must have no leading spaces.")
+            Info("Grade Level must have no multiple spaces between letters.")
             Return
         End If
         ClassGradeLevel.GradeLevelRef()

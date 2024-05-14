@@ -5,12 +5,12 @@
     End Sub
     Private Sub BtnFees_Click(sender As Object, e As EventArgs) Handles BtnFees.Click
         If Not IsEmptyField(TxtCurrentPayment.Text.Trim()) Then
-            MsgBox("Please enter the pay amount.")
+            Info("Please enter the pay amount.")
             Return
         End If
 
         If Not NoLeadingSpace(TxtCurrentPayment.Text.Trim()) Then
-            MsgBox("Current payment must have no leading spaces.")
+            Info("Current payment must have no multiple spaces between letters.")
             Return
         End If
         ClassFees.FeesRef()
@@ -28,7 +28,7 @@
             If Decimal.TryParse(TxtCurrentPayment.Text, currentPayment) Then
                 SubtractPayments(totalPayment, currentPayment)
                 If currentPayment > totalPayment Then
-                    MsgBox("Please pay the exact amount.")
+                    Info("Please pay the exact amount.")
                     TxtCurrentPayment.Clear()
                     TxtCurrentBalance.Text = "00000.00"
                 End If

@@ -74,44 +74,43 @@
     Private Sub BtnPayments_Click(sender As Object, e As EventArgs) Handles BtnPayments.Click
 #Region "IsEmptyField"
         If Not IsEmptyField(txtLRN.Text.Trim()) Then
-            MsgBox("Please enter a student LRN.")
+            Info("Please enter a student LRN.")
             Return
         End If
         If Not IsEmptyField(txtStudName.Text.Trim()) Then
-            MsgBox("Please enter a student name.")
+            Info("Please enter a student name.")
             Return
         End If
         If Not IsEmptyField(txtGradeLvl.Text.Trim()) Then
-            MsgBox("Please enter a grade level.")
+            Info("Please enter a grade level.")
             Return
         End If
         If Not IsEmptyField(txtSection.Text.Trim()) Then
-            MsgBox("Please enter a section.")
+            Info("Please enter a section.")
             Return
         End If
         If Not IsEmptyField(txtTuition.Text.Trim()) Then
-            MsgBox("Please enter a Tuition.")
+            Info("Please enter a Tuition.")
             Return
         End If
         If Not IsEmptyField(txtMiscellaneous.Text.Trim()) Then
-            MsgBox("Please enter a miscellaneous.")
+            Info("Please enter a miscellaneous.")
             Return
         End If
         If Not IsEmptyField(cmbOtherFee.Text.Trim()) Then
-            MsgBox("Please select a other fee.")
+            Info("Please select a other fee.")
             Return
         End If
         If Not IsEmptyField(cmbModeofPayment.Text.Trim()) Then
-            MsgBox("Please select a mode of payment.")
+            Info("Please select a mode of payment.")
             Return
         End If
 #End Region
         If Not NoLeadingSpace(TxtCurPayment.Text.Trim()) Then
-            MsgBox("Current payment must have no leading spaces.")
+            Info("Current payment must have no multiple spaces between numbers.")
             Return
         End If
         ClassPayments.PaymentsRef()
-        Clear()
     End Sub
     Private Sub CalculateTotalPayment()
         Dim total As Decimal = 0

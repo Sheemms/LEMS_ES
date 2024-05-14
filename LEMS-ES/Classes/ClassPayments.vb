@@ -69,6 +69,7 @@ Public Class ClassPayments
                     LogAction("Added Payment |" & name)
                     FrmBilling.LoadRecords()
                     FrmBilling.LoadTransactionHistory()
+                    FrmPayments.Clear()
                     FrmPayments.Close()
                 End If
             Else

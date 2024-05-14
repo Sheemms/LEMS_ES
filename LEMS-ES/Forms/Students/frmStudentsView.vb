@@ -107,58 +107,58 @@ Public Class FrmStudentsView
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 #Region "IsEmptyField"
         If Not IsEmptyField(txtStudNum.Text.Trim()) Then
-            MsgBox("Please enter a student LRN.")
+            Info("Please enter a student LRN.")
             Return
         End If
         If Not IsEmptyField(cmbStudType.Text.Trim()) Then
-            MsgBox("Please select a classification.")
+            Info("Please select a classification.")
             Return
         End If
         If Not IsEmptyField(txtStudLname.Text.Trim()) Then
-            MsgBox("Please enter a student lastname.")
+            Info("Please enter a student lastname.")
             Return
         End If
         If Not IsEmptyField(txtStudFname.Text.Trim()) Then
-            MsgBox("Please enter a student firstname.")
+            Info("Please enter a student firstname.")
             Return
         End If
         If Not IsEmptyField(cmbStudSuffix.Text.Trim()) Then
-            MsgBox("Please select a student suffix.")
+            Info("Please select a student suffix.")
             Return
         End If
         If Not IsEmptyField(txtAddress.Text.Trim()) Then
-            MsgBox("Please enter a Address.")
+            Info("Please enter a Address.")
             Return
         End If
         If Not IsEmptyField(txtGuardianName.Text.Trim()) Then
-            MsgBox("Please enter a guardian name.")
+            Info("Please enter a guardian name.")
             Return
         End If
         If Not IsEmptyField(txtGuardianContact.Text.Trim()) Then
-            MsgBox("Please enter a guardian contact.")
+            Info("Please enter a guardian contact.")
             Return
         End If
         If Not IsEmptyField(txtGuardianRelation.Text.Trim()) Then
-            MsgBox("Please enter a guardian relation.")
+            Info("Please enter a guardian relation.")
             Return
         End If
 #End Region
 
 
         If Not NoLeadingSpace(txtStudLname.Text.Trim()) Then
-            MsgBox("Student last name must have no leading spaces.")
+            Info("Student last name must have no multiple spaces between letters.")
             Return
         ElseIf Not NoLeadingSpace(txtStudFname.Text.Trim()) Then
-            MsgBox("Student first name must have no leading spaces.")
+            Info("Student first name have no multiple spaces between letters.")
             Return
         ElseIf Not NoLeadingSpace(txtAddress.Text.Trim()) Then
-            MsgBox("Address must have no leading spaces.")
+            Info("Address must have no multiple spaces between letters or numbers.")
             Return
         ElseIf Not NoLeadingSpace(txtGuardianName.Text.Trim()) Then
-            MsgBox("Guardian name must have no leading spaces.")
+            Info("Guardian name must have no multiple spaces between letters.")
             Return
         ElseIf Not NoLeadingSpace(txtGuardianRelation.Text.Trim()) Then
-            MsgBox("Guardian relation must have no leading spaces.")
+            Info("Guardian relation must have no multiple spaces between letters.")
             Return
         End If
         ClassStudents.StudRef()
