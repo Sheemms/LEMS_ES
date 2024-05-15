@@ -9,11 +9,12 @@ Public Class FrmSchedule
         LoadSection()
         LoadRoom()
         LoadSubject()
+        LoadTeacher()
         'LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
     Public Sub Clear()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {TxtAdviserID, TxtAdviser, TxtSubjName, TxtUnits, txtTeacherID, TxtTeacherName, TxtDept, TxtGradeLevel}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {TxtAdviserID, TxtAdviser, TxtSubjName, TxtUnits, txtTeacherID, TxtDept, TxtGradeLevel}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
@@ -23,6 +24,7 @@ Public Class FrmSchedule
         CmbSection.SelectedIndex = -1
         CmbRoom.SelectedIndex = -1
         CmbSubjectCode.SelectedIndex = -1
+        CmbTeacherName.SelectedIndex = -1
         cbM.Checked = False
         cbT.Checked = False
         cbW.Checked = False
@@ -31,6 +33,7 @@ Public Class FrmSchedule
         idSection = 0
         idSched = 0
         idSub = 0
+        teacherid = 0
     End Sub
 #Region "Loads"
     Public Sub LoadRecords()
@@ -79,6 +82,72 @@ Public Class FrmSchedule
         TxtSubjName.Clear()
         TxtUnits.Clear()
     End Sub
+    Public Sub LoadTeacher()
+        Query("SELECT ID, EmpID, CONCAT(Lastname, ' ', Firstname) Fullname FROM teacher")
+        CmbTeacherName.DataSource = ds.Tables("QueryTb")
+        CmbTeacherName.ValueMember = "ID"
+        CmbTeacherName.DisplayMember = "Fullname"
+        CmbTeacherName.SelectedIndex = -1
+        txtTeacherID.Clear()
+    End Sub
+
+    Public Sub LoadSectionData()
+        Query("SELECT a.ID, c.Department, b.GradeLevel as Grade, a.SectionRoom as Section,
+                d.EmpID, CONCAT(d.Lastname, ' ', d.Firstname) Adviser
+                FROM section a
+                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                JOIN department c ON b.Department_ID = c.ID
+                JOIN teacher d ON a.AdviserID = d.ID
+                WHERE a.ID = '" & idSection & "'")
+
+        If ds.Tables("QueryTb").Rows.Count > 0 Then
+            With ds.Tables("QueryTb").Rows(0)
+                TxtDept.Text = .Item(1)
+                TxtGradeLevel.Text = .Item(2)
+                CmbSection.Text = .Item(3)
+                TxtAdviserID.Text = .Item(4)
+                TxtAdviser.Text = .Item(5)
+            End With
+        Else
+            Clear()
+        End If
+        CmbSubjectCode.SelectedIndex = -1
+        TxtSubjName.Clear()
+        TxtUnits.Clear()
+    End Sub
+    Public Sub LoadSubjectData()
+        Query("SELECT a.ID, a.SubjectCode, a.SubjectName, a.Units
+                FROM subject a
+                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                JOIN department c ON b.Department_ID = c.ID
+                WHERE a.ID = '" & idSub & "'")
+
+        If ds.Tables("QueryTb").Rows.Count > 0 Then
+            With ds.Tables("QueryTb").Rows(0)
+                CmbSubjectCode.Text = .Item(1)
+                TxtSubjName.Text = .Item(2)
+                TxtUnits.Text = .Item(3)
+            End With
+        Else
+            Clear()
+        End If
+    End Sub
+    Public Sub LoadTeacherData()
+        Query("SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) Fullname
+                FROM teacher a
+                JOIN department b ON a.Department_ID = b.ID
+                JOIN gradelevel c ON c.Department_ID = b.ID
+                WHERE a.ID = '" & teacherid & "'")
+
+        If ds.Tables("QueryTb").Rows.Count > 0 Then
+            With ds.Tables("QueryTb").Rows(0)
+                CmbTeacherName.Text = .Item(3)
+                txtTeacherID.Text = .Item(2)
+            End With
+        Else
+            Clear()
+        End If
+    End Sub
 #End Region
 
     Public idSection = Nothing
@@ -123,6 +192,22 @@ Public Class FrmSchedule
                     TxtSubjName.Clear()
                     TxtUnits.Clear()
                 End If
+
+                Query($"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) Fullname
+                FROM teacher a
+                JOIN department b ON a.Department_ID = b.ID
+                JOIN gradelevel c ON c.Department_ID = b.ID
+                WHERE c.ID = {selectedGradeLevelID}")
+
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    CmbTeacherName.DataSource = ds.Tables("QueryTb")
+                    CmbTeacherName.DisplayMember = "Fullname"
+                    CmbTeacherName.ValueMember = "ID"
+                Else
+                    CmbTeacherName.DataSource = Nothing
+                    CmbTeacherName.Items.Clear()
+                    txtTeacherID.Clear()
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -155,7 +240,12 @@ Public Class FrmSchedule
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Public teacherid = Nothing
+    Private Sub CmbTeacherName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTeacherName.SelectedIndexChanged
+        'If CmbTeacherName.SelectedItem IsNot Nothing Then
+        '    LoadTeacherData()
+        'End If
+    End Sub
 #Region "Auto Complete/ Populate"
     'Private Sub LoadTeacherAutoComplete()
     '    Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
@@ -217,8 +307,8 @@ Public Class FrmSchedule
             Info("Please enter a teacher id.")
             Return
         End If
-        If Not IsEmptyField(TxtTeacherName.Text.Trim()) Then
-            Info("Please enter a teacher name.")
+        If Not IsEmptyField(CmbTeacherName.Text.Trim()) Then
+            Info("Please select a teacher name.")
             Return
         End If
 #End Region
@@ -320,30 +410,34 @@ Public Class FrmSchedule
             FrmScheduleReport.Show()
         End If
     End Sub
-    Public teacherid = Nothing
-
     Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
-        Dim selectTeacherName As String = TxtTeacherName.Text.Trim()
+        'Dim selectTeacherName As String = TxtTeacherName.Text.Trim()
 
-        If Not String.IsNullOrEmpty(selectTeacherName) Then
-            Query($"SELECT ID, EmpID, Department_ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM teacher WHERE EmpID LIKE '%{selectTeacherName}%' OR Lastname LIKE '%{selectTeacherName}%' OR Firstname LIKE '%{selectTeacherName}%'")
+        'If Not String.IsNullOrEmpty(selectTeacherName) Then
+        '    Query($"SELECT ID, EmpID, Department_ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM teacher WHERE EmpID LIKE '%{selectTeacherName}%' OR Lastname LIKE '%{selectTeacherName}%' OR Firstname LIKE '%{selectTeacherName}%'")
 
-            If ds.Tables("QueryTb").Rows.Count > 0 Then
-                Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
-                teacherid = Convert.ToInt32(row("ID"))
-                txtTeacherID.Text = row("EmpID").ToString()
-                TxtTeacherName.Text = row("FullName").ToString()
-            Else
-                txtTeacherID.Clear()
-                TxtTeacherName.Clear()
-            End If
+        '    If ds.Tables("QueryTb").Rows.Count > 0 Then
+        '        Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
+        '        teacherid = Convert.ToInt32(row("ID"))
+        '        txtTeacherID.Text = row("EmpID").ToString()
+        '        TxtTeacherName.Text = row("FullName").ToString()
+        '    Else
+        '        txtTeacherID.Clear()
+        '        TxtTeacherName.Clear()
+        '    End If
+        'Else
+        '    txtTeacherID.Clear()
+        '    TxtTeacherName.Clear()
+        'End If
+        If CmbSection.SelectedItem Is Nothing Then
+            Info("Select section first.")
+            Return
         Else
-            txtTeacherID.Clear()
-            TxtTeacherName.Clear()
+            SearchTeacher.Show()
         End If
     End Sub
 
-    Private Sub SearchTeacher_Click(sender As Object, e As EventArgs) Handles SearchTeacher.Click
+    Private Sub SearchTchr_Click(sender As Object, e As EventArgs) Handles SearchTchr.Click
         Dim selectTeacherName As String = ToolStripTextBox1.Text.Trim()
         Query($"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ', ', a.Firstname) Teacher
                 FROM teacher a
@@ -353,6 +447,14 @@ Public Class FrmSchedule
                 OR b.Department LIKE '%{selectTeacherName}%'")
         DgvTeacher.AutoGenerateColumns = False
         DgvTeacher.DataSource = ds.Tables("QueryTb")
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        SearchSection.Show()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        SearchSubject.Show()
     End Sub
 
 End Class

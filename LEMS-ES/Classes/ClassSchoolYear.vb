@@ -29,10 +29,10 @@ Public Class ClassSchoolYear
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Dim closeParams() As MySqlParameter = SchoolYearParameters()
                     Command("UPDATE schoolyear SET Start_Year=@Start_Year, End_Year=@End_Year WHERE ID=@ID", closeParams)
-                    MsgBox("School Year is updated.")
+                    Info("School Year is updated.")
                 End If
             Else
-                MsgBox("You cannot close the current school year without having another one open.")
+                Info("You cannot close the current school year without having another one open.")
                 Exit Sub
             End If
             FrmSY.Loadrecords()
@@ -40,7 +40,7 @@ Public Class ClassSchoolYear
             Critical("School year already exists.")
             Exit Sub
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Critical(ex.Message)
             Exit Sub
         End Try
     End Sub

@@ -54,7 +54,7 @@ Public Class FrmSY
                 Dim isActive As Boolean = Convert.ToBoolean(CmdScalarwithParam("SELECT COUNT(*) FROM schoolyear WHERE ID=@ID AND Status = 'Active'", New MySqlParameter("@ID", syID)))
 
                 If isActive Then
-                    MsgBox("This school year is already active.")
+                    Info("This school year is already active.")
                     Return
                 End If
 
@@ -64,10 +64,10 @@ Public Class FrmSY
 
                         Command("UPDATE schoolyear SET Status = 'Active' WHERE ID=@ID", New MySqlParameter("@ID", syID))
 
-                        MsgBox("School Year has been successfully opened!")
+                        Success("School Year has been successfully opened!")
                         Loadrecords()
                     Catch ex As Exception
-                        MsgBox("Error: " & ex.Message)
+                        Critical("Error: " & ex.Message)
                     End Try
                 End If
 
@@ -75,10 +75,10 @@ Public Class FrmSY
                 Dim isActive As Boolean = Convert.ToBoolean(CmdScalarwithParam("SELECT COUNT(*) FROM schoolyear WHERE ID=@ID AND Status = 'Active'", New MySqlParameter("@ID", syID)))
 
                 If Not isActive Then
-                    MsgBox("This school year is not active and cannot be closed.")
+                    Info("This school year is not active and cannot be closed.")
                     Return
                 ElseIf isActive Then
-                    MsgBox("There is no active school year to close.")
+                    Info("There is no active school year to close.")
                     Return
                 End If
 
@@ -86,10 +86,10 @@ Public Class FrmSY
                     Try
                         Command("UPDATE schoolyear SET Status = 'Inactive' WHERE ID=@ID", New MySqlParameter("@ID", syID))
 
-                        MsgBox("School Year has been successfully closed!")
+                        Success("School Year has been successfully closed!")
                         Loadrecords()
                     Catch ex As Exception
-                        MsgBox("Error: " & ex.Message)
+                        Critical("Error: " & ex.Message)
                     End Try
                 End If
             End If

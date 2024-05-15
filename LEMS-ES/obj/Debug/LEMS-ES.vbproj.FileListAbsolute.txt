@@ -156,3 +156,5 @@ C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS-ES.exe
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS-ES.xml
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS-ES.pdb
 C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS-ES.vbproj.AssemblyReference.cache
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.SearchSubject.resources
+C:\Users\BONBON\source\repos\LEMS_ES\LEMS-ES\obj\Debug\LEMS_ES.SearchTeacher.resources

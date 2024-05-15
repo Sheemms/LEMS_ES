@@ -37,7 +37,7 @@
                 Clear()
             End If
         Catch ex As Exception
-            MsgBox("ERROR!", vbCritical)
+            Critical(ex.Message)
         End Try
     End Sub
     Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
