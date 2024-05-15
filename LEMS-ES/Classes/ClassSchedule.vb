@@ -13,8 +13,8 @@ Public Class ClassSchedule
                     New MySqlParameter("@Room", FrmSchedule.CmbRoom.SelectedValue),
                     New MySqlParameter("@SubjectID", FrmSchedule.CmbSubjectCode.SelectedValue),
                     New MySqlParameter("@Days", FrmSchedule.ChckBox()),
-                    New MySqlParameter("@Time_From", FrmSchedule.txtstartTime.Text),
-                    New MySqlParameter("@Time_To", FrmSchedule.txtendTime.Text),
+                    New MySqlParameter("@Time_From", TimeSpan.Parse(FrmSchedule.txtstartTime.Text)),
+                    New MySqlParameter("@Time_To", TimeSpan.Parse(FrmSchedule.txtendTime.Text)),
                     New MySqlParameter("@TeacherID", FrmSchedule.teacherid)
                 }
                 Return SchedParam
@@ -54,6 +54,8 @@ Public Class ClassSchedule
                 Critical("Section can't have the same room, days and time")
             ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Room, Days and Time") Then
                 Critical("Room can't have the same schedule days and time.")
+            ElseIf ex.Number = 1644 Then
+                Critical("Time slot overlaps with an existing schedule.")
             End If
             Exit Sub
         Catch ex As Exception
