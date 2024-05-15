@@ -29,7 +29,7 @@ Public Class ClassEnroll
                     Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID) 
                             VALUES (@EID, @SchoolYear, @LRN, @SectionID)", dynamicParams)
                     Success("Successfully Added!")
-                    Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.txtStudName.Text
+                    Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.CmbStudName.Text
                     LogAction("Enrolled Student |" & name)
 
                     For Each row As DataGridViewRow In FrmEnrollmentRegistration.DgvStudSubject.Rows

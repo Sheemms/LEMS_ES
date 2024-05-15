@@ -12,35 +12,36 @@ Public Class FrmEnrollmentRegistration
         GetSchoolYear(lblSY)
         LoadDepartment()
         LoadSection()
+        LoadStudent()
         Clear()
     End Sub
     Public Sub Clear()
-        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN, txtStudName}
+        Dim textBoxes() As Guna.UI2.WinForms.Guna2TextBox = {txtStudLRN}
         For Each textBox As Guna.UI2.WinForms.Guna2TextBox In textBoxes
             textBox.Clear()
         Next
-        txtSearch.Clear()
+        CmbStudName.SelectedIndex = -1
         CmbSection.SelectedIndex = -1
         CmbDepartment.SelectedIndex = -1
         CmbGradeLevel.SelectedIndex = -1
         EnrollmentID = 0
         EnrollSubjID = 0
         scheduleID = 0
+        idStud = 0
     End Sub
     Public Sub LoadStudentData()
-        'Query("SELECT * FROM enrollment WHERE LRN = '" & txtStudLRN.Text & "'")
+        Query("SELECT ID, LRN, CONCAT(Lastname, ' ', Firstname) Fullname 
+                FROM student
+                WHERE ID = '" & idStud & "'")
 
-        'If ds.Tables("QueryTb").Rows.Count > 0 Then
-        '    With ds.Tables("QueryTb").Rows(0)
-        '        LabelEID.Text = .Item(1)
-        '        lblSY.Text = .Item(2)
-        '        txtStudLRN.Text = .Item(3)
-        '        CmbSection.SelectedValue = .Item(4)
-        '        CmbGradeLevel.SelectedValue = .Item(5)
-        '    End With
-        'Else
-        '    ClearFields(Me, EnrollmentID)
-        'End If
+        If ds.Tables("QueryTb").Rows.Count > 0 Then
+            With ds.Tables("QueryTb").Rows(0)
+                CmbStudName.Text = .Item(2)
+                txtStudLRN.Text = .Item(1)
+            End With
+        Else
+            Clear()
+        End If
     End Sub
     Public Sub LoadSub()
         Query($"SELECT  a.ID, CONCAT(b.Start_Year, '-',b.End_Year) SY, g.SubjectCode, g.SubjectName, 
@@ -83,8 +84,12 @@ Public Class FrmEnrollmentRegistration
         CmbSection.DisplayMember = "SectionRoom"
     End Sub
     Public scheduleID As Integer = 0
-
-
+    Public Sub LoadStudent()
+        Query("SELECT *, CONCAT(Lastname, ' ', Firstname) Fullname FROM student")
+        CmbStudName.DataSource = ds.Tables("QueryTb")
+        CmbStudName.ValueMember = "ID"
+        CmbStudName.DisplayMember = "Fullname"
+    End Sub
 
     Private Sub BtnEnroll_Click(sender As Object, e As EventArgs) Handles btnEnroll.Click
         If Not IsEmptyField(CmbDepartment.Text.Trim()) Then
@@ -103,12 +108,30 @@ Public Class FrmEnrollmentRegistration
             Info("Please enter a subject code.")
             Return
         End If
-        If Not IsEmptyField(txtStudName.Text.Trim()) Then
-            Info("Please enter a subject name.")
+        If Not IsEmptyField(CmbStudName.Text.Trim()) Then
+            Info("Please select a subject name.")
             Return
         End If
 
         ClassEnroll.EnrollmentRef()
+    End Sub
+    Public idStud As Integer = Nothing
+    Private Sub CmbStudName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbStudName.SelectedIndexChanged
+        Dim selectedStudent As Integer
+        If CmbStudName.SelectedItem IsNot Nothing AndAlso TypeOf CmbStudName.SelectedItem Is DataRowView Then
+            selectedStudent = Convert.ToInt32(DirectCast(CmbStudName.SelectedItem, DataRowView).Row("ID"))
+
+            Dim qry As String = $"SELECT ID, LRN, CONCAT(Lastname, ' ', Firstname) Fullname FROM student WHERE ID = {selectedStudent}"
+            Query(qry)
+
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                txtStudLRN.Text = ds.Tables("QueryTb").Rows(0)("LRN").ToString()
+                CmbStudName.Text = ds.Tables("QueryTb").Rows(0)("Fullname").ToString()
+                idStud = ds.Tables("QueryTb").Rows(0)("ID").ToString()
+            Else
+                txtStudLRN.Clear()
+            End If
+        End If
     End Sub
 
     Private Sub CmbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbDepartment.SelectedIndexChanged
@@ -185,21 +208,22 @@ Public Class FrmEnrollmentRegistration
 #Region "AutoComplete/Populate"
 
     Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
-        Dim selectedStudName As String = txtSearch.Text.Trim()
+        'Dim selectedStudName As String = txtSearch.Text.Trim()
 
-        If Not String.IsNullOrEmpty(selectedStudName) Then
-            Query($"SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student WHERE LRN = '{selectedStudName}' OR Lastname LIKE '%{selectedStudName}%' OR Firstname LIKE '%{selectedStudName}%'")
+        'If Not String.IsNullOrEmpty(selectedStudName) Then
+        '    Query($"SELECT ID, StudType, LRN, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName FROM student WHERE LRN = '{selectedStudName}' OR Lastname LIKE '%{selectedStudName}%' OR Firstname LIKE '%{selectedStudName}%'")
 
-            If ds.Tables("QueryTb").Rows.Count > 0 Then
-                Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
-                txtStudLRN.Text = row("LRN").ToString()
-                txtStudName.Text = row("FullName").ToString()
-            Else
-                Clear()
-            End If
-        Else
-            Clear()
-        End If
+        '    If ds.Tables("QueryTb").Rows.Count > 0 Then
+        '        Dim row As DataRow = ds.Tables("QueryTb").Rows(0)
+        '        txtStudLRN.Text = row("LRN").ToString()
+        '        txtStudName.Text = row("FullName").ToString()
+        '    Else
+        '        Clear()
+        '    End If
+        'Else
+        '    Clear()
+        'End If
+        SearchStudent.Show()
     End Sub
 
     Private Sub CmbSection_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbSection.SelectedValueChanged

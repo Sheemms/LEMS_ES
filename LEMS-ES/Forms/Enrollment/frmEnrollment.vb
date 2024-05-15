@@ -53,7 +53,7 @@ Public Class FrmEnrollment
                 FrmEnrollmentRegistration.lblSY.Text = .Cells(1).Value
                 FrmEnrollmentRegistration.LabelEID.Text = .Cells(2).Value
                 FrmEnrollmentRegistration.txtStudLRN.Text = .Cells(3).Value
-                FrmEnrollmentRegistration.txtStudName.Text = .Cells(4).Value
+                FrmEnrollmentRegistration.CmbStudName.SelectedValue = .Cells(4).Value
                 FrmEnrollmentRegistration.CmbGradeLevel.SelectedValue = .Cells(5).Value
                 FrmEnrollmentRegistration.CmbSection.SelectedValue = .Cells(6).Value
             End With
