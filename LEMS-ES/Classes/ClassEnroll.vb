@@ -24,10 +24,20 @@ Public Class ClassEnroll
     Public Shared Sub EnrollmentRef()
         Try
             Dim dynamicParams As MySqlParameter() = EnrollmentParameters()
+
+            Dim sectionID As Integer = Convert.ToInt32(FrmEnrollmentRegistration.CmbSection.SelectedValue)
+            Dim currentCapacity As Integer = GetCurrentCapacity(sectionID)
+            Dim totalCapacity As Integer = GetTotalCapacity(sectionID)
+
+            If currentCapacity >= totalCapacity Then
+                Excla("The section has reached its maximum capacity. Enrollment is not allowed.")
+                Exit Sub
+            End If
+
             If FrmEnrollmentRegistration.EnrollmentID = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
                     Command("INSERT INTO enrollment(EID, SchoolYear, LRN, SectionID) 
-                            VALUES (@EID, @SchoolYear, @LRN, @SectionID)", dynamicParams)
+                        VALUES (@EID, @SchoolYear, @LRN, @SectionID)", dynamicParams)
                     Success("Successfully Added!")
                     Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.CmbStudName.Text
                     LogAction("Enrolled Student |" & name)
@@ -41,7 +51,7 @@ Public Class ClassEnroll
                         New MySqlParameter("@ScheduleID", scheduleID)
                     }
                         Command("INSERT INTO enrolled_sched(SYID, EID, LRN, ScheduleID) 
-                                VALUES (@SYID, @EID, @LRN, @ScheduleID)", enrolledSubjectParams)
+                            VALUES (@SYID, @EID, @LRN, @ScheduleID)", enrolledSubjectParams)
                     Next
 
                     FrmEnrollmentRegistration.Clear()
@@ -56,10 +66,9 @@ Public Class ClassEnroll
             FrmEnrollment.Loadrecords()
             FrmEnrollmentRegistration.Close()
         Catch ex As MySqlException When ex.Number = 1062
-            Critical("Student already enrolled.")
-            Exit Sub
+            Excla("Student already enrolled.")
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Critical(ex.Message)
         End Try
     End Sub
 

@@ -5,8 +5,12 @@
         Loadrecords()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT * FROM department")
-        dgvDepartment.DataSource = ds.Tables("QueryTb")
+        Try
+            Query("SELECT * FROM department")
+            dgvDepartment.DataSource = ds.Tables("QueryTb")
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub Clear()
         TxtDeptName.Clear()

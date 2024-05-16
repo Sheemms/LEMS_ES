@@ -6,15 +6,19 @@
         Clear()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
+        Try
+            Query("SELECT  rq.ID, reqclass.Classification, rq.Requirement
                 FROM requirements rq
                 JOIN req_classification reqclass ON rq.Classification_ID = reqclass.ID")
-        dgvRequirements.DataSource = ds.Tables("QueryTb")
+            dgvRequirements.DataSource = ds.Tables("QueryTb")
 
-        Query("SELECT * FROM req_classification")
-        cmbClassification.DataSource = ds.Tables("QueryTb")
-        cmbClassification.ValueMember = "ID"
-        cmbClassification.DisplayMember = "Classification"
+            Query("SELECT * FROM req_classification")
+            cmbClassification.DataSource = ds.Tables("QueryTb")
+            cmbClassification.ValueMember = "ID"
+            cmbClassification.DisplayMember = "Classification"
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub Clear()
         txtRequirements.Clear()

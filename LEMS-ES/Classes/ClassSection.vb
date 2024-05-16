@@ -8,7 +8,8 @@ Public Class ClassSection
                     New MySqlParameter("@ID", FrmSections.idSection),
                     New MySqlParameter("@GradeLevel_ID", FrmSections.CmbGradeLevel.SelectedValue),
                     New MySqlParameter("@SectionRoom", FrmSections.TxtSectionName.Text),
-                    New MySqlParameter("@AdviserID", FrmSections.CmbAdviser.SelectedValue)
+                    New MySqlParameter("@AdviserID", FrmSections.CmbAdviser.SelectedValue),
+                    New MySqlParameter("@Capacity", FrmSections.TxtCapacity.Text)
                 }
             Return syParam
         Catch ex As Exception
@@ -21,7 +22,7 @@ Public Class ClassSection
         Try
             Dim dynamicParams As MySqlParameter() = SectionParameters()
             If dynamicParams Is Nothing Then
-                MsgBox("Error: parameters could not be created.")
+                Info("Error section: parameters could not be created.")
                 Return
             End If
 
@@ -31,7 +32,7 @@ Public Class ClassSection
                 If CheckGradeLevelLimit(gradeLevelId, sectionId) Then
                     If sectionId = 0 Then
                         If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                            Command("INSERT INTO section (GradeLevel_ID, SectionRoom, AdviserID) VALUES (@GradeLevel_ID, @SectionRoom, @AdviserID)", dynamicParams)
+                            Command("INSERT INTO section (GradeLevel_ID, SectionRoom, AdviserID, Capacity) VALUES (@GradeLevel_ID, @SectionRoom, @AdviserID, @Capacity)", dynamicParams)
                             Success("Successfully Added!")
                             Dim name As String = FrmSections.CmbGradeLevel.Text & " - " & FrmSections.TxtSectionName.Text & " - " & FrmSections.CmbAdviser.Text
                             LogAction("Added Section | " & name)
@@ -39,7 +40,7 @@ Public Class ClassSection
                         End If
                     Else
                         If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                            Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom, AdviserID=@AdviserID WHERE ID=@ID", dynamicParams)
+                            Command("UPDATE section SET GradeLevel_ID=@GradeLevel_ID, SectionRoom=@SectionRoom, AdviserID=@AdviserID, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
                             Success("Successfully Updated!")
                             Dim name As String = FrmSections.CmbGradeLevel.Text & " - " & FrmSections.TxtSectionName.Text & " - " & FrmSections.CmbAdviser.Text
                             LogAction("Updated Section | " & name)

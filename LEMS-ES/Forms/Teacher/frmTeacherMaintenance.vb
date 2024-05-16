@@ -15,27 +15,35 @@
         idTeacher = 0
     End Sub
     Public Sub LoadDept()
+        Try
         Query("SELECT * FROM department")
         cmbDept.DataSource = ds.Tables("QueryTb")
         cmbDept.ValueMember = "ID"
-        cmbDept.DisplayMember = "Department"
+            cmbDept.DisplayMember = "Department"
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub LoadTeacherData()
-        Query("SELECT * FROM teacher WHERE EmpID = '" & txtEmpID.Text & "'")
+        Try
+            Query("SELECT * FROM teacher WHERE EmpID = '" & txtEmpID.Text & "'")
 
-        If ds.Tables("QueryTb").Rows.Count > 0 Then
-            With ds.Tables("QueryTb").Rows(0)
-                txtEmpID.Text = .Item(1)
-                cmbDept.SelectedValue = .Item(2)
-                txtLastname.Text = .Item(3)
-                txtFirstname.Text = .Item(4)
-                txtMiddleInitial.Text = .Item(5)
-                txtContact.Text = .Item(6)
-                txtAddress.Text = .Item(7)
-            End With
-        Else
-            Clear()
-        End If
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                With ds.Tables("QueryTb").Rows(0)
+                    txtEmpID.Text = .Item(1)
+                    cmbDept.SelectedValue = .Item(2)
+                    txtLastname.Text = .Item(3)
+                    txtFirstname.Text = .Item(4)
+                    txtMiddleInitial.Text = .Item(5)
+                    txtContact.Text = .Item(6)
+                    txtAddress.Text = .Item(7)
+                End With
+            Else
+                Clear()
+            End If
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -100,6 +108,15 @@
             e.Handled = True
             Exit Sub
         End If
+    End Sub
+
+    Private Sub TxtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPassword.KeyPress, TxtRePassword.KeyPress
+        Select Case Asc(e.KeyChar)
+            Case 8, 48, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 65 To 90, 97 To 122
+                e.Handled = False
+            Case Else
+                e.Handled = True
+        End Select
     End Sub
 #End Region
 End Class

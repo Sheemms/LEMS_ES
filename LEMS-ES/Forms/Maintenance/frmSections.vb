@@ -6,12 +6,19 @@
         Clear()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT  a.ID, b.GradeLevel, a.SectionRoom, CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) as Adviser
-                FROM section a
-                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                JOIN teacher c ON a.AdviserID = c.ID")
+        Query("SELECT  a.ID, b.GradeLevel, a.SectionRoom, CONCAT(c.Lastname, ' ', c.Firstname, ' ', c.MiddleInitial) as Adviser, a.Capacity, a.CurCapacity
+            FROM section a
+            JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+            JOIN teacher c ON a.AdviserID = c.ID")
         dgvSection.DataSource = ds.Tables("QueryTb")
         dgvSection.AutoGenerateColumns = False
+
+        For Each row As DataGridViewRow In dgvSection.Rows
+            Dim sectionID As Integer = Convert.ToInt32(row.Cells("Column1").Value)
+            Dim currentCapacity As Integer = GetCurrentCapacity(sectionID)
+            Debug.WriteLine($"SectionID: {sectionID}, Current Capacity: {currentCapacity}")
+            row.Cells(5).Value = currentCapacity
+        Next
 
         Query("SELECT * FROM gradelevel")
         CmbGradeLevel.DataSource = ds.Tables("QueryTb")
@@ -23,28 +30,31 @@
         CmbAdviser.ValueMember = "ID"
         CmbAdviser.DisplayMember = "Adviser"
     End Sub
+
     Public Sub Clear()
         CmbGradeLevel.SelectedIndex = -1
         TxtSectionName.Clear()
+        TxtCapacity.Clear()
         CmbAdviser.SelectedIndex = -1
         idSection = 0
     End Sub
     Private Sub DgvSection_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSection.CellClick
         Try
-            If e.RowIndex >= 0 Then
-                Dim row As DataGridViewRow = dgvSection.Rows(e.RowIndex)
-                idSection = row.Cells(0).Value
-                CmbGradeLevel.Text = row.Cells(1).Value
-                TxtSectionName.Text = row.Cells(2).Value
-                CmbAdviser.Text = row.Cells(3).Value
+            If e.RowIndex >= 0 AndAlso dgvSection.SelectedRows.Count > 0 Then
+                Dim selectedRow As DataGridViewRow = dgvSection.SelectedRows(0)
+                idSection = selectedRow.Cells(0).Value
+                CmbGradeLevel.Text = selectedRow.Cells(1).Value
+                TxtSectionName.Text = selectedRow.Cells(2).Value
+                CmbAdviser.Text = selectedRow.Cells(3).Value
+                TxtCapacity.Text = selectedRow.Cells(4).Value
             ElseIf e.ColumnIndex >= 0 Then
                 Clear()
             End If
         Catch ex As Exception
-            MsgBox("Error selecting section: " & ex.Message, vbCritical)
+            Critical(ex.Message)
         End Try
     End Sub
-    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click, BtnUpdate.Click
+    Private Sub BtnSaveSubject_Click(sender As Object, e As EventArgs) Handles btnSaveSubject.Click
         If Not IsEmptyField(CmbGradeLevel.Text.Trim()) Then
             Info("Please select a grade level.")
             Return
@@ -55,7 +65,11 @@
             Return
         End If
         If Not IsEmptyField(CmbAdviser.Text.Trim()) Then
-            Info("Please select a Adviser name.")
+            Info("Please select a adviser name.")
+            Return
+        End If
+        If Not IsEmptyField(TxtCapacity.Text.Trim()) Then
+            Info("Please enter a capacity.")
             Return
         End If
 
@@ -72,7 +86,12 @@
             Exit Sub
         End If
     End Sub
-
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCapacity.KeyPress
+        If Not IsValidDigits(e.KeyChar) Then
+            e.Handled = True
+            Exit Sub
+        End If
+    End Sub
     Private Sub CmbGradeLevel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbGradeLevel.SelectedIndexChanged
         Dim selectedGradeLevelID As Integer
         If CmbGradeLevel.SelectedItem IsNot Nothing AndAlso TypeOf CmbGradeLevel.SelectedItem Is DataRowView Then

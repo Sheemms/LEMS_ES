@@ -25,11 +25,12 @@ Public Class ClassTeacher
 
             If frmTeacherMaintenance.idTeacher = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
+                    Command("INSERT INTO user(Username, Password, Fullname, Contact, UserLevel) 
+                            VALUES (@Username, @Password, @Fullname, @Contact, 'Instructor')", userParams)
+
                     Command("INSERT INTO teacher(EmpID, Department_ID, Lastname, Firstname, MiddleInitial, Contact, Address) 
                             VALUES (@EmpID, @Department_ID, @Lastname, @Firstname, @MiddleInitial, @Contact, @Address)", dynamicParams)
 
-                    Command("INSERT INTO user(Username, Password, Fullname, Contact, UserLevel) 
-                            VALUES (@Username, @Password, @Fullname, @Contact, 'Instructor')", userParams)
                     Success("Successfully Added!")
                     FrmTeacherMaintenance.Close()
                     FrmTeacherMaintenance.Clear()
@@ -44,8 +45,14 @@ Public Class ClassTeacher
                 End If
             End If
             FrmTeachers.Loadrecords()
-        Catch ex As MySqlException When ex.Number = 1062
-            Critical("Employee ID already exists.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 AndAlso ex.Message.Contains("EmpID") Then
+                Critical("Employee ID already exists.")
+                Exit Sub
+            ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("Username") Then
+                Critical("Username already exists.")
+                Exit Sub
+            End If
             Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)

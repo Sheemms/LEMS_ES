@@ -5,14 +5,18 @@
         Loadrecords()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT * FROM user")
-        dgvUser.DataSource = ds.Tables("QueryTb")
-        dgvUser.AutoGenerateColumns = False
+        Try
+            Query("SELECT * FROM user")
+            dgvUser.DataSource = ds.Tables("QueryTb")
+            dgvUser.AutoGenerateColumns = False
 
-        Query("SELECT * FROM userlevel")
-        cmbUserLevel.DataSource = ds.Tables("QueryTb")
-        cmbUserLevel.ValueMember = "userlevel"
-        cmbUserLevel.DisplayMember = "userlevel"
+            Query("SELECT * FROM userlevel")
+            cmbUserLevel.DataSource = ds.Tables("QueryTb")
+            cmbUserLevel.ValueMember = "userlevel"
+            cmbUserLevel.DisplayMember = "userlevel"
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub Clear()
         txtUsername.Clear()

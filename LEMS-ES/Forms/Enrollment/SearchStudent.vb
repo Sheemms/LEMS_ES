@@ -4,7 +4,7 @@
     End Sub
     Public Sub Loadrecords()
         Try
-            Query("SELECT ID, LRN, CONCAT(Lastname, ', ', Firstname, ' ', MiddleInitial, ' ', Suffix) Fullname FROM student")
+            Query("SELECT ID, LRN, CONCAT(Lastname, ', ', Firstname, ' ', MiddleInitial) Fullname FROM student")
             DgvStudent.DataSource = ds.Tables("QueryTb")
         Catch ex As Exception
             Critical(ex.Message)
@@ -12,11 +12,15 @@
     End Sub
 
     Private Sub PbSearch_Click(sender As Object, e As EventArgs) Handles PbSearch.Click
-        Dim search As String = TxtSearch.Text.Trim()
+        Try
+            Dim search As String = TxtSearch.Text.Trim()
 
-        Query($"SELECT ID, LRN, CONCAT(Lastname, ', ', Firstname, ' ', MiddleInitial, ' ', Suffix) Fullname FROM student
+            Query($"SELECT ID, LRN, CONCAT(Lastname, ', ', Firstname, ' ', MiddleInitial) Fullname FROM student
                 WHERE Lastname LIKE '%{search}%' OR Firstname LIKE '%{search}%' OR MiddleInitial LIKE '%{search}%' OR LRN LIKE '%{search}%'")
-        DgvStudent.DataSource = ds.Tables("QueryTb")
+            DgvStudent.DataSource = ds.Tables("QueryTb")
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
 
     Private Sub DgvStudent_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvStudent.CellDoubleClick

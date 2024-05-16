@@ -22,23 +22,12 @@ Partial Class FrmEnrollment
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GBEnrollmentForm = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvEnrolled = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colGradeLevel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colSection = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEnrollDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colPrint = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.colDrop = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
@@ -46,6 +35,18 @@ Partial Class FrmEnrollment
         Me.BtnSearch = New System.Windows.Forms.ToolStripButton()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSY = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colLRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFullname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colGradeLevel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSection = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEnrollDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPrint = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.colDrop = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GBEnrollmentForm.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvEnrolled, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,30 +82,30 @@ Partial Class FrmEnrollment
         '
         Me.dgvEnrolled.AllowUserToAddRows = False
         Me.dgvEnrolled.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgvEnrolled.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgvEnrolled.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvEnrolled.BackgroundColor = System.Drawing.Color.DimGray
         Me.dgvEnrolled.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
         Me.dgvEnrolled.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvEnrolled.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvEnrolled.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvEnrolled.ColumnHeadersHeight = 44
         Me.dgvEnrolled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgvEnrolled.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colSY, Me.Column1, Me.colLRN, Me.colFullname, Me.colGradeLevel, Me.colSection, Me.colEnrollDate, Me.colStatus, Me.colPrint, Me.colDrop})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvEnrolled.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvEnrolled.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colID, Me.colSY, Me.Column1, Me.colLRN, Me.colFullname, Me.colGradeLevel, Me.colSection, Me.Column2, Me.colEnrollDate, Me.colStatus, Me.colPrint, Me.colDrop})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvEnrolled.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvEnrolled.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvEnrolled.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvEnrolled.Location = New System.Drawing.Point(0, 25)
@@ -135,105 +136,6 @@ Partial Class FrmEnrollment
         Me.dgvEnrolled.ThemeStyle.RowsStyle.Height = 22
         Me.dgvEnrolled.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvEnrolled.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'colID
-        '
-        Me.colID.DataPropertyName = "ID"
-        Me.colID.HeaderText = "ID"
-        Me.colID.Name = "colID"
-        Me.colID.ReadOnly = True
-        Me.colID.Visible = False
-        '
-        'colSY
-        '
-        Me.colSY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colSY.DataPropertyName = "SchoolYear"
-        Me.colSY.HeaderText = "SchoolYear"
-        Me.colSY.Name = "colSY"
-        Me.colSY.ReadOnly = True
-        Me.colSY.Width = 96
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.DataPropertyName = "EID"
-        Me.Column1.HeaderText = "EID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 51
-        '
-        'colLRN
-        '
-        Me.colLRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colLRN.DataPropertyName = "LRN"
-        Me.colLRN.HeaderText = "LRN"
-        Me.colLRN.Name = "colLRN"
-        Me.colLRN.ReadOnly = True
-        Me.colLRN.Width = 56
-        '
-        'colFullname
-        '
-        Me.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colFullname.DataPropertyName = "Fullname"
-        Me.colFullname.HeaderText = "Fullname"
-        Me.colFullname.Name = "colFullname"
-        Me.colFullname.ReadOnly = True
-        '
-        'colGradeLevel
-        '
-        Me.colGradeLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colGradeLevel.DataPropertyName = "GradeLevel"
-        Me.colGradeLevel.HeaderText = "Grade"
-        Me.colGradeLevel.Name = "colGradeLevel"
-        Me.colGradeLevel.ReadOnly = True
-        Me.colGradeLevel.Width = 67
-        '
-        'colSection
-        '
-        Me.colSection.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colSection.DataPropertyName = "Section"
-        Me.colSection.HeaderText = "Section"
-        Me.colSection.Name = "colSection"
-        Me.colSection.ReadOnly = True
-        Me.colSection.Width = 74
-        '
-        'colEnrollDate
-        '
-        Me.colEnrollDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colEnrollDate.DataPropertyName = "Enrollment_Date"
-        Me.colEnrollDate.HeaderText = "Enrollment Date"
-        Me.colEnrollDate.Name = "colEnrollDate"
-        Me.colEnrollDate.ReadOnly = True
-        Me.colEnrollDate.Width = 116
-        '
-        'colStatus
-        '
-        Me.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colStatus.DataPropertyName = "Status"
-        Me.colStatus.HeaderText = "Status"
-        Me.colStatus.Name = "colStatus"
-        Me.colStatus.ReadOnly = True
-        Me.colStatus.Width = 69
-        '
-        'colPrint
-        '
-        Me.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colPrint.HeaderText = ""
-        Me.colPrint.Image = Global.LEMS_ES.My.Resources.Resources.printer
-        Me.colPrint.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.colPrint.Name = "colPrint"
-        Me.colPrint.ReadOnly = True
-        Me.colPrint.Width = 5
-        '
-        'colDrop
-        '
-        Me.colDrop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colDrop.HeaderText = ""
-        Me.colDrop.Image = Global.LEMS_ES.My.Resources.Resources.drop
-        Me.colDrop.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.colDrop.Name = "colDrop"
-        Me.colDrop.ReadOnly = True
-        Me.colDrop.Width = 5
         '
         'ToolStrip1
         '
@@ -294,6 +196,115 @@ Partial Class FrmEnrollment
         Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
         Me.DataGridViewImageColumn2.Width = 210
         '
+        'colID
+        '
+        Me.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colID.DataPropertyName = "ID"
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.ReadOnly = True
+        Me.colID.Width = 42
+        '
+        'colSY
+        '
+        Me.colSY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colSY.DataPropertyName = "SchoolYear"
+        Me.colSY.HeaderText = "SchoolYear"
+        Me.colSY.Name = "colSY"
+        Me.colSY.ReadOnly = True
+        Me.colSY.Width = 88
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.DataPropertyName = "EID"
+        Me.Column1.HeaderText = "EID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 49
+        '
+        'colLRN
+        '
+        Me.colLRN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colLRN.DataPropertyName = "LRN"
+        Me.colLRN.HeaderText = "LRN"
+        Me.colLRN.Name = "colLRN"
+        Me.colLRN.ReadOnly = True
+        Me.colLRN.Width = 53
+        '
+        'colFullname
+        '
+        Me.colFullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colFullname.DataPropertyName = "Fullname"
+        Me.colFullname.HeaderText = "Fullname"
+        Me.colFullname.Name = "colFullname"
+        Me.colFullname.ReadOnly = True
+        '
+        'colGradeLevel
+        '
+        Me.colGradeLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colGradeLevel.DataPropertyName = "GradeLevel"
+        Me.colGradeLevel.HeaderText = "Grade"
+        Me.colGradeLevel.Name = "colGradeLevel"
+        Me.colGradeLevel.ReadOnly = True
+        Me.colGradeLevel.Width = 62
+        '
+        'colSection
+        '
+        Me.colSection.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colSection.DataPropertyName = "Section"
+        Me.colSection.HeaderText = "Section"
+        Me.colSection.Name = "colSection"
+        Me.colSection.ReadOnly = True
+        Me.colSection.Width = 69
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.DataPropertyName = "Department"
+        Me.Column2.HeaderText = "Department"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 91
+        '
+        'colEnrollDate
+        '
+        Me.colEnrollDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colEnrollDate.DataPropertyName = "Enrollment_Date"
+        Me.colEnrollDate.HeaderText = "Enrollment Date"
+        Me.colEnrollDate.Name = "colEnrollDate"
+        Me.colEnrollDate.ReadOnly = True
+        Me.colEnrollDate.Width = 104
+        '
+        'colStatus
+        '
+        Me.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colStatus.DataPropertyName = "Status"
+        Me.colStatus.HeaderText = "Status"
+        Me.colStatus.Name = "colStatus"
+        Me.colStatus.ReadOnly = True
+        Me.colStatus.Width = 65
+        '
+        'colPrint
+        '
+        Me.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colPrint.HeaderText = ""
+        Me.colPrint.Image = Global.LEMS_ES.My.Resources.Resources.printer
+        Me.colPrint.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colPrint.Name = "colPrint"
+        Me.colPrint.ReadOnly = True
+        Me.colPrint.Width = 5
+        '
+        'colDrop
+        '
+        Me.colDrop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colDrop.HeaderText = ""
+        Me.colDrop.Image = Global.LEMS_ES.My.Resources.Resources.drop
+        Me.colDrop.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colDrop.Name = "colDrop"
+        Me.colDrop.ReadOnly = True
+        Me.colDrop.Width = 5
+        '
         'FrmEnrollment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -323,6 +334,7 @@ Partial Class FrmEnrollment
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents BtnSearch As ToolStripButton
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
     Friend WithEvents colID As DataGridViewTextBoxColumn
     Friend WithEvents colSY As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
@@ -330,9 +342,9 @@ Partial Class FrmEnrollment
     Friend WithEvents colFullname As DataGridViewTextBoxColumn
     Friend WithEvents colGradeLevel As DataGridViewTextBoxColumn
     Friend WithEvents colSection As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents colEnrollDate As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn
     Friend WithEvents colPrint As DataGridViewImageColumn
     Friend WithEvents colDrop As DataGridViewImageColumn
-    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
 End Class

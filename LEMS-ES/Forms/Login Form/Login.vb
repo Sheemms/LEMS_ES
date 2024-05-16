@@ -14,19 +14,23 @@ Public Class Login
         txtPassword.Clear()
     End Sub
     Public Sub ValidateInput(ByVal control As Control, ByVal errorMessage As String)
-        If control Is Nothing Then
-            Throw New ArgumentNullException("control", "Control cannot be null.")
-        End If
+        Try
+            If control Is Nothing Then
+                Throw New ArgumentNullException("control", "Control cannot be null.")
+            End If
 
-        If String.IsNullOrWhiteSpace(errorMessage) Then
-            Throw New ArgumentException("Error message cannot be null or empty.", "errorMessage")
-        End If
+            If String.IsNullOrWhiteSpace(errorMessage) Then
+                Throw New ArgumentException("Error message cannot be null or empty.", "errorMessage")
+            End If
 
-        If String.IsNullOrWhiteSpace(control.Text) Then
-            ErrorProvider1.SetError(control, errorMessage)
-        Else
-            ErrorProvider1.SetError(control, "")
-        End If
+            If String.IsNullOrWhiteSpace(control.Text) Then
+                ErrorProvider1.SetError(control, errorMessage)
+            Else
+                ErrorProvider1.SetError(control, "")
+            End If
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
 
     Private Sub TextBox_Validating(sender As System.Object, e As System.ComponentModel.CancelEventArgs) Handles txtUsername.Validating, txtPassword.Validating
@@ -110,11 +114,15 @@ Public Class Login
     End Sub
 
     Private Sub CbShow_CheckedChanged(sender As Object, e As EventArgs) Handles cbShow.CheckedChanged
-        If cbShow.Checked Then
-            txtPassword.PasswordChar = ""
-        Else
-            txtPassword.PasswordChar = "*"
-        End If
+        Try
+            If cbShow.Checked Then
+                txtPassword.PasswordChar = ""
+            Else
+                txtPassword.PasswordChar = "*"
+            End If
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
 
     Private Sub TxtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress

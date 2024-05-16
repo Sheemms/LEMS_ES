@@ -127,7 +127,7 @@ Public Class FrmStudentsView
             Return
         End If
         If Not IsEmptyField(txtAddress.Text.Trim()) Then
-            Info("Please enter a Address.")
+            Info("Please enter a address.")
             Return
         End If
         If Not IsEmptyField(txtGuardianName.Text.Trim()) Then

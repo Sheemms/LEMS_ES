@@ -77,8 +77,11 @@ Module ModDisplay
     Public Sub Success(ByVal MessageStatement As String)
         MsgBox(MessageStatement, MsgBoxStyle.OkOnly, "LEMSEJHS_CES")
     End Sub
-    Public Sub Info(ByVal messagestatement As String)
-        MsgBox(messagestatement, MsgBoxStyle.Information, "LEMSEJHS_CES")
+    Public Sub Info(ByVal MessageStatement As String)
+        MsgBox(MessageStatement, MsgBoxStyle.Information, "LEMSEJHS_CES")
+    End Sub
+    Public Sub Excla(ByVal MessageStatement As String)
+        MsgBox(MessageStatement, MsgBoxStyle.Exclamation, "LEMSEJHS_CES")
     End Sub
     Public Function EIDGenerate() As String
         Try
@@ -138,7 +141,32 @@ Module ModDisplay
             Return -1
         End Try
     End Function
-
+    Public Function GetCurrentCapacity(sectionID As Integer) As Integer
+        Try
+            Dim capacity As Integer = 0
+            Query($"SELECT COUNT(*) FROM enrollment WHERE SectionID = {sectionID}")
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                capacity = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)(0))
+            End If
+            Return capacity
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return 0
+        End Try
+    End Function
+    Public Function GetTotalCapacity(sectionID As Integer) As Integer
+        Try
+            Dim totalCapacity As Integer = 0
+            Query($"SELECT Capacity FROM section WHERE ID = {sectionID}")
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+                totalCapacity = Convert.ToInt32(ds.Tables("QueryTb").Rows(0)("Capacity"))
+            End If
+            Return totalCapacity
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return 0
+        End Try
+    End Function
     Public Function IsValidTime(timeString As String) As Boolean
         Dim regex As New Regex("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")
 

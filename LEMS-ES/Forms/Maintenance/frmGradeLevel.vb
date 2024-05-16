@@ -6,16 +6,20 @@
         Clear()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT gl.ID, d.Department , gl.GradeLevel 
+        Try
+            Query("SELECT gl.ID, d.Department , gl.GradeLevel 
                 FROM gradelevel gl
                 JOIN department d ON gl.Department_ID = d.ID
                 ORDER BY gl.GradeLevel")
-        dgvGradeLevel.DataSource = ds.Tables("QueryTb")
+            dgvGradeLevel.DataSource = ds.Tables("QueryTb")
 
-        Query("SELECT * FROM department")
-        cmbDept.DataSource = ds.Tables("QueryTb")
-        cmbDept.ValueMember = "ID"
-        cmbDept.DisplayMember = "Department"
+            Query("SELECT * FROM department")
+            cmbDept.DataSource = ds.Tables("QueryTb")
+            cmbDept.ValueMember = "ID"
+            cmbDept.DisplayMember = "Department"
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub Clear()
         txtAddGradeLevel.Clear()

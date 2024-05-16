@@ -24,12 +24,14 @@ Public Class ClassSchoolYear
                     Success("Successfully Added!")
                     Dim name As String = FrmSY.TxtStartYear.Text & " - " & FrmSY.TxtEndYear.Text
                     LogAction("Added School Year |" & name)
+                    FrmSY.Clear()
                 End If
             ElseIf isOpen Then
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Dim closeParams() As MySqlParameter = SchoolYearParameters()
                     Command("UPDATE schoolyear SET Start_Year=@Start_Year, End_Year=@End_Year WHERE ID=@ID", closeParams)
                     Info("School Year is updated.")
+                    FrmSY.Clear()
                 End If
             Else
                 Info("You cannot close the current school year without having another one open.")

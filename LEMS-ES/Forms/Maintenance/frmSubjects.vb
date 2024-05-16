@@ -5,17 +5,21 @@
         LoadRecords()
     End Sub
     Public Sub LoadRecords()
-        Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName, sub.Units
+        Try
+            Query("SELECT sub.ID, gl.GradeLevel, sub.SubjectCode, sub.SubjectName, sub.Units
                 FROM subject sub
                 JOIN gradelevel gl ON sub.GradeLevel_ID = gl.ID
                 ORDER BY gl.GradeLevel")
-        DgvSubject.DataSource = ds.Tables("QueryTb")
-        DgvSubject.AutoGenerateColumns = False
+            DgvSubject.DataSource = ds.Tables("QueryTb")
+            DgvSubject.AutoGenerateColumns = False
 
-        Query("SELECT * FROM gradelevel")
-        CmbGradeLevel.DataSource = ds.Tables("QueryTb")
-        CmbGradeLevel.ValueMember = "ID"
-        CmbGradeLevel.DisplayMember = "GradeLevel"
+            Query("SELECT * FROM gradelevel")
+            CmbGradeLevel.DataSource = ds.Tables("QueryTb")
+            CmbGradeLevel.ValueMember = "ID"
+            CmbGradeLevel.DisplayMember = "GradeLevel"
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub Clear()
         idSubj = 0

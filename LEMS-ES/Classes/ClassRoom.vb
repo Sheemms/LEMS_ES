@@ -4,8 +4,7 @@ Public Class ClassRoom
         Try
             Dim RoomParam() As MySqlParameter = {
                     New MySqlParameter("@ID", FrmRoom.idRoom),
-                    New MySqlParameter("@Room", FrmRoom.TxtRoom.Text),
-                    New MySqlParameter("@Capacity", FrmRoom.TxtCapacity.Text)
+                    New MySqlParameter("@Room", FrmRoom.TxtRoom.Text)
                 }
             Return RoomParam
         Catch ex As Exception
@@ -17,14 +16,14 @@ Public Class ClassRoom
             Dim dynamicParams As MySqlParameter() = RoomParameters()
             If FrmRoom.idRoom = 0 Then
                 If MsgBox("Do you want to add?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("INSERT INTO room(Room, Capacity) VALUES (@Room, @Capacity)", dynamicParams)
+                    Command("INSERT INTO room(Room) VALUES (@Room)", dynamicParams)
                     Success("Successfully Added!")
-                    Dim name As String = FrmRoom.TxtRoom.Text & FrmRoom.TxtCapacity.Text
+                    Dim name As String = FrmRoom.TxtRoom.Text
                     LogAction("Added Room |" & name)
                 End If
             Else
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE room SET Room=@Room, Capacity=@Capacity WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE room SET Room=@Room WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                 End If
             End If

@@ -96,7 +96,7 @@
 
     Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         If MsgBox("Are you sure you want to Logout?", vbYesNo + vbQuestion) = vbYes Then
-            'LogAction("has been logged out", "Logout")
+            LogAction("has been logged out")
             RemovePanel()
             MaintenanceRemovePanel()
 

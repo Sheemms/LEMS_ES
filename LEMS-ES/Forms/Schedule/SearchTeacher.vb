@@ -20,7 +20,7 @@
                 FROM teacher a
                 JOIN department b ON a.Department_ID = b.ID
                 JOIN gradelevel c ON c.Department_ID = b.ID
-                WHERE c.gradelevel = {selectedGradeLevel}")
+                WHERE c.ID = {selectedGradeLevel}")
             DgvTeacher.DataSource = ds.Tables("QueryTb")
         Catch ex As Exception
             Critical(ex.Message)

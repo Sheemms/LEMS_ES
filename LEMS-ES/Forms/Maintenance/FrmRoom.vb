@@ -10,7 +10,7 @@
     End Sub
     Public Sub Clear()
         TxtRoom.Clear()
-        TxtCapacity.Clear()
+        'TxtCapacity.Clear()
         idRoom = 0
     End Sub
     Private Sub DgvRoom_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvRoom.CellClick
@@ -19,7 +19,7 @@
                 Dim row As DataGridViewRow = DgvRoom.Rows(e.RowIndex)
                 idRoom = row.Cells(0).Value
                 TxtRoom.Text = row.Cells(1).Value
-                TxtCapacity.Text = row.Cells(2).Value
+                'TxtCapacity.Text = row.Cells(2).Value
             ElseIf e.ColumnIndex >= 0 Then
                 ClearFields(Me, idRoom)
             End If
@@ -35,21 +35,21 @@
             Info("Please enter a room name.")
             Return
         End If
-        If Not IsEmptyField(TxtCapacity.Text.Trim()) Then
-            Info("Please enter a room capacity.")
-            Return
-        End If
+        'If Not IsEmptyField(TxtCapacity.Text.Trim()) Then
+        '    Info("Please enter a room capacity.")
+        '    Return
+        'End If
 
         If Not NoLeadingSpace(TxtRoom.Text.Trim()) Then
             Info("Room name must have no multiple spaces between letters.")
             Return
-        ElseIf Not NoLeadingSpace(TxtCapacity.Text.Trim()) Then
-            Info("Capacity must have no multiple spaces between numbers.")
+            'ElseIf Not NoLeadingSpace(TxtCapacity.Text.Trim()) Then
+            '    Info("Capacity must have no multiple spaces between numbers.")
         End If
         ClassRoom.RoomRef()
         Clear()
     End Sub
-    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCapacity.KeyPress
+    Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not IsValidDigits(e.KeyChar) Then
             e.Handled = True
             Exit Sub

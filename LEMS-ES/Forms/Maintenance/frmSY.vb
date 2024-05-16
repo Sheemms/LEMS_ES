@@ -34,7 +34,6 @@ Public Class FrmSY
         End If
 
         ClassSchoolYear.SchoolYearRef()
-        Clear()
     End Sub
 
     Private Sub TextBoxDigits_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEndYear.KeyPress

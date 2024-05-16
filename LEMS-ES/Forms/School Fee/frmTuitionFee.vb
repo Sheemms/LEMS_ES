@@ -10,24 +10,28 @@
         Clear()
     End Sub
     Public Sub Loadrecords()
-        Query("SELECT tf.ID, gl.GradeLevel, tf.Amount
+        Try
+            Query("SELECT tf.ID, gl.GradeLevel, tf.Amount
                 FROM tuition tf
                 JOIN gradelevel gl ON tf.GradeLevel_ID = gl.ID")
-        dgvTuitionFee.DataSource = ds.Tables("QueryTb")
-        dgvTuitionFee.Columns(2).DefaultCellStyle.Format = "N2"
+            dgvTuitionFee.DataSource = ds.Tables("QueryTb")
+            dgvTuitionFee.Columns(2).DefaultCellStyle.Format = "N2"
 
-        Query("SELECT * FROM gradelevel")
-        cmbGradeLevel.DataSource = ds.Tables("QueryTb")
-        cmbGradeLevel.ValueMember = "ID"
-        cmbGradeLevel.DisplayMember = "GradeLevel"
+            Query("SELECT * FROM gradelevel")
+            cmbGradeLevel.DataSource = ds.Tables("QueryTb")
+            cmbGradeLevel.ValueMember = "ID"
+            cmbGradeLevel.DisplayMember = "GradeLevel"
 
-        Query("SELECT * FROM miscellaneous")
-        dgvMiscellaneous.DataSource = ds.Tables("QueryTb")
-        dgvMiscellaneous.Columns(1).DefaultCellStyle.Format = "N2"
+            Query("SELECT * FROM miscellaneous")
+            dgvMiscellaneous.DataSource = ds.Tables("QueryTb")
+            dgvMiscellaneous.Columns(1).DefaultCellStyle.Format = "N2"
 
-        Query("SELECT * FROM otherfee")
-        DgvOtherFee.DataSource = ds.Tables("QueryTb")
-        DgvOtherFee.Columns(2).DefaultCellStyle.Format = "N2"
+            Query("SELECT * FROM otherfee")
+            DgvOtherFee.DataSource = ds.Tables("QueryTb")
+            DgvOtherFee.Columns(2).DefaultCellStyle.Format = "N2"
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
     Public Sub Clear()
         idTuition = 0
@@ -56,7 +60,7 @@
         Catch ex As Exception
             MsgBox("ERROR!", vbCritical)
         End Try
-        btnSaveTuitionFee.Enabled = False
+        'btnSaveTuitionFee.Enabled = False
     End Sub
     Private Sub BtnSaveTuitionFee_Click(sender As Object, e As EventArgs) Handles btnSaveTuitionFee.Click, BtnUpdateTuition.Click
         If Not IsEmptyField(cmbGradeLevel.Text.Trim()) Then

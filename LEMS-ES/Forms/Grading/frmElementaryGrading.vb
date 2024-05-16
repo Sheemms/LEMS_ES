@@ -52,6 +52,7 @@ Public Class FrmElementaryGrading
         LoadData()
         LoadSubjectCode()
         'LoadDepartment()
+        MsgBox(userID)
     End Sub
     Public Sub LoadSubjectCode()
         Query("SELECT a.ID, a.SubjectCode, a.SubjectName, a.Units
@@ -77,21 +78,40 @@ Public Class FrmElementaryGrading
     '    CmbSubject.ComboBox.DisplayMember = "Department"
     'End Sub
     Public Sub LoadData()
-        Query($"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
-                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
-                                        FROM enrolled_sched a 
-                                        JOIN schoolyear b ON a.SYID = b.ID
-                                        JOIN student c ON a.LRN = c.LRN
-                                        JOIN enrollment d ON c.LRN = d.LRN
-                                        JOIN schedule e ON a.ScheduleID = e.ID
-                                        JOIN subject f ON e.SubjectID = f.ID
-                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
-                                        JOIN department h ON g.Department_ID = h.ID
-                                  WHERE h.Department = 'Elementary'")
-        DgvElemGrading.DataSource = ds.Tables("QueryTb")
-        DgvElemGrading.AutoGenerateColumns = False
+        Try
+            Query("SELECT * FROM user")
+            If ds.Tables("QueryTb").Rows.Count > 0 Then
+
+                Query($"SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                   CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                   f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, 
+                   a.Average, a.Remarks
+                   FROM enrolled_sched a 
+                   JOIN schoolyear b ON a.SYID = b.ID
+                   JOIN student c ON a.LRN = c.LRN
+                   JOIN enrollment d ON c.LRN = d.LRN
+                   JOIN schedule e ON a.ScheduleID = e.ID
+                   JOIN subject f ON e.SubjectID = f.ID
+                   JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                   JOIN department h ON g.Department_ID = h.ID
+                   JOIN schedule sh ON sh.SubjectID = f.ID
+                   WHERE e.TeacherID = {userID} AND h.Department = 'Elementary'")
+
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    DgvElemGrading.DataSource = ds.Tables("QueryTb")
+                    DgvElemGrading.AutoGenerateColumns = False
+                Else
+                    MsgBox("No data found for the specified user.")
+                    DgvElemGrading.DataSource = Nothing
+                End If
+            Else
+                MsgBox("No user found.")
+            End If
+        Catch ex As Exception
+            MsgBox("An error occurred: " & ex.Message)
+        End Try
     End Sub
+
     'Sub LoadRecords(ByVal sql As String)
     '    Dim i As Integer
     '    DgvElemGrading.Rows.Clear()
@@ -176,15 +196,25 @@ Public Class FrmElementaryGrading
     '        End If
     '    End If
     'End Sub
-    'Private Sub DgvElemGrading_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DgvElemGrading.EditingControlShowing
-    '    Dim columnIndex As Integer = DgvElemGrading.CurrentCell.ColumnIndex
+    Private Sub DgvElemGrading_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DgvElemGrading.EditingControlShowing
+        Dim dgv As DataGridView = CType(sender, DataGridView)
 
-    '    If columnIndex >= 8 AndAlso columnIndex <= 11 Then
-    '        AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress
-    '    Else
-    '        AddHandler CType(e.Control, TextBox).KeyPress, AddressOf TextBox_KeyPress1
-    '    End If
-    'End Sub
+        ' Ensure we only add the handler once
+        RemoveHandler e.Control.KeyPress, AddressOf NumericOnly_KeyPress
+
+        ' Check the current row index
+        If dgv.CurrentCell.RowIndex >= 8 AndAlso dgv.CurrentCell.RowIndex <= 11 Then
+            ' Attach the handler to the editing control's KeyPress event
+            AddHandler e.Control.KeyPress, AddressOf NumericOnly_KeyPress
+        End If
+    End Sub
+
+    Private Sub NumericOnly_KeyPress(sender As Object, e As KeyPressEventArgs)
+        ' Allow only digits (0-9) and control characters (like backspace)
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 
     Private Sub TextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
         Select Case Asc(e.KeyChar)
