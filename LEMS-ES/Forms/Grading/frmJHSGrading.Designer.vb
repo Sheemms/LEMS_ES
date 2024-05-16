@@ -46,7 +46,7 @@ Partial Class FrmJHSGrading
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.CmbSubjCode = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -250,7 +250,7 @@ Partial Class FrmJHSGrading
         'ToolStrip1
         '
         Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripTextBox1, Me.ToolStripButton3, Me.CmbSubjCode, Me.ToolStripLabel1, Me.ToolStripLabel2, Me.TxtLRN})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.TxtSearch, Me.ToolStripButton3, Me.CmbSubjCode, Me.ToolStripLabel1, Me.ToolStripLabel2, Me.TxtLRN})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(950, 25)
@@ -273,12 +273,12 @@ Partial Class FrmJHSGrading
         Me.ToolStripButton2.Size = New System.Drawing.Size(53, 22)
         Me.ToolStripButton2.Text = "Print"
         '
-        'ToolStripTextBox1
+        'TxtSearch
         '
-        Me.ToolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(172, 25)
+        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(172, 25)
         '
         'ToolStripButton3
         '
@@ -339,7 +339,7 @@ Partial Class FrmJHSGrading
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents ToolStripButton2 As ToolStripButton
-    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents TxtSearch As ToolStripTextBox
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents CmbSubjCode As ToolStripComboBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel

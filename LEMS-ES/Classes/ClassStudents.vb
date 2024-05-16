@@ -69,11 +69,11 @@ Public Class ClassStudents
             FrmStudents.loadrecords()
         Catch ex As MySqlException
             If ex.Number = 1062 Then
-                Critical("LRN already exists.")
+                Excla("LRN already exists.")
             End If
             Exit Sub
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Critical(ex.Message)
             Exit Sub
         End Try
     End Sub
@@ -100,7 +100,6 @@ Public Class ClassStudents
                         }
                         Command("INSERT IGNORE INTO submitted_requirements (StudentID, RequirementID) VALUES (@StudentID, @RequirementID)", reqParam)
                     Else
-                        ' Unchecked requirement, delete from submitted_requirements
                         Command("DELETE FROM submitted_requirements WHERE StudentID=@StudentID AND RequirementID=@RequirementID", {
                             New MySqlParameter("@StudentID", frmStudentsView.idStud),
                             New MySqlParameter("@RequirementID", requirementID)
@@ -111,9 +110,14 @@ Public Class ClassStudents
                 FrmStudentsView.Clear()
                 FrmStudentsView.Close()
             End If
-            frmStudents.loadrecords()
+            FrmStudents.Loadrecords()
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                Excla("LRN already exists.")
+            End If
+            Exit Sub
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Critical(ex.Message)
         End Try
     End Sub
 End Class

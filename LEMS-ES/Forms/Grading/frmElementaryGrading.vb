@@ -1,13 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FrmElementaryGrading
     Private Sub CmbSubjCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSubjCode.SelectedIndexChanged
-        Dim selectedValue As String = CmbSubjCode.SelectedIndex.ToString()
-        If CmbSubjCode.SelectedIndex <> -1 AndAlso CmbSubjCode.ComboBox.DataSource IsNot Nothing Then
-            Dim selectedRow As DataRowView = TryCast(CmbSubjCode.SelectedItem, DataRowView)
+        Try
+            Dim selectedValue As String = CmbSubjCode.SelectedIndex.ToString()
+            If CmbSubjCode.SelectedIndex <> -1 AndAlso CmbSubjCode.ComboBox.DataSource IsNot Nothing Then
+                Dim selectedRow As DataRowView = TryCast(CmbSubjCode.SelectedItem, DataRowView)
 
-            Dim selectedSubjectCodeID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+                Dim selectedSubjectCodeID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
 
-            Dim qry As String = $"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                Dim qry As String = $"SELECT a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
                                         CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
                                         f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
                                         FROM enrolled_sched a 
@@ -18,65 +19,35 @@ Public Class FrmElementaryGrading
                                         JOIN subject f ON e.SubjectID = f.ID
                                         JOIN gradelevel g ON f.GradeLevel_ID = g.ID
                                         JOIN department h ON g.Department_ID = h.ID
-                                  WHERE f.ID = {selectedSubjectCodeID}"
-            Query(qry)
-            DgvElemGrading.DataSource = ds.Tables("QueryTb")
+                                  WHERE f.ID = {selectedSubjectCodeID} AND h.Department = 'Elementary'"
+                Query(qry)
+                DgvElemGrading.DataSource = ds.Tables("QueryTb")
 
-        End If
-    End Sub
-    Private Sub CmbSubject_SelectedIndexChanged(sender As Object, e As EventArgs)
-        'If CmbSubject.SelectedIndex <> -1 AndAlso CmbSubject.ComboBox.DataSource IsNot Nothing Then
-        '    Dim selectedRow As DataRowView = TryCast(CmbSubject.SelectedItem, DataRowView)
-
-        '    Dim selectedDeptID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
-
-        '    Dim qry As String = $"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
-        '                                CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-        '                                f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
-        '                                FROM enrolled_sched a 
-        '                                JOIN schoolyear b ON a.SYID = b.ID
-        '                                JOIN student c ON a.LRN = c.LRN
-        '                                JOIN enrollment d ON c.LRN = d.LRN
-        '                                JOIN schedule e ON a.ScheduleID = e.ID
-        '                                JOIN subject f ON e.Subj_ID = f.ID
-        '                                JOIN gradelevel g ON f.GradeLevel_ID = g.ID
-        '                                JOIN department h ON g.Department_ID = h.ID
-        '                          WHERE h.ID = {selectedDeptID}"
-        '    Query(qry)
-        '    DgvElemGrading.DataSource = ds.Tables("QueryTb")
-
-        'End If
+            End If
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
     Private Sub FrmElementaryGrading_Load(sender As Object, e As EventArgs) Handles Me.Load
         Connection()
         LoadData()
         LoadSubjectCode()
-        'LoadDepartment()
-        MsgBox(userID)
     End Sub
     Public Sub LoadSubjectCode()
-        Query("SELECT a.ID, a.SubjectCode, a.SubjectName, a.Units
+        Try
+            Query("SELECT a.ID, a.SubjectCode, a.SubjectName, a.Units
                 FROM subject a
                 JOIN gradelevel b ON a.GradeLevel_ID = b.ID
                 JOIN department c ON b.Department_ID = c.ID
                 WHERE c.Department = 'Elementary'")
-        CmbSubjCode.ComboBox.DataSource = ds.Tables("QueryTb")
-        CmbSubjCode.ComboBox.ValueMember = "ID"
-        CmbSubjCode.ComboBox.DisplayMember = "SubjectCode"
-        CmbSubjCode.ComboBox.SelectedIndex = -1
+            CmbSubjCode.ComboBox.DataSource = ds.Tables("QueryTb")
+            CmbSubjCode.ComboBox.ValueMember = "ID"
+            CmbSubjCode.ComboBox.DisplayMember = "SubjectCode"
+            CmbSubjCode.ComboBox.SelectedIndex = -1
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
-    'Public Sub LoadSubject()
-    '    Query("SELECT * FROM subject")
-    '    CmbSubject.ComboBox.DataSource = ds.Tables("QueryTb")
-    '    CmbSubject.ComboBox.ValueMember = "ID"
-    '    CmbSubject.ComboBox.DisplayMember = "SubjectName"
-    'End Sub
-    'Public Sub LoadDepartment()
-    '    Query("SELECT * FROM department")
-    '    CmbSubject.ComboBox.DataSource = ds.Tables("QueryTb")
-    '    CmbSubject.ComboBox.ValueMember = "ID"
-    '    CmbSubject.ComboBox.DisplayMember = "Department"
-    'End Sub
     Public Sub LoadData()
         Try
             Query("SELECT * FROM user")
@@ -94,8 +65,9 @@ Public Class FrmElementaryGrading
                    JOIN subject f ON e.SubjectID = f.ID
                    JOIN gradelevel g ON f.GradeLevel_ID = g.ID
                    JOIN department h ON g.Department_ID = h.ID
-                   JOIN schedule sh ON sh.SubjectID = f.ID
-                   WHERE e.TeacherID = {userID} AND h.Department = 'Elementary'")
+                   JOIN teacher i ON e.TeacherID = i.ID
+                   JOIN user j ON i.UserID = j.ID
+                   WHERE j.ID = {userID} AND h.Department = 'Elementary'")
 
                 If ds.Tables("QueryTb").Rows.Count > 0 Then
                     DgvElemGrading.DataSource = ds.Tables("QueryTb")
@@ -155,25 +127,29 @@ Public Class FrmElementaryGrading
     'End Sub
 
     Private Sub DgvElemGrading_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DgvElemGrading.CellFormatting
-        If e.RowIndex >= 0 AndAlso e.ColumnIndex = 13 Then
-            If TypeOf DgvElemGrading.Rows(e.RowIndex).Cells(e.ColumnIndex).Value Is String Then
-                Dim grade As String = CType(DgvElemGrading.Rows(e.RowIndex).Cells(e.ColumnIndex).Value, String)
+        Try
+            If e.RowIndex >= 0 AndAlso e.ColumnIndex = 13 Then
+                If TypeOf DgvElemGrading.Rows(e.RowIndex).Cells(e.ColumnIndex).Value Is String Then
+                    Dim grade As String = CType(DgvElemGrading.Rows(e.RowIndex).Cells(e.ColumnIndex).Value, String)
 
-                If grade = "Failed" Then
-                    For x As Integer = 0 To 13
-                        DgvElemGrading.Rows(e.RowIndex).Cells(x).Style.BackColor = Color.Pink
-                    Next
-                ElseIf grade = "Passed" Then
-                    For x As Integer = 0 To 13
-                        DgvElemGrading.Rows(e.RowIndex).Cells(x).Style.BackColor = Color.Lavender
-                    Next
-                ElseIf grade = "No Grade" Then
-                    For x As Integer = 0 To 13
-                        DgvElemGrading.Rows(e.RowIndex).Cells(x).Style.BackColor = Color.LightCyan
-                    Next
+                    If grade = "Failed" Then
+                        For x As Integer = 0 To 13
+                            DgvElemGrading.Rows(e.RowIndex).Cells(x).Style.BackColor = Color.Pink
+                        Next
+                    ElseIf grade = "Passed" Then
+                        For x As Integer = 0 To 13
+                            DgvElemGrading.Rows(e.RowIndex).Cells(x).Style.BackColor = Color.Lavender
+                        Next
+                    ElseIf grade = "No Grade" Then
+                        For x As Integer = 0 To 13
+                            DgvElemGrading.Rows(e.RowIndex).Cells(x).Style.BackColor = Color.LightCyan
+                        Next
+                    End If
                 End If
             End If
-        End If
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
     'Private Sub DgvElemGrading_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DgvElemGrading.CellValueChanged
     '    If e.RowIndex >= 0 AndAlso e.RowIndex < DgvElemGrading.Rows.Count Then
@@ -197,23 +173,31 @@ Public Class FrmElementaryGrading
     '    End If
     'End Sub
     Private Sub DgvElemGrading_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DgvElemGrading.EditingControlShowing
-        Dim dgv As DataGridView = CType(sender, DataGridView)
+        Try
+            Dim dgv As DataGridView = CType(sender, DataGridView)
 
-        ' Ensure we only add the handler once
-        RemoveHandler e.Control.KeyPress, AddressOf NumericOnly_KeyPress
+            ' Ensure we only add the handler once
+            RemoveHandler e.Control.KeyPress, AddressOf NumericOnly_KeyPress
 
-        ' Check the current row index
-        If dgv.CurrentCell.RowIndex >= 8 AndAlso dgv.CurrentCell.RowIndex <= 11 Then
-            ' Attach the handler to the editing control's KeyPress event
-            AddHandler e.Control.KeyPress, AddressOf NumericOnly_KeyPress
-        End If
+            ' Check the current row index
+            If dgv.CurrentCell.RowIndex >= 8 AndAlso dgv.CurrentCell.RowIndex <= 11 Then
+                ' Attach the handler to the editing control's KeyPress event
+                AddHandler e.Control.KeyPress, AddressOf NumericOnly_KeyPress
+            End If
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
 
     Private Sub NumericOnly_KeyPress(sender As Object, e As KeyPressEventArgs)
-        ' Allow only digits (0-9) and control characters (like backspace)
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
+        Try
+            ' Allow only digits (0-9) and control characters (like backspace)
+            If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+                e.Handled = True
+            End If
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
 
     Private Sub TextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
@@ -260,27 +244,35 @@ Public Class FrmElementaryGrading
         End Try
     End Sub
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
-        Query($"SELECT  a.ID,CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
-                                        CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
-                                        f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, a.Average, a.Remarks
-                                        FROM enrolled_sched a 
-                                        JOIN schoolyear b ON a.SYID = b.ID
-                                        JOIN student c ON a.LRN = c.LRN
-                                        JOIN enrollment d ON c.LRN = d.LRN
-                                        JOIN schedule e ON a.ScheduleID = e.ID
-                                        JOIN subject f ON e.SubjectID = f.ID
-                                        JOIN gradelevel g ON f.GradeLevel_ID = g.ID
-                                        JOIN department h ON g.Department_ID = h.ID
-                                  WHERE h.Department = 'Elementary' AND c.Lastname LIKE '{TxtSearch.Text}' OR c.Firstname LIKE '{TxtSearch.Text}' OR c.MiddleInitial LIKE '{TxtSearch.Text}'")
-        DgvElemGrading.DataSource = ds.Tables("QueryTb")
+        Try
+            Query($"SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, d.EID, c.LRN, 
+                   CONCAT(c.Lastname, ', ', c.Firstname, ' ', c.MiddleInitial) Fullname, 
+                   f.SubjectCode, f.SubjectName, f.Units, a.FirstGrd, a.SecondGrd, a.ThirdGrd, a.FourthGrd, 
+                   a.Average, a.Remarks
+                   FROM enrolled_sched a 
+                   JOIN schoolyear b ON a.SYID = b.ID
+                   JOIN student c ON a.LRN = c.LRN
+                   JOIN enrollment d ON c.LRN = d.LRN
+                   JOIN schedule e ON a.ScheduleID = e.ID
+                   JOIN subject f ON e.SubjectID = f.ID
+                   JOIN gradelevel g ON f.GradeLevel_ID = g.ID
+                   JOIN department h ON g.Department_ID = h.ID
+                   JOIN teacher i ON e.TeacherID = i.ID
+                   JOIN user j ON i.UserID = j.ID
+                   WHERE j.ID = {userID} AND h.Department = 'Elementary' AND c.Lastname LIKE '{TxtSearch.Text}' OR c.Firstname LIKE '{TxtSearch.Text}' OR c.MiddleInitial LIKE '{TxtSearch.Text}'")
+            DgvElemGrading.DataSource = ds.Tables("QueryTb")
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
-        Dim dt As New DataTable("DS_Grading")
+        Try
+            Dim dt As New DataTable("DS_Grading")
 
-        Dim StudentLRN As String = TxtLRN.Text.Trim()
+            Dim StudentLRN As String = TxtLRN.Text.Trim()
 
-        Dim adp = New MySqlDataAdapter("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
+            Dim adp = New MySqlDataAdapter("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN, 
                                         CONCAT(c.Lastname, ', ', c.Firstname) Fullname, e.SubjectCode as Code, 
                                         e.SubjectName as Subject, e.Units, a.FirstGrd as '1', a.SecondGrd as '2', a.ThirdGrd as '3', a.FourthGrd as '4',
                                         a.Average, a.Remarks, g.GradeLevel as Grade, f.SectionRoom as Section, c.Gender, CONCAT(h.Lastname, ', ', h.Firstname) Teacher
@@ -294,18 +286,19 @@ Public Class FrmElementaryGrading
                                         JOIN teacher h ON d.TeacherID = h.ID
                                         WHERE c.LRN = '" & StudentLRN & "'", con)
 
-        adp.Fill(dt)
+            adp.Fill(dt)
 
-        If dt.Rows.Count > 0 Then
-            Dim crystal As New ReportCard
-            crystal.SetDataSource(dt)
-            FrmGradeReport.CrystalReportViewer1.ReportSource = crystal
-            FrmGradeReport.CrystalReportViewer1.Refresh()
-            FrmGradeReport.Show()
-        Else
-            MessageBox.Show("No Records")
-        End If
+            If dt.Rows.Count > 0 Then
+                Dim crystal As New ReportCard
+                crystal.SetDataSource(dt)
+                FrmGradeReport.CrystalReportViewer1.ReportSource = crystal
+                FrmGradeReport.CrystalReportViewer1.Refresh()
+                FrmGradeReport.Show()
+            Else
+                MessageBox.Show("No Records")
+            End If
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
     End Sub
-
-
 End Class

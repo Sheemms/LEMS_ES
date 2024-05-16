@@ -34,12 +34,12 @@ Public Class ClassGrading
                 Success("Successfully Save!")
             End If
         Catch ex As MySqlException
-            MsgBox(ex.Message)
+            Excla(ex.Message)
             'Catch ex As MySqlException When ex.Number = 1062
             '    Critical("Grades already added to this student.")
             '    Exit Sub
         Catch ex As Exception
-            MsgBox(ex.Message)
+            Excla(ex.Message)
         End Try
     End Sub
 #End Region
