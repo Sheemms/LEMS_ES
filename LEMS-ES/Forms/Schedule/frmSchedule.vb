@@ -277,6 +277,29 @@ Public Class FrmSchedule
         'If CmbTeacherName.SelectedItem IsNot Nothing Then
         '    LoadTeacherData()
         'End If
+
+        Try
+            If CmbTeacherName.SelectedItem IsNot Nothing AndAlso TypeOf CmbTeacherName.SelectedItem Is DataRowView Then
+                Dim selectedTeacher As Integer = Convert.ToInt32(DirectCast(CmbTeacherName.SelectedItem, DataRowView).Row("ID"))
+
+                Dim qry As String = $"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) Fullname
+                FROM teacher a
+                JOIN department b ON a.Department_ID = b.ID
+                JOIN gradelevel c ON c.Department_ID = b.ID
+                WHERE a.ID = {selectedTeacher}"
+                Query(qry)
+
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    txtTeacherID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
+                    CmbTeacherName.Text = ds.Tables("QueryTb").Rows(0)("Fullname").ToString()
+                    teacherid = ds.Tables("QueryTb").Rows(0)("ID").ToString()
+                Else
+                    txtTeacherID.Clear()
+                End If
+            End If
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
     End Sub
 #Region "Auto Complete/ Populate"
     'Private Sub LoadTeacherAutoComplete()
