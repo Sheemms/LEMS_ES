@@ -113,12 +113,63 @@
             Return
         End If
 #End Region
+        Try
+            CalculateTotalPayment()
+
+            Dim modeOfPayment As String = cmbModeofPayment.SelectedItem.ToString()
+            Dim currentPayment As Decimal = 0
+
+            If Decimal.TryParse(TxtCurPayment.Text.Trim(), currentPayment) Then
+                If modeOfPayment = "Cash" Then
+                    If currentPayment < totalAmountDue Then
+                        Info("For 'Cash' mode of payment, the full amount must be paid.")
+                        Return
+                    End If
+                End If
+            ElseIf modeOfPayment = "Installment" Then
+                If currentPayment < 1500 Then
+                    Info("For 'Installment' mode of payment, the amount must be at least 1500.")
+                    Return
+                End If
+            Else
+                Info("Please enter a valid current payment amount.")
+                Return
+            End If
+        Catch ex As Exception
+            Excla(ex.Message)
+        End Try
+
         If Not NoLeadingSpace(TxtCurPayment.Text.Trim()) Then
             Info("Current payment must have no multiple spaces between numbers.")
             Return
         End If
         ClassPayments.PaymentsRef()
     End Sub
+
+    Private totalAmountDue As Decimal ' Add a class-level variable to store the total amount due
+
+    'Private Sub CalculateTotalPayment()
+    '    Try
+    '        Dim total As Decimal = 0
+
+    '        For Each row As DataGridViewRow In DgvReceipt.Rows
+    '            If row.Cells(1).Value IsNot Nothing AndAlso IsNumeric(row.Cells(1).Value) Then
+    '                Dim paymentAmount As Decimal = CDec(row.Cells(1).Value)
+
+    '                If row.Cells(0).Value IsNot Nothing AndAlso row.Cells(0).Value.ToString() = "Discount" Then
+    '                    total -= paymentAmount
+    '                Else
+    '                    total += paymentAmount
+    '                End If
+    '            End If
+    '        Next
+
+    '        totalAmountDue = total ' Store the total amount due in the class-level variable
+    '        LabelTotalPayment.Text = total.ToString("C2") ' Format as currency with 2 decimal places
+    '    Catch ex As Exception
+    '        Critical(ex.Message)
+    '    End Try
+    'End Sub
     Private Sub CalculateTotalPayment()
         Try
             Dim total As Decimal = 0
@@ -135,6 +186,7 @@
                 End If
             Next
 
+            totalAmountDue = total
             LabelTotalPayment.Text = Format(CDec(total))
         Catch ex As Exception
             Critical(ex.Message)

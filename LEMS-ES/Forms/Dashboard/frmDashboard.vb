@@ -99,7 +99,8 @@
             LogAction("has been logged out")
             RemovePanel()
             MaintenanceRemovePanel()
-
+            userID = 0
+            IDuser = 0
             Login.Show()
             Me.Close()
         End If

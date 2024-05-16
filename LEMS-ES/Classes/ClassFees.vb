@@ -29,6 +29,7 @@ Public Class ClassFees
                 '    Success("Successfully Updated!")
                 'End If
             End If
+            FrmFee.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
