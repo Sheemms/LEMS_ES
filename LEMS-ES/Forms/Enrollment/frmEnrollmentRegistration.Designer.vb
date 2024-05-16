@@ -22,16 +22,16 @@ Partial Class FrmEnrollmentRegistration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEnrollmentRegistration))
-        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LabelEID = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -53,15 +53,10 @@ Partial Class FrmEnrollmentRegistration
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CmbStudName = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.PbSearch = New System.Windows.Forms.PictureBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DgvStudSubject = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.columnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subject = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Days = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Teacher = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.BtnUpdate = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
@@ -77,7 +72,13 @@ Partial Class FrmEnrollmentRegistration
         Me.CmbSection = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbGradeLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.CmbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.CmbStudName = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.columnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subject = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Days = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Teacher = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DgvSubjectList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -243,28 +244,28 @@ Partial Class FrmEnrollmentRegistration
         '
         Me.DgvSubjectList.AllowUserToAddRows = False
         Me.DgvSubjectList.AllowUserToDeleteRows = False
-        DataGridViewCellStyle37.BackColor = System.Drawing.Color.White
-        Me.DgvSubjectList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle37
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DgvSubjectList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvSubjectList.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle38.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle38.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvSubjectList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle38
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvSubjectList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgvSubjectList.ColumnHeadersHeight = 32
         Me.DgvSubjectList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvSubjectList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column7, Me.Column2, Me.Column3, Me.Column4, Me.Column6, Me.Column5})
-        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle39.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle39.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvSubjectList.DefaultCellStyle = DataGridViewCellStyle39
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvSubjectList.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgvSubjectList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvSubjectList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvSubjectList.Location = New System.Drawing.Point(3, 19)
@@ -392,6 +393,21 @@ Partial Class FrmEnrollmentRegistration
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Enrollment Form"
         '
+        'CmbStudName
+        '
+        Me.CmbStudName.BackColor = System.Drawing.Color.Transparent
+        Me.CmbStudName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CmbStudName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbStudName.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbStudName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CmbStudName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CmbStudName.ForeColor = System.Drawing.Color.Black
+        Me.CmbStudName.ItemHeight = 30
+        Me.CmbStudName.Location = New System.Drawing.Point(18, 162)
+        Me.CmbStudName.Name = "CmbStudName"
+        Me.CmbStudName.Size = New System.Drawing.Size(166, 36)
+        Me.CmbStudName.TabIndex = 94
+        '
         'PbSearch
         '
         Me.PbSearch.Cursor = System.Windows.Forms.Cursors.Hand
@@ -421,28 +437,28 @@ Partial Class FrmEnrollmentRegistration
         '
         Me.DgvStudSubject.AllowUserToAddRows = False
         Me.DgvStudSubject.AllowUserToDeleteRows = False
-        DataGridViewCellStyle40.BackColor = System.Drawing.Color.White
-        Me.DgvStudSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle40
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgvStudSubject.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvStudSubject.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle41.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle41.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvStudSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvStudSubject.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvStudSubject.ColumnHeadersHeight = 32
         Me.DgvStudSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvStudSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnID, Me.Code, Me.Subject, Me.Time, Me.Days, Me.Teacher})
-        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle42.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle42.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle42.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvStudSubject.DefaultCellStyle = DataGridViewCellStyle42
+        Me.DgvStudSubject.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnID, Me.Code, Me.Subject, Me.Time, Me.Days, Me.Teacher, Me.Column8})
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvStudSubject.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgvStudSubject.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvStudSubject.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvStudSubject.Location = New System.Drawing.Point(3, 19)
@@ -473,60 +489,6 @@ Partial Class FrmEnrollmentRegistration
         Me.DgvStudSubject.ThemeStyle.RowsStyle.Height = 22
         Me.DgvStudSubject.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvStudSubject.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'columnID
-        '
-        Me.columnID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.columnID.DataPropertyName = "ID"
-        Me.columnID.HeaderText = "ID"
-        Me.columnID.Name = "columnID"
-        Me.columnID.ReadOnly = True
-        Me.columnID.Width = 44
-        '
-        'Code
-        '
-        Me.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Code.DataPropertyName = "SubjectCode"
-        Me.Code.HeaderText = "Code"
-        Me.Code.Name = "Code"
-        Me.Code.ReadOnly = True
-        Me.Code.Width = 60
-        '
-        'Subject
-        '
-        Me.Subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Subject.DataPropertyName = "SubjectName"
-        Me.Subject.HeaderText = "Subject Name"
-        Me.Subject.Name = "Subject"
-        Me.Subject.ReadOnly = True
-        Me.Subject.Width = 110
-        '
-        'Time
-        '
-        Me.Time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Time.DataPropertyName = "Time"
-        Me.Time.HeaderText = "Time"
-        Me.Time.Name = "Time"
-        Me.Time.ReadOnly = True
-        Me.Time.Width = 58
-        '
-        'Days
-        '
-        Me.Days.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Days.DataPropertyName = "Days"
-        Me.Days.HeaderText = "Days"
-        Me.Days.Name = "Days"
-        Me.Days.ReadOnly = True
-        Me.Days.Width = 60
-        '
-        'Teacher
-        '
-        Me.Teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Teacher.DataPropertyName = "Teacher"
-        Me.Teacher.HeaderText = "Teacher"
-        Me.Teacher.Name = "Teacher"
-        Me.Teacher.ReadOnly = True
-        Me.Teacher.Width = 76
         '
         'Panel7
         '
@@ -584,28 +546,28 @@ Partial Class FrmEnrollmentRegistration
         '
         Me.DgvEnrolledSubjects.AllowUserToAddRows = False
         Me.DgvEnrolledSubjects.AllowUserToDeleteRows = False
-        DataGridViewCellStyle43.BackColor = System.Drawing.Color.White
-        Me.DgvEnrolledSubjects.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle43
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.DgvEnrolledSubjects.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DgvEnrolledSubjects.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle44.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle44.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvEnrolledSubjects.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvEnrolledSubjects.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DgvEnrolledSubjects.ColumnHeadersHeight = 32
         Me.DgvEnrolledSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvEnrolledSubjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle45.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle45.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle45.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvEnrolledSubjects.DefaultCellStyle = DataGridViewCellStyle45
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvEnrolledSubjects.DefaultCellStyle = DataGridViewCellStyle9
         Me.DgvEnrolledSubjects.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvEnrolledSubjects.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvEnrolledSubjects.Location = New System.Drawing.Point(3, 19)
@@ -750,20 +712,68 @@ Partial Class FrmEnrollmentRegistration
         Me.CmbDepartment.Size = New System.Drawing.Size(208, 36)
         Me.CmbDepartment.TabIndex = 87
         '
-        'CmbStudName
+        'columnID
         '
-        Me.CmbStudName.BackColor = System.Drawing.Color.Transparent
-        Me.CmbStudName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CmbStudName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbStudName.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbStudName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CmbStudName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CmbStudName.ForeColor = System.Drawing.Color.Black
-        Me.CmbStudName.ItemHeight = 30
-        Me.CmbStudName.Location = New System.Drawing.Point(18, 162)
-        Me.CmbStudName.Name = "CmbStudName"
-        Me.CmbStudName.Size = New System.Drawing.Size(166, 36)
-        Me.CmbStudName.TabIndex = 94
+        Me.columnID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.columnID.DataPropertyName = "ID"
+        Me.columnID.HeaderText = "ID"
+        Me.columnID.Name = "columnID"
+        Me.columnID.ReadOnly = True
+        Me.columnID.Visible = False
+        Me.columnID.Width = 44
+        '
+        'Code
+        '
+        Me.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Code.DataPropertyName = "SubjectCode"
+        Me.Code.HeaderText = "Code"
+        Me.Code.Name = "Code"
+        Me.Code.ReadOnly = True
+        Me.Code.Width = 60
+        '
+        'Subject
+        '
+        Me.Subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Subject.DataPropertyName = "SubjectName"
+        Me.Subject.HeaderText = "Subject Name"
+        Me.Subject.Name = "Subject"
+        Me.Subject.ReadOnly = True
+        '
+        'Time
+        '
+        Me.Time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Time.DataPropertyName = "Time"
+        Me.Time.HeaderText = "Time"
+        Me.Time.Name = "Time"
+        Me.Time.ReadOnly = True
+        Me.Time.Width = 58
+        '
+        'Days
+        '
+        Me.Days.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Days.DataPropertyName = "Days"
+        Me.Days.HeaderText = "Days"
+        Me.Days.Name = "Days"
+        Me.Days.ReadOnly = True
+        Me.Days.Width = 60
+        '
+        'Teacher
+        '
+        Me.Teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Teacher.DataPropertyName = "Teacher"
+        Me.Teacher.HeaderText = "Teacher"
+        Me.Teacher.Name = "Teacher"
+        Me.Teacher.ReadOnly = True
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.DataPropertyName = "SY"
+        Me.Column8.HeaderText = "SY"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Visible = False
+        Me.Column8.Width = 46
         '
         'FrmEnrollmentRegistration
         '
@@ -828,11 +838,12 @@ Partial Class FrmEnrollmentRegistration
     Friend WithEvents PbSearch As PictureBox
     Friend WithEvents CmbGradeLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents CmbDepartment As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CmbStudName As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents columnID As DataGridViewTextBoxColumn
     Friend WithEvents Code As DataGridViewTextBoxColumn
     Friend WithEvents Subject As DataGridViewTextBoxColumn
     Friend WithEvents Time As DataGridViewTextBoxColumn
     Friend WithEvents Days As DataGridViewTextBoxColumn
     Friend WithEvents Teacher As DataGridViewTextBoxColumn
-    Friend WithEvents CmbStudName As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
 End Class

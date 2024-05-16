@@ -59,7 +59,7 @@ Partial Class SearchTeacher
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -99,6 +99,7 @@ Partial Class SearchTeacher
         Me.Column1.DataPropertyName = "ID"
         Me.Column1.HeaderText = "ID"
         Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
         Me.Column1.Width = 44
         '
         'Column2
@@ -133,6 +134,7 @@ Partial Class SearchTeacher
         Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.ForeColor = System.Drawing.Color.Black
         Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtSearch.Location = New System.Drawing.Point(361, 12)
         Me.TxtSearch.Name = "TxtSearch"

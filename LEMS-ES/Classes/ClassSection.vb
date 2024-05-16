@@ -54,8 +54,15 @@ Public Class ClassSection
             Else
                 Critical("Invalid Grade Level.")
             End If
-        Catch ex As MySqlException When ex.Number = 1062
-            Critical("Section already exists.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 AndAlso ex.Message.Contains("SectionRoom") Then
+                Critical("Section already exists.")
+                Exit Sub
+            ElseIf ex.Number = 1062 AndAlso ex.Message.Contains("GradeLevel and Adviser") Then
+                Critical("For Adviser, only one section per grade level.")
+                Exit Sub
+            End If
+            Exit Sub
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

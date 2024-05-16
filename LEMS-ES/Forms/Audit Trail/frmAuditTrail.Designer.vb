@@ -29,13 +29,6 @@ Partial Class FrmAuditTrail
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DgvAudittrail = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
@@ -43,6 +36,13 @@ Partial Class FrmAuditTrail
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.CmbUserLevel = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgvAudittrail, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,59 +132,6 @@ Partial Class FrmAuditTrail
         Me.DgvAudittrail.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvAudittrail.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "#"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 39
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 42
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.DataPropertyName = "UserID"
-        Me.Column2.HeaderText = "UserID"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 66
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.DataPropertyName = "UserLevel"
-        Me.Column6.HeaderText = "User Level"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 86
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.DataPropertyName = "Fullname"
-        Me.Column7.HeaderText = "Fullname"
-        Me.Column7.Name = "Column7"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.DataPropertyName = "Description"
-        Me.Column3.HeaderText = "Description"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "Time"
-        Me.Column4.HeaderText = "Time"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 55
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -240,6 +187,61 @@ Partial Class FrmAuditTrail
         Me.ToolStripLabel2.Size = New System.Drawing.Size(66, 22)
         Me.ToolStripLabel2.Text = "User Level:"
         '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "#"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 39
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        Me.Column1.Width = 42
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.DataPropertyName = "UserID"
+        Me.Column2.HeaderText = "UserID"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Visible = False
+        Me.Column2.Width = 66
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.DataPropertyName = "UserLevel"
+        Me.Column6.HeaderText = "User Level"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 86
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.DataPropertyName = "Fullname"
+        Me.Column7.HeaderText = "Fullname"
+        Me.Column7.Name = "Column7"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "Description"
+        Me.Column3.HeaderText = "Description"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.DataPropertyName = "Time"
+        Me.Column4.HeaderText = "Time"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 55
+        '
         'FrmAuditTrail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,6 +269,9 @@ Partial Class FrmAuditTrail
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents CmbUserLevel As ToolStripComboBox
+    Friend WithEvents TxtSearch As ToolStripTextBox
+    Friend WithEvents CmbModule As ToolStripComboBox
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -274,7 +279,4 @@ Partial Class FrmAuditTrail
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents TxtSearch As ToolStripTextBox
-    Friend WithEvents CmbModule As ToolStripComboBox
-    Friend WithEvents ToolStripLabel1 As ToolStripLabel
 End Class

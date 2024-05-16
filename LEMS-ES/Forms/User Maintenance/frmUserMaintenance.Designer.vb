@@ -28,6 +28,13 @@ Partial Class FrmUserMaintenance
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvUser = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TxtContact = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -45,13 +52,6 @@ Partial Class FrmUserMaintenance
         Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,7 +95,7 @@ Partial Class FrmUserMaintenance
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvUser.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
@@ -139,6 +139,62 @@ Partial Class FrmUserMaintenance
         Me.dgvUser.ThemeStyle.RowsStyle.Height = 22
         Me.dgvUser.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvUser.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Username"
+        Me.Column2.HeaderText = "Username"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.DataPropertyName = "Password"
+        Me.Column3.HeaderText = "Password"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Visible = False
+        Me.Column3.Width = 90
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "Fullname"
+        Me.Column4.HeaderText = "Fullname"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column7.DataPropertyName = "Contact"
+        Me.Column7.HeaderText = "Contact"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 74
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "UserLevel"
+        Me.Column5.HeaderText = "User Level"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "Status"
+        Me.Column6.HeaderText = "Status"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
         '
         'Panel1
         '
@@ -389,62 +445,6 @@ Partial Class FrmUserMaintenance
         Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Username"
-        Me.Column2.HeaderText = "Username"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.DataPropertyName = "Password"
-        Me.Column3.HeaderText = "Password"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Visible = False
-        Me.Column3.Width = 90
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "Fullname"
-        Me.Column4.HeaderText = "Fullname"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column7.DataPropertyName = "Contact"
-        Me.Column7.HeaderText = "Contact"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 74
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "UserLevel"
-        Me.Column5.HeaderText = "User Level"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "Status"
-        Me.Column6.HeaderText = "Status"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
         '
         'FrmUserMaintenance
         '

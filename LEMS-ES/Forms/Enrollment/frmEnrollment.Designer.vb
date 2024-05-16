@@ -303,6 +303,7 @@ Partial Class FrmEnrollment
         Me.colDrop.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.colDrop.Name = "colDrop"
         Me.colDrop.ReadOnly = True
+        Me.colDrop.Visible = False
         Me.colDrop.Width = 5
         '
         'FrmEnrollment

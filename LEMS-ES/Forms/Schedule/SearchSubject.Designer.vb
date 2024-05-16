@@ -26,14 +26,14 @@ Partial Class SearchSubject
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DgvSubject = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.PbSearch = New System.Windows.Forms.PictureBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.PbSearch = New System.Windows.Forms.PictureBox()
         CType(Me.DgvSubject, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PbSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,7 +61,7 @@ Partial Class SearchSubject
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -94,41 +94,13 @@ Partial Class SearchSubject
         Me.DgvSubject.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvSubject.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'TxtSearch
-        '
-        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtSearch.DefaultText = ""
-        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtSearch.Location = New System.Drawing.Point(361, 12)
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtSearch.PlaceholderText = ""
-        Me.TxtSearch.SelectedText = ""
-        Me.TxtSearch.Size = New System.Drawing.Size(200, 36)
-        Me.TxtSearch.TabIndex = 60
-        '
-        'PbSearch
-        '
-        Me.PbSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.PbSearch.Location = New System.Drawing.Point(567, 12)
-        Me.PbSearch.Name = "PbSearch"
-        Me.PbSearch.Size = New System.Drawing.Size(30, 36)
-        Me.PbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PbSearch.TabIndex = 62
-        Me.PbSearch.TabStop = False
-        '
         'Column1
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column1.DataPropertyName = "ID"
         Me.Column1.HeaderText = "ID"
         Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
         Me.Column1.Width = 44
         '
         'Column2
@@ -167,6 +139,36 @@ Partial Class SearchSubject
         Me.Column6.HeaderText = "Units"
         Me.Column6.Name = "Column6"
         Me.Column6.Width = 65
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSearch.DefaultText = ""
+        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSearch.ForeColor = System.Drawing.Color.Black
+        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtSearch.Location = New System.Drawing.Point(361, 12)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSearch.PlaceholderText = ""
+        Me.TxtSearch.SelectedText = ""
+        Me.TxtSearch.Size = New System.Drawing.Size(200, 36)
+        Me.TxtSearch.TabIndex = 60
+        '
+        'PbSearch
+        '
+        Me.PbSearch.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.PbSearch.Location = New System.Drawing.Point(567, 12)
+        Me.PbSearch.Name = "PbSearch"
+        Me.PbSearch.Size = New System.Drawing.Size(30, 36)
+        Me.PbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PbSearch.TabIndex = 62
+        Me.PbSearch.TabStop = False
         '
         'SearchSubject
         '
