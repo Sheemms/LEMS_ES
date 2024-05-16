@@ -29,13 +29,6 @@ Partial Class FrmAuditTrail
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DgvAudittrail = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.CmbModule = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.CmbUserLevel = New System.Windows.Forms.ToolStripComboBox()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,6 +36,13 @@ Partial Class FrmAuditTrail
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.CmbModule = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.CmbUserLevel = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgvAudittrail, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,61 +132,6 @@ Partial Class FrmAuditTrail
         Me.DgvAudittrail.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvAudittrail.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.ToolStripButton3, Me.CmbModule, Me.ToolStripLabel1, Me.CmbUserLevel, Me.ToolStripLabel2})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(947, 25)
-        Me.ToolStrip1.TabIndex = 27
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'TxtSearch
-        '
-        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.TxtSearch.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.Size = New System.Drawing.Size(172, 25)
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
-        '
-        'CmbModule
-        '
-        Me.CmbModule.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbModule.Items.AddRange(New Object() {"All"})
-        Me.CmbModule.Name = "CmbModule"
-        Me.CmbModule.Size = New System.Drawing.Size(120, 25)
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(48, 22)
-        Me.ToolStripLabel1.Text = "Module:"
-        '
-        'CmbUserLevel
-        '
-        Me.CmbUserLevel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CmbUserLevel.Items.AddRange(New Object() {"All", "Administrator", "Office Staff", "Instructor"})
-        Me.CmbUserLevel.Name = "CmbUserLevel"
-        Me.CmbUserLevel.Size = New System.Drawing.Size(120, 25)
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(66, 22)
-        Me.ToolStripLabel2.Text = "User Level:"
-        '
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -241,6 +186,63 @@ Partial Class FrmAuditTrail
         Me.Column4.HeaderText = "Time"
         Me.Column4.Name = "Column4"
         Me.Column4.Width = 55
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TxtSearch, Me.ToolStripButton3, Me.CmbModule, Me.ToolStripLabel1, Me.CmbUserLevel, Me.ToolStripLabel2})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(947, 25)
+        Me.ToolStrip1.TabIndex = 27
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtSearch.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(172, 25)
+        '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton3.Image = Global.LEMS_ES.My.Resources.Resources.search
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
+        '
+        'CmbModule
+        '
+        Me.CmbModule.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbModule.Items.AddRange(New Object() {"All"})
+        Me.CmbModule.Name = "CmbModule"
+        Me.CmbModule.Size = New System.Drawing.Size(120, 25)
+        Me.CmbModule.Visible = False
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(48, 22)
+        Me.ToolStripLabel1.Text = "Module:"
+        Me.ToolStripLabel1.Visible = False
+        '
+        'CmbUserLevel
+        '
+        Me.CmbUserLevel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CmbUserLevel.Items.AddRange(New Object() {"All", "Administrator", "Office Staff", "Instructor"})
+        Me.CmbUserLevel.Name = "CmbUserLevel"
+        Me.CmbUserLevel.Size = New System.Drawing.Size(120, 25)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(66, 22)
+        Me.ToolStripLabel2.Text = "User Level:"
         '
         'FrmAuditTrail
         '

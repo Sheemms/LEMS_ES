@@ -49,20 +49,10 @@
             Critical(ex.Message)
         End Try
     End Sub
-
-    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         Try
             If Not IsEmptyField(CmbUserLevel.Text.Trim()) Then
                 MsgBox("Please select a user level.")
-                Return
-            End If
-            If Not IsEmptyField(CmbModule.Text.Trim()) Then
-                MsgBox("Please select a module.")
                 Return
             End If
 
