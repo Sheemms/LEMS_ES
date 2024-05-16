@@ -100,10 +100,7 @@ Public Class FrmSchedule
     End Sub
     Public Sub LoadTeacher()
         Try
-            Query("SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) AS Fullname, a.Department_ID
-                    FROM teacher a
-                    JOIN department b ON a.Department_ID = b.ID
-                    JOIN gradelevel c ON c.Department_ID = b.ID")
+            Query("SELECT ID, EmpID, CONCAT(Lastname, ' ', Firstname) Fullname FROM teacher")
             CmbTeacherName.DataSource = ds.Tables("QueryTb")
             CmbTeacherName.ValueMember = "ID"
             CmbTeacherName.DisplayMember = "Fullname"
@@ -186,130 +183,101 @@ Public Class FrmSchedule
 #End Region
 
     Public idSection = Nothing
-    Public idsub = Nothing
-    Public teacherid = Nothing
     Private Sub CmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSection.SelectedIndexChanged
         Try
             If CmbSection.SelectedIndex <> -1 AndAlso CmbSection.DataSource IsNot Nothing Then
                 Dim selectedRow As DataRowView = TryCast(CmbSection.SelectedItem, DataRowView)
 
-                If selectedRow IsNot Nothing Then
-                    Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
-                    Dim selectedGradeLevelID As Integer = Convert.ToInt32(selectedRow.Row("GradeLevel_ID"))
+                Dim selectedSectionID As Integer = selectedRow.Row("ID")
+                Dim selectedGradeLevelID As Integer = selectedRow.Row("GradeLevel_ID") ' Assuming GradeLevel_ID is a column in the section table
 
-                    Query($"SELECT a.ID, c.Department, b.GradeLevel, d.EmpID, CONCAT(d.Lastname, ' ', d.Firstname) AS Adviser
-                        FROM section a
-                        JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                        JOIN department c ON b.Department_ID = c.ID
-                        JOIN teacher d ON a.AdviserID = d.ID 
-                        WHERE a.ID = {selectedSectionID}")
+                Query($"SELECT a.ID, c.Department, b.GradeLevel, d.EmpID, CONCAT(d.Lastname, ' ', d.Firstname) Adviser
+                                FROM section a
+                                JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                                JOIN department c ON b.Department_ID = c.ID
+                                JOIN teacher d ON a.AdviserID = d.ID 
+                                WHERE a.ID = {selectedSectionID}")
 
-                    If ds.Tables("QueryTb").Rows.Count > 0 Then
-                        idSection = ds.Tables("QueryTb").Rows(0)("ID").ToString()
-                        TxtDept.Text = ds.Tables("QueryTb").Rows(0)("Department").ToString()
-                        TxtGradeLevel.Text = ds.Tables("QueryTb").Rows(0)("GradeLevel").ToString()
-                        TxtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
-                        TxtAdviser.Text = ds.Tables("QueryTb").Rows(0)("Adviser").ToString()
-                    Else
-                        idSection = 0
-                        TxtDept.Clear()
-                        TxtGradeLevel.Clear()
-                        TxtAdviserID.Clear()
-                        TxtAdviser.Clear()
-                    End If
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    idSection = ds.Tables("QueryTb").Rows(0)("ID").ToString()
+                    TxtDept.Text = ds.Tables("QueryTb").Rows(0)("Department").ToString()
+                    TxtGradeLevel.Text = ds.Tables("QueryTb").Rows(0)("GradeLevel").ToString()
+                    TxtAdviserID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
+                    TxtAdviser.Text = ds.Tables("QueryTb").Rows(0)("Adviser").ToString()
+                Else
+                    idSection = 0
+                    TxtDept.Clear()
+                    TxtGradeLevel.Clear()
+                    TxtAdviserID.Clear()
+                    TxtAdviser.Clear()
+                End If
 
-                    Query($"SELECT ID, SubjectCode FROM subject WHERE GradeLevel_ID = {selectedGradeLevelID}")
+                Query($"SELECT ID, SubjectCode FROM subject WHERE GradeLevel_ID = {selectedGradeLevelID}")
 
-                    If ds.Tables("QueryTb").Rows.Count > 0 Then
-                        CmbSubjectCode.DataSource = ds.Tables("QueryTb")
-                        CmbSubjectCode.DisplayMember = "SubjectCode"
-                        CmbSubjectCode.ValueMember = "ID"
-                    Else
-                        CmbSubjectCode.DataSource = Nothing
-                        CmbSubjectCode.Items.Clear()
-                        TxtSubjName.Clear()
-                        TxtUnits.Clear()
-                    End If
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    CmbSubjectCode.DataSource = ds.Tables("QueryTb")
+                    CmbSubjectCode.DisplayMember = "SubjectCode"
+                    CmbSubjectCode.ValueMember = "ID"
+                Else
+                    CmbSubjectCode.DataSource = Nothing
+                    CmbSubjectCode.Items.Clear()
+                    TxtSubjName.Clear()
+                    TxtUnits.Clear()
+                End If
 
-                    Query($"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) AS Fullname, a.Department_ID
-                        FROM teacher a
-                        JOIN department b ON a.Department_ID = b.ID
-                        JOIN gradelevel c ON c.Department_ID = b.ID
-                        WHERE c.ID = {selectedGradeLevelID}")
+                Query($"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) Fullname
+                FROM teacher a
+                JOIN department b ON a.Department_ID = b.ID
+                JOIN gradelevel c ON c.Department_ID = b.ID
+                WHERE c.ID = {selectedGradeLevelID}")
 
-                    If ds.Tables("QueryTb").Rows.Count > 0 Then
-                        CmbTeacherName.DataSource = ds.Tables("QueryTb")
-                        CmbTeacherName.DisplayMember = "Fullname"
-                        CmbTeacherName.ValueMember = "ID"
-                    Else
-                        CmbTeacherName.DataSource = Nothing
-                        CmbTeacherName.Items.Clear()
-                        txtTeacherID.Clear()
-                    End If
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    CmbTeacherName.DataSource = ds.Tables("QueryTb")
+                    CmbTeacherName.DisplayMember = "Fullname"
+                    CmbTeacherName.ValueMember = "ID"
+                Else
+                    CmbTeacherName.DataSource = Nothing
+                    CmbTeacherName.Items.Clear()
+                    txtTeacherID.Clear()
                 End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Public idSub = Nothing
     Private Sub CmbSubjectCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSubjectCode.SelectedIndexChanged
         Try
             If CmbSubjectCode.SelectedIndex <> -1 AndAlso CmbSubjectCode.DataSource IsNot Nothing Then
                 Dim selectedRow As DataRowView = TryCast(CmbSubjectCode.SelectedItem, DataRowView)
 
-                If selectedRow IsNot Nothing Then
-                    Dim selectedSubjectID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
+                Dim selectedSectionID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
 
-                    Dim qry As String = $"SELECT a.ID, b.GradeLevel, a.SubjectCode, a.SubjectName, a.Units
-                                     FROM subject a 
-                                     JOIN gradelevel b ON a.GradeLevel_ID = b.ID
-                                     WHERE a.ID = {selectedSubjectID}"
-                    Query(qry)
+                Dim qry As String = $"SELECT a.ID, b.GradeLevel,  a.SubjectCode, a.SubjectName, a.Units
+                                  FROM subject a 
+                                  JOIN gradelevel b ON a.GradeLevel_ID = b.ID
+                                  WHERE a.ID = {selectedSectionID}"
+                Query(qry)
 
-                    If ds.Tables("QueryTb").Rows.Count > 0 Then
-                        TxtSubjName.Text = ds.Tables("QueryTb").Rows(0)("SubjectName").ToString()
-                        TxtUnits.Text = ds.Tables("QueryTb").Rows(0)("Units").ToString()
-                        idSub = ds.Tables("QueryTb").Rows(0)("ID").ToString()
-                    Else
-                        TxtSubjName.Clear()
-                        TxtUnits.Clear()
-                    End If
+                If ds.Tables("QueryTb").Rows.Count > 0 Then
+                    TxtSubjName.Text = ds.Tables("QueryTb").Rows(0)("SubjectName").ToString()
+                    TxtUnits.Text = ds.Tables("QueryTb").Rows(0)("Units")
+                    idSub = ds.Tables("QueryTb").Rows(0)("ID").ToString()
+                Else
+                    TxtSubjName.Clear()
+                    TxtUnits.Clear()
                 End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Public teacherid = Nothing
     Private Sub CmbTeacherName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTeacherName.SelectedIndexChanged
-        If CmbTeacherName.SelectedIndex <> -1 AndAlso CmbTeacherName.DataSource IsNot Nothing Then
-            Dim selectedRow As DataRowView = TryCast(CmbTeacherName.SelectedItem, DataRowView)
-
-            If selectedRow IsNot Nothing Then
-                Dim selectedTeacherID As Integer = Convert.ToInt32(selectedRow.Row("ID"))
-                Dim selectedDepartmentID As Integer = Convert.ToInt32(selectedRow.Row("Department_ID"))
-
-                ' Debug: Print the selected teacher and department IDs
-                Debug.Print($"Selected Teacher ID: {selectedTeacherID}, Selected Department ID: {selectedDepartmentID}")
-
-                Query($"SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ' ', a.Firstname) AS Fullname
-                    FROM teacher a
-                    JOIN department b ON a.Department_ID = b.ID
-                    JOIN gradelevel c ON c.Department_ID = b.ID
-                    WHERE c.ID = {selectedDepartmentID}")
-
-                If ds.Tables("QueryTb").Rows.Count > 0 Then
-                    teacherid = ds.Tables("QueryTb").Rows(0)("ID").ToString()
-                    txtTeacherID.Text = ds.Tables("QueryTb").Rows(0)("EmpID").ToString()
-                Else
-                    teacherid = 0
-                    txtTeacherID.Clear()
-                End If
-            End If
-        End If
+        'If CmbTeacherName.SelectedItem IsNot Nothing Then
+        '    LoadTeacherData()
+        'End If
     End Sub
-
 #Region "Auto Complete/ Populate"
     'Private Sub LoadTeacherAutoComplete()
     '    Query("SELECT ID, CONCAT(Lastname, ' ', Firstname, ' ', MiddleInitial) AS FullName, EmpID FROM teacher")
