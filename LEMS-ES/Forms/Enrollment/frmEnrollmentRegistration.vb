@@ -163,11 +163,11 @@ Public Class FrmEnrollmentRegistration
             Return
         End If
         If Not IsEmptyField(txtStudLRN.Text.Trim()) Then
-            Info("Please enter a subject code.")
+            Info("Please enter a LRN.")
             Return
         End If
         If Not IsEmptyField(CmbStudName.Text.Trim()) Then
-            Info("Please select a subject name.")
+            Info("Please select a student name.")
             Return
         End If
 

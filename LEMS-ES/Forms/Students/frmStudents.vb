@@ -5,8 +5,9 @@ Public Class FrmStudents
         Loadrecords()
     End Sub
     Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
-        frmStudentsView.LoadReqClass()
-        frmStudentsView.Show()
+        FrmStudentsView.LoadReqClass()
+        FrmStudentsView.btnUpdate.Enabled = False
+        FrmStudentsView.Show()
     End Sub
     Public Sub Loadrecords()
         Try
