@@ -38,8 +38,7 @@ Public Class ClassSchedule
                 End If
             Else
                 If MsgBox("Do you want to update?", vbQuestion + vbYesNo) = vbYes Then
-                    Command("UPDATE schedule SET SYID=@SYID, SectionID=@SectionID, Room=@Room, SubjectID=@SubjectID, Days=@Days, Time_From=@Time_From, Time_To=@Time_To, TeacherID=@TeacherID)
-                            WHERE ID=@ID", dynamicParams)
+                    Command("UPDATE schedule SET SYID=@SYID, SectionID=@SectionID, Room=@Room, SubjectID=@SubjectID, Days=@Days, Time_From=@Time_From, Time_To=@Time_To, TeacherID=@TeacherID WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
                     FrmSchedule.Clear()
                 End If

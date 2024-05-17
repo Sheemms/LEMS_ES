@@ -39,10 +39,10 @@ Public Class FrmSchedule
     Public Sub LoadRecords()
         Try
             Query($"SELECT a.ID, CONCAT(b.Start_Year, '-',b.End_Year) SchoolYear, e.Department, d.GradeLevel, c.SectionRoom, f.Room,
-                g.SubjectCode, g.SubjectName,
+                g.SubjectCode, g.SubjectName, i.EmpID as AdviserID,
                 CONCAT(i.Lastname, ', ', i.Firstname, ' ', i.MiddleInitial) as Adviser, a.Days, 
-                CONCAT(TIME_FORMAT(a.Time_From, '%H:%i'), '-',TIME_FORMAT(a.Time_To, '%H:%i')) as Time, 
-                CONCAT(h.Lastname, ', ', h.Firstname, ' ', h.MiddleInitial) as Teacher 
+                CONCAT(TIME_FORMAT(a.Time_From, '%H:%i'), '-',TIME_FORMAT(a.Time_To, '%H:%i')) as Time, h.EmpID as TeacherID,
+                CONCAT(h.Lastname, ', ', h.Firstname) as Teacher 
                 FROM schedule a
                 JOIN schoolyear b ON a.SYID = b.ID
                 JOIN section c ON a.SectionID = c.ID
@@ -63,6 +63,38 @@ Public Class FrmSchedule
             Critical(ex.Message)
         End Try
     End Sub
+    Private Sub DgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSchedule.CellDoubleClick
+        Try
+            If e.RowIndex >= 0 AndAlso DgvSchedule.SelectedRows.Count > 0 Then
+                Dim selectedRow As DataGridViewRow = DgvSchedule.SelectedRows(0)
+                idSched = selectedRow.Cells("colID").Value
+                lblSY.Text = selectedRow.Cells("Column8").Value
+                TxtDept.Text = selectedRow.Cells("Column2").Value
+                TxtGradeLevel.Text = selectedRow.Cells("Column11").Value
+                CmbSection.Text = selectedRow.Cells("Column3").Value
+                CmbRoom.Text = selectedRow.Cells("Column4").Value
+                CmbSubjectCode.Text = selectedRow.Cells("Column1").Value
+                TxtSubjName.Text = selectedRow.Cells("Column10").Value
+                TxtAdviser.Text = selectedRow.Cells("Column5").Value
+                TxtAdviserID.Text = selectedRow.Cells("Column13").Value
+                Dim time As String = selectedRow.Cells("Column7").Value.ToString()
+                Dim times() As String = time.Split("-"c)
+                If times.Length = 2 Then
+                    txtstartTime.Text = times(0).Trim() ' Assuming you have a control named TxtTimeFrom
+                    txtendTime.Text = times(1).Trim() ' Assuming you have a control named TxtTimeTo
+                End If
+                txtTeacherID.Text = selectedRow.Cells("Column12").Value
+                CmbTeacherName.Text = selectedRow.Cells("Column9").Value
+                'Dim days As String = selectedRow.Cells("Column6").Value.ToString()
+                'PopulateDaysCheckboxes(days)
+            ElseIf e.ColumnIndex >= 0 Then
+                Clear()
+            End If
+        Catch ex As Exception
+            Critical(ex.Message)
+        End Try
+    End Sub
+
     Public Sub LoadSection()
         Try
             Query("SELECT * FROM section")
@@ -379,20 +411,40 @@ Public Class FrmSchedule
     End Sub
 
     Public Function ChckBox()
-        Try
-            Dim days = ""
-            Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
-            For i = 0 To ckbx.Length - 1
-                If ckbx(i).Checked Then
-                    days &= ckbx(i).Text & " "
-                End If
-            Next
-            Return days
-        Catch ex As Exception
-            Critical(ex.Message)
-        End Try
+        Dim days = ""
+        Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
+        For i = 0 To ckbx.Length - 1
+            If ckbx(i).Checked Then
+                days &= ckbx(i).Text & " "
+            End If
+        Next
+        Return days
     End Function
+    'Private Sub PopulateDaysCheckboxes(days As String)
+    '    Dim dayArray() As String = days.Split(" "c)
+    '    Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
 
+    '    ' Clear all checkboxes first
+    '    For Each chk As CheckBox In ckbx
+    '        chk.Checked = False
+    '    Next
+
+    '    ' Check the checkboxes based on the days string
+    '    For Each day In dayArray
+    '        Select Case day.Trim().ToLower()
+    '            Case "Monday"
+    '                cbM.Checked = True
+    '            Case "Tuesday"
+    '                cbT.Checked = True
+    '            Case "Wednesday"
+    '                cbW.Checked = True
+    '            Case "Thursday"
+    '                cbTH.Checked = True
+    '            Case "Friday"
+    '                cbF.Checked = True
+    '        End Select
+    '    Next
+    'End Sub
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         Try
             Dim search As String = TxtSearch.Text.Trim()

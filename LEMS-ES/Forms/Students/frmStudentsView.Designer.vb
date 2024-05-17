@@ -22,9 +22,9 @@ Partial Class FrmStudentsView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbStudType = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtStudNum = New Guna.UI2.WinForms.Guna2TextBox()
@@ -78,6 +78,18 @@ Partial Class FrmStudentsView
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -89,6 +101,8 @@ Partial Class FrmStudentsView
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.cmbStudType)
         Me.Panel1.Controls.Add(Me.txtStudNum)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -186,6 +200,12 @@ Partial Class FrmStudentsView
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label28)
+        Me.TabPage1.Controls.Add(Me.Label27)
+        Me.TabPage1.Controls.Add(Me.Label23)
+        Me.TabPage1.Controls.Add(Me.Label18)
+        Me.TabPage1.Controls.Add(Me.Label12)
+        Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.DtpBday)
         Me.TabPage1.Controls.Add(Me.txtAddress)
         Me.TabPage1.Controls.Add(Me.Label26)
@@ -272,27 +292,27 @@ Partial Class FrmStudentsView
         Me.dgvRequirements.AllowUserToDeleteRows = False
         Me.dgvRequirements.AllowUserToResizeColumns = False
         Me.dgvRequirements.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.White
+        Me.dgvRequirements.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle32.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequirements.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle32
         Me.dgvRequirements.ColumnHeadersHeight = 30
         Me.dgvRequirements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvRequirements.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCheckBox, Me.ID, Me.Requirement, Me.Column1})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle33.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Bahnschrift", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRequirements.DefaultCellStyle = DataGridViewCellStyle33
         Me.dgvRequirements.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRequirements.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvRequirements.Location = New System.Drawing.Point(3, 22)
@@ -572,6 +592,10 @@ Partial Class FrmStudentsView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label32)
+        Me.TabPage2.Controls.Add(Me.Label30)
+        Me.TabPage2.Controls.Add(Me.Label29)
+        Me.TabPage2.Controls.Add(Me.Label8)
         Me.TabPage2.Controls.Add(Me.txtGuardianRelation)
         Me.TabPage2.Controls.Add(Me.Label22)
         Me.TabPage2.Controls.Add(Me.txtGuardianContact)
@@ -691,9 +715,9 @@ Partial Class FrmStudentsView
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(7, 149)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(128, 16)
+        Me.Label21.Size = New System.Drawing.Size(119, 16)
         Me.Label21.TabIndex = 26
-        Me.Label21.Text = "If Guardian is Other *"
+        Me.Label21.Text = "If Guardian is Other"
         '
         'txtMotherMaidenName
         '
@@ -880,6 +904,126 @@ Partial Class FrmStudentsView
         Me.btnSave.TabIndex = 27
         Me.btnSave.Text = "Save"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(124, 149)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(14, 16)
+        Me.Label8.TabIndex = 35
+        Me.Label8.Text = "*"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Red
+        Me.Label11.Location = New System.Drawing.Point(77, 12)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(14, 16)
+        Me.Label11.TabIndex = 80
+        Me.Label11.Text = "*"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.ForeColor = System.Drawing.Color.Red
+        Me.Label12.Location = New System.Drawing.Point(77, 71)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(14, 16)
+        Me.Label12.TabIndex = 81
+        Me.Label12.Text = "*"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.Red
+        Me.Label13.Location = New System.Drawing.Point(321, 19)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(14, 16)
+        Me.Label13.TabIndex = 82
+        Me.Label13.Text = "*"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.Color.Red
+        Me.Label15.Location = New System.Drawing.Point(623, 19)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(14, 16)
+        Me.Label15.TabIndex = 83
+        Me.Label15.Text = "*"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.ForeColor = System.Drawing.Color.Red
+        Me.Label18.Location = New System.Drawing.Point(299, 13)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(14, 16)
+        Me.Label18.TabIndex = 84
+        Me.Label18.Text = "*"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.ForeColor = System.Drawing.Color.Red
+        Me.Label23.Location = New System.Drawing.Point(275, 131)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(14, 16)
+        Me.Label23.TabIndex = 85
+        Me.Label23.Text = "*"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.ForeColor = System.Drawing.Color.Red
+        Me.Label27.Location = New System.Drawing.Point(57, 189)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(14, 16)
+        Me.Label27.TabIndex = 86
+        Me.Label27.Text = "*"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.ForeColor = System.Drawing.Color.Red
+        Me.Label28.Location = New System.Drawing.Point(169, 131)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(14, 16)
+        Me.Label28.TabIndex = 87
+        Me.Label28.Text = "*"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.ForeColor = System.Drawing.Color.Red
+        Me.Label29.Location = New System.Drawing.Point(98, 175)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(14, 16)
+        Me.Label29.TabIndex = 36
+        Me.Label29.Text = "*"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.ForeColor = System.Drawing.Color.Red
+        Me.Label30.Location = New System.Drawing.Point(342, 172)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(14, 16)
+        Me.Label30.TabIndex = 37
+        Me.Label30.Text = "*"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.ForeColor = System.Drawing.Color.Red
+        Me.Label32.Location = New System.Drawing.Point(541, 175)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(14, 16)
+        Me.Label32.TabIndex = 38
+        Me.Label32.Text = "*"
+        '
         'FrmStudentsView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -961,4 +1105,16 @@ Partial Class FrmStudentsView
     Friend WithEvents Requirement As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents DtpBday As DateTimePicker
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label29 As Label
 End Class
