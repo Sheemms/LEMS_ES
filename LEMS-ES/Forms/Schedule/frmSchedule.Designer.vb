@@ -44,6 +44,20 @@ Partial Class FrmSchedule
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.DgvSchedule = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.TxtSearch = New System.Windows.Forms.ToolStripTextBox()
@@ -64,11 +78,6 @@ Partial Class FrmSchedule
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.cbF = New System.Windows.Forms.CheckBox()
-        Me.cbTH = New System.Windows.Forms.CheckBox()
-        Me.cbW = New System.Windows.Forms.CheckBox()
-        Me.cbT = New System.Windows.Forms.CheckBox()
-        Me.cbM = New System.Windows.Forms.CheckBox()
         Me.lblSY = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtTeacherID = New Guna.UI2.WinForms.Guna2TextBox()
@@ -87,20 +96,11 @@ Partial Class FrmSchedule
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.colID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cbM = New System.Windows.Forms.CheckBox()
+        Me.cbT = New System.Windows.Forms.CheckBox()
+        Me.cbW = New System.Windows.Forms.CheckBox()
+        Me.cbTH = New System.Windows.Forms.CheckBox()
+        Me.cbF = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -420,6 +420,127 @@ Partial Class FrmSchedule
         Me.DgvSchedule.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvSchedule.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'colID
+        '
+        Me.colID.DataPropertyName = "ID"
+        Me.colID.HeaderText = "ID"
+        Me.colID.Name = "colID"
+        Me.colID.ReadOnly = True
+        Me.colID.Visible = False
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "SchoolYear"
+        Me.Column8.HeaderText = "School Year"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.DataPropertyName = "Department"
+        Me.Column2.HeaderText = "Department"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column11
+        '
+        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column11.DataPropertyName = "GradeLevel"
+        Me.Column11.HeaderText = "Grade"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Width = 68
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.DataPropertyName = "SubjectCode"
+        Me.Column1.HeaderText = "Code"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 62
+        '
+        'Column10
+        '
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column10.DataPropertyName = "SubjectName"
+        Me.Column10.HeaderText = "Subject"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.DataPropertyName = "SectionRoom"
+        Me.Column3.HeaderText = "Section"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column4.DataPropertyName = "Room"
+        Me.Column4.HeaderText = "Room"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 66
+        '
+        'Column13
+        '
+        Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column13.DataPropertyName = "AdviserID"
+        Me.Column13.HeaderText = "AdviserID"
+        Me.Column13.Name = "Column13"
+        Me.Column13.ReadOnly = True
+        Me.Column13.Visible = False
+        Me.Column13.Width = 91
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.DataPropertyName = "Adviser"
+        Me.Column5.HeaderText = "Adviser"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 78
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.DataPropertyName = "Days"
+        Me.Column6.HeaderText = "Days"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 62
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.DataPropertyName = "Time"
+        Me.Column7.HeaderText = "Time"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
+        'Column12
+        '
+        Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column12.DataPropertyName = "TeacherID"
+        Me.Column12.HeaderText = "Teacher ID"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        Me.Column12.Visible = False
+        Me.Column12.Width = 94
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column9.DataPropertyName = "Teacher"
+        Me.Column9.HeaderText = "Teacher"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 78
+        '
         'Panel3
         '
         Me.Panel3.AutoScroll = True
@@ -681,56 +802,6 @@ Partial Class FrmSchedule
         Me.Label13.Text = "[To]"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'cbF
-        '
-        Me.cbF.AutoSize = True
-        Me.cbF.Location = New System.Drawing.Point(808, 37)
-        Me.cbF.Name = "cbF"
-        Me.cbF.Size = New System.Drawing.Size(63, 20)
-        Me.cbF.TabIndex = 36
-        Me.cbF.Text = "Friday"
-        Me.cbF.UseVisualStyleBackColor = True
-        '
-        'cbTH
-        '
-        Me.cbTH.AutoSize = True
-        Me.cbTH.Location = New System.Drawing.Point(720, 37)
-        Me.cbTH.Name = "cbTH"
-        Me.cbTH.Size = New System.Drawing.Size(80, 20)
-        Me.cbTH.TabIndex = 35
-        Me.cbTH.Text = "Thursday"
-        Me.cbTH.UseVisualStyleBackColor = True
-        '
-        'cbW
-        '
-        Me.cbW.AutoSize = True
-        Me.cbW.Location = New System.Drawing.Point(890, 19)
-        Me.cbW.Name = "cbW"
-        Me.cbW.Size = New System.Drawing.Size(92, 20)
-        Me.cbW.TabIndex = 34
-        Me.cbW.Text = "Wednesday"
-        Me.cbW.UseVisualStyleBackColor = True
-        '
-        'cbT
-        '
-        Me.cbT.AutoSize = True
-        Me.cbT.Location = New System.Drawing.Point(808, 19)
-        Me.cbT.Name = "cbT"
-        Me.cbT.Size = New System.Drawing.Size(73, 20)
-        Me.cbT.TabIndex = 33
-        Me.cbT.Text = "Tuesday"
-        Me.cbT.UseVisualStyleBackColor = True
-        '
-        'cbM
-        '
-        Me.cbM.AutoSize = True
-        Me.cbM.Location = New System.Drawing.Point(720, 19)
-        Me.cbM.Name = "cbM"
-        Me.cbM.Size = New System.Drawing.Size(71, 20)
-        Me.cbM.TabIndex = 32
-        Me.cbM.Text = "Monday"
-        Me.cbM.UseVisualStyleBackColor = True
-        '
         'lblSY
         '
         Me.lblSY.AutoSize = True
@@ -951,126 +1022,55 @@ Partial Class FrmSchedule
         Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         '
-        'colID
+        'cbM
         '
-        Me.colID.DataPropertyName = "ID"
-        Me.colID.HeaderText = "ID"
-        Me.colID.Name = "colID"
-        Me.colID.ReadOnly = True
-        Me.colID.Visible = False
+        Me.cbM.AutoSize = True
+        Me.cbM.Location = New System.Drawing.Point(720, 19)
+        Me.cbM.Name = "cbM"
+        Me.cbM.Size = New System.Drawing.Size(71, 20)
+        Me.cbM.TabIndex = 32
+        Me.cbM.Text = "Monday"
+        Me.cbM.UseVisualStyleBackColor = True
         '
-        'Column8
+        'cbT
         '
-        Me.Column8.DataPropertyName = "SchoolYear"
-        Me.Column8.HeaderText = "School Year"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
+        Me.cbT.AutoSize = True
+        Me.cbT.Location = New System.Drawing.Point(808, 19)
+        Me.cbT.Name = "cbT"
+        Me.cbT.Size = New System.Drawing.Size(73, 20)
+        Me.cbT.TabIndex = 33
+        Me.cbT.Text = "Tuesday"
+        Me.cbT.UseVisualStyleBackColor = True
         '
-        'Column2
+        'cbW
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.DataPropertyName = "Department"
-        Me.Column2.HeaderText = "Department"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
+        Me.cbW.AutoSize = True
+        Me.cbW.Location = New System.Drawing.Point(890, 19)
+        Me.cbW.Name = "cbW"
+        Me.cbW.Size = New System.Drawing.Size(92, 20)
+        Me.cbW.TabIndex = 34
+        Me.cbW.Text = "Wednesday"
+        Me.cbW.UseVisualStyleBackColor = True
         '
-        'Column11
+        'cbTH
         '
-        Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column11.DataPropertyName = "GradeLevel"
-        Me.Column11.HeaderText = "Grade"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        Me.Column11.Width = 68
+        Me.cbTH.AutoSize = True
+        Me.cbTH.Location = New System.Drawing.Point(720, 37)
+        Me.cbTH.Name = "cbTH"
+        Me.cbTH.Size = New System.Drawing.Size(80, 20)
+        Me.cbTH.TabIndex = 35
+        Me.cbTH.Text = "Thursday"
+        Me.cbTH.UseVisualStyleBackColor = True
         '
-        'Column1
+        'cbF
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.DataPropertyName = "SubjectCode"
-        Me.Column1.HeaderText = "Code"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 62
-        '
-        'Column10
-        '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column10.DataPropertyName = "SubjectName"
-        Me.Column10.HeaderText = "Subject"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.DataPropertyName = "SectionRoom"
-        Me.Column3.HeaderText = "Section"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column4.DataPropertyName = "Room"
-        Me.Column4.HeaderText = "Room"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 66
-        '
-        'Column13
-        '
-        Me.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column13.DataPropertyName = "AdviserID"
-        Me.Column13.HeaderText = "AdviserID"
-        Me.Column13.Name = "Column13"
-        Me.Column13.ReadOnly = True
-        Me.Column13.Visible = False
-        Me.Column13.Width = 91
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.DataPropertyName = "Adviser"
-        Me.Column5.HeaderText = "Adviser"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 78
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.DataPropertyName = "Days"
-        Me.Column6.HeaderText = "Days"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 62
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.DataPropertyName = "Time"
-        Me.Column7.HeaderText = "Time"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column12
-        '
-        Me.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column12.DataPropertyName = "TeacherID"
-        Me.Column12.HeaderText = "Teacher ID"
-        Me.Column12.Name = "Column12"
-        Me.Column12.ReadOnly = True
-        Me.Column12.Visible = False
-        Me.Column12.Width = 94
-        '
-        'Column9
-        '
-        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column9.DataPropertyName = "Teacher"
-        Me.Column9.HeaderText = "Teacher"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Width = 78
+        Me.cbF.AutoSize = True
+        Me.cbF.Location = New System.Drawing.Point(808, 37)
+        Me.cbF.Name = "cbF"
+        Me.cbF.Size = New System.Drawing.Size(63, 20)
+        Me.cbF.TabIndex = 36
+        Me.cbF.Text = "Friday"
+        Me.cbF.UseVisualStyleBackColor = True
         '
         'FrmSchedule
         '
@@ -1122,12 +1122,7 @@ Partial Class FrmSchedule
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DgvSchedule As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents cbW As CheckBox
-    Friend WithEvents cbT As CheckBox
-    Friend WithEvents cbM As CheckBox
     Friend WithEvents lblSY As Label
-    Friend WithEvents cbF As CheckBox
-    Friend WithEvents cbTH As CheckBox
     Friend WithEvents Label13 As Label
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label14 As Label
@@ -1177,4 +1172,9 @@ Partial Class FrmSchedule
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents cbF As CheckBox
+    Friend WithEvents cbTH As CheckBox
+    Friend WithEvents cbW As CheckBox
+    Friend WithEvents cbT As CheckBox
+    Friend WithEvents cbM As CheckBox
 End Class

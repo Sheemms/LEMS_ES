@@ -84,8 +84,15 @@ Public Class FrmEnrollmentRegistration
     Public Sub LoadSub()
         Try
             Query($"SELECT  a.ID, CONCAT(b.Start_Year, '-',b.End_Year) SY, g.SubjectCode, g.SubjectName, 
-		CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, 
-        a.Days, CONCAT(h.Lastname, ' ',h.Firstname) Teacher
+		                        CONCAT(TIME_FORMAT(Time_From, '%H:%i'), '-', TIME_FORMAT(Time_To, '%H:%i')) Time, 
+                                GROUP_CONCAT(
+                                    CASE j.ID 
+                                        WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(a.Days, ',', n.n), ',', -1) THEN j.Days
+                                    END
+                                    ORDER BY n.n
+                                    SEPARATOR ', '
+                                ) AS Days, 
+                                CONCAT(h.Lastname, ' ',h.Firstname) Teacher
                                 FROM schedule a
                                 JOIN schoolyear b ON a.SYID = b.ID
                                 JOIN section c ON a.SectionID = c.ID
@@ -95,7 +102,11 @@ Public Class FrmEnrollmentRegistration
 								JOIN subject g ON a.SubjectID = g.ID
 								JOIN teacher h ON a.TeacherID = h.ID
 								JOIN teacher i on c.AdviserID = i.ID
-                                WHERE c.ID = '{CmbSection.SelectedValue}'")
+                                JOIN days j ON FIND_IN_SET(j.ID, a.Days)
+                                CROSS JOIN 
+									(SELECT 1 AS n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS n
+								WHERE c.ID = '{CmbSection.SelectedValue}'
+                                GROUP BY a.ID")
             DgvStudSubject.DataSource = ds.Tables("QueryTb")
         Catch ex As Exception
             Critical(ex.Message)
@@ -104,14 +115,24 @@ Public Class FrmEnrollmentRegistration
     Public Sub LoadSubjectEnrolled()
         Try
             Query("SELECT a.ID, CONCAT(b.Start_Year, '-', b.End_Year)SYID, a.EID, d.SubjectCode ,d.SubjectName, 
-                    CONCAT(TIME_FORMAT(c.Time_From, '%H:%i'), '-', TIME_FORMAT(c.Time_To, '%H:%i')) Time, c.Days, 
+                    CONCAT(TIME_FORMAT(c.Time_From, '%H:%i'), '-', TIME_FORMAT(c.Time_To, '%H:%i')) Time,
+                    GROUP_CONCAT(
+                        CASE f.ID 
+                        WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(c.Days, ',', n.n), ',', -1) THEN f.Days
+                        END
+                        ORDER BY n.n
+                        SEPARATOR ', ') AS Days, 
                     CONCAT(e.Lastname, ', ', e.Firstname, ' ',e.MiddleInitial) Teacher
                     FROM enrolled_sched a
                     JOIN schoolyear b ON a.SYID = b.ID
                     JOIN schedule c ON a.ScheduleID = c.ID
                     JOIN subject d ON c.Subj_ID = d.ID
                     JOIN teacher e ON c.Teacher_ID = e.ID
-                    WHERE a.EID =  '" & LabelEID.Text & "'")
+                    JOIN days f ON FIND_IN_SET(f.ID, c.Days)
+                    CROSS JOIN 
+                        (SELECT 1 AS n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS n
+					WHERE a.EID = '" & LabelEID.Text & "'
+                    GROUP BY a.ID")
             DgvEnrolledSubjects.DataSource = ds.Tables("QueryTb")
         Catch ex As Exception
             Critical(ex.Message)

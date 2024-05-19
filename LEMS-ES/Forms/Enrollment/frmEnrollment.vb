@@ -165,10 +165,17 @@ Public Class FrmEnrollment
             ElseIf column = "colPrint" AndAlso e.RowIndex >= 0 Then
                 Dim enrollmentId As String = dgvEnrolled.Rows(e.RowIndex).Cells(0).Value.ToString()
                 Dim dt = New DataTable("DS_RegForm")
-                Dim adp = New MySqlDataAdapter("SELECT  CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN,
+                Dim adp = New MySqlDataAdapter($"SELECT  CONCAT(b.Start_Year, '-', b.End_Year) SY, a.EID, c.LRN,
                                             CONCAT(c.Lastname, ', ', c.Firstname, ' ',c.MiddleInitial) Fullname, c.Gender, e.GradeLevel as Grade,
                                             d.SectionRoom as Section, f.Classification as Type, i.SubjectCode as Code, i.SubjectName as Subject, j.Room,
-                                            h.Days, CONCAT(h.Time_From,'-',h.Time_To) Time, CONCAT(k.Lastname, ', ', k.Firstname) Teacher, 
+                                            GROUP_CONCAT(
+												CASE m.ID 
+													WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(h.Days, ',', n.n), ',', -1) THEN m.Days
+												END
+												ORDER BY n.n
+												SEPARATOR ', '
+											) AS Days,
+                                            CONCAT(h.Time_From,'-',h.Time_To) Time, CONCAT(k.Lastname, ', ', k.Firstname) Teacher, 
                                             CONCAT(l.Lastname, ', ', l.Firstname) Adviser
                                             FROM enrollment a
                                             JOIN schoolyear b ON a.SchoolYear = b.ID
@@ -182,7 +189,11 @@ Public Class FrmEnrollment
                                             JOIN room j ON h.Room = j.ID
                                             JOIN teacher k ON h.TeacherID = k.ID
                                             JOIN teacher l ON d.AdviserID = l.ID
-                                            WHERE a.ID = " & enrollmentId, con)
+                                            JOIN days m ON FIND_IN_SET(m.ID, h.Days)
+                                            CROSS JOIN 
+												(SELECT 1 AS n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS n
+											WHERE a.ID = {enrollmentId}
+											GROUP BY h.ID", con)
                 adp.Fill(dt)
 
                 If dt.Rows.Count = 0 Then

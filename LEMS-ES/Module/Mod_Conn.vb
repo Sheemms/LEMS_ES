@@ -14,9 +14,13 @@ Module Mod_Conn
     Public pbox As Image
 
     Public Sub Connection()
-        If con.State = ConnectionState.Closed Then
-            con.Open()
-        End If
+        Try
+            If con.State = ConnectionState.Closed Then
+                con.Open()
+            End If
+        Catch ex As mysqlException
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Public Sub Query(ByVal QueryStatement As String)
@@ -24,6 +28,27 @@ Module Mod_Conn
         ds = New DataSet
         adp.Fill(ds, "QueryTb")
     End Sub
+    Public Function QueryWithParams(ByVal query As String, ByVal ParamArray parameters() As MySqlParameter) As DataTable
+        Dim dataTable As New DataTable()
+        Dim connection As New MySqlConnection(My.Settings.Conn_String)
+        Dim command As New MySqlCommand(query, connection)
+        Try
+            command.Parameters.AddRange(parameters)
+            Dim adapter As New MySqlDataAdapter(command)
+            adapter.Fill(dataTable)
+        Catch ex As Exception
+            ' Handle the exception (e.g., log error, display message)
+            MsgBox("Error executing parameterized query: " & ex.Message)
+        Finally
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
+            command.Dispose()
+            connection.Dispose()
+        End Try
+        Return dataTable
+    End Function
+
     Public Sub Command(ByVal CommandStatement As String, ParamArray dynamicParam() As MySqlParameter)
         cmd = New MySqlCommand(CommandStatement, con)
         cmd.Parameters.AddRange(dynamicParam)

@@ -10,7 +10,6 @@ Public Class FrmSchedule
         LoadRoom()
         LoadSubject()
         LoadTeacher()
-        'LoadTeacherAutoComplete()
         GetSchoolYear(lblSY)
     End Sub
     Public Sub Clear()
@@ -40,7 +39,14 @@ Public Class FrmSchedule
         Try
             Query($"SELECT a.ID, CONCAT(b.Start_Year, '-',b.End_Year) SchoolYear, e.Department, d.GradeLevel, c.SectionRoom, f.Room,
                 g.SubjectCode, g.SubjectName, i.EmpID as AdviserID,
-                CONCAT(i.Lastname, ', ', i.Firstname, ' ', i.MiddleInitial) as Adviser, a.Days, 
+                CONCAT(i.Lastname, ', ', i.Firstname, ' ', i.MiddleInitial) as Adviser, 
+                GROUP_CONCAT(
+                    CASE j.ID 
+                        WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(a.Days, ',', n.n), ',', -1) THEN j.Days
+                    END
+                    ORDER BY n.n
+                    SEPARATOR ', '
+                ) AS Days,
                 CONCAT(TIME_FORMAT(a.Time_From, '%H:%i'), '-',TIME_FORMAT(a.Time_To, '%H:%i')) as Time, h.EmpID as TeacherID,
                 CONCAT(h.Lastname, ', ', h.Firstname) as Teacher 
                 FROM schedule a
@@ -51,7 +57,11 @@ Public Class FrmSchedule
                 JOIN room f ON a.Room = f.ID
                 JOIN subject g ON a.SubjectID = g.ID
                 JOIN teacher h ON a.TeacherID = h.ID
-                JOIN teacher i on c.AdviserID = i.ID")
+                JOIN teacher i on c.AdviserID = i.ID
+                JOIN days j ON FIND_IN_SET(j.ID, a.Days)
+                CROSS JOIN 
+                    (SELECT 1 AS n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS n
+                GROUP BY a.ID")
             DgvSchedule.DataSource = ds.Tables("QueryTb")
 
             Query("SELECT a.ID, b.Department, a.EmpID, CONCAT(a.Lastname, ', ', a.Firstname) Teacher
@@ -80,13 +90,11 @@ Public Class FrmSchedule
                 Dim time As String = selectedRow.Cells("Column7").Value.ToString()
                 Dim times() As String = time.Split("-"c)
                 If times.Length = 2 Then
-                    txtstartTime.Text = times(0).Trim() ' Assuming you have a control named TxtTimeFrom
-                    txtendTime.Text = times(1).Trim() ' Assuming you have a control named TxtTimeTo
+                    txtstartTime.Text = times(0).Trim()
+                    txtendTime.Text = times(1).Trim()
                 End If
                 txtTeacherID.Text = selectedRow.Cells("Column12").Value
                 CmbTeacherName.Text = selectedRow.Cells("Column9").Value
-                'Dim days As String = selectedRow.Cells("Column6").Value.ToString()
-                'PopulateDaysCheckboxes(days)
             ElseIf e.ColumnIndex >= 0 Then
                 Clear()
             End If
@@ -306,10 +314,6 @@ Public Class FrmSchedule
     End Sub
     Public teacherid = Nothing
     Private Sub CmbTeacherName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTeacherName.SelectedIndexChanged
-        'If CmbTeacherName.SelectedItem IsNot Nothing Then
-        '    LoadTeacherData()
-        'End If
-
         Try
             If CmbTeacherName.SelectedItem IsNot Nothing AndAlso TypeOf CmbTeacherName.SelectedItem Is DataRowView Then
                 Dim selectedTeacher As Integer = Convert.ToInt32(DirectCast(CmbTeacherName.SelectedItem, DataRowView).Row("ID"))
@@ -410,41 +414,6 @@ Public Class FrmSchedule
         ClassSchedule.SchedRef()
     End Sub
 
-    Public Function ChckBox()
-        Dim days = ""
-        Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
-        For i = 0 To ckbx.Length - 1
-            If ckbx(i).Checked Then
-                days &= ckbx(i).Text & " "
-            End If
-        Next
-        Return days
-    End Function
-    'Private Sub PopulateDaysCheckboxes(days As String)
-    '    Dim dayArray() As String = days.Split(" "c)
-    '    Dim ckbx() = {cbM, cbT, cbW, cbTH, cbF}
-
-    '    ' Clear all checkboxes first
-    '    For Each chk As CheckBox In ckbx
-    '        chk.Checked = False
-    '    Next
-
-    '    ' Check the checkboxes based on the days string
-    '    For Each day In dayArray
-    '        Select Case day.Trim().ToLower()
-    '            Case "Monday"
-    '                cbM.Checked = True
-    '            Case "Tuesday"
-    '                cbT.Checked = True
-    '            Case "Wednesday"
-    '                cbW.Checked = True
-    '            Case "Thursday"
-    '                cbTH.Checked = True
-    '            Case "Friday"
-    '                cbF.Checked = True
-    '        End Select
-    '    Next
-    'End Sub
     Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
         Try
             Dim search As String = TxtSearch.Text.Trim()
@@ -501,9 +470,17 @@ Public Class FrmSchedule
             If column = "colPrint" AndAlso e.RowIndex >= 0 Then
                 Dim teacherID As String = DgvTeacher.Rows(e.RowIndex).Cells(0).Value.ToString()
                 Dim dt = New DataTable("DS_Schedule")
-                Dim adp = New MySqlDataAdapter("SELECT CONCAT(b.Start_Year, '-', b.End_Year) SY, e.GradeLevel as Grade, d.SectionRoom as Section, c.SubjectCode as Code, 
-                                            c.SubjectName as Subject, f.Room, a.Days, CONCAT(a.Time_From, '-',a.Time_To) Time, 
-                                            CONCAT(g.Lastname, ', ',g.Firstname) Teacher
+                Dim query As String = "SELECT CONCAT(b.Start_Year, '-', b.End_Year) AS SY, e.GradeLevel AS Grade, d.SectionRoom AS Section, c.SubjectCode AS Code, 
+                                            c.SubjectName AS Subject, f.Room,
+                                            GROUP_CONCAT(
+												CASE h.ID 
+													WHEN SUBSTRING_INDEX(SUBSTRING_INDEX(a.Days, ',', n.n), ',', -1) THEN h.Days
+												END
+												ORDER BY n.n
+												SEPARATOR ', '
+											) AS Days, 
+                                            CONCAT(a.Time_From, '-',a.Time_To) AS Time, 
+                                            CONCAT(g.Lastname, ', ',g.Firstname) AS Teacher
                                             FROM schedule a 
                                             JOIN schoolyear b ON a.SYID = b.ID
                                             JOIN subject c ON a.SubjectID = c.ID
@@ -511,8 +488,16 @@ Public Class FrmSchedule
                                             JOIN gradelevel e ON d.GradeLevel_ID = e.ID
                                             JOIN room f ON a.Room = f.ID
                                             JOIN teacher g ON a.TeacherID = g.ID
-                                            WHERE a.TeacherID = " & teacherID, con)
-                adp.Fill(dt)
+                                            JOIN days h ON FIND_IN_SET(h.ID, a.Days)
+                                            CROSS JOIN 
+												(SELECT 1 AS n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS n
+											WHERE a.TeacherID = @TeacherID
+											GROUP BY a.ID"
+                Using cmd As New MySqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@TeacherID", teacherID)
+                    Dim adp As New MySqlDataAdapter(cmd)
+                    adp.Fill(dt)
+                End Using
 
                 If dt.Rows.Count = 0 Then
                     Info("No Schedule")

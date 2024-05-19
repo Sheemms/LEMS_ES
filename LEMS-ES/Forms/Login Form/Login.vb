@@ -1,13 +1,17 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Connection()
-        Query("SELECT * FROM user")
-        If ds.Tables("QueryTb").Rows.Count = 0 Then
-            MsgBox("No Admin Registered Yet.")
-            RegistrationForm.Show()
-            Me.Close()
-        End If
+        Try
+            Connection()
+            Query("SELECT * FROM user")
+            If ds.Tables("QueryTb").Rows.Count = 0 Then
+                MsgBox("No Admin Registered Yet.")
+                RegistrationForm.Show()
+                Me.Close()
+            End If
+        Catch ex As MySqlException
+
+        End Try
     End Sub
     Public Sub Clear()
         txtUsername.Clear()

@@ -60,6 +60,8 @@ Public Class ClassEnroll
                 If MsgBox("Do you want to update it?", vbQuestion + vbYesNo) = vbYes Then
                     Command("UPDATE enrollment SET EID=@EID, SchoolYear=@SchoolYear, LRN=@LRN, SectionID=@SectionID, GradeLevel_ID=@GradeLevel_ID WHERE ID=@ID", dynamicParams)
                     Success("Successfully Updated!")
+                    Dim name As String = FrmEnrollmentRegistration.txtStudLRN.Text & " - " & FrmEnrollmentRegistration.CmbStudName.Text
+                    LogAction("Updated Enrolled Student |" & name)
                     FrmEnrollmentRegistration.Clear()
                 End If
             End If
