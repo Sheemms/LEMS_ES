@@ -480,6 +480,67 @@ LOCK TABLES `schedule` WRITE;
 INSERT INTO `schedule` VALUES (1,1,1,'1',1,'1,2,3,4,5','08:00:00','09:00:00',1);
 /*!40000 ALTER TABLE `schedule` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `schedule_BEFORE_INSERT` BEFORE INSERT ON `schedule` FOR EACH ROW BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM schedule
+        WHERE
+            TeacherID = NEW.TeacherID
+            AND Days = NEW.Days
+            AND (
+                (NEW.Time_From < Time_To AND NEW.Time_From >= Time_From) OR
+                (NEW.Time_To <= Time_To AND NEW.Time_To > Time_From) OR
+                (NEW.Time_From <= Time_From AND NEW.Time_To >= Time_To)
+            )
+    ) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Time overlaps with an existing schedule for this teacher';
+    END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `schedule_BEFORE_UPDATE` BEFORE UPDATE ON `schedule` FOR EACH ROW BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM schedule
+        WHERE
+            TeacherID = NEW.TeacherID
+            AND Days = NEW.Days
+            AND ID != NEW.ID
+            AND (
+                (NEW.Time_From < Time_To AND NEW.Time_From >= Time_From) OR
+                (NEW.Time_To <= Time_To AND NEW.Time_To > Time_From) OR
+                (NEW.Time_From <= Time_From AND NEW.Time_To >= Time_To)
+            )
+    ) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Time overlaps with an existing schedule for this teacher';
+    END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `schoolyear`
@@ -782,4 +843,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-21 21:28:31
+-- Dump completed on 2024-05-21 21:31:13
